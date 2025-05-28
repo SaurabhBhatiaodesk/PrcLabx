@@ -1,0 +1,45 @@
+.BlogPageWrapper-os .ql-container.ql-snow {
+    border: none;
+}
+
+.BlogPageWrapper-os .quill.border.rounded-lg {
+    border: 1px solid #00000099;
+    border-radius: 4px;
+    overflow-y: hidden;
+}
+
+.BlogPageWrapper-os .ql-toolbar.ql-snow {
+    border: none;
+    border-bottom: 1px solid #00000099;
+}
+
+.BlogPageWrapper-os {
+    color: #000 !important;
+}
+
+.label-text-os {
+    display: flex;
+    font-size: 16px;
+    line-height: 20px;
+}
+.BlogPageWrapper-os h2, .BlogPageWrapper-os p , h3 span , ul li span strong ,h3 strong {
+    color: #000 !important;
+}
+.BlogPageWrapper-os{
+    color: black;
+}
+.ql-editor ol li:not(.ql-direction-rtl), .ql-editor ul li:not(.ql-direction-rtl) {
+    padding-left: 1.5em;
+    color: black !important;
+}
+
+
+.ql-editor{
+    color: black !important;    
+}
+.ql-editor p, .ql-editor ol, .ql-editor ul, .ql-editor pre, .ql-editor blockquote, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6 {
+    margin: 0;
+    padding: 0;
+    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+    color: black !important;
+}

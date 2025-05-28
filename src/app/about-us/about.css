@@ -1,0 +1,67 @@
+.about__bg__gradiant{
+    background-image: url(../../../public/Images/about/bggradiant.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.User_img img{
+    width: 100%;
+}
+.overlap__description {
+    background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+    padding: 35px;
+    padding-top: 30%;
+    position: absolute;
+    top: 5rem;
+    z-index: 1;
+    width: 90%;
+    right: 0;
+    border-radius: 20px;
+    text-align: left;
+}
+.overlap__section_labX.relative img {
+    z-index: 2;
+    position: relative;
+    width: 95%;
+}
+.overlap__description h3, .overlap__description p{
+    color: #000;
+}
+.overlap__section_labX.relative {
+    margin-bottom: 22rem;
+}
+.bg_light_black{
+    background: #0c0c0c;
+}
+.bg_light_yellow{
+    background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+    border-radius: 20px;
+}
+h2 {
+    font-size: 32px !important;
+    line-height: 40px;
+}
+/* .max-container p{
+    font-size: 16px;
+} */
+@media screen and (max-width: 767px) {
+img.pb-3.m-auto, .about_line{
+    /* opacity: 0; */
+}
+.grid.xl\:grid-cols-2.lg\:grid-cols-3.grid-cols-1.gap-8.lg\:py-5.py-3.items-center, .max-container p, .overlap__description h3 {
+    text-align: center;
+}
+.overlap__description {
+    width: 100%;
+    padding-top: 18% !important;
+    padding: 35px 15px;
+}
+.overlap__section_labX.relative img {
+    width: 100%;
+}
+.overlap__section_labX.relative {
+    margin-bottom: 47rem;
+}
+}

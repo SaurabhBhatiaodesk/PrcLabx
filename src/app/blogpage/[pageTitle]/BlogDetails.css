@@ -1,0 +1,263 @@
+/* .blog-details-os h3, .blog-details-os p {
+    color: #ffffff;
+} */
+.main__section h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+.main__section p {
+    font-size: 16px;
+}
+.main__section{
+    width: 60%;
+    margin:auto;
+}
+.social__icon {
+    display: flex;
+    gap: 14px;
+    margin: 15px 0px;
+}
+.social_section {
+    border-bottom: 1px solid #ffffff9c;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.social__icon a{
+    cursor: pointer;
+}
+.blog_slide_img{
+    height: 75px !important;
+}
+.side_bg_img{
+    background-image: url('../../../../public/Images//blog/Ellipse.svg');
+    width: 400px;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 25%;
+}
+@media screen and (max-width: 767px) {
+    .main__section{
+        width: 100% !important; 
+    }
+    .blog-details-os .w-full.lg\:w-3\/4.pr-6 {
+    padding: 0 !important;
+}
+}
+
+
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
+}
+
+
+
+.ql-editor ol, .ql-editor ul {
+  padding-left: 1.5em;
+  color: black !important;
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   Base Styles (Desktop & General Styles)
+============================================ */
+
+/* Headings - General */
+.custom-content-styling h2,
+.custom-content-styling h2 span {
+    background-color: transparent !important;
+    color: #cccccc !important;
+    font-size: 28px;
+}
+
+.custom-content-styling h3 span  {
+    font-size: 25px;
+    color: #cccccc !important;
+}
+.custom-content-styling h3{
+    color: #cccccc !important;
+}
+
+.custom-content-styling h4 {
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.custom-content-styling h4 strong {
+    font-size: 20px;
+    color: #cccccc !important;
+    font-weight: bold;
+}
+.custom-content-styling h3 strong {
+    font-size: 24px;
+    color: #cccccc !important;
+    font-weight: bold;
+}
+
+
+/* New - h5 and h6 */
+.custom-content-styling h5 {
+    font-size: 18px;
+    color: #cccccc !important;
+    margin-bottom: 8px;
+}
+.custom-content-styling h5 strong {
+  font-size: 18px;
+  color: #cccccc !important;
+  margin-bottom: 8px;
+}
+
+.custom-content-styling h6 {
+    font-size: 16px;
+    color: #cccccc !important;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs */
+.custom-content-styling p {
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #cccccc; 
+    margin-bottom: 10px;
+}
+
+/* List Items */
+.custom-content-styling li strong {
+  color: #cccccc !important;
+  font-size: 18px;
+}
+
+.custom-content-styling li span {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cccccc !important;
+    margin-bottom: 10px;
+}
+
+/* Links */
+.custom-content-styling a {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+
+.custom-content-styling a:hover {
+    color: #ff4500;
+}
+
+/* Line Breaks */
+.custom-content-styling br {
+    line-height: 0 !important;
+    margin: 0 !important;
+}
+
+/* Empty Paragraph Removal */
+.custom-content-styling p:empty {
+    display: none !important;
+}
+
+/* ============================================
+   Tablet View - max-width: 768px
+============================================ */
+
+@media (max-width: 768px) {
+    /* Headings (h4-h6) */
+    .custom-content-styling h4 {
+        font-size: 18px;
+    }
+    .custom-content-styling li strong {
+      color: #cccccc !important;
+      font-size: 16px;
+    }
+    .custom-content-styling h4 strong {
+        font-size: 19px;
+    }
+
+    .custom-content-styling h5 {
+        font-size: 16px;
+    }
+
+    .custom-content-styling h6 {
+        font-size: 14px;
+    }
+
+    /* h2, h3, strong in paragraphs */
+    .custom-content-styling h2 span,
+    .custom-content-styling h4 strong,
+    .custom-content-styling p strong {
+        font-size: 24px !important;
+        color: #cccccc !important;
+    }
+
+    .custom-content-styling h3 span {
+        font-size: 22px;
+        color: #cccccc !important;
+    }
+
+    /* Paragraph */
+    .custom-content-styling p {
+        font-size: 16px;
+    }
+
+    /* Special h3 span */
+    .custom-content-styling h3 span {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   Mobile View - max-width: 480px
+============================================ */
+
+@media (max-width: 480px) {
+    /* Headings (h4-h6) */
+    .custom-content-styling h4 {
+        font-size: 16px;
+    }
+
+    .custom-content-styling h4 strong {
+        font-size: 17px;
+    }
+
+    .custom-content-styling h5 {
+        font-size: 14px;
+    }   .custom-content-styling h5 strong {
+      font-size: 14px;
+  }
+
+    .custom-content-styling h6 {
+        font-size: 12px;
+    }
+
+    /* h2, h3, strong in paragraphs */
+    .custom-content-styling h2 span,
+    .custom-content-styling p strong {
+        font-size: 20px;
+    }
+
+    .custom-content-styling h3 span {
+        font-size: 20px;
+        color: #cccccc !important;
+    }
+
+    /* Paragraph */
+    .custom-content-styling p {
+        font-size: 14px;
+    }
+
+    /* Special h3 span */
+    .custom-content-styling h3 span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+

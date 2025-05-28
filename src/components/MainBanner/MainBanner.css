@@ -1,0 +1,25 @@
+.mySwipergk .swiper-pagination {
+  position: absolute;
+  text-align: left;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+.mySwipergk .swiper-pagination-bullet {
+  width: 20px;
+  height: 12px;
+  border-radius: 5px !important;
+  background-color: #ffffff;
+  border-radius: 0;
+  margin: 0 4px;
+}
+
+.mySwipergk .swiper-pagination-bullet-active {
+  background-color: var(--F1-btn-color);
+}
+@media only screen and (max-width: 600px) {
+  .mySwipergk .swiper-pagination {
+    display: none;
+  }
+}

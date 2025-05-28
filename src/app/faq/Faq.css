@@ -1,0 +1,24 @@
+/* button[data-selected="0"] {
+    background: linear-gradient(74deg, #56c1c1, #000000);
+  }
+  
+  button[data-selected="1"] {
+    background: linear-gradient(74deg, #f35520c0, #000000);
+  }
+  
+  button[data-selected="2"] {
+    background: linear-gradient(74deg, #d5fd33a1, #000000);
+  }
+  
+  button[data-selected="3"] {
+    background: linear-gradient(74deg, #A044FF, #000000);
+  }
+  
+  button[data-selected="4"] {
+    background: linear-gradient(74deg, #2052e8a5, #000000);
+  }
+  
+  button {
+    transition: background 0.3s ease-in-out;
+  }
+   */

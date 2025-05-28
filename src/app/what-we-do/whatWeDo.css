@@ -1,0 +1,25 @@
+.max-container {
+    max-width: 1200px;
+    margin: auto;
+}
+.ship-device svg.ship-svg-ico {
+    max-width: 480px;
+    margin: auto;
+}
+.shop-block {
+    overflow: hidden;
+
+}
+.shop-block.rounded-\[15px\].border-2.shadow-lg.shadow-\[\#ede57456\].transition-shadow.duration-300.flex.flex-col.justify-between.hover\:shadow-\[0_0_20px_10px_\#ede57456\] img {
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.shop-block.rounded-\[15px\].border-2.shadow-lg.shadow-\[\#ede57456\].transition-shadow.duration-300.flex.flex-col.justify-between.hover\:shadow-\[0_0_20px_10px_\#ede57456\]:hover img {
+
+-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+

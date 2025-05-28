@@ -1,0 +1,109 @@
+.header-component header {
+    max-width: 1536px !important;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 90px;
+    /* background-color: transparent !important; */
+
+}
+
+  
+.header-component {
+    position: sticky;
+    top: 0;
+    z-index: 555;
+    /* margin-bottom: 15px; */
+}
+/* header svg {
+    width: 26px;
+    height: 26px;
+} */
+
+ul.dropdown-content {
+    position: absolute;
+}
+ 
+.navmenu ul.menu > li > a,
+.navmenu ul.menu li summary {
+    padding: 5px 15px;
+    font-size: 16px;
+}
+button.btn__menu.inline-flex.items-center {
+    font-size: 16px;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdowns.services_drop:hover .dropdown-menus {
+    display: block;
+  }
+ 
+  ul.dropdown-menu, ul.dropdown-menus {
+    background: #000;
+    padding: 10px 0px;
+    width: 250px;
+}
+ul.dropdown-menu li a, ul.dropdown-menus li a {
+    font-size: 16px;
+    padding: 5px 0px;
+}
+.logo_LabX{
+    width: 200px;
+}
+.social__icon, .showmobile {
+    display: none;
+}
+@media only screen and (max-width: 	1023px) {
+    .logo_LabX{
+        width: 120px;
+    }
+    .showmobile {
+        display: block !important;
+    }
+    .social__icon {
+        display: flex !important;
+        gap: 10px;
+        margin-top: 2rem;
+    }
+    .flex.basis-0.flex-row.flex-grow.flex-nowrap.justify-start.bg-transparent.items-center.no-underline.text-medium.whitespace-nowrap.box-border {
+        justify-content: center;
+        margin-right: 25px;
+    }
+    ul.dropdown-menus.absolute.hidden.text-white.pt-1, ul.dropdown-menu.absolute.hidden.text-white.pt-1 {
+        z-index: 999;
+        position: relative;
+    }
+    li.block.px-4.py-2.hover\:bg-gray-800 {
+        padding: 0 10px;
+    }
+    .block.lg\:flex.flex-grow.justify-center {
+        position: absolute;
+        left: 0;
+        background: #000;
+        top: 68px;
+        padding: 15px;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        z-index: 999;
+
+    }
+    .navmenu ul.menu > li > a, .navmenu ul.menu li summary {
+        padding: 5px 5px;
+        font-size: 15px;
+    }
+    ul.menu.menu-horizontal.px-1.flex li {
+        margin-bottom: 6px;
+    }
+ul.menu.menu-horizontal.px-1.flex {
+    display: block;
+}
+}
+@media only screen and (max-width: 	640px) {
+    .header-component header {
+        padding-right: 15px;
+        padding-left: 15px;
+        height: 70px;
+    }
+
+}

@@ -1,0 +1,78 @@
+label[data-slot="label"] {
+    color: #ffffff; /* Replace this with your desired color */
+  }
+  textarea::placeholder {
+    color: #ffffff; /* Replace with your desired color */
+    opacity: 1; /* Ensures the color is fully opaque */
+  } 
+  .subpixel-antialiased{
+    color: white !important;
+  }
+
+  input[type="submit"] {
+    background-color: #EDE574; /* Button background */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    transform: scale(1.05);
+    background-color: #E1F5C4; /* Hover background */
+  }
+
+
+
+
+  
+/* style os starts */
+.steper-form-section-os .MuiFormControl-root fieldset {
+  border: 1px solid #fff;
+  /* background-color: #000; */
+}
+.steper-form-section-os .MuiFormControl-root fieldset.css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color:#fff;
+}
+.steper-form-section-os .MuiFormControl-root .css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color:#fff;
+}
+.steper-form-section-os
+  .MuiFormControl-root
+  fieldset.MuiOutlinedInput-notchedOutline:hover
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #fff !important;
+}
+.steper-form-section-os
+  .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.steper-form-section-os
+  .MuiFormControl-root
+  .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+  color: #fff;
+}
+.steper-form-section-os .MuiFormControl-root label {
+  color: #fff;
+}
+.steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
+  color: #fff;
+}
+.steper-textarea-os .MuiTextarea-root {
+  background: #000;
+  color: #fff;
+}
+.steper-textarea-os .MuiTextarea-root textarea::placeholder {
+  opacity: 1;
+}
+.steper-textarea-os
+  .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not(
+    [data-inverted-colors="false"]
+  ) {
+  --Textarea-focusedHighlight: #fff;
+  border: 1px solid #fff !important;
+}

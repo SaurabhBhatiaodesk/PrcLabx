@@ -1,0 +1,45 @@
+img.dynamic__img {
+    width: 100%;
+}
+.MuiBox-root  {
+    padding: 0px 10px !important;
+    margin-top: 10px !important;
+}
+.MuiBox-root ul li span{
+    color: #fff !important;
+}
+ /* .overlap__term__data {
+    position: absolute;
+    top: 50%;
+    z-index: 9;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+section.bg-no-repeat.bg-cover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    height: 600px;
+    background: #0000006e;
+} */
+img.dynamic__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.MuiBox-root p span , .MuiBox-root p strong {
+    color: #fff !important;
+    background: #000 !important;
+}
+@media screen and (max-width: 767px) {
+    img.dynamic__img { 
+        height: auto; 
+    }
+    section.bg-no-repeat.bg-cover:before {
+        height: 100%;
+        top: 0;
+    }
+}

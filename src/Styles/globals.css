@@ -1,0 +1,252 @@
+html {
+  padding-right: unset !important;
+  overflow: unset !important;
+}
+body,
+h2,
+h3 {
+  font-family: Gordita, sans-serif;
+}
+h2,
+h3,
+p {
+  color: var(--primary-color);
+}
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gordita;
+  src: url("../app/fonts/Gordita-Medium.woff2") format("woff2"),
+    url("../app/fonts/Gordita-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Gordita;
+  src: url("../app/fonts/Gordita-Light.woff2") format("woff2"),
+    url("../app/fonts/Gordita-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Gordita;
+  src: url("../app/fonts/Gordita-Bold.woff2") format("woff2"),
+    url("../app/fonts/Gordita-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Gordita;
+  src: url("../app/fonts/Gordita-Regular.woff2") format("woff2"),
+    url("../app/fonts/Gordita-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Gordita;
+  src: url("../app/fonts/Gordita-Black.woff2") format("woff2"),
+    url("../app/fonts/Gordita-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --theme-bg: #ffffff;
+  --text-color: #010101;
+  --theme-bg: #ffffff;
+  --white: #ffffff;
+  --black: #000;
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --tertiary-color: #ede574;
+  --Space_Grotesk: "Space Grotesk", sans-serif;
+  --multi-color: #035597;
+  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
+  --transition: all 0.3s ease-in-out;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ffffff;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+  }
+}
+body {
+  font-weight: 500;
+  background-color: var(--black);
+  overflow-x: hidden;
+  font-size: 20px;
+  color: var(--white);
+  scroll-behavior: smooth;
+}
+.max-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+.italic-placeholder::placeholder {
+  font-style: italic !important;
+}
+.error-message {
+  padding: 0;
+  color: #ede574;
+  font-size: 12px;
+}
+.padd-top-bottom {
+  padding: 60px 0;
+  overflow: hidden;
+}
+.F1-btn-color {
+  color: var(--secondary-color, #000);
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+.F1-btn-color:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(237, 229, 116, 0.8);
+  background-position: right center;
+}
+.main-bg {
+  background-color: var(--secondary-color);
+}
+h2 {
+  font-size: 42px;
+  line-height: 55px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.btn,
+h3 {
+  font-weight: 600;
+}
+h3 {
+  font-size: 24px;
+  line-height: 34px;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.btn {
+  background: var(--F1-btn-color);
+  padding: 8px 13px !important;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--black);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  border-radius: 150px;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease-in-out, background 1.5s ease-in-out;
+}
+.btn:hover {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #43c6ac, #43c6ac);
+}
+[aria-selected="1"] {
+  background: #502fbb;
+}
+[aria-selected="2"] {
+  background: #fad7f2;
+}
+[aria-selected="3"] {
+  background: #c81111;
+}
+[aria-selected="4"] {
+  background: #3d1919;
+}
+[aria-selected="5"] {
+  background: #14e3d5;
+}
+.Removeborder-Heading h2 {
+  border-bottom: unset;
+}
+.text-yellow-400 {
+  color: #ede574;
+}
+.faq-main-title h2,
+.faq-main-title p,
+.text-black-custom {
+  color: #000 !important;
+}
+.learnmore button {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  line-height: 1.1rem;
+}
+@media only screen and (max-width: 640px) {
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--primary-color);
+  }
+  .sm-order-2 {
+    order: 2 !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 28px;
+    line-height: 38px;
+    font-family: Gordita, sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+.animate-zoomInOut {
+  animation: 1s infinite zoomInOut;
+}
+.strongtx strong {
+  font-size: 18px;
+}
+.gkhidden button {
+  display: none;
+}
+.data-\[selectable\=true\]\:focus\:bg-default:focus[data-selectable="true"] {
+  background: var(--tertiary-color) !important;
+  color: #000 !important;
+}
+
+@media (max-width: 767px) {
+  li.MuiButtonBase-root {
+    word-break: break-word;
+    white-space: normal;
+  }
+}

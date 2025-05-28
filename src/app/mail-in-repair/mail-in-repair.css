@@ -1,0 +1,331 @@
+/* Container for the pattern lock */
+/* .pattern-lock-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  position: relative;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background-color: #d3d3d3;
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.cell.selected {
+  background-color: #00ffff;
+  transform: scale(1.2);
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-save {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #45a049;
+}
+
+.btn-reset {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #e53935;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+} */
+
+
+
+
+/* =========================== */
+
+
+.data-\[hover\=true\]\:transition-colors[data-hover="true"] {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  background-color: #ede574 !important;
+  color: black !important;
+}
+
+.bg-blackgk button {
+  background: black;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.bg-blackgk button:hover {
+  background: black;
+  border: 1px solid;
+  border-radius: 5px;
+}
+/* .react-pattern-lock__pattern-wrapper {
+  height: 300px !important;
+  width: 50% !important;
+  margin: 0 auto;
+} */
+
+.react-pattern-lock__point-wrapper{
+  width: 100% !important;
+  /* height: 300px !important; */
+  /* flex: unset !important; */
+}
+
+.react-pattern-lock__pattern-wrapper{
+  /* height: unset !important; */
+  /* height: 300px !important; */
+}
+a label[data-slot="label ,trigger"] {
+  color: #ffffff;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #555;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+textarea::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.subpixel-antialiased {
+  color: white !important;
+}
+
+input[type="submit"] {
+  background-color: #ede574;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  background-color: #e1f5c4;
+}
+
+.gauav button {
+  background: #ff000000;
+  border: 1px solid;
+}
+
+.gauav button:hover {
+  background-color: transparent;
+}
+
+.group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-default-foreground {
+  --tw-text-opacity: 1;
+  color: white !important;
+}
+
+.gaurav-bg-trans .transition-background {
+  background: transparent;
+}
+
+.subpixel-antialiased {
+  color: white !important;
+  background: black;
+}
+
+/* style os starts */
+.steper-form-section-os .MuiFormControl-root fieldset {
+  border: 1px solid #fff;
+  /* background-color: #000; */
+}
+
+.steper-form-section-os .MuiFormControl-root fieldset.css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root .css-xhkvgb:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root fieldset.MuiOutlinedInput-notchedOutline:hover .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #fff !important;
+}
+
+.steper-form-section-os .css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.steper-form-section-os .MuiFormControl-root .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+  color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root label {
+  color: #fff;
+}
+
+.steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
+  color: #fff;
+}
+
+.steper-textarea-os .MuiTextarea-root {
+  background: #000;
+  color: #fff;
+}
+
+.steper-textarea-os .MuiTextarea-root textarea::placeholder {
+  opacity: 1;
+}
+
+.steper-textarea-os .MuiTextarea-root.css-1cquhrj-JoyTextarea-root:not([data-inverted-colors="false"]) {
+  --Textarea-focusedHighlight: #fff;
+  border: 1px solid #fff !important;
+}
+
+/* style os ends */
+
+/* .steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill:focus {
+  border-color: #fff !important;
+  background-color: transparent !important;
+}
+
+.steper-form-section-os
+  .MuiFormControl-root
+  .MuiInputBase-root
+  input:-webkit-autofill:focus::-webkit-input-placeholder {
+  color: white !important;
+} */
+.gaurav-line:after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: var(--tertiary-color);
+  top: 37%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+@media only screen and (max-width: 600px) {
+  .gaurav-line:after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: var(--tertiary-color);
+    top: 30% !important;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+input.check__box {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
+.check__boxs{
+  min-width: 20px;
+  height: 25px;
+  position: relative;
+  top: 4px;
+}
+
+.signature-canvas-row-os {
+  display: flex
+;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.signature-canvas-row-os > div {
+  width: calc(50% - 8px);
+}
+.signature-canvas-row-os > div img {
+  width: 100%;
+  height: auto;
+  min-height: 199px;
+}

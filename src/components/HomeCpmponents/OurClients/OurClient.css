@@ -1,0 +1,14 @@
+.client-slider img {
+  width: 70%;
+  height: 120px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}

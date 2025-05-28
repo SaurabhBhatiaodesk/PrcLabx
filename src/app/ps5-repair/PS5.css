@@ -1,0 +1,28 @@
+button.active-tab[data-selected="0"] {
+    background: linear-gradient(74deg, #56c1c1, #000000);
+  }
+  
+  button.active-tab[data-selected="1"] {
+    background: linear-gradient(74deg, #f35520c0, #000000);
+  }
+  
+  button.active-tab[data-selected="2"] {
+    background: linear-gradient(74deg, #d5fd33a1, #000000);
+  }
+  
+  button.active-tab[data-selected="3"] {
+    background: linear-gradient(74deg, #A044FF, #000000);
+  }
+  
+  button.active-tab[data-selected="4"] {
+    background: linear-gradient(74deg, #2052e8a5, #000000);
+  }
+  button.active-tab[data-selected="5"] {
+    background: linear-gradient(74deg, #e89820a5, #000000);
+  }
+  button.active-tab[data-selected="6"] {
+    background: linear-gradient(74deg, #19d113a5, #000000);
+  }
+  button.active-tab[data-selected="7"] {
+    background: linear-gradient(74deg, #13abd1a5, #000000);
+  }

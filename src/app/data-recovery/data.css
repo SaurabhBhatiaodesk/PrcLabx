@@ -1,0 +1,44 @@
+.main__cart_section {
+    display: flex;
+    gap: 10px;
+}
+.card_box {
+    width: 32%;
+    border: 1px solid #FFFFFF33;
+    background: #0B0B0B;
+    padding: 20px;
+    border-radius: 15px;
+}
+.card_box b {
+    padding: 10px 20px;
+    display: block;
+    width: fit-content;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+.card_box:hover {
+    background: radial-gradient(50.91% 76.58% at 18.73% 75.25%, #F12711 0, #111616 100%);
+}
+.card_box.hoverBlue:hover{
+    background: radial-gradient(50.91% 76.58% at 18.73% 75.25%, #11998E 0, #111616 100%);
+}
+.card_box.hoverGreen:hover{
+    background: radial-gradient(50.91% 76.58% at 18.73% 75.25%, #799F0C 0, #111616 100%);
+}
+b.one{
+    background: #F12711;
+}
+b.two {
+    background: #11998E;
+}
+b.three {
+    background: #799F0C;
+}
+@media only screen and (max-width: 767px) {
+    .main__cart_section {
+        flex-direction: column;
+    }
+    .card_box {
+        width: 100%;
+    }
+}

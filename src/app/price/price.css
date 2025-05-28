@@ -1,0 +1,65 @@
+th.border-bottom.px-4.py-2 { 
+    background: #181818;
+    /* text-align: left; */
+    color: #fff;
+    font-size: 16px;
+}
+
+.addontext{
+    font-size: 12px !important;
+}
+td.border-bottom.px-4.py-2 {
+    border-bottom: 1px solid #ccc; 
+    font-size: 16px;
+}
+.container_small{
+    width: 60%;
+    margin: auto;
+}
+.bg-transprint{
+    background: transparent;
+}
+.overlap__number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.overlap__number h2, .overlap__number h3{
+   color: #000;
+}
+.rounded-md.p-4 {
+    overflow: auto;
+}
+tr:nth-child(even) {background-color: #4e4e4e;color:#fff;}
+
+@media screen and (max-width: 767px) {
+
+th.border-bottom.px-4.py-2 {
+    font-size: 14px;
+    width: 100%;
+    min-width: 175px;
+}
+.container_small {
+    width: 90%;
+    margin: auto;
+}
+.device__img img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.overlap__number h2 {
+    font-size: 20px;
+    width: 324px;
+}
+.overlap__number h3 {
+    font-size: 18px;
+}
+img.logo__img {
+    width: 60px;
+}
+}
+.gk-hidden button{
+    display: none !important;
+}
