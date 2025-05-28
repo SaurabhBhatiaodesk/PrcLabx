@@ -1,8 +1,8 @@
 module.exports = {
   apps: [{
-    name: "my-nextjs-app",
+    name: "labx-prc-repair",
     script: "npm",
-    args: "start -p 3001",
+    args: "start -p 3002",
     watch: true,
     env: {
       NODE_ENV: "development",
