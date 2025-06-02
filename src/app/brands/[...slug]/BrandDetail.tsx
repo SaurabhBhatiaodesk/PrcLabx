@@ -126,7 +126,7 @@ const SidebarItem: React.FC<{
       {isExpanded && hasChildren && (
         <div className="mt-1">
           {item.categories &&
-            Object.entries(item.categories).map(([key, val]) => (
+            Object.entries(item.categories as Record<string, any>).map(([key, val]) => (
               <SidebarItem
                 key={key}
                 item={val}
@@ -138,7 +138,7 @@ const SidebarItem: React.FC<{
               />
             ))}
           {item.series &&
-            Object.entries(item.series).map(([key, val]) => (
+            Object.entries(item.series as Record<string, any>).map(([key, val]) => (
               <SidebarItem
                 key={key}
                 item={val}
@@ -150,7 +150,7 @@ const SidebarItem: React.FC<{
               />
             ))}
           {item.models &&
-            Object.entries(item.models).map(([key, val]) => (
+            Object.entries(item.models as Record<string, any>).map(([key, val]) => (
               <SidebarItem
                 key={key}
                 item={val}
