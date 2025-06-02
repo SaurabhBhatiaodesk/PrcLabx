@@ -97,7 +97,6 @@ const SidebarItem: React.FC<{
           style={{ marginLeft: `${(level - 1) * 10 + 10}px` }}
         />
       )}
-
       <div
         className={`flex items-center justify-between cursor-pointer rounded-md px-5 py-3 transition-colors duration-200
           ${
