@@ -19,6 +19,7 @@ const config: Config = {
         quaternary: "var(--multi-color)", // Maps to --multi-color
         black: "var(--black)", // Maps to --black
         white: "var(--white)", // Maps to --white
+        fourth:"var(--fourth-color)"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

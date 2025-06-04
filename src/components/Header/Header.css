@@ -29,7 +29,8 @@ ul.dropdown-content {
     font-size: 16px;
 }
 button.btn__menu.inline-flex.items-center {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -48,14 +49,19 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
     padding: 5px 0px;
 }
 .logo_LabX{
-    width: 200px;
+    width: auto;
 }
 .social__icon, .showmobile {
     display: none;
 }
+._header_links a
+{
+    font-size: 18px !important;
+    font-family: 500;
+}
 @media only screen and (max-width: 	1023px) {
     .logo_LabX{
-        width: 120px;
+        width: auto;
     }
     .showmobile {
         display: block !important;

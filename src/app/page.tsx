@@ -1,5 +1,6 @@
 
 import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+import Devicequote from "@/components/Devicelist/Devicequote";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import DataRecovery from "@/components/HomeCpmponents/DataRecovery/DataRecovery";
 import DeliveryTous from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
@@ -83,6 +84,7 @@ const page = () => {
   return (
     <div>
       <MainBanner />
+      <Devicequote/>
       <DeliveryTous/>
       <Storeproduct/>
       <DataRecovery/>
