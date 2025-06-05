@@ -95,10 +95,9 @@ const page = () => {
       <YouTubeHome/>
       <OurClient />
       <AskusQuestion accordionData={accordionData}  
-      faq="General FAQs"/>
-     
-    
-     
+      faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+      faqbg_color="bg-[#FEF6FF]"
+      faq="Most People Ask us These Questions"/>
     </div>
   );
 };

@@ -97,9 +97,9 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(0)}
         >
-          <span className="text-[17px] tracking-[1.5px]">Our Services</span>
+          <span className="text-[17px] tracking-[1.5px] text-primary">Our Services</span>
           <MdKeyboardArrowDown
-            className={`transition-transform duration-300 ${
+            className={`transition-transform duration-300 !text-primary ${
               activeIndex === 0 ? "rotate-180" : ""
             }`}
           />
@@ -110,36 +110,36 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/mail-in-repair">Mail-In-Repair</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/training">Training</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/b2b-repair-services">B2B Repair</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/screen-refurbishing">Screen Refurbishment</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="data-recovery">Data Recovery</Link>
             </li>
             <div className="flex items-center gap-2">
-              <li className="mb-2">Parts Store</li>
+              <li className="mb-2 text-primary">Parts Store</li>
               <span className="text-white">
                 <Image src={commingsoon} width={40} height={30} alt="" />
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <li className="mb-2">Repair Form</li>
+              <li className="mb-2 text-primary">Repair Form</li>
               <span className="text-white">
                 <Image src={commingsoon} width={40} height={30} alt="" />
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <li className="mb-2">Repair Solutions</li>
+              <li className="mb-2 text-primary">Repair Solutions</li>
               <span className="text-white">
                 <Image src={commingsoon} width={40} height={30} alt="" />
               </span>
@@ -154,9 +154,9 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(1)}
         >
-          <span className="text-[17px] tracking-[1.5px]">Quick links</span>
+          <span className="text-[17px] tracking-[1.5px] text-primary">Quick links</span>
           <MdKeyboardArrowDown
-            className={`transition-transform duration-300 ${
+            className={`transition-transform duration-300 !text-primary${
               activeIndex === 1 ? "rotate-180" : ""
             }`}
           />
@@ -167,29 +167,29 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/contact-us">Contact Us</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/blogs">Blogs</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/faq">FAQs</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/what-we-do">What we do</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/Warranty_and_Terms">Warranty and Terms</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/Shipping_Policy">Shipping Policy</Link>
             </li>
 
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <Link href="/Terms-and-conditions">Terms and Conditions</Link>
             </li>
           </ul>
@@ -202,9 +202,9 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(2)}
         >
-          <span className="text-[17px] tracking-[1.5px]">Contact Info</span>
+          <span className="text-[17px] tracking-[1.5px] text-primary">Contact Info</span>
           <MdKeyboardArrowDown
-            className={`transition-transform duration-300 ${
+            className={`transition-transform duration-300 !text-primary ${
               activeIndex === 2 ? "rotate-180" : ""
             }`}
           />
@@ -215,7 +215,7 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <a
                 href="mailto:bharat@labxrepair.com.au"
                 className="hover:underline"
@@ -223,21 +223,19 @@ const MobileFooterMenue = () => {
                 bharat@labxrepair.com.au
               </a>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-primary">
               <a href="tel:+61455777077" className="hover:underline">
                 +61455777077
               </a>
             </li>
-
             <Link
               href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D"
               legacyBehavior
             >
-              <a className=" " target="_blank" rel="noopener noreferrer">
+              <a className="text-primary" target="_blank" rel="noopener noreferrer">
                 122 Queen St, St Marys NSW 2760, Australia
               </a>
             </Link>
-
             {toast && (
               <ToastNotification
                 message={toast.message}
@@ -247,17 +245,17 @@ const MobileFooterMenue = () => {
               />
             )}
 
-            <li className="mb-2">Newsletter </li>
+            <li className="mb-2 text-primary">Newsletter </li>
           </ul>
         </div>
       </div>
       <div>
-        <h3 className="text-center lg:text-xl text-lg mb-3">
+        <h3 className="text-center lg:text-xl text-lg mb-3 text-primary">
           We DO NOT provide Walk-In Service
         </h3>
       </div>
       <div className="emailsection relative">
-        <h3 className="text-center">Newsletter </h3>
+        <h3 className="text-center text-primary">Newsletter </h3>
         <div className="relative max-w-full">
           <input
             type="email"

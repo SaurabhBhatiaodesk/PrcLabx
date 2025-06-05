@@ -10,7 +10,7 @@ import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { IoCallOutline } from "react-icons/io5";
 
-import { CiMail } from "react-icons/ci";
+import { CiLocationOn, CiMail } from "react-icons/ci";
 import MobileFooterMenue from "./MobileFooterMenue";
 import sendicon from "../../../public/Images/icons/send.svg";
 import { FiMail } from "react-icons/fi";
@@ -20,6 +20,7 @@ import ToastNotification from "../../components/ToastNotification/ToastNotificat
 import { MdCall } from "react-icons/md";
 import { IoIosCart } from "react-icons/io";
 import { TiArrowForward } from "react-icons/ti";
+import newlogo from "../../../public/Images/prclogo.png";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
@@ -99,7 +100,7 @@ const Footer = () => {
   };
 
   return (
-    <>
+    <div className="bg-prc">
       <div className="container">
         <div className="pt-5 xl:pt-20">
           <section className="hidden lg:block">
@@ -110,63 +111,60 @@ const Footer = () => {
                     <Image
                       width={200}
                       height={200}
-                      className="mb-4"
-                      src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp"
+                      className="mb-4 w-[65px]"
+                      src={newlogo}
                       alt=" lab-x"
                     />
                   </Link>
-                  <p className="font-[300] font-poppins">
+                  <p className="font-[300] font-poppins text-primary">
                     LabX is a professional and skilful phone repair service
                     provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
-                    <Link
-                      href="https://www.facebook.com/profile.php?id=61568955864034"
-                      target="blank"
-                    >
-                      <SlSocialFacebook
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.instagram.com/labxrepair/"
-                      target="blank"
-                    >
-                      <FaInstagram
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
-                    <Link href="https://x.com/LabxRepair" target="blank">
-                      <FaXTwitter
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
-                    <Link
-                      href="https://www.youtube.com/@PRCRepair"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaYoutube
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
-
-                    <Link
-                      href="https://www.tiktok.com/@labxrepair"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaTiktok
-                        className="hover:scale-110 transition-transform duration-200"
-                        fontSize={30}
-                      />
-                    </Link>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.facebook.com/profile.php?id=61568955864034"
+                        target="blank"
+                      >
+                        <SlSocialFacebook
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.instagram.com/labxrepair/"
+                        target="blank"
+                      >
+                        <FaInstagram
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link href="https://x.com/LabxRepair" target="blank">
+                        <FaXTwitter
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.youtube.com/@PRCRepair"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaYoutube
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>  
                   </div>
-                  <div className="Abn number flex  items-center   mt-2">
+                  {/* <div className="Abn number flex  items-center   mt-2">
                     <span>
                       <TiArrowForward fontSize={30} />
                     </span>
@@ -174,17 +172,17 @@ const Footer = () => {
                       ABN No :-{" "}
                       <span className="text-tertiary ">31646271829</span>
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div>
                 <div>
-                  <h3 className="xl:mb-5">Our Services</h3>
+                  <h3 className="xl:mb-5 text-tertiary">Our Services</h3>
                   <div>
                     <ul className="text-[18px]">
                       <div>
                         <Link href="/mail-in-repair">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 ">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary ">
                             Mail-In-Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -192,7 +190,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/training">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
                             Training
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -200,7 +198,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/b2b-repair-services">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
                             B2B Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -208,7 +206,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/ps5-repair">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
                             PS5 Repair
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -216,7 +214,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/screen-refurbishing">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
                             Screen Refurbishment
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -224,7 +222,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/data-recovery">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
                             Data Recovery
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -232,7 +230,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <span>
-                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
                             Parts Store
                             <span className="text-white">
                               <Image
@@ -248,7 +246,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <span>
-                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
                             Repair Form
                             <span className="text-white">
                               <Image
@@ -264,7 +262,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <span>
-                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] hover:text-yellow-200 cursor-pointer">
+                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
                             Repair Solutions
                             <span className="text-white">
                               <Image
@@ -284,12 +282,12 @@ const Footer = () => {
               </div>
               <div>
                 <div>
-                  <h3 className="xl:mb-5">Quick links</h3>
+                  <h3 className="xl:mb-5 text-tertiary">Quick links</h3>
                   <div>
                     <ul className="text-[18px]">
                       <div>
                         <Link href="/about-us">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             About Us
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -297,7 +295,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/contact-us">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Contact Us
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -305,7 +303,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/blogs">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Blogs
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -313,7 +311,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/faq">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             FAQ’s
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -321,7 +319,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/Trademark_Disclaimer">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Trademark Disclaimer
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -329,7 +327,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/Warranty_and_Terms">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Warranty and Terms
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -337,7 +335,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link href="/Shipping_Policy">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Shipping Policy
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -346,7 +344,7 @@ const Footer = () => {
 
                       <div>
                         <Link href="/Terms_and_Conditions">
-                          <li className="relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Terms and conditions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
@@ -358,33 +356,48 @@ const Footer = () => {
               </div>
               <div>
                 <div>
-                  <h3 className="xl:mb-5">Contact Info</h3>
+                  <h3 className="xl:mb-5 text-tertiary">Contact Info</h3>
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <CiMail
-                        className="hover:scale-110 transition-transform duration-200"
+                        className="hover:scale-110 transition-transform duration-200 text-tertiary"
                         fontSize={25}
                       />
                       <Link
                         href="mailto:bharat@labxrepair.com.au"
                         legacyBehavior
                       >
-                        <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200">
+                        <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary">
                           bharat@labxrepair.com.au
                         </a>
                       </Link>
                     </div>
                     <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <IoCallOutline
-                        className="hover:scale-110 transition-transform duration-200"
+                        className="hover:scale-110 transition-transform duration-200 text-tertiary"
                         fontSize={25}
                       />
                       <Link href="" legacyBehavior>
                         <a
                           href="tel:+61455777077"
-                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200"
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary"
                         >
                           +61455777077
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
+                      <CiLocationOn
+                        className="hover:scale-110 transition-transform duration-200 text-tertiary"
+                        fontSize={25}
+                      />
+                      <Link href="" legacyBehavior>
+                        <a
+                          href="https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia/@-33.7586704,150.756797,5340m/data=!3m1!1e3!4m6!3m5!1s0x6b129ab1929d4f97:0x103feb9784d7d023!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D"
+                          className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary"
+                          target="_blank"
+                        >
+                          122 Queen St, St Marys NSW 2760, Australia
                         </a>
                       </Link>
                     </div>
@@ -407,8 +420,8 @@ const Footer = () => {
                       </Link>
                     </div> */}
                     <div>
-                      <h3 className="lg:text-xl text-lg">
-                        We DO NOT provide Walk-In Service
+                      <h3 className="lg:text-xl text-lg text-primary">
+                        Sign-Up The LABX
                       </h3>
                     </div>
                     <div>
@@ -421,9 +434,9 @@ const Footer = () => {
                         />
                       )}
 
-                      <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
+                      {/* <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
                         Newsletter
-                      </h2>
+                      </h2> */}
                     </div>
                     <div className="relative max-w-full">
                       <input
@@ -435,9 +448,8 @@ const Footer = () => {
                       />
                       <button
                         type="submit"
-                        className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${
-                          loading ? "blur-sm pointer-events-none" : ""
-                        }`}
+                        className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${loading ? "blur-sm pointer-events-none" : ""
+                          }`}
                         style={{ width: "14%" }}
                         onClick={handleSubscribe} // Trigger the subscription logic on button click
                         disabled={loading} // Prevent multiple clicks
@@ -480,60 +492,58 @@ const Footer = () => {
                 LabX is a professional and skilful phone repair service provider
                 in Australia
               </p>
-              <div className="flex gap-3 mt-5 justify-center">
-                <Link
-                  href="https://www.facebook.com/profile.php?id=61568955864034"
-                  target="blank"
-                >
-                  <SlSocialFacebook
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
-                <Link
-                  href="https://www.instagram.com/labxrepair/"
-                  target="blank"
-                >
-                  <FaInstagram
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
-                <Link href="https://x.com/LabxRepair" target="blank">
-                  <FaXTwitter
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
-                <Link
-                  href="https://www.youtube.com/@PRCRepair"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaYoutube
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
-                <Link
-                  href="https://www.tiktok.com/@labxrepair"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTiktok
-                    className="hover:scale-110 transition-transform duration-200"
-                    fontSize={30}
-                  />
-                </Link>
-              </div>
-              <div className="Abn number flex  items-center justify-center  mt-2">
+             <div className="flex gap-3 mt-5 justify-center">
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.facebook.com/profile.php?id=61568955864034"
+                        target="blank"
+                      >
+                        <SlSocialFacebook
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.instagram.com/labxrepair/"
+                        target="blank"
+                      >
+                        <FaInstagram
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link href="https://x.com/LabxRepair" target="blank">
+                        <FaXTwitter
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>
+                    <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
+                      <Link
+                        href="https://www.youtube.com/@PRCRepair"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaYoutube
+                          className="hover:scale-110 transition-transform duration-200"
+                          fontSize={30}
+                        />
+                      </Link>
+                    </div>  
+                  </div>
+              {/* <div className="Abn number flex  items-center justify-center  mt-2">
                 <span>
                   <TiArrowForward fontSize={30} />
                 </span>
                 <span className="lg:text-lg text-sm ">
                   ABN No :- <span className="text-tertiary ">31646271829</span>
                 </span>
-              </div>
+              </div> */}
 
               <MobileFooterMenue />
             </div>
@@ -549,13 +559,13 @@ const Footer = () => {
           <section className="copywrite py-5 pb-10 xl:py-8">
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
-                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center ">
+                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary">
                   Copyright © LabX Repair {new Date().getFullYear()} - All
                   rights reserved
                 </p>
               </div>
               <div className="sm:text-center">
-                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center ">
+                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary">
                   Website Designed by{" "}
                   <a href="https://www.base2brand.com/">Base2Brand Infotech</a>{" "}
                 </p>
@@ -611,7 +621,7 @@ const Footer = () => {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -93,7 +93,7 @@ export default function MainBanner() {
                         — LabX Repair Does It All!
                       </span>
                     </h1>
-                    <p>
+                    <p className="text-primary">
                       {`LabX Repair is more than just a mobile phone repair service.
                     We’re a full-service platform dedicated to quality mobile
                     phone repairing, professional training, and community
@@ -123,7 +123,7 @@ export default function MainBanner() {
                         – Our Training Programs
                       </span>
                     </h1>
-                    <p>
+                    <p className="text-primary">
                       {
                         "Join LabX’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"
                       }
@@ -149,7 +149,7 @@ export default function MainBanner() {
                         – Service for Your Devices
                       </span>
                     </h1>
-                    <p>
+                    <p className="text-primary">
                       {` Restore your phone’s display to like-new condition with our expert screen refurbishing service. Get high-quality, cost-effective repairs that bring your screen back to life, saving you money and extending your device's lifespan!`}
                     </p>
                     <div className="my-4 xl:my-10">
@@ -173,7 +173,7 @@ export default function MainBanner() {
                         – Mobile Phone Recovery Service
                       </span>
                     </h1>
-                    <p>
+                    <p className="text-primary">
                       {`Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`}
                     </p>
                     <div className="my-4 xl:my-10">

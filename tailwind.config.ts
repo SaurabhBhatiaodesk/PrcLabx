@@ -13,13 +13,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary-color)", // Maps to --primary-color
-        secondary: "var(--secondary-color)", // Maps to --secondary-color
-        tertiary: "var(--tertiary-color)", // Maps to --tertiary-color
-        quaternary: "var(--multi-color)", // Maps to --multi-color
-        black: "var(--black)", // Maps to --black
-        white: "var(--white)", // Maps to --white
-        fourth:"var(--fourth-color)"
+        primary: "var(--primary)", // Maps to --primary-color
+        secondary: "var(--secondary)", // Maps to --secondary-color
+        tertiary: "var(--tertiary)", // Maps to --tertiary-color
+        quaternary: "var(--multi)", // Maps to --multi-color
+        fourth:"var(--fourth)",
+        prc:"var(--prc)"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

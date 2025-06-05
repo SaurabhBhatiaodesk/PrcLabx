@@ -1,3 +1,20 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+
+  --text-color: #010101;
+  --primary: #ffffff;
+  --secondary: #161616;
+  --tertiary: #FFE303;
+  --fourth:#00BC9D;
+  --prc:#00303E;
+  --Space_Grotesk: "Space Grotesk", sans-serif;
+  --multi: #035597;
+  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
+  --transition: all 0.3s ease-in-out;
+}
 html {
   padding-right: unset !important;
   overflow: unset !important;
@@ -10,7 +27,7 @@ h3 {
 h2,
 h3,
 p {
-  color: var(--primary-color);
+  color:var(--secondary)
 }
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
@@ -58,36 +75,20 @@ p {
   font-style: normal;
   font-display: swap;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root {
 
-  --text-color: #010101;
-  --white: #ffffff;
-  --black: #161616;
-  --primary-color: #ffffff;
-  --secondary-color: #000000;
-  --tertiary-color: #FFE303;
-  --fourth-color:#00BC9D;
-  --Space_Grotesk: "Space Grotesk", sans-serif;
-  --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
-  --transition: all 0.3s ease-in-out;
-}
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #ffffff;
-    --primary-color: #ffffff;
-    --secondary-color: #000000;
+    --primary: #ffffff;
+    --secondary: #000000;
   }
 }
 body {
   font-weight: 500;
-  background-color: var(--black);
+  background-color: var(--primary);
   overflow-x: hidden;
   font-size: 20px;
-  color: var(--white);
+  color: var(--secondary);
   scroll-behavior: smooth;
 }
 .max-container {
@@ -108,7 +109,7 @@ body {
   overflow: hidden;
 }
 .F1-btn-color {
-  color: var(--secondary-color, #000);
+  color: var(--secondary);
   font-weight: 500;
   border-radius: 8px;
   font-size: 16px;
@@ -123,14 +124,13 @@ body {
   border-color: rgba(237, 229, 116, 0.8);
   background-position: right center;
 }
-.main-bg {
-  background-color: var(--secondary-color);
-}
+
 h2 {
   font-size: 42px;
   line-height: 55px;
   font-weight: 700;
   letter-spacing: 1.5px;
+    color:var(--secondary)
 }
 .btn,
 h3 {
@@ -145,6 +145,7 @@ p {
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 15px;
+
 }
 .btn {
   background: var(--F1-btn-color);
@@ -200,7 +201,7 @@ p {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    color: var(--primary-color);
+    color: var(--primary);
   }
   .sm-order-2 {
     order: 2 !important;
@@ -212,7 +213,7 @@ p {
     line-height: 38px;
     font-family: Gordita, sans-serif;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary);
   }
 }
 @media only screen and (max-width: 1024px) {
