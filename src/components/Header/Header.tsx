@@ -18,7 +18,6 @@ import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png"
-import search_icon from "../../../public/Images/searchicon.png"
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -75,7 +74,7 @@ export default function App() {
       <Marquee marquee_bg="bg-tertiary" marquee_text="text-black" marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing" />
       <div className="w-full header header-component">
         <Navbar
-          className="text-white bg-white"
+          className="text-secondary bg-primary"
           isBordered
           isMenuOpen={isMenuOpen}
           onMenuOpenChange={setIsMenuOpen}
@@ -89,7 +88,7 @@ export default function App() {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             /> */}
             {!isMenuOpen ? (
-              <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-primary">
+              <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-secondary">
                 {" "}
                 <TbMenu2 fontSize={24} height={19} />{" "}
                 <span className="leading-3"> Menu</span>
@@ -103,7 +102,7 @@ export default function App() {
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
               <div className="navmenu flex items-center justify-between">
-                <NavbarContent className="flex justify-evenly items-center">
+                <NavbarContent className="flex justify-center items-center">
                   <NavbarBrand>
                     <Link href="/">
                       <Image
@@ -111,7 +110,7 @@ export default function App() {
                         width={200}
                         height={200}
                         alt="Brand Logo"
-                        className="logo_LabX"
+                        className="logo_LabX w-[60px]"
                       />
                     </Link>
                   </NavbarBrand>
@@ -132,33 +131,34 @@ export default function App() {
                 </div>
 
                 <div
-                  className={`${isMenuOpen ? "block" : "hidden"
-                    } lg:flex  flex-grow justify-evenly items-center`}
+                  className={`${
+                    isMenuOpen ? "block" : "hidden"
+                  } lg:flex  flex-grow justify-center items-center`}
                   id="nav-content"
                 >
                   <ul className="menu menu-horizontal px-1 flex items-center">
                     <li>
                       <div className="dropdowns services_drop inline-block relative">
                         <button
-                          className="btn__menu text-black inline-flex items-center hover:text-fourth"
+                          className="btn__menu inline-flex items-center hover:text-fourth"
                           onClick={toggleDropdown}
                         >
-                          <span className="mr-1">Apple</span>
+                          <span className="mr-1">Services</span>
                           <MdKeyboardArrowDown />
                         </button>
                         {isDropdownOpen && (
                           <ul className="dropdown-menus absolute hidden text-white pt-1">
-                            {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200">
+                            {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                             <Link href="/mail-in-repair" onClick={toggleMenu}>
                               Mail In Repair
                             </Link>
                           </li> */}
-                            <li className="text-[16px] font-medium block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                               <Link href="/training" onClick={toggleMenu}>
                                 Training{" "}
                               </Link>
                             </li>
-                            <li className="text-[16px] font-medium block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                               <Link
                                 href="/b2b-repair-services"
                                 onClick={toggleMenu}
@@ -166,12 +166,12 @@ export default function App() {
                                 B2B Repair{" "}
                               </Link>
                             </li>
-                            <li className="text-[16px] font-medium block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                               <Link href="/ps5-repair" onClick={toggleMenu}>
                                 PS5 Repair
                               </Link>
                             </li>
-                            <li className="text-[16px] font-medium block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                               <Link
                                 href="/screen-refurbishing"
                                 onClick={toggleMenu}
@@ -179,13 +179,13 @@ export default function App() {
                                 Screen Refurbishment{" "}
                               </Link>
                             </li>
-                            <li className="text-[16px] font-medium block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                               <Link href="/data-recovery" onClick={toggleMenu}>
                                 Data Recovery{" "}
                               </Link>
                             </li>
                             <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
-                              <span className="text-[16px] font-medium">Parts Store </span>
+                              <span className="text-[16px]">Parts Store </span>
                               <span className="text-white">
                                 <Image
                                   src={commingsoon}
@@ -196,7 +196,7 @@ export default function App() {
                               </span>
                             </li>
                             <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
-                              <span className="text-[16px] font-medium">Repair Form </span>
+                              <span className="text-[16px]">Repair Form </span>
                               <span className="text-white">
                                 <Image
                                   src={commingsoon}
@@ -226,9 +226,9 @@ export default function App() {
                     </li>
 
                     {/* header */}
-                    <li className="_header_links font-medium text-black ">
+                    <li>
                       <Link href="/mail-in-repair" onClick={toggleMenu}>
-                        Samsung Phones
+                        Mail In Repair
                       </Link>
                     </li>
                     <li
@@ -236,7 +236,7 @@ export default function App() {
                     hover:border-yellow-200 p-1
                     "
                     >
-                      <span className="text-[18px] text-black">Samsung Tablets</span>
+                      <span className="text-[16px]">Parts Store</span>
                       <span className="text-white">
                         <Image
                           src={commingsoon}
@@ -246,30 +246,30 @@ export default function App() {
                         />
                       </span>
                     </li>
-                    <li className="_header_links">
+                    <li>
                       <Link
-                        className="hover:text-fourth text-black"
+                        className="hover:text-fourth"
                         href="/training"
                         onClick={toggleMenu}
                       >
-                        Oppo
+                        Training
                       </Link>
                     </li>
-                    <li className="_header_links">
+                    <li>
                       <Link
-                        className="hover:text-fourth  text-black"
+                        className="hover:text-fourth"
                         href="/screen-refurbishing"
                         onClick={toggleMenu}
                       >
-                        Google
+                        Screen Refurbishment
                       </Link>
                     </li>
                     <div className="dropdown inline-block relative">
                       <button
-                        className="btn__menu inline-flex items-center text-black hover:text-fourth"
+                        className="btn__menu inline-flex items-center hover:text-fourth"
                         onClick={togglePriceDropdown}
                       >
-                        <span className="mr-1">Game console</span>
+                        <span className="mr-1">Price list</span>
                         <svg
                           className="fill-current h-4 w-4"
                           xmlns="http://www.w3.org/2000/svg"
@@ -305,19 +305,19 @@ export default function App() {
                         Price List
                       </Link>
                     </li> */}
-                    <li className="_header_links">
+                    <li>
                       <Link
-                        className="hover:text-fourth text-black"
+                        className="hover:text-fourth"
                         href="/contact-us"
                         onClick={toggleMenu}
                       >
-                        Other Models
+                        Contact Us
                       </Link>
                     </li>
                     <li>
                       <div className="dropdown inline-block relative">
                         <button
-                          className="btn__menu inline-flex items-center hover:text-fourth text-black"
+                          className="btn__menu inline-flex items-center hover:text-fourth"
                           onClick={toggleAboutDropdown}
                         >
                           <span className="mr-1">About us</span>
@@ -340,7 +340,7 @@ export default function App() {
                                 Meet Bharat
                               </Link>
                             </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                               <Link
                                 className=""
                                 href="/what-we-do"
@@ -349,7 +349,7 @@ export default function App() {
                                 What We Do
                               </Link>
                             </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                               <Link
                                 className=""
                                 href="/faq"
@@ -358,9 +358,9 @@ export default function App() {
                                 FAQ{" "}
                               </Link>
                             </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-yellow-200 cursor-pointer">
+                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                               <Link
-                                className="hover:text-yellow-200"
+                                className="hover:text-fourth"
                                 href="/blogs"
                                 onClick={toggleMenu}
                               >
@@ -421,23 +421,14 @@ export default function App() {
                       </Link>
                     </div>
                   </div>
-                  <div className="w-[26px] cursor-pointer">
-                    <Image
-                      src={search_icon}
-                      alt="search icon"
-                      width={1000}
-                      height={300}
-                    />
-                  </div>
                 </div>
-
-                <Link href="/mail-in-repair">
-                  <button
-                    className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
-                    area-label=" Start the repair process for your device"
-                  >
-                    Instant Quote{" "}
-                  </button>
+               <Link href="/mail-in-repair">
+                                <button
+                                  className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
+                                  area-label=" Start the repair process for your device"
+                                >
+                                  Instant Quote{" "}
+                                </button>
                 </Link>
               </div>
             </div>

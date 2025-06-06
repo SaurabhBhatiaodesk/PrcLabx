@@ -17,8 +17,8 @@ const CourseHighlights = () => {
             {/* course 0 */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center ">
-              <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit text-tertiary">
+              <div className="p-2 lg:p-2 bg-primary text-secondary rounded-md">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-secondary">
                   Beginner Phone Repair Course
                   <svg
                     className="relative top-full left-0"
@@ -31,7 +31,7 @@ const CourseHighlights = () => {
                     <path
                       d="M0 10 Q50 20 100 10"
                       fill="none"
-                      stroke="#fff563"
+                      stroke="var(--prc)"
                       strokeWidth="6"
                     />
                   </svg>
@@ -50,14 +50,14 @@ const CourseHighlights = () => {
                 </p>
                 <ul className="space-y-2 pb-5">
                   <li>
-                    <strong className="text-yellow-400">
+                    <strong className="text-prc">
                       Introduction to Tools and Parts:
                     </strong>
                     &nbsp;Tools and parts are essential for mobile repairs,
                     ensuring precision, efficiency, and high-quality results.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                    <strong className="text-prc">
                       Screen Replacement Techniques:
                     </strong>
                     &nbsp;Screen replacement requires careful handling, precise
@@ -65,7 +65,7 @@ const CourseHighlights = () => {
                     functionality.
                   </li>
                   <li>
-                    <strong className="text-yellow-400">
+                    <strong className="text-prc">
                       Camera and Flashlight Replacements:
                     </strong>
                     &nbsp;Replacing the camera and flashlight involves
@@ -74,13 +74,14 @@ const CourseHighlights = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton
-                    MainButton="Learn More"
-                    link="/beginner-phone-repair-course"
-                  />
+                  <div>
+                    <button className="text-white uppercase font-bold bg-[#00303E] text-center py-[10px] px-7 rounded-full w-max">
+                      LEARN MORE
+                    </button>
+                  </div>
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
+                  <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
                     This phone repair course does not include micro soldering or
                     motherboard-level repairs.
                   </div>
@@ -107,8 +108,8 @@ const CourseHighlights = () => {
                   fill
                 />
               </div>
-              <div className="p-2 lg:p-2 bg-black text-white rounded-md">
-                <h2 className="text-3xl font-bold mb-4 w-fit text-[#6DD5ED]">
+              <div className="p-2 lg:p-2 bg-primary text-secondary rounded-md">
+                <h2 className="text-3xl font-bold mb-4 w-fit text-secondary">
                   Advanced Motherboard Repair – Micro Soldering (Level 1)
                   <svg
                     className="relative top-full left-0"
@@ -144,21 +145,21 @@ const CourseHighlights = () => {
                 </p>
                 <ul className="space-y-2 pb-5">
                   <li>
-                    <strong className="text-[#6DD5ED]">
+                    <strong className="text-[#FF8A80]">
                       Component Familiarity:
                     </strong>
                     &nbsp;Learn to work with essential components and advanced
                     tools, including reballing techniques.
                   </li>
                   <li>
-                    <strong className="text-[#6DD5ED]">
+                    <strong className="text-[#FF8A80]">
                       Schematics and Diagnostics:
                     </strong>
                     &nbsp;Understand how to read board schematics, trace faults,
                     and diagnose common issues.
                   </li>
                   <li>
-                    <strong className="text-[#6DD5ED]">
+                    <strong className="text-[#FF8A80]">
                       Repair Techniques:
                     </strong>
                     &nbsp;Tackle problems like no image, no backlight,
@@ -173,7 +174,7 @@ const CourseHighlights = () => {
                   />
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px]">
+                  <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
                     {`By the end of this repair mobile phone course, you'll have
                     the confidence to handle a variety of motherboard-level
                     repairs with precision.`}

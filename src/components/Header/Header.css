@@ -85,7 +85,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
     .block.lg\:flex.flex-grow.justify-center {
         position: absolute;
         left: 0;
-        background: #000;
+        background: var(--primary);
         top: 68px;
         padding: 15px;
         width: 100%;

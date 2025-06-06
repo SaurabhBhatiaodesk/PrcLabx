@@ -140,12 +140,11 @@ Videos`,
           features={features}
         />
         <div className="container py-4 xl:py-6">
-          <MainHeading Heading="What We Can Recover" />
+          <MainHeading Heading="What We Can Recover" color="var(--primary)" svg_stroke="var(--trtiary)" />
 
           <BoxIconComponents data={sectionData} />
           <IconTitleParaImage
-            heading="Our Data Recovery Process
-"
+            heading="Our Data Recovery Process"
             title=""
             points={dataRecoveryPoints}
             // buttonLabel="READ MORE"
@@ -155,7 +154,7 @@ Videos`,
         </div>
         <DataImportantNote />
       </section>
-      <StaperForm/>
+      <StaperForm />
       <DataStarted />
 
       <GoogleReview />

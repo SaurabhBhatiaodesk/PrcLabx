@@ -48,35 +48,34 @@ const PS5Repair = () => {
       <PS5Banner />
       <div className="bg-[#0b0b0b] md:py-10 py-8">
         <div className=" container">
-          <MainHeading Heading="How Mail-In PS5 Repair Works?" />
-          <p className="lg:w-[60%] md:w-[80%] w-full m-auto text-center">
+          <MainHeading Heading="How Mail-In PS5 Repair Works?" color="var(--primary)" />
+          <p className="lg:w-[60%] md:w-[80%] w-full m-auto text-center text-primary">
             Simply package your PS5 securely and{" "}
-            <span className="font-medium text-[#EDE574] underline">ship</span>{" "}
+            <span className="font-medium text-tertiary underline">ship</span>{" "}
             it to us. Once we{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               receive
             </span>{" "}
             your console, our expert technicians will{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               diagnose
             </span>{" "}
             the issue and carry out the necessary{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               repairs
             </span>{" "}
             using high-quality parts. After a thorough{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               quality check,
             </span>{" "}
             we’ll quickly{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               ship back
             </span>{" "}
             your fully functional PS5 back to you so you can{" "}
-            <span className="font-medium text-[#EDE574] underline">
+            <span className="font-medium text-tertiary underline">
               resume gaming{" "}
-            </span>{" "}
-            without delay.
+            </span>{" "}without delay.
           </p>
         </div>
       </div>
