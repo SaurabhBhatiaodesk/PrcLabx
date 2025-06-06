@@ -66,7 +66,7 @@ const HowWorks = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="p-4 bg-gray-800 rounded-md shadow-lg text-white transition-all duration-300 border-[1px] border-[#5b5b5b99] flex flex-col justify-between"
+              className="p-4 !bg-primary rounded-md shadow-lg text-secondary transition-all duration-300 border-[1px] border-[#5b5b5b99] flex flex-col justify-between group"
               style={{ cursor: 'pointer' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = hoverGradients[index % hoverGradients.length];
@@ -79,7 +79,7 @@ const HowWorks = () => {
               <p className="text-sm">{step.content}</p>
               <Link href={step.link}>
                 {step.button && (
-                  <button className="text-[13px] font-semibold tracking-[2px] uppercase py-[10px] px-[10px] rounded-[50px] border-[1px] w-fit transition duration-300 ease-in-out transform hover:scale-105">
+                  <button className="text-[13px] font-semibold tracking-[2px] uppercase py-[10px] px-[10px] rounded-[50px] border-[1px] w-fit transition duration-300 ease-in-out transform hover:scale-105 group-hover:text-primary">
                     {step.button}
                   </button>
                 )}

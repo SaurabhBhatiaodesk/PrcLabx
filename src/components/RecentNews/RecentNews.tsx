@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import MainHeading from "../ManinHeading/MainHeading";
+import MainTitle from "../MainTitle/MainTitle";
 
 interface BlogData {
   _id: string;
@@ -64,16 +65,12 @@ const RecentNews: React.FC = () => {
   };
 
   return (
-    <div className="RecentNews-os">
+    <div className="RecentNews-os bg-[#243B55]">
       <div className="container">
         <div className="py-3 xl:py-5" data-aos="fade-up">
-          <MainHeading Heading="Read Our Blogs" />
-          <p className="text-center text-lg mt-2 mb-6">
-            Explore our latest blogs for insights, news, and expert tips on
-            mobile phone repair and technology. Stay updated with LabX’s tech
-            knowledge!
-          </p>
-          <div>
+          <MainHeading Heading="Recent News" color="var(--tertiary)" svg_stroke="primary"/>
+          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
+          <div className="py-10">
             {loading ? (
               <p>Loading...</p>
             ) : blogs.length > 0 ? (

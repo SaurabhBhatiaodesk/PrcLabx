@@ -99,12 +99,12 @@ export default function Productswiper({ }) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="bg-[#0b0b0b]">
-      <div className="container">
+    <div className="">
+      <div className="">
         <div className="py-5 xl:p-6">
-          <MainHeading Heading="Google Reviews" />
-          <MainTitle Title="Read our genuine customer reviews to see why so many trust LabX. Real feedback from satisfied customers speaks for itself!" />
-          <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
+          <MainHeading Heading="Our Google Reviews" svg_stroke="var(--prc)" />
+          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
+          <div className="service-slide-box flex gap-5 pt-8 lg:flex-row items-center flex-col">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               className="arrow-top-right w-[100%] py-4"
@@ -133,7 +133,7 @@ export default function Productswiper({ }) {
             >
               {reviews.map((review, index) => (
                 <SwiperSlide key={index}>
-                  <div className="p-4 bg-[#010101] rounded-[20px] border-[1px] border-[] shadow-md">
+                  <div className="p-4 rounded-[20px] border-[1px] border-[var(--secondry)] shadow-md">
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex gap-3 items-start">
                         <Image

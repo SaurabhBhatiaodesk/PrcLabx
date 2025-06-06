@@ -6,12 +6,12 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import DeliveryTousMobile from "./DeliveryTousMobile";
 import Link from "next/link";
-import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
+import arrow1 from "../../../../public/Images/rightarrow1.webp";
 import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../../public/Images/icons/arrow1-5.svg";
-
+import shipbanner1 from "../../../../public/Images/shipdevicebanner1.webp"
 interface Tab {
   id: number;
   label: string;
@@ -53,8 +53,7 @@ const VerticalTabs: React.FC = () => {
         "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image:
-        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: shipbanner1,
       // image: screenreplace,
     },
     {
@@ -168,14 +167,14 @@ const VerticalTabs: React.FC = () => {
       case 4:
         return "linear-gradient(74deg, #2052e8a5, #000000)";
       default:
-        return "linear-gradient(74deg, #56c1c1, #000000)";
+        return "linear-gradient(74deg, var(--fourth), #000000)";
     }
   };
 
   const getTextColor = (id: number) => {
     switch (id) {
       case 0:
-        return "#56c1c1";
+        return "var(--fourth)";
       case 1:
         return "#f35520c0";
       case 2:
@@ -291,32 +290,31 @@ const VerticalTabs: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-        <MainHeading Heading="Get a Quick Look at What We Offer" />
-        <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" />
-        <div className="lg:block hidden">
-          <div className="grid xl:grid-cols-[1fr_3fr_1fr] lg:grid-cols-[3fr_6fr] gap-4">
-            <div className="flex flex-col w-full gap-4">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
-                    activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
-                  }`}
-                  onClick={() => setActiveTab(tab.id)}
-                  data-selected={tab.id.toString()}
-                  role="tab"
-                  aria-label={`Tab for ${tab.label}`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+        <MainHeading Heading="Ship Your Device To Us" color="var(--fourth)"  svg_stroke="var(--primary)"/>
+        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
+        <div className="grid justify-center grid-cols-2 lg:grid-cols-5  py-5 w-full gap-4">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`p-3 text-white rounded-[10px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
+                  ? "active-tab"
+                  : "bg-opacity-50 hover:bg-opacity-75"
+                }`}
+              onClick={() => setActiveTab(tab.id)}
+              data-selected={tab.id.toString()}
+              role="tab"
+              aria-label={`Tab for ${tab.label}`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="lg:block hidden py-5">
+          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_6fr] gap-4">
             <div
               className={`flex-1 xl:pl-4 radial-gradient-background-${activeTab}`}
             >
-              <h3 className="mb-2">{tabs[activeTab].content}</h3>
+              <h3 className="mb-2 text-primary">{tabs[activeTab].content}</h3>
               {[
                 {
                   title: tabs[activeTab].contentf2title,
@@ -350,7 +348,7 @@ const VerticalTabs: React.FC = () => {
                       height={50}
                     />
                     <div>
-                      <p className="">
+                      <p className="text-primary">
                         <span
                           className="font-bold pb-[2px] mr-[3px]"
                           style={{ color: getTextColor(activeTab) }} // Apply dynamic text color here
@@ -402,7 +400,6 @@ const VerticalTabs: React.FC = () => {
             </div>
           </div>
         </div>
-
         <section className="lg:hidden block">
           <DeliveryTousMobile itoms={itoms} />
         </section>

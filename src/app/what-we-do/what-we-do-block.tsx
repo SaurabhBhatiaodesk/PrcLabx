@@ -21,7 +21,7 @@ const WhatWeDo = () => {
         <div className="container">
           <div className="text-center py-5 my-5">
             <h1 className="text-3xl font-bold mb-4 relative w-fit m-auto aos-init aos-animate">
-              Ship Your Device To Us
+              Ship Your Device To Us 
             </h1>
             <svg
               className="ship-svg-ico relative top-full left-0"
@@ -33,7 +33,7 @@ const WhatWeDo = () => {
             >
               <path
                 d="M0 15 Q50 0 100 15"
-                fill="none"
+                fill="#fff"
                 stroke="#fff563"
                 stroke-width="6"
               ></path>

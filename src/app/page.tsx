@@ -1,5 +1,6 @@
 
 import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+import Devicequote from "@/components/Devicelist/Devicequote";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import DataRecovery from "@/components/HomeCpmponents/DataRecovery/DataRecovery";
 import DeliveryTous from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
@@ -83,6 +84,7 @@ const page = () => {
   return (
     <div>
       <MainBanner />
+      <Devicequote/>
       <DeliveryTous/>
       <Storeproduct/>
       <DataRecovery/>
@@ -93,10 +95,9 @@ const page = () => {
       <YouTubeHome/>
       <OurClient />
       <AskusQuestion accordionData={accordionData}  
-      faq="General FAQs"/>
-     
-    
-     
+      faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+      faqbg_color="bg-[#FEF6FF]"
+      faq="Most People Ask us These Questions"/>
     </div>
   );
 };

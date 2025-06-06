@@ -29,7 +29,7 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
 }) => {
   return (
     <div className="container lg:py-10 py-4">
-      <MainHeading Heading={heading} />
+      <MainHeading Heading={heading} color="var(--primary)"/>
       <MainTitle Title={title} />
 
       <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 grid-col-recerse gap-4 lg:py-5 py-3 items-center">
@@ -45,8 +45,8 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
                   height={24}
                 />
                 <div className="">
-                  <p className="">
-                    <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                  <p className="text-primary">
+                    <span className="text-xl pb-[2px] text-tertiary font-semibold">
                       {point.title}
                     </span>
 

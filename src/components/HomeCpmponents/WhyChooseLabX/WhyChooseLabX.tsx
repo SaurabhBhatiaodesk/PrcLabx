@@ -47,26 +47,26 @@ const WhyChooseLabX: React.FC = () => {
   ];
 
   return (
-    <div>
-      <div className="container" data-aos="fade-up">
-        <MainHeading Heading="We Do, What Others Don't" />
-        <MainTitle Title="At LabX, we tackle complex mobile phone repair challenges that others can’t, delivering reliable solutions and unmatched expertise." />
+    <div className="bg-primary">
+      <div className="container py-11" data-aos="fade-up">
+        <MainHeading Heading="Why Choose PRC Repair?" color="var(--secondary)" svg_stroke="#FBAC05"/>
+        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."  color="var(--secondary)" />
 
-        <div className="lg:pb-8 py-4">
+        <div className="py-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
             {sectionData.map((section, index) => (
               <div
                 key={index}
                 style={{ background: "transparent" }} // Default background
-                className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
+                className="p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#00303e73] transition-shadow duration-300 flex flex-col justify-center gap-3 hover:shadow-[0_0_20px_10px_#00303e73] group"
                 onMouseEnter={(e) => e.currentTarget.style.background = section.hoverBackground}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
               >
                 <div className="flex justify-center">
                   <Image className="pb-2 w-[60px]" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className="text-[#EDE574] xl:text-xl lg:w-[70%] m-auto">{section.title}</h3>
-                <p>{section.description}</p>
+                <h3 className="text-prc group-hover:text-primary xl:text-xl lg:w-[80%] m-auto my-0 py-2">{section.title}</h3>
+                <p className="text-secondary group-hover:text-primary">{section.description}</p>  
               </div>
             ))}
           </div>
