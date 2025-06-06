@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import AOS from "aos";
@@ -34,16 +34,14 @@ const RecentNews: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true); // State to track loading status
   const swiperRef = useRef<any>(null); // Ref for Swiper instance
   const router = useRouter();
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialize AOS animations
 
     // Fetch blogs from the API
     const fetchBlogs = async () => {
       try {
-        const response = await fetch(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs`
-        ); // No pagination required
+        const response = await fetch(`${apiUrl}/api/admin/blogs`); // No pagination required
         const data = await response.json();
         const filteredBlogs = data.blogs.filter(
           (blog: BlogData) => blog.status
@@ -80,60 +78,58 @@ const RecentNews: React.FC = () => {
               <p>Loading...</p>
             ) : blogs.length > 0 ? (
               <Swiper
-              modules={[Autoplay, Navigation]}
-              loop={true}
-              autoplay={{ delay: 3000 }}
-              // navigation={true}
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              breakpoints={{
-                640: { slidesPerView: 1, spaceBetween: 10 },
-                768: { slidesPerView: 2, spaceBetween: 15 },
-                1024: { slidesPerView: 3, spaceBetween: 20 },
-              }}
-              className="blogs-swiper"
-            >
-              {blogs.map((blog) => (
-                <SwiperSlide key={blog._id}>
-                  <div
-                    onClick={() => sendId(blog.pageTitle)}
-                    className="blogs-row-col-os cursor-pointer"
-                    data-aos="zoom-in"
-                  >
-                    <div>
-                      {blog.featuredImage.length > 0 && (
-                        <Image
-                          src={blog.featuredImage[0]}
-                          alt={blog.heading}
-                          width={500}
-                          height={350}
-                          className="rounded-md object-cover blog-image-home"
-                        />
-                      )}
-                    </div>
-                    <div className="mt-4">
-                      <h2 className="font-bold text-lg text-[#EDE574]">
-                        {blog.heading.slice(0, 40)}...
-                      </h2>
-                      <p className="text-base mt-2 text-white">
-                        {stripHtmlTags(blog.content).length > 160
-                          ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
-                          : stripHtmlTags(blog.content)}
-                      </p>
-                      <div className="flex justify-end items-center mt-4">
-                        <button
-                          onClick={() => sendId(blog.pageTitle)}
-                          className="capitalize text-[16px] text-[#EDE574]"
-                        >
-                          Read More
-                        </button>
+                modules={[Autoplay, Navigation]}
+                loop={true}
+                autoplay={{ delay: 3000 }}
+                // navigation={true}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                breakpoints={{
+                  640: { slidesPerView: 1, spaceBetween: 10 },
+                  768: { slidesPerView: 2, spaceBetween: 15 },
+                  1024: { slidesPerView: 3, spaceBetween: 20 },
+                }}
+                className="blogs-swiper"
+              >
+                {blogs.map((blog) => (
+                  <SwiperSlide key={blog._id}>
+                    <div
+                      onClick={() => sendId(blog.pageTitle)}
+                      className="blogs-row-col-os cursor-pointer"
+                      data-aos="zoom-in"
+                    >
+                      <div>
+                        {blog.featuredImage.length > 0 && (
+                          <Image
+                            src={blog.featuredImage[0]}
+                            alt={blog.heading}
+                            width={500}
+                            height={350}
+                            className="rounded-md object-cover blog-image-home"
+                          />
+                        )}
+                      </div>
+                      <div className="mt-4">
+                        <h2 className="font-bold text-lg text-[#EDE574]">
+                          {blog.heading.slice(0, 40)}...
+                        </h2>
+                        <p className="text-base mt-2 text-white">
+                          {stripHtmlTags(blog.content).length > 160
+                            ? `${stripHtmlTags(blog.content).slice(0, 160)}...`
+                            : stripHtmlTags(blog.content)}
+                        </p>
+                        <div className="flex justify-end items-center mt-4">
+                          <button
+                            onClick={() => sendId(blog.pageTitle)}
+                            className="capitalize text-[16px] text-[#EDE574]"
+                          >
+                            Read More
+                          </button>
+                        </div>
                       </div>
                     </div>
-                    
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             ) : (
               <p className="text-center text-gray-500 italic">
                 No blogs available.

@@ -8,9 +8,7 @@ import {
   Box,
   Checkbox,
   FormControlLabel,
-  IconButton,
 } from "@mui/material";
-import { FiX } from "react-icons/fi";
 import { useRouter, useSearchParams } from "next/navigation";
 
 // Dynamically import ReactQuill to avoid SSR issues
@@ -43,14 +41,14 @@ const PrivacyPolicyPage: React.FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const policyId = searchParams.get("id"); // Get policy ID from URL if editing
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     if (policyId) {
       setIsEditMode(true);
       const fetchPolicy = async () => {
         try {
           const response = await fetch(
-            `https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`
+            `${apiUrl}/api/admin/privacypolicybyId/${policyId}`
           );
           if (!response.ok)
             throw new Error(`Error fetching policy: ${response.statusText}`);
@@ -143,8 +141,8 @@ const PrivacyPolicyPage: React.FC = () => {
 
     try {
       const url = isEditMode
-        ? `https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${policyId}`
-        : "https://labxbackend.labxrepair.com.au/api/admin/privacypolicy";
+        ? `${apiUrl}/api/admin/privacypolicy/${policyId}`
+        : `${apiUrl}/api/admin/privacypolicy`;
       const method = isEditMode ? "PUT" : "POST";
 
       const response = await fetch(url, {

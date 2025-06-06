@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 const brands: string[] = [
@@ -54,6 +54,26 @@ const colors: string[] = [
 const Brands: React.FC = () => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const displayedBrands = showAll ? brands : brands.slice(0, 10);
+
+useEffect(() => {
+  const fetchBrands = async () => {
+    try {
+      const api = "https://www.prc.repair/api/getbrands";
+      const res = await fetch(api);
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      const data = await res.json();  // Parse JSON here
+      console.log("brands data:", data);
+    } catch (error) {
+      console.error("Error fetching brands:", error);
+    }
+  };
+
+  fetchBrands();
+}, []);
 
   // Helper function to create URL-friendly slugs from brand names
   const slugify = (text: string): string =>

@@ -8,7 +8,7 @@ import Instagram from "../../../public/Images/blog/instagram.svg";
 import Twitter from "../../../public/Images/blog/twitter.svg";
 interface BlogData {
   _id: string;
-  pageTitle:string;
+  pageTitle: string;
   heading: string;
   featuredImage: string[];
   createdAt: string;
@@ -21,8 +21,9 @@ async function fetchPaginatedBlogs(
   blogs: BlogData[];
   totalPages: number;
 }> {
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const res = await fetch(
-    `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=${limit}`,
+    `${apiUrl}/api/admin/blogs?page=${page}&limit=${limit}`,
     {
       cache: "no-store",
     }
@@ -52,10 +53,6 @@ export default function BlogSidebar() {
     }
   }, [currentPage]);
 
-  useEffect(() => {
-    fetchBlogs(currentPage, blogsPerPage);
-  }, [currentPage]);
-
   const fetchBlogs = async (page: number, limit: number) => {
     try {
       const { blogs, totalPages } = await fetchPaginatedBlogs(page, limit);
@@ -75,31 +72,55 @@ export default function BlogSidebar() {
   return (
     <div>
       <div className="social_section">
-      <h4>Share</h4>
-      <div className="social__icon">
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
-          <Image alt="Facebook" src={Facebook} />
-        </a>
-        <a href={`https://t.me/share/url?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
-          <Image alt="Telegram" src={Telegram_logo} />
-        </a>
-        <a href={`https://www.instagram.com/sharer.php?u=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
-          <Image alt="Instagram" src={Instagram} />
-        </a>
-        <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer">
-          <Image alt="Twitter" src={Twitter} />
-        </a>
+        <h4>Share</h4>
+        <div className="social__icon">
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+              currentUrl
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image alt="Facebook" src={Facebook} />
+          </a>
+          <a
+            href={`https://t.me/share/url?url=${encodeURIComponent(
+              currentUrl
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image alt="Telegram" src={Telegram_logo} />
+          </a>
+          <a
+            href={`https://www.instagram.com/sharer.php?u=${encodeURIComponent(
+              currentUrl
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image alt="Instagram" src={Instagram} />
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+              currentUrl
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image alt="Twitter" src={Twitter} />
+          </a>
+        </div>
       </div>
-    </div>
       <div className="side_bg_img"></div>
       <h3 className="text-lg font-semibold mb-4">More Posts</h3>
       <ul>
         {blogs.map((blog) => (
           <li
             onClick={() => sendId(blog.pageTitle)}
-            key={blog._id} style={{zIndex:'444', position:'relative'}}
+            key={blog._id}
+            style={{ zIndex: "444", position: "relative" }}
             className="flex items-start mb-4 shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer border border-tertiary hover:scale-105 transition-transform duration-200 ease-in-out"
-
           >
             {blog.featuredImage.length > 0 && (
               <Image
@@ -123,28 +144,30 @@ export default function BlogSidebar() {
       </ul>
       {/* Pagination Buttons */}
       {totalPages > 1 && (
-      <div className="flex justify-center mt-4">
-        {[...Array(totalPages)].map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${
-              currentPage === index + 1 ? "active" : "bg-gray-200 text-gray-700"
-            }`}
-            style={
-              currentPage === index + 1
-                ? {
-                    background: "linear-gradient(45deg, #E1F5C4, #EDE574)",
-                    color: "black",
-                  }
-                : {}
-            }
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-)}
+        <div className="flex justify-center mt-4">
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${
+                currentPage === index + 1
+                  ? "active"
+                  : "bg-gray-200 text-gray-700"
+              }`}
+              style={
+                currentPage === index + 1
+                  ? {
+                      background: "linear-gradient(45deg, #E1F5C4, #EDE574)",
+                      color: "black",
+                    }
+                  : {}
+              }
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

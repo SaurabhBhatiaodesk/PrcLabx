@@ -91,137 +91,6 @@ type HandleSubmitParams = {
   pricingAgreement: boolean;
 };
 
-// const PatternLock = () => {
-//   const handlePatternComplete = (code: number[], nodes: any) => {
-//     console.log("Pattern code (numbers):", code);
-//     console.log("Pattern nodes:", nodes);
-//     alert(`Pattern: ${code.join("-")}`); // Display the pattern as a string
-//   };
-
-//   return (
-//     <div
-//       style={{
-//         width: "320px",
-//         height: "320px",
-//         backgroundColor: "#000", // Background color for the pattern container
-//         borderRadius: "10px", // Rounded corners
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         margin: "0 auto", // Center align the pattern lock
-//       }}
-//     >
-//       <ReactCanvasPatternLock
-//         width={300} // Width of the pattern grid
-//         height={300} // Height of the pattern grid
-//         rows={3} // Number of rows
-//         cols={3} // Number of columns
-//         onComplete={handlePatternComplete} // Callback for when the pattern is completed
-//       />
-//     </div>
-//   );
-// };
-
-// const CustomPatternLock: React.FC<CustomPatternLockProps> = ({ onFinish }) => {
-//   const [path, setPath] = useState<number[]>([]);
-//   const [error, setError] = useState(false);
-//   const [size] = useState(3);
-//   const canvasRef = useRef<HTMLCanvasElement>(null);
-//   const containerRef = useRef<HTMLDivElement>(null);
-
-//   const handleCellClick = (index: number, cellRect: DOMRect) => {
-//     if (!path.includes(index)) {
-//       setPath([...path, index]);
-//       drawPath(cellRect);
-//     }
-//   };
-
-//   const handleFinish = () => {
-//     if (path.length > 0) {
-//       const pattern = path.join("-");
-//       onFinish(pattern);
-//       setError(false);
-//     } else {
-//       setError(true);
-//     }
-//   };
-
-//   const handleReset = () => {
-//     setPath([]);
-//     setError(false);
-//     const canvas = canvasRef.current;
-//     if (canvas) {
-//       const ctx = canvas.getContext("2d");
-//       if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     }
-//   };
-
-//   const drawPath = (cellRect: DOMRect) => {
-//     const canvas = canvasRef.current;
-//     const ctx = canvas?.getContext("2d");
-
-//     if (ctx && containerRef.current) {
-//       const { left, top } = containerRef.current.getBoundingClientRect();
-//       const centerX = cellRect.left + cellRect.width / 2 - left;
-//       const centerY = cellRect.top + cellRect.height / 2 - top;
-
-//       if (path.length > 0) {
-//         const lastIndex = path[path.length - 1];
-//         const lastCell = containerRef.current.children[lastIndex];
-//         if (lastCell) {
-//           const lastRect = (lastCell as HTMLElement).getBoundingClientRect();
-//           const lastCenterX = lastRect.left + lastRect.width / 2 - left;
-//           const lastCenterY = lastRect.top + lastRect.height / 2 - top;
-
-//           ctx.beginPath();
-//           ctx.moveTo(lastCenterX, lastCenterY);
-//           ctx.lineTo(centerX, centerY);
-//           ctx.strokeStyle = "#00ffff";
-//           ctx.lineWidth = 5;
-//           ctx.stroke();
-//           ctx.closePath();
-//         }
-//       }
-//     }
-//   };
-
-//   return (
-//     <div className="pattern-lock-container">
-//       <div
-//         className="grid"
-//         ref={containerRef}
-//         style={{
-//           gridTemplateColumns: `repeat(${size}, 1fr)`,
-//           gridTemplateRows: `repeat(${size}, 1fr)`,
-//         }}
-//       >
-//         {Array.from({ length: size * size }, (_, index) => (
-//           <div
-//             key={index}
-//             className={`cell ${path.includes(index) ? "selected" : ""}`}
-//             onClick={(e) =>
-//               handleCellClick(
-//                 index,
-//                 (e.target as HTMLElement).getBoundingClientRect()
-//               )
-//             }
-//           ></div>
-//         ))}
-//       </div>
-//       <canvas ref={canvasRef} className="canvas-overlay"></canvas>
-//       <div className="controls">
-//         <button onClick={handleFinish} className="btn-save">
-//           Save Pattern
-//         </button>
-//         <button onClick={handleReset} className="btn-reset">
-//           Reset Pattern
-//         </button>
-//       </div>
-//       {error && <p className="error-message">Please draw a valid pattern.</p>}
-//     </div>
-//   );
-// };
-
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -273,7 +142,7 @@ const StaperForm: React.FC = () => {
   });
 
   const [pricingAgreement, setPricingAgreement] = useState(false);
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   class PasswordPattern extends React.Component<{
     onFinish: (path: string) => void;
   }> {
@@ -655,10 +524,10 @@ const StaperForm: React.FC = () => {
             : "ps5"
         }`,
       };
-  
+
       try {
         const response = await axios.post(
-          "https://labxbackend.labxrepair.com.au/api/repair_info",
+          `${apiUrl}/api/repair_info`,
           payload,
           {
             headers: {
@@ -666,18 +535,18 @@ const StaperForm: React.FC = () => {
             },
           }
         );
-        
+
         if (response.status === 200 || response.status === 201) {
           const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
-  
+
           if (typeof window !== "undefined") {
             localStorage.removeItem("formData");
-  
+
             // Pass orderReferenceId as query parameter in the URL
             const cleanOrderReferenceId = orderReferenceId.startsWith("#")
               ? orderReferenceId.slice(1)
               : orderReferenceId;
-            
+
             // Handle Google Ads conversion tracking
             const callback = function () {
               // Navigate after conversion
@@ -689,11 +558,11 @@ const StaperForm: React.FC = () => {
                   : router.push(`/ps5-repair/thank-you`);
               }
             };
-  
+
             // Google Ads Conversion Tracking
-            window.gtag('event', 'conversion', {
-              'send_to': 'AW-16874061920/mR6jCKzNgr0aEOCAl-4-',
-              'event_callback': callback,
+            window.gtag("event", "conversion", {
+              send_to: "AW-16874061920/mR6jCKzNgr0aEOCAl-4-",
+              event_callback: callback,
             });
           }
         } else {
@@ -707,7 +576,6 @@ const StaperForm: React.FC = () => {
       }
     }
   };
-  
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -1641,11 +1509,11 @@ const StaperForm: React.FC = () => {
                           }}
                           sx={{
                             // This targets the label in ALL states
-                            '& label.MuiInputLabel-root': {
-                              color: 'gray',
+                            "& label.MuiInputLabel-root": {
+                              color: "gray",
                             },
-                            '& label.Mui-focused': {
-                              color: 'gray',
+                            "& label.Mui-focused": {
+                              color: "gray",
                             },
                           }}
                         />

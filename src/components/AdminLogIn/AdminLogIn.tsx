@@ -18,25 +18,21 @@ interface FormValues {
 export default function AdminLogIn(): JSX.Element {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get("email");
     const password = data.get("password");
 
-
     try {
       // Send POST request to the login API
-      const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/admin/login",
-        {
-          username: email,
-          password: password,
-        }
-      );
+      const response = await axios.post(`${apiUrl}/api/admin/login`, {
+        username: email,
+        password: password,
+      });
 
       if (response.status === 200) {
-
         // Navigate to /admindashboard if login is successful
         router.push("/adminDeshboard");
       }
