@@ -167,11 +167,9 @@ const CourseHighlights = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton
-                    MainButton="Learn More"
-                    link="/advanced-motherboard"
-                    color="bg-[#6DD5ED]"
-                  />
+                  <button className="text-white uppercase font-bold bg-[#00303E] text-center py-[10px] px-7 rounded-full w-max">
+                    LEARN MORE
+                  </button>
                 </div>
                 <div className="my-4">
                   <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
@@ -185,7 +183,7 @@ const CourseHighlights = () => {
 
             {/* course 2 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-primary text-secondary rounded-md">
                 <h2 className="text-3xl font-bold mb-4 w-fit text-[#FF9966]">
                   Expert Motherboard Repair – Micro Soldering (Level 2)
                   <svg
@@ -259,14 +257,12 @@ const CourseHighlights = () => {
                   </li>
                 </ul>
                 <div>
-                  <MainButton
-                    MainButton="Learn More"
-                    link="/expert-motherboard-repair"
-                    color="bg-[#FF9966]"
-                  />
+                  <button className="text-white uppercase font-bold bg-[#00303E] text-center py-[10px] px-7 rounded-full w-max">
+                    LEARN MORE
+                  </button>
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">
+                  <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
                     This advanced phone fixing course equips you with the
                     expertise to tackle complex motherboard repairs, giving you
                     the edge in handling the most challenging devices.
@@ -292,7 +288,7 @@ const CourseHighlights = () => {
                   fill
                 />
               </div>
-              <div className="p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="p-2 lg:p-2 bg-primary text-secondary rounded-md">
                 <h2 className="text-3xl font-bold mb-4 text-[#799F0C]">
                   Master Motherboard Repair – Micro Soldering (Level 3)
                   <svg
@@ -336,14 +332,12 @@ const CourseHighlights = () => {
                   difficult recovery cases.
                 </ul>
                 <div>
-                  <MainButton
-                    MainButton="Learn More"
-                    link="/master-motherboard-repair"
-                    color="bg-[#799F0C]"
-                  />
+                  <button className="text-white uppercase font-bold bg-[#00303E] text-center py-[10px] px-7 rounded-full w-max">
+                    LEARN MORE
+                  </button>
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] font-poppins text-base">
+                  <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
                     This Level 3 course is designed to take your repair
                     expertise to the highest level, enabling you to handle the
                     most advanced repairs and data recovery tasks. By the end of
@@ -357,7 +351,7 @@ const CourseHighlights = () => {
 
             {/* course 5 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
-              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-black text-white rounded-md">
+              <div className="order-2 lg:order-1 p-2 lg:p-2 bg-primary text-secondary rounded-md">
                 <h2 className="text-3xl font-bold mb-4 w-fit text-[#cf2362a7]">
                   Professional Phone Screen Refurbishing Course
                   <svg
@@ -377,7 +371,7 @@ const CourseHighlights = () => {
                   </svg>
                 </h2>
 
-           
+
                 <div className="flex gap-4 text-yellow-400">
                   <p className="font-semibold">Duration: 5 Days</p>
                   <p className="font-semibold">|</p>
@@ -405,14 +399,12 @@ const CourseHighlights = () => {
                   screen is suitable for refurbishing or replacement.
                 </ul>
                 <div>
-                  <MainButton
-                    MainButton="Learn More"
-                    link="/professional-phone-screen"
-                    color="bg-[#cf2362a7]"
-                  />
+                  <button className="text-white uppercase font-bold bg-[#00303E] text-center py-[10px] px-7 rounded-full w-max">
+                    LEARN MORE
+                  </button>
                 </div>
                 <div className="my-4">
-                  <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-base font-poppins">
+                  <div className="px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300  text-[18px] tracking-[1.5px]">
                     This course provides a complete understanding of the
                     professional screen refurbishing process, enabling you to
                     offer high-quality refurbishing services for both LCD and
@@ -433,8 +425,8 @@ const CourseHighlights = () => {
 
 
             {/* course 6 */}
-             
-               {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
+
+            {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:py-6 py-3 items-center">
               <div className="relative w-full h-[300px] md:h-[550px] sm-order-2">
                 <Image
                   className="object-[4%_10%] object-cover rounded-[30px] border-2 border-[#26bd9aed] "
