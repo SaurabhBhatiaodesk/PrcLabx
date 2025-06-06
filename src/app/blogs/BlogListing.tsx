@@ -26,12 +26,12 @@ const Blogs: React.FC = () => {
   const [pagination, setPagination] = useState<Pagination | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [limit] = useState(24); // Limit per page
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
+          `${apiUrl}/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
         console.log(
           "response?.data?.blogresponse?.data?.blog",

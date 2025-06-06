@@ -29,10 +29,9 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
   };
 
   try {
+    const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
     const res = await fetch(
-      `https://labxbackend.labxrepair.com.au/api/admin/getPageBypageTitle/${encodeURIComponent(
-        pageTitle
-      )}`,
+      `${apiUrl}/api/admin/getPageBypageTitle/${encodeURIComponent(pageTitle)}`,
       requestOptions
     );
 
@@ -126,7 +125,7 @@ export default async function BlogDetails({
             </h2>
 
             <div className="mb-4">
-            <BlogContent content={blog.content} />
+              <BlogContent content={blog.content} />
             </div>
           </div>
 

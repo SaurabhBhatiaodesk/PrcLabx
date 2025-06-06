@@ -21,14 +21,14 @@ const CreatePageList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
   const router = useRouter();
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     fetchPages();
   }, []);
 
   const fetchPages = async () => {
     try {
-      const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/createpage");
+      const response = await fetch(`${apiUrl}/api/admin/createpage`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch pages");
@@ -54,7 +54,7 @@ const CreatePageList: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this page?")) {
       try {
-        const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/deletepage/${id}`, {
+        const response = await fetch(`${apiUrl}/api/admin/deletepage/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         });
@@ -72,11 +72,11 @@ const CreatePageList: React.FC = () => {
     }
   };
 
-
-
-
   const handleCopyClick = (pageName: string) => {
-    const pageUrl = `https://labxrepair.com.au/${pageName.replace(/\s+/g, '_')}`;
+    const pageUrl = `https://labxrepair.com.au/${pageName.replace(
+      /\s+/g,
+      "_"
+    )}`;
     navigator.clipboard.writeText(pageUrl).then(() => {
       alert("URL copied to clipboard!");
     });
@@ -105,18 +105,31 @@ const CreatePageList: React.FC = () => {
         <tbody>
           {pages.map((page) => (
             <tr key={page._id}>
-              <td className="px-4 py-2 border">{page.pageName.replace(/_/g, " ")}</td>
+              <td className="px-4 py-2 border">
+                {page.pageName.replace(/_/g, " ")}
+              </td>
               {/* <td className="px-4 py-2 border">{stripHtmlTags(page.pageEditor)}</td> */}
               <td className="px-4 py-2 border">{page.seoPageTitle}</td>
-              <td className="px-4 py-2 border">{page.status ? "Active" : "Inactive"}</td>
               <td className="px-4 py-2 border">
-                <IconButton onClick={() => handleEdit(page._id)} color="primary">
+                {page.status ? "Active" : "Inactive"}
+              </td>
+              <td className="px-4 py-2 border">
+                <IconButton
+                  onClick={() => handleEdit(page._id)}
+                  color="primary"
+                >
                   <FiEdit />
                 </IconButton>
-                <IconButton onClick={() => handleDelete(page._id)} color="error">
+                <IconButton
+                  onClick={() => handleDelete(page._id)}
+                  color="error"
+                >
                   <FiTrash />
                 </IconButton>
-                <IconButton onClick={() => handleCopyClick(page.pageName)} color="default">
+                <IconButton
+                  onClick={() => handleCopyClick(page.pageName)}
+                  color="default"
+                >
                   <FiClipboard />
                 </IconButton>
               </td>

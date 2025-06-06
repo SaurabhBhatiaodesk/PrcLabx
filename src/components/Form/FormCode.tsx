@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import lottiearrow from "../../../public/Images/jsonfile/scrolling.json";
 import axios from "axios";
 import {
   TextField,
@@ -14,7 +13,6 @@ import {
 import { TextareaAutosize } from "@mui/base"; // For the message input
 import "./Form.css";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
-import Lottie from "lottie-react";
 
 const FormCode: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false); // State for loader
@@ -36,7 +34,7 @@ const FormCode: React.FC = () => {
     phoneNumber: "",
     course_name: "",
   });
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   // Handle changes for all form fields
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
@@ -168,7 +166,7 @@ const FormCode: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/training",
+        `${apiUrl}/api/create/training`,
         requestData
       );
       console.log(await response.data, "Form submitted successfully");

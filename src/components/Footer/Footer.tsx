@@ -29,6 +29,7 @@ const Footer = () => {
     message: string;
     type: "success" | "error";
   } | null>(null);
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   // Email validation regex pattern
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -47,17 +48,14 @@ const Footer = () => {
     setLoading(true); // Show loader when processing starts
 
     try {
-      const response = await fetch(
-        "https://labxbackend.labxrepair.com.au/api/create/subscription",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer <your-token>`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email_address: email }),
-        }
-      );
+      const response = await fetch(`${apiUrl}/api/create/subscription`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer <your-token>`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email_address: email }),
+      });
 
       const data = await response.json();
 

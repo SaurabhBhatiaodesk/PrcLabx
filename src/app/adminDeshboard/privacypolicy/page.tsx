@@ -50,7 +50,7 @@
 //       const fetchPolicy = async () => {
 //         try {
 //           const response = await fetch(
-//             `https://labxbackend.labxrepair.com.au/api/admin/privacypolicybyId/${policyId}`
+//             `${apiUrl}/api/admin/privacypolicybyId/${policyId}`
 //           );
 //           if (!response.ok)
 //             throw new Error(`Error fetching policy: ${response.statusText}`);
@@ -143,8 +143,8 @@
 
 //     try {
 //       const url = isEditMode
-//         ? `https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${policyId}`
-//         : "https://labxbackend.labxrepair.com.au/api/admin/privacypolicy";
+//         ? `${apiUrl}/api/admin/privacypolicy/${policyId}`
+//         : "${apiUrl}/api/admin/privacypolicy";
 //       const method = isEditMode ? "PUT" : "POST";
 
 //       const response = await fetch(url, {
@@ -298,31 +298,17 @@
 
 // export default PrivacyPolicyPage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import dynamic from "next/dynamic";
 
 // Dynamically import the PrivacyPolicyPage component with ssr: false
-const PrivacyPolicyPage = dynamic(() => import("./PrivacyPolicyPage/PrivacyPolicyPage"), {
-  ssr: false, // Disable SSR for this component
-});
+const PrivacyPolicyPage = dynamic(
+  () => import("./PrivacyPolicyPage/PrivacyPolicyPage"),
+  {
+    ssr: false, // Disable SSR for this component
+  }
+);
 
 export default function Page() {
   return (

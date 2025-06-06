@@ -1,55 +1,46 @@
-// src/components/Pdp.tsx
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 import paypal from "../../../assets/Icons/paypal_888870.svg";
 import afterpay from "../../../assets/Icons/afterpay.svg";
 import zip from "../../../assets/Icons/zipicon.png";
 import american from "../../../assets/Icons/american-express_349228.svg";
-import Image from "next/image";
-type ServiceTab = {
-  label: string;
-  key: string;
-};
 
-type PartOption = {
-  title: string;
-  subtitle: string;
-  price: number;
-  key: string;
-};
+const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
+  pdpDetail,
+  tabs,
+}) => {
+  const pathname = usePathname();
+  const router = useRouter();
 
-const serviceTabs: ServiceTab[] = [
-  { label: "Screen Repair", key: "screen" },
-  { label: "Battery Issue", key: "battery" },
-  { label: "Back Glass Repair", key: "back_glass" },
-  { label: "Camera Issue", key: "camera" },
-  { label: "Charging Issue", key: "charging" },
-  { label: "Speaker Issue", key: "speaker" },
-];
+  const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+  const [selectedPart, setSelectedPart] = useState<string | undefined>();
 
-const partOptions: PartOption[] = [
-  {
-    key: "aftermarket",
-    title: "Screen Replacement Aftermarket",
-    subtitle: "(Quality–Incell)",
-    price: 120,
-  },
-  {
-    key: "premium",
-    title: "Screen Replacement Premium",
-    subtitle: "(Quality–OLED)",
-    price: 240,
-  },
-  {
-    key: "oem",
-    title: "Screen Replacement – Best Quality",
-    subtitle: "(OEM / Refurbished)",
-    price: 405,
-  },
-];
+  // Set the active tab when the component mounts or pathname changes
+  useEffect(() => {
+    const lastSegment = pathname.split("/").pop(); // Get the last segment from the path
+    const tab = tabs.find((tab: any) => tab.alias === lastSegment);
+    if (tab) {
+      setActiveTab(tab.id.toString()); // Set the active tab based on the slug in the URL
+    }
+  }, [pathname, tabs]);
 
-const Pdp: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("screen");
-  const [selectedPart, setSelectedPart] = useState<string>("aftermarket");
+  // Function to handle tab click and update the URL
+  const handleTabClick = (tab: any) => {
+    setActiveTab(tab.id.toString());
+    // Update the URL to reflect the clicked tab's alias
+    const pathWithoutLastSegment = pathname.split("/").slice(0, -1).join("/");
+    const newUrl = `${pathWithoutLastSegment}/${tab.alias}`;
+    router.push(newUrl); // Replace the last segment without appending
+  };
+
+  // Check if the image exists in pdpDetail, otherwise use a fallback static image
+  const getImage = (part: any) => {
+    return part?.image
+      ? part.image
+      : "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg"; // Default image if no image is available
+  };
 
   return (
     <div className="bg-[#FFF5EB] rounded-lg p-6 max-w-6xl mx-auto">
@@ -60,26 +51,22 @@ const Pdp: React.FC = () => {
 
       {/* Tabs */}
       <div className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-2 mb-3">
-        {serviceTabs.map((tab) => (
+        {tabs.map((tab: any) => (
           <button
-            key={tab.key}
-            onClick={() => {
-              setActiveTab(tab.key);
-              // whenever you switch tabs, you might want to reset selectedPart
-              setSelectedPart(partOptions[0].key);
-            }}
+            key={tab.id}
+            onClick={() => handleTabClick(tab)}
             className={`
               rounded-t-lg rounded-b-none md:px-4 md:py-2 p-2
               text-sm font-medium 
               border border-gray-300
               ${
-                activeTab === tab.key
+                activeTab === tab.id.toString()
                   ? "bg-yellow-400 text-black border-b-0 text-xs"
                   : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
               }
             `}
           >
-            {tab.label}
+            {tab.title}
           </button>
         ))}
       </div>
@@ -89,7 +76,7 @@ const Pdp: React.FC = () => {
         {/* Left: Phone Image */}
         <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
           <img
-            src="	https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg"
+            src={getImage(pdpDetail[0])} // Use getImage function to get the image
             alt="iPhone 15"
             className="w-56 h-auto object-contain rounded-lg shadow-md"
           />
@@ -102,37 +89,30 @@ const Pdp: React.FC = () => {
 
           {/* Part Options */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            {partOptions.map((part) => {
-              const isSelected = selectedPart === part.key;
+            {pdpDetail.map((part: any) => {
+              const isSelected = selectedPart === part.id.toString(); // Ensure matching id type
               return (
                 <div
-                  key={part.key}
-                  onClick={() => setSelectedPart(part.key)}
-                  className={`
-                    cursor-pointer 
-                    p-4 rounded-xl border-2
-                    flex flex-col justify-between
-                    ${
-                      isSelected
-                        ? "bg-yellow-400 border-teal-800"
-                        : "bg-white border-gray-300 hover:border-purple-400"
-                    }
-                  `}
+                  key={part.id}
+                  onClick={() => setSelectedPart(part.id.toString())}
+                  className={`cursor-pointer p-4 rounded-xl border-2 flex flex-col justify-between ${
+                    isSelected
+                      ? "bg-yellow-400 border-teal-800"
+                      : "bg-white border-gray-300 hover:border-purple-400"
+                  }`}
                 >
                   <div>
                     <h3 className="text-base font-medium text-black">
                       {part.title}
                     </h3>
-                    <p className="text-xs text-gray-600 mb-1">{part.subtitle}</p>
                   </div>
                   <div className="mt-1">
                     <span
-                      className={`
-                        text-2xl font-semibold
-                        ${isSelected ? "text-purple-700" : "text-purple-600"}
-                      `}
+                      className={`text-2xl font-semibold ${
+                        isSelected ? "text-purple-700" : "text-purple-600"
+                      }`}
                     >
-                      ${part.price}
+                      {part.price_range}
                     </span>
                   </div>
                 </div>
@@ -150,9 +130,8 @@ const Pdp: React.FC = () => {
             </button>
           </div>
 
-          {/* Payment Icons (row of icons) */}
+          {/* Payment Icons */}
           <div className="flex items-center justify-center space-x-4 mb-6 bg-white rounded-md">
-            {/* Replace `src` with your actual icon URLs */}
             <Image src={paypal} alt="PayPal" className="h-8 w-auto" />
             <Image
               src={afterpay}

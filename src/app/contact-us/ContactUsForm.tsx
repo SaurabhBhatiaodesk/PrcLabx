@@ -3,23 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-
-import {
-  TextField,
-  Button,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  SelectChangeEvent,
-} from "@mui/material";
-import { TextareaAutosize } from "@mui/base";
 import "./Contactus.css";
-import contactusimage from "../../../public/Images/contactusimage.png";
-
-// icons
-import localtion from "../../../public/Images/localtion.svg";
-import contactustime from "../../../public/Images/icons/contactustime.svg";
 import callcontactus from "../../../public/Images/icons/callcontactus.svg";
 import contactusmail from "../../../public/Images/icons/contactusmail.svg";
 import ContactForm from "./ContactForm";
@@ -36,47 +20,45 @@ const ContactUsForm: React.FC = () => {
     first_name: "",
     last_name: "",
     email_address: "",
-    contact_no: ""
-
+    contact_no: "",
   });
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
 
-
-   // Handle changes for all form fields
+  // Handle changes for all form fields
   //  / Handle changes for all form fields
- // Handle changes for all form fields
-// Handle changes for all form fields
-const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
-) => {
-  const { name, value } = e.target;
+  // Handle changes for all form fields
+  // Handle changes for all form fields
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
+  ) => {
+    const { name, value } = e.target;
 
-  // Ensure `value` is treated as a string (type assertion)
-  const valueAsString = value as string;
+    // Ensure `value` is treated as a string (type assertion)
+    const valueAsString = value as string;
 
-  // Prevent spaces in specific fields
-  if (
-    name === "first_name" ||
-    name === "last_name" ||
-    name === "email_address" ||
-    name === "contact_no"
-  ) {
-    const trimmedValue = valueAsString.replace(/\s/g, ""); // Remove spaces
-    setFormData((prev) => ({
-      ...prev,
-      [name!]: trimmedValue,
-    }));
-    // Validate the field as the user types
-    validateField(name!, trimmedValue);
-  } else {
-    setFormData((prev) => ({
-      ...prev,
-      [name!]: valueAsString,
-    }));
-    // Validate the field as the user types
-    validateField(name!, valueAsString);
-  }
-};
-
+    // Prevent spaces in specific fields
+    if (
+      name === "first_name" ||
+      name === "last_name" ||
+      name === "email_address" ||
+      name === "contact_no"
+    ) {
+      const trimmedValue = valueAsString.replace(/\s/g, ""); // Remove spaces
+      setFormData((prev) => ({
+        ...prev,
+        [name!]: trimmedValue,
+      }));
+      // Validate the field as the user types
+      validateField(name!, trimmedValue);
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name!]: valueAsString,
+      }));
+      // Validate the field as the user types
+      validateField(name!, valueAsString);
+    }
+  };
 
   const validateField = (name: string, value: string) => {
     let errors = { ...formErrors };
@@ -111,7 +93,6 @@ const handleChange = (
     setFormErrors(errors); // Update errors state after validation
   };
 
-
   const validateAllFields = () => {
     let errors = {
       first_name: "",
@@ -134,7 +115,12 @@ const handleChange = (
     e.preventDefault();
 
     // Early validation: Check if any required field is empty
-    const errors: { first_name: string; last_name: string; email_address: string; contact_no: string } = {
+    const errors: {
+      first_name: string;
+      last_name: string;
+      email_address: string;
+      contact_no: string;
+    } = {
       first_name: "",
       last_name: "",
       email_address: "",
@@ -159,7 +145,12 @@ const handleChange = (
     }
 
     // If there are errors, prevent the form submission and display validation messages
-    if (errors.first_name || errors.last_name || errors.email_address || errors.contact_no) {
+    if (
+      errors.first_name ||
+      errors.last_name ||
+      errors.email_address ||
+      errors.contact_no
+    ) {
       setFormErrors(errors);
       return; // Prevent API call if any required field is empty
     }
@@ -168,7 +159,12 @@ const handleChange = (
     validateAllFields();
 
     // If validation fails after the field check, stop the submission
-    if (formErrors.first_name || formErrors.last_name || formErrors.email_address || formErrors.contact_no) {
+    if (
+      formErrors.first_name ||
+      formErrors.last_name ||
+      formErrors.email_address ||
+      formErrors.contact_no
+    ) {
       return;
     }
 
@@ -181,11 +177,9 @@ const handleChange = (
       enquiry_message: formData.enquiry_message || "", // Always include enquiry_message
     };
 
-    console.log("requestDataaa",requestData)
-
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
+        `${apiUrl}/api/create/contact-us`, // Replace with your actual API endpoint
         requestData
       );
       console.log(await response.data, "Form submitted successfully");
@@ -294,7 +288,9 @@ const handleChange = (
                       </p>
                     </div> */}
                     <div>
-                      <h3 className="text-secondary text-center lg:text-xl text-lg ">We DO NOT accept walk-ins </h3>
+                      <h3 className="text-secondary text-center lg:text-xl text-lg ">
+                        We DO NOT accept walk-ins{" "}
+                      </h3>
                     </div>
                   </div>
                 </div>
