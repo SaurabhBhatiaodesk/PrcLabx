@@ -87,8 +87,8 @@ export default function Devicequote() {
                 <div className='pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3 '>
                     {
                         imagedata.map((data, index) => (
-                            <Link href="">
-                                <div className='border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center' key={index}>
+                            <Link href="" key={index}>
+                                <div className='border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center' >
                                     <Image
                                         src={data.image}
                                         alt='device_image'
