@@ -56,7 +56,7 @@ const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color }) => {
     <div>
       {link ? (
         <Link href={link}>
-          <button className={buttonStyles} aria-label={`Click ${MainButton}`}>
+          <button className={buttonStyles} aria-label={`Click ${MainButton}`} style={{ background: buttonColor }}>
             {MainButton}
           </button>
         </Link>
