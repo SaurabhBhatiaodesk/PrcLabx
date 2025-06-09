@@ -83,7 +83,7 @@ const DataImportantNote = () => {
               <Image src={pointer} alt="pointer" width={30} />
 
                 <div className="">
-                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                  <span className="text-lg pb-[2px] text-tertiary  font-semibold">
                   Failed Software Updates:
                   </span>
                   <p className="text-primary">

@@ -61,14 +61,17 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   const isSelected = (part: any) => {
     const defaultSelectedId = defaultSelectedPart?.id?.toString(); // Ensure defaultSelectedPart.id is a string
     const selectedPartId = selectedPart;
-    return defaultSelectedId === part.id.toString() || selectedPartId === part.id.toString();
+    return (
+      defaultSelectedId === part.id.toString() ||
+      selectedPartId === part.id.toString()
+    );
   };
 
   return (
     <>
-      <div className="bg-[#FFF5EB] rounded-lg p-6 max-w-6xl mx-auto">
+      <div className="bg-[#FFF5EB] rounded-lg md:p-6  max-w-6xl mx-auto p-3">
         {/* Header */}
-        <h2 className="text-2xl font-bold mb-4 text-[cadetblue]">
+        <h2 className="text-2xl font-bold mb-4 text-prc">
           SERVICES WE OFFER FOR{" "}
           <span className="text-purple-700">IPHONE 15</span>
         </h2>
@@ -79,9 +82,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab)}
-              className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-2 text-sm font-medium border border-gray-300 ${
+              className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${
                 activeTab === tab.id.toString()
-                  ? "bg-yellow-400 text-black border-b-0 text-xs"
+                  ? "bg-yellow-400 text-black border-b-0 text-[11px]"
                   : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
               }`}
             >
@@ -97,14 +100,16 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
             <img
               src={getImage(pdpDetail[0])} // Use getImage function to get the image
               alt="iPhone 15"
-              className="w-56 h-auto object-contain rounded-lg shadow-md"
+              className="w-56 h-auto object-contain rounded-lg"
             />
           </div>
 
           {/* Right: Part Selection & Buttons */}
           <div className="w-full lg:w-2/3 lg:pl-6">
             {/* “Select a Part” Label */}
-            <p className="text-lg font-semibold mb-3 text-black">Select a Part</p>
+            <p className="text-lg font-semibold mb-3 text-black">
+              Select a Part
+            </p>
 
             {/* Part Options */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
@@ -117,17 +122,19 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                     onClick={() => handleParClick(part)}
                     className={`cursor-pointer p-4 rounded-xl border-2 flex flex-col justify-between ${
                       isSelectedPart
-                        ? "bg-yellow-400 border-teal-800"
+                        ? "bg-yellow-400 border-prc"
                         : "bg-white border-gray-300 hover:border-purple-400"
                     }`}
                   >
                     <div>
-                      <h3 className="text-base font-medium text-black">{part.title}</h3>
+                      <h3 className="mdd:text-sm text-xs font-medium text-black">
+                        {part.title}
+                      </h3>
                     </div>
                     <div className="mt-1">
                       <span
-                        className={`text-2xl font-semibold ${
-                          isSelectedPart ? "text-purple-700" : "text-purple-600"
+                        className={`text-base font-semibold ${
+                          isSelectedPart ? "text-prc" : "text-prc"
                         }`}
                       >
                         {part.price_range}
@@ -141,25 +148,33 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 mb-6">
               <button
-                className="flex-1 bg-teal-800 text-white rounded-lg py-3 text-center font-medium hover:bg-teal-900 transition"
+                className="flex-1 bg-teal-800 text-white rounded-lg py-3 text-center font-medium hover:bg-teal-900 transition text-base"
                 onClick={() => setIsModalOpen(true)}
               >
                 BOOK NOW
               </button>
               <Link href="/mail-in-repair">
-              <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition">
-                MAIL IN REPAIR
-              </button>
+                <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition">
+                  MAIL IN REPAIR
+                </button>
               </Link>
             </div>
 
             {/* Payment Icons */}
             <div className="flex items-center justify-center space-x-4 mb-6 bg-white rounded-md">
               <Image src={paypal} alt="PayPal" className="h-8 w-auto" />
-              <Image src={afterpay} alt="Afterpay" className="h-10 w-30 p-2 bg-black rounded-3xl " />
+              <Image
+                src={afterpay}
+                alt="Afterpay"
+                className="h-10 w-30 p-2 bg-black rounded-3xl "
+              />
               <Image src={zip} alt="Zip" className="h-10 w-12 rounded-md" />
               <Image src={american} alt="Amex" className="h-10 w-12" />
-              <img src="https://img.icons8.com/fluency/48/000000/cash-in-hand.png" alt="Cash" className="h-10 w-12" />
+              <img
+                src="https://img.icons8.com/fluency/48/000000/cash-in-hand.png"
+                alt="Cash"
+                className="h-10 w-12"
+              />
             </div>
 
             {/* Bottom Links/Buttons */}
@@ -177,7 +192,11 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           </div>
         </div>
       </div>
-      <BookSlot isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} defaultSelectedPart={defaultSelectedPart}/>
+      <BookSlot
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        defaultSelectedPart={defaultSelectedPart}
+      />
     </>
   );
 };

@@ -3,8 +3,6 @@ import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 
-
-
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -25,8 +23,6 @@ export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
-
-
   const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
@@ -34,10 +30,35 @@ export default function MainBanner() {
     const index = swiper.realIndex; // Get the real index of the slide
     setBackgroundImage(backgroundImages[index % backgroundImages.length]); // Update the background image
   };
+  useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
+        // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
+        let baseData: any = JSON.parse(
+          sessionStorage.getItem("baseData") || "[]"
+        );
+        if (baseData.length === 0) {
+          try {
+            const res = await fetch(api);
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            baseData = await res.json();
+            sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
+          } catch (error) {
+            console.error("Error fetching base data:", error);
+          }
+        }
+      } catch (error) {
+        console.error("Unexpected error:", error);
+      }
+    };
 
+    fetchBrands();
+  }, []);
   return (
     <>
-
       <section
         className="background-banner"
         style={{
@@ -58,7 +79,6 @@ export default function MainBanner() {
                 >
                   Need Training?
                 </button>
-
               </Link>
             </div>
             <Swiper
@@ -88,7 +108,7 @@ export default function MainBanner() {
                   <div>
                     <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                       Get Your Device Fixed or Learn Mobile Phone Repairs
-                      <span className="text-[#EDE574]">
+                      <span className="text-tertiary ">
                         {" "}
                         — LabX Repair Does It All!
                       </span>
@@ -192,8 +212,18 @@ export default function MainBanner() {
             <Bannersearchcard />
           </div>
         </div>
-        <div style={{transform: 'rotate(-1deg)'}}>
-          <Marquee marquee_bg="bg-tertiary" marquee_text="text-black" marquee_messages=". Fast Phone Repairs: 30 Mins to Same Day, Only a Few Need Extra Time!" />
+        <div
+          style={{
+            transform: "rotate(-1deg)",
+            position: "relative",
+            top: "17px",
+          }}
+        >
+          <Marquee
+            marquee_bg="bg-tertiary"
+            marquee_text="text-black"
+            marquee_messages=". Fast Phone Repairs: 30 Mins to Same Day, Only a Few Need Extra Time!"
+          />
         </div>
       </section>
     </>

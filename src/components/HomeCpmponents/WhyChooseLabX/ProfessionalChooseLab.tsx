@@ -72,7 +72,7 @@ const WhyChooseLabX: React.FC = () => {
                 className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] flex flex-col justify-between"
               >
                 <Link href={section.pageUrl}>
-                  <h3 className="text-[#EDE574] xl:text-xl lg:w-[100%] m-auto mb-3">
+                  <h3 className="text-tertiary  xl:text-xl lg:w-[100%] m-auto mb-3">
                     {section.title}
                   </h3>
                   <p>{section.content}</p>

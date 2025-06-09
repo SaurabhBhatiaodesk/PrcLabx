@@ -1,4 +1,7 @@
 "use client";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
 import React, { useEffect, useState, useRef } from "react";
 import SidebarItem from "./SidebarItem";
 import BrandImageGrid from "./BrandImageGrid";
@@ -18,7 +21,6 @@ const BrandDetailPage: React.FC = () => {
   // Build slugArray by stripping "/brands" and splitting the rest
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
-
   // Fetch brands data from API
   useEffect(() => {
     const fetchBrands = async () => {
@@ -87,63 +89,100 @@ const BrandDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto">
       {/* Sidebar */}
-      {isSidebarOpen && (
-        <aside
-          className="w-full max-w-xs md:max-w-md lg:max-w-[26rem] bg-yellow-400 p-6 overflow-y-auto sticky top-0
-            shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200"
-        >
-          <h2 className="text-xl font-extrabold text-green-800 mb-2 border-b border-green-600 tracking-wide select-none">
-            Select Brands
-          </h2>
+      <div className="relative">
+        {isSidebarOpen && (
+          <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
+            <aside
+              className="lg:w-96 w-[320px] bg-tertiary md:p-6  p-3 overflow-y-auto sticky top-0
+            shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[800px] scrollbar-custom"
+            >
+              <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b  tracking-wide hover:bg-[] transition-colors">
+                Select Brands
+              </h2>
 
-          {brandsData.map((brand: any) => (
-            <SidebarItem
-              key={brand.id}
-              item={brand}
-              href={`/brands/${brand.alias}`}
-              level={0}
-              expandedPaths={expandedPaths}
-              toggleExpand={toggleExpand}
-              currentPath={pathname}
-              setIsLastItemClicked={setIsLastItemClicked}
-              setTabs={setTabs}
-            />
-          ))}
-        </aside>
-      )}
+              {brandsData.map((brand: any) => (
+                <SidebarItem
+                  key={brand.id}
+                  item={brand}
+                  href={`/brands/${brand.alias}`}
+                  level={0}
+                  expandedPaths={expandedPaths}
+                  toggleExpand={toggleExpand}
+                  currentPath={pathname}
+                  setIsLastItemClicked={setIsLastItemClicked}
+                  setTabs={setTabs}
+                />
+              ))}
+            </aside>
+            <button
+              onClick={() => setIsSidebarOpen((prev) => !prev)}
+              className="mb-4 p-2 bg-[#122d37] text-white rounded-md h-10 flex items-center justify-center  absolute top-4 right-[-3rem] z-10"
+            >
+              <IoIosArrowForward
+                className={`
+      inline-block
+      transform
+      transition-transform
+      duration-300
+      ease-in-out
+      ${isSidebarOpen ? "rotate-180" : "rotate-0"}
+    `}
+                size={24}
+              />
+            </button>
+          </div>
+        )}
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-3 bg-[#fff4f0] min-h-screen overflow-auto shadow-inner">
+      <main
+        className={`flex-1  bg-white transition-all duration-300 ${
+          isSidebarOpen ? "pt-[60px] p-4" : "p-4"
+        }`}
+      >
         <button
           onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className="mb-6 p-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+          className={`lg:mb-6 mb-2 p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center  ${
+            isSidebarOpen ? "hidden" : ""
+          }`}
         >
-          {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+          <IoIosArrowForward
+            className={`
+      inline-block
+      transform
+      transition-transform
+      duration-300
+      ease-in-out
+      ${isSidebarOpen ? "rotate-180" : "rotate-0"}
+    `}
+            size={24}
+          />
         </button>
-
         {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-gray-600">
-          <Link href="/brands" className="hover:underline font-medium">
-            Home
-          </Link>
-          {slugArray.map((slug, idx) => {
-            const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
-            return (
-              <span key={path}>
-                {" "}
-                &gt;{" "}
-                <Link
-                  href={path}
-                  className="hover:underline capitalize font-medium"
-                >
-                  {slug.replace(/-/g, " ")}
-                </Link>
-              </span>
-            );
-          })}
-        </nav>
+        <div className="hidden md:block">
+          <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap ">
+            <Link href="/brands" className="hover:underline font-bold">
+              Home
+            </Link>
+            {slugArray.map((slug, idx) => {
+              const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
+              return (
+                <span key={path}>
+                  {" "}
+                  &gt;{" "}
+                  <Link
+                    href={path}
+                    className="hover:underline capitalize font-bold"
+                  >
+                    {slug.replace(/-/g, " ")}
+                  </Link>
+                </span>
+              );
+            })}
+          </nav>
+        </div>
 
         {/* Render content based on the fetched brands data */}
         {!isLastItemClicked ? (

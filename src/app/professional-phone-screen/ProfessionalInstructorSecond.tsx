@@ -81,25 +81,25 @@ function BeginnerPhoneRepairCourseSale() {
               {/* <div className=" flex justify-between w-full gap-2">
                 <div className="flex justify-between items-center  border-[2px] border-[#EDE574] text-black p-4 rounded-md w-full">
                   <div className="text-center">
-                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-tertiary ">
                       {timeLeft.days}
                     </h3>
                     <p className="m-0">Days</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-tertiary ">
                       {timeLeft.hours}
                     </h3>
                     <p className="m-0"> Hours</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-tertiary ">
                       {timeLeft.minutes}
                     </h3>
                     <p className="m-0">Minutes</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-[#EDE574]">
+                    <h3 className="text-[26px] lg:text-[50px] lg:font-bold font-medium text-tertiary ">
                       {timeLeft.seconds}
                     </h3>
                     <p className="m-0">Seconds</p>

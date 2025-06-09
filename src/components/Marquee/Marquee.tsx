@@ -46,7 +46,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
               messages.map((message, messageIndex) => (
                 <span
                   key={`${repetitionIndex}-${messageIndex}`}
-                  className={`px-[10px] py-[5px] border-[1px] rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6 border-transparent ${marquee_text}`}
+                  className={`px-[10px] py-[5px] border-[1px] rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6  ${marquee_text}`}
                 >
                   {message}
                 </span>

@@ -106,7 +106,7 @@ const RecentNews: React.FC = () => {
                         )}
                       </div>
                       <div className="mt-4">
-                        <h2 className="font-bold text-lg text-[#EDE574]">
+                        <h2 className="font-bold text-lg text-tertiary ">
                           {blog.heading.slice(0, 40)}...
                         </h2>
                         <p className="text-base mt-2 text-white">
@@ -117,7 +117,7 @@ const RecentNews: React.FC = () => {
                         <div className="flex justify-end items-center mt-4">
                           <button
                             onClick={() => sendId(blog.pageTitle)}
-                            className="capitalize text-[16px] text-[#EDE574]"
+                            className="capitalize text-[16px] text-tertiary "
                           >
                             Read More
                           </button>

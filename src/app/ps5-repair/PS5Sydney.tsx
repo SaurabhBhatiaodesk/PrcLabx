@@ -44,7 +44,7 @@ const PS5Sydney: React.FC = () => {
         {datatable.map((itom, index) =>
 
           <div className="flex flex-col gap-3" key={index}>
-            <h2 className="text-3xl font-semibold text-[#EDE574]">{itom.MainheadingItom}</h2>
+            <h2 className="text-3xl font-semibold text-tertiary ">{itom.MainheadingItom}</h2>
             <div>
               <Image
                 src={itom.imageItom}

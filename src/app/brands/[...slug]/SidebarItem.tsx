@@ -1,3 +1,6 @@
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -75,29 +78,26 @@ const SidebarItem: React.FC<{
       {level > 0 && (
         <div
           className="absolute top-0 left-4 h-full border-l border-green-400 pointer-events-none"
-          style={{ marginLeft: `${(level - 1) * 10 + 10}px` }}
+          style={{ marginLeft: `${(level - 1) * 6 + 10}px` }}
         />
       )}
       <div
-        className={`flex items-center justify-between cursor-pointer rounded-md px-5 py-1 transition-colors duration-200
+        className={`flex items-center justify-between cursor-pointer rounded-md px-5 py-1 transition-colors duration-200 relative z-10
           ${
             isActive
-              ? "bg-green-700 text-white shadow-lg"
-              : "text-gray-800 hover:bg-green-100 hover:text-green-700 text-sm"
+              ? "bg-[#122d37] text-white shadow-lg md:text-[15px] text-[13px]"
+              : "text-gray-800 hover:bg-green-100 hover:text-[#122d37] text-sm"
           }`}
         style={{ paddingLeft: `${level * 20 + 20}px` }}
         onClick={handleCategoryClick} // Handle category click
       >
-        <Link href={href} className="flex-1 truncate">
+        <Link href={href} className="flex-1 truncate font-semibold">
           {item.title}
         </Link>
         {hasChildren && (
           <span
-            className={`text-green-600 font-bold select-none transition-transform duration-300 text-base ${
-              isExpanded ? "rotate-180" : "rotate-0"
-            }`}
-          >
-            ▼
+            className={` font-bold select-none transition-transform duration-300 text-base ${isActive ? "text-white" : ""}`}>
+          {isExpanded ? <MdKeyboardArrowUp  /> : <MdKeyboardArrowDown />}
           </span>
         )}
       </div>
