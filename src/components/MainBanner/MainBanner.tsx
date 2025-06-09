@@ -192,7 +192,7 @@ export default function MainBanner() {
             <Bannersearchcard />
           </div>
         </div>
-        <div style={{transform: 'rotate(-1deg)'}}>
+        <div style={{transform: 'rotate(-1deg)',position: 'relative', top: '17px'}}>
           <Marquee marquee_bg="bg-tertiary" marquee_text="text-black" marquee_messages=". Fast Phone Repairs: 30 Mins to Same Day, Only a Few Need Extra Time!" />
         </div>
       </section>
