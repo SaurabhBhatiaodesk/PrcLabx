@@ -60,19 +60,19 @@ function TraningWillLearn({
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt=" labx repair " />
                 <p>
-                  <strong className="text-[22px] text-[#EDE574]">{paramtitle1} :</strong> {param1}
+                  <strong className="text-[22px] text-tertiary ">{paramtitle1} :</strong> {param1}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt=" labx repair " />
                 <p>
-                  <strong className="text-[22px] text-[#EDE574]">{paramtitle2} :</strong> {param2}
+                  <strong className="text-[22px] text-tertiary ">{paramtitle2} :</strong> {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
                 <Image src={checkmark} alt=" labx repair " />
                 <p>
-                  <strong className="text-[22px] text-[#EDE574]">{paramtitle3} :</strong> {param3}
+                  <strong className="text-[22px] text-tertiary ">{paramtitle3} :</strong> {param3}
                 </p>
               </div>
             </div>

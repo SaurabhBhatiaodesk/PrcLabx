@@ -17,7 +17,7 @@ import { setPriceCat } from "@/app/redux/slice";
 import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import commingsoon from "../../../public/Images/coming-soon.svg";
-import newlogo from "../../../public/Images/prclogo.png"
+import newlogo from "../../../public/Images/prclogo.png";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -71,7 +71,11 @@ export default function App() {
   };
   return (
     <>
-      <Marquee marquee_bg="bg-tertiary" marquee_text="text-black" marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing" />
+      <Marquee
+        marquee_bg="bg-tertiary"
+        marquee_text="text-black"
+        marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing"
+      />
       <div className="w-full header header-component">
         <Navbar
           className="text-secondary bg-primary"
@@ -422,13 +426,13 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-               <Link href="/mail-in-repair">
-                                <button
-                                  className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
-                                  area-label=" Start the repair process for your device"
-                                >
-                                  Instant Quote{" "}
-                                </button>
+                <Link href="/mail-in-repair">
+                  <button
+                    className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
+                    area-label=" Start the repair process for your device"
+                  >
+                    Instant Quote{" "}
+                  </button>
                 </Link>
               </div>
             </div>

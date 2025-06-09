@@ -102,7 +102,7 @@ const DataBox: React.FC = () => {
                 }
                 onClick={() => PricetoggleMenu(section.id)}
               >
-                <h3 className="text-[#EDE574] xl:text-xl m-auto">
+                <h3 className="text-tertiary  xl:text-xl m-auto">
                   {section.title}
                 </h3>
                 <p>{section.description}</p>

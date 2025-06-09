@@ -43,9 +43,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   };
 
   return (
-    <div className="bg-[#FFF5EB] rounded-lg p-6 max-w-6xl mx-auto">
+    <div className="bg-[#FFF5EB] rounded-lg md:p-6  max-w-6xl mx-auto p-3">
       {/* Header */}
-      <h2 className="text-2xl font-bold mb-4 text-[cadetblue]">
+      <h2 className="text-2xl font-bold mb-4 text-prc">
         SERVICES WE OFFER FOR <span className="text-purple-700">IPHONE 15</span>
       </h2>
 
@@ -56,12 +56,10 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
             key={tab.id}
             onClick={() => handleTabClick(tab)}
             className={`
-              rounded-t-lg rounded-b-none md:px-4 md:py-2 p-2
-              text-sm font-medium 
-              border border-gray-300
+              rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300
               ${
                 activeTab === tab.id.toString()
-                  ? "bg-yellow-400 text-black border-b-0 text-xs"
+                  ? "bg-yellow-400 text-black border-b-0 text-[11px]"
                   : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
               }
             `}
@@ -78,7 +76,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           <img
             src={getImage(pdpDetail[0])} // Use getImage function to get the image
             alt="iPhone 15"
-            className="w-56 h-auto object-contain rounded-lg shadow-md"
+            className="w-56 h-auto object-contain rounded-lg "
           />
         </div>
 
@@ -88,28 +86,28 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           <p className="text-lg font-semibold mb-3 text-black">Select a Part</p>
 
           {/* Part Options */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 md:gap-4 lg:gap-6 gap-2 mb-4">
             {pdpDetail.map((part: any) => {
               const isSelected = selectedPart === part.id.toString(); // Ensure matching id type
               return (
                 <div
                   key={part.id}
                   onClick={() => setSelectedPart(part.id.toString())}
-                  className={`cursor-pointer p-4 rounded-xl border-2 flex flex-col justify-between ${
+                  className={`cursor-pointer md:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${
                     isSelected
-                      ? "bg-yellow-400 border-teal-800"
+                      ? "bg-yellow-400 border-prc"
                       : "bg-white border-gray-300 hover:border-purple-400"
                   }`}
                 >
                   <div>
-                    <h3 className="text-base font-medium text-black">
+                    <h3 className="mdd:text-sm text-xs font-medium text-black">
                       {part.title}
                     </h3>
                   </div>
                   <div className="mt-1">
                     <span
-                      className={`text-2xl font-semibold ${
-                        isSelected ? "text-purple-700" : "text-purple-600"
+                      className={`text-base font-semibold ${
+                        isSelected ? "text-prc" : "text-prc"
                       }`}
                     >
                       {part.price_range}
@@ -122,7 +120,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 mb-6">
-            <button className="flex-1 bg-teal-800 text-white rounded-lg py-3 text-center font-medium hover:bg-teal-900 transition">
+            <button className="flex-1 bg-prc text-white rounded-lg p-3 text-center font-medium hover:bg-teal-900 transition text-base">
               BOOK NOW
             </button>
             <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition">

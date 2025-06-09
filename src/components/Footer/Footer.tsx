@@ -580,7 +580,7 @@ const Footer = () => {
                       src={homefooter}
                       alt=" labx repair "
                     />
-                    <span className="text-[12px] tracking-[1.5px] ">Home</span>
+                    <span className="text-[12px] tracking-[1.5px] text-white ">Home</span>
                   </div>
                 </Link>
                 <Link href="/training">
@@ -590,28 +590,28 @@ const Footer = () => {
                       src={traning}
                       alt=" labx repair "
                     />
-                    <span className="text-[12px] tracking-[1.5px] ">
+                    <span className="text-[12px] tracking-[1.5px] text-white ">
                       Training
                     </span>
                   </div>
                 </Link>
                 <Link href="mailto:bharat@labxrepair.com.au">
                   <div className="flex flex-col items-center">
-                    <FiMail fontSize={24} />
-                    <span className="text-[12px] tracking-[1.5px] ">Mail</span>
+                    <FiMail fontSize={24}  color="white"/>
+                    <span className="text-[12px] tracking-[1.5px] text-white  ">Mail</span>
                   </div>
                 </Link>
                 <Link href="/coming-soon">
                   <div className="flex flex-col items-center">
-                    <IoIosCart fontSize={26} />
-                    <span className="text-[12px] tracking-[1.5px] ">Cart</span>
+                    <IoIosCart fontSize={26} color="white" />
+                    <span className="text-[12px] tracking-[1.5px] text-white">Cart</span>
                   </div>
                 </Link>
 
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
-                    <MdCall fontSize={24} />
-                    <span className="text-[12px] tracking-[1.5px] ">Call</span>
+                    <MdCall fontSize={24}  color="white"/>
+                    <span className="text-[12px] tracking-[1.5px]  text-white">Call</span>
                   </div>
                 </Link>
               </div>

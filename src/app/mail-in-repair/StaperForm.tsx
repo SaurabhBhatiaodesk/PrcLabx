@@ -653,12 +653,10 @@ const StaperForm: React.FC = () => {
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading
-              Heading={`${pathname === "/mail-in-repair"
-                  ? "LabX Mail-In Repair Submission Form"
-                  : pathname === "/data-recovery"
-                    ? "LabX data-recovery Submission Form"
-                    : "LabX PS5 Repair Submission Form"
-                }`}
+              Heading={`${pathname === "/mail-in-repair"? "LabX Mail-In Repair Submission Form": pathname === "/data-recovery"? "LabX data-recovery Submission Form": "LabX PS5 Repair Submission Form"}`
+              
+              }
+              svg_stroke="var(--prc)"
             />
           </div>
 
@@ -1577,7 +1575,7 @@ const StaperForm: React.FC = () => {
 
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-3">
-                        <h4 className=" lg:text-xl text-lg mb-3 text-[#EDE574]">
+                        <h4 className=" lg:text-xl text-lg mb-3 text-tertiary ">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
@@ -1602,21 +1600,21 @@ const StaperForm: React.FC = () => {
                             By checking this box, I confirm that I have read and
                             agree to the LabX
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Warranty_and_Terms"
                             >
                               Warranty Terms

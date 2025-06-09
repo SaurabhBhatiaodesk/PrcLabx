@@ -40,9 +40,11 @@ button.btn__menu.inline-flex.items-center {
   }
  
   ul.dropdown-menu, ul.dropdown-menus {
-    background: #000;
+    background: #ffffff;
     padding: 10px 0px;
     width: 250px;
+    color: var(--prc);
+    font-weight: 700;
 }
 ul.dropdown-menu li a, ul.dropdown-menus li a {
     font-size: 16px;

@@ -121,11 +121,11 @@ function TraningBanner({
             "
                 >
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
-                    <span className="text-[#EDE574]">Duration</span>
+                    <span className="text-tertiary ">Duration</span>
                     <span>{Duration}</span>|
                   </div>
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
-                    <span className="text-[#EDE574]">Price</span>
+                    <span className="text-tertiary ">Price</span>
 
                     <span>{Price}</span>
                   </div>

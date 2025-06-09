@@ -88,7 +88,7 @@ export default function MainBanner() {
                   <div>
                     <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                       Get Your Device Fixed or Learn Mobile Phone Repairs
-                      <span className="text-[#EDE574]">
+                      <span className="text-tertiary ">
                         {" "}
                         — LabX Repair Does It All!
                       </span>

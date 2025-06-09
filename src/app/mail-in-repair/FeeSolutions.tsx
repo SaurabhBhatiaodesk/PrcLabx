@@ -20,7 +20,7 @@ const FeeSolutions = () => {
                   fill // Ensures the image fills its parent container responsively
                 />
               </div>
-              <div className="p-2 lg:p-4 bg-black text-white rounded-md ">
+              <div className="p-2 lg:p-4  text-black rounded-md ">
                 <h2 className="text-3xl font-bold mb-4 ">
                 Comprehensive B2B and Public Phone Repair Services
                 <Image  height="300" width="400"src={Line.src} alt=" labx repair " className="pt-3" />
