@@ -101,7 +101,7 @@ export default function Productswiper({ }) {
   return (
     <div className="">
       <div className="">
-        <div className="py-5 xl:p-6">
+        <div className="py-5 p-6">
           <MainHeading Heading="Our Google Reviews" svg_stroke="var(--prc)" />
           <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
           <div className="service-slide-box flex gap-5 pt-8 lg:flex-row items-center flex-col">

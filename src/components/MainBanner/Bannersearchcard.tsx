@@ -14,7 +14,7 @@ export default function Bannersearchcard() {
         </div>
         <div className='py-3'>
           <div className='flex py-4 border-[1px] border-[#00303E] rounded-full'>
-            <select name="" id="" className='text-black outline-none w-[90%] m-auto'>
+            <select name="" id="" className='text-black outline-none w-[90%] m-auto bg-transparent'>
               <option>Select Your Brand</option>
               {["Apple", "Samsung Tablets", "Oppo", "Google", "Game Console", "Laptop"].map((data, index) => {
                 return (
@@ -26,7 +26,7 @@ export default function Bannersearchcard() {
             </select>
           </div>
           <div className='flex py-4 border-[1px] border-[#00303E] rounded-full mt-6'>
-            <select name="" id="" className='text-black outline-none w-[90%] m-auto'>
+            <select name="" id="" className='text-black outline-none w-[90%] m-auto bg-transparent'>
               {["Apple", "Samsung Tablets", "Oppo", "Google", "Game Console", "Laptop"].map((data, index) => {
                 return (
                   <div key={index}>

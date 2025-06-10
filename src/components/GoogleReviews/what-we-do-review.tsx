@@ -84,7 +84,7 @@ export default function Productswiper({}) {
     <div className="bg-[#0b0b0b]">
       <div className="container">
         <div className="py-5 xl:p-6">
-          <MainHeading Heading="Our Google Reviews" />
+          <MainHeading Heading="Our Google Reviews" color="var(--primary)" />
           <MainTitle Title="" />
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
             <Swiper
@@ -123,7 +123,7 @@ export default function Productswiper({}) {
                           alt={`${review.name}'s profile`}
                         />
                         <div>
-                          <h5 className="font-semibold">{review.name}</h5>
+                          <h5 className="font-semibold text-primary">{review.name}</h5>
                           <p className="text-[#b2b2b2] text-sm mb-2 ">
                             {review.date}
                           </p>
@@ -145,7 +145,7 @@ export default function Productswiper({}) {
                       )}
                     </div>
                     <p
-                      className="font-extralight font-poppins text-[16px] leading-[24px]"
+                      className="font-extralight font-poppins text-[16px] leading-[24px] text-primary"
                       style={{
                         display: "-webkit-box",
                         WebkitLineClamp: 4,

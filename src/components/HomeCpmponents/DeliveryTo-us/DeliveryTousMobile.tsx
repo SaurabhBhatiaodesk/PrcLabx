@@ -70,7 +70,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
           >
             <div className="p-[12px] rounded-b-lg text-[16px]">
               <div className="flex items-center gap-2 mb-3">
-                <p className="xl:pb-2 pb-1 m-0">{item.content}</p>
+                <p className="xl:pb-2 pb-1 m-0 text-primary">{item.content}</p>
               </div>
               {item.contentf2 && (
                 <div className="flex items-start gap-2 mb-2">
@@ -80,7 +80,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p>{item.contentf2}</p>
+                  <p className="text-primary">{item.contentf2}</p>
                 </div>
               )}
               {item.contentf3 && (
@@ -91,7 +91,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p>{item.contentf3}</p>
+                  <p className="text-primary">{item.contentf3}</p>
                 </div>
               )}
               {item.contentf4 && (
@@ -102,7 +102,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p>{item.contentf4}</p>
+                  <p className="text-primary">{item.contentf4}</p>
                 </div>
               )}
               {item.contentf5 && (
@@ -113,7 +113,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p>{item.contentf5}</p>
+                  <p className="text-primary">{item.contentf5}</p>
                 </div>
               )}
               {item.contentf6 && (
@@ -124,7 +124,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p>{item.contentf6}</p>
+                  <p className="text-primary">{item.contentf6}</p>
                 </div>
               )}
             </div>

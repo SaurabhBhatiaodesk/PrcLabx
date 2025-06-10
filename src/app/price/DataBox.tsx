@@ -35,7 +35,7 @@ const DataBox: React.FC = () => {
       description: `For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.`,
       activecolor:
         "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
-        button: "See price list",
+      button: "See price list",
     },
     {
       id: 2,
@@ -44,26 +44,26 @@ const DataBox: React.FC = () => {
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
       activecolor:
         "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
-        button: "See price list",
+      button: "See price list",
     },
     {
       id: 3,
-  
+
       title: "General Repair Pricing",
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
       activecolor:
         "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
-        button: "See price list",
-        
+      button: "See price list",
+
     },
     {
       id: 4,
-   
+
       title: "DIY/Techcnian Damage Pricing",
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
       activecolor:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
-        button: "See price list",
+      button: "See price list",
     },
   ];
   useEffect(() => {
@@ -78,21 +78,20 @@ const DataBox: React.FC = () => {
   return (
     <div>
       <div className="container" data-aos="fade-up">
-      
+
         <div className="lg:pb-8 py-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
-          {sectionData.map((section, index) => (
+            {sectionData.map((section, index) => (
               <div
                 key={index}
                 style={{
                   background:
                     pricingId === section.id
-                      ? section.activecolor
+                      ? `${section.activecolor} `
                       : "transparent",
                 }}
-                className={`p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer ${
-                  pricingId === section.id ? "text-white" : "text-black"
-                }`}
+                className={`p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group ${pricingId === section.id ? "text-white" : "text-black"
+                  }`}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.background = section.activecolor)
                 }
@@ -105,11 +104,12 @@ const DataBox: React.FC = () => {
                 <h3 className="text-tertiary  xl:text-xl m-auto">
                   {section.title}
                 </h3>
-                <p>{section.description}</p>
-                <div className="w-[50%] m-auto"> 
-                <button className="btn capitalize" onClick={() => PricetoggleMenu(section.id)}>
-                  {section.button}
-                </button>
+                <p className={`group-hover:text-primary ${pricingId === section.id ? "text-white" : "text-black"
+                  }`}>{section.description}</p>
+                <div className="w-[50%] m-auto">
+                  <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
+                    {section.button}
+                  </button>
                 </div>
               </div>
             ))}
@@ -121,40 +121,40 @@ const DataBox: React.FC = () => {
               <section className="datarecovery">
                 <div className="KeyFeaturesDataRecovery">
                   <div>
-                    <MainHeading Heading="Key Features" />
+                    <MainHeading Heading="Key Features" />Key Features
                   </div>
-                 
+
 
                   <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
                       <Image
                         src={recoverfirsr}
                         alt="Repairs for cracked"
                         className="w-[44px] h-[50px]"
                       />
-                      <p className="lg:w-[70%] m-auto text-center">
+                      <p className="lg:w-[70%] m-auto text-center text-primary">
                         Recover photos, videos, contacts, and more.
                       </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center">
-                    <Image
-                      className="w-[44px] h-[50px]"
-                      src={Competitiveandupfrontpricing}
-                      alt="Repairs for cracked"
-                        
-                    />
-                      <p className="lg:w-[70%] m-auto text-center">
+                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                      <Image
+                        className="w-[44px] h-[50px]"
+                        src={Competitiveandupfrontpricing}
+                        alt="Repairs for cracked"
+
+                      />
+                      <p className="lg:w-[70%] m-auto text-center text-primary">
                         Specialized recovery for water-damaged, dead, or
                         physically damaged devices.
                       </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
                       <Image
                         className="w-[44px] h-[50px]"
                         src={Transparentpricing}
                         alt="Repairs for cracked"
                       />
-                      <p className="lg:w-[70%] m-auto text-center">
+                      <p className="lg:w-[70%] m-auto text-center text-primary">
                         Transparent pricing with no hidden fees.
                       </p>{" "}
                     </div>
@@ -176,37 +176,37 @@ const DataBox: React.FC = () => {
               <div className="KeyFeatures GeneralRepair">
                 <MainHeading Heading="   Key Features" />
                 <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
-                  <div className="flex flex-col justify-center items-center">
-                  <Image
-                        src={Recoverphotos}
-                        alt="Repairs for cracked"
-                        className="w-[44px] h-[50px]"
-                      />
-                    <p className="lg:w-[70%] m-auto text-center">
+                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <Image
+                      src={Recoverphotos}
+                      alt="Repairs for cracked"
+                      className="w-[44px] h-[50px]"
+                    />
+                    <p className="lg:w-[70%] m-auto text-center text-primary">
                       {" "}
                       Repairs for cracked screens, battery replacements, and
                       more.
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center">
-                  <Image
-                        className="w-[44px] h-[50px]"
-                        src={Specializedrecovery}
-                        alt="Repairs for cracked"
-                      />
-                    <p className="lg:w-[70%] m-auto text-center">
+                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <Image
+                      className="w-[44px] h-[50px]"
+                      src={Specializedrecovery}
+                      alt="Repairs for cracked"
+                    />
+                    <p className="lg:w-[70%] m-auto text-center text-primary">
                       {" "}
                       Fast turnaround time for common repairs
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center">
+                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
                     <Image
                       className="w-[44px] h-[50px]"
                       src={Competitiveandupfrontpricing}
                       alt="Repairs for cracked"
-                        
+
                     />
-                    <p className="lg:w-[70%] m-auto text-center">
+                    <p className="lg:w-[70%] m-auto text-center text-primary">
                       Competitive and upfront pricing.
                     </p>{" "}
                   </div>
@@ -216,25 +216,25 @@ const DataBox: React.FC = () => {
             {(priceCat === 4 || pricingId === 4) && (
               <section className="DIY/Technician Damage Pricing">
                 <div>
-                <MainHeading Heading="   Key Features" />
+                  <MainHeading Heading="   Key Features" />
                   <MainTitle Title="This service is specifically for devices damaged during DIY or technician attempts." />
                 </div>
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5">
-                  <div className="flex flex-col justify-center items-center">
-                    <Image   className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
-                    <p className="lg:w-[70%] m-auto text-center">
+                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <Image className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
+                    <p className="lg:w-[70%] m-auto text-center text-primary">
                       Repairs for connector damage, bent connectors, fitting
                       issues, installation problems, torn flex cables, ripped
                       pads, and more.
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center">
+                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
                     <Image
                       className="w-[44px] h-[75px]"
                       src={completetherepair}
                       alt="Repairs for cracked"
                     />
-                    <p className="lg:w-[70%] m-auto text-center">
+                    <p className="lg:w-[70%] m-auto text-center text-primary">
                       Please note that the pricing provided is a minimum
                       estimate. The final price will be determined after we
                       diagnose the device or complete the repair.
