@@ -15,7 +15,7 @@ const DataStarted = () => {
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10  lg:p-4 p-1 items-center">
           <div>
             {" "}
-            <Image src={HowtoGetStarted} className=" h-auto object-cover rounded-[20px] " alt=" labx repair "></Image>
+            <Image src={HowtoGetStarted} className=" h-auto object-cover rounded-[20px] " alt=" PRC repair "></Image>
           </div>
           <div>
             <div className="flex-col flex">
@@ -34,7 +34,7 @@ const DataStarted = () => {
 
                 <div className="">
                 <p className=" text-secondary">
-                Ship your device to LabX or request a shipping label during form submission.
+                Ship your device to PRC or request a shipping label during form submission.
                   </p>
                 </div>
               </div>

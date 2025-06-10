@@ -21,17 +21,17 @@ const GoogleReviews = dynamic(
 );
 
 export const metadata = {
-  title: "Mobile Phone Repair Course - Phone Repair Course | Labx Repair",
+  title: "Mobile Phone Repair Course - Phone Repair Course | PRC Repair",
   description:
-    "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+    "PRC Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
   keywords: [
     "Mobile Repair Training",
     "Phone Repair Course",
   ],
   openGraph: {
-    title: "Mobile Phone Repair Course - Phone Repair Course | Labx Repair",
+    title: "Mobile Phone Repair Course - Phone Repair Course | PRC Repair",
     description:
-      "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+      "PRC Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     url: "/",
     type: "website",
 
@@ -40,15 +40,15 @@ export const metadata = {
         url: "",
         width: 1200,
         height: 630,
-        alt: "LabX Tech Solutions Banner",
+        alt: "PRC Tech Solutions Banner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile Phone Repair Course - Phone Repair Course | Labx Repair",
+    title: "Mobile Phone Repair Course - Phone Repair Course | PRC Repair",
     description:
-      "Labx Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+      "PRC Repair provides the best mobile repair training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
@@ -61,7 +61,7 @@ const Training = () => {
       <div>
         <Breadcrumb
           pageName="Master the Art of Mobile Phone Repair"
-          pageDescription="Join LabX's comprehensive mobile phone repairing course to acquire essential skills and certifications. Transform your passion for technology into a rewarding career, and make a difference in people’s lives through mobile phone repair services!"
+          pageDescription="Join PRC's comprehensive mobile phone repairing course to acquire essential skills and certifications. Transform your passion for technology into a rewarding career, and make a difference in people’s lives through mobile phone repair services!"
           backgroundImage="/Images/BannerImages/traningback.png"
           AdminImage="/Images/adminimage.png"
           link="/training"

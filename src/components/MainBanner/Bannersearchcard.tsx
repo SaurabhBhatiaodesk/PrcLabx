@@ -3,7 +3,7 @@ import MainHeading from '../ManinHeading/MainHeading';
 
 export default function Bannersearchcard() {
   return (
-    <div className='w-[100%] lg:w-[80%] m-auto'>
+    <div className='w-[100%] lg:w-[70%] ml-auto'>
       <div className='bg-white rounded-2xl p-[5%]'>
         <div className='mb-3'>
           {/* <h2 className="text-[34px] text-center text-black">Select Your Device</h2>

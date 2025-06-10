@@ -68,7 +68,7 @@ const RecentNews: React.FC = () => {
     <div className="RecentNews-os bg-[#243B55]">
       <div className="container">
         <div className="py-3 xl:py-5" data-aos="fade-up">
-          <MainHeading Heading="Recent News" color="var(--tertiary)" svg_stroke="primary"/>
+          <MainHeading Heading="Recent News" color="var(--tertiary)" svg_stroke="var(--primary)"/>
           <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
           <div className="py-10">
             {loading ? (

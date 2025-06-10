@@ -207,7 +207,7 @@ const B2BRepairServices: React.FC = () => {
       <div className="steper-form-section-os">
         <Breadcrumb
           pageName="B2B Phone Repair Service"
-          pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. LabX provides specialized services that help you maintain your business efficiency and product quality."
+          pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. PRC provides specialized services that help you maintain your business efficiency and product quality."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/B2BRepairServices.svg"
           link="/coming-soon"
@@ -221,7 +221,7 @@ const B2BRepairServices: React.FC = () => {
                 B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers
               </h2>
               <p>
-                From repair shops to retailers to bulk device suppliers, LabX
+                From repair shops to retailers to bulk device suppliers, PRC
                 caters to the specific needs of B2B phone repairs. Our
                 specialized services are designed to help you maintain
                 efficiency and product quality. We handle complex repairs,
@@ -235,11 +235,11 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Why Partner with LabX for Your B2B Repair Needs?" />
+            <MainHeading Heading="Why Partner with PRC for Your B2B Repair Needs?" />
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={B2BRepairNeeds} alt=" labx repair " />
+                <Image src={B2BRepairNeeds} alt=" PRC repair " />
               </div>
               <div>
                 <div className="flex-col gap-2  flex">
@@ -269,7 +269,7 @@ const B2BRepairServices: React.FC = () => {
                       </span>
                       <p className="inline ml-1">
                         {
-                          " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with LabX, you gain access to a higher level of phone fixing services."
+                          " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with PRC, you gain access to a higher level of phone fixing services."
                         }
                       </p>
                     </div>
@@ -394,7 +394,7 @@ const B2BRepairServices: React.FC = () => {
                 </div>
               </div>
               <div>
-                <Image src={RepairServices} alt=" labx repair " />
+                <Image src={RepairServices} alt=" PRC repair " />
               </div>
             </div>
           </div>

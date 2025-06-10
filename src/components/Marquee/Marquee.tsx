@@ -36,7 +36,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
         }
 
         .marquee-item:hover {
-          box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.8); /* Accessible glow */
+         
         }
       `}</style>
       <section className={`w-full relative h-[50px] ${marquee_bg} overflow-hidden`}>
@@ -46,7 +46,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
               messages.map((message, messageIndex) => (
                 <span
                   key={`${repetitionIndex}-${messageIndex}`}
-                  className={`px-[10px] py-[5px] border-[1px] rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6  ${marquee_text}`}
+                  className={`px-[10px] py-[5px]  rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6  text-black ${marquee_text}`}
                 >
                   {message}
                 </span>

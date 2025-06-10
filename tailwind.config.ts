@@ -17,6 +17,7 @@ const config: Config = {
         secondary: "var(--secondary)", // Maps to --secondary-color
         tertiary: "var(--tertiary)", // Maps to --tertiary-color
         quaternary: "var(--multi)", // Maps to --multi-color
+        alpha: "var(--alpha)", // Maps to --alpha-color
         fourth:"var(--fourth)",
         prc:"var(--prc)"
       },

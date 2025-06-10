@@ -61,10 +61,10 @@ const Footer = () => {
 
       if (response.ok) {
         setToast({
-          message: "Thank you for subscribing to LABX!",
+          message: "Thank you for subscribing to PRC!",
           type: "success",
         });
-        // alert("Thank you for subscribing to LABX!");
+        // alert("Thank you for subscribing to PRC!");
         setEmail(""); // Reset email input
       } else {
         // alert("wrong")
@@ -115,7 +115,7 @@ const Footer = () => {
                     />
                   </Link>
                   <p className="font-[300] font-poppins text-primary">
-                    LabX is a professional and skilful phone repair service
+                    PRC is a professional and skilful phone repair service
                     provider in Australia
                   </p>
                   <div className="flex gap-3 mt-5">
@@ -419,7 +419,7 @@ const Footer = () => {
                     </div> */}
                     <div>
                       <h3 className="lg:text-xl text-lg text-primary">
-                        Sign-Up The LABX
+                        Sign-Up The PRC
                       </h3>
                     </div>
                     <div>
@@ -487,7 +487,7 @@ const Footer = () => {
                 </Link>
               </div>
               <p className="text-center text-primary">
-                LabX is a professional and skilful phone repair service provider
+                PRC is a professional and skilful phone repair service provider
                 in Australia
               </p>
              <div className="flex gap-3 mt-5 justify-center">
@@ -558,7 +558,7 @@ const Footer = () => {
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary">
-                  Copyright © LabX Repair {new Date().getFullYear()} - All
+                  Copyright © PRC Repair {new Date().getFullYear()} - All
                   rights reserved
                 </p>
               </div>
@@ -578,7 +578,7 @@ const Footer = () => {
                     <Image
                       className="w-[24px]"
                       src={homefooter}
-                      alt=" labx repair "
+                      alt=" PRC repair "
                     />
                     <span className="text-[12px] tracking-[1.5px] text-white ">Home</span>
                   </div>
@@ -588,7 +588,7 @@ const Footer = () => {
                     <Image
                       className="w-[27px]"
                       src={traning}
-                      alt=" labx repair "
+                      alt=" PRC repair "
                     />
                     <span className="text-[12px] tracking-[1.5px] text-white ">
                       Training

@@ -47,55 +47,55 @@ const WhatWeDo = () => {
           <div className="max-container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
            <Link href='/training'>
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop1} alt=" labx repair " />
+              <Image src={Shop1} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>
             </div>
             </Link>
            <Link href='/mail-in-repair'>
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop2} alt=" labx repair " />
+              <Image src={Shop2} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Mail in Repair</h1>
             </div>
             </Link>
             <Link href='/data-recovery'> 
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop3} alt=" labx repair " />
+              <Image src={Shop3} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Data Recovery</h1>
             </div>
             </Link>
             <Link href='/screen-refurbishing'>  
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop4} alt=" labx repair " />
+              <Image src={Shop4} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Screen Refurbishing</h1>
             </div>
             </Link>
             <Link href='/b2b-repair-services'>   
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop5} alt=" labx repair " />
+              <Image src={Shop5} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">B2B Repair</h1>
             </div>
             </Link>
             <Link href='/repair-solutions'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop6} alt=" labx repair " />
+              <Image src={Shop6} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Repair Solutions</h1>
             </div>
             </Link>
             <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop7} alt=" labx repair " />
+              <Image src={Shop7} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Parts Store</h1>
             </div>
             </Link>
             <Link href='/coming-soon'>    
             <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop8} alt=" labx repair " />
+              <Image src={Shop8} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Repair Form</h1>
             </div>
             </Link>
 
             {/* <div className="shop-block  rounded-[15px] border-2 shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]">
-              <Image src={Shop8} alt=" labx repair " />
+              <Image src={Shop8} alt=" PRC repair " />
               <h1 className="mb-4 mt-4 custom-absolute">Training</h1>
             </div> */}
           </div>

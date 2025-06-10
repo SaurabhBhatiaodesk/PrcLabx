@@ -50,10 +50,10 @@ const MobileFooterMenue = () => {
 
       if (response.ok) {
         setToast({
-          message: "Thank you for subscribing to LABX!",
+          message: "Thank you for subscribing to PRC!",
           type: "success",
         });
-        // alert("Thank you for subscribing to LABX!");
+        // alert("Thank you for subscribing to PRC!");
         setEmail(""); // Reset email input
       } else {
         // alert("wrong")

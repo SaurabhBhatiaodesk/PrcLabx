@@ -74,8 +74,8 @@ export default function Productswiper() {
   ];
 
   return (
-    <div className="lg:py-4 py-3 bg-[var(--primary)]">
-      <div className="container">
+    <div className="lg:py-4 py-3 bg-[var(--primary)] container p-2">
+      <div className="">
         <div className="lg:py-2 py-2 flex flex-col xl:flex-row ">
           <div className="text-start">
             <MainHeading Heading="Parts Store" color="var(--secondary)" text_align='start' svg_stroke="#FBAC05" />
@@ -94,7 +94,7 @@ export default function Productswiper() {
           </div>
         </div>
       </div>
-      <div className="container service-slide-box flex gap-5 lg:flex-row items-center flex-col product-slider-section p-2">
+      <div className=" service-slide-box flex gap-5 lg:flex-row items-center flex-col product-slider-section">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           className="arrow-top-right w-full py-4"
