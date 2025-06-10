@@ -90,7 +90,7 @@ const DataBox: React.FC = () => {
                       ? `${section.activecolor} `
                       : "transparent",
                 }}
-                className={`p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group ${pricingId === section.id ? "text-white" : "text-black"
+                className={`p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group ${pricingId === section.id ? "text-white" : "text-black"
                   }`}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.background = section.activecolor)

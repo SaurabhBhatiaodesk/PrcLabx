@@ -32,11 +32,10 @@ const FeeSolutions = () => {
                 <p className="text-secondary">{`Our mail in cell phone repair service caters to both end users and businesses, providing a fast, reliable solution for complex repairs. We welcome repair shops and individual customers to send phone for repair, offering expert motherboard repairs, soldering, and component replacements. With quick turnaround times, our phone repair mail in service ensures that your devices are returned in optimal working condition.`}</p>
                 </ul>
                 <div>
-                  <Link href="/b2b-repair-services">
                   <p className="text-secondary">
-                    Learn More about B2B Repair
+                     <MainButton MainButton="Learn More about B2B Repair" link="/b2b-repair-services"  color="bg-prc"/>
+                    
                   </p>
-                  </Link>
                   {/* <MainButton MainButton="Learn More about B2B Repair " link="/b2b-repair-services" /> */}
                 </div>
               </div>

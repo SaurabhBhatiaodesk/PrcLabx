@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import MainHeading from "@/components/ManinHeading/MainHeading";
-import "./price.css";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
 import MainTitle from "@/components/MainTitle/MainTitle";
