@@ -290,24 +290,26 @@ const VerticalTabs: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-        <MainHeading Heading="Ship Your Device To Us" color="var(--fourth)"  svg_stroke="var(--primary)"/>
+        <MainHeading Heading="Ship Your Device To Us"  color="var(--fourth)" svg_stroke="var(--primary)" />
         <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
-        <div className="grid justify-center grid-cols-2 lg:grid-cols-5  py-5 w-full gap-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              className={`p-3 text-white rounded-[10px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
+        <div className="lg:block hidden">
+          <div className="grid justify-center grid-cols-2 lg:grid-cols-5  py-5 w-full gap-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`p-3 text-white rounded-[10px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
                   ? "active-tab"
                   : "bg-opacity-50 hover:bg-opacity-75"
-                }`}
-              onClick={() => setActiveTab(tab.id)}
-              data-selected={tab.id.toString()}
-              role="tab"
-              aria-label={`Tab for ${tab.label}`}
-            >
-              {tab.label}
-            </button>
-          ))}
+                  }`}
+                onClick={() => setActiveTab(tab.id)}
+                data-selected={tab.id.toString()}
+                role="tab"
+                aria-label={`Tab for ${tab.label}`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="lg:block hidden py-5">
           <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_6fr] gap-4">
@@ -400,7 +402,7 @@ const VerticalTabs: React.FC = () => {
             </div>
           </div>
         </div>
-        <section className="lg:hidden block">
+        <section className="lg:hidden block py-4 lg:py-3">
           <DeliveryTousMobile itoms={itoms} />
         </section>
       </div>

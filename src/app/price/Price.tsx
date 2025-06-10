@@ -6130,8 +6130,8 @@ const Pricing: React.FC = () => {
             {mobileCategory.map((category, index) => (
               <button
                 key={index}
-                className={`px-2 py-2 text-white text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%] ${
-                  activeTabIndex === index ? "bg-gray-700" : "bg-transparent"
+                className={`px-2 py-2  text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%] ${
+                  activeTabIndex === index ? "bg-gray-700 text-primary" : "bg-transparent text-secondary"
                 }`}
                 onClick={() => handleMobileCategory(category.mobile, index)}
               >
@@ -6154,13 +6154,13 @@ const Pricing: React.FC = () => {
                         className="flex w-full items-center justify-between py-3 text-left"
                         onClick={() => handleToggle(index)}
                       >
-                        <h3 className="text-white xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                        <h3 className="text-secondary xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                           {accordion.title}
                         </h3>
                         {activeCategoryIndex === index ? (
-                          <GrSubtract color="white" />
+                          <GrSubtract color="black" />
                         ) : (
-                          <LuPlus color="white" />
+                          <LuPlus color="black" />
                         )}
                       </button>
                       {activeCategoryIndex === index && (
@@ -6188,7 +6188,7 @@ const Pricing: React.FC = () => {
                                       (column, colIndex) => (
                                         <td
                                           key={colIndex}
-                                          className="border-bottom px-4 py-2 text-center"
+                                          className="border-bottom px-4 py-2 text-center text-secondary"
                                         >
                                           {row[column.key]}
                                         </td>

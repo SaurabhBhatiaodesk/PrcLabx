@@ -486,7 +486,7 @@ const Footer = () => {
                   />
                 </Link>
               </div>
-              <p className="text-center">
+              <p className="text-center text-primary">
                 LabX is a professional and skilful phone repair service provider
                 in Australia
               </p>
