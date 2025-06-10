@@ -4,9 +4,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-const BrandImageGrid: React.FC<{ brandsData: any[]; pathname: string }> = ({
+const BrandImageGrid: React.FC<{ brandsData: any[]; pathname: string; isSidebarOpen:boolean; }> = ({
   brandsData,
   pathname,
+  isSidebarOpen
 }) => {
     useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -14,7 +15,9 @@ const BrandImageGrid: React.FC<{ brandsData: any[]; pathname: string }> = ({
   const router = useRouter(); // Initialize the router
   // if (brandsData.length === 0) return <span className="text-red-600 text-base">No products available for this brand at the moment. Please check back later!</span>;
   return (
-    <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 lg:gap-8 md:gap-6 gap-4 bg-[#fff4f0] lg:p-8 md:p-6  p-4 rounded-xl shadow-inner"   data-aos="fade-up">
+    <div className={`grid grid-cols-2  md:grid-cols-3 ${isSidebarOpen ? "xl:grid-cols-4 lg:grid-cols-2":"xl:grid-cols-5 lg:grid-cols-3"}   lg:gap-8 md:gap-6 gap-4 bg-[#fff4f0] lg:p-8 md:p-6  p-4 rounded-xl shadow-inner`} 
+    >
+    {/* // data-aos="fade-up"> */}
       {brandsData.map((brand: any) => (
         <Link
           key={brand.id}

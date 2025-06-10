@@ -69,7 +69,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 
   return (
     <>
-      <div className="bg-[#FFF5EB] rounded-lg md:p-6  max-w-6xl mx-auto p-3">
+    <div className="bg-[#FFF5EB]">
+      <div className=" rounded-lg md:p-6  max-w-6xl mx-auto p-3">
         {/* Header */}
         <h2 className="text-2xl font-bold mb-4 text-prc">
           SERVICES WE OFFER FOR{" "}
@@ -192,11 +193,13 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           </div>
         </div>
       </div>
+  
       <BookSlot
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
         defaultSelectedPart={defaultSelectedPart}
       />
+          </div>
     </>
   );
 };

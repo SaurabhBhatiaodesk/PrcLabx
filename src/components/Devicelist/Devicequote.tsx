@@ -99,7 +99,7 @@ export default function Devicequote() {
         <h2 className="text-start w-fit text-[#00303E]">
           Click to Get an Instant Quote Now!
         </h2>
-        <div className="pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3 ">
+        <div className={`pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3 `}>
           {brandData.map((data, index) => (
             <Link key={index} href={`/brands/${slugify(data.alias)}`}>
               <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center p-4">

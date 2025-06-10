@@ -29,7 +29,7 @@ const FixLabx = () => {
                 " I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX."
               }
             </p>
-            <MainButton MainButton="Read My Story" link="/about-us" />
+            <MainButton MainButton="Read My Story" link="/about-us" color="bg-prc" />
           </div>
           <div className="owener-image">
             <Image
