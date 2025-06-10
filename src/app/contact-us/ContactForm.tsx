@@ -343,7 +343,7 @@ const ContactForm: React.FC = () => {
 
             {/* {/ Training Message /} */}
             <div>
-              <h3 className="text-[20px] lg:text-[26px]">Write Your Enquiry</h3>
+              <h3 className="text-[20px] lg:text-[26px] text-primary">Write Your Enquiry</h3>
               <TextareaAutosize
                 className="border-[1.5px]"
                 minRows={6}
