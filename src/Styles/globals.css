@@ -9,6 +9,7 @@
   --secondary: #161616;
   --tertiary: #FFE303;
   --fourth:#00BC9D;
+  --alpha:#FBAC05;
   --prc:#00303E;
   --Space_Grotesk: "Space Grotesk", sans-serif;
   --multi: #035597;
@@ -195,6 +196,15 @@ p {
   font-size: 1.1rem;
   text-transform: capitalize;
   line-height: 1.1rem;
+}
+@media only screen and (max-width: 1440px) {
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
 }
 @media only screen and (max-width: 640px) {
   p {

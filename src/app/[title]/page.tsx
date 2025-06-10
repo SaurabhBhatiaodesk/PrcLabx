@@ -96,7 +96,7 @@ export default async function PageDetail({
                   height="300"
                   width="400"
                   src={Line.src}
-                  alt=" labx repair "
+                  alt=" PRC repair "
                   className="pb-3 m-auto"
                 />
               </h1>
@@ -104,7 +104,7 @@ export default async function PageDetail({
                 <Image
                   key={image}
                   src={image}
-                  alt=" labx repair "
+                  alt=" PRC repair "
                   width="100"
                   height="100"
                   className="dynamic__img"

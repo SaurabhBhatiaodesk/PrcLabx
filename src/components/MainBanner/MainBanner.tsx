@@ -12,10 +12,10 @@ import "aos/dist/aos.css";
 import { Pagination } from "swiper/modules";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
-import mainf1 from "../../../public/Images/BannerImages/bone.webp";
-import mainf2 from "../../../public/Images/BannerImages/bthree.webp";
-import mainf3 from "../../../public/Images/BannerImages/btwo.webp";
-import mainf4 from "../../../public/Images/BannerImages/bfour.webp";
+import mainf1 from "../../../public/Images/BannerImages/bannerf1.webp";
+import mainf2 from "../../../public/Images/BannerImages/bannerf2.webp";
+import mainf3 from "../../../public/Images/BannerImages/bannerf3.webp";
+import mainf4 from "../../../public/Images/BannerImages/bannerf4.webp";
 import Bannersearchcard from "./Bannersearchcard";
 import Marquee from "../Marquee/Marquee";
 
@@ -23,7 +23,7 @@ export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
-  const Paginationback = ["#FF0000", "#FF9966", "#6DD5ED", "#A044FF"];
+
   const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
 
   const handleSlideChange = (swiper: any) => {
@@ -60,7 +60,7 @@ export default function MainBanner() {
   return (
     <>
       <section
-        className="background-banner"
+        className="background-banner bg-black"
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
@@ -73,7 +73,7 @@ export default function MainBanner() {
             <div className="mb-4 lg:mt-[0] mt-[0px] relative">
               <Link href="/training">
                 <button
-                  className="text-black px-[20px] py-[6px] border-[2px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#9d9c98]
+                  className="text-black px-[20px] py-[6px] border-[3px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#9d9c98]
                    animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] relative top-6"
                   style={{ transform: "rotate(354deg)" }} // Equivalent to -5deg (360 - 5)
                 >
@@ -110,21 +110,21 @@ export default function MainBanner() {
                       Get Your Device Fixed or Learn Mobile Phone Repairs
                       <span className="text-tertiary ">
                         {" "}
-                        — LabX Repair Does It All!
+                        — PRC Repair Does It All!
                       </span>
                     </h1>
                     <p className="text-primary">
-                      {`LabX Repair is more than just a mobile phone repair service.
+                      {`PRC Repair is more than just a mobile phone repair service.
                     We’re a full-service platform dedicated to quality mobile
                     phone repairing, professional training, and community
                     support. Whether you're looking to get your iPhone or
                     smartphone repaired, purchase repair parts, or enhance your
-                    repair skills through our training programs, LabX Repair has
+                    repair skills through our training programs, PRC Repair has
                     it all.`}
                     </p>
                     <div className="my-4 xl:my-10">
                       <MainButton
-                        color="[#EDE574]"
+                          color="bg-prc"
                         MainButton="Request a Quote"
                         link="/contact-us"
                       />
@@ -138,21 +138,21 @@ export default function MainBanner() {
                   <div>
                     <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                       Learn to Repair Mobile Phones Through
-                      <span className="text-[#6DD5ED]">
+                      <span className="text-[#FFDAB9]">
                         {" "}
                         – Our Training Programs
                       </span>
                     </h1>
                     <p className="text-primary">
                       {
-                        "Join LabX’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"
+                        "Join PRC’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"
                       }
                     </p>
                     <div className="my-4 xl:my-10">
                       <MainButton
                         MainButton="Start Training"
                         link="/training"
-                        color="[#6DD5ED]"
+                          color="bg-prc"
                       />
                     </div>
                   </div>
@@ -164,7 +164,7 @@ export default function MainBanner() {
                   <div>
                     <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                       Professional Mobile Phone Screen Refurbishing
-                      <span className="text-[#FF9966]">
+                      <span className="text-[#39FF14]">
                         {" "}
                         – Service for Your Devices
                       </span>
@@ -176,7 +176,7 @@ export default function MainBanner() {
                       <MainButton
                         MainButton="Start Repair"
                         link="/screen-refurbishing"
-                        color="[#FF9966]"
+                       color="bg-prc"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function MainBanner() {
                   <div>
                     <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                       Get Back Your Lost Data with Our Expert
-                      <span className="text-[#A044FF]">
+                      <span className="text-[#A8FFEB]">
                         {" "}
                         – Mobile Phone Recovery Service
                       </span>
@@ -200,7 +200,7 @@ export default function MainBanner() {
                       <MainButton
                         MainButton="Data Recovery"
                         link="/data-recovery"
-                        color="[#A044FF]"
+                       color="bg-prc"
                       />
                     </div>
                   </div>
@@ -208,7 +208,7 @@ export default function MainBanner() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="my-auto mx-0">
+          <div className="flex justify-center items-center">
             <Bannersearchcard />
           </div>
         </div>

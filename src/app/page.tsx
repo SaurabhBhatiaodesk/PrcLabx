@@ -6,6 +6,7 @@ import DataRecovery from "@/components/HomeCpmponents/DataRecovery/DataRecovery"
 import DeliveryTous from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
 import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
 import OurClient from "@/components/HomeCpmponents/OurClients/OurClient";
+import ShipDeviceUs from "@/components/HomeCpmponents/ShipDevice/ShipDeviceUs";
 import WhyChooseLabX from "@/components/HomeCpmponents/WhyChooseLabX/WhyChooseLabX";
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import MainBanner from "@/components/MainBanner/MainBanner";
@@ -15,12 +16,12 @@ import RecentNews from "@/components/RecentNews/RecentNews";
 import Storeproduct from "@/components/Storeproduct/Storeproduct";
 import React from "react";
 export const metadata = {
-  title: "Best Mobile Phone Repair Courses, Services & Training | Labx Repair",
-  description: "Labx Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
-  keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
+  title: "Best Mobile Phone Repair Courses, Services & Training | PRC Repair",
+  description: "PRC Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
+  keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    description: "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/", 
     type: "website",
     images: [
@@ -28,14 +29,14 @@ export const metadata = {
         url: "", 
         width: 1200,
         height: 630,
-        alt: "LabX Tech Solutions Banner",
+        alt: "PRC Tech Solutions Banner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
-    description: "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    description: "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
@@ -85,7 +86,8 @@ const page = () => {
     <div>
       <MainBanner />
       <Devicequote/>
-      <DeliveryTous/>
+      {/* <DeliveryTous/> */}
+      <ShipDeviceUs/>
       <Storeproduct/>
       <DataRecovery/>
       <WhyChooseLabX />
@@ -93,7 +95,7 @@ const page = () => {
       <GoogleReviews />
       <RecentNews/>
       <YouTubeHome/>
-      <OurClient />
+      {/* <OurClient /> */}
       <AskusQuestion accordionData={accordionData}  
       faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
       faqbg_color="bg-[#FEF6FF]"

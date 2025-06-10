@@ -38,10 +38,10 @@ const VerticalTabs: React.FC = () => {
     {
       id: 0,
       label: "Screen Refurbishment",
-      content: "LabX Professional Screen Refurbishment:",
+      content: "PRC Professional Screen Refurbishment:",
       contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
-        "At LabX Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3title: "State-of-the-Art Technology",
       contentf3:
         "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -59,7 +59,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 1,
       label: "Phone Repair Courses",
-      content: "LabX Professional Phone Repair Courses:",
+      content: "PRC Professional Phone Repair Courses:",
       contentf2title: "Beginner Training",
       contentf2:
         "Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
@@ -81,7 +81,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 2,
       label: "Mail In Repair",
-      content: "LabX Professional Mail In Repair:",
+      content: "PRC Professional Mail In Repair:",
       contentf2title: "Review Our Pricing",
       contentf2:
         "Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
@@ -106,7 +106,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 3,
       label: "B2B Phone Repair",
-      content: "LabX Professional B2B Phone Repair:",
+      content: "PRC Professional B2B Phone Repair:",
       contentf2title: "Competitive Pricing",
       contentf2:
         "Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
@@ -131,7 +131,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 4,
       label: "Data Recovery",
-      content: "LabX Professional Data Recovery:",
+      content: "PRC Professional Data Recovery:",
       contentf2title: "Data from Dead",
       contentf2:
         "We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure.",
@@ -192,9 +192,9 @@ const VerticalTabs: React.FC = () => {
     {
       id: 0,
       label: "Screen Refurbishment",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "PRC Professional Screen Refurbishment Services:",
       contentf2:
-        "Expert B2B Screen Refurbishing: At LabX Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "Expert B2B Screen Refurbishing: At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3:
         "State-of-the-Art Technology: We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
       contentf4:
@@ -209,7 +209,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 1,
       label: "Phone Repair Courses",
-      content: "LabX Professional Phone Repair Courses:",
+      content: "PRC Professional Phone Repair Courses:",
       contentf2:
         "Beginner Training: Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
       contentf3:
@@ -226,7 +226,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 2,
       label: "Mail In Repair",
-      content: "LabX Professional Mail In Repair:",
+      content: "PRC Professional Mail In Repair:",
       contentf2:
         "Review Our Pricing: Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
       contentf3:
@@ -245,7 +245,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 3,
       label: "B2B Phone Repair",
-      content: "LabX Professional B2B Phone Repair:",
+      content: "PRC Professional B2B Phone Repair:",
       contentf2:
         "Competitive Pricing: Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
       contentf3:
@@ -264,7 +264,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 4,
       label: "Data Recovery",
-      content: "LabX Professional Data Recovery:",
+      content: "PRC Professional Data Recovery:",
       contentf2:
         "Data from Dead: We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure.",
       contentf3:

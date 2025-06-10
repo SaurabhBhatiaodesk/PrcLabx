@@ -48,25 +48,45 @@ const WhyChooseLabX: React.FC = () => {
 
   return (
     <div className="bg-primary">
-      <div className="container py-11" data-aos="fade-up">
-        <MainHeading Heading="Why Choose PRC Repair?" color="var(--secondary)" svg_stroke="#FBAC05"/>
-        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."  color="var(--secondary)" />
+      <div className="container lg:py-11 py-7" data-aos="fade-up">
+        {/* <MainHeading Heading="Why Choose PRC Repair?" color="var(--secondary)" svg_stroke="#FBAC05"/> */}
+        <h2 className=" text-black text-center relative mb-2">
+          Why Choose&nbsp;
+          <span className="relative inline-block text-[#002E3E]">
+            PRC Repair?
+            <svg
+              className="absolute left-0 bottom-0 w-full h-[0.75em] rotate-[180deg] top-6 z-[-1]"
+              viewBox="0 0 100 30"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0 15 Q50 0 100 15"
+                fill="none"
+                stroke="#FBAC05"
+                strokeWidth="6"
+              />
+            </svg>
+          </span>
+        </h2>
+
+        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--secondary)" />
 
         <div className="py-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center md:gap-4 gap-2">
             {sectionData.map((section, index) => (
               <div
                 key={index}
                 style={{ background: "transparent" }} // Default background
-                className="p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#00303e73] transition-shadow duration-300 flex flex-col justify-center gap-3 hover:shadow-[0_0_20px_10px_#00303e73] group"
+                className="xl:p-[15px]  p-2 rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#00303e73] transition-shadow duration-300 flex flex-col justify-center gap-1 hover:shadow-[0_0_20px_10px_#00303e73] group"
                 onMouseEnter={(e) => e.currentTarget.style.background = section.hoverBackground}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
               >
                 <div className="flex justify-center">
                   <Image className="pb-2 w-[60px]" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className="text-prc group-hover:text-primary xl:text-xl lg:w-[80%] m-auto my-0 py-2">{section.title}</h3>
-                <p className="text-secondary group-hover:text-primary">{section.description}</p>  
+                <h3 className="text-prc group-hover:text-primary xl:text-[18px] lg:w-[80%] m-auto my-0 py-1 text-[15px] leading-6">{section.title}</h3>
+                <p className="text-secondary group-hover:text-primary 2xl:text-lg text-sm">{section.description}</p>
               </div>
             ))}
           </div>

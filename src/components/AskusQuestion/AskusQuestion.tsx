@@ -36,7 +36,7 @@ export default function AskusQuestion({ accordionData, faq, faqbg_color, faq_sub
   return (
     <section className={`py-5 xl:py-10 bg-no-repeat bg-cover ${faqbg_color}`}>
       <div className="container">
-        <MainHeading Heading={faq} color="black" />
+        <MainHeading Heading={faq} color="black"  svg_stroke="var(--alpha)"/>
         <MainTitle Title={`${faq_subheading}`} />
         <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
           <div>
