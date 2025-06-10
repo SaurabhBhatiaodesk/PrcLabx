@@ -130,6 +130,15 @@ const BookSlot: React.FC<BookSlotProps> = ({
           alert("Appointment booked successfully!");
           closeModal();
           setLoading(false);
+          setFormData({
+            name: "",
+            mobile: "",
+            email: "",
+            date: "",
+            timeSlot: "",
+            phoneColor: "",
+            comment: "",
+          });
         } else {
           alert("Failed to book appointment. Please try again.");
           setLoading(false);

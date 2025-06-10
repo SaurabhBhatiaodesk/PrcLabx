@@ -30,7 +30,7 @@ export const metadata = {
     images: "Images/aboutadmin.png", // Replace with your image URL
   },
   alternates: {
-    canonical: "https://labxrepair.com.au/mail-in-repair/thank-you",
+    canonical: "https://labxrepair.com.au/thank-you",
   },
 };
 const page = () => {

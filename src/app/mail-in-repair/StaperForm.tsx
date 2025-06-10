@@ -551,10 +551,10 @@ const StaperForm: React.FC = () => {
               // Navigate after conversion
               if (typeof window !== "undefined") {
                 pathname === "/mail-in-repair"
-                  ? router.push(`/mail-in-repair/thank-you`)
+                  ? router.push(`/thank-you`)
                   : pathname === "/data-recovery"
-                    ? router.push(`/data-recovery/thank-you`)
-                    : router.push(`/ps5-repair/thank-you`);
+                    ? router.push(`/thank-you`)
+                    : router.push(`/thank-you`);
               }
             };
 

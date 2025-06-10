@@ -140,9 +140,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import MainHeading from "../../../components/ManinHeading/MainHeading";
-import MainTitle from "../../../components/MainTitle/MainTitle";
-import ThanksData from "../../mail-in-repair/ThanksData";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import ThanksData from "../mail-in-repair/ThanksData";
 
 
 interface Params {
