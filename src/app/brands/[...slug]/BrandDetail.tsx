@@ -186,12 +186,13 @@ const BrandDetailPage: React.FC = () => {
 
         {/* Render content based on the fetched brands data */}
         {!isLastItemClicked ? (
-          <BrandImageGrid brandsData={slugData} pathname={pathname} />
+          <BrandImageGrid brandsData={slugData} pathname={pathname} isSidebarOpen={isSidebarOpen}/>
+          
         ) : (
           <Pdp
             pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
             tabs={tabs}
-          />
+            />
         )}
       </main>
     </div>
