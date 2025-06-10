@@ -1,8 +1,8 @@
 import React from 'react'
-import Brands from "./Brands";
+import BrandDetailPage from './[...slug]/BrandDetail';
 const page = () => {
   return (
-    <div><Brands/></div>
+    <div><BrandDetailPage/></div>
   )
 }
 

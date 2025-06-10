@@ -5,16 +5,17 @@ import quote2 from "../../../public/Images/quoteimg2.png";
 import quote3 from "../../../public/Images/quoteimg3.png";
 import quote4 from "../../../public/Images/quoteimg4.png";
 import Image from "next/image";
-import apple from "../../../public/Images/apple.png";
 import Link from "next/link";
 import axios from "axios";
+
 interface BrandData {
   alias: string;
   image: string;
 }
+
 export default function Devicequote() {
   const [brandData, setBrandData] = useState<BrandData[]>([]);
-  console.log("brandData", brandData);
+  const [showAll, setShowAll] = useState(false);
 
   // Fetch data from the API on component mount
   useEffect(() => {
@@ -31,11 +32,13 @@ export default function Devicequote() {
 
     fetchData();
   }, []);
+
   const slugify = (text: string): string =>
     text
       .toLowerCase()
       .replace(/\s+/g, "-") // Replace spaces with dash
       .replace(/[^\w-]+/g, ""); // Remove non-word chars
+
   return (
     <div className="py-10 bg-white">
       <div className="container">
@@ -96,27 +99,48 @@ export default function Devicequote() {
         </div>
       </div>
       <div className="container pt-12">
-        <h2 className="text-start w-fit text-[#00303E]">
-          Click to Get an Instant Quote Now!
-        </h2>
-        <div className={`pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3 `}>
-          {brandData.map((data, index) => (
-            <Link key={index} href={`/brands/${slugify(data.alias)}`}>
-              <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center p-4">
-                {/* Add fixed size box around the image */}
-                <div className="flex justify-center items-center w-full h-[120px]">
-                  <img
-                    src={data.image}
-                    alt="device_image"
-                    width={100} // Fixed width
-                    height={100} // Fixed height
-                    className="rounded-2xl w-full h-full object-contain mix-blend-darken group-hover:rotate-[20deg] transition-all duration-700"
-                  />
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="flex items-center justify-between">
+          <h2 className="text-start w-fit text-[#00303E]">
+            Click to Get an Instant Quote Now!
+          </h2>
+          <Link href="/brands">
+            <button className="text-[#00303E] font-semibold border-2 px-4 py-2 rounded-full hover:bg-gray-200">
+              View All
+            </button>
+          </Link>
         </div>
+        <div
+          className={`pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3`}
+        >
+          {brandData
+            .slice(0, showAll ? brandData.length : 14)
+            .map((data, index) => (
+              <Link key={index} href={`/brands/${slugify(data.alias)}`}>
+                <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center p-4">
+                  <div className="flex justify-center items-center w-full h-[120px]">
+                    <img
+                      src={data.image}
+                      alt="device_image"
+                      width={100} // Fixed width
+                      height={100} // Fixed height
+                      className="rounded-2xl w-full h-full object-contain mix-blend-darken group-hover:rotate-[20deg] transition-all duration-700"
+                    />
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+        {/* View More Button */}
+        {/* {brandData.length > 14 && !showAll && (
+          <div className="flex justify-center pt-6">
+            <button
+              onClick={() => setShowAll(true)}
+              className="text-[#00303E] font-semibold border-2 px-4 py-2 rounded-full hover:bg-gray-200"
+            >
+              View More
+            </button>
+          </div>
+        )} */}
       </div>
     </div>
   );

@@ -48,18 +48,18 @@ const BrandDetailPage: React.FC = () => {
         setBrandsData(baseData); // Set the base data to state
 
         // Fetch data for slug-based endpoint (only if the slugArray is non-empty)
-        if (slugArray.length > 0) {
-          try {
-            const resSlug = await fetch(slugApi);
-            if (!resSlug.ok) {
-              throw new Error(`HTTP error! status: ${resSlug.status}`);
-            }
-            const slugEndpointData = await resSlug.json();
-            setSlugData(slugEndpointData); // Set the slug-specific data to state
-          } catch (error) {
-            console.error("Error fetching slug data:", error);
+        // if (slugArray.length > 0) {
+        try {
+          const resSlug = await fetch(slugApi);
+          if (!resSlug.ok) {
+            throw new Error(`HTTP error! status: ${resSlug.status}`);
           }
+          const slugEndpointData = await resSlug.json();
+          setSlugData(slugEndpointData); // Set the slug-specific data to state
+        } catch (error) {
+          console.error("Error fetching slug data:", error);
         }
+        // }
       } catch (error) {
         console.error("Error fetching brands:", error);
       }
@@ -186,13 +186,16 @@ const BrandDetailPage: React.FC = () => {
 
         {/* Render content based on the fetched brands data */}
         {!isLastItemClicked ? (
-          <BrandImageGrid brandsData={slugData} pathname={pathname} isSidebarOpen={isSidebarOpen}/>
-          
+          <BrandImageGrid
+            brandsData={slugData}
+            pathname={pathname}
+            isSidebarOpen={isSidebarOpen}
+          />
         ) : (
           <Pdp
             pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
             tabs={tabs}
-            />
+          />
         )}
       </main>
     </div>

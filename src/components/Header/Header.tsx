@@ -152,42 +152,37 @@ export default function App() {
                         </button>
                         {isDropdownOpen && (
                           <ul className="dropdown-menus absolute hidden text-white pt-1">
-                            {/* <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                            <Link href="/mail-in-repair" onClick={toggleMenu}>
-                              Mail In Repair
-                            </Link>
-                          </li> */}
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                              <Link href="/training" onClick={toggleMenu}>
+                            <Link href="/training" onClick={toggleMenu}>
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                                 Training{" "}
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                              <Link
-                                href="/b2b-repair-services"
-                                onClick={toggleMenu}
-                              >
+                              </li>
+                            </Link>
+                            <Link
+                              href="/b2b-repair-services"
+                              onClick={toggleMenu}
+                            >
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                                 B2B Repair{" "}
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                              <Link href="/ps5-repair" onClick={toggleMenu}>
+                              </li>
+                            </Link>
+                            <Link href="/ps5-repair" onClick={toggleMenu}>
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                                 PS5 Repair
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                              <Link
-                                href="/screen-refurbishing"
-                                onClick={toggleMenu}
-                              >
+                              </li>
+                            </Link>
+                            <Link
+                              href="/screen-refurbishing"
+                              onClick={toggleMenu}
+                            >
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                                 Screen Refurbishment{" "}
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                              <Link href="/data-recovery" onClick={toggleMenu}>
+                              </li>
+                            </Link>
+                            <Link href="/data-recovery" onClick={toggleMenu}>
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
                                 Data Recovery{" "}
-                              </Link>
-                            </li>
+                              </li>
+                            </Link>
                             <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
                               <span className="text-[16px]">Parts Store </span>
                               <span className="text-white">
@@ -335,42 +330,38 @@ export default function App() {
                         </button>
                         {isAboutDropdownOpen && (
                           <ul className="dropdown-menu absolute hidden text-white pt-1">
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                              <Link
-                                className=""
-                                href="/about-us"
-                                onClick={toggleMenu}
-                              >
+                            <Link
+                              className=""
+                              href="/about-us"
+                              onClick={toggleMenu}
+                            >
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                                 Meet Bharat
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                              <Link
-                                className=""
-                                href="/what-we-do"
-                                onClick={toggleMenu}
-                              >
+                              </li>
+                            </Link>
+                            <Link
+                              className=""
+                              href="/what-we-do"
+                              onClick={toggleMenu}
+                            >
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                                 What We Do
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                              <Link
-                                className=""
-                                href="/faq"
-                                onClick={toggleMenu}
-                              >
+                              </li>
+                            </Link>
+                            <Link className="" href="/faq" onClick={toggleMenu}>
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                                 FAQ{" "}
-                              </Link>
-                            </li>
-                            <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                              <Link
-                                className="hover:text-fourth"
-                                href="/blogs"
-                                onClick={toggleMenu}
-                              >
+                              </li>
+                            </Link>
+                            <Link
+                              className="hover:text-fourth"
+                              href="/blogs"
+                              onClick={toggleMenu}
+                            >
+                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
                                 Blogs{" "}
-                              </Link>
-                            </li>
+                              </li>
+                            </Link>
                           </ul>
                         )}
                       </div>
