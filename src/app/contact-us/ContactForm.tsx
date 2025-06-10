@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,6 +19,7 @@ import "./Contactus.css";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
 
 const ContactForm: React.FC = () => {
+  const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(false); // State for loader
   const [toast, setToast] = useState<{
     message: string;
@@ -356,7 +358,7 @@ const ContactForm: React.FC = () => {
                   padding: "10px",
                   marginTop: "10px",
                   backgroundColor: "black",
-                  color: "white",
+                  color:"var(--primary) !important",
                   borderRadius: "8px",
                   borderColor: "white",
                   fontSize: "17px",

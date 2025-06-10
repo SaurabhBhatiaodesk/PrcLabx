@@ -7,7 +7,7 @@ const MobileBrandName = () => {
     <>
       <section className="">
         <div className="container mx-auto pt-8">
-          <MainHeading Heading="Supported Models" />
+          <MainHeading Heading="Supported Models"  svg_stroke="var(--alpha)"/>
           <MainTitle
             Title="We refurbish screens for a wide range of devices, including"
           />
@@ -17,7 +17,7 @@ const MobileBrandName = () => {
                 key={index}
                 className="px-4 py-2 border border-prc rounded-full shadow-lg text-center lg:text-sm text-xs tracking-wide transition duration-300 ease-in-out hover:bg-primary  hover:shadow-xl hover:border-tertiary hover:border-[2px]"
               >
-                <p className=" text-prc m-0 text-[13px] hover:text-secondary ">{brand}</p>
+                <p className=" text-prc m-0 text-[16px] font-semibold hover:text-secondary ">{brand}</p>
               </div>
             ))}
           </div>
