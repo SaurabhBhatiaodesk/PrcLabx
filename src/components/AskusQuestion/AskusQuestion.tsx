@@ -47,10 +47,10 @@ export default function AskusQuestion({ accordionData, faq, faqbg_color, faq_sub
                   className="border-b border-gray-200 dark:border-gray-700"
                 >
                   <button
-                    className="flex w-full items-center justify-between py-4 text-left"
+                    className="flex w-full items-center justify-between py-3 text-left"
                     onClick={() => handleToggle(index)}
                   >
-                    <h3 className="text-black xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                    <h3 className="text-black xl:text-[22px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                       {item.title}
                     </h3>
                     {active === index ? (

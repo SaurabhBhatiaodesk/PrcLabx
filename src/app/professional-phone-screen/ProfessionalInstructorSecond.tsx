@@ -106,7 +106,7 @@ function BeginnerPhoneRepairCourseSale() {
                   </div>
                 </div>
 
-                <div className="text-center bg-yellow-400 p-2 rounded w-fit text-[40px]  flex flex-col items-center justify-center ">
+                <div className="text-center bg-tertiary  p-2 rounded w-fit text-[40px]  flex flex-col items-center justify-center ">
                   <h3 className="lg:text-[50px] font-bold text-black">40%</h3>
                   <p className="m-0 text-[black]">SALE</p>
                 </div>
