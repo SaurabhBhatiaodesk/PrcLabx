@@ -50,10 +50,14 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
   // Randomly select a gradient color for each tab button
   const getGradientColor = (index: number) => {
     return activeTabIndex === index
-      ? gradientColors[index % gradientColors.length] // Select color for active tab
+      ? gradientColors[index % gradientColors.length] // Select bg color for active tab
       : "transparent"; // Default transparent background for inactive tabs
   };
-
+  const getColor = (index: number) => {
+    return activeTabIndex === index
+      ? "text-primary" // Select color for active tab
+      : "text-secondary"; // Default transparent background for inactive tabs
+  };
   return (
     <div>
       <section className="py-5 xl:py-10 hidden lg:block">
@@ -69,8 +73,9 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
                 key={index}
                 style={{
                   background: getGradientColor(index), // Apply gradient color to active tab
+                  color:getColor(index)
                 }}
-                className="px-2 py-2 text-white text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%]"
+                className="px-2 py-2 text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%]"
                 onClick={() => handleTabClick(index)} // On click change the tab color
               >
                 {category.category}

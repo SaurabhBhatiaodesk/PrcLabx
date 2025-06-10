@@ -64,8 +64,8 @@ const HowWorks = () => {
                 e.currentTarget.style.background;
               }}
             >
-              <h3 className="text-lg font-bold mb-2 ">{step.title}</h3>
-              <p className="text-sm ">{step.content}</p>
+              <h3 className="text-lg font-bold mb-2 group-hover:text-primary">{step.title}</h3>
+              <p className="text-sm group-hover:text-primary">{step.content}</p>
               <Link href={step.link}>
                 {step.button && (
                   // <button className="text-[13px] font-semibold tracking-[2px] uppercase py-[10px] px-[10px] rounded-[50px] border-[1px] w-fit transition duration-300 ease-in-out transform hover:scale-105 group-hover:text-primary">
