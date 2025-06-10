@@ -1,0 +1,49 @@
+name: Deploy Application
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.15.1]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm run build
+      env:
+        CI: false
+        NODE_OPTIONS: --max_old_space-size=4096 
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY_LIVE }}
+        REMOTE_HOST: ${{ secrets.SERVER_IP }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+        TARGET: /home/ec2-user/labx-prc-repair/
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
+        script: |
+          cd /home/ec2-user/labx-prc-repair/
+          # Check if the process exists
+          if pm2 list | grep -q "labx-prc-repair"; then
+            pm2 restart labx-prc-repair
+          else
+             pm2 start /home/ec2-user/labx-prc-repair/node_modules/.bin/next --name "labx-prc-repair" -- start -- -p 3002
+          fi
+          pm2 save --force
