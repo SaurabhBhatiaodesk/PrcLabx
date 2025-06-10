@@ -110,10 +110,10 @@ const YouTubeHome: React.FC = () => {
 
   return (
     <>
-      <div className="bg-[#0b0b0b] py-3">
+      <div className="md:py-10 py-6">
         <div className="max-container relative">
-          <MainHeading Heading="Learn Like a Pro: Video Guides" />
-          <MainTitle Title="Discover our YouTube channel featuring informative videos on mobile phone repairs, tutorials, and expert tips. Join our community and enhance your skills while staying updated on the latest repair techniques!" />
+          <MainHeading Heading="Watch Us in Action" svg_stroke="var(--alpha)" />
+          <MainTitle Title="Discover our YouTube channel featuring informative videos on mobile phone repairs, tutorials, and expert tips. Join our community and enhance your skills while staying updated on the latest repair techniques!" color="var(--secondary)" />
 
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}

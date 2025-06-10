@@ -23,8 +23,8 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) =
   <div className="flex items-start gap-3">
     <Image width={24} height={24} src={icon} alt="icon" />
     <div>
-      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">{title}</span>
-      <p>{description}</p>
+      <span className="text-xl pb-[2px] text-tertiary font-semibold">{title}</span>
+      <p className="text-primary">{description}</p>
     </div>
   </div>
 );
@@ -32,9 +32,9 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) =
 const BoxComponents: React.FC<BoxComponentsProps> = ({ heading, title, image, features }) => {
   return (
     <section className="container">
-      <div className="text-center pt-3">
-        <MainHeading Heading={heading} />
-        <MainTitle Title={title} />
+      <div className="text-center pt-8">
+        <MainHeading Heading={heading} color="var(--primary)" svg_stroke="var(--tertiary)" />
+        <MainTitle Title={title} color="var(--primary)"/>
       </div>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:p-4 p-1 items-center">
         <div>

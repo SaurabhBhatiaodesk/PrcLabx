@@ -121,11 +121,11 @@ function TraningBanner({
             "
                 >
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
-                    <span className="text-[#EDE574]">Duration</span>
+                    <span className="text-tertiary ">Duration</span>
                     <span>{Duration}</span>|
                   </div>
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
-                    <span className="text-[#EDE574]">Price</span>
+                    <span className="text-tertiary ">Price</span>
 
                     <span>{Price}</span>
                   </div>
@@ -161,9 +161,7 @@ function TraningBanner({
             pathname === "/master-motherboard-repair" ||
             pathname === "/professional-phone-screen" ? (
               <div className="admin-image relative h-full">
-                <h3 className="text-3xl font-bold text-tertiary w-full text-center mb-1">
-                  Please Fill the Form
-                </h3>
+               
                 <FormCode />
               </div>
             ) : (

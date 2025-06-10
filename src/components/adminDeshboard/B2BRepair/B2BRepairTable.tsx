@@ -36,7 +36,7 @@ const B2BRepairTable: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const fetchData = async (page: number, limit: number, searchValue = "") => {
     setIsLoading(true);
     setErrorMessage("");
@@ -44,7 +44,7 @@ const B2BRepairTable: React.FC = () => {
       let response;
       if (searchValue.trim() === "") {
         // Normal GET request
-        response = await axios.get(`https://labxbackend.labxrepair.com.au/api/repair`, {
+        response = await axios.get(`${apiUrl}/api/repair`, {
           params: {
             page: page + 1, // Backend pages are 1-indexed
             limit,
@@ -53,7 +53,7 @@ const B2BRepairTable: React.FC = () => {
       } else {
         // Search POST request
         response = await axios.post(
-          `https://labxbackend.labxrepair.com.au/api/repair/search`,
+          `${apiUrl}/api/repair/search`,
           { searchValue },
           {
             params: {
@@ -83,8 +83,6 @@ const B2BRepairTable: React.FC = () => {
       setIsLoading(false);
     }
   };
-
-
 
   useEffect(() => {
     fetchData(page, rowsPerPage, searchValue);
@@ -118,7 +116,7 @@ const B2BRepairTable: React.FC = () => {
   const confirmDelete = async () => {
     if (deleteId) {
       try {
-        await axios.delete(`https://labxbackend.labxrepair.com.au/api/repair/delete/${deleteId}`);
+        await axios.delete(`${apiUrl}/api/repair/delete/${deleteId}`);
         setDeleteDialogOpen(false);
         setDeleteId(null);
         fetchData(page, rowsPerPage, searchValue); // Refresh data after deletion
@@ -141,13 +139,17 @@ const B2BRepairTable: React.FC = () => {
       </Typography>
       <B2BRepairFilter onSearchChange={handleSearchChange} />
       {isLoading ? (
-        <Typography sx={{ textAlign: "center", margin: 2 }}>Loading...</Typography>
+        <Typography sx={{ textAlign: "center", margin: 2 }}>
+          Loading...
+        </Typography>
       ) : errorMessage ? (
         <Typography sx={{ textAlign: "center", margin: 2, color: "red" }}>
           {errorMessage}
         </Typography>
       ) : data.length === 0 ? (
-        <Typography sx={{ textAlign: "center", margin: 2 }}>No records found.</Typography>
+        <Typography sx={{ textAlign: "center", margin: 2 }}>
+          No records found.
+        </Typography>
       ) : (
         <Table>
           <TableHead>
@@ -164,32 +166,42 @@ const B2BRepairTable: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((record: any) =>{
+            {data.map((record: any) => {
               return (
-
-              <TableRow key={record._id}>
-                <TableCell>{record?.personalDetails?.businessName || 'NA'}</TableCell>
-                <TableCell>{record?.personalDetails?.fullName || 'NA'}</TableCell>
-                <TableCell>{record?.personalDetails?.contactNo || 'NA'}</TableCell>
-                <TableCell>{record?.personalDetails?.emailAddress || 'NA'}</TableCell>
-                <TableCell>{record?.deviceDetails?.deviceType || 'NA'}</TableCell>
-                <TableCell>{record?.deviceDetails?.brand || 'NA'}</TableCell>
-                <TableCell>{record?.orderReferenceId || 'NA'}</TableCell>
-                {/* <TableCell>
+                <TableRow key={record._id}>
+                  <TableCell>
+                    {record?.personalDetails?.businessName || "NA"}
+                  </TableCell>
+                  <TableCell>
+                    {record?.personalDetails?.fullName || "NA"}
+                  </TableCell>
+                  <TableCell>
+                    {record?.personalDetails?.contactNo || "NA"}
+                  </TableCell>
+                  <TableCell>
+                    {record?.personalDetails?.emailAddress || "NA"}
+                  </TableCell>
+                  <TableCell>
+                    {record?.deviceDetails?.deviceType || "NA"}
+                  </TableCell>
+                  <TableCell>{record?.deviceDetails?.brand || "NA"}</TableCell>
+                  <TableCell>{record?.orderReferenceId || "NA"}</TableCell>
+                  {/* <TableCell>
                   <Typography sx={{ color: "green", fontWeight: "bold" }}>
                     Active
                   </Typography>
                 </TableCell> */}
-                <TableCell>
-                  {/* <IconButton onClick={() => handleViewClick(record._id)}>
+                  <TableCell>
+                    {/* <IconButton onClick={() => handleViewClick(record._id)}>
                     <VisibilityIcon />
                   </IconButton> */}
-                  <IconButton onClick={() => handleDeleteClick(record._id)}>
-                    <DeleteIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            )})}
+                    <IconButton onClick={() => handleDeleteClick(record._id)}>
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       )}
@@ -202,9 +214,10 @@ const B2BRepairTable: React.FC = () => {
         onRowsPerPageChange={handleChangeRowsPerPage}
         rowsPerPageOptions={[5, 10, 15]}
         sx={{
-          "& .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows": {
-            color: "green",
-          },
+          "& .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows":
+            {
+              color: "green",
+            },
           "& .MuiTablePagination-select": {
             color: "green",
           },
@@ -216,7 +229,8 @@ const B2BRepairTable: React.FC = () => {
         <DialogTitle>Confirm Deletion</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Are you sure you want to delete this record? This action cannot be undone.
+            Are you sure you want to delete this record? This action cannot be
+            undone.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -1,12 +1,5 @@
 import { Metadata } from "next";
-import {
-  Typography,
-  Box,
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-} from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import Link from "next/link";
 import "./policy.css";
 import Image from "next/image";
@@ -15,10 +8,9 @@ import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 
 import Line from "../../../public/Images/about/leap.svg"; // Function to fetch data from the server
 async function fetchPageData(title: string) {
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const res = await fetch(
-    `https://labxbackend.labxrepair.com.au/api/admin/title/${encodeURIComponent(
-      title
-    )}`,
+    `${apiUrl}/api/admin/title/${encodeURIComponent(title)}`,
     {
       cache: "no-store",
     }
@@ -39,8 +31,6 @@ export async function generateMetadata({
   try {
     const data = await fetchPageData(params.title);
     const page = data.data;
-    console.log('page', page);
-
     return {
       title: page.seoPageTitle,
       description: page.pageDescription,
@@ -74,7 +64,6 @@ export default async function PageDetail({
     return (
       <>
         <section className="bg-no-repeat bg-cover p-0 relative">
-
           <div className="max-container overlap__term__data pt-8">
             <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
               <div className="w-full px-4">
@@ -107,12 +96,19 @@ export default async function PageDetail({
                   height="300"
                   width="400"
                   src={Line.src}
-                  alt=" labx repair "
+                  alt=" PRC repair "
                   className="pb-3 m-auto"
                 />
               </h1>
               {page.images.map((image: string, index: number) => (
-                <Image key={image} src={image} alt=" labx repair " width='100' height='100' className='dynamic__img' />
+                <Image
+                  key={image}
+                  src={image}
+                  alt=" PRC repair "
+                  width="100"
+                  height="100"
+                  className="dynamic__img"
+                />
               ))}
             </div>
           </div>

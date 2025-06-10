@@ -50,7 +50,7 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
   // Randomly select a gradient color for each tab button
   const getGradientColor = (index: number) => {
     return activeTabIndex === index
-      ? gradientColors[index % gradientColors.length] // Select color for active tab
+      ? gradientColors[index % gradientColors.length] // Select bg color for active tab
       : "transparent"; // Default transparent background for inactive tabs
   };
 
@@ -68,9 +68,11 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
               <button
                 key={index}
                 style={{
-                  background: getGradientColor(index), // Apply gradient color to active tab
+                  background: getGradientColor(index),
                 }}
-                className="px-2 py-2 text-white text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%]"
+                className={`px-2 py-2 text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%] 
+                  ${activeTabIndex === index ? "text-primary" : "text-secondary"}
+                  `}
                 onClick={() => handleTabClick(index)} // On click change the tab color
               >
                 {category.category}
@@ -86,18 +88,18 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
                   className="flex w-full items-center justify-between py-3 text-left"
                   onClick={() => handleToggle(index)} // Toggle individual FAQ item
                 >
-                  <h3 className="text-white xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                  <h3 className="text-secondary xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                     {item.title}
                   </h3>
                   {activeCategoryIndex === index ? (
-                    <GrSubtract color="white" />
+                    <GrSubtract color="black" />
                   ) : (
-                    <LuPlus color="white" />
+                    <LuPlus color="black" />
                   )}
                 </button>
                 {activeCategoryIndex === index && (
                   <div className="py-4 pt-0">
-                    <p className="text-white">{item.content}</p>
+                    <p className="text-secondary">{item.content}</p>
                   </div>
                 )}
               </div>

@@ -93,7 +93,7 @@ const Page = () => {
       </>
       )}
       <div className="container_small bg-black pt-8 pb-6">
-        <h2 className="text-center">Contact Information</h2>
+        <h2 className="text-center text-primary">Contact Information</h2>
         <ContactForm />
       </div>
       <div className="device__img text-center container pt-8 mt-5 pb-8 mb-5 relative">

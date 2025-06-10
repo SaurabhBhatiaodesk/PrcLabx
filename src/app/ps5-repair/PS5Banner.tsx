@@ -33,7 +33,7 @@ export default function PS5Banner() {
               <div className="md:mb-16 mb-11 lg:mt-[0] mt-[0px] relative">
                 <Link href="/training">
                   <button
-                    className="px-[20px] py-[6px] border-[2px] rounded-full bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98]
+                    className="px-[20px] py-[6px] border-[2px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#9d9c98]
                     animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] md:text-[18px] text-[12px] tracking-[1.5px] relative top-6"
                     style={{ transform: "rotate(354deg)" }} // Equivalent to -5deg (360 - 5)
                   >
@@ -41,17 +41,17 @@ export default function PS5Banner() {
                   </button>
                 </Link>
               </div>
-              <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                <span className="text-[#EDE574]">PS5 </span>
+              <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-primary tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                <span className="text-tertiary">PS5 </span>
                 REPAIRS
               </h1>
-              <p>
-                Is your PlayStation 5 experiencing issues? Whether it&apos;s
-                <span className="font-medium text-[#EDE574] underline">
+              <p className="text-primary">
+                Is your PlayStation 5 experiencing issues? Whether it&apos;s{" "}
+                <span className="font-medium text-tertiary underline">
                   {" "}
                   overheating, crashing, or hardware failure,
                 </span>
-                we&apos;ve got you covered with professional PS5 repair
+               {' '}we&apos;ve got you covered with professional PS5 repair
                 services. Our skilled technicians specialize in diagnosing and
                 fixing all PS5 problems, ensuring you get back to your gaming
                 without delays.

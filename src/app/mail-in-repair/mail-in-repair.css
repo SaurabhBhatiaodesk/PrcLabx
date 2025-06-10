@@ -93,8 +93,8 @@
     text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
-  background-color: #ede574 !important;
-  color: black !important;
+  background-color: var(--secondary) !important;
+  color: var(--primary) !important;
 }
 
 .bg-blackgk button {
@@ -126,7 +126,10 @@
 a label[data-slot="label ,trigger"] {
   color: #ffffff;
 }
-
+input,textarea
+{
+  color: var(--secondary) !important;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -159,9 +162,7 @@ textarea::placeholder {
   opacity: 1;
 }
 
-.subpixel-antialiased {
-  color: white !important;
-}
+
 
 input[type="submit"] {
   background-color: #ede574;
@@ -189,7 +190,6 @@ input[type="submit"]:hover {
 
 .group[data-has-value="true"] .group-data-\[has-value\=true\]\:text-default-foreground {
   --tw-text-opacity: 1;
-  color: white !important;
 }
 
 .gaurav-bg-trans .transition-background {
@@ -197,8 +197,8 @@ input[type="submit"]:hover {
 }
 
 .subpixel-antialiased {
-  color: white !important;
-  background: black;
+  color: var(--secondary) !important;
+  /* background: black; */
 }
 
 /* style os starts */
@@ -232,11 +232,11 @@ input[type="submit"]:hover {
 }
 
 .steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
-  color: #fff;
+  color: var(--secondary);
 }
 
 .steper-textarea-os .MuiTextarea-root {
-  background: #000;
+  /* background: #000; */
   color: #fff;
 }
 
@@ -248,7 +248,10 @@ input[type="submit"]:hover {
   --Textarea-focusedHighlight: #fff;
   border: 1px solid #fff !important;
 }
-
+.div_child div:nth-child(1) 
+{
+  border-radius: 12px !important;
+}
 /* style os ends */
 
 /* .steper-form-section-os
@@ -328,4 +331,38 @@ input.check__box {
   width: 100%;
   height: auto;
   min-height: 199px;
+}
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root 
+{
+  border-radius: 15px;
+}
+.MuiFormControl-root.MuiFormControl-fullWidth.MuiTextField-root.w-full.bg-primary.text-secondary.border-white.css-1k0xg0p-MuiFormControl-root-MuiTextField-root 
+{
+  border-radius: 15px;
+}
+.MuiTextarea-root.MuiTextarea-variantOutlined.MuiTextarea-colorNeutral.MuiTextarea-sizeMd.css-1lx3d2f-JoyTextarea-root
+{
+  border: 2px solid var(--secondary);
+  border-radius: 12px;
+}
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root
+{
+  border: none !important;
+}
+/* span#react-aria4539273259-\:r3b\:
+{
+  color: var(--secondary);
+} */
+.font-normal
+{
+  color: var(--secondary);
+}
+.css-1k0xg0p-MuiFormControl-root-MuiTextField-root label.MuiInputLabel-root
+{
+  color: gray  !important;
+  background: var(--primary) !important;
+}
+label#react-aria630388666-\:ra\:
+{
+  color: var(--secondary) !important;
 }

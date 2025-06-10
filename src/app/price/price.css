@@ -32,7 +32,10 @@ td.border-bottom.px-4.py-2 {
     overflow: auto;
 }
 tr:nth-child(even) {background-color: #4e4e4e;color:#fff;}
-
+tr:nth-child(even) td 
+{
+    color: #fff !important;
+}
 @media screen and (max-width: 767px) {
 
 th.border-bottom.px-4.py-2 {

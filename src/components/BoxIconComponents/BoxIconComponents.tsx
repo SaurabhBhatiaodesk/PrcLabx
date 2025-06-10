@@ -40,7 +40,7 @@ const BoxIconComponents: React.FC<BoxIconComponentsProps> = ({ data }) => {
                 <div className="flex justify-center">
                   <Image className="pb-2" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className="text-[#EDE574] xl:text-xl lg:w-[70%] m-auto">
+                <h3 className="text-tertiary  xl:text-xl lg:w-[70%] m-auto">
                   {section.title}
                 </h3>
               </div>

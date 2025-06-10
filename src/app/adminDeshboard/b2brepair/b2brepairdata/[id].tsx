@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Typography, Paper, Box, CircularProgress } from "@mui/material";
 import Image from "next/image";
 
-const API_URL = "https://labxbackend.labxrepair.com.au/api/repair/id/";
+const API_URL = "https://prcbackend.prcrepair.com.au/api/repair/id/";
 
 interface RepairData {
   personalDetails: {

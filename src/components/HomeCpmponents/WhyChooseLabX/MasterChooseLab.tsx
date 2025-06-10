@@ -74,7 +74,7 @@ const WhyChooseLabX: React.FC = () => {
               >
                 <Link href={section.pageUrl} >
                
-               <h3 className="text-[#EDE574] xl:text-xl lg:w-[100%] m-auto mb-3">{section.title}</h3>
+               <h3 className="text-tertiary  xl:text-xl lg:w-[100%] m-auto mb-3">{section.title}</h3>
                <p>{section.content}</p>
                <p style={{
                  display: "-webkit-box",

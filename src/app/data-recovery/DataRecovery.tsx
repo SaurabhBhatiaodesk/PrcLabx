@@ -123,8 +123,8 @@ Videos`,
     <>
       <div className="strongtx">
         <Breadcrumb
-          pageName="Data Recovery Services - LabXRepair"
-          pageDescription="At <strong> LabXRepair,</strong> we specialize in professional data recovery services for mobile phones, tablets, MacBooks, laptops, and more. Whether you’ve experienced hardware failure on device, or need to recover vital information from a damaged device, our skilled technicians are here to help."
+          pageName="Data Recovery Services - PRCRepair"
+          pageDescription="At <strong> PRCRepair,</strong> we specialize in professional data recovery services for mobile phones, tablets, MacBooks, laptops, and more. Whether you’ve experienced hardware failure on device, or need to recover vital information from a damaged device, our skilled technicians are here to help."
           backgroundImage="/Images/BannerImages/mailinrepair.png"
           AdminImage="/Images/Data Recovery side.png"
           link="/price"
@@ -134,18 +134,17 @@ Videos`,
 
       <section style={{ background: "#0B0B0B" }}>
         <BoxComponents
-          heading="Why Choose LabX for Data Recovery?"
+          heading="Why Choose PRC for Data Recovery?"
           title="The only path to data recovery is getting the phone to work again. We bring phones back from the dead every day. There is no manual, no instruction book, for what we do. We are the motherboard whisperers."
           image={datarecoverytop} // Now correctly typed
           features={features}
         />
         <div className="container py-4 xl:py-6">
-          <MainHeading Heading="What We Can Recover" />
+          <MainHeading Heading="What We Can Recover" color="var(--primary)" svg_stroke="var(--trtiary)" />
 
           <BoxIconComponents data={sectionData} />
           <IconTitleParaImage
-            heading="Our Data Recovery Process
-"
+            heading="Our Data Recovery Process"
             title=""
             points={dataRecoveryPoints}
             // buttonLabel="READ MORE"
@@ -155,7 +154,7 @@ Videos`,
         </div>
         <DataImportantNote />
       </section>
-      <StaperForm/>
+      <StaperForm />
       <DataStarted />
 
       <GoogleReview />

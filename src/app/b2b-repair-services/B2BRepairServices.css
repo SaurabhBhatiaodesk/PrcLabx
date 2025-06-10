@@ -63,7 +63,7 @@ label[data-slot="label"] {
   color: #fff;
 }
 .steper-textarea-os .MuiTextarea-root {
-  background: #000;
+  /* background: #000; */
   color: #fff;
 }
 .steper-textarea-os .MuiTextarea-root textarea::placeholder {

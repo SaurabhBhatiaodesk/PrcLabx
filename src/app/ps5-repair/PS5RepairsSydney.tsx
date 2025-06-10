@@ -420,7 +420,7 @@ const PS5RepairsSydney: React.FC = () => {
       <div className="container bgchange">
         <div className="py-3">
           {" "}
-          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" />
+          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" color="var(--primary)" />
         </div>
         {/* <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" /> */}
         <div className="lg:block hidden">

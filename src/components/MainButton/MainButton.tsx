@@ -47,23 +47,29 @@ interface MainButtonProps {
 
 const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color }) => {
   // Default color gradient if no color is provided
-  const buttonColor = color || "bg-gradient-to-r from-[#E1F5C4] to-[#EDE574]";
+
 
   // Button styles
-  const buttonStyles = `${buttonColor} text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase text-black py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 hover:bg-gradient-to-r hover:from-[#EDE574] hover:to-[#E1F5C4] my-2`;
+  // const buttonStyles = `  hover:bg-${buttonColor} my-2`;
 
   return (
     <div>
       {link ? (
         <Link href={link}>
-          <button className={buttonStyles} aria-label={`Click ${MainButton}`}>
-            {MainButton}
-          </button>
+         <button 
+  className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`} 
+  aria-label={`Click ${MainButton}`} 
+>
+  {MainButton}
+</button> 
         </Link>
       ) : (
-        <button className={buttonStyles} aria-label={MainButton}>
-          {MainButton}
-        </button>
+        <button 
+  className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`} 
+  aria-label={`Click ${MainButton}`} 
+>
+  {MainButton}
+</button>
       )}
     </div>
   );
