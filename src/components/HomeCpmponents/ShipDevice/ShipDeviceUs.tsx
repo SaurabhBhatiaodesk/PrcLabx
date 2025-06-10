@@ -104,7 +104,7 @@ export default function ShipDeviceUs() {
                   </div>
                     <div>
                       <Link href={slide.linking} className=" flex items-center gap-2 text-primary font-medium text-sm lg:text-base hover:underline mt-3">
-                       <span className="text-tertiary">Learn More </span> <IoIosArrowRoundForward fontSize={30} color="var(--tertiary)" />
+                       <p className="text-tertiary m-0">Learn More </p> <IoIosArrowRoundForward fontSize={30} color="var(--tertiary)" />
                       </Link>
                     </div>
                 </div>

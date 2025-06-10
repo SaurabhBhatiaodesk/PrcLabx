@@ -90,7 +90,7 @@ export default async function PageDetail({
               </div>
             </div>
             <div>
-              <h1 className="text-white mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
+              <h1 className="text-secondary mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
                 {formatPageName(page.pageName)}
                 <Image
                   height="300"
