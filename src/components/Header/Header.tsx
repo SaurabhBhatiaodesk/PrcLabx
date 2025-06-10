@@ -141,10 +141,50 @@ export default function App() {
                   id="nav-content"
                 >
                   <ul className="menu menu-horizontal px-1 flex items-center">
+                   
                     <li>
+                      <Link className="hover:text-fourth" href="">
+                        Apple
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Samsung Phones
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Samsung Tablets
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Oppo
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Google
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Game console
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-fourth" href="">
+                        Other Models
+                      </Link>
+                    </li>
+                     <li>
                       <div className="dropdowns services_drop inline-block relative">
                         <button
-                          className="btn__menu inline-flex items-center hover:text-fourth"
+                          className="btn__menu inline-flex items-center hover:text-fourth mr-2"
                           onClick={toggleDropdown}
                         >
                           <span className="mr-1">Services</span>
@@ -223,9 +263,8 @@ export default function App() {
                         )}
                       </div>
                     </li>
-
                     {/* header */}
-                    <li>
+                    {/* <li>
                       <Link href="/mail-in-repair" onClick={toggleMenu}>
                         Mail In Repair
                       </Link>
@@ -294,7 +333,7 @@ export default function App() {
                           })}
                         </ul>
                       )}
-                    </div>
+                    </div> */}
                     {/* <li>
                       <Link
                         className="hover:text-fourth"
@@ -304,7 +343,7 @@ export default function App() {
                         Price List
                       </Link>
                     </li> */}
-                    <li>
+                    {/* <li>
                       <Link
                         className="hover:text-fourth"
                         href="/contact-us"
@@ -312,7 +351,7 @@ export default function App() {
                       >
                         Contact Us
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <div className="dropdown inline-block relative">
                         <button
