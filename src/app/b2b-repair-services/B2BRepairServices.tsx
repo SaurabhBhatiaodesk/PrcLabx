@@ -244,7 +244,7 @@ const B2BRepairServices: React.FC = () => {
               <div>
                 <div className="flex-col gap-2  flex">
                   <div className="flex items-start gap-3">
-                    <div className="w-[15%] mt-[2px]">
+                    <div className="w-[35px] mt-[2px]">
                       <Image src={pointer} alt="pointer"  className="w-[30px]" />
                     </div>
                     <div className="w-[85%]">
@@ -260,7 +260,7 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-[15%] mt-[2px]">
+                    <div className="w-[35px] mt-[2px]">
                       <Image src={pointer} alt="pointer"  className="w-[30px]" />
                     </div>
                     <div className="w-[85%]">
@@ -276,7 +276,7 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-[15%] mt-[2px]">
+                    <div className="w-[35px] mt-[2px]">
                       <Image src={pointer} alt="pointer"  className="w-[30px]" />
                     </div>
                     <div className="w-[85%]">
@@ -292,7 +292,7 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-[15%] mt-[2px]">
+                    <div className="w-[35px] mt-[2px]">
                       <Image src={pointer} alt="pointer"  className="w-[30px]" />
                     </div>
                     <div className="w-[85%]">

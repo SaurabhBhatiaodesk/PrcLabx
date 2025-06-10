@@ -250,7 +250,7 @@ input[type="submit"]:hover {
 }
 .div_child div:nth-child(1) 
 {
-  border-radius: 12px;
+  border-radius: 12px !important;
 }
 /* style os ends */
 
@@ -356,4 +356,13 @@ input.check__box {
 .font-normal
 {
   color: var(--secondary);
+}
+.css-1k0xg0p-MuiFormControl-root-MuiTextField-root label.MuiInputLabel-root
+{
+  color: gray  !important;
+  background: var(--primary) !important;
+}
+label#react-aria630388666-\:ra\:
+{
+  color: var(--secondary) !important;
 }

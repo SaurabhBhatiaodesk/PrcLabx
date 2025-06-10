@@ -161,9 +161,7 @@ function TraningBanner({
             pathname === "/master-motherboard-repair" ||
             pathname === "/professional-phone-screen" ? (
               <div className="admin-image relative h-full">
-                <h3 className="text-3xl font-bold text-tertiary w-full text-center mb-1">
-                  Please Fill the Form
-                </h3>
+               
                 <FormCode />
               </div>
             ) : (
