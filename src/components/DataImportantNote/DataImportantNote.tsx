@@ -36,22 +36,22 @@ const DataImportantNote = () => {
           </div>
 
           {/* Important Notes */}
-          <div className="bg-black text-yellow-400 p-6 rounded-lg shadow-lg">
+          <div className="bg-black text-tertiary p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-tertiary">
               Important Notes
             </h2>
-            <div className="flex gap-[5px] text-secondary items-start">
+            <div className="flex gap-[5px] text-primary items-start">
               <span><LuDot  color="white" /></span>
-              <p className="text-primery m-0">Customers must provide the correct device password to access recovered data. If the password is incorrect or unavailable, LabX will not be able to verify the recovered files.</p>
+              <p className="text-primary m-0">Customers must provide the correct device password to access recovered data. If the password is incorrect or unavailable, LabX will not be able to verify the recovered files.</p>
             </div>
-            <div className="flex gap-[5px] text-secondary items-start">
+            <div className="flex gap-[5px] text-primary items-start">
               <span><LuDot  color="white" /></span>
-              <p className="text-primery m-0">In cases where the device cannot be repaired for long-term functionality, we may power it temporarily to retrieve data, but no further repairs will be performed.</p>
+              <p className="text-primary m-0">In cases where the device cannot be repaired for long-term functionality, we may power it temporarily to retrieve data, but no further repairs will be performed.</p>
             </div>
           </div>
 
           {/* Common Scenarios We Handle */}
-          <div className="bg-black text-yellow-200 p-6 rounded-lg shadow-lg">
+          <div className="bg-black text-tertiary p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-tertiary">
               Common Scenarios We Handle
             </h2>
@@ -59,10 +59,10 @@ const DataImportantNote = () => {
             <Image src={pointer} alt="pointer" width={30} />
 
                 <div className="">
-                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                  <span className="text-lg pb-[2px] text-tertiary font-semibold">
                   Water Damage:
                   </span>
-                  <p>
+                  <p className="text-primary">
                   Quick recovery from devices exposed to liquid spills or submersion.
                   </p>
                 </div>
@@ -71,10 +71,10 @@ const DataImportantNote = () => {
                 <Image src={pointer} alt="pointer" width={30} />
 
                 <div className="">
-                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                  <span className="text-lg pb-[2px] text-tertiary font-semibold">
                   Impact Damage: 
                   </span>
-                  <p>
+                  <p className="text-primary">
                   Devices dropped or damaged due to external force.
                   </p>
                 </div>
@@ -83,10 +83,10 @@ const DataImportantNote = () => {
               <Image src={pointer} alt="pointer" width={30} />
 
                 <div className="">
-                  <span className="text-lg pb-[2px] text-[#EDE574] font-semibold">
+                  <span className="text-lg pb-[2px] text-tertiary  font-semibold">
                   Failed Software Updates:
                   </span>
-                  <p>
+                  <p className="text-primary">
                   Data recovery from bricked devices after failed updates.
                   </p>
                 </div>

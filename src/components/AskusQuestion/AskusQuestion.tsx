@@ -6,8 +6,9 @@ import { GrSubtract } from "react-icons/gr";
 import Image from "next/image";
 import ps5game from "../../../public/Images/ps5game.webp";
 import MainHeading from "../ManinHeading/MainHeading";
-
 import { usePathname } from "next/navigation";
+import MainTitle from "../MainTitle/MainTitle";
+import banner from "../../../public/Images/faqbanner.webp"
 interface AccordionItem {
   title?: string;
   content?: string;
@@ -16,9 +17,11 @@ interface AccordionItem {
 
 interface AskusQuestionProps {
   accordionData: AccordionItem[];
-  faq?:string;
+  faq?: string;
+  faqbg_color?: string;
+  faq_subheading?: string;
 }
-export default function AskusQuestion({ accordionData,faq }: AskusQuestionProps) {
+export default function AskusQuestion({ accordionData, faq, faqbg_color, faq_subheading }: AskusQuestionProps) {
   const [active, setActive] = useState<number | null>(null);
 
   const pathnav = usePathname();
@@ -31,9 +34,10 @@ export default function AskusQuestion({ accordionData,faq }: AskusQuestionProps)
   };
 
   return (
-    <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')] bg-no-repeat bg-cover">
+    <section className={`py-5 xl:py-10 bg-no-repeat bg-cover ${faqbg_color}`}>
       <div className="container">
-        <MainHeading Heading={faq} color="black" />
+        <MainHeading Heading={faq} color="black"  svg_stroke="var(--alpha)"/>
+        <MainTitle Title={`${faq_subheading}`} />
         <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
           <div>
             <div className="flex flex-col xl:space-y-2">
@@ -80,7 +84,7 @@ export default function AskusQuestion({ accordionData,faq }: AskusQuestionProps)
               ) : (
                 <Image
                   className="lg:h-auto h-[300px] object-contain"
-                  src="https://labxbackend.s3.us-east-2.amazonaws.com/faqimages+1+(1).webp"
+                  src={banner}
                   alt="Mobile repair"
                   width={500}
                   height={500}

@@ -1,3 +1,21 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+
+  --text-color: #010101;
+  --primary: #ffffff;
+  --secondary: #161616;
+  --tertiary: #FFE303;
+  --fourth:#00BC9D;
+  --alpha:#FBAC05;
+  --prc:#00303E;
+  --Space_Grotesk: "Space Grotesk", sans-serif;
+  --multi: #035597;
+  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
+  --transition: all 0.3s ease-in-out;
+}
 html {
   padding-right: unset !important;
   overflow: unset !important;
@@ -10,7 +28,7 @@ h3 {
 h2,
 h3,
 p {
-  color: var(--primary-color);
+  color:var(--secondary)
 }
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
@@ -58,36 +76,20 @@ p {
   font-style: normal;
   font-display: swap;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root {
-  --theme-bg: #ffffff;
-  --text-color: #010101;
-  --theme-bg: #ffffff;
-  --white: #ffffff;
-  --black: #000;
-  --primary-color: #ffffff;
-  --secondary-color: #000000;
-  --tertiary-color: #ede574;
-  --Space_Grotesk: "Space Grotesk", sans-serif;
-  --multi-color: #035597;
-  --F1-btn-color: linear-gradient(45deg, #e1f5c4, #ede574);
-  --transition: all 0.3s ease-in-out;
-}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #ffffff;
-    --primary-color: #ffffff;
-    --secondary-color: #000000;
+    --primary: #ffffff;
+    --secondary: #000000;
   }
 }
 body {
   font-weight: 500;
-  background-color: var(--black);
+  background-color: var(--primary);
   overflow-x: hidden;
   font-size: 20px;
-  color: var(--white);
+  color: var(--secondary);
   scroll-behavior: smooth;
 }
 .max-container {
@@ -108,7 +110,7 @@ body {
   overflow: hidden;
 }
 .F1-btn-color {
-  color: var(--secondary-color, #000);
+  color: var(--secondary);
   font-weight: 500;
   border-radius: 8px;
   font-size: 16px;
@@ -123,14 +125,13 @@ body {
   border-color: rgba(237, 229, 116, 0.8);
   background-position: right center;
 }
-.main-bg {
-  background-color: var(--secondary-color);
-}
+
 h2 {
   font-size: 42px;
   line-height: 55px;
   font-weight: 700;
   letter-spacing: 1.5px;
+    color:var(--secondary)
 }
 .btn,
 h3 {
@@ -145,6 +146,7 @@ p {
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 15px;
+
 }
 .btn {
   background: var(--F1-btn-color);
@@ -195,12 +197,20 @@ p {
   text-transform: capitalize;
   line-height: 1.1rem;
 }
+@media only screen and (max-width: 1440px) {
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+}
 @media only screen and (max-width: 640px) {
   p {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    color: var(--primary-color);
   }
   .sm-order-2 {
     order: 2 !important;
@@ -212,7 +222,7 @@ p {
     line-height: 38px;
     font-family: Gordita, sans-serif;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary);
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -249,4 +259,23 @@ p {
     word-break: break-word;
     white-space: normal;
   }
+  .scrollbar-custom::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+}
+}
+/* Custom Scrollbar Styles */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: #F5F5F5; /* Track background */
+  border-radius: 10px; /* Rounded corners on track */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Track shadow */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: var(--prc); /* Thumb color */
+  border-radius: 10px; /* Rounded corners on thumb */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Thumb shadow */
 }

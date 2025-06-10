@@ -29,7 +29,8 @@ ul.dropdown-content {
     font-size: 16px;
 }
 button.btn__menu.inline-flex.items-center {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -39,23 +40,30 @@ button.btn__menu.inline-flex.items-center {
   }
  
   ul.dropdown-menu, ul.dropdown-menus {
-    background: #000;
+    background: #ffffff;
     padding: 10px 0px;
     width: 250px;
+    color: var(--prc);
+    font-weight: 700;
 }
 ul.dropdown-menu li a, ul.dropdown-menus li a {
     font-size: 16px;
     padding: 5px 0px;
 }
 .logo_LabX{
-    width: 200px;
+    width: auto;
 }
 .social__icon, .showmobile {
     display: none;
 }
+._header_links a
+{
+    font-size: 18px !important;
+    font-family: 500;
+}
 @media only screen and (max-width: 	1023px) {
     .logo_LabX{
-        width: 120px;
+        width: auto;
     }
     .showmobile {
         display: block !important;
@@ -79,7 +87,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
     .block.lg\:flex.flex-grow.justify-center {
         position: absolute;
         left: 0;
-        background: #000;
+        background: var(--primary);
         top: 68px;
         padding: 15px;
         width: 100%;

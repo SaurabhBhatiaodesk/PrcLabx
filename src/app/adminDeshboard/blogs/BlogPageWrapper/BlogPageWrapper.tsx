@@ -44,15 +44,13 @@ const BlogPageWrapper: React.FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const blogId = searchParams.get("id");
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     if (blogId) {
       setIsEditMode(true);
       const fetchBlog = async () => {
         try {
-          const response = await fetch(
-            `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
-          );
+          const response = await fetch(`${apiUrl}/api/admin/blog/${blogId}`);
           const data = await response.json();
           setBlogData({
             heading: data.heading,
@@ -162,8 +160,8 @@ const BlogPageWrapper: React.FC = () => {
       });
 
       const url = isEditMode
-        ? `https://labxbackend.labxrepair.com.au/api/admin/blog/${blogId}`
-        : "https://labxbackend.labxrepair.com.au/api/admin/blog";
+        ? `${apiUrl}/api/admin/blog/${blogId}`
+        : `${apiUrl}/api/admin/blog`;
       const method = isEditMode ? "PUT" : "POST";
 
       // Send the request with FormData

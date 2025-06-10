@@ -4,7 +4,6 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-
 type PrivacyPolicy = {
   _id: string;
   heading: string;
@@ -22,11 +21,11 @@ const PrivacyPolicyList: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const router = useRouter();
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     const fetchPolicies = async () => {
       try {
-        const response = await fetch("https://labxbackend.labxrepair.com.au/api/admin/privacypolicy");
+        const response = await fetch(`${apiUrl}/api/admin/privacypolicy`);
 
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
@@ -44,7 +43,10 @@ const PrivacyPolicyList: React.FC = () => {
         if (error instanceof Error) {
           console.error("Error fetching privacy policies:", error.message);
         } else {
-          console.error("Unknown error occurred while fetching policies:", error);
+          console.error(
+            "Unknown error occurred while fetching policies:",
+            error
+          );
         }
 
         // Fallback to an empty list
@@ -68,9 +70,12 @@ const PrivacyPolicyList: React.FC = () => {
     setShowModal(false);
 
     try {
-      const response = await fetch(`https://labxbackend.labxrepair.com.au/api/admin/privacypolicy/${deleteId}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${apiUrl}/api/admin/privacypolicy/${deleteId}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (response.ok) {
         alert("Privacy policy deleted successfully!");
@@ -91,8 +96,6 @@ const PrivacyPolicyList: React.FC = () => {
     }
   };
 
-
-
   const handleEdit = (id: string) => {
     router.push(`/adminDeshboard/privacypolicy?id=${id}`);
   };
@@ -103,7 +106,9 @@ const PrivacyPolicyList: React.FC = () => {
 
   return (
     <div className="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Privacy Policies</h2>
+      <h2 className="text-2xl font-semibold text-center mb-6">
+        Privacy Policies
+      </h2>
       <table className="table-auto w-full border-collapse border border-gray-300">
         <thead>
           <tr className="bg-indigo-600 text-white">
@@ -129,7 +134,6 @@ const PrivacyPolicyList: React.FC = () => {
                 {policy.pageTitle}
               </td>
 
-
               {/* Keywords */}
               <td className="py-2 px-4 border" style={{ color: "black" }}>
                 {policy.pageKeywords}
@@ -138,29 +142,29 @@ const PrivacyPolicyList: React.FC = () => {
               {/* Images */}
               <td className="py-2 px-4 border">
                 <div className="flex flex-wrap gap-2">
-                {policy?.images?.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
-                    {policy?.images.map((image, index) => (
-                      <div
-                        key={index}
-                        style={{
-                          position: "relative",
-                          display: "inline-block",
-                        }}
-                      >
-                        <Image
-                          src={image} // Base64 image string or image URL
-                          alt={`Image ${index + 1}`}
-                          width={400}
-                          height={300}
-                          className="rounded-md"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  "No Image"
-                )}
+                  {policy?.images?.length > 0 ? (
+                    <div className="flex flex-wrap gap-2">
+                      {policy?.images.map((image, index) => (
+                        <div
+                          key={index}
+                          style={{
+                            position: "relative",
+                            display: "inline-block",
+                          }}
+                        >
+                          <Image
+                            src={image} // Base64 image string or image URL
+                            alt={`Image ${index + 1}`}
+                            width={400}
+                            height={300}
+                            className="rounded-md"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    "No Image"
+                  )}
                 </div>
               </td>
 
@@ -197,7 +201,9 @@ const PrivacyPolicyList: React.FC = () => {
       {showModal && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-            <h3 className="text-lg font-semibold mb-4">Are you sure you want to delete this policy?</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              Are you sure you want to delete this policy?
+            </h3>
             <div className="flex justify-end gap-4">
               <button
                 onClick={() => {

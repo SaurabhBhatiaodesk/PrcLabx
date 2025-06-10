@@ -33,7 +33,7 @@ export default function Productswiper({}) {
     <div>
       <div className="container ">
         <div className=" py-4 xl:py-6">
-          <MainHeading Heading="Our Clients" />
+          <MainHeading Heading="Our Clients" color="var(--secondary)" svg_stroke="var(--secondary)" />
           <MainTitle Title="Our clients trust us for expert mobile device repair and advanced motherboard soldering solutions. We are committed to delivering fast, reliable, and high-quality service tailored to their needs." />
 
           <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">

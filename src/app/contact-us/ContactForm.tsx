@@ -15,13 +15,7 @@ import {
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
 import "./Contactus.css";
-import contactusimage from "../../../public/Images/contactusimage.png";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
-// icons
-import localtion from "../../../public/Images/localtion.svg";
-import contactustime from "../../../public/Images/icons/contactustime.svg";
-import callcontactus from "../../../public/Images/icons/callcontactus.svg";
-import contactusmail from "../../../public/Images/icons/contactusmail.svg";
 
 const ContactForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false); // State for loader
@@ -43,7 +37,7 @@ const ContactForm: React.FC = () => {
     email_address: "",
     contact_no: "",
   });
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   // Handle changes for all form fields
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
@@ -197,7 +191,7 @@ const ContactForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "https://labxbackend.labxrepair.com.au/api/create/contact-us", // Replace with your actual API endpoint
+        `${apiUrl}/api/create/contact-us`, // Replace with your actual API endpoint
         requestData
       );
       // console.log(await response.data, "Form submitted successfully");
@@ -272,7 +266,10 @@ const ContactForm: React.FC = () => {
           notiClass="googleadd"
         />
       )}
-      <div className="p-2 lg:p-10 steper-form-section-os bg-black " id="contactId">
+      <div
+        className="p-2 lg:p-10 steper-form-section-os bg-black "
+        id="contactId"
+      >
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4 bg-black text-white">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
@@ -286,7 +283,6 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 error={!!formErrors.first_name}
                 helperText={formErrors.first_name}
-                
               />
 
               <TextField
@@ -324,29 +320,30 @@ const ContactForm: React.FC = () => {
                 helperText={formErrors.contact_no}
               /> */}
 
-<TextField
-  label="Phone Number *"
-  name="contact_no"
-  type="tel" // Changed to "text" to remove number spinner
-  fullWidth
-  variant="outlined"
-  value={formData.contact_no}
-  onChange={(e) => {
-    if (/^\d{0,10}$/.test(e.target.value)) { // Allows only up to 10 digits
-      setFormData({
-        ...formData,
-        contact_no: e.target.value,
-      });
-    }
-  }}
-  error={!!formErrors.contact_no}
-  helperText={formErrors.contact_no}
-/>
+              <TextField
+                label="Phone Number *"
+                name="contact_no"
+                type="tel" // Changed to "text" to remove number spinner
+                fullWidth
+                variant="outlined"
+                value={formData.contact_no}
+                onChange={(e) => {
+                  if (/^\d{0,10}$/.test(e.target.value)) {
+                    // Allows only up to 10 digits
+                    setFormData({
+                      ...formData,
+                      contact_no: e.target.value,
+                    });
+                  }
+                }}
+                error={!!formErrors.contact_no}
+                helperText={formErrors.contact_no}
+              />
             </div>
 
             {/* {/ Training Message /} */}
             <div>
-              <h3 className="text-[20px] lg:text-[26px]">Write Your Enquiry</h3>
+              <h3 className="text-[20px] lg:text-[26px] text-primary">Write Your Enquiry</h3>
               <TextareaAutosize
                 className="border-[1.5px]"
                 minRows={6}

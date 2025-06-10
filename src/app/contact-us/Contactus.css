@@ -60,13 +60,19 @@ input[type="submit"]:hover {
   color: #fff;
 }
 .steper-form-section-os .MuiFormControl-root label {
-  color: #fff;
+  color: var(--primary) !important;
+  background: transparent !important;
+}
+
+textarea::placeholder
+{
+  color: var(--primary) !important;
 }
 .steper-form-section-os .MuiFormControl-root .MuiInputBase-root input {
-  color: #fff;
+  color: #fff !important;
 }
 .steper-textarea-os .MuiTextarea-root {
-  background: #000;
+  /* background: #000; */
   color: #fff;
 }
 .steper-textarea-os .MuiTextarea-root textarea::placeholder {

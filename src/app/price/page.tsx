@@ -1,7 +1,7 @@
 import React from "react";
 
 import Contact from "./contact";
-
+import "./price.css"
 export const metadata = {
   title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
   description:

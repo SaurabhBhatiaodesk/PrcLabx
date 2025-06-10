@@ -32,14 +32,14 @@ const BlogsListing: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false); // Modal state
   const [deleteId, setDeleteId] = useState<string | null>(null); // Blog ID to delete
   const router = useRouter();
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const limit = 10; // Items per page
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${page}&limit=${limit}`
+          `${apiUrl}/api/admin/blogs?page=${page}&limit=${limit}`
         );
         const data = await response.json();
         console.log("datadata", data);
@@ -69,12 +69,9 @@ const BlogsListing: React.FC = () => {
     if (!deleteId) return;
 
     try {
-      const response = await fetch(
-        `https://labxbackend.labxrepair.com.au/api/admin/blog/${deleteId}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`${apiUrl}/api/admin/blog/${deleteId}`, {
+        method: "DELETE",
+      });
       if (response.ok) {
         alert("Blog deleted successfully!");
         setBlogs((prev) => prev.filter((blog) => blog._id !== deleteId)); // Remove deleted blog from UI

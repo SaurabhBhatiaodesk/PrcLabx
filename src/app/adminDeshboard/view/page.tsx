@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Typography, Paper, Box, CircularProgress } from "@mui/material";
 import Image from "next/image";
 
-const API_URL = "https://labxbackend.labxrepair.com.au/api/repair/id/";
-
 interface RepairData {
   personalDetails: {
     businessName: string;
@@ -39,11 +37,10 @@ interface RepairData {
 const ProductDetails: React.FC = () => {
   const [repairData, setRepairData] = useState<RepairData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     const fetchRepairData = async () => {
       const id = localStorage.getItem("selectedId");
-      console.log("ididididid", id);
       // Retrieve the ID from localStorage
       if (!id) {
         console.error("ID not found in localStorage");
@@ -52,7 +49,7 @@ const ProductDetails: React.FC = () => {
       }
 
       try {
-        const response = await fetch(`${API_URL}${id}`, {
+        const response = await fetch(`${apiUrl}/api/repair/id/${id}`, {
           method: "GET",
           redirect: "follow",
         });

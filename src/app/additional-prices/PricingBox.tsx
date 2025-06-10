@@ -67,7 +67,7 @@ const PricingBox: React.FC = () => {
                 <div className="flex justify-center">
                   <Image className="pb-2 w-[60px]" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className="text-[#EDE574] xl:text-xl lg:w-[70%] m-auto">{section.title}</h3>
+                <h3 className="text-tertiary  xl:text-xl lg:w-[70%] m-auto">{section.title}</h3>
                 <p>{section.description}</p>
               </div>
             ))}

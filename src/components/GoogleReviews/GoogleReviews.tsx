@@ -37,7 +37,7 @@ const reviews = [
     logoImage: Googletest,
     rating: 5,
     param:
-      "I had an outstanding experience at the LabX Repair Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
+      "I had an outstanding experience at the PRC Repair Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
   },
   {
     name: "Sahil Sardana",
@@ -55,7 +55,7 @@ const reviews = [
     logoImage: Googletest,
     rating: 5,
     param:
-      "I had a great experience with LabX Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
+      "I had a great experience with PRC Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
   },
   {
     name: "Ashley Jay",
@@ -81,7 +81,7 @@ const reviews = [
   //   profileImage: Iname,
   //   logoImage: Googletest,
   //   rating: 5,
-  //   param:"Fantastic experience with LabX Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
+  //   param:"Fantastic experience with PRC Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
   // },
   {
     name: "Ethan Wilson",
@@ -90,7 +90,7 @@ const reviews = [
     logoImage: Googletest,
     rating: 5,
     param:
-      "LabX Repair's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
+      "PRC Repair's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
   },
   // Add more review objects as needed
 ];
@@ -99,12 +99,12 @@ export default function Productswiper({ }) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="bg-[#0b0b0b]">
-      <div className="container">
-        <div className="py-5 xl:p-6">
-          <MainHeading Heading="Google Reviews" />
-          <MainTitle Title="Read our genuine customer reviews to see why so many trust LabX. Real feedback from satisfied customers speaks for itself!" />
-          <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">
+    <div className="">
+      <div className="">
+        <div className="py-5 p-6">
+          <MainHeading Heading="Our Google Reviews" svg_stroke="var(--alpha)" />
+          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
+          <div className="service-slide-box flex gap-5 pt-8 lg:flex-row items-center flex-col">
             <Swiper
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               className="arrow-top-right w-[100%] py-4"
@@ -133,7 +133,7 @@ export default function Productswiper({ }) {
             >
               {reviews.map((review, index) => (
                 <SwiperSlide key={index}>
-                  <div className="p-4 bg-[#010101] rounded-[20px] border-[1px] border-[] shadow-md">
+                  <div className="p-4 rounded-[20px] border-[1px] border-[var(--secondry)] shadow-md">
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex gap-3 items-start">
                         <Image

@@ -23,9 +23,10 @@ interface TitleProps {
   Title: string;
   color?: string;
   animation?: string; // New prop for AOS animation
+  para_align?:string
 }
 
-const MainTitle: React.FC<TitleProps> = ({ Title, color, animation }) => {
+const MainTitle: React.FC<TitleProps> = ({ Title, color, animation,para_align }) => {
   useEffect(() => {
    
     AOS.init({ duration: 1500 }); // Initialize AOS with a duration of 1000ms
@@ -34,9 +35,9 @@ const MainTitle: React.FC<TitleProps> = ({ Title, color, animation }) => {
   return (
     <div
       data-aos={animation || 'fade-up'} 
-      className="title-text text-center 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%] m-auto"
+      className={`title-text ${para_align == 'start' ? 'm-0 text-start': 'm-auto text-center' } 3xl:w-[70%] lg:w-[70%] 2xl:w-[60%] md:w-[90%]`}
     >
-      <p style={{ color: color || 'inherit' }}>{Title}</p>
+      <p className='m-0' style={{ color: color || 'inherit' }}>{Title}</p>
     </div>
   );
 };

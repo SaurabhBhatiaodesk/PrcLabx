@@ -23,14 +23,14 @@ import {
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import "./B2BRepairServices.css";
 import MainButton from "@/components/MainButton/MainButton";
-import pointer from "../../../public/Images/icons/pointing-right.svg";
+import pointer from "../../../public/Images/tickicon.png";
 import B2BRepairNeeds from "../../../public/Images/B2B Repair Needs.png";
 import RepairServices from "../../../public/Images/Repair Services.png";
 
-import ApplyforaBusinessAccount from "../../../public/Images/icons/Apply for a Business Account.svg";
-import SendUsYourDevices from "../../../public/Images/icons/Send Us Your Devices.svg";
-import TrackYourOrders from "../../../public/Images/icons/Track Your Orders.svg";
-import ReceiveYourRepairedDevices from "../../../public/Images/icons/Receive Your Repaired Devices.svg";
+import ApplyforaBusinessAccount from "../../../public/Images/Apply for a Business Account.svg";
+import SendUsYourDevices from "../../../public/Images/Send Us Your Devices.svg";
+import TrackYourOrders from "../../../public/Images/Track Your Orders.svg";
+import ReceiveYourRepairedDevices from "../../../public/Images/Receive Your Repaired Devices.svg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -207,7 +207,7 @@ const B2BRepairServices: React.FC = () => {
       <div className="steper-form-section-os">
         <Breadcrumb
           pageName="B2B Phone Repair Service"
-          pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. LabX provides specialized services that help you maintain your business efficiency and product quality."
+          pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. PRC provides specialized services that help you maintain your business efficiency and product quality."
           backgroundImage="/Images/BannerImages/about.png"
           AdminImage="/Images/B2BRepairServices.svg"
           link="/coming-soon"
@@ -221,7 +221,7 @@ const B2BRepairServices: React.FC = () => {
                 B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers
               </h2>
               <p>
-                From repair shops to retailers to bulk device suppliers, LabX
+                From repair shops to retailers to bulk device suppliers, PRC
                 caters to the specific needs of B2B phone repairs. Our
                 specialized services are designed to help you maintain
                 efficiency and product quality. We handle complex repairs,
@@ -235,19 +235,20 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Why Partner with LabX for Your B2B Repair Needs?" />
+            <MainHeading Heading="Why Partner with PRC for Your B2B Repair Needs?" />
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={B2BRepairNeeds} alt=" labx repair " />
+                <Image src={B2BRepairNeeds} alt=" PRC repair " />
               </div>
               <div>
                 <div className="flex-col gap-2  flex">
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
-
-                    <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                    <div className="w-[35px] mt-[2px]">
+                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    </div>
+                    <div className="w-[85%]">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Reliable Screen Refurbishing:
                       </span>
                       <p className="inline ml-1">
@@ -259,23 +260,27 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
-                    <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                    <div className="w-[35px] mt-[2px]">
+                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    </div>
+                    <div className="w-[85%]">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Expert Logic Board Repairs:
                       </span>
                       <p className="inline ml-1">
                         {
-                          " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with LabX, you gain access to a higher level of phone fixing services."
+                          " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with PRC, you gain access to a higher level of phone fixing services."
                         }
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
-                    <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                    <div className="w-[35px] mt-[2px]">
+                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    </div>
+                    <div className="w-[85%]">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Comprehensive Data Recovery:
                       </span>
                       <p className="inline ml-1">
@@ -287,9 +292,11 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
-                    <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                    <div className="w-[35px] mt-[2px]">
+                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    </div>
+                    <div className="w-[85%]">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Bulk Repair Solutions:
                       </span>
                       <p className="inline ml-1">
@@ -318,7 +325,7 @@ const B2BRepairServices: React.FC = () => {
                     <Image src={pointer} alt="pointer" />
 
                     <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Competitive Pricing:
                       </span>
                       <p className="inline ml-1">
@@ -333,7 +340,7 @@ const B2BRepairServices: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Image src={pointer} alt="pointer" />
                     <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Fast Turnaround Times:
                       </span>
                       <p className="inline ml-1">
@@ -347,7 +354,7 @@ const B2BRepairServices: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Image src={pointer} alt="pointer" />
                     <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Custom Repair Solutions:
                       </span>
                       <p className="inline ml-1">
@@ -361,7 +368,7 @@ const B2BRepairServices: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Image src={pointer} alt="pointer" />
                     <div className="">
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Repair Tracking and Updates:
                       </span>
                       <p className="inline ml-1">
@@ -374,7 +381,7 @@ const B2BRepairServices: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Image src={pointer} alt="pointer" />
                     <div>
-                      <span className="text-xl pb-[2px] text-[#EDE574] font-semibold">
+                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
                         Easy B2B Account Setup:
                       </span>
                       <p className="inline ml-1">
@@ -387,7 +394,7 @@ const B2BRepairServices: React.FC = () => {
                 </div>
               </div>
               <div>
-                <Image src={RepairServices} alt=" labx repair " />
+                <Image src={RepairServices} alt=" PRC repair " />
               </div>
             </div>
           </div>
@@ -404,10 +411,10 @@ const B2BRepairServices: React.FC = () => {
                   <div
                     key={index}
                     style={{ background: "transparent" }}
-                    className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col  hover:shadow-[0_0_20px_10px_#ede57456] "
+                    className="p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col  hover:shadow-[0_0_20px_10px_#ede57456] group"
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.background =
-                        section.hoverBackground)
+                    (e.currentTarget.style.background =
+                      section.hoverBackground)
                     }
                     onMouseLeave={(e) =>
                       (e.currentTarget.style.background = "transparent")
@@ -420,10 +427,10 @@ const B2BRepairServices: React.FC = () => {
                         alt={section.alt}
                       />
                     </div>
-                    <h3 className="text-[#EDE574] xl:text-lg ">
+                    <h3 className="text-tertiary xl:text-lg ">
                       {section.title}
                     </h3>
-                    <p>{section.description}</p>
+                    <p className="group-hover:text-primary">{section.description}</p>
 
                   </div>
                 ))}

@@ -6,12 +6,12 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import DeliveryTousMobile from "./DeliveryTousMobile";
 import Link from "next/link";
-import arrow1 from "../../../../public/Images/icons/arrow1-1.svg";
+import arrow1 from "../../../../public/Images/rightarrow1.webp";
 import arrow2 from "../../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../../public/Images/icons/arrow1-5.svg";
-
+import shipbanner1 from "../../../../public/Images/shipdevicebanner1.webp"
 interface Tab {
   id: number;
   label: string;
@@ -38,10 +38,10 @@ const VerticalTabs: React.FC = () => {
     {
       id: 0,
       label: "Screen Refurbishment",
-      content: "LabX Professional Screen Refurbishment:",
+      content: "PRC Professional Screen Refurbishment:",
       contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
-        "At LabX Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3title: "State-of-the-Art Technology",
       contentf3:
         "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -53,14 +53,13 @@ const VerticalTabs: React.FC = () => {
         "We understand the urgency of business needs, which is why we offer quick and efficient screen refurbishing services without compromising quality.",
       button: "READ MORE",
       link: "/screen-refurbishing",
-      image:
-        "https://labxbackend.s3.us-east-2.amazonaws.com/ScreenRefurbishment+1.webp",
+      image: shipbanner1,
       // image: screenreplace,
     },
     {
       id: 1,
       label: "Phone Repair Courses",
-      content: "LabX Professional Phone Repair Courses:",
+      content: "PRC Professional Phone Repair Courses:",
       contentf2title: "Beginner Training",
       contentf2:
         "Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
@@ -82,7 +81,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 2,
       label: "Mail In Repair",
-      content: "LabX Professional Mail In Repair:",
+      content: "PRC Professional Mail In Repair:",
       contentf2title: "Review Our Pricing",
       contentf2:
         "Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
@@ -107,7 +106,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 3,
       label: "B2B Phone Repair",
-      content: "LabX Professional B2B Phone Repair:",
+      content: "PRC Professional B2B Phone Repair:",
       contentf2title: "Competitive Pricing",
       contentf2:
         "Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
@@ -132,7 +131,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 4,
       label: "Data Recovery",
-      content: "LabX Professional Data Recovery:",
+      content: "PRC Professional Data Recovery:",
       contentf2title: "Data from Dead",
       contentf2:
         "We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure.",
@@ -168,14 +167,14 @@ const VerticalTabs: React.FC = () => {
       case 4:
         return "linear-gradient(74deg, #2052e8a5, #000000)";
       default:
-        return "linear-gradient(74deg, #56c1c1, #000000)";
+        return "linear-gradient(74deg, var(--fourth), #000000)";
     }
   };
 
   const getTextColor = (id: number) => {
     switch (id) {
       case 0:
-        return "#56c1c1";
+        return "var(--fourth)";
       case 1:
         return "#f35520c0";
       case 2:
@@ -193,9 +192,9 @@ const VerticalTabs: React.FC = () => {
     {
       id: 0,
       label: "Screen Refurbishment",
-      content: "LabX Professional Screen Refurbishment Services:",
+      content: "PRC Professional Screen Refurbishment Services:",
       contentf2:
-        "Expert B2B Screen Refurbishing: At LabX Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "Expert B2B Screen Refurbishing: At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3:
         "State-of-the-Art Technology: We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
       contentf4:
@@ -210,7 +209,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 1,
       label: "Phone Repair Courses",
-      content: "LabX Professional Phone Repair Courses:",
+      content: "PRC Professional Phone Repair Courses:",
       contentf2:
         "Beginner Training: Our beginner phone repairing course covers essential phone repairs, including screen replacement services and charging port repairs. Gain hands-on experience and confidence in your repair skills.",
       contentf3:
@@ -227,7 +226,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 2,
       label: "Mail In Repair",
-      content: "LabX Professional Mail In Repair:",
+      content: "PRC Professional Mail In Repair:",
       contentf2:
         "Review Our Pricing: Check our Price List for no-fix, no-fee pricing on common logic board issues. A $66 service fee applies for devices with previous repair attempts.",
       contentf3:
@@ -246,7 +245,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 3,
       label: "B2B Phone Repair",
-      content: "LabX Professional B2B Phone Repair:",
+      content: "PRC Professional B2B Phone Repair:",
       contentf2:
         "Competitive Pricing: Our pricing is competitive with one standard rate for both end users and shops. We focus on providing high-quality repair services and offer support to businesses when they need reliable, cost-effective solutions for their repair needs.",
       contentf3:
@@ -265,7 +264,7 @@ const VerticalTabs: React.FC = () => {
     {
       id: 4,
       label: "Data Recovery",
-      content: "LabX Professional Data Recovery:",
+      content: "PRC Professional Data Recovery:",
       contentf2:
         "Data from Dead: We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure.",
       contentf3:
@@ -291,32 +290,33 @@ const VerticalTabs: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-        <MainHeading Heading="Get a Quick Look at What We Offer" />
-        <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" />
+        <MainHeading Heading="Ship Your Device To Us"  color="var(--fourth)" svg_stroke="var(--primary)" />
+        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
         <div className="lg:block hidden">
-          <div className="grid xl:grid-cols-[1fr_3fr_1fr] lg:grid-cols-[3fr_6fr] gap-4">
-            <div className="flex flex-col w-full gap-4">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`p-3 text-white rounded-[50px] border-[1.5px] text-base tracking-[1.2px] ${
-                    activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
+          <div className="grid justify-center grid-cols-2 lg:grid-cols-5  py-5 w-full gap-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`p-3 text-white rounded-[10px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
+                  ? "active-tab"
+                  : "bg-opacity-50 hover:bg-opacity-75"
                   }`}
-                  onClick={() => setActiveTab(tab.id)}
-                  data-selected={tab.id.toString()}
-                  role="tab"
-                  aria-label={`Tab for ${tab.label}`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+                onClick={() => setActiveTab(tab.id)}
+                data-selected={tab.id.toString()}
+                role="tab"
+                aria-label={`Tab for ${tab.label}`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="lg:block hidden py-5">
+          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_6fr] gap-4">
             <div
               className={`flex-1 xl:pl-4 radial-gradient-background-${activeTab}`}
             >
-              <h3 className="mb-2">{tabs[activeTab].content}</h3>
+              <h3 className="mb-2 text-primary">{tabs[activeTab].content}</h3>
               {[
                 {
                   title: tabs[activeTab].contentf2title,
@@ -350,7 +350,7 @@ const VerticalTabs: React.FC = () => {
                       height={50}
                     />
                     <div>
-                      <p className="">
+                      <p className="text-primary">
                         <span
                           className="font-bold pb-[2px] mr-[3px]"
                           style={{ color: getTextColor(activeTab) }} // Apply dynamic text color here
@@ -402,8 +402,7 @@ const VerticalTabs: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <section className="lg:hidden block">
+        <section className="lg:hidden block py-4 lg:py-3">
           <DeliveryTousMobile itoms={itoms} />
         </section>
       </div>

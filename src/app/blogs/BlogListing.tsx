@@ -26,12 +26,12 @@ const Blogs: React.FC = () => {
   const [pagination, setPagination] = useState<Pagination | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [limit] = useState(24); // Limit per page
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          `https://labxbackend.labxrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
+          `${apiUrl}/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
         console.log(
           "response?.data?.blogresponse?.data?.blog",
@@ -69,7 +69,7 @@ const Blogs: React.FC = () => {
               return (
                 <div
                   key={blog._id}
-                  className="blog-article p-4 rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
+                  className="blog-article p-4 rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
                 >
                   <Link href={`/blogs/${blog.pageTitle}`}>
                     <Image
@@ -80,7 +80,7 @@ const Blogs: React.FC = () => {
                       className="rounded-[20px] h-[250px] object-cover"
                     />
                   </Link>
-                  <h3 className="mb-4 mt-4 text-tertiary">
+                  <h3 className="mb-4 mt-4 text-prc">
                     {(blog.heading || "Blog Title").slice(0, 40)}...
                   </h3>
                   <div className="learnmore">
@@ -92,6 +92,7 @@ const Blogs: React.FC = () => {
                     <MainButton
                       MainButton="View Details"
                       link={`/blogs/${blog?.pageTitle}`}
+                      color="bg-prc"
                     />
                   </div>
                 </div>

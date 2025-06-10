@@ -91,137 +91,6 @@ type HandleSubmitParams = {
   pricingAgreement: boolean;
 };
 
-// const PatternLock = () => {
-//   const handlePatternComplete = (code: number[], nodes: any) => {
-//     console.log("Pattern code (numbers):", code);
-//     console.log("Pattern nodes:", nodes);
-//     alert(`Pattern: ${code.join("-")}`); // Display the pattern as a string
-//   };
-
-//   return (
-//     <div
-//       style={{
-//         width: "320px",
-//         height: "320px",
-//         backgroundColor: "#000", // Background color for the pattern container
-//         borderRadius: "10px", // Rounded corners
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         margin: "0 auto", // Center align the pattern lock
-//       }}
-//     >
-//       <ReactCanvasPatternLock
-//         width={300} // Width of the pattern grid
-//         height={300} // Height of the pattern grid
-//         rows={3} // Number of rows
-//         cols={3} // Number of columns
-//         onComplete={handlePatternComplete} // Callback for when the pattern is completed
-//       />
-//     </div>
-//   );
-// };
-
-// const CustomPatternLock: React.FC<CustomPatternLockProps> = ({ onFinish }) => {
-//   const [path, setPath] = useState<number[]>([]);
-//   const [error, setError] = useState(false);
-//   const [size] = useState(3);
-//   const canvasRef = useRef<HTMLCanvasElement>(null);
-//   const containerRef = useRef<HTMLDivElement>(null);
-
-//   const handleCellClick = (index: number, cellRect: DOMRect) => {
-//     if (!path.includes(index)) {
-//       setPath([...path, index]);
-//       drawPath(cellRect);
-//     }
-//   };
-
-//   const handleFinish = () => {
-//     if (path.length > 0) {
-//       const pattern = path.join("-");
-//       onFinish(pattern);
-//       setError(false);
-//     } else {
-//       setError(true);
-//     }
-//   };
-
-//   const handleReset = () => {
-//     setPath([]);
-//     setError(false);
-//     const canvas = canvasRef.current;
-//     if (canvas) {
-//       const ctx = canvas.getContext("2d");
-//       if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     }
-//   };
-
-//   const drawPath = (cellRect: DOMRect) => {
-//     const canvas = canvasRef.current;
-//     const ctx = canvas?.getContext("2d");
-
-//     if (ctx && containerRef.current) {
-//       const { left, top } = containerRef.current.getBoundingClientRect();
-//       const centerX = cellRect.left + cellRect.width / 2 - left;
-//       const centerY = cellRect.top + cellRect.height / 2 - top;
-
-//       if (path.length > 0) {
-//         const lastIndex = path[path.length - 1];
-//         const lastCell = containerRef.current.children[lastIndex];
-//         if (lastCell) {
-//           const lastRect = (lastCell as HTMLElement).getBoundingClientRect();
-//           const lastCenterX = lastRect.left + lastRect.width / 2 - left;
-//           const lastCenterY = lastRect.top + lastRect.height / 2 - top;
-
-//           ctx.beginPath();
-//           ctx.moveTo(lastCenterX, lastCenterY);
-//           ctx.lineTo(centerX, centerY);
-//           ctx.strokeStyle = "#00ffff";
-//           ctx.lineWidth = 5;
-//           ctx.stroke();
-//           ctx.closePath();
-//         }
-//       }
-//     }
-//   };
-
-//   return (
-//     <div className="pattern-lock-container">
-//       <div
-//         className="grid"
-//         ref={containerRef}
-//         style={{
-//           gridTemplateColumns: `repeat(${size}, 1fr)`,
-//           gridTemplateRows: `repeat(${size}, 1fr)`,
-//         }}
-//       >
-//         {Array.from({ length: size * size }, (_, index) => (
-//           <div
-//             key={index}
-//             className={`cell ${path.includes(index) ? "selected" : ""}`}
-//             onClick={(e) =>
-//               handleCellClick(
-//                 index,
-//                 (e.target as HTMLElement).getBoundingClientRect()
-//               )
-//             }
-//           ></div>
-//         ))}
-//       </div>
-//       <canvas ref={canvasRef} className="canvas-overlay"></canvas>
-//       <div className="controls">
-//         <button onClick={handleFinish} className="btn-save">
-//           Save Pattern
-//         </button>
-//         <button onClick={handleReset} className="btn-reset">
-//           Reset Pattern
-//         </button>
-//       </div>
-//       {error && <p className="error-message">Please draw a valid pattern.</p>}
-//     </div>
-//   );
-// };
-
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -273,7 +142,7 @@ const StaperForm: React.FC = () => {
   });
 
   const [pricingAgreement, setPricingAgreement] = useState(false);
-
+  const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   class PasswordPattern extends React.Component<{
     onFinish: (path: string) => void;
   }> {
@@ -647,18 +516,17 @@ const StaperForm: React.FC = () => {
         repairDetails,
         shippingDetails,
         pricingAgreement,
-        type: `${
-          pathname === "/mail-in-repair"
+        type: `${pathname === "/mail-in-repair"
             ? "mail-in"
             : pathname === "/data-recovery"
-            ? "data-recovery"
-            : "ps5"
-        }`,
+              ? "data-recovery"
+              : "ps5"
+          }`,
       };
-  
+
       try {
         const response = await axios.post(
-          "https://labxbackend.labxrepair.com.au/api/repair_info",
+          `${apiUrl}/api/repair_info`,
           payload,
           {
             headers: {
@@ -666,34 +534,34 @@ const StaperForm: React.FC = () => {
             },
           }
         );
-        
+
         if (response.status === 200 || response.status === 201) {
           const { orderReferenceId } = response.data.data; // Assuming the orderReferenceId is returned in the response data
-  
+
           if (typeof window !== "undefined") {
             localStorage.removeItem("formData");
-  
+
             // Pass orderReferenceId as query parameter in the URL
             const cleanOrderReferenceId = orderReferenceId.startsWith("#")
               ? orderReferenceId.slice(1)
               : orderReferenceId;
-            
+
             // Handle Google Ads conversion tracking
             const callback = function () {
               // Navigate after conversion
               if (typeof window !== "undefined") {
                 pathname === "/mail-in-repair"
-                  ? router.push(`/mail-in-repair/thank-you`)
+                  ? router.push(`/thank-you`)
                   : pathname === "/data-recovery"
-                  ? router.push(`/data-recovery/thank-you`)
-                  : router.push(`/ps5-repair/thank-you`);
+                    ? router.push(`/thank-you`)
+                    : router.push(`/thank-you`);
               }
             };
-  
+
             // Google Ads Conversion Tracking
-            window.gtag('event', 'conversion', {
-              'send_to': 'AW-16874061920/mR6jCKzNgr0aEOCAl-4-',
-              'event_callback': callback,
+            window.gtag("event", "conversion", {
+              send_to: "AW-16874061920/mR6jCKzNgr0aEOCAl-4-",
+              event_callback: callback,
             });
           }
         } else {
@@ -707,7 +575,6 @@ const StaperForm: React.FC = () => {
       }
     }
   };
-  
 
   useEffect(() => {
     // When 'requireReturnLabel' is set to 'No', clear returnLabelDetails
@@ -786,13 +653,10 @@ const StaperForm: React.FC = () => {
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading
-              Heading={`${
-                pathname === "/mail-in-repair"
-                  ? "LabX Mail-In Repair Submission Form"
-                  : pathname === "/data-recovery"
-                  ? "LabX data-recovery Submission Form"
-                  : "LabX PS5 Repair Submission Form"
-              }`}
+              Heading={`${pathname === "/mail-in-repair"? "LabX Mail-In Repair Submission Form": pathname === "/data-recovery"? "LabX data-recovery Submission Form": "LabX PS5 Repair Submission Form"}`
+              
+              }
+              svg_stroke="var(--prc)"
             />
           </div>
 
@@ -808,13 +672,12 @@ const StaperForm: React.FC = () => {
                   className="flex items-center flex-col  relative z-10"
                 >
                   <div
-                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${
-                      activeStep === index
+                    className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${activeStep === index
                         ? "bg-yellow-500"
                         : activeStep > index
-                        ? "bg-black"
-                        : " relative z-10"
-                    }`}
+                          ? "bg-black"
+                          : " relative z-10"
+                      }`}
                   >
                     {activeStep > index ? (
                       <Lottie
@@ -827,11 +690,10 @@ const StaperForm: React.FC = () => {
                     )}
                   </div>
                   <p
-                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${
-                      activeStep === index
+                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${activeStep === index
                         ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
                         : ""
-                    }`}
+                      }`}
                   >
                     {step}
                   </p>
@@ -855,12 +717,12 @@ const StaperForm: React.FC = () => {
                   </div>
                   <div>
                     <div className="">
-                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-4 bg-black text-white">
+                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-4 bg-primary text-secondary">
                         <h4 className="lg:text-lg text-sm">Personal Details</h4>
 
                         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                           {/* Business Name (Optional) */}
-                          <div>
+                          <div className="border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
                             <TextField
                               label="Business Name(If any)"
                               name="business_name"
@@ -879,15 +741,17 @@ const StaperForm: React.FC = () => {
                                 // This targets the label in ALL states
                                 "& label.MuiInputLabel-root": {
                                   color: "gray",
+                                  background: "#fff",
                                 },
                                 "& label.Mui-focused": {
                                   color: "gray",
+                                  background: "#fff"
                                 },
                               }}
                             />
                           </div>
 
-                          <div>
+                          <div className="border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
                             <TextField
                               required
                               label="Full Name"
@@ -911,9 +775,11 @@ const StaperForm: React.FC = () => {
                                 // This targets the label in ALL states
                                 "& label.MuiInputLabel-root": {
                                   color: "gray",
+                                  background: "#fff",
                                 },
                                 "& label.Mui-focused": {
                                   color: "gray",
+                                  background: "#fff",
                                 },
                               }}
                             />
@@ -924,7 +790,7 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                          <div>
+                          <div className="border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
                             <TextField
                               required
                               label="Contact Number"
@@ -953,9 +819,11 @@ const StaperForm: React.FC = () => {
                                 // This targets the label in ALL states
                                 "& label.MuiInputLabel-root": {
                                   color: "gray",
+                                  background: "#fff",
                                 },
                                 "& label.Mui-focused": {
                                   color: "gray",
+                                  background: "#fff",
                                 },
                               }}
                               inputProps={{ maxLength: 10 }}
@@ -968,7 +836,7 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                          <div>
+                          <div className="border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
                             <TextField
                               required
                               label="Your Email"
@@ -992,14 +860,15 @@ const StaperForm: React.FC = () => {
                                 // This targets the label in ALL states
                                 "& label.MuiInputLabel-root": {
                                   color: "gray",
+                                   background:"#fff",
                                 },
                                 "& label.Mui-focused": {
                                   color: "gray",
+                                   background:"#fff",
                                 },
                               }}
-                              className={`w-full bg-black text-white border-white ${
-                                isInvalid ? "border-red-500" : ""
-                              }`}
+                              className={`w-full bg-primary text-secondary border-white ${isInvalid ? "border-red-500" : ""
+                                }`}
                               type="email"
                             />
                             {errors.emailAddress && (
@@ -1019,103 +888,109 @@ const StaperForm: React.FC = () => {
                           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                             {(pathname === "/mail-in-repair" ||
                               pathname === "/data-recovery") && (
-                              <>
-                                <div className="w-full">
-                                  <TextField
-                                    type="text"
-                                    label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
-                                    name="deviceType"
-                                    fullWidth
-                                    value={deviceDetails.deviceType}
-                                    onChange={(
-                                      e: React.ChangeEvent<HTMLInputElement>
-                                    ) =>
-                                      setDeviceDetails({
-                                        ...deviceDetails,
-                                        deviceType: e.target.value,
-                                      })
-                                    }
-                                    InputLabelProps={{
-                                      shrink: true, // ⬅️ Keeps the label on top
-                                    }}
-                                    sx={{
-                                      // This targets the label in ALL states
-                                      "& label.MuiInputLabel-root": {
-                                        color: "gray",
-                                      },
-                                      "& label.Mui-focused": {
-                                        color: "gray",
-                                      },
-                                    }}
-                                  />
-                                </div>
-                                <div className="w-full">
-                                  <TextField
-                                    id="brandModel"
-                                    type="text"
-                                    label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
-                                    name="brandModel"
-                                    fullWidth
-                                    value={deviceDetails.brand}
-                                    onChange={(
-                                      e: React.ChangeEvent<HTMLInputElement>
-                                    ) =>
-                                      setDeviceDetails({
-                                        ...deviceDetails,
-                                        brand: e.target.value,
-                                      })
-                                    }
-                                    InputLabelProps={{
-                                      shrink: true, // ⬅️ Keeps the label on top
-                                    }}
-                                    sx={{
-                                      // This targets the label in ALL states
-                                      "& label.MuiInputLabel-root": {
-                                        color: "gray",
-                                      },
-                                      "& label.Mui-focused": {
-                                        color: "gray",
-                                      },
-                                    }}
-                                  />
-                                </div>
-                                <div>
-                                  <TextField
-                                    type="text"
-                                    label="IMEI/Serial No.(If known)"
-                                    name="imei_serial_no"
-                                    fullWidth
-                                    value={deviceDetails.imeiOrSerialNo}
-                                    onChange={(e) =>
-                                      setDeviceDetails({
-                                        ...deviceDetails,
-                                        imeiOrSerialNo: e.target.value,
-                                      })
-                                    }
-                                    InputLabelProps={{
-                                      shrink: true, // ⬅️ Keeps the label on top
-                                    }}
-                                    sx={{
-                                      // This targets the label in ALL states
-                                      "& label.MuiInputLabel-root": {
-                                        color: "gray",
-                                      },
-                                      "& label.Mui-focused": {
-                                        color: "gray",
-                                      },
-                                    }}
-                                  />
-                                </div>
-                              </>
-                            )}
-                            <div className="w-full ">
+                                <>
+                                  <div className="w-full border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
+                                    <TextField
+                                      type="text"
+                                      label="Enter Device Type(eg:Mobile Phone/Tablet/laptop) "
+                                      name="deviceType"
+                                      fullWidth
+                                      value={deviceDetails.deviceType}
+                                      onChange={(
+                                        e: React.ChangeEvent<HTMLInputElement>
+                                      ) =>
+                                        setDeviceDetails({
+                                          ...deviceDetails,
+                                          deviceType: e.target.value,
+                                        })
+                                      }
+                                      InputLabelProps={{
+                                        shrink: true, // ⬅️ Keeps the label on top
+                                      }}
+                                      sx={{
+                                        // This targets the label in ALL states
+                                        "& label.MuiInputLabel-root": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                        "& label.Mui-focused": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                      }}
+                                    />
+                                  </div>
+                                  <div className="w-full border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
+                                    <TextField
+                                      id="brandModel"
+                                      type="text"
+                                      label="Enter Brand/Model (e.g:Apple-iPhone 13 Pro)"
+                                      name="brandModel"
+                                      fullWidth
+                                      value={deviceDetails.brand}
+                                      onChange={(
+                                        e: React.ChangeEvent<HTMLInputElement>
+                                      ) =>
+                                        setDeviceDetails({
+                                          ...deviceDetails,
+                                          brand: e.target.value,
+                                        })
+                                      }
+                                      InputLabelProps={{
+                                        shrink: true, // ⬅️ Keeps the label on top
+                                      }}
+                                      sx={{
+                                        // This targets the label in ALL states
+                                        "& label.MuiInputLabel-root": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                        "& label.Mui-focused": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                      }}
+                                    />
+                                  </div>
+                                  <div className=" w-full border-[2px] border-[var(--secondary)] rounded-xl form_input_outer">
+                                    <TextField
+                                      type="text"
+                                      label="IMEI/Serial No.(If known)"
+                                      name="imei_serial_no"
+                                      fullWidth
+                                      value={deviceDetails.imeiOrSerialNo}
+                                      onChange={(e) =>  
+                                        setDeviceDetails({
+                                          ...deviceDetails,
+                                          imeiOrSerialNo: e.target.value,
+                                        })
+                                      }
+                                      InputLabelProps={{
+                                        shrink: true, // ⬅️ Keeps the label on top
+                                      }}
+                                      sx={{
+                                        // This targets the label in ALL states
+                                        "& label.MuiInputLabel-root": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                        "& label.Mui-focused": {
+                                          color: "gray",
+                                          background:"var(--primary)"
+                                        },
+                                      }}
+                                    />
+                                  </div>
+                                </>
+                              )}
+                            <div className="w-full">
                               <Select
                                 defaultSelectedKeys={
                                   deviceDetails?.passwordType == "None"
                                     ? ["None"]
                                     : [deviceDetails?.passwordType]
                                 }
-                                className="bg-blackgk"
+                                className="bg-primary text-secondary"
                                 label="Password Type (Must Be Correct One)*"
                                 name="password_type"
                                 value={deviceDetails.passwordType || "None"}
@@ -1135,14 +1010,14 @@ const StaperForm: React.FC = () => {
                                 }}
                                 fullWidth
                               >
-                                <MenuItem key="None" value="None">
+                                <MenuItem key="None" value="None" >
                                   None
                                 </MenuItem>
                                 <MenuItem key="PIN" value="PIN">
                                   PIN
                                 </MenuItem>
                                 {pathname === "/mail-in-repair" ||
-                                pathname === "/data-recovery" ? (
+                                  pathname === "/data-recovery" ? (
                                   <MenuItem key="Pattern" value="Pattern">
                                     Pattern
                                   </MenuItem>
@@ -1301,11 +1176,12 @@ const StaperForm: React.FC = () => {
                       <div className=" ">
                         <div>
                           <div className="">
-                            <div className="flex flex-col gap-4 bg-black text-white">
+                            <div className="flex flex-col gap-4 bg-primary text-secondary">
                               {/* Description of Issue */}
-                              <div className="steper-textarea-os mt-4 ">
+                              <div className="steper-textarea-os mt-4 border-2 border-[var(--secondary)] rounded-xl div_child ">
                                 <Textarea
                                   placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
+                                  className="bg-primary"
                                   minRows={5}
                                   value={repairDetails.issueDescription}
                                   onChange={(e) => {
@@ -1323,6 +1199,7 @@ const StaperForm: React.FC = () => {
                                     "& textarea::placeholder": {
                                       color: "gray",
                                       opacity: 1,
+                                      borderRadius:"12px"
                                     },
                                   }}
                                 />
@@ -1345,9 +1222,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "#ede574", // Custom color for the radio button
+                                            color: "var(--tertiary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "#ede574", // Color when radio is checked
+                                              color: "var(--tertiary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1368,9 +1245,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "#ede574", // Custom color for the radio button
+                                            color: "var(--tertiary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "#ede574", // Color when radio is checked
+                                              color: "var(--tertiary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1391,42 +1268,42 @@ const StaperForm: React.FC = () => {
 
                                   {repairDetails.previousRepairAttempts ===
                                     "Yes" && (
-                                    <div className="steper-textarea-os mt-2">
-                                      <p className="text-yellow-500 text-sm mt-2 italic">
-                                        A $66 service fee will be required to
-                                        release the device, regardless of
-                                        whether it is fixed or not.
-                                      </p>
-                                      <Textarea
-                                        placeholder="Little explanation about previous attempts"
-                                        minRows={5}
-                                        value={
-                                          repairDetails.previousRepairAttemptsComments
-                                        }
-                                        onChange={(e) =>
-                                          setRepairDetails({
-                                            ...repairDetails,
-                                            previousRepairAttemptsComments:
-                                              e.target.value,
-                                          })
-                                        }
-                                        required
-                                        sx={{
-                                          "& textarea::placeholder": {
-                                            color: "gray",
-                                            opacity: 1,
-                                          },
-                                        }}
-                                      />
-                                      {errors.previousRepairAttemptsComments && (
-                                        <p className="text-[red] text-sm mb-0">
-                                          {
-                                            errors.previousRepairAttemptsComments
-                                          }
+                                      <div className="steper-textarea-os mt-2">
+                                        <p className="text-yellow-500 text-sm mt-2 italic">
+                                          A $66 service fee will be required to
+                                          release the device, regardless of
+                                          whether it is fixed or not.
                                         </p>
-                                      )}
-                                    </div>
-                                  )}
+                                        <Textarea
+                                          placeholder="Little explanation about previous attempts"
+                                          minRows={5}
+                                          value={
+                                            repairDetails.previousRepairAttemptsComments
+                                          }
+                                          onChange={(e) =>
+                                            setRepairDetails({
+                                              ...repairDetails,
+                                              previousRepairAttemptsComments:
+                                                e.target.value,
+                                            })
+                                          }
+                                          required
+                                          sx={{
+                                            "& textarea::placeholder": {
+                                              color: "gray",
+                                              opacity: 1,
+                                            },
+                                          }}
+                                        />
+                                        {errors.previousRepairAttemptsComments && (
+                                          <p className="text-[red] text-sm mb-0">
+                                            {
+                                              errors.previousRepairAttemptsComments
+                                            }
+                                          </p>
+                                        )}
+                                      </div>
+                                    )}
                                 </div>
 
                                 {/* Jump the Queue */}
@@ -1441,9 +1318,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "#ede574", // Custom color for the radio button
+                                            color: "var(--tertiary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "#ede574", // Color when radio is checked
+                                            color: "var(--tertiary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1464,9 +1341,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "#ede574", // Custom color for the radio button
+                                            color: "var(--tertiary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "#ede574", // Color when radio is checked
+                                            color: "var(--tertiary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1488,11 +1365,11 @@ const StaperForm: React.FC = () => {
                                   {/* Displaying fee message when "Yes" is selected */}
                                   {repairDetails.jumpQueueForFasterService ===
                                     "Yes" && (
-                                    <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                                      A minimum fee of $100 (or higher) will be
-                                      charged for priority service.
-                                    </p>
-                                  )}
+                                      <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                                        A minimum fee of $100 (or higher) will be
+                                        charged for priority service.
+                                      </p>
+                                    )}
                                 </div>
                               </div>
 
@@ -1578,7 +1455,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requirePickupLabel ==
-                            "Yes,Please arrange pickup from my location"
+                              "Yes,Please arrange pickup from my location"
                               ? ["Yes,Please arrange pickup from my location"]
                               : ["No,I will send the device myself"]
                           }
@@ -1607,20 +1484,20 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ==
                           "Yes,Please arrange pickup from my location" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            A one-way shipping fee of $15-$20 will be added to
-                            your invoice, regardless of whether the device is
-                            repaired or not. Connote label will be sent to your
-                            email.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              A one-way shipping fee of $15-$20 will be added to
+                              your invoice, regardless of whether the device is
+                              repaired or not. Connote label will be sent to your
+                              email.
+                            </p>
+                          )}
 
                         {shippingDetails.requirePickupLabel ===
                           "No,I will send the device myself" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            No, I will send the device myself.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              No, I will send the device myself.
+                            </p>
+                          )}
                       </div>
                       {/* Shipping Address (Required) */}
                       <div className="w-full">
@@ -1641,11 +1518,11 @@ const StaperForm: React.FC = () => {
                           }}
                           sx={{
                             // This targets the label in ALL states
-                            '& label.MuiInputLabel-root': {
-                              color: 'gray',
+                            "& label.MuiInputLabel-root": {
+                              color: "gray",
                             },
-                            '& label.Mui-focused': {
-                              color: 'gray',
+                            "& label.Mui-focused": {
+                              color: "gray",
                             },
                           }}
                         />
@@ -1663,7 +1540,7 @@ const StaperForm: React.FC = () => {
                         <Select
                           defaultSelectedKeys={
                             shippingDetails.requireReturnLabel ==
-                            "Please ship the device back to me"
+                              "Please ship the device back to me"
                               ? ["Please ship the device back to me"]
                               : ["I will arrange pickup myself"]
                           }
@@ -1689,16 +1566,16 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requireReturnLabel ===
                           "Please ship the device back to me" && (
-                          <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
-                            Additional shipping fee of $15-$20 will be added to
-                            your invoice.
-                          </p>
-                        )}
+                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                              Additional shipping fee of $15-$20 will be added to
+                              your invoice.
+                            </p>
+                          )}
                       </div>
 
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-3">
-                        <h4 className=" lg:text-xl text-lg mb-3 text-[#EDE574]">
+                        <h4 className=" lg:text-xl text-lg mb-3 text-tertiary ">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
@@ -1723,21 +1600,21 @@ const StaperForm: React.FC = () => {
                             By checking this box, I confirm that I have read and
                             agree to the LabX
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
-                              className="text-[#EDE574]  "
+                              className="text-tertiary   "
                               href="/Warranty_and_Terms"
                             >
                               Warranty Terms
@@ -1867,11 +1744,10 @@ const StaperForm: React.FC = () => {
                         <button
                           onClick={handleSubmit}
                           disabled={!pricingAgreement || isLoading} // Disable when loading
-                          className={`btn ${
-                            !pricingAgreement || isLoading
+                          className={`btn ${!pricingAgreement || isLoading
                               ? "opacity-50 cursor-not-allowed"
                               : ""
-                          }`}
+                            }`}
                         >
                           {isLoading ? "Processing..." : "Submit"}
                         </button>
