@@ -114,7 +114,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
       setLoading(true);
       try {
         const response = await fetch(
-          "https://www.prc.repair/submit-appointment-newBooking",
+          "https://www.prc.repair/api/submit-appointment",
           {
             method: "POST",
             headers: {
