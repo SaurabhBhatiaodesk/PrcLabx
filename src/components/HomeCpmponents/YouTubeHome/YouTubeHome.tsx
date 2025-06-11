@@ -11,27 +11,21 @@ import "swiper/css/navigation";
 // Define props for LazyYouTube
 interface LazyYouTubeProps {
   videoId: string;
+  isActive: boolean;
+  onClick: () => void; // Callback to handle video play toggle
 }
 
 // Lazy loading YouTube video component
-export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const handleLoadVideo = () => {
-    if (!isLoaded) {
-      setIsLoaded(true);
-    }
-  };
-
+export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId, isActive, onClick }) => {
   const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
     <div className="youtube-1" style={{ position: "relative" }}>
-      {isLoaded ? (
+      {isActive ? (
         <iframe
           className="rounded-[30px]"
           width="100%"
-          height="400"
+          height="350"
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           title="YouTube video player"
           frameBorder="0"
@@ -44,7 +38,7 @@ export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId }) => {
           className="thumbnail-wrapper"
           style={{
             width: "100%",
-            height: "400px",
+            height: "350px",
             backgroundImage: `url(${thumbnail})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -52,7 +46,7 @@ export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId }) => {
             borderRadius: "30px",
             position: "relative",
           }}
-          onClick={handleLoadVideo}
+          onClick={onClick}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,9 +86,20 @@ export const LazyYouTube: React.FC<LazyYouTubeProps> = memo(({ videoId }) => {
 
 LazyYouTube.displayName = "LazyYouTube";
 
-
 const YouTubeHome: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
+  // Array of video IDs
+  const videoIds = [
+    "I5t-cizP1hg",
+    "g51-l5-h8Cc",
+    "Fq8geFUeZkM",
+    "I5t-cizP1hg",
+    "g51-l5-h8Cc",
+    "Fq8geFUeZkM",
+    // Add more video IDs as required
+  ];
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -108,10 +113,15 @@ const YouTubeHome: React.FC = () => {
     }
   };
 
+  const handleVideoClick = (videoId: string) => {
+    // If clicked video is already active, toggle to stop playing it
+    setActiveVideoId((prevId) => (prevId === videoId ? null : videoId));
+  };
+
   return (
     <>
       <div className="md:py-10 py-6">
-        <div className="max-container relative">
+        <div className="container relative">
           <MainHeading Heading="Watch Us in Action" svg_stroke="var(--alpha)" />
           <MainTitle Title="Discover our YouTube channel featuring informative videos on mobile phone repairs, tutorials, and expert tips. Join our community and enhance your skills while staying updated on the latest repair techniques!" color="var(--secondary)" />
 
@@ -128,18 +138,19 @@ const YouTubeHome: React.FC = () => {
               450: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 2 },
-              1440: { slidesPerView: 2 },
+              1440: { slidesPerView: 3 },
             }}
           >
-            <SwiperSlide>
-              <LazyYouTube videoId="I5t-cizP1hg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <LazyYouTube videoId="g51-l5-h8Cc" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <LazyYouTube videoId="Fq8geFUeZkM" />
-            </SwiperSlide>
+            {/* Dynamically render SwiperSlides based on the videoIds array */}
+            {videoIds.map((videoId, index) => (
+              <SwiperSlide key={index}>
+                <LazyYouTube
+                  videoId={videoId}
+                  isActive={activeVideoId === videoId}
+                  onClick={() => handleVideoClick(videoId)}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
 
           <div

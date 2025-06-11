@@ -983,14 +983,14 @@ const StaperForm: React.FC = () => {
                                   </div>
                                 </>
                               )}
-                            <div className="w-full">
+                            <div className="w-full set_lable_color">
                               <Select
                                 defaultSelectedKeys={
                                   deviceDetails?.passwordType == "None"
                                     ? ["None"]
                                     : [deviceDetails?.passwordType]
                                 }
-                                className="bg-primary text-secondary"
+                                className="bg-primary !text-secondary"
                                 label="Password Type (Must Be Correct One)*"
                                 name="password_type"
                                 value={deviceDetails.passwordType || "None"}
