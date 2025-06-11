@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
+import { RxCross2 } from "react-icons/rx";
 
 interface FormData {
   name: string;
@@ -105,7 +106,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
         name: formData.name,
         mobile: formData.mobile,
         email: formData.email,
-        store_location: 1, 
+        store_location: 1,
         date: formData.date,
         time_slot: formData.timeSlot,
         phone_color: formData.phoneColor,
@@ -156,213 +157,205 @@ const BookSlot: React.FC<BookSlotProps> = ({
   return (
     <>
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg w-96 relative">
-            <h2 className="text-2xl font-bold mb-4">BOOK YOUR SLOT</h2>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+          <div className="bg-white md:p-6 p-2 rounded-lg md:w-1/2 w-full relative m-2">
+            <h2 className="text-2xl font-bold mb-4 text-prc">BOOK YOUR SLOT</h2>
 
             <form onSubmit={handleSubmit}>
               {/* Name Field */}
-              <div className="relative mb-4">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className={`peer w-full p-2 border-2 rounded ${
-                    errors.name ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  placeholder="John Doe"
-                />
-                <label
-                  htmlFor="name"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.name || errors.name
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Name <span className="text-red-500">*</span>
-                </label>
-                {errors.name && (
-                  <p className="text-red-500 text-sm">{errors.name}</p>
-                )}
-              </div>
-
-              {/* Mobile Field */}
-              <div className="relative mb-4">
-                <input
-                  type="tel"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleInputChange}
-                  className={`peer w-full p-2 border-2 rounded ${
-                    errors.mobile ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  placeholder="Enter Your Mobile Number"
-                />
-                <label
-                  htmlFor="mobile"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.mobile || errors.mobile
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Mobile <span className="text-red-500">*</span>
-                </label>
-                {errors.mobile && (
-                  <p className="text-red-500 text-sm">{errors.mobile}</p>
-                )}
-              </div>
-
-              {/* Email Field */}
-              <div className="relative mb-4">
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={`peer w-full p-2 border-2 rounded ${
-                    errors.email ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                  placeholder="abc@mail.com"
-                />
-                <label
-                  htmlFor="email"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.email || errors.email
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Email <span className="text-red-500">*</span>
-                </label>
-                {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email}</p>
-                )}
-              </div>
-
-              {/* Date Field */}
-              <div className="relative mb-4">
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleInputChange}
-                  min={today}
-                  className={`peer w-full p-2 border-2 rounded ${
-                    errors.date ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                />
-                <label
-                  htmlFor="date"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.date || errors.date
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Date <span className="text-red-500">*</span>
-                </label>
-                {errors.date && (
-                  <p className="text-red-500 text-sm">{errors.date}</p>
-                )}
-              </div>
-
-              {/* Time Slot Dropdown */}
-              <div className="relative mb-4">
-                <select
-                  name="timeSlot"
-                  value={formData.timeSlot}
-                  onChange={handleInputChange}
-                  className={`peer w-full p-2 border-2 rounded ${
-                    errors.timeSlot ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                >
-                  <option value="">Select</option>
-                  {formData.date && (
-                    <>
-                      <option value="09:00:00 to 09:30:00">9:00 AM</option>
-                      <option value="09:30:00 to 10:00:00">9:30 AM</option>
-                      <option value="10:00:00 to 10:30:00">10:00 AM</option>
-                      <option value="10:30:00 to 11:00:00">10:30 AM</option>
-                      <option value="11:00:00 to 11:30:00">11:00 AM</option>
-                      <option value="11:30:00 to 12:00:00">11:30 AM</option>
-                      <option value="12:00:00 to 12:30:00">12:00 PM</option>
-                      <option value="12:30:00 to 13:00:00">12:30 PM</option>
-                      <option value="13:00:00 to 13:30:00">1:00 PM</option>
-                      <option value="13:30:00 to 14:00:00">1:30 PM</option>
-                      <option value="14:00:00 to 14:30:00">2:00 PM</option>
-                      <option value="14:30:00 to 15:00:00">2:30 PM</option>
-                      <option value="15:00:00 to 15:30:00">3:00 PM</option>
-                      <option value="15:30:00 to 16:00:00">3:30 PM</option>
-                      <option value="16:00:00 to 16:30:00">4:00 PM</option>
-                      <option value="16:30:00 to 17:00:00">4:30 PM</option>
-                      <option value="17:00:00 to 17:30:00">5:00 PM</option>
-                    </>
+              <div className="grid grid-cols-1 gap-2">
+                <div className="relative mb-2">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.name ? "border-red-500" : "border-prc "
+                      } focus:outline-none focus:ring-2 focus:ring-prc`}
+                    placeholder="John Doe"
+                  />
+                  <label
+                    htmlFor="name"
+                    className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.name || errors.name
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
+                      }`}
+                  >
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  {errors.name && (
+                    <p className="text-red-500 text-sm m-0">{errors.name}</p>
                   )}
-                </select>
-                <label
-                  htmlFor="timeSlot"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.timeSlot || errors.timeSlot
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Time Slot <span className="text-red-500">*</span>
-                </label>
-                {errors.timeSlot && (
-                  <p className="text-red-500 text-sm">{errors.timeSlot}</p>
-                )}
-              </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-2">
+                  {/* Mobile Field */}
+                  <div className="relative mb-2">
+                    <input
+                      type="tel"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleInputChange}
+                      className={`h-12  text-base peer w-full p-2 border-2 rounded   ${errors.mobile ? "border-red-500" : " border-prc "
+                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      placeholder="Enter Your Mobile Number"
+                    />
+                    <label
+                      htmlFor="mobile"
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.mobile || errors.mobile
+                          ? "scale-100 top-0 text-prc"
+                          : "scale-100 text-prc "
+                        }`}
+                    >
+                      Mobile <span className="text-red-500">*</span>
+                    </label>
+                    {errors.mobile && (
+                      <p className="text-red-500 text-sm m-0">{errors.mobile}</p>
+                    )}
+                  </div>
 
-              {/* Phone Color Field */}
-              <div className="relative mb-4">
-                <input
-                  type="text"
-                  name="phoneColor"
-                  value={formData.phoneColor}
-                  onChange={handleInputChange}
-                  className="peer w-full p-2 border-2 rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your phone color here"
-                />
-                <label
-                  htmlFor="phoneColor"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.phoneColor
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Phone Color
-                </label>
-              </div>
+                  {/* Email Field */}
+                  <div className="relative mb-2">
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.email ? "border-red-500" : "border-prc "
+                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      placeholder="abc@mail.com"
+                    />
+                    <label
+                      htmlFor="email"
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${formData.email || errors.email
+                          ? "scale-100 top-0 text-prc"
+                          : "scale-100 text-prc "
+                        }`}
+                    >
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    {errors.email && (
+                      <p className="text-red-500 text-sm m-0">{errors.email}</p>
+                    )}
+                  </div>
 
-              {/* Comment Field */}
-              <div className="relative mb-4">
-                <textarea
-                  name="comment"
-                  value={formData.comment}
-                  onChange={handleInputChange}
-                  className="peer w-full p-2 border-2 rounded border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your comment/message here"
-                />
-                <label
-                  htmlFor="comment"
-                  className={`absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 ${
-                    formData.comment
-                      ? "scale-75 top-0 text-blue-500"
-                      : "scale-100 text-gray-500"
-                  }`}
-                >
-                  Comment
-                </label>
+                  {/* Date Field */}
+                  <div className="relative mb-2">
+                    <input
+                      type="date"
+                      name="date"
+                      value={formData.date}
+                      onChange={handleInputChange}
+                      min={today}
+                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.date ? "border-red-500" : "border-prc "
+                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                    />
+                    <label
+                      htmlFor="date"
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${formData.date || errors.date
+                          ? "scale-100 top-0 text-prc"
+                          : "scale-100 text-prc "
+                        }`}
+                    >
+                      Date <span className="text-red-500">*</span>
+                    </label>
+                    {errors.date && (
+                      <p className="text-red-500 text-sm m-0">{errors.date}</p>
+                    )}
+                  </div>
+
+                  {/* Time Slot Dropdown */}
+                  <div className="relative mb-2">
+                    <select
+                      name="timeSlot"
+                      value={formData.timeSlot}
+                      onChange={handleInputChange}
+                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.timeSlot ? "border-red-500" : "border-prc "
+                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                    >
+                      <option value="">Select</option>
+                      {formData.date && (
+                        <>
+                          <option value="09:00:00 to 09:30:00">9:00 AM</option>
+                          <option value="09:30:00 to 10:00:00">9:30 AM</option>
+                          <option value="10:00:00 to 10:30:00">10:00 AM</option>
+                          <option value="10:30:00 to 11:00:00">10:30 AM</option>
+                          <option value="11:00:00 to 11:30:00">11:00 AM</option>
+                          <option value="11:30:00 to 12:00:00">11:30 AM</option>
+                          <option value="12:00:00 to 12:30:00">12:00 PM</option>
+                          <option value="12:30:00 to 13:00:00">12:30 PM</option>
+                          <option value="13:00:00 to 13:30:00">1:00 PM</option>
+                          <option value="13:30:00 to 14:00:00">1:30 PM</option>
+                          <option value="14:00:00 to 14:30:00">2:00 PM</option>
+                          <option value="14:30:00 to 15:00:00">2:30 PM</option>
+                          <option value="15:00:00 to 15:30:00">3:00 PM</option>
+                          <option value="15:30:00 to 16:00:00">3:30 PM</option>
+                          <option value="16:00:00 to 16:30:00">4:00 PM</option>
+                          <option value="16:30:00 to 17:00:00">4:30 PM</option>
+                          <option value="17:00:00 to 17:30:00">5:00 PM</option>
+                        </>
+                      )}
+                    </select>
+                    <label
+                      htmlFor="timeSlot"
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.timeSlot || errors.timeSlot
+                          ? "scale-100 top-0 text-prc"
+                          : "scale-100 text-prc "
+                        }`}
+                    >
+                      Time Slot <span className="text-red-500">*</span>
+                    </label>
+                    {errors.timeSlot && (
+                      <p className="text-red-500 text-sm m-0">{errors.timeSlot}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Phone Color Field */}
+                <div className="relative mb-2">
+                  <input
+                    type="text"
+                    name="phoneColor"
+                    value={formData.phoneColor}
+                    onChange={handleInputChange}
+                    className="h-12  text-base peer w-full p-2 border-2 rounded border-prc focus:outline-none focus:ring-2 focus:ring-prc"
+                    placeholder="Enter your phone color here"
+                  />
+                  <label
+                    htmlFor="phoneColor"
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc text-[16px] ${formData.phoneColor
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc"
+                      }`}
+                  >
+                    Phone Color
+                  </label>
+                </div>
+
+                {/* Comment Field */}
+                <div className="relative mb-2">
+                  <textarea
+                    name="comment"
+                    rows={8}
+                    value={formData.comment}
+                    onChange={handleInputChange}
+                    className="  text-base peer w-full p-2 border-2 rounded border-prc focus:outline-none focus:ring-2 focus:ring-prc"
+                    placeholder="Enter your comment/message here"
+                  />
+                  <label
+                    htmlFor="comment"
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.comment
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
+                      }`}
+                  >
+                    Comment
+                  </label>
+                </div>
               </div>
 
               <button
                 type="submit"
-                className="bg-blue-500 text-white py-2 px-4 rounded"
+                className="bg-prc text-white py-2 px-4 rounded w-full"
               >
                 Book Now
               </button>
@@ -370,9 +363,9 @@ const BookSlot: React.FC<BookSlotProps> = ({
 
             <button
               onClick={closeModal}
-              className="absolute top-0 right-2 text-gray-500"
+              className="absolute top-2 right-2 text-prc "
             >
-              &times;
+              <RxCross2 fontSize={30} />
             </button>
           </div>
         </div>

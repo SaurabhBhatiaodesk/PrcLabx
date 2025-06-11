@@ -96,7 +96,7 @@ const BrandDetailPage: React.FC = () => {
           <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
             <aside
               className="lg:w-96 w-[320px] bg-tertiary md:p-6  p-3 overflow-y-auto sticky top-0
-            shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[800px] scrollbar-custom"
+            shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
             >
               <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b  tracking-wide hover:bg-[] transition-colors">
                 Select Brands
@@ -118,7 +118,7 @@ const BrandDetailPage: React.FC = () => {
             </aside>
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className="mb-4 p-2 bg-[#122d37] text-white rounded-md h-10 flex items-center justify-center  absolute top-4 right-[-3rem] z-10"
+              className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center    absolute top-4 right-[1rem] z-10"
             >
               <IoIosArrowForward
                 className={`
@@ -138,15 +138,13 @@ const BrandDetailPage: React.FC = () => {
 
       {/* Main Content */}
       <main
-        className={`flex-1  bg-white transition-all duration-300 ${
-          isSidebarOpen ? "pt-[60px] p-4" : "p-4"
-        }`}
+        className={`flex-1  bg-white transition-all duration-300 ${isSidebarOpen ? "md:pt-[25px] pt-[30px] md:pl-3 " : "md:p-4 pt-[10px]"
+          }`}
       >
         <button
           onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className={`lg:mb-6 mb-2 p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center  ${
-            isSidebarOpen ? "hidden" : ""
-          }`}
+          className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center  ${isSidebarOpen ? "hidden" : ""
+            }`}
         >
           <IoIosArrowForward
             className={`
