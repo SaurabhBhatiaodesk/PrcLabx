@@ -187,7 +187,6 @@ const BrandDetailPage: React.FC = () => {
             })}
           </nav>
         </div>
-
         {/* Render content based on the fetched brands data */}
         {!isLastItemClicked ? (
           <BrandImageGrid
