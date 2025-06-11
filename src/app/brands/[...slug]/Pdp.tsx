@@ -1,6 +1,5 @@
 
 "use client";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
@@ -9,8 +8,7 @@ import afterpay from "../../../assets/Icons/afterpay.svg";
 import zip from "../../../assets/Icons/zipicon.png";
 import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
-import Link from "next/link";
-import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+import FaqComponent from "./FaqComponent";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   pdpDetail,
@@ -18,6 +16,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 }) => {
   const pathname = usePathname();
   const router = useRouter();
+  const [popop, setPopop] = useState(false);
+  const [close, setClose] = useState(false);
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   const [selectedPart, setSelectedPart] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -106,9 +106,19 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
         "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
     },
   ];
+  const handleFaqClick = () => {
+    setPopop(true);
+ 
+  }
+  const handleClose = () => {
+    setPopop(false);
+  };
+  const MailRepair = () => {
+    router.push("/mail-in-repair?scrollTo=stapergkform");
+  }
   return (
     <>
-      <div className="bg-[#FFF5EB]">
+      <div className="bg-[#FFF5EB] relative">
         <div className=" rounded-lg md:p-6  max-w-6xl mx-auto p-3">
           {/* Header */}
           <h2 className="text-2xl font-bold mb-4 text-prc">
@@ -123,8 +133,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                 key={tab.id}
                 onClick={() => handleTabClick(tab)}
                 className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTab === tab.id.toString()
-                    ? "bg-tertiary  text-black border-b-0 text-[11px]"
-                    : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
+                  ? "bg-tertiary  text-black border-b-0 text-[11px]"
+                  : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
                   }`}
               >
                 {tab.title}
@@ -160,8 +170,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                       key={part.id}
                       onClick={() => handleParClick(part)}
                       className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${isSelectedPart
-                          ? "bg-tertiary  border-prc"
-                          : "bg-white border-gray-300 hover:border-purple-400"
+                        ? "bg-tertiary  border-prc"
+                        : "bg-white border-gray-300 hover:border-purple-400"
                         }`}
                     >
                       <div>
@@ -191,16 +201,16 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                   BOOK NOW
                 </button>
 
-                <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition lg:text-base text-sm" onClick={() => router.push("/mail-in-repair")}>MAIL IN REPAIR</button>
+                <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition lg:text-base text-sm" onClick={MailRepair}>MAIL IN REPAIR</button>
               </div>
 
               {/* Payment Icons */}
-              <div className="flex items-center justify-center space-x-4 mb-6 bg-white rounded-md">
+              <div className="flex items-center justify-center space-x-4 mb-6 bg-white rounded-md border-1">
                 <Image src={paypal} alt="PayPal" className="h-8 w-auto" />
                 <Image
                   src={afterpay}
                   alt="Afterpay"
-                  className="h-10 w-30 p-2 bg-black rounded-3xl "
+                  className="h-8 w-30 p-2 bg-black rounded-3xl "
                 />
                 <Image src={zip} alt="Zip" className="h-10 w-12 rounded-md" />
                 <Image src={american} alt="Amex" className="h-10 w-12" />
@@ -213,16 +223,76 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 
               {/* Bottom Links/Buttons */}
               <div className="flex flex-col md:flex-row md:space-x-4 space-y-3 md:space-y-0 justify-center">
-                <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
+                {/* <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
                   Repair FAQ?
-                </button>
-                <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
+                </button> */}
+                {/* <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
                   Google Reviews
-                </button>
-                <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
+                </button> */}
+                <button onClick={handleFaqClick} className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
                   Why Phone Repair Centre?
                 </button>
+
+
               </div>
+             { popop &&
+             <>
+              <div id="YOUR_ID" className="fixed z-50 inset-0 overflow-y-auto">
+                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                  <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+                    <div className="absolute inset-0 bg-prc opacity-75 z-[42]"></div>
+                  </div>
+
+                  <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+
+                  </span>
+
+                  <div
+                    className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
+
+                  >
+                    <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+                      <button onClick={handleClose}
+                        type="button"
+                        data-behavior="cancel"
+                        className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-prc"
+                      >
+                        <span className="sr-only">Close</span>
+                        <svg
+                          className="h-6 w-6  text-red-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="sm:flex sm:items-start">
+
+                      <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                        <h3 className="text-black xl:text-[22px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]" id="modal-headline">
+                          Repair Center
+                        </h3>
+                        <div className="mt-2">
+                          <p className="p2-4 pt-0 text-[#0B0B0B] text-sm">With more than a decade of experience, Phone Repair Centre has established itself as one of the most cost-effective and trusted mobile repair service providers in Australia. Located at 122 Queen Street, St Marys, NSW-2760, we are on a mission to make technology accessible to everyone by offering reliable, high-quality repairs at prices that won’t break the bank.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+             </> }
+
+
             </div>
           </div>
         </div>
@@ -234,11 +304,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
         />
       </div>
 
-      <AskusQuestion accordionData={accordionData}
-        faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
-        faqbg_color="bg-[#FEF6FF]"
-        faq="Most People Ask us These Questions" />
-           {/* <GoogleReviews /> */}
+      <FaqComponent/>
+      {/* <GoogleReviews /> */}
     </>
   );
 };
