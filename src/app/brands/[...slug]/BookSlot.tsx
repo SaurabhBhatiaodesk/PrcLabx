@@ -153,7 +153,16 @@ const BookSlot: React.FC<BookSlotProps> = ({
   };
 
   const today = new Date().toISOString().split("T")[0];
+  const getHeight = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      return "h-[130px]";
+    } else if (window.innerWidth < 1024) {
+      return "h-[130px]";
+    } else {
+      return "h-[130px]";
+    }
 
+  }
   return (
     <>
       {isModalOpen && (
@@ -170,15 +179,15 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.name ? "border-red-500" : "border-prc "
-                      } focus:outline-none focus:ring-2 focus:ring-prc`}
+                    className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.name ? "border-red-500" : "border-prc "
+                      } focus:ring-prc`}
                     placeholder="John Doe"
                   />
                   <label
                     htmlFor="name"
                     className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.name || errors.name
-                        ? "scale-100 top-0 text-prc"
-                        : "scale-100 text-prc "
+                      ? "scale-100 top-0 text-prc"
+                      : "scale-100 text-prc "
                       }`}
                   >
                     Name <span className="text-red-500">*</span>
@@ -195,15 +204,15 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="mobile"
                       value={formData.mobile}
                       onChange={handleInputChange}
-                      className={`h-12  text-base peer w-full p-2 border-2 rounded   ${errors.mobile ? "border-red-500" : " border-prc "
-                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  ${errors.mobile ? "border-red-500" : " border-prc "
+                        } focus:ring-prc`}
                       placeholder="Enter Your Mobile Number"
                     />
                     <label
                       htmlFor="mobile"
                       className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.mobile || errors.mobile
-                          ? "scale-100 top-0 text-prc"
-                          : "scale-100 text-prc "
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
                         }`}
                     >
                       Mobile <span className="text-red-500">*</span>
@@ -220,15 +229,15 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.email ? "border-red-500" : "border-prc "
-                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.email ? "border-red-500" : "border-prc "
+                        }  focus:ring-prc`}
                       placeholder="abc@mail.com"
                     />
                     <label
                       htmlFor="email"
                       className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${formData.email || errors.email
-                          ? "scale-100 top-0 text-prc"
-                          : "scale-100 text-prc "
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
                         }`}
                     >
                       Email <span className="text-red-500">*</span>
@@ -246,14 +255,14 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       value={formData.date}
                       onChange={handleInputChange}
                       min={today}
-                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.date ? "border-red-500" : "border-prc "
-                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.date ? "border-red-500" : "border-prc "
+                        }  focus:ring-prc`}
                     />
                     <label
                       htmlFor="date"
                       className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${formData.date || errors.date
-                          ? "scale-100 top-0 text-prc"
-                          : "scale-100 text-prc "
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
                         }`}
                     >
                       Date <span className="text-red-500">*</span>
@@ -269,8 +278,8 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="timeSlot"
                       value={formData.timeSlot}
                       onChange={handleInputChange}
-                      className={`h-12  text-base peer w-full p-2 border-2 rounded ${errors.timeSlot ? "border-red-500" : "border-prc "
-                        } focus:outline-none focus:ring-2 focus:ring-prc`}
+                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.timeSlot ? "border-red-500" : "border-prc "
+                        }  focus:ring-prc`}
                     >
                       <option value="">Select</option>
                       {formData.date && (
@@ -298,8 +307,8 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     <label
                       htmlFor="timeSlot"
                       className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.timeSlot || errors.timeSlot
-                          ? "scale-100 top-0 text-prc"
-                          : "scale-100 text-prc "
+                        ? "scale-100 top-0 text-prc"
+                        : "scale-100 text-prc "
                         }`}
                     >
                       Time Slot <span className="text-red-500">*</span>
@@ -317,14 +326,14 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     name="phoneColor"
                     value={formData.phoneColor}
                     onChange={handleInputChange}
-                    className="h-12  text-base peer w-full p-2 border-2 rounded border-prc focus:outline-none focus:ring-2 focus:ring-prc"
+                    className="h-12 text-base peer w-full p-2 border rounded   focus:border-prc custom-focus border-prc  focus:ring-prc"
                     placeholder="Enter your phone color here"
                   />
                   <label
                     htmlFor="phoneColor"
                     className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc text-[16px] ${formData.phoneColor
-                        ? "scale-100 top-0 text-prc"
-                        : "scale-100 text-prc"
+                      ? "scale-100 top-0 text-prc"
+                      : "scale-100 text-prc"
                       }`}
                   >
                     Phone Color
@@ -335,17 +344,17 @@ const BookSlot: React.FC<BookSlotProps> = ({
                 <div className="relative mb-2">
                   <textarea
                     name="comment"
-                    rows={8}
+                    // rows={6}
                     value={formData.comment}
                     onChange={handleInputChange}
-                    className="  text-base peer w-full p-2 border-2 rounded border-prc focus:outline-none focus:ring-2 focus:ring-prc"
+                    className={`text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus focus:ring-prc ${getHeight()}`}
                     placeholder="Enter your comment/message here"
                   />
                   <label
                     htmlFor="comment"
                     className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${formData.comment
-                        ? "scale-100 top-0 text-prc"
-                        : "scale-100 text-prc "
+                      ? "scale-100 top-0 text-prc"
+                      : "scale-100 text-prc "
                       }`}
                   >
                     Comment

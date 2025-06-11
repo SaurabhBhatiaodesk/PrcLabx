@@ -39,7 +39,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
          
         }
       `}</style>
-      <section className={`w-full relative h-[50px] ${marquee_bg} overflow-hidden`}>
+      <section className={`w-full relative h-[50px] hidden md:block ${marquee_bg} overflow-hidden`}>
         <div className="absolute top-[-20px] whitespace-nowrap animate-marquee">
           <div className="flex gap-2">
             {Array.from({ length: repetitions }).map((_, repetitionIndex) =>

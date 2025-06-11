@@ -19,6 +19,7 @@ import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 import "./mail-in-repair.css";
 import Link from "next/link";
 import axios from "axios";
+import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { ReactCanvasPatternLock } from "react-canvas-pattern-lock";
@@ -93,6 +94,7 @@ type HandleSubmitParams = {
 
 const StaperForm: React.FC = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
+    const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
   const sigPad = useRef<SignatureCanvas>(null);
@@ -619,6 +621,19 @@ const StaperForm: React.FC = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const scrollTo = searchParams.get("scrollTo");
+    if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100); // slight delay to ensure DOM is ready
+      }
+    }
+  }, []);
+
   return (
     <>
       {isLoading && (
@@ -705,7 +720,7 @@ const StaperForm: React.FC = () => {
           <div className="">
             {activeStep === 0 && (
               <>
-                <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
+                <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]" id="stapergkform">
                   <div className="hidden md:block">
                     <div className="relative w-full h-full block pb-[61%]">
                       <Image
