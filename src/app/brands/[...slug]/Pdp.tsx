@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -9,6 +8,7 @@ import zip from "../../../assets/Icons/zipicon.png";
 import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
 import FaqComponent from "./FaqComponent";
+import Link from "next/link";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   pdpDetail,
@@ -108,14 +108,13 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   ];
   const handleFaqClick = () => {
     setPopop(true);
- 
-  }
+  };
   const handleClose = () => {
     setPopop(false);
   };
   const MailRepair = () => {
-    router.push("/mail-in-repair?scrollTo=stapergkform");
-  }
+    sessionStorage.setItem("repairType", "mail-in-repair");
+  };
   return (
     <>
       <div className="bg-[#FFF5EB] relative">
@@ -132,10 +131,11 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
               <button
                 key={tab.id}
                 onClick={() => handleTabClick(tab)}
-                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTab === tab.id.toString()
-                  ? "bg-tertiary  text-black border-b-0 text-[11px]"
-                  : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
-                  }`}
+                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${
+                  activeTab === tab.id.toString()
+                    ? "bg-tertiary  text-black border-b-0 text-[11px]"
+                    : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
+                }`}
               >
                 {tab.title}
               </button>
@@ -169,10 +169,11 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                     <div
                       key={part.id}
                       onClick={() => handleParClick(part)}
-                      className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${isSelectedPart
-                        ? "bg-tertiary  border-prc"
-                        : "bg-white border-gray-300 hover:border-purple-400"
-                        }`}
+                      className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${
+                        isSelectedPart
+                          ? "bg-tertiary  border-prc"
+                          : "bg-white border-gray-300 hover:border-purple-400"
+                      }`}
                     >
                       <div>
                         <h3 className="mdd:text-sm text-xs font-medium text-black">
@@ -181,8 +182,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                       </div>
                       <div className="mt-1">
                         <span
-                          className={`text-base font-semibold ${isSelectedPart ? "text-prc" : "text-prc"
-                            }`}
+                          className={`text-base font-semibold ${
+                            isSelectedPart ? "text-prc" : "text-prc"
+                          }`}
                         >
                           {part.price_range}
                         </span>
@@ -200,8 +202,14 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                 >
                   BOOK NOW
                 </button>
-
-                <button className="flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition lg:text-base text-sm" onClick={MailRepair}>MAIL IN REPAIR</button>
+                <Link href="/mail-in-repair">
+                  <button
+                    className="w-full flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition lg:text-base text-sm"
+                    onClick={MailRepair}
+                  >
+                    MAIL IN REPAIR
+                  </button>
+                </Link>
               </div>
 
               {/* Payment Icons */}
@@ -229,70 +237,85 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                 {/* <button className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
                   Google Reviews
                 </button> */}
-                <button onClick={handleFaqClick} className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
+                <button
+                  onClick={handleFaqClick}
+                  className="px-6 py-2 border border-gray-700 rounded-full text-gray-700 hover:bg-gray-100 transition text-sm font-medium"
+                >
                   Why Phone Repair Centre?
                 </button>
-
-
               </div>
-             { popop &&
-             <>
-              <div id="YOUR_ID" className="fixed z-50 inset-0 overflow-y-auto">
-                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                  <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-                    <div className="absolute inset-0 bg-prc opacity-75 z-[42]"></div>
-                  </div>
-
-                  <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-
-                  </span>
-
+              {popop && (
+                <>
                   <div
-                    className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
-
+                    id="YOUR_ID"
+                    className="fixed z-50 inset-0 overflow-y-auto"
                   >
-                    <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
-                      <button onClick={handleClose}
-                        type="button"
-                        data-behavior="cancel"
-                        className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-prc"
+                    <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                      <div
+                        className="fixed inset-0 transition-opacity"
+                        aria-hidden="true"
                       >
-                        <span className="sr-only">Close</span>
-                        <svg
-                          className="h-6 w-6  text-red-600"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div className="sm:flex sm:items-start">
+                        <div className="absolute inset-0 bg-prc opacity-75 z-[42]"></div>
+                      </div>
 
-                      <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <h3 className="text-black xl:text-[22px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]" id="modal-headline">
-                          Repair Center
-                        </h3>
-                        <div className="mt-2">
-                          <p className="p2-4 pt-0 text-[#0B0B0B] text-sm">With more than a decade of experience, Phone Repair Centre has established itself as one of the most cost-effective and trusted mobile repair service providers in Australia. Located at 122 Queen Street, St Marys, NSW-2760, we are on a mission to make technology accessible to everyone by offering reliable, high-quality repairs at prices that won’t break the bank.</p>
+                      <span
+                        className="hidden sm:inline-block sm:align-middle sm:h-screen"
+                        aria-hidden="true"
+                      ></span>
+
+                      <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                        <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+                          <button
+                            onClick={handleClose}
+                            type="button"
+                            data-behavior="cancel"
+                            className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-prc"
+                          >
+                            <span className="sr-only">Close</span>
+                            <svg
+                              className="h-6 w-6  text-red-600"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              aria-hidden="true"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div className="sm:flex sm:items-start">
+                          <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3
+                              className="text-black xl:text-[22px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]"
+                              id="modal-headline"
+                            >
+                              Repair Center
+                            </h3>
+                            <div className="mt-2">
+                              <p className="p2-4 pt-0 text-[#0B0B0B] text-sm">
+                                With more than a decade of experience, Phone
+                                Repair Centre has established itself as one of
+                                the most cost-effective and trusted mobile
+                                repair service providers in Australia. Located
+                                at 122 Queen Street, St Marys, NSW-2760, we are
+                                on a mission to make technology accessible to
+                                everyone by offering reliable, high-quality
+                                repairs at prices that won’t break the bank.
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
-                </div>
-              </div>
-             </> }
-
-
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -304,7 +327,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
         />
       </div>
 
-      <FaqComponent/>
+      <FaqComponent />
       {/* <GoogleReviews /> */}
     </>
   );

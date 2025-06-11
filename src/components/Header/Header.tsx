@@ -69,6 +69,10 @@ export default function App() {
   const toggleAboutDropdown = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
   };
+
+    const MailRepair = () => {
+    sessionStorage.setItem("repairType", "mail-in-repair");
+  };
   return (
     <>
       <Marquee
@@ -460,6 +464,7 @@ export default function App() {
                   <button
                     className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
                     area-label=" Start the repair process for your device"
+                    onClick={MailRepair}
                   >
                     Instant Quote{" "}
                   </button>

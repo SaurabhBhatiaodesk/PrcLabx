@@ -12,15 +12,43 @@ import Pdp from "./Pdp";
 const BrandDetailPage: React.FC = () => {
   const pathname = usePathname();
   const [brandsData, setBrandsData] = useState<any>([]); // State to hold brands data
-  const [slugData, setSlugData] = useState<any>([]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Sidebar state
+  const [slugData, setSlugData] = useState<any>([]); 
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true); // Sidebar state
   const [expandedPaths, setExpandedPaths] = useState<string[]>([]); // Expanded paths for sidebar
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
+  
+  // State for mobile detection
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // Detect if the device is mobile, only after the component is mounted
+  useEffect(() => {
+    if (typeof window !== "undefined") { // Check if window is available (client-side)
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
+      };
+      
+      handleResize(); // Initial check
+      window.addEventListener('resize', handleResize); // Update on window resize
+
+      return () => window.removeEventListener('resize', handleResize); // Cleanup on unmount
+    }
+  }, []); // Empty dependency array ensures it runs only once
+
+  // Set the initial state of the sidebar for mobile
+  useEffect(() => {
+    if (isMobile) {
+      setIsSidebarOpen(false); // Close sidebar on mobile
+    } else {
+      setIsSidebarOpen(true); // Open sidebar on larger screens
+    }
+  }, [isMobile]);
+
   // Build slugArray by stripping "/brands" and splitting the rest
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
+
   // Fetch brands data from API
   useEffect(() => {
     const fetchBrands = async () => {
@@ -48,7 +76,6 @@ const BrandDetailPage: React.FC = () => {
         setBrandsData(baseData); // Set the base data to state
 
         // Fetch data for slug-based endpoint (only if the slugArray is non-empty)
-        // if (slugArray.length > 0) {
         try {
           const resSlug = await fetch(slugApi);
           if (!resSlug.ok) {
@@ -59,7 +86,6 @@ const BrandDetailPage: React.FC = () => {
         } catch (error) {
           console.error("Error fetching slug data:", error);
         }
-        // }
       } catch (error) {
         console.error("Error fetching brands:", error);
       }
@@ -95,9 +121,9 @@ const BrandDetailPage: React.FC = () => {
         {isSidebarOpen && (
           <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
             <aside
-              className="lg:w-96 w-[320px] bg-tertiary md:p-6  p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
+              className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
             >
-              <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b  tracking-wide hover:bg-[] transition-colors">
+              <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
                 Select Brands
               </h2>
 
@@ -117,17 +143,10 @@ const BrandDetailPage: React.FC = () => {
             </aside>
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center    absolute top-4 right-[1rem] z-10"
+              className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-4 right-[1rem] z-10"
             >
               <IoIosArrowForward
-                className={`
-      inline-block
-      transform
-      transition-transform
-      duration-300
-      ease-in-out
-      ${isSidebarOpen ? "rotate-180" : "rotate-0"}
-    `}
+                className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
                 size={24}
               />
             </button>
@@ -137,29 +156,20 @@ const BrandDetailPage: React.FC = () => {
 
       {/* Main Content */}
       <main
-        className={`flex-1  bg-white transition-all duration-300 ${isSidebarOpen ? "md:pt-[25px] pt-[30px] md:pl-3 " : "md:p-4 pt-[10px]"
-          }`}
+        className={`flex-1 bg-white transition-all duration-300 ${isSidebarOpen ? "md:pt-[25px] pt-[30px] md:pl-3 " : "md:p-4 pt-[10px]"}`}
       >
         <button
           onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10  h-8 flex items-center justify-center  ${isSidebarOpen ? "hidden" : ""
-            }`}
+          className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
         >
           <IoIosArrowForward
-            className={`
-      inline-block
-      transform
-      transition-transform
-      duration-300
-      ease-in-out
-      ${isSidebarOpen ? "rotate-180" : "rotate-0"}
-    `}
+            className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
             size={24}
           />
         </button>
         {/* Breadcrumb */}
         <div className="hidden md:block">
-          <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap ">
+          <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
             <Link href="/brands" className="hover:underline font-bold">
               Home
             </Link>
@@ -169,10 +179,7 @@ const BrandDetailPage: React.FC = () => {
                 <span key={path}>
                   {" "}
                   &gt;{" "}
-                  <Link
-                    href={path}
-                    className="hover:underline capitalize font-bold"
-                  >
+                  <Link href={path} className="hover:underline capitalize font-bold">
                     {slug.replace(/-/g, " ")}
                   </Link>
                 </span>
