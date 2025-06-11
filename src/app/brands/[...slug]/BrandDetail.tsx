@@ -18,14 +18,30 @@ const BrandDetailPage: React.FC = () => {
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
+  
+  // State for mobile detection
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Detect if the device is mobile
-  const isMobile = window.innerWidth <= 768;  // Adjust the 768px value based on your design
+  // Detect if the device is mobile, only after the component is mounted
+  useEffect(() => {
+    if (typeof window !== "undefined") { // Check if window is available (client-side)
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
+      };
+      
+      handleResize(); // Initial check
+      window.addEventListener('resize', handleResize); // Update on window resize
+
+      return () => window.removeEventListener('resize', handleResize); // Cleanup on unmount
+    }
+  }, []); // Empty dependency array ensures it runs only once
 
   // Set the initial state of the sidebar for mobile
   useEffect(() => {
     if (isMobile) {
-      setIsSidebarOpen(false);
+      setIsSidebarOpen(false); // Close sidebar on mobile
+    } else {
+      setIsSidebarOpen(true); // Open sidebar on larger screens
     }
   }, [isMobile]);
 
