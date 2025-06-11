@@ -11,7 +11,7 @@
 .header-component {
     position: sticky;
     top: 0;
-    z-index: 555;
+    z-index: 40;
     /* margin-bottom: 15px; */
 }
 /* header svg {

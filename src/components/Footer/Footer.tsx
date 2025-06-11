@@ -572,7 +572,7 @@ const Footer = () => {
           </section>
           <section className="block lg:hidden">
             <div className="py-3 bg-black  relative z-[1000]  ">
-              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-3 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
+              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-1 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
                 <Link href="/">
                   <div className="flex flex-col items-center">
                     <Image
