@@ -74,7 +74,7 @@ export default function Productswiper() {
   ];
 
   return (
-    <div className="lg:py-4 py-3 bg-[var(--primary)] container p-2">
+    <div className="  container py-4">
       <div className="">
         <div className="lg:py-2 py-2 flex flex-col xl:flex-row ">
           <div className="text-start">

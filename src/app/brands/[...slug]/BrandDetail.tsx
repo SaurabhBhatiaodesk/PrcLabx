@@ -115,7 +115,7 @@ const BrandDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto">
+    <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
       {/* Sidebar */}
       <div className="relative">
         {isSidebarOpen && (
