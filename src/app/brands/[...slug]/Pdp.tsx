@@ -7,7 +7,6 @@ import afterpay from "../../../assets/Icons/afterpay.svg";
 import zip from "../../../assets/Icons/zipicon.png";
 import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
-import FaqComponent from "./FaqComponent";
 import Link from "next/link";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
@@ -319,16 +318,12 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
             </div>
           </div>
         </div>
-
         <BookSlot
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           defaultSelectedPart={defaultSelectedPart}
         />
       </div>
-
-      <FaqComponent />
-      {/* <GoogleReviews /> */}
     </>
   );
 };
