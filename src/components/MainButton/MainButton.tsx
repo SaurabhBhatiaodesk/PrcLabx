@@ -34,8 +34,6 @@
 
 // export default MainButton;
 
-
-
 import React from "react";
 import Link from "next/link";
 
@@ -46,30 +44,24 @@ interface MainButtonProps {
 }
 
 const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color }) => {
-  // Default color gradient if no color is provided
-
-
-  // Button styles
-  // const buttonStyles = `  hover:bg-${buttonColor} my-2`;
-
   return (
     <div>
       {link ? (
         <Link href={link}>
-         <button 
-  className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`} 
-  aria-label={`Click ${MainButton}`} 
->
-  {MainButton}
-</button> 
+          <button
+            className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`}
+            aria-label={`Click ${MainButton}`}
+          >
+            {MainButton}
+          </button>
         </Link>
       ) : (
-        <button 
-  className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`} 
-  aria-label={`Click ${MainButton}`} 
->
-  {MainButton}
-</button>
+        <button
+          className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`}
+          aria-label={`Click ${MainButton}`}
+        >
+          {MainButton}
+        </button>
       )}
     </div>
   );

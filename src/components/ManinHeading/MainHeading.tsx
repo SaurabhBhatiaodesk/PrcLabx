@@ -65,16 +65,16 @@ const MainHeading: React.FC<MainHeadingProps> = ({
 
   return (
     <div data-aos={animation || "fade-up"} 
-     className={`relative w-fit ${text_align == 'start' ? 'm-0': 'm-auto' }`}
+     className={`relative  w-fit ${text_align == 'start' ? 'm-0': 'm-auto' }`}
     >
       <h2
-        className={` w-fit`}
+        className={` w-fit mb-3 leter tracking-normal`}
         style={{ color: color || "inherit" }}
       >
         {Heading}
       </h2>
       <svg
-        className={`relative  left-0  rotate-[180deg] z-[-1] top-[-22px]`}
+        className={`absolute left-0  rotate-[180deg] z-[-1] top-[29px]`}
         width="100%"
         height="20"
         viewBox="0 0 100 30"

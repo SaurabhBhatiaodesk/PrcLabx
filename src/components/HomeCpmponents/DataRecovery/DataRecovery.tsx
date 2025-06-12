@@ -41,31 +41,25 @@ const DataRecovery = () => {
       className="bg-no-repeat bg-cover"
       style={{ backgroundImage: `url(${banner.src})` }} // Using .src here
     >
-      <div className="container lg:py-5 py-4">
+      <div className="container lg:py-5 py-2">
         <MainHeading Heading="Data Recovery" color="var(--tertiary)" svg_stroke="var(--primary)" />
         <MainTitle Title="At LabX, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way." color="var(--primary)" />
 
-        <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 lg:py-10 py-3">
+ <div className="grid xl:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-4 gap-0 lg:py-6 py-4">
+  {dataHandle.map((item, index) => (
+    <div className="flex items-start gap-3" key={index}>
+      <Image src={item.icon} alt="pointer" className="w-6 h-6 mt-1" />
+      <p className="text-[14px] 2xl:text-[18px] leading-relaxed text-primary">
+        <span className="text-lg 2xl:text-xl font-semibold text-tertiary">
+          {item.title}:
+        </span>{" "}
+        {item.description}
+      </p>
+    </div>
+  ))}
+</div>
 
 
-          {dataHandle.map((item, index) => (
-            <div className="flex items-start gap-3" key={index}>
-              <Image src={item.icon} alt="pointer" />
-              <div>
-                <span className="text-lg 2xl:text-xl pb-[2px] text-tertiary font-semibold">
-                  {item.title}
-                </span>
-                <p className="text-[14px] 2xl:text-[18px] text-primary">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))},
-
-
-
-
-        </div>
       </div>
       <div>
 

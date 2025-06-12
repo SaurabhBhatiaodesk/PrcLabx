@@ -7,10 +7,12 @@ import quote4 from "../../../public/Images/quoteimg4.png";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
+import MainHeading from "../ManinHeading/MainHeading";
 
 interface BrandData {
   alias: string;
   image: string;
+  title: string;
 }
 
 export default function Devicequote() {
@@ -40,9 +42,9 @@ export default function Devicequote() {
       .replace(/[^\w-]+/g, ""); // Remove non-word chars
 
   return (
-    <div className="py-10 bg-white">
+    <div className="lg:py-10 p-0 bg-white">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-[4%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-[4%]">
           <div className="flex items-center lg:justify-center py-3 lg:py-0">
             <Image
               src={quote1}
@@ -98,14 +100,19 @@ export default function Devicequote() {
           </div>
         </div>
       </div>
-      <div className="container pt-12">
-        <div className="flex items-center justify-between">
-          <h2 className="text-start w-fit text-[#00303E]">
+      <div className="container lg:pt-12 md:p-8  py-5">
+        <div className="flex items-center justify-between lg:flex-row flex-col tracking-normal">
+          <h2 className="text-prc text-center md:text-left py-2">
             Click to Get an Instant Quote Now!
           </h2>
+           
           <Link href="/brands">
-            <button className="text-[#00303E] font-semibold border-2 px-4 py-2 rounded-full hover:bg-gray-200">
-              View All
+            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
+           Visit store
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
             </button>
           </Link>
         </div>
@@ -116,15 +123,16 @@ export default function Devicequote() {
             .slice(0, showAll ? brandData.length : 14)
             .map((data, index) => (
               <Link key={index} href={`/brands/${slugify(data.alias)}`}>
-                <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center p-4">
-                  <div className="flex justify-center items-center w-full h-[120px]">
+                <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center md:p-4 p-2">
+                  <div className="flex justify-between items-center w-full h-[120px] flex-col ">
                     <img
                       src={data.image}
                       alt="device_image"
                       width={100} // Fixed width
                       height={100} // Fixed height
-                      className="rounded-2xl w-full h-full object-contain mix-blend-darken group-hover:rotate-[20deg] transition-all duration-700"
+                      className="rounded-2xl w-full h-[80px]  object-contain mix-blend-darken group-hover:rotate-[20deg] transition-all duration-700"
                     />
+                    <span className="text-[16px]">{data.title}</span>
                   </div>
                 </div>
               </Link>
