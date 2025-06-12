@@ -41,26 +41,35 @@ interface MainButtonProps {
   MainButton: string; // Button text
   link?: string; // Optional link prop
   color?: string; // Optional color prop
+  onClick?: () => void; // Optional onClick handler
 }
 
-const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color }) => {
+const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color , onClick }) => {
   return (
     <div>
       {link ? (
         <Link href={link}>
           <button
-            className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`}
+            className={` uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center  ${color}`}
             aria-label={`Click ${MainButton}`}
           >
             {MainButton}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
           </button>
         </Link>
       ) : (
-        <button
-          className={`border-[2px] border-[#FFFFFF] text-white text-[13px] 2xl:text-[13px] xl:text-[14px] font-semibold tracking-[2px] uppercase py-3 2xl:py-[10px] xl:py-[10px] px-[15px] rounded-[50px] transition duration-300 ease-in-out transform hover:scale-90 ${color}`}
+        <button onClick={onClick}
+          className={`uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl border-[2px] border-[#FFFFFF]  flex justify-center items-center ${color}`}
           aria-label={`Click ${MainButton}`}
         >
           {MainButton}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
         </button>
       )}
     </div>

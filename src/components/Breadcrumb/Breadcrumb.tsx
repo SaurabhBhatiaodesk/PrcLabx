@@ -13,11 +13,11 @@ interface BreadcrumbProps {
   backgroundImage: string;
   AdminImage: string;
   link?: any;
-  buttonname?: string;
+  buttonname: string;
   scrollId?: any;
   scrollOffSet?: any;
-  pageNamecolor?:string;
-  containerclass?:string
+  pageNamecolor?: string;
+  containerclass?: string;
 }
 
 function Breadcrumb({
@@ -30,7 +30,7 @@ function Breadcrumb({
   scrollId,
   scrollOffSet,
   pageNamecolor,
-  containerclass
+  containerclass,
 }: BreadcrumbProps) {
   const [isBrowser, setIsBrowser] = useState(false);
   const pathname = usePathname();
@@ -77,8 +77,16 @@ function Breadcrumb({
         className="bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className={`container   ${containerclass == undefined ? "py-8":containerclass}`}>
-          <div className={`grid lg:grid-cols-2 grid-cols-1 items-center pt-3 ${pathname === "/training" ? "2xl:grid-cols-[5fr_3fr] " : ""}`}>
+        <div
+          className={`container   ${
+            containerclass == undefined ? "py-8" : containerclass
+          }`}
+        >
+          <div
+            className={`grid lg:grid-cols-2 grid-cols-1 items-center pt-3 ${
+              pathname === "/training" ? "2xl:grid-cols-[5fr_3fr] " : ""
+            }`}
+          >
             <div className="w-full lg:px-4 mb-8 lg:mb-0">
               <div className="text-center lg:text-left">
                 <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
@@ -92,14 +100,16 @@ function Breadcrumb({
                   </li>
                   <li>
                     <p className="text-body-color text-primary flex items-center lg:gap-[10px] gap-[3px] lg:text-base font-medium mb-0 text-sm ">
-                      <span className="text-body-color text-primary">
-                        /
-                      </span>
+                      <span className="text-body-color text-primary">/</span>
                       {pageName}
                     </p>
                   </li>
                 </ul>
-                <h1 className={`text-dark lg:mb-3 mb-2 text-3xl font-bold ${pageNamecolor == undefined ? "text-primary":pageNamecolor} sm:text-4xl md:text-[40px] md:leading-[1.2]`}>
+                <h1
+                  className={`text-dark lg:mb-3 mb-2 text-3xl font-bold ${
+                    pageNamecolor == undefined ? "text-primary" : pageNamecolor
+                  } sm:text-4xl md:text-[40px] md:leading-[1.2]`}
+                >
                   {pageName}
                 </h1>
                 <p
@@ -113,18 +123,29 @@ function Breadcrumb({
                 {pathname === "/training" ? null : (
                   <>
                     {isBrowser && window.location.pathname === link ? (
-                      <button className="btn" onClick={handleScrollToTarget}>
-                        {buttonname}
-                      </button>
+                      // <button className="btn" onClick={handleScrollToTarget}>
+                      //   {buttonname}
+                      // </button>
+                      <MainButton
+                        MainButton={buttonname}
+                        color="bg-prc"
+                        onClick={handleScrollToTarget}
+                      />
                     ) : (
-                      <Link href={link}>
-                        <button className="btn">{buttonname}</button>
-                      </Link>
+                      // <Link href={link}>
+                      //   <button className="btn">{buttonname}</button>
+                      // </Link>
+                      <MainButton
+                        MainButton={buttonname}
+                        color="bg-prc"
+                        link={link}
+                      />
                     )}
                   </>
                 )}
               </div>
             </div>
+
             {pathname === "/training" ? (
               <div className="admin-image relative h-full">
                 <FormCode />

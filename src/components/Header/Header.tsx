@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png";
+import MainButton from "../MainButton/MainButton";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -460,7 +461,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <Link href="/mail-in-repair">
+                {/* <Link href="/mail-in-repair">
                   <button
                     className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
                     area-label=" Start the repair process for your device"
@@ -468,7 +469,14 @@ export default function App() {
                   >
                     Instant Quote{" "}
                   </button>
-                </Link>
+                </Link> */}
+                 <MainButton
+                        MainButton="Instant Quote"
+                        color=""
+                        onClick={MailRepair}
+                        link="/mail-in-repair"
+                        aria-label="Start the repair process for your device"
+                      />
               </div>
             </div>
           </div>
