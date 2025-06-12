@@ -31,45 +31,45 @@ export default function ShipDeviceUs() {
       src: sliderimage,
       alt: "Screen Refurbishment",
       Product: "Screen Refurbishment",
-      linking:"/screen-refurbishing"
+      linking: "/screen-refurbishing"
     },
-    {
-      src: sliderimage2,
-      alt: "Phone Repair Courses",
-      Product: "Phone Repair Courses",
-       linking:"/mail-in-repair"
-    },
+    // {
+    //   src: sliderimage2,
+    //   alt: "Phone Repair Courses",
+    //   Product: "Phone Repair Courses",
+    //   linking: "/mail-in-repair"
+    // },
     {
       src: sliderimage3,
       alt: "Mail In Repair",
       Product: "Mail In Repair",
-      linking:"/mail-in-repair"
+      linking: "/mail-in-repair"
     },
     {
       src: sliderimage4,
-      alt: "Data Recovery",
-      Product: "Data Recovery",
-          linking:"/data-recovery"
+      alt: "PS5 Repair",
+      Product: "PS5 Repair",
+      linking: "/ps5-repair"
     },
     {
       src: sliderimage5,
       alt: "B2B Phone Repair",
       Product: "B2B Phone Repair",
-      linking:"/b2b-repair-services"
+      linking: "/b2b-repair-services"
     },
-   
+
   ];
 
   return (
-    <div className="lg:py-4 py-3 "style={{ background: 'radial-gradient(circle, rgb(178, 245, 234) -41%, rgb(3, 9, 11) 56%)' }}>
+    <div className="lg:py-4 py-3 " style={{ background: 'radial-gradient(circle, rgb(178, 245, 234) -41%, rgb(3, 9, 11) 56%)' }}>
       <div className="container">
         <div className="">
-           <MainHeading Heading="Ship Your Device To Us"  color="#00BC9D" svg_stroke="var(--primary)" />
-        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
-         
+          <MainHeading Heading="Ship Your Device To Us" color="#00BC9D" svg_stroke="var(--primary)" />
+          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
+
         </div>
       </div>
-      <div className="container service-slide-box flex gap-5 lg:flex-row items-center flex-col product-slider-section p-2">
+      <div className="container  pt-4">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           className="arrow-top-right w-full py-4"
@@ -83,8 +83,8 @@ export default function ShipDeviceUs() {
             450: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 3 },
-            1440: { slidesPerView: 5 },
-        
+            1440: { slidesPerView: 4 },
+
           }}
         >
           {slideData.map((slide, index) => (
@@ -97,23 +97,23 @@ export default function ShipDeviceUs() {
                     alt={slide.Product}
                   />
                   <div className="product pt-3">
-                    <p className="text-primary text-sm lg:text-lg leading-snug font-semibold   mb-[0] font-poppins ">
+                    <p className="text-primary text-sm lg:text-lg leading-snug font-semibold   mb-[0] ">
                       {slide.Product}
                     </p>
-                  
+
                   </div>
-                    <div>
-                      <Link href={slide.linking} className=" flex items-center gap-2 text-primary font-medium text-sm lg:text-base hover:underline mt-3">
-                       <p className="text-tertiary m-0">Learn More </p> <IoIosArrowRoundForward fontSize={30} color="var(--tertiary)" />
-                      </Link>
-                    </div>
+                  <div>
+                    <Link href={slide.linking} className=" flex items-center gap-2 text-primary font-medium text-sm lg:text-base hover:underline mt-3">
+                      <p className="text-tertiary m-0">Learn More </p> <IoIosArrowRoundForward fontSize={30} color="var(--tertiary)" />
+                    </Link>
+                  </div>
                 </div>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-     
+
     </div>
   );
 }

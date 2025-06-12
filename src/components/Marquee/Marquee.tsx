@@ -28,6 +28,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
         .animate-marquee {
           animation: marquee 800s linear infinite;
           display: flex;
+          COLOR: #000 !important;
         }
 
         .marquee-item {
@@ -46,7 +47,7 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
               messages.map((message, messageIndex) => (
                 <span
                   key={`${repetitionIndex}-${messageIndex}`}
-                  className={`px-[10px] py-[5px]  rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6  text-black ${marquee_text}`}
+                  className={`px-[10px] py-[5px]  rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6 uppercase text-black ${marquee_text}`}
                 >
                   {message}
                 </span>

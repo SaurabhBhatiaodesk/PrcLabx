@@ -13,15 +13,15 @@ const FixLabx = () => {
     // <div>FixLabx LabX Mobile Tech</div>
     <>
       <div
-        className="gk bg-no-repeat bg-cover bg-center"
+        className="gk bg-no-repeat bg-cover bg-center relative overflow-hidden "
         style={{ backgroundImage: `url(${banner.src})` }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] items-center pxs-0 md:px-[30px]">
-          <div></div>
-          <div className="text-center lg:p-0 p-4">
-            <h2 className="text-[#040404] text-[32px]  lg:text-[36px] 2xl:text-[42px] font-[800] pb-3">
-              LabX Mobile Phone Repair
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] md-[4fr_2fr] items-center pxs-0 md:px-[30px]">
+          <div className="xl:block hidden"></div>
+          <div className="text-center  p-4">
+            <h2 className="text-[#040404] text-[32px]  lg:text-[36px] 2xl:text-[42px] font-[800] pb-2">
+              PS5 Mobile Phone Repair
             </h2>
-            <p className="text-[#040404] text-[24px]  lg:text-[26px] 2xl:text-[28px] font-[800] pb-3">
+            <p className="text-[#040404] text-[24px]  lg:text-[26px] 2xl:text-[28px] font-[800] m-[4px]">
               About Bharat Dhingra 
             </p>
             <p className="text-black " style={{ color: "#040404" }}>
@@ -31,7 +31,7 @@ const FixLabx = () => {
             </p>
             <MainButton MainButton="Read My Story" link="/about-us" color="bg-prc" />
           </div>
-          <div className="owener-image">
+          <div className="owener-image xl:absolute xl:right-0 h-full  xl:top-[13px]">
             <Image
               className="h-[22rem] lg:h-[100%] xl:h-[100%] 2xl:h-[100%] 3xl:h-[100%] w-full lg:block hidden"
               src={bharat}
