@@ -16,11 +16,45 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   const pathname = usePathname();
   const router = useRouter();
   const [popop, setPopop] = useState(false);
-  const [close, setClose] = useState(false);
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   const [selectedPart, setSelectedPart] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [defaultSelectedPart, setDefaultSelectedPart] = useState<any>(null); // Ensure this is `any` to allow object structure\
+  const pathSegments = pathname.split("/");
+  const secondLastSegment = pathSegments[pathSegments.length - 2]; // This gives us 'screen-repair'
+  const [device, setDevice] = useState<string>("");
+
+  // Fetch the base data from sessionStorage
+  const brandsData = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+
+  // Recursive function to find the product matching the alias
+  const findProductByAlias = (data: any[], alias: string) => {
+    for (const item of data) {
+      if (item.products) {
+        const foundProduct = item.products.find(
+          (product: any) => product.alias === alias
+        );
+        if (foundProduct) {
+          // Return the found product ID and stop the loop
+          return foundProduct.title;
+        }
+      }
+
+      // Recursively check if the item has nested data
+      if (item.data) {
+        const result: any = findProductByAlias(item.data, alias);
+        if (result) return result; // Stop the loop when result is found
+      }
+    }
+    return null; // Return null if no match is found
+  };
+
+  useEffect(() => {
+    const productId = findProductByAlias(brandsData, secondLastSegment);
+    if (productId) {
+      setDevice(productId); // Set the found product ID in the state
+    }
+  }, [secondLastSegment, brandsData]); // Ensure `secondLastSegment` and `brandsData` are dependencies
 
   // Set the active tab when the component mounts or pathname changes
   useEffect(() => {
@@ -68,43 +102,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
       selectedPartId === part.id.toString()
     );
   };
-  const accordionData = [
-    {
-      title: "What types of devices do you repair?",
-      content:
-        "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
-    },
-    {
-      title: "What types of repairs do you specialize in?",
-      content:
-        "Our expertise includes screen replacement, motherboard repairs, data recovery, and micro soldering. We also handle complex repairs like Face ID issues, and water damage recovery.",
-    },
-    {
-      title: "Do you offer any warranties on your repairs?",
-      content:
-        "Yes, all repairs come with a 1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
-    },
-    {
-      title: "What is the warranty on liquid-damaged devices?",
-      content:
-        "We do not recommend repairing liquid-damaged devices and suggest only data recovery services. If the customer insists on repair, we do not provide any warranty, including for the replaced parts.",
-    },
-    {
-      title: "Will all functions work on my dead device after repair?",
-      content:
-        "No guarantees can be made. The initial quote covers the visible issue, e.g., turning on a dead device. Since devices have numerous functions, issues like a non-working camera or mic will require a separate quote unless the fault is minor, in which case we’ll address it during the repair. Major issues will need re-quoting.",
-    },
-    {
-      title: "Do you offer repair services for all phone brands?",
-      content:
-        "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
-    },
-    {
-      title: "How long does a typical phone repair take?",
-      content:
-        "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
-    },
-  ];
   const handleFaqClick = () => {
     setPopop(true);
   };
@@ -121,7 +118,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           {/* Header */}
           <h2 className="text-2xl font-bold mb-4 text-prc">
             SERVICES WE OFFER FOR{" "}
-            <span className="text-purple-700">IPHONE 15</span>
+            <span className="text-purple-700">{device}</span>
           </h2>
 
           {/* Tabs */}

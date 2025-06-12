@@ -133,7 +133,7 @@ export default function Productswiper({ }) {
             >
               {reviews.map((review, index) => (
                 <SwiperSlide key={index}>
-                  <div className="p-4 rounded-[20px] border-[1px] border-[var(--secondry)] shadow-md">
+                  <div className="p-4 rounded-[20px] border-[1px] border-[var(--secondry)] shadow-md cursor-pointer">
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex gap-3 items-start">
                         <Image

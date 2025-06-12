@@ -35,9 +35,10 @@ const Page = () => {
         <div className="strongtx">
           <Breadcrumb
             pageName="Professional Screen Refurbishment Services"
+            pageNamecolor="text-[#B2F5EA]"
             pageDescription={`At PRCRepair, we specialize in <strong>professional screen refurbishment</strong> for mobile phones, tablets, and other devices. Our advanced techniques and state-of-the-art equipment allow us to restore damaged screens to their original condition, saving both time and money compared to full screen replacements.`}
-            backgroundImage="/Images/BannerImages/price.png"
-            AdminImage="/Images/screen-refurbishing.png"
+            backgroundImage="/Images/screenrefbg.webp"
+            AdminImage="/Images/broken-smart-phone.webp"
             link="/price"
             buttonname="View Pricing"
           />
