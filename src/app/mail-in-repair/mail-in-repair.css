@@ -334,7 +334,7 @@ input.check__box {
 }
 .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root 
 {
-  border-radius: 15px;
+  border-radius: 10px !important;
 }
 .MuiFormControl-root.MuiFormControl-fullWidth.MuiTextField-root.w-full.bg-primary.text-secondary.border-white.css-1k0xg0p-MuiFormControl-root-MuiTextField-root 
 {
@@ -362,7 +362,7 @@ input.check__box {
   color: gray  !important;
   background: var(--primary) !important;
 }
-label#react-aria630388666-\:ra\:
+.set_lable_color label
 {
   color: var(--secondary) !important;
 }

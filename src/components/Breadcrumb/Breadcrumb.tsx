@@ -113,13 +113,15 @@ function Breadcrumb({
                 {pathname === "/training" ? null : (
                   <>
                     {isBrowser && window.location.pathname === link ? (
-                      <button className="btn" onClick={handleScrollToTarget}>
-                        {buttonname}
-                      </button>
+                      <MainButton MainButton={`${buttonname}`} link={link} color="bg-prc" />
+                      // <button className="btn" onClick={handleScrollToTarget}>
+                      //   {buttonname}
+                      // </button>
                     ) : (
-                      <Link href={link}>
-                        <button className="btn">{buttonname}</button>
-                      </Link>
+                      <MainButton MainButton={`${buttonname}`} link={link} color="bg-prc" />
+                      // <Link href={link}>
+                      //   <button className="btn">{buttonname}</button>
+                      // </Link>
                     )}
                   </>
                 )}
