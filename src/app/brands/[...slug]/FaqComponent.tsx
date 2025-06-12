@@ -1,17 +1,27 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { usePathname } from "next/navigation";
 
 const FaqComponent: React.FC = () => {
   const [faqData, setFaqData] = useState<any[]>([]); // State to hold the FAQ data
   const [loading, setLoading] = useState<boolean>(true); // State to handle loading status
   const [error, setError] = useState<string>(""); // State to handle errors
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null); // State to handle the active (toggled) FAQ
-
+  const pathname = usePathname();
+  // Extract the brand and model from the pathname
+  const brand = pathname.split("/")[2]; // "apple"
+  const model = pathname.split("/")[3]; // "iphone"
+  // Fetch brand data from sessionStorage or some other source
+  const brandsData = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+  // Find the corresponding brand data
+  const matchedBrand = brandsData.find((item: any) => item.alias === brand);
+  const matchedModel = matchedBrand?.data?.find(
+    (item: any) => item.alias === model
+  );
   // Fetch FAQ data from API on component mount
   useEffect(() => {
-    const api = `https://www.prc.repair/api/getFaq/apple/48`;
-
+    const api = `https://www.prc.repair/api/getFaq/${matchedBrand?.title}/${matchedModel?.id}`;
     axios
       .get(api)
       .then((res) => {
