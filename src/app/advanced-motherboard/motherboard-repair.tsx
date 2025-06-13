@@ -5,15 +5,82 @@ import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
-import AdvancedChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/advancedMotherboardChooseLab";
+// import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
+
 import React from "react";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import { usePathname } from "next/navigation";
+import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
+import rname from "../../../public/Images/icons/rname.png";
+import jname from "../../../public/Images/icons/E.png";
+import Iname from "../../../public/Images/icons/I.png";
+import Nname from "../../../public/Images/icons/N.png";
+import Sname from "../../../public/Images/icons/S.png";
+import Aname from "../../../public/Images/icons/A.png";
+import hname from "../../../public/Images/icons/h.png";
+import Googletest from "../../../public/Images/icons/Googletest.svg";
+import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import LightCources from "@/components/TraningBanner/LightCources";
 
 const BeginnerCourse = () => {
+  const reviewsData = [
+    {
+      name: "Liam Foster",
+      date: "September 12, 2023",
+      profileImage: hname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
+    },
+    {
+      name: "Emma Williams",
+      date: "September 12, 2023",
+      profileImage: rname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
+    },
+    {
+      name: "Jack O'Connor",
+      date: "September 12, 2023",
+      profileImage: Sname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
+    },
+    {
+      name: "Chloe Brown",
+      date: "October 5, 2023",
+      profileImage: jname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
+    },
+    {
+      name: "Oliver Harris",
+      date: "November 1, 2023",
+      profileImage: Aname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
+    },
+    {
+      name: "Sophie Clark",
+      date: "November 1, 2023",
+      profileImage: Nname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
+    },
+  ];
   const pathname = usePathname();
   const accordionData = [
     {
@@ -90,8 +157,15 @@ const BeginnerCourse = () => {
       <TrainingTabMotherboard />
       <TrainingTabMotherboardsecond />
       <TraningCourseInstructors />
-      <MotherboardPhoneReapair />
-      <AdvancedChooseLab />
+      {/* <MotherboardPhoneReapair /> */}
+      <LightCources
+        title=" Tools and Techniques Covered"
+        discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration."
+      />
+      {/* <AdvancedChooseLab /> */}
+      {/* comment code */}
+      <Boxblock></Boxblock>
+
       {pathname === "/beginner-phone-repair-course" ||
       pathname === "/advanced-motherboard" ||
       pathname === "/expert-motherboard-repair" ||
@@ -107,7 +181,8 @@ const BeginnerCourse = () => {
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-      <MotherboardReviews />
+      {/* <MotherboardReviews /> */}
+      <BiginnerReviews reviews={reviewsData} />
     </>
   );
 };

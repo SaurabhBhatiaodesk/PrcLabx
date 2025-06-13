@@ -8,6 +8,7 @@ import zip from "../../../assets/Icons/zipicon.png";
 import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
 import Link from "next/link";
+import FaqComponent from "./FaqComponent";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   pdpDetail,
@@ -260,7 +261,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                       ></span>
 
                       <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                        <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+                        <div className=" sm:block absolute top-0 right-0 pt-4 pr-4">
                           <button
                             onClick={handleClose}
                             type="button"
@@ -310,6 +311,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                       </div>
                     </div>
                   </div>
+                
                 </>
               )}
             </div>
@@ -321,6 +323,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
           defaultSelectedPart={defaultSelectedPart}
         />
       </div>
+
+     <div><FaqComponent></FaqComponent></div>
     </>
   );
 };

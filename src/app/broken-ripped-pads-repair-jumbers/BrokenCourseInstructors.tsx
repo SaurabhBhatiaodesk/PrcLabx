@@ -46,7 +46,7 @@ function BrokenCourseInstructors() {
                   fill // Ensures the image fills its parent container responsively
                 />
               </div>
-              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
+              <div className="p-3 lg:p-6  text-black rounded-md">
                 <h2 className="text-3xl font-bold mb-4">Training Instructors</h2>
 
                 <p className="text-base text-tertiary ">Bharat Dhingra & Team</p>

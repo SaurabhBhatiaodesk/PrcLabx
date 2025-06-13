@@ -119,7 +119,7 @@ export default async function BlogDetails({
             </p>
           </div>
         </div>
-        <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row mb-right">
+        <div className="container mx-auto my-10 p-6  shadow-lg rounded-lg flex flex-col lg:flex-row mb-right">
           {/* Main Blog Content */}
           <div className="w-full lg:w-3/4 mb-6 lg:mb-0">
             {blog?.featuredImage.length > 0 ? (
@@ -147,13 +147,13 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">
+            <h2 className="text-3xl font-bold my-[10px] mt-5 text-prc">
               {blog.heading}
             </h2>
 
             <div className="mb-4">
               <div
-                className="mt-2 text-white custom-content-styling"
+                className="mt-2 text-prc custom-content-styling"
                 dangerouslySetInnerHTML={{ __html: blog.content }}
               ></div>
             </div>

@@ -6,7 +6,7 @@ img.dynamic__img {
     margin-top: 10px !important;
 }
 .MuiBox-root ul li span{
-    color: #fff !important;
+    color: #000000 !important;
 }
  /* .overlap__term__data {
     position: absolute;
@@ -31,8 +31,8 @@ img.dynamic__img {
     object-fit: cover;
 }
 .MuiBox-root p span , .MuiBox-root p strong {
-    color: #fff !important;
-    background: #000 !important;
+    color: #000000 !important;
+
 }
 @media screen and (max-width: 767px) {
     img.dynamic__img { 
@@ -42,4 +42,13 @@ img.dynamic__img {
         height: 100%;
         top: 0;
     }
+}
+
+.css-djg7e {
+    background-color: #ffffff !important;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: unset !important;
+    padding: 24px;
+    margin-top: 32px;
 }

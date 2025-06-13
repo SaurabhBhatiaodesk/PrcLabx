@@ -1,13 +1,13 @@
 "use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/BeginnerPhoneRepaiCourseSale";
+import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/LightCources";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
-import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
+// import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
+// import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
 import React from "react";
 import FristTraningTab from "./FristTraningTab";
 import SecondTraningTab from "./SecondTraningTab";
@@ -16,9 +16,76 @@ import TraningSales from "./TraningSales";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
 import { usePathname } from "next/navigation";
-
+import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
+import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import rname from "../../../public/Images/icons/rname.png";
+import jname from "../../../public/Images/icons/E.png";
+import Iname from "../../../public/Images/icons/I.png";
+import Nname from "../../../public/Images/icons/N.png";
+import Sname from "../../../public/Images/icons/S.png";
+import Aname from "../../../public/Images/icons/A.png";
+import hname from "../../../public/Images/icons/h.png";
+import Googletest from "../../../public/Images/icons/Googletest.svg";
+import LightCources from "@/components/TraningBanner/LightCources";
 const BeginnerCourse = () => {
   const pathname = usePathname();
+
+  const reviewsData = [
+    {
+      name: "Sarah Thompson",
+      date: "September 12, 2023",
+      profileImage: hname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The Expert Motherboard Repair course exceeded my expectations. The hands-on training in micro soldering gave me the confidence to handle complex repairs professionally. Highly recommend it!",
+    },
+    {
+      name: "James Harper",
+      date: "September 12, 2023",
+      profileImage: rname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Fantastic course! The instructors were knowledgeable, and I gained valuable skills in diagnostics and soldering. Perfect for anyone looking to excel in motherboard repairs.",
+    },
+    {
+      name: "Olivia Bennett",
+      date: "September 12, 2023",
+      profileImage: Sname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "This course is a game-changer! I can now repair IC chips and tackle reballing challenges. Great support and detailed lessons made learning seamless.",
+    },
+    {
+      name: "Liam Cooper",
+      date: "October 5, 2023",
+      profileImage: jname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Joining this training was the best decision for my career. The practical sessions on NAND programming and chip repairs were incredibly detailed. Worth every minute!",
+    },
+    {
+      name: "Emma Wilson",
+      date: "November 1, 2023",
+      profileImage: Aname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Exceptional experience! The focus on real-world repair scenarios and advanced techniques like dual-board soldering has improved my repair accuracy. Great for beginners and pros alike!",
+    },
+    {
+      name: "Ethan Turner",
+      date: "November 1, 2023",
+      profileImage: Nname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Expert Motherboard Repair training delivered exactly what I needed. Comprehensive lessons, hands-on practice, and certification boosted my confidence. I now handle client repairs with precision.",
+    },
+  ];
   const accordionData = [
     {
       title: "1. Who is this course suitable for?",
@@ -110,26 +177,16 @@ const BeginnerCourse = () => {
       <FristTraningTab />
       <SecondTraningTab />
       <TrainingInstructors {...instructorData} />
+   <LightCources title=" Tools and Techniques Covered" discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration." />
 
-      <TraningSales
-        courseName="Become a Master in Motherboard Repairs"
-        imagedata="/Images/CourseInstructors.png"
-        courseDescription={[
-          "Complete this comprehensive mainboard repair training and build the confidence to handle complex motherboard repairs with ease. From advanced diagnostics to precise micro soldering, you’ll develop the expertise to tackle intricate challenges and deliver exceptional results. Equip yourself to work professionally on a wide array of devices, ensuring top-notch performance and reliability.",
-        ]}
-        saleDurationDays={7}
-        initialCounters={{
-          personsMentored: 50,
-          workshopsAttended: 300,
-          coachingCertificates: 25,
-        }}
-      />
-      <ExpertChooseLab />
+      {/* <ExpertChooseLab /> */}
+      {/* comment code */}
+      <Boxblock></Boxblock>
       {pathname === "/beginner-phone-repair-course" ||
-      pathname === "/advanced-motherboard" ||
-      pathname === "/expert-motherboard-repair" ||
-      pathname === "/master-motherboard-repair" ||
-      pathname === "/professional-phone-screen" ? null : (
+        pathname === "/advanced-motherboard" ||
+        pathname === "/expert-motherboard-repair" ||
+        pathname === "/master-motherboard-repair" ||
+        pathname === "/professional-phone-screen" ? null : (
         <div className=" pt-3 " id="expert-motherboard-repair-id">
           <MainHeading Heading="Expert Motherboard Repair" />
           <FormCode />
@@ -140,7 +197,8 @@ const BeginnerCourse = () => {
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-      <ExpertMotherboardReviews />
+      {/* <ExpertMotherboardReviews /> */}
+      <BiginnerReviews reviews={reviewsData} />
     </>
   );
 };

@@ -107,11 +107,11 @@ const TraningTabBignersecond: React.FC = () => {
   return (
     <section
       className="pb-4 lg:pb-[60px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('/images/Home/back-banner.svg')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">

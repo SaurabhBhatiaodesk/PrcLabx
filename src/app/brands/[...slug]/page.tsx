@@ -5,7 +5,7 @@ const Page: React.FC = () => {
   return (
     <div>
       <BrandDetail />
-      <FaqComponent />
+      {/* <FaqComponent /> */}
       <GoogleReviews />
     </div>
   );

@@ -470,14 +470,17 @@ export default function App() {
                     Instant Quote{" "}
                   </button>
                 </Link> */}
+                <div className="md:block  hidden">
                  <MainButton
                         MainButton="Instant Quote"
                         color=""
-                        onClick={MailRepair}
-                        link="/mail-in-repair"
+                        // onClick={MailRepair}
+                        link="/brands"
                         aria-label="Start the repair process for your device"
                       />
+                      </div>
               </div>
+
             </div>
           </div>
         </Navbar>
