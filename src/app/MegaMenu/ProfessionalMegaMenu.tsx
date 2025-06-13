@@ -194,13 +194,13 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   // Fetch menu data from API
-  useEffect(() => {
+useEffect(() => {
     const fetchMenuData = async () => {
       try {
         setIsLoading(true);
-
+ 
         let baseData: MenuItem[] = JSON.parse(sessionStorage.getItem("baseData") || "[]");
-
+ 
         if (baseData.length === 0) {
           const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
           const res = await fetch(api);
@@ -208,7 +208,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           baseData = await res.json();
           sessionStorage.setItem("baseData", JSON.stringify(baseData));
         }
-
+ 
         setMenuData(baseData);
       } catch (error) {
         console.error("Error fetching menu data:", error);
@@ -216,7 +216,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
         setIsLoading(false);
       }
     };
-
+ 
     fetchMenuData();
   }, []);
 
