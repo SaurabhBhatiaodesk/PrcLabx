@@ -5,7 +5,6 @@ import React from "react";
 import BrokenRippedFirstTab from "./BrokenRippedFirstTab";
 import BrokenRippedSecondTab from "./BrokenRippedSecondTab";
 import BrokenCourseInstructors from "./BrokenCourseInstructors";
-import BrokenBlink from "./BrokenBlink";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
