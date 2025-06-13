@@ -38,51 +38,48 @@ const B2BRepairTable: React.FC = () => {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const fetchData = async (page: number, limit: number, searchValue = "") => {
-    setIsLoading(true);
-    setErrorMessage("");
-    try {
-      let response;
-      if (searchValue.trim() === "") {
-        // Normal GET request
-        response = await axios.get(`${apiUrl}/api/repair`, {
-          params: {
-            page: page + 1, // Backend pages are 1-indexed
-            limit,
-          },
-        });
-      } else {
-        // Search POST request
-        response = await axios.post(
-          `${apiUrl}/api/repair/search`,
-          { searchValue },
-          {
-            params: {
-              page: page + 1,
-              limit,
-            },
-          }
-        );
-      }
-
-      setData(response.data.data);
-      setTotalRecords(response.data.pagination.totalRecords);
-      setIsLoading(false);
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        if (error.response && error.response.status === 404) {
-          setErrorMessage("No records found matching the search criteria.");
-        } else {
-          setErrorMessage("An error occurred while fetching data.");
-        }
-      } else if (error instanceof Error) {
-        setErrorMessage(error.message);
-      } else {
-        setErrorMessage("An unexpected error occurred.");
-      }
-
-      setIsLoading(false);
+  setIsLoading(true);
+  setErrorMessage("");
+  try {
+    let response;
+    if (searchValue.trim() === "") {
+      response = await axios.get(`${apiUrl}/api/repair`, {
+        params: { page: page + 1, limit },
+      });
+    } else {
+      response = await axios.post(
+        `${apiUrl}/api/repair/search`,
+        { searchValue },
+        { params: { page: page + 1, limit } }
+      );
     }
-  };
+
+    if (!response || !response.data) {
+      setErrorMessage("Invalid response from server.");
+      return;
+    }
+
+    setData(response.data.data);
+    setTotalRecords(response.data.pagination.totalRecords);
+    setIsLoading(false);
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        // Log the status and body for debugging
+        console.error("API Response Error: ", error.response.status, error.response.data);
+        setErrorMessage(`Error: ${error.response.status} - ${error.response.statusText}`);
+      } else {
+        setErrorMessage("Network error or invalid URL.");
+      }
+    } else if (error instanceof Error) {
+      setErrorMessage(error.message);
+    } else {
+      setErrorMessage("An unexpected error occurred.");
+    }
+    setIsLoading(false);
+  }
+};
+
 
   useEffect(() => {
     fetchData(page, rowsPerPage, searchValue);
