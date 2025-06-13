@@ -50,7 +50,7 @@ const AboutUs = () => {
                   <li>
                     <Link
                       href="/"
-                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-primary"
+                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-secondary"
                     >
                       Home
                     </Link>
@@ -62,7 +62,7 @@ const AboutUs = () => {
                     </p>
                   </li>
                 </ul>
-                <h1 className="text-dark mb-0 text-3xl font-bold dark:text-primary sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                <h1 className="text-prc mb-0 text-3xl font-bold dark:text-secondary sm:text-4xl md:text-[40px] md:leading-[1.2]">
                   Meet Bharat Dhingra  (Founder)
                 </h1>
                 <Image height="80" width="600" src={UnderLine.src} alt=" labx repair " className="mb-3 about_line" />
@@ -85,7 +85,7 @@ const AboutUs = () => {
       </section>
       <div className="about__bg__gradiant">
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="max-container text-primary text-center rounded-md">
+          <div className="max-container text-secondary text-center rounded-md">
             <p className="">
               From a young age, I was fascinated with technology, particularly mobile phones.  After completing my higher secondary education, in 2005, I enrolled in a six-month course at one of the big city &apos;s institutes to learn mobile phone repair. My passion and dedication quickly set me apart— I was not only excelling in my assignments but also helping my classmates with theirs. Recognizing my potential, the institute&apos;s owner, who ran a well-known repair shop, offered me an unpaid apprenticeship at his store—a rare opportunity, as most paid for the chance to work there. I gladly worked for two years without pay, absorbing everything I could about the trade.
             </p>
@@ -114,17 +114,17 @@ const AboutUs = () => {
 
       <div className="max-container "   >
         <section>
-          <div className="bg-black text-primary flex flex-col items-center py-2 lg:py-4">
+          <div className="bg-[#FEF6FF] text-secondary flex flex-col items-center py-2 lg:py-4">
 
             <div className="w-full p-6">
-              <h2 className="font-bold text-center mb-2 text-primary">A Breakthrough </h2>
+              <h2 className="font-bold text-center mb-2 text-secondary">A Breakthrough </h2>
               <Image height="100" width="400" src={Break.src} alt=" labx repair " className="pb-3 m-auto" />
-              <p className="  text-center  text-primary">
+              <p className="  text-center  text-secondary">
                 Despite these hardships, I stayed there for six months, determined to learn and grow. Eventually, I found another opportunity at a repair shop in Blacktown. When I approached the owner, I struggled to communicate in English and asked if he spoke Hindi. He didn &apos;t, but he gave me a chance, recognizing my skills instead of focusing on my language barrier.
               </p>
-              <p className="  text-center  text-primary">
+              <p className="  text-center  text-secondary">
                 I still remember the day I worked my first shift at that shop—<span className="text-sm">it was a Thursday night. After three hours of work, I was handed $50. It felt like a fortune compared to what I had been earning</span> </p>
-              <p className="text-center text-primary">Over the next two years, I invested countless hours into my work. The shop closed at 5 PM, but I often stayed late, honing my craft and preparing myself for the future.  </p>
+              <p className="text-center text-secondary">Over the next two years, I invested countless hours into my work. The shop closed at 5 PM, but I often stayed late, honing my craft and preparing myself for the future.  </p>
             </div>
           </div>
         </section>
@@ -150,7 +150,7 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant "  >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="max-container text-primary text-center rounded-md">
+          <div className="max-container text-secondary text-center rounded-md">
             <h2 className="mb-2">A Helping Hand</h2>
             <Image height="100" width="300" src={Hand.src} alt=" labx repair " className="pb-3 m-auto" />
             <p className=""> Back at home, I shared my plans with my uncle, Paramjit Thiara (I was a paying guest at his place), who had always been a pillar of support. Recognizing my determination, he gave me an old, broken cupboard, which we creatively transformed into a makeshift workbench. This simple gesture played a crucial role in getting me started.
@@ -248,7 +248,7 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant pt-8 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="max-container text-primary text-center rounded-md">
+          <div className="max-container text-secondary text-center rounded-md">
             <h2 className="mb-2">Scaling Up: Building a Team and Expanding Services</h2>
             <Image height="1000" width="900" src={Service.src} className="pb-3 m-auto" alt=" labx repair " />
             <p className="">
@@ -291,31 +291,31 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="mt-5 pt-8 bg_light_black " >
+      <section className="mt-5 pt-8 bg-[#FEF6FF] " >
         <div className="max-container">
           <div className="text-center mt-5">
-            <h2 className="mb-2 w-auto text-primary">A New Chapter: Focus and Growth
+            <h2 className="mb-2 w-auto text-secondary">A New Chapter: Focus and Growth
             </h2>
             <Image height="1000" width="600" src={New.src} alt=" labx repair " className="pb-3 m-auto" />
           </div>
-          <p className="text-center text-primary">During the COVID-19 pandemic, something remarkable happened—my business thrived despite the challenges. While I had initially planned to focus on launching training programs, the surge in demand for repairs and services led me to postpone those plans. Whether it was due to luck, goodwill, or sheer hard work, I found myself busier than ever.</p>
+          <p className="text-center text-secondary">During the COVID-19 pandemic, something remarkable happened—my business thrived despite the challenges. While I had initially planned to focus on launching training programs, the surge in demand for repairs and services led me to postpone those plans. Whether it was due to luck, goodwill, or sheer hard work, I found myself busier than ever.</p>
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="chap_Image">
               <Image height="1000" width="1000" src={Chapter} alt=" labx repair " className="" />
             </div>
             <div className="">
-              <p className="text-primary">One significant milestone during this period was securing authorization to become a Samsung Service Centre. This partnership brought a tremendous influx of work and solidified our reputation as a trusted repair provider.
+              <p className="text-secondary">One significant milestone during this period was securing authorization to become a Samsung Service Centre. This partnership brought a tremendous influx of work and solidified our reputation as a trusted repair provider.
               </p>
-              <p className="text-primary">Around the same time, I decided to let go of my stall at Parklea Markets. It was a tough decision, as it was my first shop and the foundation of my journey in Australia. However, managing both the market stall and the Samsung Service Centre became overwhelming, and it was time to move on. In 2020 (or perhaps 2021), I sold the market stall and shifted my complete focus to our main shop, Phone Repair Centre, at St Marys.
+              <p className="text-secondary">Around the same time, I decided to let go of my stall at Parklea Markets. It was a tough decision, as it was my first shop and the foundation of my journey in Australia. However, managing both the market stall and the Samsung Service Centre became overwhelming, and it was time to move on. In 2020 (or perhaps 2021), I sold the market stall and shifted my complete focus to our main shop, Phone Repair Centre, at St Marys.
               </p>
-              <p className="text-primary">This transition allowed us to improve operations further. We renovated the back end of the St Marys store to optimize our workflow and storage, ensuring we could keep up with the increasing demand. The decision to focus entirely on the Phone Repair Centre proved to be a turning point, enabling us to provide exceptional service and continue growing the business.
+              <p className="text-secondary">This transition allowed us to improve operations further. We renovated the back end of the St Marys store to optimize our workflow and storage, ensuring we could keep up with the increasing demand. The decision to focus entirely on the Phone Repair Centre proved to be a turning point, enabling us to provide exceptional service and continue growing the business.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-5 pt-8 bg_light_yellow " >
+      <section className="mt-5 pt-8  " >
         <div className="max-container ">
           <div className="text-center mt-5">
             <h2 className="mb-0 w-auto text-black">Expanding Horizons: The Birth of TechCity
@@ -339,21 +339,22 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="pt-8 pb-8 bg_light_black " >
-        <div className="max-container text-primary pt-8 mt-5">
+      <section className="pt-8 pb-8 bg-tertiary " >
+        <div className="max-container text-secondary pt-8 mt-5">
           <div className="text-center">
-            <h2 className="mb-0 text-primary"> Introducing Screen Refurbishing with a Transparent Approach</h2>
-            <Image height="1000" width="1000" src={Service.src} className="pb-3 m-auto" alt=" labx repair " />
-            <p className="text-primary">As my business continued to grow and operations became more streamlined—with excellent staff, management, repairs, and customer service—I knew it was time to take another bold step forward. Around this time, I welcomed Imran to the team, a talented and creative addition who brought innovative ideas and energy. Together, we formed a dedicated team committed to elevating the business to new heights.</p>
-            <p className="text-primary">One of the biggest frustrations in the industry was the lack of transparency in screen buyback programs. Suppliers would grade screens as A, B, or C, or reject them outright, often without any explanation. This lack of clarity felt like a monopoly, and I knew there was a better way</p>
-            <p className="text-primary">Driven by the desire to offer transparency and fairness, we decided to bring screen refurbishing in-house. We invested in the latest machines, crafted a fair pricing model, and set out to do things differently. The results were transformative. For every screen we handled, we provided clear grading criteria and photos, ensuring complete honesty and trust.</p>
-            <p className="text-primary">When we launched this service for other businesses, the response was overwhelming. Customers were thrilled with our fast turnaround, competitive pricing, and above all, our commitment to transparency. The demand grew beyond anything we had anticipated, and our screen refurbishing quickly became one of the most sought-after services in the industry.</p>
-            <p className="text-primary">This venture not only strengthened our reputation but also solidified our belief in doing business the right way. By setting new standards of honesty and quality, we redefined screen refurbishment as a service customers could trust, laying the foundation for even greater success.</p>
+            
+            {/* <h2 className="mb-0 text-secondary"> Introducing Screen Refurbishing with a Transparent Approach</h2> */}
+             <MainHeading Heading="Introducing Screen Refurbishing with a Transparent Approach" color="var(--prc)" svg_stroke="var(--alpha)" />
+            <p className="text-secondary">As my business continued to grow and operations became more streamlined—with excellent staff, management, repairs, and customer service—I knew it was time to take another bold step forward. Around this time, I welcomed Imran to the team, a talented and creative addition who brought innovative ideas and energy. Together, we formed a dedicated team committed to elevating the business to new heights.</p>
+            <p className="text-secondary">One of the biggest frustrations in the industry was the lack of transparency in screen buyback programs. Suppliers would grade screens as A, B, or C, or reject them outright, often without any explanation. This lack of clarity felt like a monopoly, and I knew there was a better way</p>
+            <p className="text-secondary">Driven by the desire to offer transparency and fairness, we decided to bring screen refurbishing in-house. We invested in the latest machines, crafted a fair pricing model, and set out to do things differently. The results were transformative. For every screen we handled, we provided clear grading criteria and photos, ensuring complete honesty and trust.</p>
+            <p className="text-secondary">When we launched this service for other businesses, the response was overwhelming. Customers were thrilled with our fast turnaround, competitive pricing, and above all, our commitment to transparency. The demand grew beyond anything we had anticipated, and our screen refurbishing quickly became one of the most sought-after services in the industry.</p>
+            <p className="text-secondary">This venture not only strengthened our reputation but also solidified our belief in doing business the right way. By setting new standards of honesty and quality, we redefined screen refurbishment as a service customers could trust, laying the foundation for even greater success.</p>
           </div>
         </div>
       </section>
 
-      <div className="max-container text-primary pt-8 mt-5 " >
+      <div className="max-container text-secondary pt-8 mt-5 " >
         <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
           <div className="tech_Image">
             <Image height="1000" width="1000" src={Techcity} alt=" labx repair " className="" />
@@ -392,7 +393,7 @@ const AboutUs = () => {
 
       <div className="about__bg__gradiant pt-8 mt-5 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
-          <div className="max-container text-primary text-center rounded-md">
+          <div className="max-container text-secondary text-center rounded-md">
             <h2 className="mb-2">LabX: A Passion Project Born from Purpose </h2>
             <Image height="1000" width="800" src={Service.src} className="pb-3 m-auto" alt=" labx repair " />
             <p className="">

@@ -554,16 +554,16 @@ const Footer = () => {
               backgroundColor: "#42425a",
             }}
           />
-          <section className="copywrite py-5 pb-10 xl:py-8">
+          <section className="copywrite py-2 pb-10 xl:py-4">
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
-                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary">
+                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Copyright © PRC Repair {new Date().getFullYear()} - All
                   rights reserved
                 </p>
               </div>
               <div className="sm:text-center">
-                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary">
+                <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Website Designed by{" "}
                   <a href="https://www.base2brand.com/">Base2Brand Infotech</a>{" "}
                 </p>

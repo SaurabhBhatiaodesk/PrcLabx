@@ -6,14 +6,23 @@ import TraningProfessionalBanner from "@/components/TraningBanner/TrainingTabPro
 import ProfessionalSecondTab from "@/components/TraningBanner/ProfessionalTabSecondBanner";
 import TraningCourseInstructors from "./ProfessionalInstructor";
 import ProfessionalInstructorSecond from "./ProfessionalInstructorSecond";
-import ProfessionalChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ProfessionalChooseLab";
-import ProfessionalReviews from "@/components/GoogleReviews/ProfessionalReviews";
+// import ProfessionalChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ProfessionalChooseLab";
+// import ProfessionalReviews from "@/components/GoogleReviews/ProfessionalReviews";
 import React from "react";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import ProfessionalThreeTab from "./ProfessionalThreeTab";
 import { usePathname } from "next/navigation";
-
+import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
+import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import rname from "../../../public/Images/icons/rname.png";
+import jname from "../../../public/Images/icons/E.png";
+import Nname from "../../../public/Images/icons/N.png";
+import Sname from "../../../public/Images/icons/S.png";
+import Aname from "../../../public/Images/icons/A.png";
+import hname from "../../../public/Images/icons/h.png";
+import Googletest from "../../../public/Images/icons/Googletest.svg";
+import LightCources from "@/components/TraningBanner/LightCources";
 const ProfessionalScreen = () => {
   const pathname = usePathname();
   const accordionData = [
@@ -55,6 +64,62 @@ const ProfessionalScreen = () => {
         "Many programs provide industry-recognized certificates, showcasing your expertise in LCD and OLED screen refurbishment and boosting your professional credibility.",
     },
   ];
+  const reviewsData = [
+  {
+    name: "Tommy Harris",
+    date: "September 12, 2023",
+    profileImage: hname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "This motherboard repair course taught me everything I needed to know about micro soldering. The hands-on training was fantastic, and I’m now confident handling complex repairs.",
+  },
+  {
+    name: "Emma Wilson",
+    date: "September 12, 2023",
+    profileImage: rname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "An excellent course for anyone looking to level up their skills. The instructors are knowledgeable, and the practical experience has made me a pro in motherboard repairs.",
+  },
+  {
+    name: "Jacob Brown",
+    date: "September 12, 2023",
+    profileImage: Sname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "Highly recommend this micro soldering course! I learned everything from CPU reballing to data recovery. The training was clear, and I feel ready to start my own business.",
+  },
+  {
+    name: "Sarah Clark",
+    date: "October 5, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "The Master Motherboard Repair course was a game-changer. I can now confidently repair damaged boards and handle tricky data recovery tasks. Worth every penny!",
+  },
+  {
+    name: "James Walker",
+    date: "November 1, 2023",
+    profileImage: Aname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "Great hands-on experience with real-world scenarios. This course has taken my repair skills to the next level, especially with advanced soldering techniques. Very happy!",
+  },
+  {
+    name: "Lily Roberts",
+    date: "November 1, 2023",
+    profileImage: Nname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "I gained valuable insights into micro soldering and mobile phone repairs. The course helped me become proficient in restoring even the most challenging motherboard issues. Fantastic training!",
+  },
+];
   const instructorData = {
     instructorName: "Bharat Dhingra & Team",
     instructorImage: "/Images/CourseInstructors.png", // Update with the correct image path
@@ -110,13 +175,16 @@ const ProfessionalScreen = () => {
       <ProfessionalSecondTab />
       <ProfessionalThreeTab />
       <TraningCourseInstructors />
-      <ProfessionalInstructorSecond />
-      <ProfessionalChooseLab />
+  <LightCources title=" Tools and Techniques Covered" discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration." />
+      {/* <ProfessionalChooseLab /> */}
+      {/* this is comment code  */}
+
+      <Boxblock></Boxblock>
       {pathname === "/beginner-phone-repair-course" ||
-      pathname === "/advanced-motherboard" ||
-      pathname === "/expert-motherboard-repair" ||
-      pathname === "/master-motherboard-repair" ||
-      pathname === "/professional-phone-screen" ? null : (
+        pathname === "/advanced-motherboard" ||
+        pathname === "/expert-motherboard-repair" ||
+        pathname === "/master-motherboard-repair" ||
+        pathname === "/professional-phone-screen" ? null : (
         <div className=" pt-3" id="professional-phone-screen-id">
           <MainHeading Heading="Professional Phone Screen Refurbishing Course" />
           <FormCode />
@@ -127,7 +195,8 @@ const ProfessionalScreen = () => {
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-      <ProfessionalReviews />
+      {/* <ProfessionalReviews /> */}
+     <BiginnerReviews reviews={reviewsData} />
     </>
   );
 };

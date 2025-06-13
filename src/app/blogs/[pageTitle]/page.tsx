@@ -92,7 +92,7 @@ export default async function BlogDetails({
             </p>
           </div>
         </div>
-        <div className="container mx-auto my-10 p-6 bg-black shadow-lg rounded-lg flex flex-col lg:flex-row mb-right">
+        <div className="container mx-auto my-10 md:p-6 p-3  rounded-lg flex flex-col lg:flex-row mb-right">
           {/* Main Blog Content */}
           <div className="w-full lg:w-3/4 mb-6 lg:mb-0">
             {blog?.featuredImage.length > 0 ? (
@@ -120,7 +120,7 @@ export default async function BlogDetails({
               "No Image"
             )}
 
-            <h2 className="text-3xl font-bold my-[10px] mt-5 text-tertiary">
+            <h2 className="text-3xl font-bold my-[10px] mt-5 text-prc">
               {blog.heading}
             </h2>
 
@@ -130,7 +130,7 @@ export default async function BlogDetails({
           </div>
 
           {/* Sidebar with Paginated Blogs */}
-          <div className="lg:w-1/4 w-full bg-black p-4 rounded-lg shadow-md">
+          <div className="lg:w-1/4 w-full bg-primary p-4 rounded-lg shadow-md">
             <BlogSidebar />
           </div>
         </div>

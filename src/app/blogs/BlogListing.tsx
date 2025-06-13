@@ -115,14 +115,14 @@ const Blogs: React.FC = () => {
 
       {/* Pagination Controls */}
       {pagination && pagination.totalPages > 1 && (
-        <div className="pagination-controls flex justify-center mt-4">
+        <div className="pagination-controls flex justify-center my-4">
           {Array.from({ length: pagination.totalPages }, (_, index) => (
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`mx-1 px-3 py-1 border rounded ${
                 currentPage === index + 1
-                  ? "bg-[#EDE574] text-black"
+                  ? "bg-prc text-primary"
                   : "bg-gray-200 text-black"
               }`}
             >

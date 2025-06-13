@@ -10,7 +10,7 @@
     width: 100%;
 }
 .overlap__description {
-    background: linear-gradient(90deg, #EDE574 0%, #E1F5C4 100%);
+    background:var(--tertiary);
     padding: 35px;
     padding-top: 30%;
     position: absolute;

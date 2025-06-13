@@ -12,19 +12,19 @@ import "aos/dist/aos.css";
 import { Pagination } from "swiper/modules";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
-import mainf1 from "../../../public/Images/BannerImages/bannerf1.webp";
-import mainf2 from "../../../public/Images/BannerImages/bannerf2.webp";
+// import mainf1 from "../../../public/Images/BannerImages/bannerf1.webp";
+// import mainf2 from "../../../public/Images/BannerImages/bannerf2.webp";
 import mainf3 from "../../../public/Images/BannerImages/bannerf3.webp";
-import mainf4 from "../../../public/Images/BannerImages/bannerf4.webp";
+// import mainf4 from "../../../public/Images/BannerImages/bannerf4.webp";
 import Bannersearchcard from "./Bannersearchcard";
 import Marquee from "../Marquee/Marquee";
 
 export default function MainBanner() {
-  const [backgroundImage, setBackgroundImage] = useState(mainf1); // State to track background image
+  const [backgroundImage, setBackgroundImage] = useState(mainf3); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
 
 
-  const backgroundImages = [mainf1, mainf2, mainf3, mainf4];
+  const backgroundImages = [ mainf3];
 
   const handleSlideChange = (swiper: any) => {
     const index = swiper.realIndex; // Get the real index of the slide
@@ -207,7 +207,7 @@ export default function MainBanner() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-end items-center">
             <Bannersearchcard />
           </div>
         </div>

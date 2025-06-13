@@ -123,7 +123,7 @@ const FristTraningTab: React.FC = () => {
           <MainHeading
             Heading="
 Course Syllabus
-"
+" color="var-(--prc)" svg_stroke="var-(--alpha)"
           />
         </div>
 
@@ -138,11 +138,10 @@ Course Syllabus
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-5 xl:p-4 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
-                    activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
-                  }`}
+                  className={`p-3 lg:p-5 xl:p-4 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
+                    ? "active-tab"
+                    : "bg-opacity-50 hover:bg-opacity-75"
+                    }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
                   role="tab"
@@ -209,10 +208,10 @@ Course Syllabus
               {tabs[activeTab].button && tabs[activeTab].link && (
                 <>
                   {pathname === "/beginner-phone-repair-course" ||
-                  pathname === "/advanced-motherboard" ||
-                  pathname === "/expert-motherboard-repair" ||
-                  pathname === "/master-motherboard-repair" ||
-                  pathname === "/professional-phone-screen" ? (
+                    pathname === "/advanced-motherboard" ||
+                    pathname === "/expert-motherboard-repair" ||
+                    pathname === "/master-motherboard-repair" ||
+                    pathname === "/professional-phone-screen" ? (
                     <button
                       className="border-[0.5px] py-3 px-5 rounded-[50px] text-sm text-white font-[500]"
                       style={{
