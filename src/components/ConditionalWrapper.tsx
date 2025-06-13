@@ -4,6 +4,7 @@ import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { usePathname } from "next/navigation";
+import HeaderDev from "./Header/HeaderDev";
 
 const ConditionalWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -21,7 +22,7 @@ const ConditionalWrapper: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <>
-      {!isAdminRoute && <Header />}
+      {!isAdminRoute && <Header /> || <HeaderDev/>}
       {children}
       {!isAdminRoute && <Footer />}
     </>

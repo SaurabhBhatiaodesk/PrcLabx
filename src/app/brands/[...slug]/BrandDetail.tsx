@@ -7,6 +7,7 @@ import BrandImageGrid from "./BrandImageGrid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Pdp from "./Pdp";
+import Strip from "@/components/Strip/Strip";
 
 const BrandDetailPage: React.FC = () => {
   const pathname = usePathname();
@@ -114,7 +115,9 @@ const BrandDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
+   <div>
+  <Strip title="PDP" />
+     <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
       {/* Sidebar */}
       <div className="relative">
         {isSidebarOpen && (
@@ -203,6 +206,7 @@ const BrandDetailPage: React.FC = () => {
         )}
       </main>
     </div>
+   </div>
   );
 };
 
