@@ -36,18 +36,18 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
     );
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch blog data. Status: ${res.status}`);
+      const errorText = await res.text(); // Get the response as text in case of an error
+      throw new Error(`Failed to fetch blog data. Status: ${res.status}, Response: ${errorText}`);
     }
 
-    // **Read and log the response body**
     const data = await res.json();
-    // console.log("Fetched Blog Data:", data);
     return data;
   } catch (error) {
     console.error("Error fetching blog data:", error);
     throw error;
   }
 }
+
 
 // Generate Metadata for the Blog
 export async function generateMetadata({
