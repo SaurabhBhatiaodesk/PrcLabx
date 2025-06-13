@@ -1,7 +1,6 @@
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import React from "react";
-// import ExpertChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
 import BrokenRippedFirstTab from "./BrokenRippedFirstTab";
 import BrokenRippedSecondTab from "./BrokenRippedSecondTab";
 import BrokenCourseInstructors from "./BrokenCourseInstructors";
