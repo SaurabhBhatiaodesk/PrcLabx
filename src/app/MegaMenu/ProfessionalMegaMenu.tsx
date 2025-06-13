@@ -185,8 +185,6 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
 const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [menuData, setMenuData] = useState<MenuItem[]>([]);
-  console.log("menuData",menuData);
-  
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredPath, setHoveredPath] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -201,9 +199,16 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
       try {
         setIsLoading(true);
 
-        let baseData: MenuItem[] = JSON.parse(
-          sessionStorage.getItem("baseData") || "[]"
-        );
+        let baseData: MenuItem[] = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+
+        if (baseData.length === 0) {
+          const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
+          const res = await fetch(api);
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          baseData = await res.json();
+          sessionStorage.setItem("baseData", JSON.stringify(baseData));
+        }
+
         setMenuData(baseData);
       } catch (error) {
         console.error("Error fetching menu data:", error);
