@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png";
+import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -70,7 +71,7 @@ export default function App() {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
   };
 
-    const MailRepair = () => {
+  const MailRepair = () => {
     sessionStorage.setItem("repairType", "mail-in-repair");
   };
   return (
@@ -137,7 +138,7 @@ export default function App() {
                     <IoIosCart fontSize={26} />
                   </Link>
                 </div>
-
+                <ProfessionalMegaMenu />
                 <div
                   className={`${
                     isMenuOpen ? "block" : "hidden"
@@ -145,47 +146,7 @@ export default function App() {
                   id="nav-content"
                 >
                   <ul className="menu menu-horizontal px-1 flex items-center">
-                   
                     <li>
-                      <Link className="hover:text-fourth" href="">
-                        Apple
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Samsung Phones
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Samsung Tablets
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Oppo
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Google
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Game console
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="hover:text-fourth" href="">
-                        Other Models
-                      </Link>
-                    </li>
-                     <li>
                       <div className="dropdowns services_drop inline-block relative">
                         <button
                           className="btn__menu inline-flex items-center hover:text-fourth mr-2"
@@ -267,95 +228,6 @@ export default function App() {
                         )}
                       </div>
                     </li>
-                    {/* header */}
-                    {/* <li>
-                      <Link href="/mail-in-repair" onClick={toggleMenu}>
-                        Mail In Repair
-                      </Link>
-                    </li>
-                    <li
-                      className="flex justify-center items-center gap-1 border-[1px] rounded-md border-primary w-fit hover:text-fourth 
-                    hover:border-yellow-200 p-1
-                    "
-                    >
-                      <span className="text-[16px]">Parts Store</span>
-                      <span className="text-white">
-                        <Image
-                          src={commingsoon}
-                          width={30}
-                          height={30}
-                          alt=""
-                        />
-                      </span>
-                    </li>
-                    <li>
-                      <Link
-                        className="hover:text-fourth"
-                        href="/training"
-                        onClick={toggleMenu}
-                      >
-                        Training
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="hover:text-fourth"
-                        href="/screen-refurbishing"
-                        onClick={toggleMenu}
-                      >
-                        Screen Refurbishment
-                      </Link>
-                    </li>
-                    <div className="dropdown inline-block relative">
-                      <button
-                        className="btn__menu inline-flex items-center hover:text-fourth"
-                        onClick={togglePriceDropdown}
-                      >
-                        <span className="mr-1">Price list</span>
-                        <svg
-                          className="fill-current h-4 w-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-                        </svg>
-                      </button>
-                      {isPriceDropdownOpen && (
-                        <ul className="dropdown-menu absolute hidden text-white pt-1">
-                          {listData.map((item, index) => {
-                            return (
-                              <li
-                                key={index}
-                                className="block px-4 py-2 hover:bg-gray-800  hover:text-fourth cursor-pointer"
-                                onClick={() => PricetoggleMenu(item.id)}
-                              >
-                                <span className=" text-[16px]">
-                                  {item.btnName}
-                                </span>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      )}
-                    </div> */}
-                    {/* <li>
-                      <Link
-                        className="hover:text-fourth"
-                        href="/price"
-                        onClick={toggleMenu}
-                      >
-                        Price List
-                      </Link>
-                    </li> */}
-                    {/* <li>
-                      <Link
-                        className="hover:text-fourth"
-                        href="/contact-us"
-                        onClick={toggleMenu}
-                      >
-                        Contact Us
-                      </Link>
-                    </li> */}
                     <li>
                       <div className="dropdown inline-block relative">
                         <button
