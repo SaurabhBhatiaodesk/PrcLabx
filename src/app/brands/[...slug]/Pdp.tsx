@@ -9,6 +9,7 @@ import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
 import Link from "next/link";
 import FaqComponent from "./FaqComponent";
+import Strip from "@/components/Strip/Strip";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   pdpDetail,
@@ -114,6 +115,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   };
   return (
     <>
+  
       <div className="bg-[#FFF5EB] relative">
         <div className=" rounded-lg md:p-6  max-w-6xl mx-auto p-3">
           {/* Header */}

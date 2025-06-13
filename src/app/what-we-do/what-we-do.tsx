@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import MainButton from "@/components/MainButton/MainButton";
 import Image from "next/image";
 import WhatBlock from "./what-we-do-block";
-import GoogleReview from "@/components/GoogleReviews/what-we-do-review";
+import GoogleReview from "@/components/GoogleReviews/GoogleReviews";
 import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
 
 const WhatWeDo = () => {
@@ -21,7 +21,8 @@ const WhatWeDo = () => {
       </div>
       <WhatBlock/>
       <YouTubeHome />
-      <GoogleReview/>
+       <GoogleReview />
+
     </>
   );
 };

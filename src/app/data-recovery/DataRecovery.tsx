@@ -52,6 +52,9 @@ Videos`,
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
     },
   ];
+
+
+  
   const dataRecoveryPoints = [
     {
       title: "Initial Assessment: ",
@@ -132,7 +135,7 @@ Videos`,
         />
       </div>
 
-      <section style={{ background: "#0B0B0B" }}>
+      <section >
         <BoxComponents
           heading="Why Choose PRC for Data Recovery?"
           title="The only path to data recovery is getting the phone to work again. We bring phones back from the dead every day. There is no manual, no instruction book, for what we do. We are the motherboard whisperers."
@@ -140,7 +143,7 @@ Videos`,
           features={features}
         />
         <div className="container py-4 xl:py-6">
-          <MainHeading Heading="What We Can Recover" color="var(--primary)" svg_stroke="var(--trtiary)" />
+          <MainHeading Heading="What We Can Recover" color="var(--prc)" svg_stroke="var(--alpha)" />
 
           <BoxIconComponents data={sectionData} />
           <IconTitleParaImage

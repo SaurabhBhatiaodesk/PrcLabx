@@ -29,7 +29,7 @@ const BoxIconComponents: React.FC<BoxIconComponentsProps> = ({ data }) => {
               <div
                 key={index}
                 style={{ background: "transparent" }} // Default background
-                className="p-[20px] rounded-[15px] border-2 border-[#ede574] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456]"
+                className="p-[20px] rounded-[15px] border-2 border-prc shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] text-prc hover:text-primary"
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.background = section.hoverBackground)
                 }
@@ -40,7 +40,7 @@ const BoxIconComponents: React.FC<BoxIconComponentsProps> = ({ data }) => {
                 <div className="flex justify-center">
                   <Image className="pb-2" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className="text-tertiary  xl:text-xl lg:w-[70%] m-auto">
+                <h3 className=" xl:text-xl lg:w-[70%] m-auto">
                   {section.title}
                 </h3>
               </div>
