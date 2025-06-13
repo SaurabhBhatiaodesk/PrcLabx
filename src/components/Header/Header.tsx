@@ -20,7 +20,6 @@ import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png";
 import MainButton from "../MainButton/MainButton";
 import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
-import MainButton from "../MainButton/MainButton";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
