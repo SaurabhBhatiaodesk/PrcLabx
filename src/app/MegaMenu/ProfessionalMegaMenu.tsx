@@ -201,16 +201,9 @@ useEffect(() => {
       try {
         setIsLoading(true);
  
-        let baseData: MenuItem[] = JSON.parse(sessionStorage.getItem("baseData") || "[]");
- 
-        if (baseData.length === 0) {
-          const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
-          const res = await fetch(api);
-          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-          baseData = await res.json();
-          sessionStorage.setItem("baseData", JSON.stringify(baseData));
-        }
- 
+        let baseData: MenuItem[] = JSON.parse(
+          sessionStorage.getItem("baseData") || "[]"
+        );
         setMenuData(baseData);
       } catch (error) {
         console.error("Error fetching menu data:", error);
