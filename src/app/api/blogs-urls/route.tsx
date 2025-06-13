@@ -6,14 +6,26 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   let blogUrls: Set<string> = new Set();
 
   try {
+    // Fetch blog data from the API
     const blogResponse = await fetch(blogApi);
+
+    // Check if the response is successful (status 200)
+    if (!blogResponse.ok) {
+      throw new Error(`Failed to fetch data. Status: ${blogResponse.status}`);
+    }
+
+    // Parse the response as JSON
     const { blogs } = await blogResponse.json();
+
+    // Ensure blogs is an array
     if (Array.isArray(blogs)) {
       blogs.forEach((blog: any) => {
         if (blog.pageTitle) {
           blogUrls.add(`${websiteUrl}blogs/${blog.pageTitle.replace(/\s+/g, "-").toLowerCase()}`);
         }
       });
+    } else {
+      throw new Error("Blogs data is not an array.");
     }
   } catch (error) {
     console.error("Error fetching blog URLs:", error);
@@ -25,8 +37,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from(blogUrls)
   .map(
-    (url) => `
-  <url>
+    (url) => `  <url>
     <loc>${url}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>daily</changefreq>
