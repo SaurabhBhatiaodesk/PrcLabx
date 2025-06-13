@@ -1,5 +1,4 @@
 "use client";
-import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 import React, { useEffect, useState, useRef } from "react";
