@@ -17,9 +17,9 @@ const FixLabx = () => {
         style={{ backgroundImage: `url(${banner.src})` }}>
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] md-[4fr_2fr] items-center pxs-0 md:px-[30px]">
           <div className="xl:block hidden"></div>
-          <div className="text-center  p-4">
+          <div className="text-center  p-4 flex flex-col justify-center items-center">
             <h2 className="text-[#040404] text-[32px]  lg:text-[36px] 2xl:text-[42px] font-[800] pb-2">
-              PS5 Mobile Phone Repair
+              PRC Mobile Phone Repair
             </h2>
             <p className="text-[#040404] text-[24px]  lg:text-[26px] 2xl:text-[28px] font-[800] m-[4px]">
               About Bharat Dhingra 

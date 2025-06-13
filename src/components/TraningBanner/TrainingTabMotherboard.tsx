@@ -136,8 +136,8 @@ const TraningTabBigner: React.FC = () => {
                   key={tab.id}
                   className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
                     activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
+                      ? "active-tab text-white"
+                      : " text-prc"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -159,7 +159,7 @@ const TraningTabBigner: React.FC = () => {
                 />
               </div>
 
-              <h3>{tabs[activeTab].content}</h3>
+              <h3 className="text-white">{tabs[activeTab].content}</h3>
               {[
                 {
                   title: tabs[activeTab].contentf2title,

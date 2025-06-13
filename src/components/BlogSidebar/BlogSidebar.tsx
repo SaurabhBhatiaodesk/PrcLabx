@@ -119,22 +119,22 @@ export default function BlogSidebar() {
           <li
             onClick={() => sendId(blog.pageTitle)}
             key={blog._id}
-            style={{ zIndex: "444", position: "relative" }}
-            className="flex items-start mb-4 shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer border border-tertiary hover:scale-105 transition-transform duration-200 ease-in-out"
+          
+            className="flex items-start mb-4 shadow-sm rounded-lg p-2 hover:shadow-md gap-4 cursor-pointer border border-prc hover:scale-105 transition-transform duration-200 ease-in-out"
           >
             {blog.featuredImage.length > 0 && (
               <Image
                 src={blog.featuredImage[0]}
                 alt={blog.heading}
-                className="blog_slide_img rounded-md object-cover"
+                className="blog_slide_img rounded-md object-cover border-2 border-alpha"
                 width={100}
                 height={100}
-                style={{ border: "2px solid #EDE574" }}
+                
                 layout="responsive"
               />
             )}
             <div>
-              <h4 className="text-sm font-medium text-white">{blog.heading}</h4>
+              <h4 className="text-sm font-medium text-secondary">{blog.heading}</h4>
               {/* <p className="text-xs text-white">
                 {new Date(blog.createdAt).toLocaleDateString()}
               </p> */}
@@ -146,25 +146,17 @@ export default function BlogSidebar() {
       {totalPages > 1 && (
         <div className="flex justify-center mt-4">
           {[...Array(totalPages)].map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageChange(index + 1)}
-              className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${
-                currentPage === index + 1
-                  ? "active"
-                  : "bg-gray-200 text-gray-700"
-              }`}
-              style={
-                currentPage === index + 1
-                  ? {
-                      background: "linear-gradient(45deg, #E1F5C4, #EDE574)",
-                      color: "black",
-                    }
-                  : {}
-              }
-            >
-              {index + 1}
-            </button>
+          <button
+  key={index}
+  onClick={() => handlePageChange(index + 1)}
+  className={`px-4 py-2 text-black mx-1 rounded-full text-sm ${
+    currentPage === index + 1
+      ? "bg-prc text-primary"
+      : "bg-gray-200 text-gray-700"
+  }`}
+>
+  {index + 1}
+</button>
           ))}
         </div>
       )}

@@ -1,17 +1,32 @@
-"use client"
+
+"use client";
+import banner from "../../../../public/Images/faqbanner.webp";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { usePathname } from "next/navigation";
+import MainTitle from "@/components/MainTitle/MainTitle";
+import MainHeading from "@/components/ManinHeading/MainHeading";
+import Image from "next/image";
 
 const FaqComponent: React.FC = () => {
   const [faqData, setFaqData] = useState<any[]>([]); // State to hold the FAQ data
   const [loading, setLoading] = useState<boolean>(true); // State to handle loading status
   const [error, setError] = useState<string>(""); // State to handle errors
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null); // State to handle the active (toggled) FAQ
-
+  const pathname = usePathname();
+  // Extract the brand and model from the pathname
+  const brand = pathname.split("/")[2]; // "apple"
+  const model = pathname.split("/")[3]; // "iphone"
+  // Fetch brand data from sessionStorage or some other source
+  const brandsData = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+  // Find the corresponding brand data
+  const matchedBrand = brandsData.find((item: any) => item.alias === brand);
+  const matchedModel = matchedBrand?.data?.find(
+    (item: any) => item.alias === model
+  );
   // Fetch FAQ data from API on component mount
   useEffect(() => {
-    const api = `https://www.prc.repair/api/getFaq/apple/48`;
-
+    const api = `https://www.prc.repair/api/getFaq/${matchedBrand?.title}/${matchedModel?.id}`;
     axios
       .get(api)
       .then((res) => {
@@ -31,27 +46,37 @@ const FaqComponent: React.FC = () => {
 
   return (
     <>
+    <div className="py-5 xl:py-10  bg-[#FEF6FF]">
+    <div className="container ">
+      <MainHeading Heading="Most People Ask us These Questions" color="black"  svg_stroke="var(--alpha)"/>
+        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
+    <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
+  <div>
+
+   
       {faqData.length > 0 && (
-        <div className="max-w-screen-lg mx-auto px-4 py-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-[#00303E] mb-8">
-            Frequently Asked Questions
-          </h2>
+        <div className="max-w-screen-lg mx-auto ">
+          
 
           {loading && <p className="text-center text-lg">Loading...</p>}
           {error && <p className="text-center text-lg text-red-500">{error}</p>}
 
-          <div className="space-y-4">
+      <div className={`space-y-2 ${faqData.length < 6 ? "" : "h-[450px] overflow-y-scroll w-full scrollbar-thin scrollbar-track-yellow-200 scrollbar-thumb-green-700 gauravkumarscrollbar"}`}>
+  {/* FAQ content goes here */}
+
+
+            {/* Map through the FAQ data and render each item */}
             {faqData.map((faq: any) => (
               <div
                 key={faq.id}
-                className="border rounded-lg shadow-md overflow-hidden"
+                className="border-b border-gray-200 dark:border-gray-700"
               >
                 <div
                   onClick={() => handleToggleFAQ(faq.id)}
-                  className="bg-[#00303E] text-white px-6 py-4 cursor-pointer hover:bg-[#005063] transition-all duration-300 ease-in-out flex justify-between items-center"
+                  className="flex w-full items-center justify-between py-3 text-left"
                 >
                   <h3
-                    className="text-sm sm:text-xl md:text-2xl font-semibold"
+                    className="text-sm htmleditor"
                     dangerouslySetInnerHTML={{ __html: faq.question }}
                   />
                   {/* Chevron Icon */}
@@ -82,6 +107,20 @@ const FaqComponent: React.FC = () => {
           </div>
         </div>
       )}
+       </div>
+       <div>
+   <Image
+                    className="lg:h-auto h-[300px] object-contain"
+                    src={banner}
+                    alt="Mobile repair"
+                    width={500}
+                    height={500}
+                  />
+</div>
+</div>
+
+</div>
+</div>
     </>
   );
 };

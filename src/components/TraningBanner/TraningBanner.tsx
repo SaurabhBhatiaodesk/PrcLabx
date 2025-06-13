@@ -89,7 +89,7 @@ function TraningBanner({
   return (
     <>
       <section
-        className="bg-no-repeat bg-cover p-0"
+        className="bg-no-repeat bg-cover p-3"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="container">
@@ -99,15 +99,15 @@ function TraningBanner({
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2">
                     <Image src={trending} alt=" labx repair " />
-                    <span className=" lg:text-lg text-sm">{courseName}</span>
+                    <span className=" lg:text-lg text-sm text-primary">{courseName}</span>
                   </div>
                   <div className="flex gap-2">
                     <Image src={coursereating} alt=" labx repair " />
-                    <span className=" lg:text-lg text-sm">{courseRating}</span>
+                    <span className=" lg:text-lg text-sm text-primary">{courseRating}</span>
                   </div>
                   <div className="flex gap-2">
                     <Image src={clock} alt=" labx repair " />
-                    <span className=" lg:text-lg text-sm">{courseHour}</span>
+                    <span className=" lg:text-lg text-sm text-primary">{courseHour}</span>
                   </div>
                 </div>
                 <div className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] xl:p-2 w-fit mb-2">
@@ -122,12 +122,12 @@ function TraningBanner({
                 >
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
                     <span className="text-tertiary ">Duration</span>
-                    <span>{Duration}</span>|
+                    <span className="text-primary">{Duration}</span>|
                   </div>
                   <div className="flex lg:gap-3 gap-2 lg:justify-start justify-center">
                     <span className="text-tertiary ">Price</span>
 
-                    <span>{Price}</span>
+                    <span className="text-primary">{Price}</span>
                   </div>
                 </div>
               </div>

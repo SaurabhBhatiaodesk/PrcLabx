@@ -1,55 +1,55 @@
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import React from "react";
-import ExpertChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
+// import ExpertChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
 import BrokenRippedFirstTab from "./BrokenRippedFirstTab";
 import BrokenRippedSecondTab from "./BrokenRippedSecondTab";
 import BrokenCourseInstructors from "./BrokenCourseInstructors";
-import BrokenBlink from "./BrokenBlink";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
+import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
 
 const BrokenRippedPadsRepairJumbers = () => {
-    const accordionData = [
-        {
-          title: "What is the duration of the training program?",
-          content:
-            "The training program lasts for 5 days, providing intensive hands-on experience and theoretical knowledge to master mobile repair techniques efficiently.",
-        },
-        {
-          title: "Do I need prior experience in mobile phone repairs?",
-          content:
-            "No prior experience is required. The course is designed for beginners, with step-by-step guidance to ensure you develop the necessary skills from scratch.",
-        },
-        {
-          title: "What devices will I learn to repair?",
-          content:
-          "You will learn to repair iPhones, iPads, and Android devices, covering a range of common issues like screen, battery, and camera replacements.",   
-        },
-        {
-          title: "Are the tools and materials provided?",
-          content:
-            "Yes, all tools and materials required for the course, including practice devices, will be provided, allowing you to learn hands-on during the training.",
-        },
-        {
-          title: "How can I register for the course?",
-          content:
-            "You can register for the mobile phone repair course through our website, where you can select a suitable date and complete the registration process securely online.",
-        },
-        {
-          title: "What happens if I miss a class?",
-          content:
-            "If you miss a class, you can arrange to attend a make-up session. We ensure flexibility to help you complete your training.",
-        },
-        {
-          title: "Will I be able to start my own repair business after this training?",
-          content:
-            "Absolutely! The phone repair course equips you with the skills needed to start your own mobile repair business, offering practical insights into running a successful operation.",
-        },
-      ];
+  const accordionData = [
+    {
+      title: "What is the duration of the training program?",
+      content:
+        "The training program lasts for 5 days, providing intensive hands-on experience and theoretical knowledge to master mobile repair techniques efficiently.",
+    },
+    {
+      title: "Do I need prior experience in mobile phone repairs?",
+      content:
+        "No prior experience is required. The course is designed for beginners, with step-by-step guidance to ensure you develop the necessary skills from scratch.",
+    },
+    {
+      title: "What devices will I learn to repair?",
+      content:
+        "You will learn to repair iPhones, iPads, and Android devices, covering a range of common issues like screen, battery, and camera replacements.",
+    },
+    {
+      title: "Are the tools and materials provided?",
+      content:
+        "Yes, all tools and materials required for the course, including practice devices, will be provided, allowing you to learn hands-on during the training.",
+    },
+    {
+      title: "How can I register for the course?",
+      content:
+        "You can register for the mobile phone repair course through our website, where you can select a suitable date and complete the registration process securely online.",
+    },
+    {
+      title: "What happens if I miss a class?",
+      content:
+        "If you miss a class, you can arrange to attend a make-up session. We ensure flexibility to help you complete your training.",
+    },
+    {
+      title: "Will I be able to start my own repair business after this training?",
+      content:
+        "Absolutely! The phone repair course equips you with the skills needed to start your own mobile repair business, offering practical insights into running a successful operation.",
+    },
+  ];
   return (
     <>
       <TraningBanner
@@ -63,11 +63,11 @@ const BrokenRippedPadsRepairJumbers = () => {
         courseHour="25 Hours"
         Duration="5 Days"
         Price="$1249 (Includes a free toolkit for each student)"
-         buttonname="JOIN THIS COURSE"
+        buttonname="JOIN THIS COURSE"
       />
 
 
-<TraningWillLearn
+      <TraningWillLearn
         title="Course Highlights"
         Course="Phone Repair Course Format"
         paramtitle1="Essential Tools, Parts, and Screen Replacement"
@@ -84,18 +84,22 @@ const BrokenRippedPadsRepairJumbers = () => {
         Courseformate2="  5 Days Duration"
         Courseformate3="  Experienced Instructors"
         Courseformate4="  Free Toolkit"
-           border="#26bd9aed"
+        border="#26bd9aed"
       />
-      <BrokenRippedFirstTab/>
-      <BrokenRippedSecondTab/>
-      <BrokenCourseInstructors/>
-      <BrokenBlink/>
-      <ExpertChooseLab />
+      <BrokenRippedFirstTab />
+      <BrokenRippedSecondTab />
+      <BrokenCourseInstructors />
+      {/* <BrokenBlink /> */}
+      
+
+
+      {/* <ExpertChooseLab /> */}
+      <Boxblock></Boxblock>
       <div className="container" id="broken-ripped-pads-repair-jumbers-id">
-        <MainHeading Heading="Broken Ripped Pads Repair Jumbers"/>
-        </div>
-          <FormCode/>
-          
+        <MainHeading Heading="Broken Ripped Pads Repair Jumbers" />
+      </div>
+      <FormCode />
+
       <FrequentlyAskedQuestions
         heading="Frequently Asked Questions (FAQs)"
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
@@ -103,7 +107,7 @@ const BrokenRippedPadsRepairJumbers = () => {
       />
       <BiginnerReviews />
 
-      
+
     </>
   );
 };

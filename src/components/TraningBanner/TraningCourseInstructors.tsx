@@ -46,18 +46,18 @@ function TraningCourseInstructors() {
                   fill // Ensures the image fills its parent container responsively
                 />
               </div>
-              <div className="p-3 lg:p-6 bg-black text-white rounded-md">
+              <div className="p-3 lg:p-6 text-black rounded-md ">
                 <h2 className="text-3xl font-bold mb-4">Training Instructors</h2>
 
-                <p className="text-base text-tertiary ">Bharat Dhingra & Team</p>
+                <p className="text-base text-black ">Bharat Dhingra & Team</p>
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2 items-center">
                     <Image src={coursereating} alt="Course rating icon" />
-                    <span>4.7</span>
+                    <span className="text-prc font-medium">4.7</span>
                   </div>
                   <div className="flex gap-2 items-center">
                     <Image src={clock} alt="Clock icon" />
-                    <span>25 Hours</span>
+                    <span className="text-black">25 Hours</span>
                   </div>
                 </div>
 
@@ -70,15 +70,15 @@ function TraningCourseInstructors() {
                 {/* Dynamic Counter Section */}
                 <div className="flex gap-6 mt-4">
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{personsMentored}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc ">{personsMentored}+</h3>
                     <p>Years of industry experience</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{workshopsAttended}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc ">{workshopsAttended}+</h3>
                     <p>Professionals trained </p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{coachingCertificates}</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc ">{coachingCertificates}</h3>
                     <p> Positive feedback</p>
                   </div>
                 </div>

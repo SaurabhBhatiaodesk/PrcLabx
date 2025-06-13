@@ -111,26 +111,7 @@ const TraningTabBignersecond: React.FC = () => {
       link: "/training",
       image: tabimage,
     },
-    // {
-    //   id: 4,
-    //   label: "Data Recovery",
-    //   content: "LabX Professional Data Recovery:",
-    //   contentf2title: "Data from Dead ",
-    //   contentf2:
-    //     " We can do data recovery from damaged phones that won’t turn on due to hardware damage, shock, or water exposure",
-    //   contentf3title: "Physically Damaged Devices ",
-    //   contentf3:
-    //     " Whether your phone has been dropped, crushed, or exposed to liquids, we can often retrieve your valuable files.",
-    //   contentf4title: "Corrupt Operating Systems ",
-    //   contentf4:
-    //     " We handle cases of OS corruption, which often makes a device unbootable, and recover data like contacts, texts, photos, and videos.",
-    //   contentf5title: "Failed or Broken Logic Boards",
-    //   contentf5:
-    //     " Our team of mobile technicians specializes in recovering data from devices with broken or failed logic boards, using advanced techniques.",
-    //   button: "Get Course",
-    //   link: "/coming-soon",
-    //   image: tabimage,
-    // },
+
   ];
 
   const getGradientColor = (id: number) => {
@@ -153,19 +134,19 @@ const TraningTabBignersecond: React.FC = () => {
   return (
     <section
       className="pb-4 lg:pb-[60px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('/images/Home/back-banner.svg')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
         </div> */}
 
-        <div className="p-3 bg-white mb-6">
-          <p className="text-black mb-0 font-[600]">
+        <div className="p-3 bg-prc mb-6 ">
+          <p className="text-primary mb-0 font-[600]">
             Section 2: Removing and Replacing Parts
           </p>
         </div>
@@ -175,10 +156,10 @@ const TraningTabBignersecond: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
+                  className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[2px] text-base tracking-[1.2px] ${
                     activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
+                      ? "active-tab text-white "
+                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

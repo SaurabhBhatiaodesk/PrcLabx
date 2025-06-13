@@ -1,5 +1,4 @@
 "use client";
-import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 import React, { useEffect, useState, useRef } from "react";
@@ -156,8 +155,9 @@ const BrandDetailPage: React.FC = () => {
 
       {/* Main Content */}
       <main
-        className={`flex-1 bg-white transition-all duration-300 ${isSidebarOpen ? "md:pt-[25px] pt-[30px] md:pl-3 " : "md:p-4 pt-[10px]"}`}
+        className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px]  " : " pt-[10px]"}`}
       >
+        <div className="md:pl-3 pl-2">
         <button
           onClick={() => setIsSidebarOpen((prev) => !prev)}
           className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
@@ -186,6 +186,7 @@ const BrandDetailPage: React.FC = () => {
               );
             })}
           </nav>
+        </div>
         </div>
         {/* Render content based on the fetched brands data */}
         {!isLastItemClicked ? (
