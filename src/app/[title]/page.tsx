@@ -5,7 +5,6 @@ import "./policy.css";
 import Image from "next/image";
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
-
 import Line from "../../../public/Images/about/leap.svg"; // Function to fetch data from the server
 async function fetchPageData(title: string) {
   const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;

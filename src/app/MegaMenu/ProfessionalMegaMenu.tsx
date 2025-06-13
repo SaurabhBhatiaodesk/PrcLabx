@@ -185,6 +185,8 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
 const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [menuData, setMenuData] = useState<MenuItem[]>([]);
+  console.log("menuData",menuData);
+  
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredPath, setHoveredPath] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);

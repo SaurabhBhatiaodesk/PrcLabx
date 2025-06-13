@@ -5,10 +5,10 @@
     background-repeat: no-repeat;
 }
 
+
 .User_img img{
     width: 100%;
 }
-
 .overlap__description {
     background:var(--tertiary);
     padding: 35px;

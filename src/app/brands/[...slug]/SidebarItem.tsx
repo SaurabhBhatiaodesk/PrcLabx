@@ -49,10 +49,7 @@ const SidebarItem: React.FC<{
     const hasNestedArrays = items.some(
       (child: any) => Array.isArray(child.data) || Array.isArray(child.products)
     );
-    console.log("hasNestedArrays",hasNestedArrays);
-    
     const slugMatch = items.some((child: any) => child.alias === lastSegment); // Check if alias matches last segment of URL
-console.log("slugMatch",slugMatch);
 
     // If no nested arrays and slug matches, set the state to true
     if (!hasNestedArrays && slugMatch) {
