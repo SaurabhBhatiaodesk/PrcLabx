@@ -209,7 +209,7 @@ const TabFaq = () => {
               background: getGradientColor(categoryIndex), // Set gradient color for active category
             }}
           >
-            <span className="text-[17px] tracking-[1.5px]">
+            <span className="text-[17px] tracking-[1.5px] ">
               {categoryData.category}
             </span>
             <MdKeyboardArrowDown

@@ -41,7 +41,7 @@ const WhyChooseLabX: React.FC = () => {
       image: B2BServices,
       alt: "B2B Services",
       title: "Customized B2B Services",
-      description: `LabX Repair offers tailored solutions for businesses, including bulk refurbishments and wholesale repairs, ensuring your operations run smoothly and efficiently.`,
+      description: `PRC Repair offers tailored solutions for businesses, including bulk refurbishments and wholesale repairs, ensuring your operations run smoothly and efficiently.`,
       hoverBackground: "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))"
     },
   ];

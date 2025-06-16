@@ -1,8 +1,13 @@
 "use client";
+import Image from "next/image";
+import commingsoon from "../../../public/Images/coming-soon.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { IoChevronDown, IoChevronForward } from "react-icons/io5";
+import { SlSocialFacebook } from "react-icons/sl";
 
 // TypeScript interfaces
 interface MenuItem {
@@ -121,11 +126,10 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
     <div ref={itemRef} className="relative group/nested">
       <Link
         href={`/brands/${itemPath}`}
-        className={`flex items-center justify-between px-3 py-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-l-[#122d37] hover:bg-gray-50 ${
-          isActivePath(item.alias)
+        className={`flex items-center justify-between px-3 py-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-l-[#122d37] hover:bg-gray-50 ${isActivePath(item.alias)
             ? "bg-[#122d37] text-white border-l-[#122d37]"
             : "text-gray-700 hover:text-[#122d37]"
-        }`}
+          }`}
         onMouseEnter={() => onMouseEnter(itemId, level)}
         onMouseLeave={() => onMouseLeave(level + 1)}
       >
@@ -185,24 +189,44 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
 const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [menuData, setMenuData] = useState<MenuItem[]>([]);
-  console.log("menuData",menuData);
-  
+  console.log("menuData", menuData);
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredPath, setHoveredPath] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const submenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const togglePriceDropdown = () => {
+    setIsPriceDropdownOpen(!isPriceDropdownOpen);
+  };
+
+  const toggleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+  };
   // Fetch menu data from API
-useEffect(() => {
+  useEffect(() => {
     const fetchMenuData = async () => {
       try {
         setIsLoading(true);
- 
-        let baseData: MenuItem[] = JSON.parse(sessionStorage.getItem("baseData") || "[]");
- 
+
+        let baseData: MenuItem[] = JSON.parse(
+          sessionStorage.getItem("baseData") || "[]"
+        );
+
         if (baseData.length === 0) {
           const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
           const res = await fetch(api);
@@ -210,7 +234,7 @@ useEffect(() => {
           baseData = await res.json();
           sessionStorage.setItem("baseData", JSON.stringify(baseData));
         }
- 
+
         setMenuData(baseData);
       } catch (error) {
         console.error("Error fetching menu data:", error);
@@ -218,7 +242,7 @@ useEffect(() => {
         setIsLoading(false);
       }
     };
- 
+
     fetchMenuData();
   }, []);
 
@@ -302,9 +326,8 @@ useEffect(() => {
 
     return (
       <div
-        className={`absolute top-full ${
-          isRightSide ? "right-0" : "left-0"
-        } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
+        className={`absolute top-full ${isRightSide ? "right-0" : "left-0"
+          } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
         style={{
           width: "auto",
           minWidth: "500px",
@@ -380,105 +403,240 @@ useEffect(() => {
     );
   };
 
-  if (isLoading) {
-    return (
-      <nav className={`bg-white border-b border-gray-200 ${className}`}>
-        <div className="container mx-auto px-6">
-          <div className="flex justify-center items-center py-3">
-            <div className="flex space-x-6">
-              {[...Array(6)].map((_, index) => (
-                <div
-                  key={index}
-                  className="h-5 bg-gray-200 w-20 rounded animate-pulse"
-                ></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <nav className={` ${className}`}>
+  //       <div className="">
+  //         <div className="flex justify-center items-center py-3">
+  //           <div className="flex space-x-6">
+  //             {[...Array(6)].map((_, index) => (
+  //               <div
+  //                 key={index}
+  //                 className="h-5 bg-gray-200 w-20 rounded animate-pulse"
+  //               ></div>
+  //             ))}
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </nav>
+  //   );
+  // }
 
   return (
     <>
       {/* Enhanced Desktop Navigation */}
-      <nav
-        className={`bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm ${className}`}
-      >
-        <div className="container mx-auto px-6">
-          <ul className="flex justify-center items-center space-x-6 py-3 relative">
-            {menuData.slice(0, 6).map((item, index) => (
-              <li
-                key={item.id}
-                className="relative group"
-                onMouseEnter={() => handleMouseEnter(item.id.toString())}
-                onMouseLeave={() => handleMouseLeave()}
-              >
-                <Link
-                  href={`/brands/${item.alias}`}
-                  className={`flex items-center px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${
-                    isActivePath(item.alias)
-                      ? "bg-[#122d37] text-white shadow-md"
-                      : "text-gray-700 hover:text-white"
-                  }`}
+      <div className="hidden lg:block">
+        <nav className={` ${className}`}>
+          <div className="">
+            <ul className="flex justify-center items-center space-x-3 relative">
+              {menuData.slice(0, 6).map((item, index) => (
+                <li
+                  key={item.id}
+                  className="relative group"
+                  onMouseEnter={() => handleMouseEnter(item.id.toString())}
+                  onMouseLeave={() => handleMouseLeave()}
                 >
-                  {item.title}
-                  {hasChildren(item) && (
-                    <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
-                  )}
-                </Link>
-
-                {/* Perfect mega menu dropdown */}
-                {hasChildren(item) &&
-                  activeMenu === item.id.toString() &&
-                  renderMegaDropdown(item, index)}
-              </li>
-            ))}
-            <div
-        className="relative"
-        onMouseEnter={() => setIsDropdownVisible(true)}
-        onMouseLeave={() => setIsDropdownVisible(false)}
-      >
-        <button className="flex text-center text-sm text-blue-500 hover:text-blue-700 mt-2">
-          {isDropdownVisible ? "Show Less" : "Other Brands"}
-          <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
-        </button>
-
-        {/* Dropdown for remaining brands */}
-        {isDropdownVisible && (
-          <div className="absolute top-0 left-0 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg w-64 py-2 z-10">
-            <ul className="space-y-2">
-              {menuData.slice(6).map((item) => (
-                <li key={item.id} className="relative group">
                   <Link
                     href={`/brands/${item.alias}`}
-                    className={`flex items-center px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  `}
+                    className={`flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
+                        ? "bg-[#122d37] text-white shadow-md"
+                        : "text-gray-700 hover:text-white"
+                      }`}
                   >
                     {item.title}
+                    {hasChildren(item) && (
+                      <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                    )}
                   </Link>
+
+                  {/* Perfect mega menu dropdown */}
+                  {hasChildren(item) &&
+                    activeMenu === item.id.toString() &&
+                    renderMegaDropdown(item, index)}
                 </li>
               ))}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsDropdownVisible(true)}
+                onMouseLeave={() => setIsDropdownVisible(false)}
+              >
+                <button className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
+                  Other Brands
+                  <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+
+                {/* Dropdown for remaining brands */}
+                {isDropdownVisible && (
+                  <div className="absolute top-[28px] left-0 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg w-64 py-2 z-10">
+                    <ul className="space-y-2">
+                      {menuData.slice(6).map((item) => (
+                        <li key={item.id} className="relative group">
+                          <Link
+                            href={`/brands/${item.alias}`}
+                            className={`flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  `}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div className="lg:block  hidden"
+
+              >
+                <ul className="menu menu-horizontal px-1 flex items-center space-x-1">
+                  <li>
+                    <div className="relative inline-block group">
+                      <button className="flex items-center px-2 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                        <span className="mr-1">Services</span>
+                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                      </button>
+
+                      <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
+                        <li>
+                          <Link
+                            href="/training"
+                            className="blck px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between"
+                          >
+                            Training
+                             <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/b2b-repair-services"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                            B2B Repair
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/ps5-repair"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                            PS5 Repair
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/screen-refurbishing"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                            Screen Refurbishment
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/data-recovery"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                            Data Recovery
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+
+                        {/* Coming Soon items */}
+                        {["Parts Store", "Repair Form", "Repair Solutions"].map((item, idx) => (
+                          <li
+                            key={idx}
+                            className="flex justify-between items-center px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200"
+                          >
+                            <span>{item}</span>
+                            <Image src={commingsoon} alt="Coming soon" width={20} height={20} />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                  </li>
+                  <li>
+
+
+
+
+
+
+
+
+
+
+
+
+                  </li>
+
+                  <li>
+                    <div className="relative inline-block group">
+                      <button className="flex items-center px-2 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                        <span className="mr-1">About us</span>
+                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                      </button>
+
+                      <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
+                        <li>
+                          <Link
+                            href="/about-us"
+                            onClick={toggleMenu}
+                            className="blck px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between"
+                          >
+                         Meet Bharat
+                             <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                          href="/what-we-do"
+                            onClick={toggleMenu}
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                          What We Do
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                         href="/faq"
+                            onClick={toggleMenu}
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                           FAQ{" "}
+                              <IoChevronForward className="ml-2 text-sm" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                           href="/blogs"
+                            onClick={toggleMenu}
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                               Blogs{" "}
+                            
+                          </Link>
+                        </li>
+                      
+
+                     
+                      </ul>
+                    </div>
+
+                  </li>
+                </ul>
+
+
+              </div>
             </ul>
           </div>
-        )}
+        </nav>
       </div>
-          </ul>
-          
-        </div>
-      </nav>
 
       {/* Enhanced background overlay */}
-      {activeMenu && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-10 z-20 backdrop-blur-sm"
-          onClick={() => {
-            setActiveMenu(null);
-            setHoveredPath([]);
-          }}
-        />
-      )}
     </>
   );
 };

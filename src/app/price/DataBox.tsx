@@ -17,6 +17,7 @@ import "aos/dist/aos.css";
 import { setPriceCat } from "../redux/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import MainButton from "@/components/MainButton/MainButton";
 
 const DataBox: React.FC = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const DataBox: React.FC = () => {
       description: `For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.`,
       activecolor:
         "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
-      button: "See price list",
+      button: "See price",
     },
     {
       id: 2,
@@ -44,7 +45,7 @@ const DataBox: React.FC = () => {
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
       activecolor:
         "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
-      button: "See price list",
+      button: "See price",
     },
     {
       id: 3,
@@ -53,7 +54,7 @@ const DataBox: React.FC = () => {
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
       activecolor:
         "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
-      button: "See price list",
+      button: "See price",
 
     },
     {
@@ -63,7 +64,7 @@ const DataBox: React.FC = () => {
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
       activecolor:
         "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
-      button: "See price list",
+      button: "See price",
     },
   ];
   useEffect(() => {
@@ -107,9 +108,10 @@ const DataBox: React.FC = () => {
                 <p className={`group-hover:text-primary ${pricingId === section.id ? "text-white" : "text-black"
                   }`}>{section.description}</p>
                 <div className="w-[50%] m-auto">
-                  <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
+                  {/* <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
                     {section.button}
-                  </button>
+                  </button> */}
+                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)}  color="var(--prc)"/>
                 </div>
               </div>
             ))}

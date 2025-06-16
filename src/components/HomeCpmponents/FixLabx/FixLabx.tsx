@@ -26,7 +26,7 @@ const FixLabx = () => {
             </p>
             <p className="text-black " style={{ color: "#040404" }}>
               {
-                " I'm Bharat Dhingra, the founder of LabX, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts LabX."
+                " I'm Bharat Dhingra, the founder of PRC, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts PRC."
               }
             </p>
             <MainButton MainButton="Read My Story" link="/about-us" color="bg-prc" />

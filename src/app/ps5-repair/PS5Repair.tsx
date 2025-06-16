@@ -46,34 +46,34 @@ const PS5Repair = () => {
   return (
     <div>
       <PS5Banner />
-      <div className="bg-[#0b0b0b] md:py-10 py-8">
-        <div className=" container">
-          <MainHeading Heading="How Mail-In PS5 Repair Works?" color="var(--primary)" />
-          <p className="lg:w-[60%] md:w-[80%] w-full m-auto text-center text-primary">
+      <div className="md:py-10 py-8">
+        <div className=" container text-prc">
+          <MainHeading Heading="How Mail-In PS5 Repair Works?" color="var(--prc) " svg_stroke="var(--alpha)" />
+          <p className="lg:w-[60%] md:w-[80%] w-full m-auto text-center text-prc">
             Simply package your PS5 securely and{" "}
-            <span className="font-medium text-tertiary underline">ship</span>{" "}
+            <span className="font-medium text-alpha underline">ship</span>{" "}
             it to us. Once we{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               receive
             </span>{" "}
             your console, our expert technicians will{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               diagnose
             </span>{" "}
             the issue and carry out the necessary{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               repairs
             </span>{" "}
             using high-quality parts. After a thorough{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               quality check,
             </span>{" "}
             we’ll quickly{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               ship back
             </span>{" "}
             your fully functional PS5 back to you so you can{" "}
-            <span className="font-medium text-tertiary underline">
+            <span className="font-medium text-alpha underline">
               resume gaming{" "}
             </span>{" "}without delay.
           </p>

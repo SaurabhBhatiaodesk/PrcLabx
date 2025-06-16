@@ -50,7 +50,7 @@ const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color , onCli
       {link ? (
         <Link href={link}>
           <button
-            className={` uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center  ${color}`}
+            className={` uppercase bg-[#EF0000] text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-2 rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center  ${color}`}
             aria-label={`Click ${MainButton}`}
           >
             {MainButton}
@@ -62,7 +62,7 @@ const MainButton: React.FC<MainButtonProps> = ({ MainButton, link, color , onCli
         </Link>
       ) : (
         <button onClick={onClick}
-          className={`uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl border-[2px] border-[#FFFFFF]  flex justify-center items-center ${color}`}
+          className={`uppercase bg-[#EF0000] text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-2 rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center ${color}`}
           aria-label={`Click ${MainButton}`}
         >
           {MainButton}

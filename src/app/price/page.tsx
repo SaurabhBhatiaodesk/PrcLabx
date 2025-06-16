@@ -5,12 +5,12 @@ import "./price.css"
 export const metadata = {
   title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
   description:
-    "At LabX Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
+    "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
   keywords: ["Mobile Repair Solutions", "Expert Device Repair"],
   openGraph: {
     title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
     description:
-      "At LabX Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
+      "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
     url: "", // Replace with your actual page URL
     type: "website",
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
     description:
-      "At LabX Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
+      "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

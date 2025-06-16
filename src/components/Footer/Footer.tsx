@@ -362,11 +362,11 @@ const Footer = () => {
                         fontSize={25}
                       />
                       <Link
-                        href="mailto:bharat@labxrepair.com.au"
+                        href="mailto:bharat@prcrepair.com.au"
                         legacyBehavior
                       >
                         <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary">
-                          bharat@labxrepair.com.au
+                          bharat@prcrepair.com.au
                         </a>
                       </Link>
                     </div>
@@ -595,7 +595,7 @@ const Footer = () => {
                     </span>
                   </div>
                 </Link>
-                <Link href="mailto:bharat@labxrepair.com.au">
+                <Link href="mailto:bharat@prcrepair.com.au">
                   <div className="flex flex-col items-center">
                     <FiMail fontSize={24}  color="white"/>
                     <span className="text-[12px] tracking-[1.5px] text-white  ">Mail</span>

@@ -3,7 +3,7 @@
     padding-right: 30px;
     padding-left: 30px;
     height: 90px;
-    /* background-color: transparent !important; */
+
 
 }
 
@@ -39,13 +39,7 @@ button.btn__menu.inline-flex.items-center {
     display: block;
   }
  
-  ul.dropdown-menu, ul.dropdown-menus {
-    background: #ffffff;
-    padding: 10px 0px;
-    width: 250px;
-    color: var(--prc);
-    font-weight: 700;
-}
+
 ul.dropdown-menu li a, ul.dropdown-menus li a {
     font-size: 16px;
     padding: 5px 0px;
@@ -73,10 +67,7 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
         gap: 10px;
         margin-top: 2rem;
     }
-    .flex.basis-0.flex-row.flex-grow.flex-nowrap.justify-start.bg-transparent.items-center.no-underline.text-medium.whitespace-nowrap.box-border {
-        justify-content: center;
-        margin-right: 25px;
-    }
+
     ul.dropdown-menus.absolute.hidden.text-white.pt-1, ul.dropdown-menu.absolute.hidden.text-white.pt-1 {
         z-index: 999;
         position: relative;
