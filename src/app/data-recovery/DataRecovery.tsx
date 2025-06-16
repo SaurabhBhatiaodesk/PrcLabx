@@ -1,7 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import React from "react";
-import GoogleReview from "@/components/GoogleReviews/BiginnerReviews";
+
 import MainTitle from "@/components/MainTitle/MainTitle";
 import Image from "next/image";
 

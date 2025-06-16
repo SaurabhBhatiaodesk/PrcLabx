@@ -182,7 +182,7 @@ const BeginnerCourse = () => {
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-       <BiginnerReviews reviews={reviewsData} />
+       <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
     </>
   );
 };

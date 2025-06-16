@@ -49,13 +49,7 @@ import { Providers } from "./redux/providers";
 import Script from "next/script";
 import Canonical from "./Canonical";
 import Image from "next/image";
-import rname from "../../../public/Images/icons/rname.png";
-import jname from "../../../public/Images/icons/E.png";
-import Nname from "../../../public/Images/icons/N.png";
-import Sname from "../../../public/Images/icons/S.png";
-import Aname from "../../../public/Images/icons/A.png";
-import hname from "../../../public/Images/icons/h.png";
-import Googletest from "../../../public/Images/icons/Googletest.svg";
+
 
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],

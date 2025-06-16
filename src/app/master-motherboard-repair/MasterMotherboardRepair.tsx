@@ -211,7 +211,7 @@ const reviewsData = [
       />
 
       {/* <MasterReviews /> */}
-      <BiginnerReviews reviews={reviewsData} />
+      <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
     </>
   );
 };

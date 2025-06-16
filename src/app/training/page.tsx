@@ -15,10 +15,7 @@ const Form = dynamic(() => import("../../components/Form/Form"), {
   ssr: false,
 });
 
-const GoogleReviews = dynamic(
-  () => import("../../components/GoogleReviews/GoogleReviews"),
-  { ssr: false }
-);
+
 
 export const metadata = {
   title: "Mobile Phone Repair Course - Phone Repair Course | PRC Repair",
@@ -72,7 +69,6 @@ const Training = () => {
         />
         <CourseHighlights />
         <Form />
-        <GoogleReviews />
       </div>
     </>
   );

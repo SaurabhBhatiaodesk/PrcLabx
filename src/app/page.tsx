@@ -1,7 +1,7 @@
 
 import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
 import Devicequote from "@/components/Devicelist/Devicequote";
-import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
+import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import DataRecovery from "@/components/HomeCpmponents/DataRecovery/DataRecovery";
 import DeliveryTous from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
 import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
@@ -11,6 +11,14 @@ import WhyChooseLabX from "@/components/HomeCpmponents/WhyChooseLabX/WhyChooseLa
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import MainBanner from "@/components/MainBanner/MainBanner";
 import RecentNews from "@/components/RecentNews/RecentNews";
+// import rname from "../../../../public/Images/icons/rname.png";
+import rname from "../../public/Images/icons/rname.png";
+import jname from "../../public/Images/icons/E.png";
+import Nname from "../../public/Images/icons/N.png";
+import Sname from "../../public/Images/icons/S.png";
+import Aname from "../../public/Images/icons/A.png";
+import hname from"../../public/Images/icons/h.png";
+import Googletest from "../../public/Images/icons/Googletest.svg";
 
 // import ServicesComponents from "@/components/ServicesComponents/ServicesComponents";
 import Storeproduct from "@/components/Storeproduct/Storeproduct";
@@ -81,6 +89,62 @@ const accordionData = [
       "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
   },
 ];
+ const reviewsData = [
+    {
+      name: "Liam Foster",
+      date: "September 12, 2023",
+      profileImage: hname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
+    },
+    {
+      name: "Emma Williams",
+      date: "September 12, 2023",
+      profileImage: rname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
+    },
+    {
+      name: "Jack O'Connor",
+      date: "September 12, 2023",
+      profileImage: Sname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
+    },
+    {
+      name: "Chloe Brown",
+      date: "October 5, 2023",
+      profileImage: jname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
+    },
+    {
+      name: "Oliver Harris",
+      date: "November 1, 2023",
+      profileImage: Aname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
+    },
+    {
+      name: "Sophie Clark",
+      date: "November 1, 2023",
+      profileImage: Nname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
+    },
+  ];
 const page = () => {
   return (
     <div>
@@ -92,7 +156,7 @@ const page = () => {
       <DataRecovery/>
       <WhyChooseLabX />
       <FixLabx />
-      <GoogleReviews />
+       <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Review"/>
       <RecentNews/>
       <YouTubeHome/>
       {/* <OurClient /> */}

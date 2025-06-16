@@ -1,18 +1,12 @@
 import React from "react";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import MainButton from "@/components/MainButton/MainButton";
+
 import Link from "next/link";
 import Image from "next/image";
-import course2 from "../../../public/Images/aboutadmin.png";
-import aboutbg from "../../../public/Images/aboutbg.svg";
+
 import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import OurVision from "../../../public/Images/OurVision.png"
+
 import Adminimage from "../../../public/Images/adminimage.png"
 import Banner from "../../../public/Images/BannerImages/about.png"
-import checkmark from "../../../public/Images/icons/checkmark.svg"
-import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
-// import GoogleReviews from "@/components/GoogleReviews/GoogleReviews";
 import UnderLine from "../../../public/Images/about/about-line.svg"
 import Line from "../../../public/Images/about/line.svg"
 import Leap from "../../../public/Images/about/leap.svg"
@@ -30,7 +24,6 @@ import Chapter from "../../../public/Images/about/chapter.png"
 import Team from "../../../public/Images/about/team.png"
 import New from "../../../public/Images/about/new.svg"
 import Service from "../../../public/Images/about/service.svg"
-import Labx from "../../../public/Images/about/labx.svg"
 import Techcity from "../../../public/Images/about/techcity.png"
 import Traning from "../../../public/Images/about/traning.png"
 import './about.css'

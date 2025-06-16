@@ -6,7 +6,7 @@ import Phone from "../../../public/Images/our-phone.png";
 import Offer from "../../../public/Images/offer.png";
 import Offers from "../../../public/Images/offers.png";
 import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
-import GoogleReview from "@/components/GoogleReviews/GoogleReviews";
+
 import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
 import Line from "../../../public/Images/about/leap.svg";
 import MainButton from "@/components/MainButton/MainButton";
@@ -170,7 +170,7 @@ const page = () => {
       </div>
       <FixLabx />
       <YouTubeHome />
-      <GoogleReview />
+     
     </>
   );
 };

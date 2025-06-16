@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Price from "./Price";
 import Device from "../../../public/Images/about/device.svg";
-import GoogleReview from "@/components/GoogleReviews/BiginnerReviews";
 import Image from "next/image";
 import ContactForm from "../contact-us/ContactForm";
 import Link from "next/link";

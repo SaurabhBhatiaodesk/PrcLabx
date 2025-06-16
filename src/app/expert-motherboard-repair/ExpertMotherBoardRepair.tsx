@@ -198,7 +198,7 @@ const BeginnerCourse = () => {
         accordionData={accordionData}
       />
       {/* <ExpertMotherboardReviews /> */}
-      <BiginnerReviews reviews={reviewsData} />
+      <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
     </>
   );
 };
