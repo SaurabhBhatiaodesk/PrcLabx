@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
-import Iname from "../../../public/Images/icons/I.png";
 import Nname from "../../../public/Images/icons/N.png";
 import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
@@ -182,7 +181,7 @@ const BeginnerCourse = () => {
         accordionData={accordionData}
       />
       {/* <MotherboardReviews /> */}
-      <BiginnerReviews reviews={reviewsData} />
+      <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Reviews"/>
     </>
   );
 };

@@ -3,6 +3,7 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import React from "react";
 import Link from "next/link";
+import MainButton from "@/components/MainButton/MainButton";
 
 const HowWorks = () => {
   const steps = [
@@ -72,14 +73,12 @@ const HowWorks = () => {
                   //   {step.button}
                   // </button>
 
-                  <button className="flex items-center gap-2 px-4 py-3 rounded-full bg-black text-white font-bold transition-all duration-200 hover:bg-[#111] text-base">
-                    {step.button}
-                    <div className="flex justify-center items-center hover:bg-black">
-                      <div className="w-2.5 h-0.5 bg-black hover:bg-black relative transition-all duration-200">
-                        <div className="absolute top-[-3px] right-[-6px] border-t-2 border-r-2 border-white p-1 rotate-45 transition-all duration-200 group-hover:right-0"></div>
-                      </div>
-                    </div>
-                  </button>
+                  // <button className="flex items-center gap-2 px-4 py-3 rounded-full bg-black text-white font-bold transition-all duration-200 hover:bg-[#111] text-base">
+                  //   {step.button}
+                   
+                  // </button>
+                  <MainButton MainButton={step.button} color="bg-prc"/>
+                    //  <MainButton MainButton={step.buttonad} />
                 )}
               </Link>
             </div>

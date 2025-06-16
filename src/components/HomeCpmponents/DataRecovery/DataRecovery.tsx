@@ -43,7 +43,7 @@ const DataRecovery = () => {
     >
       <div className="container lg:py-5 py-2">
         <MainHeading Heading="Data Recovery" color="var(--tertiary)" svg_stroke="var(--primary)" />
-        <MainTitle Title="At LabX, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way." color="var(--primary)" />
+        <MainTitle Title="At PRC, we provide a seamless, transparent data recovery experience designed to keep you informed and stress-free throughout the entire process. Our commitment to communication and quality ensures you receive timely updates and support every step of the way." color="var(--primary)" />
 
  <div className="grid xl:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-4 gap-0 lg:py-6 py-4">
   {dataHandle.map((item, index) => (

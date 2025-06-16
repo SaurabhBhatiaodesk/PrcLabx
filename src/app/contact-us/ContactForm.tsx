@@ -269,22 +269,38 @@ const ContactForm: React.FC = () => {
         />
       )}
       <div
-        className="p-2 lg:p-10 steper-form-section-os bg-black "
+        className="p-2 lg:p-10 "
         id="contactId"
       >
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-4 bg-black text-white">
+          <div className="flex flex-col gap-4">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
               {/* {/ Business Name Input /} */}
               <TextField
                 label="First Name*"
                 name="first_name"
+                className=""
                 fullWidth
                 variant="outlined"
                 value={formData.first_name}
                 onChange={handleChange}
                 error={!!formErrors.first_name}
                 helperText={formErrors.first_name}
+                  sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
               />
 
               <TextField
@@ -296,6 +312,21 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 error={!!formErrors.last_name}
                 helperText={formErrors.last_name}
+                sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
               />
 
               <TextField
@@ -307,6 +338,21 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 error={!!formErrors.email_address}
                 helperText={formErrors.email_address}
+                sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
               />
               {/*
                       {/ Phone Number Input with validation /} */}
@@ -340,37 +386,43 @@ const ContactForm: React.FC = () => {
                 }}
                 error={!!formErrors.contact_no}
                 helperText={formErrors.contact_no}
+                sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
               />
             </div>
 
             {/* {/ Training Message /} */}
             <div>
-              <h3 className="text-[20px] lg:text-[26px] text-primary">Write Your Enquiry</h3>
-              <TextareaAutosize
-                className="border-[1.5px]"
-                minRows={6}
-                placeholder="Enter your message here"
-                value={formData.enquiry_message}
-                onChange={handleChange}
-                name="enquiry_message"
-                style={{
-                  width: "100%",
-                  padding: "10px",
-                  marginTop: "10px",
-                  backgroundColor: "black",
-                  color:"var(--primary) !important",
-                  borderRadius: "8px",
-                  borderColor: "white",
-                  fontSize: "17px",
-                  textTransform: "capitalize",
-                }}
-              />
+              <h3 className="text-[20px] lg:text-[26px] text-prc text-sm mb-2">Write Your Enquiry</h3>
+          <TextareaAutosize
+  className="w-full rounded-lg border border-gray-400 focus:outline-none focus:border-prc focus:border-2 p-3 placeholder:text-lg placeholder:text-gray-500"
+  minRows={6}
+  placeholder="Enter your message here"
+  value={formData.enquiry_message}
+  onChange={handleChange}
+  name="enquiry_message"
+  
+/>
+
             </div>
           </div>
 
           {/* {/ Submit Button /} */}
-          <div className="py-4">
-            <Button
+          <div className="py-2">
+            {/* <Button
               variant="contained"
               sx={{
                 background: "linear-gradient(to right, #E1F5C4, #EDE574)",
@@ -389,7 +441,9 @@ const ContactForm: React.FC = () => {
               disabled={isLoading}
             >
               {isLoading ? "Submitting..." : "Submit"}
-            </Button>
+            </Button> */}
+            <button  type="submit"
+              disabled={isLoading} className=" uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center  bg-prc">   {isLoading ? "Submitting..." : "Submit"}</button>
           </div>
         </form>
       </div>

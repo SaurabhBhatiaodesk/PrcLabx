@@ -15,10 +15,7 @@ const Form = dynamic(() => import("../../components/Form/Form"), {
   ssr: false,
 });
 
-const GoogleReviews = dynamic(
-  () => import("../../components/GoogleReviews/GoogleReviews"),
-  { ssr: false }
-);
+
 
 export const metadata = {
   title: "Mobile Phone Repair Course - Phone Repair Course | PRC Repair",
@@ -61,7 +58,7 @@ const Training = () => {
       <div>
         <Breadcrumb
           pageName="Master the Art of Mobile Phone Repair"
-          pageDescription="Join LabX's comprehensive mobile phone repairing course to acquire essential skills and certifications. Transform your passion for technology into a rewarding career, and make a difference in people’s lives through mobile phone repair services!"
+          pageDescription="Join PRC comprehensive mobile phone repairing course to acquire essential skills and certifications. Transform your passion for technology into a rewarding career, and make a difference in people’s lives through mobile phone repair services!"
           backgroundImage="/Images/traningbg.webp"
           AdminImage="/Images/adminimage.png"
           link="/training"
@@ -72,7 +69,6 @@ const Training = () => {
         />
         <CourseHighlights />
         <Form />
-        <GoogleReviews />
       </div>
     </>
   );

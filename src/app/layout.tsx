@@ -50,6 +50,7 @@ import Script from "next/script";
 import Canonical from "./Canonical";
 import Image from "next/image";
 
+
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--Font-SpaceGrotesk",

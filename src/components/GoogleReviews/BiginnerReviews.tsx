@@ -16,24 +16,27 @@ import star from "../../../public/Images/icons/star.svg";
 interface Review {
   name: string;
   date: string;
+  googletitle?: any;
   profileImage: StaticImageData;
   logoImage: StaticImageData;
   rating: number;
   param: string;
+
 }
 
 interface BiginnerReviewsProps {
   reviews?: Review[];
+   googletitle: string;
 }
 
-export default function BiginnerReviews({ reviews = [] }: BiginnerReviewsProps) {
+export default function BiginnerReviews({ reviews = [], googletitle }: BiginnerReviewsProps) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
     <div>
       <div className="py-5 xl:p-6">
         <div className="mb-3">
-          <MainHeading Heading=" Learner Testimonials" color="black" svg_stroke="var(--alpha)" />
+          <MainHeading Heading={googletitle} color="black" svg_stroke="var(--alpha)" />
         </div>
         <MainTitle Title="" />
         <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">

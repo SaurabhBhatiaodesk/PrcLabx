@@ -7,7 +7,7 @@ const AdditionalPrices = () => {
     <>
       <Breadcrumb
         pageName="LabX Repair - Price List"
-        pageDescription="At LabX Repair, we provide a comprehensive range of repair including Data Recovery, Technician Damage Repair, DIY Damage Repair, Screen refurbishment services and General Spare Part Replacment. Below are the four main categories of pricing for our offerings:"
+        pageDescription="At PRC Repair, we provide a comprehensive range of repair including Data Recovery, Technician Damage Repair, DIY Damage Repair, Screen refurbishment services and General Spare Part Replacment. Below are the four main categories of pricing for our offerings:"
         backgroundImage="/Images/BannerImages/about.png"
         AdminImage="/Images/faq.svg"
         link="/price"

@@ -206,11 +206,11 @@ const ContactUsForm: React.FC = () => {
     <>
       <section
         className="py-4 lg:py-[30px] "
-        style={{
-          backgroundImage: "url('/images/Home/back-banner.svg')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
+        // style={{
+        //   backgroundImage: "url('/images/Home/back-banner.svg')",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundSize: "cover",
+        // }}
       >
         <div className="max-container">
           <div className="grid lg:grid-cols-[3fr_5fr] grid-cols-1    ">
@@ -226,25 +226,7 @@ const ContactUsForm: React.FC = () => {
               <div className="relative w-full h-[100%] flex flex-col justify-center lg:right-4 right-0">
                 <div className=" w-full">
                   <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
-                    {/* {/ Address /} */}
-                    {/* <div className="flex items-center gap-3">
-                      <span className="flex-shrink-0">
-                        <Image
-                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
-                          src={localtion}
-                          alt="Location Icon"
-                        />
-                      </span>
-                      <Link
-                        href="https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia"
-                        passHref
-                      >
-                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          122 Queen St, St Marys NSW 2760, Australia
-                        </p>
-                      </Link>
-                    </div> */}
-                    {/* {/ Phone /} */}
+                 
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
                         <Image
@@ -268,25 +250,13 @@ const ContactUsForm: React.FC = () => {
                           alt="Email Icon"
                         />
                       </span>
-                      <Link href="mailto:bharat@labxrepair.com.au" passHref>
+                      <Link href="mailto:bharat@prcrepair.com.au" passHref>
                         <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          bharat@labxrepair.com.au
+                          bharat@prcrepair.com.au
                         </p>
                       </Link>
                     </div>
-                    {/* {/ Operating Hours /} */}
-                    {/* <div className="flex items-center gap-3">
-                      <span className="flex-shrink-0">
-                        <Image
-                          className="w-[50px] h-[50px] object-contain" // Ensure size is same
-                          src={contactustime}
-                          alt="Clock Icon"
-                        />
-                      </span>
-                      <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                        Monday-Friday: 9am - 6pm
-                      </p>
-                    </div> */}
+                   
                     <div>
                       <h3 className="text-secondary text-center lg:text-xl text-lg ">
                         We DO NOT accept walk-ins{" "}
@@ -295,116 +265,12 @@ const ContactUsForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-              {/* {/ <Image className="w-full h-full object-cover" src={contactusimage} alt="Contact Us Image" /> /} */}
+             
             </div>
 
             <div>
               <ContactForm />
-              {/* <div className="p-4 lg:p-10 steper-form-section-os bg-black ">
-                <form onSubmit={handleSubmit}>
-                  <div className="flex flex-col gap-4 bg-black text-white">
-                    <div className="grid grid-cols-2 gap-4 form-label">
-
-                      <TextField
-                        label="First Name*"
-                        name="first_name"
-                        fullWidth
-                        variant="outlined"
-                        value={formData.first_name}
-                        onChange={handleChange}
-                        error={!!formErrors.first_name}
-                        helperText={formErrors.first_name}
-                      />
-
-
-                      <TextField
-                        label="Last Name*"
-                        name="last_name"
-                        fullWidth
-                        variant="outlined"
-                        value={formData.last_name}
-                        onChange={handleChange}
-                        error={!!formErrors.last_name}
-                        helperText={formErrors.last_name}
-                      />
-
-                      <TextField
-                        label="Your Email *"
-                        name="email_address"
-                        fullWidth
-                        variant="outlined"
-                        value={formData.email_address}
-                        onChange={handleChange}
-                        error={!!formErrors.email_address}
-                        helperText={formErrors.email_address}
-                      />
-                      {/*
-
-                      <TextField
-                        label="Phone Number *"
-                        name="contact_no"
-                        type="number"
-                        fullWidth
-                        variant="outlined"
-                        value={formData.contact_no}
-                        onChange={handleChange}
-                        error={!!formErrors.contact_no}
-                        helperText={formErrors.contact_no}
-                      />
-
-
-                    </div>
-
-
-                    <div>
-                      <h3 className="text-[20px] lg:text-[26px]">
-                        Write Your Enquiry
-                      </h3>
-                      <TextareaAutosize
-                        className="border-[1.5px]"
-                        minRows={6}
-                        placeholder="Enter your message here"
-                        value={formData.enquiry_message}
-                        onChange={handleChange}
-                        name="enquiry_message"
-                        style={{
-                          width: "100%",
-                          padding: "10px",
-                          marginTop: "10px",
-                          backgroundColor: "black",
-                          color: "white",
-                          borderRadius: "8px",
-                          borderColor: "white",
-                          fontSize: "17px",
-                          textTransform: "capitalize",
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="py-4">
-                    <Button
-                      variant="contained"
-                      sx={{
-                        background:
-                          "linear-gradient(to right, #E1F5C4, #EDE574)",
-                        color: "black",
-                        textTransform: "uppercase",
-                        fontSize: "14px",
-                        padding: "12px 18px",
-                        borderRadius: "50px",
-                        "&:hover": {
-                          background:
-                            "linear-gradient(to right, #EDE574, #E1F5C4)",
-                        },
-                      }}
-                      type="submit"
-                    >
-                      Submit
-                    </Button>
-                  </div>
-                </form>
-              </div> */}
+            
             </div>
           </div>
         </div>

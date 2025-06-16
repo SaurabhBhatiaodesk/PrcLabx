@@ -411,28 +411,27 @@ const PS5RepairsSydney: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[30px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('/images/Home/back-banner.svg')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange">
         <div className="py-3">
           {" "}
-          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" color="var(--primary)" />
+          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" color="var(--prc) " svg_stroke="var(--alpha)" />
         </div>
-        {/* <MainTitle Title="Take a quick look at our range of mobile phone repair services tailored to meet all your needs, from expert repairs and training programs to quality parts and data recovery — everything under one roof!" /> */}
         <div className="lg:block hidden">
           <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4">
             <div className="flex flex-col w-full gap-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 text-white rounded-[10px] border-[1.5px] font-semibold text-base tracking-[1.2px] ${
+                  className={`p-3 rounded-[10px] border-[1.5px] font-semibold text-base tracking-[1.2px] ${
                     activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
+                      ? "active-tab text-primary"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

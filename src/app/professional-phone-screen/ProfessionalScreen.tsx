@@ -196,7 +196,8 @@ const ProfessionalScreen = () => {
         accordionData={accordionData}
       />
       {/* <ProfessionalReviews /> */}
-     <BiginnerReviews reviews={reviewsData} />
+  <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Review"/>
+
     </>
   );
 };

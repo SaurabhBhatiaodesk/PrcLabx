@@ -20,6 +20,7 @@ import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png";
 import MainButton from "../MainButton/MainButton";
 import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import { IoChevronDown } from "react-icons/io5";
 export default function App() {
   const dispatch = useDispatch();
   const Router = useRouter();
@@ -31,34 +32,8 @@ export default function App() {
   // Toggle function to change menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+ 
   };
-
-  const PricetoggleMenu = (data: number) => {
-    dispatch(setPriceCat(data));
-    Router.push("/price");
-  };
-  const listData = [
-    {
-      id: 0,
-      btnName: "Price List",
-    },
-    {
-      id: 1,
-      btnName: "Screen Buy-Back Pricing ",
-    },
-    {
-      id: 2,
-      btnName: "Data Recovery Pricing",
-    },
-    {
-      id: 3,
-      btnName: "General Repair Pricing",
-    },
-    {
-      id: 4,
-      btnName: "DIY/Techcnian Damage Pricing",
-    },
-  ];
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -82,12 +57,12 @@ export default function App() {
         marquee_text="text-black"
         marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing"
       />
-      <div className="w-full header header-component">
+      <div className="t">
         <Navbar
           className="text-secondary bg-primary"
           isBordered
-          isMenuOpen={isMenuOpen}
-          onMenuOpenChange={setIsMenuOpen}
+          maxWidth="2xl"
+          
         >
           <NavbarContent
             className="lg:hidden"
@@ -97,7 +72,7 @@ export default function App() {
             {/* <NavbarMenuToggle
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             /> */}
-            {!isMenuOpen ? (
+            {isMenuOpen ? (
               <button className=" w-[50px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-secondary">
                 {" "}
                 <TbMenu2 fontSize={24} height={19} />{" "}
@@ -113,7 +88,7 @@ export default function App() {
             <div className="navbar text-pastelBlue items-center justify-between">
               <div className="navmenu flex items-center justify-between">
                 <NavbarContent className="flex justify-center items-center">
-                  <NavbarBrand>
+                  <NavbarBrand className="flex  justify-center lg:justify-start">
                     <Link href="/">
                       <Image
                         src={newlogo}
@@ -127,11 +102,7 @@ export default function App() {
                 </NavbarContent>
 
                 <div className="flex gap-[6px] relative">
-                  {/* <span className="showmobile">
-                    <Link href="tel:+61455777077">
-                    <MdCall   fontSize={26}/>
-                    </Link>
-                  </span> */}
+
                   <Link
                     className="showmobile hover:scale-110 transition-transform duration-200"
                     href="tel:+61455777077"
@@ -140,91 +111,107 @@ export default function App() {
                   </Link>
                 </div>
                 <ProfessionalMegaMenu />
-                <div
-                  className={`${
-                    isMenuOpen ? "block" : "hidden"
-                  } lg:flex  flex-grow justify-center items-center`}
+               <div className="block lg:hidden">
+                 <div
+                  className={`${isMenuOpen ? "hidden" : "block"
+                    } lg:flex  flex-grow  items-center absolute bg-primary left-0 h-screen w-full md:top-[72px] !top-[65px]`}
                   id="nav-content"
                 >
-                  <ul className="menu menu-horizontal px-1 flex items-center">
+                  <ul className="menu menu-horizontal px-1 flex items-center spa">
                     <li>
                       <div className="dropdowns services_drop inline-block relative">
                         <button
-                          className="btn__menu inline-flex items-center hover:text-fourth mr-2"
+                          className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
                           onClick={toggleDropdown}
                         >
                           <span className="mr-1">Services</span>
-                          <MdKeyboardArrowDown />
+                          <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                         </button>
                         {isDropdownOpen && (
-                          <ul className="dropdown-menus absolute hidden text-white pt-1">
-                            <Link href="/training" onClick={toggleMenu}>
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                                Training{" "}
-                              </li>
+                          <ul className="dropdown-menus  hidden text-prc  pt-1">
+                            <Link href="/training" onClick={toggleMenu} className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;
+                  ">
+
+                              Training{" "}
+
                             </Link>
                             <Link
                               href="/b2b-repair-services"
-                              onClick={toggleMenu}
+                              onClick={toggleMenu} className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;
+                  "
                             >
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                                B2B Repair{" "}
-                              </li>
+
+                              B2B Repair{" "}
+
                             </Link>
-                            <Link href="/ps5-repair" onClick={toggleMenu}>
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                                PS5 Repair
-                              </li>
+                            <Link href="/ps5-repair" onClick={toggleMenu} className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;
+                  ">
+
+                              PS5 Repair
+
                             </Link>
                             <Link
                               href="/screen-refurbishing"
-                              onClick={toggleMenu}
+                              onClick={toggleMenu} className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;
+                  "
                             >
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                                Screen Refurbishment{" "}
-                              </li>
-                            </Link>
-                            <Link href="/data-recovery" onClick={toggleMenu}>
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth">
-                                Data Recovery{" "}
-                              </li>
-                            </Link>
-                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
-                              <span className="text-[16px]">Parts Store </span>
-                              <span className="text-white">
-                                <Image
-                                  src={commingsoon}
-                                  width={40}
-                                  height={30}
-                                  alt=""
-                                />
-                              </span>
-                            </li>
-                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
-                              <span className="text-[16px]">Repair Form </span>
-                              <span className="text-white">
-                                <Image
-                                  src={commingsoon}
-                                  width={40}
-                                  height={30}
-                                  alt=""
-                                />
-                              </span>
-                            </li>
-                            <li className=" px-4 py-2 hover:bg-gray-800 hover:text-fourth flex items-center justify-between cursor-pointer">
-                              <span className="text-[16px]">
-                                Repair Solutions{" "}
-                              </span>
 
+                              Screen Refurbishment{" "}
+
+                            </Link>
+                            <Link href="/data-recovery" onClick={toggleMenu} className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;
+                  ">
+
+                              Data Recovery{" "}
+
+                            </Link>
+                            <div className="flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;">
+                              <span className="
+                  ">Parts Store </span>
                               <span className="text-white">
                                 <Image
                                   src={commingsoon}
-                                  width={40}
-                                  height={30}
+                                  width={20}
+                                  height={20}
                                   alt=""
                                 />
                               </span>
-                            </li>
+                            </div>
+
+                            <div className="flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;">
+                              <span className="
+                  ">Repair Form </span>
+                              <span className="text-white">
+                                <Image
+                                  src={commingsoon}
+                                  width={20}
+                                  height={20}
+                                  alt=""
+                                />
+                              </span>
+                            </div>
+
+                            <div className="flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;">
+                              <span className="
+                  ">Repair Solutions </span>
+                              <span className="text-white">
+                                <Image
+                                  src={commingsoon}
+                                  width={20}
+                                  height={20}
+                                  alt=""
+                                />
+                              </span>
+                            </div>
+
                           </ul>
                         )}
                       </div>
@@ -232,7 +219,7 @@ export default function App() {
                     <li>
                       <div className="dropdown inline-block relative">
                         <button
-                          className="btn__menu inline-flex items-center hover:text-fourth"
+                          className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
                           onClick={toggleAboutDropdown}
                         >
                           <span className="mr-1">About us</span>
@@ -245,38 +232,42 @@ export default function App() {
                           </svg>
                         </button>
                         {isAboutDropdownOpen && (
-                          <ul className="dropdown-menu absolute hidden text-white pt-1">
+                          <ul className="dropdown-menu  hidden text-white pt-1">
                             <Link
-                              className=""
+                              className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;"
                               href="/about-us"
                               onClick={toggleMenu}
                             >
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                                Meet Bharat
-                              </li>
+
+                              Meet Bharat
+
                             </Link>
                             <Link
-                              className=""
+                              className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;"
                               href="/what-we-do"
                               onClick={toggleMenu}
                             >
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                                What We Do
-                              </li>
+
+                              What We Do
+
                             </Link>
-                            <Link className="" href="/faq" onClick={toggleMenu}>
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                                FAQ{" "}
-                              </li>
+                            <Link className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;" href="/faq" onClick={toggleMenu}>
+
+                              FAQ{" "}
+
                             </Link>
                             <Link
-                              className="hover:text-fourth"
+                              className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    &quot;text-gray-700 hover:text-white&quot;"
                               href="/blogs"
                               onClick={toggleMenu}
                             >
-                              <li className="block px-4 py-2 hover:bg-gray-800 hover:text-fourth cursor-pointer">
-                                Blogs{" "}
-                              </li>
+
+                              Blogs{" "}
+
                             </Link>
                           </ul>
                         )}
@@ -333,24 +324,17 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                {/* <Link href="/mail-in-repair">
-                  <button
-                    className=" hidden lg:block uppercase bg-[#EF0000] text-white text-[18px] py-[8px] px-[15px] rounded-3xl"
-                    area-label=" Start the repair process for your device"
-                    onClick={MailRepair}
-                  >
-                    Instant Quote{" "}
-                  </button>
-                </Link> */}
-                <div className="md:block  hidden">
-                 <MainButton
-                        MainButton="Instant Quote"
-                        color=""
-                        // onClick={MailRepair}
-                        link="/brands"
-                        aria-label="Start the repair process for your device"
-                      />
-                      </div>
+               </div>
+
+                <div className="lg:block  hidden">
+                  <MainButton
+                    MainButton="Instant Quote"
+                    color=""
+                    // onClick={MailRepair}
+                    link="/brands"
+                    aria-label="Start the repair process for your device"
+                  />
+                </div>
               </div>
 
             </div>
