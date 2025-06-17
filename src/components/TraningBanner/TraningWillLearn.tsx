@@ -7,6 +7,7 @@ import arrowright from  "../../../public/Images/icons/arrowright.svg";
 import clockbig from  "../../../public/Images/icons/clockbig.svg"
 import Line from "../../../public/Images/about/leap.svg";
 import { usePathname } from "next/navigation";
+import MainHeading from "../ManinHeading/MainHeading";
 
 interface TraningWillLearn {
   border?: string; // Optional border color
@@ -46,33 +47,34 @@ function TraningWillLearn({
   return (
     <>
       <div className="container py-4 lg:py-[30px] space-y-2 lg:space-y-4">
-        <h2 className="text-center">{title}</h2>
-        <Image
+        {/* <h2 className="text-center">{title}</h2> */}
+        <MainHeading Heading={title} svg_stroke="var(--alpha)" color="var(--prc)"/>
+        {/* <Image
           height="300"
           width="500"
           src={Line}
           alt=" labx repair "
           className="pb-3 m-auto"
-        />
+        /> */}
         <div className="grid xl:grid-cols-[6fr_2fr] lg:grid-cols-2 gap-4">
           <div>
             <div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt=" labx repair " />
+                {/* <Image src={checkmark} alt=" labx repair " /> */}
                 <p>
-                  <strong className="text-[22px] text-tertiary ">{paramtitle1} :</strong> {param1}
+                  <strong className="text-[22px] text-fourth ">{paramtitle1} :</strong> {param1}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt=" labx repair " />
+                {/* <Image src={checkmark} alt=" labx repair " /> */}
                 <p>
-                  <strong className="text-[22px] text-tertiary ">{paramtitle2} :</strong> {param2}
+                  <strong className="text-[22px] text-fourth ">{paramtitle2} :</strong> {param2}
                 </p>
               </div>
               <div className="flex gap-2 items-start">
-                <Image src={checkmark} alt=" labx repair " />
+                {/* <Image src={checkmark} alt=" labx repair " /> */}
                 <p>
-                  <strong className="text-[22px] text-tertiary ">{paramtitle3} :</strong> {param3}
+                  <strong className="text-[22px] text-fourth ">{paramtitle3} :</strong> {param3}
                 </p>
               </div>
             </div>

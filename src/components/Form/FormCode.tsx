@@ -205,8 +205,8 @@ const FormCode: React.FC = () => {
 
   return (
     <div className="">
-      <div className="bg-[#E3E5E5] p-3 lg:p-8 rounded-3xl">
-       <MainHeading Heading="Please Fill the Form" color="var(--secondary)" svg_stroke="var(--prc)" />
+      <div className="bg-primary p-3 lg:p-8 rounded-3xl my-3">
+       <MainHeading Heading="Please Fill the Form" color="var(--prc)" svg_stroke="var(--alpha)" />
         <div className=" steper-form-section-os " id="Kickstart">
           {isLoading && (
             <div
@@ -256,6 +256,21 @@ const FormCode: React.FC = () => {
                   variant="outlined"
                   value={formData.business_name}
                   onChange={handleChange}
+                     sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
                 />
 
                 {/* Email Input with validation */}
@@ -268,6 +283,21 @@ const FormCode: React.FC = () => {
                   onChange={handleChange}
                   error={!!formErrors.email}
                   helperText={formErrors.email}
+                     sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
                 />
 
                 {/* Phone Number Input with validation */}
@@ -298,6 +328,21 @@ const FormCode: React.FC = () => {
                   }}
                   error={!!formErrors.phoneNumber}
                   helperText={formErrors.phoneNumber}
+                     sx={{
+                     '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+    
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
                 />
 
                 {/* Course Selection */}
@@ -309,13 +354,27 @@ const FormCode: React.FC = () => {
                     value={formData.course_name} // This is binding the course name to the Select value
                     onChange={handleCourseChange}
                     error={!!formErrors.course_name} // Show error if course is not selected
-                    sx={{
-                      color: "var(--secondary)", // Set the text color of the selected option to white
-                      "& .MuiSelect-icon": {
-                        color: "var(--secondary)", // Set the dropdown icon color to white
-                      }
-                    }}
-                  >
+                  sx={{
+    color: "var(--secondary)", // Set the text color of the selected option to white
+    "& .MuiSelect-icon": {
+      color: "var(--secondary)", // Set the dropdown icon color to white
+    },
+    '& label.Mui-focused': {
+      color: 'var(--prc)', // 👈 custom label color when focused
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderWidth: 2,
+      },
+    },
+  }}
+>
+                    
+                  
                     <MenuItem value="">-- Select a Course --</MenuItem>
                     <MenuItem value="Beginner_Phone_Repair">
                       Beginner Phone Repair Course ( $1249)

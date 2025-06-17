@@ -477,13 +477,13 @@ const Footer = () => {
             <div className="">
               <div className="flex justify-center">
                 <Link href="/">
-                  <Image
-                    className="mb-4 flex justify-center "
-                    src="https://labxbackend.s3.us-east-2.amazonaws.com/Clip+path+group.webp"
-                    width={200}
-                    height={200}
-                    alt=" lab-x"
-                  />
+                    <Image
+                      width={200}
+                      height={200}
+                      className="mb-4 w-[65px]"
+                      src={newlogo}
+                      alt=" lab-x"
+                    />
                 </Link>
               </div>
               <p className="text-center text-primary">
@@ -572,7 +572,7 @@ const Footer = () => {
           </section>
           <section className="block lg:hidden">
             <div className="py-3 bg-black  relative z-[1000]  ">
-              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-1 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77] ">
+              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-1 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77]  border-r-[10px_10px_0px_0px]">
                 <Link href="/">
                   <div className="flex flex-col items-center">
                     <Image

@@ -110,8 +110,8 @@ function TraningBanner({
                     <span className=" lg:text-lg text-sm text-primary">{courseHour}</span>
                   </div>
                 </div>
-                <div className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] xl:p-2 w-fit mb-2">
-                  <h1 className="text-dark  text-3xl font-bold text-black sm:text-4xl md:text-[40px] md:leading-[1.2] w">
+                <div className="">
+                  <h1 className="text-dark  text-3xl font-bold text-fourth sm:text-4xl md:text-[40px] md:leading-[1.2] w">
                     {pageName}
                   </h1>
                 </div>

@@ -114,19 +114,19 @@ const TraningTabBignersecond: React.FC = () => {
   return (
     <section
       className="pb-4 lg:pb-[60px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+        // backgroundImage: "url('/images/Home/back-banner.svg')",
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
         </div> */}
 
-        <div className="p-3 bg-white mb-6">
-          <p className="text-black mb-0 font-[600]">
+        <div className="p-3 bg-prc mb-6">
+          <p className="text-primary mb-0 font-[600]">
             Section 3. Screen Refurbishing
           </p>
         </div>
@@ -136,10 +136,10 @@ const TraningTabBignersecond: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
+                  className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
                     activeTab === tab.id
-                      ? "active-tab"
-                      : "bg-opacity-50 hover:bg-opacity-75"
+                      ? "active-tab text-primary"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

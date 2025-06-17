@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // For navigation
+import MainHeading from "../ManinHeading/MainHeading";
 
 interface Item {
   id: string;
@@ -70,9 +71,13 @@ const Bannersearchcard: React.FC = () => {
   const models = getModelsOrProducts(selectedSeries.title);
 
   return (
-    <div className="max-w-lg mr-0 p-8 bg-gray-50 rounded-lg shadow-md">
-      <h2 className="text-center text-2xl font-semibold mb-6 text-gray-800">Select Your Device</h2>
+    <div className="max-w-lg mr-0 lg:p-8 p-6 bg-gray-50 rounded-lg shadow-md">
+      {/* <h2 className="text-center text-2xl font-semibold mb-6 text-gray-800">Select Your Device</h2> */}
+      <div className="mb-4">
+<MainHeading Heading="Select Your Device" svg_stroke="var(--alpha)" color="var(--prc)"/>
 
+
+      </div>
       {/* Brand Selection */}
       <select
         value={selectedBrand.title}

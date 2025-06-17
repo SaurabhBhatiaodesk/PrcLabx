@@ -112,11 +112,11 @@ const FristTraningTab: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[30px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('/images/Home/back-banner.svg')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange">
         <div className="mb-3">
@@ -127,8 +127,8 @@ Course Syllabus
           />
         </div>
 
-        <div className="p-3 bg-white mb-6">
-          <p className="text-black mb-0 font-[600]">
+        <div className="p-3 bg-prc mb-6">
+          <p className="text-primary mb-0 font-[600]">
             Expert Motherboard Repair – Micro Soldering (Level 1)
           </p>
         </div>
@@ -138,9 +138,9 @@ Course Syllabus
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-5 xl:p-4 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${activeTab === tab.id
-                    ? "active-tab"
-                    : "bg-opacity-50 hover:bg-opacity-75"
+                  className={`p-3 lg:p-5 xl:p-4  rounded-[5px] border-[1.5px] text-sm tracking-[1.2px] ${activeTab === tab.id
+                    ? "active-tab text-primary"
+                    : "bg-opacity-50 hover:bg-opacity-75 text-prc"
                     }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

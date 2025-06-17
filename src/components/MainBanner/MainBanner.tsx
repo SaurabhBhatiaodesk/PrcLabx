@@ -68,7 +68,7 @@ export default function MainBanner() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container grid grid-cols-1 lg:grid-cols-2 py-8">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 lg:py-8 py-3">
           <div>
             <div className="mb-4 lg:mt-[0] mt-[0px] relative">
               <Link href="/training">

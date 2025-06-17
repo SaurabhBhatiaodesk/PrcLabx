@@ -69,10 +69,10 @@ function TrainingInstructors({
                   fill // Ensures the image fills its parent container responsively
                 />
               </div>
-              <div className="p-0 lg:p-6 bg-black text-white rounded-md">
+              <div className="p-0 lg:p-6  rounded-md">
                 <h2 className="text-3xl font-bold mb-4">{CourseHeading}</h2>
 
-                <p className="text-base text-tertiary ">{instructorName}</p>
+                <p className="text-base text-fourth ">{instructorName}</p>
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2 items-center">
                     <span>{courseRating}</span>
@@ -91,17 +91,17 @@ function TrainingInstructors({
                 {/* Dynamic Counter Section */}
                 <div className="flex gap-6 mt-4">
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{personsMentored}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{personsMentored}+</h3>
                   
                     <p>{param1}</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{workshopsAttended}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{workshopsAttended}+</h3>
                
                     <p>{param2}</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{coachingCertificates}</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{coachingCertificates}</h3>
                    
                     <p>{param3}</p>
                   </div>

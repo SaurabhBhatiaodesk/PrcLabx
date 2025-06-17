@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import Image from "next/image";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import Link from "next/link";
@@ -468,16 +468,16 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 {/* Dropdown for remaining brands */}
                 {isDropdownVisible && (
                   <div className="absolute top-[28px] left-0 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg w-64 py-2 z-10">
-                    <ul className="space-y-2">
+                    <ul className="">
                       {menuData.slice(6).map((item) => (
                         <li key={item.id} className="relative group">
                           <Link
                             href={`/brands/${item.alias}`}
-                            className={`flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
+                            className={` px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between items-center "
                   `}
                           >
                             {item.title}
+                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                       ))}
