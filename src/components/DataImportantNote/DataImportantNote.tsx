@@ -36,7 +36,7 @@ const DataImportantNote = () => {
           </div>
 
           {/* Important Notes */}
-          <div className="bg-black text-tertiary p-6 rounded-lg shadow-lg">
+          <div className="bg-prc text-tertiary p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-tertiary">
               Important Notes
             </h2>
@@ -51,7 +51,7 @@ const DataImportantNote = () => {
           </div>
 
           {/* Common Scenarios We Handle */}
-          <div className="bg-black text-tertiary p-6 rounded-lg shadow-lg">
+          <div className="bg-prc text-tertiary p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-tertiary">
               Common Scenarios We Handle
             </h2>

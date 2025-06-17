@@ -214,10 +214,10 @@ const MobileFooterMenue = () => {
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
             <li className="mb-2 text-primary">
               <a
-                href="mailto:bharat@prcrepair.com.au"
+                href="mailto:info@prc.repair "
                 className="hover:underline"
               >
-                bharat@prcrepair.com.au
+                info@prc.repair 
               </a>
             </li>
             <li className="mb-2 text-primary">

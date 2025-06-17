@@ -168,7 +168,7 @@ const Thankyou: React.FC = () => {
 
   const ShippingMessage = (
     <p className="text-secondary text-center">
-      If you choose LabX’s shipping label, we will email you the connote details shortly. Please include the reference number with your device when sending it to us. This reference number is essential for tracking your repair and will serve as the primary communication method.
+      If you choose PRC shipping label, we will email you the connote details shortly. Please include the reference number with your device when sending it to us. This reference number is essential for tracking your repair and will serve as the primary communication method.
     </p>
   );
   const stepsData = [

@@ -121,7 +121,7 @@ const Blogs: React.FC = () => {
     <>
       <div className="main-blog-list">
         {blogs.length > 0 ? (
-          <div className="container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2">
+          <div className="container grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 justify-center text-center gap-4 mb-2  mt-5">
             {blogs.map((blog) => {
               const featuredImage =
                 blog.featuredImage && blog.featuredImage.length > 0
@@ -145,7 +145,7 @@ const Blogs: React.FC = () => {
                   <h3 className="mb-4 mt-4 text-prc">
                     {(blog.heading || "Blog Title").slice(0, 40)}...
                   </h3>
-                  <div className="learnmore">
+                  <div className="learnmore flex justify-center">
                     {/* <MainButton
                       MainButton="View Details"
                       link={`/blogs/${blog._id}`}

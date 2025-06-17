@@ -1,17 +1,14 @@
 "use client";
 import React from "react";
 
-type marquee_props = {
-  marquee_bg: string
-  marquee_text:string
-  marquee_messages:any
-}
+type MarqueeProps = {
+  marquee_bg: string;      // Background class (e.g., "bg-yellow-400")
+  marquee_text: string;    // Text color class (e.g., "text-black")
+  marquee_messages: string; // The marquee message string
+};
 
-
-
-const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) => {
-  const messages =[marquee_messages];
-  const repetitions = 100;
+const Marquee = ({ marquee_bg, marquee_text, marquee_messages }: MarqueeProps) => {
+  const repetitions = 50;
 
   return (
     <>
@@ -26,33 +23,28 @@ const Marquee = ({ marquee_bg,marquee_text, marquee_messages}: marquee_props) =>
         }
 
         .animate-marquee {
-          animation: marquee 800s linear infinite;
+          animation: marquee 1000s linear infinite;
           display: flex;
-          COLOR: #000 !important;
+          white-space: nowrap;
         }
 
         .marquee-item {
-          animation: pulse 32s infinite;
-          transition: all 2s ease-in-out;
-        }
-
-        .marquee-item:hover {
-         
+          animation: none;
         }
       `}</style>
-      <section className={`w-full relative h-[50px] hidden md:block ${marquee_bg} overflow-hidden`}>
-        <div className="absolute top-[-20px] whitespace-nowrap animate-marquee">
-          <div className="flex gap-2">
-            {Array.from({ length: repetitions }).map((_, repetitionIndex) =>
-              messages.map((message, messageIndex) => (
-                <span
-                  key={`${repetitionIndex}-${messageIndex}`}
-                  className={`px-[10px] py-[5px]  rounded-full marquee-item lg:text-[20px] text-[12px] font-bold tracking-[1px] relative top-6 uppercase text-black ${marquee_text}`}
-                >
-                  {message}
-                </span>
-              ))
-            )}
+
+      <section className={`w-full relative h-[40px] hidden md:block ${marquee_bg} overflow-hidden`}>
+        <div className="absolute top-0 animate-marquee">
+          <div className="flex gap-6">
+            {Array.from({ length: repetitions }).map((_, index) => (
+              <span
+                key={index}
+                style={{ color: "#000", WebkitTextFillColor: "#000" }} // Ensures solid black text
+                className={`px-[10px] py-[5px] lg:text-[20px] text-[12px] font-bold tracking-[1px] uppercase marquee-item ${marquee_text}`}
+              >
+                {marquee_messages}
+              </span>
+            ))}
           </div>
         </div>
       </section>

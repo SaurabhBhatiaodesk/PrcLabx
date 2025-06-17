@@ -120,7 +120,8 @@ const TraningTabBigner: React.FC = () => {
     >
       <div className="container bgchange">
         <div className="mb-3">
-          <MainHeading Heading="Course Syllabus" />
+          {/* gaurav comment code  */}
+          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--prc)" />
         </div>
 
         <div className="p-3 bg-prc mb-6">

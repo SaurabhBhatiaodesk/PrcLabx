@@ -60,7 +60,7 @@ export default function MainBanner() {
   return (
     <>
       <section
-        className="background-banner bg-black"
+        className="background-banner bg-black "
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
@@ -68,7 +68,7 @@ export default function MainBanner() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container grid grid-cols-1 lg:grid-cols-2 lg:py-8 py-3">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 lg:py-5 py-3">
           <div>
             <div className="mb-4 lg:mt-[0] mt-[0px] relative">
               <Link href="/training">
@@ -105,7 +105,7 @@ export default function MainBanner() {
               <SwiperSlide>
                 <div className="gap-4 items-start xl:py-5">
                   <div>
-                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-3 transition-opacity duration-1000">
                       Get Your Device Fixed or Learn Mobile Phone Repairs
                       <span className="text-tertiary ">
                         {" "}
@@ -121,7 +121,7 @@ export default function MainBanner() {
                     repair skills through our training programs, PRC Repair has
                     it all.`}
                     </p>
-                    <div className="my-4 xl:my-10">
+                    <div className="my-4 xl:my-6">
                       <MainButton
                           color="bg-prc"
                         MainButton="Request a Quote"

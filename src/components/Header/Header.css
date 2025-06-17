@@ -58,7 +58,15 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
 @media only screen and (max-width: 	1023px) {
     .logo_LabX{
         width: auto;
+        position: relative;
+      
+
     }
+    .cardicon{
+        position: absolute !important;
+          right: 15px !important;
+    }
+    
     .showmobile {
         display: block !important;
     }
@@ -105,4 +113,12 @@ ul.menu.menu-horizontal.px-1.flex {
         height: 70px;
     }
 
+}
+
+@media only screen and (max-width: 767px) {
+    .logo_LabX {
+        width: auto;
+        position: absolute;
+        transform: translate(167%, -50%);
+    }
 }

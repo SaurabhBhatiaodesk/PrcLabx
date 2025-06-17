@@ -123,7 +123,7 @@ const MasterTabFirsh: React.FC = () => {
 Course Syllabus
 "
 svg_stroke="var(--alpha)"
-color="var(prc)"
+color="var(--prc)"
           />
         </div>
 

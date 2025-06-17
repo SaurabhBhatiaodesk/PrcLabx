@@ -61,7 +61,7 @@ export default function App() {
         marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing"
       />
       <div className="t">
-        <Navbar className="text-secondary bg-primary" isBordered maxWidth="2xl">
+        <Navbar className="text-secondary bg-primary h-20 " isBordered maxWidth="2xl" >
           <NavbarContent
             className="lg:hidden"
             id="nav-toggle"
@@ -85,9 +85,9 @@ export default function App() {
           </NavbarContent>
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
-              <div className="navmenu flex items-center justify-between">
-                <NavbarContent className="flex justify-center items-center">
-                  <NavbarBrand className="flex  justify-center lg:justify-start">
+              <div className="navmenu flex items-center justify-between ">
+              
+                 
                     <Link href="/">
                       <Image
                         src={newlogo}
@@ -97,10 +97,9 @@ export default function App() {
                         className="logo_LabX w-[60px]"
                       />
                     </Link>
-                  </NavbarBrand>
-                </NavbarContent>
+              
 
-                <div className="flex gap-[6px] relative">
+                <div className="flex gap-[6px] relative cardicon">
                   <Link
                     className="showmobile hover:scale-110 transition-transform duration-200"
                     href="tel:+61455777077"

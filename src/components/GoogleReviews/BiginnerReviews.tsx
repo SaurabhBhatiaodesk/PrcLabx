@@ -36,7 +36,7 @@ export default function BiginnerReviews({ reviews = [], googletitle }: BiginnerR
     <div>
       <div className="py-5 xl:p-6 px-2">
         <div className="mb-3">
-          <MainHeading Heading={googletitle} color="black" svg_stroke="var(--alpha)" />
+          <MainHeading Heading={googletitle} color="var(--prc)" svg_stroke="var(--alpha)" />
         </div>
         <MainTitle Title="" />
         <div className="service-slide-box flex gap-5 lg:flex-row items-center flex-col">

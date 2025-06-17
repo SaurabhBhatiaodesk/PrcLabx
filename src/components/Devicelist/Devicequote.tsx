@@ -105,14 +105,14 @@ export default function Devicequote() {
           <h2 className="text-prc text-center md:text-left py-2">
             Click to Get an Instant Quote Now!
           </h2>
-           
+
           <Link href="/brands">
             <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
-           Visit store
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+              Visit store
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </button>
           </Link>
         </div>
@@ -123,32 +123,28 @@ export default function Devicequote() {
             .slice(0, showAll ? brandData.length : 14)
             .map((data, index) => (
               <Link key={index} href={`/brands/${slugify(data.alias)}`}>
-                <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center md:p-4 p-2">
-                  <div className="flex justify-between items-center w-full h-[120px] flex-col ">
-                    <img
-                      src={data.image}
-                      alt="device_image"
-                      width={100} // Fixed width
-                      height={100} // Fixed height
-                      className="rounded-2xl w-full h-[80px]  object-contain mix-blend-darken group-hover:rotate-[20deg] transition-all duration-700"
-                    />
-                    <span className="text-[16px]">{data.title}</span>
-                  </div>
-                </div>
+              <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center md:p-4 p-2 relative overflow-hidden">
+  <div className="relative flex justify-center items-center h-full w-full">
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-alpha opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl z-10" />
+
+    <img
+      src={data.image}
+      alt="device_image"
+      width={100}
+      height={100}
+      className="rounded-2xl w-full h-[80px] object-contain mix-blend-darken group-hover:scale-95 transition-all duration-700 relative z-20"
+    />
+  </div>
+</div>
+
               </Link>
+
+
+
             ))}
         </div>
-        {/* View More Button */}
-        {/* {brandData.length > 14 && !showAll && (
-          <div className="flex justify-center pt-6">
-            <button
-              onClick={() => setShowAll(true)}
-              className="text-[#00303E] font-semibold border-2 px-4 py-2 rounded-full hover:bg-gray-200"
-            >
-              View More
-            </button>
-          </div>
-        )} */}
+
       </div>
     </div>
   );

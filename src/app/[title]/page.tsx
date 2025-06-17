@@ -13,6 +13,7 @@ import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import Line from "../../../public/Images/about/leap.svg"; // Function to fetch data from the server
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import MainHeading from "@/components/ManinHeading/MainHeading";
 async function fetchPageData(title: string) {
   const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const res = await fetch(
@@ -152,7 +153,7 @@ export default async function PageDetail({
               </div>
             </div>
             <div>
-              <h1 className="text-secondary mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
+              {/* <h1 className="text-secondary mb-0 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2] text-center">
                 {formatPageName(page.pageName)}
                 <Image
                   height="300"
@@ -161,7 +162,8 @@ export default async function PageDetail({
                   alt=" PRC repair "
                   className="pb-3 m-auto"
                 />
-              </h1>
+              </h1> */}
+              <MainHeading Heading= {formatPageName(page.pageName)}  color="var(--prc)" svg_stroke="var(--alpha)" />
               {page.images.map((image: string, index: number) => (
                 <Image
                   key={image}

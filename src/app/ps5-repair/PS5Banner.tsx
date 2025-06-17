@@ -57,7 +57,7 @@ export default function PS5Banner() {
                 without delays.
               </p>
               <div className="my-4 xl:my-10">
-                <MainButton MainButton="View Pricing" link="/price" />
+                <MainButton MainButton="View Pricing" link="/price"  color="bg-prc"/>
               </div>
             </div>
             <div className="w-full"></div>

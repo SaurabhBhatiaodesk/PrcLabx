@@ -146,6 +146,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
           className="bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 max-h-80 overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out"
           style={{
             width: "240px",
+         
             boxShadow:
               "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
@@ -340,7 +341,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
       >
         <div className="p-6">
           {/* Enhanced Header with gradient */}
-          <div className="pb-4 border-b border-gray-200 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] -m-6 mb-4 p-6 rounded-t-lg">
+          {/* <div className="pb-4 border-b border-gray-200 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] -m-6 mb-4 p-6 rounded-t-lg">
             <h3 className="text-lg font-bold text-white mb-1">
               {parentItem.title} Products & Services
             </h3>
@@ -348,7 +349,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
               Explore our comprehensive range of{" "}
               {parentItem.title.toLowerCase()} repair services
             </p>
-          </div>
+          </div> */}
 
           {/* Enhanced Grid Layout with perfect spacing */}
           <div
@@ -389,7 +390,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
             <Link
               href={`/brands/${parentItem.alias}`}
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-semibold rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className=" inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               View All {parentItem.title} Products
               <IoChevronForward className="ml-2 text-sm" />
@@ -438,7 +439,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 >
                   <Link
                     href={`/brands/${item.alias}`}
-                    className={`flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
+                    className={` flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
                         ? "bg-[#122d37] text-white shadow-md"
                         : "text-gray-700 hover:text-white"
                       }`}
@@ -460,7 +461,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 onMouseEnter={() => setIsDropdownVisible(true)}
                 onMouseLeave={() => setIsDropdownVisible(false)}
               >
-                <button className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
+                <button className="flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
                   Other Brands
                   <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                 </button>
@@ -491,9 +492,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 <ul className="menu menu-horizontal px-1 flex items-center space-x-1">
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">Services</span>
-                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
@@ -503,7 +503,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="blck px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between"
                           >
                             Training
-                             <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>
@@ -512,7 +511,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                             B2B Repair
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>
@@ -521,7 +519,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                             PS5 Repair
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>
@@ -530,7 +527,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                             Screen Refurbishment
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>
@@ -539,7 +535,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                             Data Recovery
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
 
@@ -574,9 +569,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
-                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
@@ -587,7 +581,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="blck px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between"
                           >
                          Meet Bharat
-                             <IoChevronForward className="ml-2 text-sm" />
+                            
                           </Link>
                         </li>
                         <li>
@@ -597,7 +591,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                           What We Do
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>
@@ -607,7 +600,6 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                            FAQ{" "}
-                              <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                         <li>

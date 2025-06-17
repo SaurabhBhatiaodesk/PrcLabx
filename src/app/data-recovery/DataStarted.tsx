@@ -21,16 +21,14 @@ const DataStarted = () => {
             <div className="flex-col flex">
             
               <div className="flex items-start gap-3">
-              <Image width={24} height={24} src={pointer} alt="pointer" />
                 <div className="">
                   <p className="text-secondary">
-                  Visit our <Link className="font-semibold" href="/mail-in-repair">Mail-In Repair</Link> page to fill out the submission form and include details about your device and the issue.
+                  Visit our <Link className="font-semibold text-prc" href="/mail-in-repair">Mail-In Repair</Link> page to fill out the submission form and include details about your device and the issue.
                   </p>
                   
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Image width={24} height={24} src={pointer} alt="pointer" />
 
                 <div className="">
                 <p className=" text-secondary">
@@ -39,7 +37,7 @@ const DataStarted = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-              <Image width={24} height={24} src={pointer} alt="pointer" />
+             
 
                 <div className="">
                 <p className=" text-secondary">
@@ -48,7 +46,7 @@ const DataStarted = () => {
                 </div>
               </div>
             </div>
-            <MainButton MainButton="START REPAIR" link="/mail-in-repair"/>
+            <MainButton MainButton="START REPAIR" link="/mail-in-repair" color="bg-prc"/>
           </div>
         </div>
       </section>
