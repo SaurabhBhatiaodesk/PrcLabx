@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import labx from "../../../public/Images/Brand logos/Frame.svg";
+import homespinner from "../../../public/Images/homespinner.gif"
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import { SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
@@ -19,7 +19,7 @@ import traning from "../../../public/Images/icons/traning.svg";
 import ToastNotification from "../../components/ToastNotification/ToastNotification";
 import { MdCall } from "react-icons/md";
 import { IoIosCart } from "react-icons/io";
-import { TiArrowForward } from "react-icons/ti";
+
 import newlogo from "../../../public/Images/prclogo.png";
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -493,7 +493,7 @@ const Footer = () => {
              <div className="flex gap-3 mt-5 justify-center">
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.facebook.com/profile.php?id=61568955864034"
+                        href="https://www.facebook.com/prcrepair122/"
                         target="blank"
                       >
                         <SlSocialFacebook
@@ -504,7 +504,7 @@ const Footer = () => {
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.instagram.com/labxrepair/"
+                        href="https://www.instagram.com/prc.repair/"
                         target="blank"
                       >
                         <FaInstagram
@@ -514,7 +514,7 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
-                      <Link href="https://x.com/LabxRepair" target="blank">
+                      <Link href="https://x.com/prc_repair" target="blank">
                         <FaXTwitter
                           className="hover:scale-110 transition-transform duration-200"
                           fontSize={30}
@@ -523,7 +523,7 @@ const Footer = () => {
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.youtube.com/@PRCRepair"
+                        href="https://www.youtube.com/channel/UClA97i8j5HkTHcK5pgCtpBw"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -619,6 +619,7 @@ const Footer = () => {
           </section>
         </div>
       </div>
+      <Image className="p-3 fixed right-0 bottom-0 z-50" src={homespinner} alt="homespinner" />
     </div>
   );
 };
