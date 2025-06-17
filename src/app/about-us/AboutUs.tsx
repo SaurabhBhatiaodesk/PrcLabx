@@ -32,10 +32,10 @@ const AboutUs = () => {
   return (
     <div>
       <section
-        className="bg-no-repeat bg-cover p-0"
-        style={{ backgroundImage: `url(${Banner})` }}
+        className="bg-prc bg-cover p-0"
+       
       >
-        <div className="max-container">
+        <div className="max-container relative">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
             <div className="w-full px-4">
               <div className="text-center lg:text-left">
@@ -43,29 +43,29 @@ const AboutUs = () => {
                   <li>
                     <Link
                       href="/"
-                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-secondary"
+                      className="text-primary flex items-center gap-[10px] text-base font-medium dark:text-secondary"
                     >
                       Home
                     </Link>
                   </li>
                   <li>
-                    <p className="text-body-color flex items-center gap-[10px] text-base font-medium mb-0">
-                      <span className="text-body-color dark:text-dark-6">/</span>
+                    <p className="text-primary flex items-center gap-[10px] text-base font-medium mb-0">
+                      <span className="text-primary">/</span>
                       About Us
                     </p>
                   </li>
                 </ul>
-                <h1 className="text-prc mb-0 text-3xl font-bold dark:text-secondary sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                <h1 className="text-primary mb-0 text-3xl font-bold dark:text-secondary sm:text-4xl md:text-[40px] md:leading-[1.2]">
                   Meet Bharat Dhingra  (Founder)
                 </h1>
-                <Image height="80" width="600" src={UnderLine.src} alt=" PRC repair " className="mb-3 about_line" />
-                <p className="text-body-color dark:text-dark-6 mb-5 text-base">
+                
+                <p className="text-primary mb-5 text-base">
                   Born in 1986 in Punjab, India, my journey has been one of passion, perseverance, and purpose.
                 </p>
               </div>
 
             </div>
-            <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+            <div className="admin-image relative 2xl:h-[400px] lg:h-[350px] h-[350px]">
               <Image
                 src={Adminimage}
                 alt="Admin Visual"
