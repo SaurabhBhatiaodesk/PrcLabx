@@ -75,16 +75,16 @@
 .custom-content-styling h2,
 .custom-content-styling h2 span {
     background-color: transparent !important;
-    color: #cccccc !important;
+   color: var(--secondary); 
     font-size: 28px;
 }
 
 .custom-content-styling h3 span  {
     font-size: 25px;
-    color: #cccccc !important;
+    color: var(--secondary)
 }
 .custom-content-styling h3{
-    color: #cccccc !important;
+   color: var(--secondary); 
 }
 
 .custom-content-styling h4 {
@@ -95,12 +95,12 @@
 
 .custom-content-styling h4 strong {
     font-size: 20px;
-    color: #cccccc !important;
+ color: var(--secondary);
     font-weight: bold;
 }
 .custom-content-styling h3 strong {
     font-size: 24px;
-    color: #cccccc !important;
+ color: var(--secondary);
     font-weight: bold;
 }
 
@@ -108,18 +108,18 @@
 /* New - h5 and h6 */
 .custom-content-styling h5 {
     font-size: 18px;
-    color: #cccccc !important;
+   color: var(--secondary); 
     margin-bottom: 8px;
 }
 .custom-content-styling h5 strong {
   font-size: 18px;
-  color: #cccccc !important;
+ color: var(--secondary);
   margin-bottom: 8px;
 }
 
 .custom-content-styling h6 {
     font-size: 16px;
-    color: #cccccc !important;
+ color: var(--secondary);
     margin-bottom: 8px;
 }
 
@@ -133,14 +133,14 @@
 
 /* List Items */
 .custom-content-styling li strong {
-  color: #cccccc !important;
+ color: var(--secondary); 
   font-size: 18px;
 }
 
 .custom-content-styling li span {
     font-size: 18px;
     line-height: 1.6;
-    color: #cccccc !important;
+   color: var(--secondary); 
     margin-bottom: 10px;
 }
 
@@ -175,7 +175,7 @@
         font-size: 18px;
     }
     .custom-content-styling li strong {
-      color: #cccccc !important;
+     color: var(--secondary); 
       font-size: 16px;
     }
     .custom-content-styling h4 strong {
@@ -246,7 +246,7 @@
 
     .custom-content-styling h3 span {
         font-size: 20px;
-        color: #cccccc !important;
+   color: var(--secondary)
     }
 
     /* Paragraph */

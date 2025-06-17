@@ -671,7 +671,7 @@ const StaperForm: React.FC = () => {
               Heading={`${pathname === "/mail-in-repair"? "PRC Mail-In Repair Submission Form": pathname === "/data-recovery"? "PRC data-recovery Submission Form": "PRC PS5 Repair Submission Form" }`
               
               }
-              color="var-(--prc)"
+              color="var(--prc)"
               svg_stroke="var(--alpha)"
             />
           </div>
@@ -1405,9 +1405,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--tertiary)", // Custom color for the radio button
+                                            color: "var(--prc)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                            color: "var(--tertiary)", // Color when radio is checked
+                                            color: "var(--prc)", // Color when radio is checked
                                             },
                                           }}
                                           checked={

@@ -121,7 +121,7 @@ const Footer = () => {
                   <div className="flex gap-3 mt-5">
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.facebook.com/profile.php?id=61568955864034"
+                        href="https://www.facebook.com/prcrepair122/"
                         target="blank"
                       >
                         <SlSocialFacebook
@@ -132,7 +132,7 @@ const Footer = () => {
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.instagram.com/labxrepair/"
+                        href="https://www.instagram.com/prc.repair/"
                         target="blank"
                       >
                         <FaInstagram
@@ -142,7 +142,7 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
-                      <Link href="https://x.com/LabxRepair" target="blank">
+                      <Link href="https://x.com/prc_repair" target="blank">
                         <FaXTwitter
                           className="hover:scale-110 transition-transform duration-200"
                           fontSize={30}
@@ -151,7 +151,7 @@ const Footer = () => {
                     </div>
                     <div className="p-[8px] flex justify-center items-center bg-tertiary rounded-[50%]">
                       <Link
-                        href="https://www.youtube.com/@PRCRepair"
+                        href="https://www.youtube.com/channel/UClA97i8j5HkTHcK5pgCtpBw"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -362,11 +362,11 @@ const Footer = () => {
                         fontSize={25}
                       />
                       <Link
-                        href="mailto:bharat@prcrepair.com.au"
+                        href="mailto:info@prc.repair "
                         legacyBehavior
                       >
                         <a className="text-[18px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary">
-                          bharat@prcrepair.com.au
+                          info@prc.repair 
                         </a>
                       </Link>
                     </div>
@@ -559,13 +559,13 @@ const Footer = () => {
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Copyright © PRC Repair {new Date().getFullYear()} - All
-                  rights reserved
+                  rights reserved .
                 </p>
               </div>
               <div className="sm:text-center">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Website Designed by{" "}
-                  <a href="https://www.base2brand.com/">Base2Brand Infotech</a>{" "}
+                  <a href="https://www.base2brand.com/">Base2Brand Infotech .</a>{" "}
                 </p>
               </div>
             </div>
@@ -595,7 +595,7 @@ const Footer = () => {
                     </span>
                   </div>
                 </Link>
-                <Link href="mailto:bharat@prcrepair.com.au">
+                <Link href="mailto:info@prc.repair ">
                   <div className="flex flex-col items-center">
                     <FiMail fontSize={24}  color="white"/>
                     <span className="text-[12px] tracking-[1.5px] text-white  ">Mail</span>

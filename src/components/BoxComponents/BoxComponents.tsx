@@ -23,7 +23,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) =
   <div className="flex items-start gap-3">
     <Image width={24} height={24} src={icon} alt="icon" />
     <div>
-      <span className="text-xl pb-[2px] text-fourth font-semibold ">{title}</span>
+      <span className="text-xl pb-[2px] text-prc font-semibold ">{title}</span>
       <p className="text-secondary">{description}</p>
     </div>
   </div>

@@ -174,7 +174,7 @@ const FormCode: React.FC = () => {
       if (response) {
         // alert("Form submitted successfully!");
         setToast({
-          message: "Thank you for showing your interest in LABx training.",
+          message: "Thank you for showing your interest in PRC training.",
           type: "success",
         });
         setFormData({

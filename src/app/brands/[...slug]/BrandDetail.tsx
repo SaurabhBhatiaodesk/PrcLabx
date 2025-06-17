@@ -8,17 +8,18 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Pdp from "./Pdp";
 import Strip from "@/components/Strip/Strip";
+import { log } from "console";
 
 const BrandDetailPage: React.FC = () => {
   const pathname = usePathname();
   const [brandsData, setBrandsData] = useState<any>([]); // State to hold brands data
-  const [slugData, setSlugData] = useState<any>([]); 
+  const [slugData, setSlugData] = useState<any>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true); // Sidebar state
   const [expandedPaths, setExpandedPaths] = useState<string[]>([]); // Expanded paths for sidebar
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
-  
+
   // State for mobile detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -28,7 +29,7 @@ const BrandDetailPage: React.FC = () => {
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
       };
-      
+
       handleResize(); // Initial check
       window.addEventListener('resize', handleResize); // Update on window resize
 
@@ -115,98 +116,101 @@ const BrandDetailPage: React.FC = () => {
   };
 
   return (
-   <div>
-  <Strip title="PDP" />
-     <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
-      {/* Sidebar */}
-      <div className="relative">
-        {isSidebarOpen && (
-          <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
-            <aside
-              className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
-            >
-              <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
-                Select Brands
-              </h2>
+    <div>
+      <Strip title="Repair Prices" />
+      <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
+        {/* Sidebar */}
+        <div className="relative">
+          {isSidebarOpen && (
+            <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
+              <aside
+                className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
+              >
+                <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
+                  Select Brands
+                </h2>
 
-              {brandsData.map((brand: any) => (
-                <SidebarItem
-                  key={brand.id}
-                  item={brand}
-                  href={`/brands/${brand.alias}`}
-                  level={0}
-                  expandedPaths={expandedPaths}
-                  toggleExpand={toggleExpand}
-                  currentPath={pathname}
-                  setIsLastItemClicked={setIsLastItemClicked}
-                  setTabs={setTabs}
+                {brandsData.map((brand: any) => (
+                  <SidebarItem
+                    key={brand.id}
+                    item={brand}
+                    href={`/brands/${brand.alias}`}
+                    level={0}
+                    expandedPaths={expandedPaths}
+                    toggleExpand={toggleExpand}
+                    currentPath={pathname}
+                    setIsLastItemClicked={setIsLastItemClicked}
+                    setTabs={setTabs}
+                  />
+                ))}
+              </aside>
+              <button
+                onClick={() => setIsSidebarOpen((prev) => !prev)}
+                className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-4 right-[1rem] z-10"
+              >
+                <IoIosArrowForward
+                  className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
+                  size={24}
                 />
-              ))}
-            </aside>
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Main Content */}
+        <main
+          className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px]  " : " pt-[10px]"}`}
+        >
+          <div className="md:pl-3 pl-2">
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-4 right-[1rem] z-10"
+              className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
             >
               <IoIosArrowForward
                 className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
                 size={24}
               />
             </button>
+            {/* Breadcrumb */}
+            <div className="hidden md:block">
+              <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
+                <Link href="/brands" className="hover:underline font-bold">
+                  Home
+                </Link>
+                {slugArray.map((slug, idx) => {
+                  const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
+                  const displayText = slug
+                    .replace(/-\d+$/, "") 
+                    .replace(/-/g, " ");
+                  return (
+                    <span key={path}>
+                      {" "}
+                      &gt;{" "}
+                      <Link href={path} className="hover:underline capitalize font-bold">
+                        {displayText}
+                      </Link>
+                    </span>
+                  );
+                })}
+              </nav>
+            </div>
           </div>
-        )}
+          {/* Render content based on the fetched brands data */}
+          {!isLastItemClicked ? (
+            <BrandImageGrid
+              brandsData={slugData}
+              pathname={pathname}
+              isSidebarOpen={isSidebarOpen}
+            />
+          ) : (
+            <Pdp
+              pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
+              tabs={tabs}
+            />
+          )}
+        </main>
       </div>
-
-      {/* Main Content */}
-      <main
-        className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px]  " : " pt-[10px]"}`}
-      >
-        <div className="md:pl-3 pl-2">
-        <button
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
-        >
-          <IoIosArrowForward
-            className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
-            size={24}
-          />
-        </button>
-        {/* Breadcrumb */}
-        <div className="hidden md:block">
-          <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
-            <Link href="/brands" className="hover:underline font-bold">
-              Home
-            </Link>
-            {slugArray.map((slug, idx) => {
-              const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
-              return (
-                <span key={path}>
-                  {" "}
-                  &gt;{" "}
-                  <Link href={path} className="hover:underline capitalize font-bold">
-                    {slug.replace(/-/g, " ")}
-                  </Link>
-                </span>
-              );
-            })}
-          </nav>
-        </div>
-        </div>
-        {/* Render content based on the fetched brands data */}
-        {!isLastItemClicked ? (
-          <BrandImageGrid
-            brandsData={slugData}
-            pathname={pathname}
-            isSidebarOpen={isSidebarOpen}
-          />
-        ) : (
-          <Pdp
-            pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
-            tabs={tabs}
-          />
-        )}
-      </main>
     </div>
-   </div>
   );
 };
 

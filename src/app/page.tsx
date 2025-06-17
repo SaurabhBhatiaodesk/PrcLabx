@@ -208,7 +208,7 @@ const page = () => {
       <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)" />
       <DataRecovery />
       <MasterPhone />
-      <Productswiper slideData={slideData} Heading="China Warehouse, Global Flow" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="" color="var(--fourth)" />
+      <Productswiper slideData={slideData} Heading="China Warehouse, Global Flow" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="var(--alpha)" color="var(--prc)" />
 
       <WhyChooseLabX />
       <FixLabx />

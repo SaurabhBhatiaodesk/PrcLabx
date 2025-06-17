@@ -48,58 +48,58 @@ import Googletest from "../../../public/Images/icons/Googletest.svg";
 const B2BRepairServices: React.FC = () => {
    const reviewsData = [
     {
-      name: "Liam Foster",
-      date: "September 12, 2023",
+      name: "Jason T",
+      date: "September 22, 2022",
       profileImage: hname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
+        "Outstanding service i was looking for phone repair near me ! B2B Phone Repair fixed my iPhone’s cracked screen in no time. Fast, affordable, and excellent quality. Highly recommend them for repairs!",
     },
     {
-      name: "Emma Williams",
-      date: "September 12, 2023",
+      name: "Emily R.",
+      date: "September 25, 2021",
       profileImage: rname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
+        "I’ve used B2B for multiple repairs, and they never disappoint. Friendly team, quick service, and my phone always works like new. Best repair shop in town!",
     },
     {
-      name: "Jack O'Connor",
+      name: "Liam K.",
       date: "September 12, 2023",
       profileImage: Sname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
+        "B2B mobile phone repair saved my water-damaged phone! I thought it was beyond repair, but they restored it perfectly. Highly professional and trustworthy. Five stars!",
     },
     {
-      name: "Chloe Brown",
+      name: "Sophie L.",
       date: "October 5, 2023",
       profileImage: jname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
+        "Cracked my phone screen badly, and B2B repaired it within an hour. Affordable, reliable, and great customer service. Wouldn’t go anywhere else for repair.",
     },
     {
-      name: "Oliver Harris",
-      date: "November 1, 2023",
+      name: "Daniel P.",
+      date: "November 19, 2023",
       profileImage: Aname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
+        "My go-to for any phone repairs. They’ve fixed screens, batteries, and charging issues on several of my devices. B2B always delivers quality service at great prices.",
     },
     {
-      name: "Sophie Clark",
+      name: "Amelia M.",
       date: "November 1, 2023",
       profileImage: Nname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
+        "Had a battery issue with my old phone, and B2B mobile phone repair fixed it right up. Affordable, fast, and friendly service. So glad I found them!",
     },
   ];
   const repairData = [
@@ -462,7 +462,7 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container" data-aos="fade-up">
-            <MainHeading Heading="We Do, What Others Don't" />
+            <MainHeading Heading="We Do, What Others Don't"  svg_stroke="var(--alpha)" color="var(--prc)"/>
             {/* <MainTitle Title="At LabX, we tackle complex mobile phone repair challenges that others can’t, delivering reliable solutions and unmatched expertise." /> */}
 
             <div className="lg:pb-8 py-4">

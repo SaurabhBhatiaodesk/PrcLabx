@@ -250,9 +250,9 @@ const ContactUsForm: React.FC = () => {
                           alt="Email Icon"
                         />
                       </span>
-                      <Link href="mailto:bharat@prcrepair.com.au" passHref>
+                      <Link href="mailto:info@prc.repair" passHref>
                         <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          bharat@prcrepair.com.au
+                          info@prc.repair 
                         </p>
                       </Link>
                     </div>

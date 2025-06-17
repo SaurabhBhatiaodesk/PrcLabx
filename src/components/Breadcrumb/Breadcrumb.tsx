@@ -151,11 +151,11 @@ function Breadcrumb({
                 <FormCode />
               </div>
             ) : (
-              <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
+              <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px] ">
                 <Image
                   src={AdminImage}
                   alt="Admin Visual"
-                  className="object-contain pt-3"
+                  className="object-contain p-3"
                   fill
                 />
               </div>

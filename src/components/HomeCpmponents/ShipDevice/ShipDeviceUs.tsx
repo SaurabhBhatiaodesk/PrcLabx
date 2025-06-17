@@ -90,24 +90,22 @@ export default function ShipDeviceUs() {
           {slideData.map((slide, index) => (
             <SwiperSlide className="" key={index}>
               <Link href={slide.linking}>
-                <div className="relative  ">
+                <div className="relative group">
                   <Image
-                    className="w-full object-cover h-auto rounded-[10px]"
+                    className="w-full object-cover h-auto rounded-[10px] transition-all duration-500 hover:scale-90"
                     src={slide.src}
                     alt={slide.Product}
                   />
-                  <div className="product pt-3">
-                    <p className="text-primary text-sm lg:text-lg leading-snug font-semibold   mb-[0] ">
-                      {slide.Product}
-                    </p>
-
+                  <div className="absolute inset-0 bg-secondary bg-opacity-40 opacity-0 group-hover:opacity-75 transition-all duration-300 flex justify-center items-center rounded-[10px]">
+                    <p className="text-primary font-semibold text-lg">{slide.Product}</p>
                   </div>
-                  <div>
-                    <Link href={slide.linking} className=" flex items-center gap-2 text-primary font-medium text-sm lg:text-base hover:underline mt-3">
-                      <p className="text-tertiary m-0">Learn More </p> <IoIosArrowRoundForward fontSize={30} color="var(--tertiary)" />
-                    </Link>
+                  <div className="absolute bottom-4 left-4">
+                    {/* <Link href={slide.linking} >
+      Learn More
+    </Link> */}
                   </div>
                 </div>
+
               </Link>
             </SwiperSlide>
           ))}

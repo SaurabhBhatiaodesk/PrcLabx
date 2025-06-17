@@ -39,58 +39,58 @@ const Page = () => {
 
    const reviewsData = [
     {
-      name: "Liam Foster",
+      name: "John R",
       date: "September 12, 2023",
       profileImage: hname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
+        "The screen refurbishment course was fantastic! Learned advanced tools like laser machines and OCA laminators. Perfect for building my tech repair skills.",
     },
     {
-      name: "Emma Williams",
+      name: "Emily T",
       date: "September 12, 2023",
       profileImage: rname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
+        "Loved the hands-on practice! From screen separation to UV gluing, every step was explained clearly. Highly recommended for aspiring technicians!",
     },
     {
-      name: "Jack O'Connor",
-      date: "September 12, 2023",
+      name: "Mike L",
+      date: "September 1, 2022",
       profileImage: Sname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
+        "The trainers were excellent, and the tools provided were top-notch. I feel confident now handling LCD and OLED screen repairs professionally.",
     },
     {
-      name: "Chloe Brown",
-      date: "October 5, 2023",
+      name: "Sarah",
+      date: "October 4, 2021",
       profileImage: jname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
+        "Screen Refurbishing Course exceeded expectations. I mastered polarizer replacement and vacuum laminating. Great value for anyone entering the mobile repair industry! ",
     },
     {
-      name: "Oliver Harris",
-      date: "November 1, 2023",
+      name: "Kevin H",
+      date: "November 6, 2022",
       profileImage: Aname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
+        "Practical and engaging! The ultrasonic cleaning and air bubble removal techniques were eye-opening. A must-take course for tech enthusiasts.",
     },
     {
-      name: "Sophie Clark",
-      date: "November 1, 2023",
+      name: "Rachel M",
+      date: "November 4, 2023",
       profileImage: Nname,
       logoImage: Googletest,
       rating: 5,
       param:
-        "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
+        "This Screen Refurbishing Course with detailed instructions on refurbishing screens. I now have the skills to start my repair business. Truly worth it!",
     },
   ];
   return (
@@ -109,7 +109,7 @@ const Page = () => {
         </div>
 
         <div className="flex justify-center flex-col max-container lg:py-5">
-          <MainHeading Heading="Why Choose Screen Refurbishment?" svg_stroke="var(--prc)" />
+          <MainHeading Heading="Why Choose Screen Refurbishment?" svg_stroke="var(--alpha)"  color="var(--prc)"/>
           <p>
             Screen refurbishment is an eco-friendly and cost-effective
             alternative to replacing an entire display assembly. Instead of

@@ -132,7 +132,7 @@ const BrokenRippedFirstTab: React.FC = () => {
     >
       <div className="container bgchange">
         <div className="mb-3">
-          <MainHeading Heading="Phone Repair Course Syllabus" />
+          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--prc)" />
         </div>
 
         <div className="p-3 bg-white mb-6">
@@ -146,11 +146,10 @@ const BrokenRippedFirstTab: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px]  ${
-                    activeTab === tab.id
+                  className={`p-3 lg:p-6 xl:p-6 text-white rounded-[5px] border-[1.5px] text-base tracking-[1.2px]  ${activeTab === tab.id
                       ? "active-tab"
                       : "bg-opacity-50 hover:bg-opacity-75"
-                  }`}
+                    }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
                   role="tab"
