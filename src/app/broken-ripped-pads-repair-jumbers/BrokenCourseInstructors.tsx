@@ -70,15 +70,15 @@ function BrokenCourseInstructors() {
                 {/* Dynamic Counter Section */}
                 <div className="flex gap-6 mt-4">
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{personsMentored}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{personsMentored}+</h3>
                     <p>Years of industry experience</p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{workshopsAttended}+</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{workshopsAttended}+</h3>
                     <p>Professionals trained </p>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-[40px] lg:text-[50px] font-bold text-tertiary ">{coachingCertificates}</h3>
+                    <h3 className="text-[40px] lg:text-[50px] font-bold text-prc">{coachingCertificates}</h3>
                     <p> Positive feedback</p>
                   </div>
                 </div>

@@ -123,7 +123,7 @@ const YouTubeHome: React.FC = () => {
     <>
       <div className="md:py-10 py-6">
         <div className="container relative">
-          <MainHeading Heading="Watch Us in Action" svg_stroke="var(--alpha)" />
+          <MainHeading Heading="Watch Us in Action" svg_stroke="var(--alpha)" color="var(--prc)" />
           <MainTitle Title="Discover our YouTube channel featuring informative videos on mobile phone repairs, tutorials, and expert tips. Join our community and enhance your skills while staying updated on the latest repair techniques!" color="var(--secondary)" />
 
           <Swiper

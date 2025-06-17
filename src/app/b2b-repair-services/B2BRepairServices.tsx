@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import Image from "next/image";
-import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+
 
 import processor from "../../../public/Images/icons/processor.svg";
 import lighting from "../../../public/Images/icons/lighting.svg";
@@ -236,24 +236,21 @@ const B2BRepairServices: React.FC = () => {
       alt: "Repairs",
       title: "Technician Damage",
       description: `If you have broken the connector or torn the flex cable during your repair process,You can send it to us,we will fix it for you.`,
-      hoverBackground:
-        "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
+  
     },
     {
       image: SendUsYourDevices,
       alt: "Transparency",
       title: "Remote Unlocking",
       description: `We can remove user accounts or reset your phone remotely. Contact us for assistance.`,
-      hoverBackground:
-        "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
+     
     },
     {
       image: TrackYourOrders,
       alt: "Recovery",
       title: "Free Guidance",
       description: `Stuck on something or have questions during your repair? Feel free to ask! If it's within our expertise, we'll provide you with free guidance.`,
-      hoverBackground:
-        "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
+      
     },
     {
       image: ReceiveYourRepairedDevices,
@@ -261,8 +258,7 @@ const B2BRepairServices: React.FC = () => {
       title: "Supply Uncommon Parts",
       description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
 
-      hoverBackground:
-        "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
+     
     },
   ];
 
@@ -309,10 +305,10 @@ const B2BRepairServices: React.FC = () => {
                 <div className="flex-col gap-2  flex">
                   <div className="flex items-start gap-3">
                     <div className="w-[35px] mt-[2px]">
-                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    
                     </div>
                     <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Reliable Screen Refurbishing:
                       </span>
                       <p className="inline ml-1">
@@ -325,10 +321,10 @@ const B2BRepairServices: React.FC = () => {
 
                   <div className="flex items-start gap-3">
                     <div className="w-[35px] mt-[2px]">
-                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    
                     </div>
                     <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Expert Logic Board Repairs:
                       </span>
                       <p className="inline ml-1">
@@ -341,10 +337,10 @@ const B2BRepairServices: React.FC = () => {
 
                   <div className="flex items-start gap-3">
                     <div className="w-[35px] mt-[2px]">
-                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    
                     </div>
                     <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Comprehensive Data Recovery:
                       </span>
                       <p className="inline ml-1">
@@ -357,10 +353,10 @@ const B2BRepairServices: React.FC = () => {
 
                   <div className="flex items-start gap-3">
                     <div className="w-[35px] mt-[2px]">
-                      <Image src={pointer} alt="pointer"  className="w-[30px]" />
+                    
                     </div>
                     <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Bulk Repair Solutions:
                       </span>
                       <p className="inline ml-1">
@@ -386,10 +382,10 @@ const B2BRepairServices: React.FC = () => {
               <div>
                 <div className="flex-col gap-2  flex">
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
+                
 
                     <div className="">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Competitive Pricing:
                       </span>
                       <p className="inline ml-1">
@@ -402,9 +398,9 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
+                
                     <div className="">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Fast Turnaround Times:
                       </span>
                       <p className="inline ml-1">
@@ -416,9 +412,9 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
+                
                     <div className="">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Custom Repair Solutions:
                       </span>
                       <p className="inline ml-1">
@@ -430,9 +426,9 @@ const B2BRepairServices: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
+                
                     <div className="">
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Repair Tracking and Updates:
                       </span>
                       <p className="inline ml-1">
@@ -443,9 +439,9 @@ const B2BRepairServices: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Image src={pointer} alt="pointer" />
+                
                     <div>
-                      <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                      <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Easy B2B Account Setup:
                       </span>
                       <p className="inline ml-1">
@@ -476,13 +472,7 @@ const B2BRepairServices: React.FC = () => {
                     key={index}
                     style={{ background: "transparent" }}
                     className="p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col  hover:shadow-[0_0_20px_10px_#ede57456] group"
-                    onMouseEnter={(e) =>
-                    (e.currentTarget.style.background =
-                      section.hoverBackground)
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.background = "transparent")
-                    }
+                   
                   >
                     <div className="flex justify-center">
                       <Image
@@ -491,10 +481,10 @@ const B2BRepairServices: React.FC = () => {
                         alt={section.alt}
                       />
                     </div>
-                    <h3 className="text-tertiary xl:text-lg ">
+                    <h3 className="text-alpha xl:text-lg ">
                       {section.title}
                     </h3>
-                    <p className="group-hover:text-primary">{section.description}</p>
+                    <p className="text-prc text-[17px] leading-6">{section.description}</p>
 
                   </div>
                 ))}

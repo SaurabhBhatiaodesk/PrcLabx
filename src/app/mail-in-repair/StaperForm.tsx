@@ -1093,8 +1093,8 @@ const StaperForm: React.FC = () => {
                                 }}
                                 className="flex items-center justify-center"
                               >
-                                <div className="bg-prc p-5 rounded-lg  lg:w-[30%] w-[90%] px-3 border-[1px] border-[#81818175]">
-                                  <h2 className="text-center text-2xl mb-2 text-white">
+                                <div className="bg-primary p-5 rounded-lg  lg:w-[30%] w-[90%] px-3 border-[1px] border-[#81818175]">
+                                  <h2 className="text-center text-2xl mb-2 text-prc">
                                     Enter Device PIN
                                   </h2>
                                   <TextField
@@ -1108,18 +1108,33 @@ const StaperForm: React.FC = () => {
                                     InputLabelProps={{
                                       shrink: true, // ⬅️ Keeps the label on top
                                     }}
-                                       sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
+                                sx={{
+    '& label.Mui-focused': {
+      color: 'var(--prc)', // Label color when focused
+    },
+    '& label': {
+      color: 'var(--prc)', // Default label color
+    },
+    '&:hover label': {
+      color: 'var(--prc)', // Label color on hover
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: 'gray',
+        borderColor: 'var(--prc)',
       },
-    
+      '&:hover fieldset': {
+        borderColor: 'var(--prc)', // Border color on hover
+      },
       '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
+        borderColor: 'var(--prc)',
         borderWidth: 2,
+      },
+      '& input::placeholder': {
+        color: 'var(--prc)', // Placeholder color
+        opacity: 1, // Optional: make placeholder fully opaque
+      },
+      '& input': {
+        color: 'black', // Input text color
       },
     },
   }}
@@ -1163,20 +1178,21 @@ const StaperForm: React.FC = () => {
                                 }}
                                 className="flex items-center justify-center p-[15px]"
                               >
-                                <div className="bg-prc p-5 rounded-lg lg:w-[30%] w-full overflow-auto max-h py-3 border-[1px] border-[#81818175]">
-                                  <h2 className="text-center text-2xl mb-2 text-white">
+                                <div className="bg-primary p-5 rounded-lg lg:w-[30%] w-full overflow-auto max-h py-3 border-[1px] border-primary">
+                                  <h2 className="text-center text-2xl mb-2 text-prc">
                                     Draw Your Pattern
                                   </h2>
                                   <div
                                     style={{
                                       width: "320px",
                                       height: "320px",
-                                      backgroundColor: "var(--prc)",
+                                      backgroundColor: "var(--primary)",
                                       borderRadius: "10px",
                                       display: "flex",
                                       justifyContent: "center",
                                       alignItems: "center",
                                       margin: "0 auto",
+                                      color:"var(--prc)"
                                     }}
                                   >
                                     <ReactCanvasPatternLock
@@ -1270,9 +1286,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--tertiary)", // Custom color for the radio button
+                                            color: "var(-prc)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "var(--tertiary)", // Color when radio is checked
+                                              color: "var(--prc)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1293,9 +1309,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--tertiary)", // Custom color for the radio button
+                                            color: "var(--prc)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "var(--tertiary)", // Color when radio is checked
+                                              color: "var(--prc)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1317,7 +1333,7 @@ const StaperForm: React.FC = () => {
                                   {repairDetails.previousRepairAttempts ===
                                     "Yes" && (
                                       <div className="steper-textarea-os mt-2">
-                                        <p className="text-yellow-500 text-sm mt-2 italic">
+                                        <p className="text-prc text-sm mt-2 italic">
                                           A $66 service fee will be required to
                                           release the device, regardless of
                                           whether it is fixed or not.
@@ -1366,9 +1382,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--tertiary)", // Custom color for the radio button
+                                            color: "var(--prc)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                            color: "var(--tertiary)", // Color when radio is checked
+                                            color: "var(--prc)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1413,7 +1429,7 @@ const StaperForm: React.FC = () => {
                                   {/* Displaying fee message when "Yes" is selected */}
                                   {repairDetails.jumpQueueForFasterService ===
                                     "Yes" && (
-                                      <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                                      <p className="text-prc text-sm mt-2 mb-0 italic">
                                         A minimum fee of $100 (or higher) will be
                                         charged for priority service.
                                       </p>
@@ -1532,7 +1548,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ==
                           "Yes,Please arrange pickup from my location" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            <p className="text-prc text-sm mt-2 mb-0 italic">
                               A one-way shipping fee of $15-$20 will be added to
                               your invoice, regardless of whether the device is
                               repaired or not. Connote label will be sent to your
@@ -1542,7 +1558,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ===
                           "No,I will send the device myself" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            <p className="text-prc text-sm mt-2 mb-0 italic">
                               No, I will send the device myself.
                             </p>
                           )}
@@ -1621,7 +1637,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requireReturnLabel ===
                           "Please ship the device back to me" && (
-                            <p className="text-yellow-500 text-sm mt-2 mb-0 italic">
+                            <p className="text-prc text-sm mt-2 mb-0 italic">
                               Additional shipping fee of $15-$20 will be added to
                               your invoice.
                             </p>
@@ -1630,7 +1646,7 @@ const StaperForm: React.FC = () => {
 
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-2">
-                        <h4 className=" lg:text-xl text-lg mb-3 text-alpha ">
+                        <h4 className=" lg:text-basic text-sm mb-1 text-prc ">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
@@ -1655,21 +1671,21 @@ const StaperForm: React.FC = () => {
                             By checking this box, I confirm that I have read and
                             agree to the PRC
                             <Link
-                              className="text-alpha   "
+                              className="text-prc  font-semibold "
                               href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
-                              className="text-alpha   "
+                              className="text-prc font-semibold  "
                               href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
-                              className="text-alpha   "
+                              className="text-prc  font-semibold  "
                               href="/Warranty_and_Terms"
                             >
                               Warranty Terms
@@ -1686,12 +1702,12 @@ const StaperForm: React.FC = () => {
 
                       {/* Signature */}
                       <div className="my-2">
-                        <div className="flex justify-between gap-2">
-                          <span className="bg-gradient-to-r from-[#E1F5C4] to-[#EDE574] text-[14px] 2xl:text-lg xl:text-base uppercase text-black py-3 2xl:py-3 xl:py-[10px] px-[18px] rounded-t-[5px]  hover:from-[#EDE574] hover:to-[#E1F5C4] w-full">
+                        <div className="flex justify-between  rounded-[5px_5px_0px_0px] overflow-hidden">
+                          <span className=" bg-prc text-[14px] 2xl:text-lg xl:text-base uppercase text-primary py-3 2xl:py-3 xl:py-[10px] px-[18px]   w-full">
                             Draw Your Signature *
                           </span>
                           <button
-                            className=" italic text-primary  border-[--F1-btn-color] bg-[red] px-2 rounded-t-[5px] text-sm"
+                            className=" italic text-primary  border-[--F1-btn-color] bg-[red] px-2  text-sm"
                             onClick={clearSignature}
                           >
                             Clear
@@ -1710,7 +1726,7 @@ const StaperForm: React.FC = () => {
                           }
                         /> */}
 
-                        <div className="grid grid-cols-2 gap-3 ">
+                        <div className="grid grid-cols-2 gap-3  border-2 border-alpha">
                           <div className="">
                             <SignatureCanvas
                               ref={sigPad}

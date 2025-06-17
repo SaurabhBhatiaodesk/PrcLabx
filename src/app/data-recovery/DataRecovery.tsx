@@ -91,29 +91,25 @@ const DataRecovery = () => {
       alt: "Repairs",
       title: `Photos and 
 Videos`,
-      hoverBackground:
-        "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
+      
     },
     {
       image: ContactsandMessages,
       alt: "Transparency",
       title: "Contacts and Messages",
-      hoverBackground:
-        "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
+     
     },
     {
       image: emaildocument,
       alt: "Recovery",
       title: "Document Files",
-      hoverBackground:
-        "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
+    
     },
     {
       image: PhysicallyDamagedDevices,
       alt: "B2B Services",
       title: "Data from Physically Damaged Devices",
-      hoverBackground:
-        "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
+     
     },
   ];
 

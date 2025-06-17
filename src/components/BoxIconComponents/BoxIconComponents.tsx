@@ -8,7 +8,7 @@ interface SectionData {
   image: string;
   alt: string;
   title: string;
-  hoverBackground: string;
+
 }
 
 interface BoxIconComponentsProps {
@@ -28,21 +28,15 @@ const BoxIconComponents: React.FC<BoxIconComponentsProps> = ({ data }) => {
             {data.map((section, index) => (
               <div
                 key={index}
-                style={{ background: "transparent" }} // Default background
-                className="p-[20px] rounded-[15px] border-2 border-prc shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] text-prc hover:text-primary"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = section.hoverBackground)
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "transparent")
-                }
+                className="border-[1.5px] rounded-md bg-prc lg:p-5 p-2 flex justify-center items-center hover:scale-105 transform translate-x-1 transition-all duration-300 ease-in-out"
+
               >
                 <div className="flex justify-center">
-                  <Image className="pb-2" src={section.image} alt={section.alt} />
+                  <Image className="pb-2 w-1/2" src={section.image} alt={section.alt} />
                 </div>
-                <h3 className=" xl:text-xl lg:w-[70%] m-auto">
+                <p className=" lg:text-base text-sm lg:w-[70%] m-auto text-primary">
                   {section.title}
-                </h3>
+                </p>
               </div>
             ))}
           </div>

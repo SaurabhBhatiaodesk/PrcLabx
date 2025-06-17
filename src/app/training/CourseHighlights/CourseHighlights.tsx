@@ -197,7 +197,7 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => (
       className={`p-2 lg:p-2 bg-primary text-secondary rounded-md ${course.textOrder ?? ""
         }`}
     >
-      <h2 className="text-3xl font-bold mb-4 w-fit text-secondary">
+      <h2 className="text-3xl font-bold mb-4 w-fit text-prc">
         {course.title}
         <svg
           className="relative top-full left-0"
@@ -222,7 +222,7 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => (
       </div>
 
       {course.description && (
-        <p className="text-base mb-3 text-black">{course.description}</p>
+        <p className="text-base mb-3 text-secondary">{course.description}</p>
       )}
 
       {course.features && (
@@ -246,7 +246,7 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => (
       {course.subTitle && <h3 className="mb-2">{course.subTitle}</h3>}
       {course.featuresHtml && (
         <div
-          className=""
+          className="text-secondary"
           dangerouslySetInnerHTML={{ __html: course.featuresHtml }}
         />
       )}
@@ -279,7 +279,7 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => (
 const CourseHighlights: FC = () => (
   <section className="py-4 lg:py-[20px]">
     <div className="container">
-      <MainHeading Heading="Our Mobile Phone Repair Courses" />
+      <MainHeading Heading="Our Mobile Phone Repair Courses"  svg_stroke="var(--alpha)" color="var(--prc)"/>
       {courses.map((c) => (
         <CourseCard key={c.id} course={c} />
       ))}

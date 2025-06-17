@@ -38,15 +38,10 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
           <div className="flex-col gap-2 flex">
             {points.map((point, index) => (
               <div key={index} className="flex items-start gap-3">
-                <Image
-                  src="/Images/icons/pointing-right.svg"
-                  alt="pointer"
-                  width={24}
-                  height={24}
-                />
+               
                 <div className="">
                   <p className="text-secondary">
-                    <span className="text-xl pb-[2px] text-tertiary font-semibold">
+                    <span className="text-xl pb-[2px] text-fourth font-semibold ">
                       {point.title}
                     </span>
 

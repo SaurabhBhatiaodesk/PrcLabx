@@ -34,8 +34,7 @@ const DataBox: React.FC = () => {
 
       title: `Screen Buy-Back Pricing`,
       description: `For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.`,
-      activecolor:
-        "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
+
       button: "See price",
     },
     {
@@ -43,8 +42,7 @@ const DataBox: React.FC = () => {
 
       title: "Data Recovery Pricing",
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
-      activecolor:
-        "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
+     
       button: "See price",
     },
     {
@@ -52,8 +50,7 @@ const DataBox: React.FC = () => {
 
       title: "General Repair Pricing",
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
-      activecolor:
-        "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
+     
       button: "See price",
 
     },
@@ -62,8 +59,7 @@ const DataBox: React.FC = () => {
 
       title: "DIY/Techcnian Damage Pricing",
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
-      activecolor:
-        "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
+      
       button: "See price",
     },
   ];
@@ -85,33 +81,23 @@ const DataBox: React.FC = () => {
             {sectionData.map((section, index) => (
               <div
                 key={index}
-                style={{
-                  background:
-                    pricingId === section.id
-                      ? `${section.activecolor} `
-                      : "transparent",
-                }}
-                className={`p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group ${pricingId === section.id ? "text-white" : "text-black"
+              
+              
+                className={`p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group "
                   }`}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = section.activecolor)
-                }
-                onMouseLeave={(e) =>
-                  pricingId !== section.id &&
-                  (e.currentTarget.style.background = "transparent")
-                }
+              
+              
                 onClick={() => PricetoggleMenu(section.id)}
               >
-                <h3 className="text-tertiary  xl:text-xl m-auto">
+                <h3 className="text-prc  xl:text-xl m-auto">
                   {section.title}
                 </h3>
-                <p className={`group-hover:text-primary ${pricingId === section.id ? "text-white" : "text-black"
-                  }`}>{section.description}</p>
+                <p className={` text-[17px]  leading-6`}>{section.description}</p>
                 <div className="w-[50%] m-auto">
                   {/* <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
                     {section.button}
                   </button> */}
-                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)}  color="var(--prc)"/>
+                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)}  color="bg-prc"/>
                 </div>
               </div>
             ))}
@@ -128,7 +114,7 @@ const DataBox: React.FC = () => {
 
 
                   <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
-                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                       <Image
                         src={recoverfirsr}
                         alt="Repairs for cracked"
@@ -138,7 +124,7 @@ const DataBox: React.FC = () => {
                         Recover photos, videos, contacts, and more.
                       </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                       <Image
                         className="w-[44px] h-[50px]"
                         src={Competitiveandupfrontpricing}
@@ -150,7 +136,7 @@ const DataBox: React.FC = () => {
                         physically damaged devices.
                       </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                    <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                       <Image
                         className="w-[44px] h-[50px]"
                         src={Transparentpricing}
@@ -162,8 +148,8 @@ const DataBox: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="px-[20px] py-[6px] border-[2px] rounded-[8px] bg-[rgba(157,156,152,0.83)] shadow-[5px_4px_28px_1px_#9d9c98] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] text-[18px] tracking-[1.5px] text-center">
-                  <strong className="text-tertiary"> Note: </strong> Data
+                <div className="my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
+                  <strong className="text-prc font-bold"> Note: </strong> Data
                   recovery services are subject to device condition. Please
                   refer to our terms for full details. If you choose LabX to fix
                   your dead device, it will be treated as a data recovery case.
@@ -178,7 +164,7 @@ const DataBox: React.FC = () => {
               <div className="KeyFeatures GeneralRepair">
                 <MainHeading Heading="   Key Features" />
                 <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
-                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                  <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                     <Image
                       src={Recoverphotos}
                       alt="Repairs for cracked"
@@ -190,7 +176,7 @@ const DataBox: React.FC = () => {
                       more.
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                  <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                     <Image
                       className="w-[44px] h-[50px]"
                       src={Specializedrecovery}
@@ -201,7 +187,7 @@ const DataBox: React.FC = () => {
                       Fast turnaround time for common repairs
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                  <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                     <Image
                       className="w-[44px] h-[50px]"
                       src={Competitiveandupfrontpricing}
@@ -222,7 +208,7 @@ const DataBox: React.FC = () => {
                   <MainTitle Title="This service is specifically for devices damaged during DIY or technician attempts." />
                 </div>
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5">
-                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                  <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                     <Image className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
                     <p className="lg:w-[70%] m-auto text-center text-primary">
                       Repairs for connector damage, bent connectors, fitting
@@ -230,7 +216,7 @@ const DataBox: React.FC = () => {
                       pads, and more.
                     </p>
                   </div>
-                  <div className="flex flex-col justify-center items-center bg-secondary rounded-xl lg:mx-3 py-3 lg:my-0 my-3">
+                  <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
                     <Image
                       className="w-[44px] h-[75px]"
                       src={completetherepair}

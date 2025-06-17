@@ -17,12 +17,22 @@ import jname from "../../public/Images/icons/E.png";
 import Nname from "../../public/Images/icons/N.png";
 import Sname from "../../public/Images/icons/S.png";
 import Aname from "../../public/Images/icons/A.png";
-import hname from"../../public/Images/icons/h.png";
+import hname from "../../public/Images/icons/h.png";
 import Googletest from "../../public/Images/icons/Googletest.svg";
 
-// import ServicesComponents from "@/components/ServicesComponents/ServicesComponents";
-import Storeproduct from "@/components/Storeproduct/Storeproduct";
+import sliderimg1 from "../../public/Images/slidercable.webp"
+import sliderimg2 from "../../public/Images/slidercamera.webp"
+import sliderimg3 from "../../public/Images/sliderchip.webp"
+
+import sliderimg4 from "../../public/Images/slidermotherboard.webp"
+import sliderimg5 from "../../public/Images/slidermobilechip.webp"
+import sliderimg6 from "../../public/Images/slidermotherboard.webp"
+import sliderimg7 from "../../public/Images/sliderphoneback.webp"
+import sliderimg8 from "../../public/Images/sliderphonelock.webp"
+
 import React from "react";
+import MasterPhone from "@/components/MasterPhone/MasterPhone";
+import Productswiper from "@/components/Storeproduct/Productswiper";
 export const metadata = {
   title: "Best Mobile Phone Repair Courses, Services & Training | PRC Repair",
   description: "PRC Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
@@ -30,11 +40,11 @@ export const metadata = {
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
     description: "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-    url: "/", 
+    url: "/",
     type: "website",
     images: [
       {
-        url: "", 
+        url: "",
         width: 1200,
         height: 630,
         alt: "PRC Tech Solutions Banner",
@@ -89,81 +99,128 @@ const accordionData = [
       "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
   },
 ];
- const reviewsData = [
-    {
-      name: "Liam Foster",
-      date: "September 12, 2023",
-      profileImage: hname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
-    },
-    {
-      name: "Emma Williams",
-      date: "September 12, 2023",
-      profileImage: rname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
-    },
-    {
-      name: "Jack O'Connor",
-      date: "September 12, 2023",
-      profileImage: Sname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
-    },
-    {
-      name: "Chloe Brown",
-      date: "October 5, 2023",
-      profileImage: jname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
-    },
-    {
-      name: "Oliver Harris",
-      date: "November 1, 2023",
-      profileImage: Aname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
-    },
-    {
-      name: "Sophie Clark",
-      date: "November 1, 2023",
-      profileImage: Nname,
-      logoImage: Googletest,
-      rating: 5,
-      param:
-        "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
-    },
-  ];
+const reviewsData = [
+  {
+    name: "Liam Foster",
+    date: "September 12, 2023",
+    profileImage: hname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "The course was incredibly detailed, and the hands-on practice helped me build confidence. The instructors were patient and knowledgeable, making even complex micro soldering techniques easy to understand.",
+  },
+  {
+    name: "Emma Williams",
+    date: "September 12, 2023",
+    profileImage: rname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "This course transformed my skills! I can now confidently repair motherboards and handle advanced micro soldering tasks. Highly recommend it for anyone serious about electronics repair.",
+  },
+  {
+    name: "Jack O'Connor",
+    date: "September 12, 2023",
+    profileImage: Sname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "The one-week intensive program was perfect. I learned advanced diagnostics and component replacement with expert guidance. The hands-on approach made everything clear and practical. Excellent experience!",
+  },
+  {
+    name: "Chloe Brown",
+    date: "October 5, 2023",
+    profileImage: jname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "Fantastic course! The instructors were highly experienced, and their step-by-step guidance on micro soldering was invaluable. I feel ready to handle complex motherboard repairs now. ",
+  },
+  {
+    name: "Oliver Harris",
+    date: "November 1, 2023",
+    profileImage: Aname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "The training exceeded my expectations. From using advanced tools to mastering micro soldering techniques, I gained practical skills that I can apply immediately. Great value for time and money!",
+  },
+  {
+    name: "Sophie Clark",
+    date: "November 1, 2023",
+    profileImage: Nname,
+    logoImage: Googletest,
+    rating: 5,
+    param:
+      "A must-attend course for repair professionals. The small class size allowed personalized attention, and the hands-on exercises helped me master motherboard repairs quickly. Truly worth every minute!",
+  },
+];
+const slideData = [
+  {
+    src: sliderimg1,
+    alt: "Charging Port",
+    Product: "Charging Port"
+  },
+  {
+    src: sliderimg2,
+    alt: "Cameras",
+    Product: "Cameras"
+  },
+  {
+    src: sliderimg3,
+    alt: "ICs/ Chips",
+    Product: "ICs/ Chips"
+  },
+  {
+    src: sliderimg4,
+    alt: "PS5 IC/ Parts",
+    Product: "PS5 IC/ Parts"
+  },
+  {
+    src: sliderimg5,
+    alt: "Motherboard Component Connect",
+    Product: "Motherboard Component Connect"
+  },
+  {
+    src: sliderimg6,
+    alt: "Tools/ Stencils",
+    Product: "Tools/ Stencils"
+  },
+  {
+    src: sliderimg7,
+    alt: "Back Glass",
+    Product: "Back Glass"
+  },
+  {
+    src: sliderimg8,
+    alt: "Screens",
+    Product: "Screens"
+  },
+];
 const page = () => {
   return (
     <div>
       <MainBanner />
-      <Devicequote/>
+      <Devicequote />
       {/* <DeliveryTous/> */}
-      <ShipDeviceUs/>
-      <Storeproduct/>
-      <DataRecovery/>
+      <ShipDeviceUs />
+
+      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)" />
+      <DataRecovery />
+      <MasterPhone />
+      <Productswiper slideData={slideData} Heading="China Warehouse, Global Flow" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="" color="var(--fourth)" />
+
       <WhyChooseLabX />
       <FixLabx />
-       <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Review"/>
-      <RecentNews/>
-      <YouTubeHome/>
+
+      <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
+      <RecentNews />
+      <YouTubeHome />
       {/* <OurClient /> */}
-      <AskusQuestion accordionData={accordionData}  
-      faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
-      faqbg_color="bg-[#FEF6FF]"
-      faq="Most People Ask us These Questions"/>
+      <AskusQuestion accordionData={accordionData}
+        faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
+        faqbg_color="bg-[#FEF6FF]"
+        faq="Most People Ask us These Questions" />
     </div>
   );
 };

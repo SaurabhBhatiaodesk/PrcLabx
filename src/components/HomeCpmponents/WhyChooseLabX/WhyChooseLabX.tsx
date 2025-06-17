@@ -77,10 +77,8 @@ const WhyChooseLabX: React.FC = () => {
             {sectionData.map((section, index) => (
               <div
                 key={index}
-                style={{ background: "transparent" }} // Default background
-                className="xl:p-[15px]  p-2 rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#00303e73] transition-shadow duration-300 flex flex-col justify-center gap-1 hover:shadow-[0_0_20px_10px_#00303e73] group"
-                onMouseEnter={(e) => e.currentTarget.style.background = section.hoverBackground}
-                onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
+                className="xl:p-[15px]  p-2 rounded-[15px] border-2  shadow-lg shadow-[#00303e73] transition-shadow duration-300 flex flex-col justify-center gap-1 "
+               
               >
                 <div className="flex justify-center">
                   <Image className="pb-2 w-[60px]" src={section.image} alt={section.alt} />

@@ -11,7 +11,7 @@ const DataStarted = () => {
   return (
     <>
       <section className="container py-8 lg:py-4">
-        <MainHeading Heading="How to Get Started"/>
+        <MainHeading Heading="How to Get Started" svg_stroke="var(--alpha)" color="var(--prc)"/>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-10  lg:p-4 p-1 items-center">
           <div>
             {" "}
