@@ -49,10 +49,9 @@ export default function App() {
   const MailRepair = () => {
     sessionStorage.setItem("repairType", "mail-in-repair");
   };
- useEffect(() => {
-   
- console.log("isMenuOpen", isMenuOpen)
- }, [])
+  useEffect(() => {
+    console.log("isMenuOpen", isMenuOpen);
+  }, []);
   return (
     <>
       <Marquee
@@ -61,7 +60,11 @@ export default function App() {
         marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing"
       />
       <div className="t">
-        <Navbar className="text-secondary bg-primary h-20 " isBordered maxWidth="2xl" >
+        <Navbar
+          className="text-secondary bg-primary h-20 "
+          isBordered
+          maxWidth="2xl"
+        >
           <NavbarContent
             className="lg:hidden"
             id="nav-toggle"
@@ -71,7 +74,6 @@ export default function App() {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             /> */}
             {isMenuOpen ? (
-
               <button className=" w-[30px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-secondary">
                 {" "}
                 <TbMenu2 fontSize={24} height={19} />{" "}
@@ -86,27 +88,20 @@ export default function App() {
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
               <div className="navmenu flex items-center justify-between ">
-              
-                 
-                    <Link href="/">
-                      <Image
-                        src={newlogo}
-                        width={200}
-                        height={200}
-                        alt="Brand Logo"
-                        className="logo_LabX w-[60px]"
-                      />
-                    </Link>
-              
+                <Link href="/">
+                  <Image
+                    src={newlogo}
+                    width={200}
+                    height={200}
+                    alt="Brand Logo"
+                    className="logo_LabX w-[60px]"
+                  />
+                </Link>
 
-                <div className="flex gap-[6px] relative cardicon">
-                  <Link
-                    className="showmobile hover:scale-110 transition-transform duration-200"
-                    href="tel:+61455777077"
-                  >
-                    <IoIosCart fontSize={26} />
-                  </Link>
+                <div className="md:hidden cardicon">
+                 <MainButton MainButton="Read More" color="bg-prc" />
                 </div>
+                
                 <ProfessionalMegaMenu />
                 <div className="block lg:hidden">
                   <div
@@ -117,128 +112,117 @@ export default function App() {
                   >
                     <ul className="menu menu-horizontal px-1 flex items-center space-y-2 mt-2">
                       <li>
-                        <div className="dropdowns services_drop inline-block relative">
-                          <button
-                            className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
-                            onClick={toggleDropdown}
+                        <div className="">
+                          <Link
+                            href="/training"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
                           >
-                            <span className="mr-1">Services</span>
-                            <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
-                          </button>
-                          {isDropdownOpen && (
-                            <ul className="dropdown-menus  hidden text-prc  pt-1">
-                              <Link
-                                href="/training"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                            Training{" "}
+                          </Link>
+                          <Link
+                            href="/b2b-repair-services"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
-                              >
-                                Training{" "}
-                              </Link>
-                              <Link
-                                href="/b2b-repair-services"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          >
+                            B2B Repair{" "}
+                          </Link>
+                          <Link
+                            href="/ps5-repair"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
-                              >
-                                B2B Repair{" "}
-                              </Link>
-                              <Link
-                                href="/ps5-repair"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          >
+                            PS5 Repair
+                          </Link>
+                          <Link
+                            href="/screen-refurbishing"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
-                              >
-                                PS5 Repair
-                              </Link>
-                              <Link
-                                href="/screen-refurbishing"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          >
+                            Screen Refurbishment{" "}
+                          </Link>
+                          <Link
+                            href="/data-recovery"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
-                              >
-                                Screen Refurbishment{" "}
-                              </Link>
-                              <Link
-                                href="/data-recovery"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                                Data Recovery{" "}
-                              </Link>
-                              <div
-                                className='flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          >
+                            Data Recovery{" "}
+                          </Link>
+                          <div
+                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"'
-                              >
-                                <span
-                                  className="
+                          >
+                            <span
+                              className="
                   "
-                                >
-                                  Parts Store{" "}
-                                </span>
-                                <span className="text-white">
-                                  <Image
-                                    src={commingsoon}
-                                    width={20}
-                                    height={20}
-                                    alt=""
-                                  />
-                                </span>
-                              </div>
+                            >
+                              Parts Store{" "}
+                            </span>
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={20}
+                                height={20}
+                                alt=""
+                              />
+                            </span>
+                          </div>
 
-                              <div
-                                className='flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          <div
+                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"'
-                              >
-                                <span
-                                  className="
+                          >
+                            <span
+                              className="
                   "
-                                >
-                                  Repair Form{" "}
-                                </span>
-                                <span className="text-white">
-                                  <Image
-                                    src={commingsoon}
-                                    width={20}
-                                    height={20}
-                                    alt=""
-                                  />
-                                </span>
-                              </div>
+                            >
+                              Repair Form{" "}
+                            </span>
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={20}
+                                height={20}
+                                alt=""
+                              />
+                            </span>
+                          </div>
 
-                              <div
-                                className='flex justify-between items-center px-[5px] py-2  text-sm font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                          <div
+                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"'
-                              >
-                                <span
-                                  className="
+                          >
+                            <span
+                              className="
                   "
-                                >
-                                  Repair Solutions{" "}
-                                </span>
-                                <span className="text-white">
-                                  <Image
-                                    src={commingsoon}
-                                    width={20}
-                                    height={20}
-                                    alt=""
-                                  />
-                                </span>
-                              </div>
-                            </ul>
-                          )}
+                            >
+                              Repair Solutions{" "}
+                            </span>
+                            <span className="text-white">
+                              <Image
+                                src={commingsoon}
+                                width={20}
+                                height={20}
+                                alt=""
+                              />
+                            </span>
+                          </div>
                         </div>
                       </li>
                       <li>
                         <div className="dropdowns services_drop inline-block relative">
                           <button
-                            className="flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
+                            className="flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
                             onClick={toggleDropdown}
                           >
                             <span className="mr-1">About us</span>
@@ -249,7 +233,7 @@ export default function App() {
                               <Link
                                 href="/about-us"
                                 onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
                               >
@@ -258,7 +242,7 @@ export default function App() {
                               <Link
                                 href="/what-we-do"
                                 onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
                               >
@@ -267,11 +251,47 @@ export default function App() {
                               <Link
                                 href="/blogs"
                                 onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-sm font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
                   '
                               >
                                 Blogs{" "}
+                              </Link>
+                                   <Link
+                                href="/faq"
+                                onClick={toggleMenu}
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
+                              >
+                                Faq{" "}
+                              </Link>
+                                   <Link
+                                href="/Trademark_Disclaimer"
+                                onClick={toggleMenu}
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
+                              >
+                              Trademark Disclaimer{" "}
+                              </Link>
+                                  <Link
+                                href="/Warranty_and_Terms"
+                                onClick={toggleMenu}
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
+                              >
+                              Warranty And Terms{" "}
+                              </Link>
+                                      <Link
+                                href="/Shipping_Policy"
+                                onClick={toggleMenu}
+                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
+                              >
+                             Shipping Policy{" "}
                               </Link>
                             </ul>
                           )}
@@ -282,7 +302,7 @@ export default function App() {
                     <div className="lg:hidden block">
                       <div className=" flex gap-3 mt-5 justify-start pt-3">
                         <Link
-                          href="https://www.facebook.com/profile.php?id=61568955864034"
+                          href="https://www.facebook.com/prcrepair122/"
                           target="blank"
                         >
                           <SlSocialFacebook
@@ -291,7 +311,7 @@ export default function App() {
                           />
                         </Link>
                         <Link
-                          href="https://www.instagram.com/labxrepair/"
+                          href="https://www.instagram.com/prc.repair/"
                           target="blank"
                         >
                           <FaInstagram
@@ -299,14 +319,14 @@ export default function App() {
                             fontSize={30}
                           />
                         </Link>
-                        <Link href="https://x.com/LabxRepair" target="blank">
+                        <Link href="https://x.com/prc_repair" target="blank">
                           <FaXTwitter
                             className="hover:scale-110 transition-transform duration-200"
                             fontSize={30}
                           />
                         </Link>
                         <Link
-                          href="https://www.youtube.com/@PRCRepair"
+                          href="https://www.youtube.com/channel/UClA97i8j5HkTHcK5pgCtpBw"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -315,7 +335,7 @@ export default function App() {
                             fontSize={30}
                           />
                         </Link>
-                        <Link
+                        {/* <Link
                           href="https://www.tiktok.com/@labxrepair"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -324,7 +344,7 @@ export default function App() {
                             className="hover:scale-110 transition-transform duration-200"
                             fontSize={30}
                           />
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>

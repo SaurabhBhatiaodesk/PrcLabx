@@ -10,6 +10,7 @@ import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
+import mailinrepairbg from "../../../public/Images/mailinrepairbg.png";
 
 import Textarea from "@mui/joy/Textarea";
 import { FormControlLabel, Modal, Radio, TextField } from "@mui/material";
@@ -22,6 +23,7 @@ import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { ReactCanvasPatternLock } from "react-canvas-pattern-lock";
+
 // import PatternLock from "react-pattern-lock";
 
 type Errors = {
@@ -664,14 +666,15 @@ const StaperForm: React.FC = () => {
         </div>
       )}
 
-      <section className="steper-form-section-os">
+      <section className="steper-form-section-os" style={{ backgroundImage: `url(${mailinrepairbg.src})` }} // Using .src here
+                      >
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading
               Heading={`${pathname === "/mail-in-repair"? "PRC Mail-In Repair Submission Form": pathname === "/data-recovery"? "PRC data-recovery Submission Form": "PRC PS5 Repair Submission Form" }`
               
               }
-              color="var(--prc)"
+              color="var(--primary)"
               svg_stroke="var(--alpha)"
             />
           </div>
@@ -681,7 +684,7 @@ const StaperForm: React.FC = () => {
             className="max-w-5xl mx-auto lg:p-4 "
             id="stapergk"
           >
-            <div className="grid grid-cols-2 mb-8  relative gaurav-line">
+            <div className="grid grid-cols-2 mb-8  relative text-primary">
               {["Personal Details", "Repair Details"].map((step, index) => (
                 <div
                   key={index}
@@ -721,7 +724,7 @@ const StaperForm: React.FC = () => {
           <div className="">
             {activeStep === 0 && (
               <>
-                <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]">
+                <div className="grid md:grid-cols-2 gap-[20px] py-2 lg:py-8 border-y-[1px] border-[#81818175]" >
                   <div className="hidden md:block">
                     <div className="relative w-full h-full block pb-[61%]">
                       <Image
@@ -733,8 +736,8 @@ const StaperForm: React.FC = () => {
                   </div>
                   <div>
                     <div className="">
-                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-4 bg-primary text-secondary">
-                        <h4 className="lg:text-lg text-sm">Personal Details</h4>
+                      <div className="flex flex-col xl:gap-4 lg:gap-3 gap-4  text-secondary">
+                        <h4 className="lg:text-lg text-sm text-primary">Personal Details</h4>
 
                         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 form-label">
                           {/* Business Name (Optional) */}
@@ -1232,7 +1235,7 @@ const StaperForm: React.FC = () => {
                       <div className=" ">
                         <div>
                           <div className="">
-                            <div className="flex flex-col gap-4 bg-primary text-secondary">
+                            <div className="flex flex-col gap-4  text-secondary">
                               {/* Description of Issue */}
                               <div className="mt-2 ">
                                 <Textarea

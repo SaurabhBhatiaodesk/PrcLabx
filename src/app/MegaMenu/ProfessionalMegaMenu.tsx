@@ -396,9 +396,9 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 >
                   <Link
                     href={`/brands/${item.alias}`}
-                    className={` flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
+                    className={` flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
                         ? "bg-[#122d37] text-white shadow-md"
-                        : "text-gray-700 hover:text-white"
+                        : "text-secondary hover:text-white"
                       }`}
                   >
                     {item.title}
@@ -418,7 +418,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 onMouseEnter={() => setIsDropdownVisible(true)}
                 onMouseLeave={() => setIsDropdownVisible(false)}
               >
-                <button className="flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
+                <button className="flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
                   Other Brands
                   <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                 </button>
@@ -449,7 +449,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 <ul className="menu menu-horizontal px-1 flex items-center space-x-1">
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">Services</span>
                       </button>
 
@@ -526,7 +526,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
                       </button>
 

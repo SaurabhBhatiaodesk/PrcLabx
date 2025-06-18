@@ -70,10 +70,10 @@ export default function MainBanner() {
       >
         <div className="container grid grid-cols-1 lg:grid-cols-2 lg:py-5 py-3">
           <div>
-            <div className="mb-4 lg:mt-[0] mt-[0px] relative">
+            <div className="mb-4 lg:mt-[0] mt-[0px] relative ">
               <Link href="/training">
                 <button
-                  className="text-black px-[20px] py-[6px] border-[3px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_#B2F5EA] text-[18px] tracking-[1.5px] relative top-6"
+                  className="text-black px-[20px] py-[6px] border-[3px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_#B2F5EA] text-[18px] tracking-[1.5px] relative top-6 md:m-0 mb-7"
                   style={{ transform: "rotate(354deg)" }} // Equivalent to -5deg (360 - 5)
                 >
                   Need Training?

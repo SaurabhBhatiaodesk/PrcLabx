@@ -87,8 +87,8 @@ export default function Productswiper({ slideData, Heading, Title, svg_stroke, c
           breakpoints={{
             320: { slidesPerView: 2 },
             450: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 4 },
             1440: { slidesPerView: 5 },
             1600: { slidesPerView: 7 },
           }}

@@ -89,8 +89,8 @@ export default function ShipDeviceUs() {
           breakpoints={{
             320: { slidesPerView: 2 },
             450: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 4 },
             1440: { slidesPerView: 4 },
 
           }}
@@ -108,7 +108,6 @@ export default function ShipDeviceUs() {
                     <p className="text-primary font-semibold lg:text-3xl md:2xl text-sm">{slide.Product}</p>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                  
                   </div>
                 </div>
 

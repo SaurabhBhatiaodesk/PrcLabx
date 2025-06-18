@@ -138,7 +138,7 @@ console.log("slugArrayslugArray",slugArray);
           {isSidebarOpen && (
             <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
               <aside
-                className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl "
+                className={`lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl`}
               >
                 <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
                   Select Brands
