@@ -17,6 +17,7 @@ import sliderimage2 from "../../../../public/Images/young.webp"
 import sliderimage3 from "../../../../public/Images/digital.webp"
 import sliderimage4 from "../../../../public/Images/closeup.webp"
 import sliderimage5 from "../../../../public/Images/specialistlast.webp"
+import backsv  from "../../../../public/Images/backsv.svg" 
 
 export default function ShipDeviceUs() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -61,7 +62,14 @@ export default function ShipDeviceUs() {
   ];
 
   return (
-    <div className="lg:py-4 py-3 " style={{ background: 'radial-gradient(circle, rgb(178, 245, 234) -41%, rgb(3, 9, 11) 56%)' }}>
+<div
+  className="lg:py-4 py-3"
+  style={{
+    backgroundImage: `url(${backsv.src})`,
+     backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  }}
+>
       <div className="container">
         <div className="">
           <MainHeading Heading="Ship Your Device To Us" color="#00BC9D" svg_stroke="var(--primary)" />
@@ -97,16 +105,18 @@ export default function ShipDeviceUs() {
                     alt={slide.Product}
                   />
                   <div className="absolute inset-0 bg-secondary bg-opacity-40 opacity-0 group-hover:opacity-75 transition-all duration-300 flex justify-center items-center rounded-[10px]">
-                    <p className="text-primary font-semibold text-lg">{slide.Product}</p>
+                    <p className="text-primary font-semibold lg:text-3xl md:2xl text-sm">{slide.Product}</p>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    {/* <Link href={slide.linking} >
-      Learn More
-    </Link> */}
+                  
                   </div>
                 </div>
 
               </Link>
+<div className="mt-3 flex justify-start items-center gap-2 text-tertiary  text-lg hover:text-white">
+  <Link href={slide.linking} className=" " >Learn More</Link>
+  <IoIosArrowRoundForward  className="" fontSize={35}/>
+</div>
             </SwiperSlide>
           ))}
         </Swiper>

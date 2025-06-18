@@ -316,3 +316,13 @@ h3.text-sm.htmleditor span {
 
 
 }
+.scrollbar::-webkit-scrollbar {
+  width: 1px;
+  display: none;
+  background-color: #F5F5F5;
+}
+
+.scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}

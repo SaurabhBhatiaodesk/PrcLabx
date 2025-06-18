@@ -22,6 +22,7 @@ import { IoIosCart } from "react-icons/io";
 
 import newlogo from "../../../public/Images/prclogo.png";
 const Footer = () => {
+  
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
   const [loading, setLoading] = useState(false); // To track loading state
@@ -96,7 +97,11 @@ const Footer = () => {
   const handleToastHide = () => {
     setToast(null); // Reset the toast state
   };
-
+  const scrollTotop = () => {
+  // Scroll to the top with smooth behavior
+  window.scrollTo({ top: 0, behavior: "smooth" });
+ 
+};
   return (
     <div className="bg-prc">
       <div className="container">
@@ -619,7 +624,8 @@ const Footer = () => {
           </section>
         </div>
       </div>
-      <Image className="p-3 fixed right-0 bottom-0 z-50" src={homespinner} alt="homespinner" />
+      <Image className="p-3 fixed right-0 bottom-0 z-50 lg:block hidden cursor-pointer "  onClick={scrollTotop} src={homespinner} alt="homespinner" />
+
     </div>
   );
 };

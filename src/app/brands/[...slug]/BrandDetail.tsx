@@ -19,11 +19,23 @@ const BrandDetailPage: React.FC = () => {
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
+   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+    const [activeTabData, setActiveTabData] = useState();
 
+
+   console.log("isLastItemClicked>>>::",isLastItemClicked);
+   
   // State for mobile detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // Detect if the device is mobile, only after the component is mounted
+
+  useEffect(() => {
+    // if (tabs && activeTab !== undefined) {
+    //   const matchedTab = tabs?.find((tab:any) => tab?.id === activeTab);
+    //   setActiveTabData(matchedTab);
+    // }
+  }, [tabs, activeTab]);
   useEffect(() => {
     if (typeof window !== "undefined") { // Check if window is available (client-side)
       const handleResize = () => {
@@ -49,6 +61,7 @@ const BrandDetailPage: React.FC = () => {
   // Build slugArray by stripping "/brands" and splitting the rest
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
+console.log("slugArrayslugArray",slugArray);
 
   // Fetch brands data from API
   useEffect(() => {
@@ -57,6 +70,7 @@ const BrandDetailPage: React.FC = () => {
         const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
         const slugPath = slugArray.length > 0 ? slugArray.join("/") : ""; // Create slugPath
         const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}`; // Construct the endpoint for slug-based API
+        console.log("tab>>>>>",slugApi);
 
         // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
         let baseData: any = JSON.parse(
@@ -116,15 +130,15 @@ const BrandDetailPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="mb-2">
       <Strip title="Repair Prices" />
-      <div className="flex min-h-screen bg-white max-w-[1920px] mx-auto border-b border-[#122d37]">
+      <div className={`flex min-h-screen bg-white max-w-[1920px]  mx-auto  border-b border-[#122d37] ${isSidebarOpen ? "gap-5 m-3" : "gap-0"}`}>
         {/* Sidebar */}
         <div className="relative">
           {isSidebarOpen && (
             <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
               <aside
-                className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar-custom"
+                className="lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl "
               >
                 <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
                   Select Brands
@@ -146,7 +160,7 @@ const BrandDetailPage: React.FC = () => {
               </aside>
               <button
                 onClick={() => setIsSidebarOpen((prev) => !prev)}
-                className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-4 right-[1rem] z-10"
+                className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-2 right-[1rem] z-10 border-prc"
               >
                 <IoIosArrowForward
                   className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
@@ -159,9 +173,9 @@ const BrandDetailPage: React.FC = () => {
 
         {/* Main Content */}
         <main
-          className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px]  " : " pt-[10px]"}`}
+          className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px] rounded-xl " : " pt-[10px]"}`}
         >
-          <div className="md:pl-3 pl-2">
+          <div className="md:pl-6 pl-2">
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
               className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
@@ -206,6 +220,10 @@ const BrandDetailPage: React.FC = () => {
             <Pdp
               pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
               tabs={tabs}
+              activeTab={activeTab}
+               setActiveTab={setActiveTab}
+               slugData={slugData}
+               setSlugData={setSlugData}
             />
           )}
         </main>

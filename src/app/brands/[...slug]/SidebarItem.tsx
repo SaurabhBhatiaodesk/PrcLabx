@@ -43,14 +43,19 @@ const SidebarItem: React.FC<{
 
   // Function to recursively map over items (data or products)
   const renderChildItems = (items: any[], parentHref: string) => {
+    console.log(items, 'items>>>>', parentHref, "parentHref")
     setTabs(items);
     const lastSegment = pathname.split("/").pop(); // Get the last part of the URL (slugMatch)
+    console.log(lastSegment, 'lastSegment>>>>')
+
     // Check if there are no nested arrays and if the alias matches the last segment of the URL
     const hasNestedArrays = items.some(
       (child: any) => Array.isArray(child.data) || Array.isArray(child.products)
     );
+    console.log(hasNestedArrays,'hasNestedArrayshasNestedArrays')
     const slugMatch = items.some((child: any) => child.alias === lastSegment); // Check if alias matches last segment of URL
 
+    console.log(slugMatch,'slugMatchslugMatch')
     // If no nested arrays and slug matches, set the state to true
     if (!hasNestedArrays && slugMatch) {
       setIsLastItemClicked(true);
@@ -92,7 +97,7 @@ const SidebarItem: React.FC<{
         onClick={handleCategoryClick} // Handle category click
       >
         <Link href={href} className="flex-1 truncate font-semibold">
-          {item.title}
+          {item.title} 
         </Link>
         {hasChildren && (
           <span

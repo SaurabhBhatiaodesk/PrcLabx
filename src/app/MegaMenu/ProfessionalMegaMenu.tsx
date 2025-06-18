@@ -63,60 +63,15 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
     if (isHovered && submenuRef.current && itemRef.current) {
       const itemRect = itemRef.current.getBoundingClientRect();
       const submenu = submenuRef.current;
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const submenuWidth = 240; // Consistent width for independent submenus
-      const submenuHeight = submenu.scrollHeight; // Actual height of the submenu content
-
+      
       // Reset positioning styles
       submenu.style.left = "";
-      submenu.style.right = "";
       submenu.style.top = "";
-      submenu.style.bottom = "";
-
-      // Horizontal positioning: Try right, then left
-      const spaceOnRight = viewportWidth - itemRect.right;
-      const spaceOnLeft = itemRect.left;
-
-      if (spaceOnRight >= submenuWidth) {
-        // Position to the right of the parent item
-        submenu.style.left = `${itemRect.right + 2}px`; // 2px gap
-        submenu.style.right = "auto";
-      } else if (spaceOnLeft >= submenuWidth) {
-        // Position to the left of the parent item
-        submenu.style.left = `${itemRect.left - submenuWidth - 2}px`; // 2px gap
-        submenu.style.right = "auto";
-      } else {
-        // Fallback: position within viewport if not enough space on either side
-        // This might overlap the parent, but ensures visibility
-        submenu.style.left = `${Math.max(
-          0,
-          viewportWidth - submenuWidth - 8
-        )}px`;
-        submenu.style.right = "auto";
-      }
-
-      // Vertical positioning: Align with parent item's top, or adjust if off-screen
-      const spaceBelow = viewportHeight - itemRect.top;
-      const spaceAbove = itemRect.bottom;
-
-      if (spaceBelow >= submenuHeight) {
-        // Align top with parent item
-        submenu.style.top = `${itemRect.top}px`;
-        submenu.style.bottom = "auto";
-      } else if (spaceAbove >= submenuHeight) {
-        // Align bottom with parent item
-        submenu.style.top = `${itemRect.bottom - submenuHeight}px`;
-        submenu.style.bottom = "auto";
-      } else {
-        // Fallback: center vertically in viewport
-        submenu.style.top = `${Math.max(
-          8,
-          (viewportHeight - submenuHeight) / 2
-        )}px`;
-        submenu.style.bottom = "auto";
-      }
-
+      
+      // Position the submenu directly to the right of the parent item
+      submenu.style.left = `${itemRect.right - 12}px`; // 2px gap from parent item
+      submenu.style.top = `${itemRect.top - 40}px`; // Align top with parent item
+      
       // Ensure submenu is fixed position relative to viewport
       submenu.style.position = "fixed";
     }
@@ -124,29 +79,31 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
   return (
     <div ref={itemRef} className="relative group/nested">
-      <Link
-        href={`/brands/${itemPath}`}
-        className={`flex items-center justify-between px-3 py-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-l-[#122d37] hover:bg-gray-50 ${isActivePath(item.alias)
-            ? "bg-[#122d37] text-white border-l-[#122d37]"
-            : "text-gray-700 hover:text-[#122d37]"
-          }`}
-        onMouseEnter={() => onMouseEnter(itemId, level)}
-        onMouseLeave={() => onMouseLeave(level + 1)}
-      >
-        <span className="flex-1 truncate pr-2 font-medium">{item.title}</span>
-        {hasChildren(item) && (
-          <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transition-transform duration-200 group-hover/nested:translate-x-1" />
-        )}
-      </Link>
+   <Link
+  href={`/brands/${itemPath}`}
+  className={`group flex items-center justify-between p-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent 
+    ${isActivePath(item.alias)
+      ? "bg-[#122d37] text-white border-l-[#122d37]"
+      : "text-gray-700 hover:text-[#122d37] hover:bg-gray-50 hover:border-l-[#122d37]"
+    }`}
+  onMouseEnter={() => onMouseEnter(itemId, level)}
+  onMouseLeave={() => onMouseLeave(level + 1)}
+>
+  <span className="flex-1 truncate pr-2 font-medium transition-all duration-300 ease-in-out">{item.title}</span>
+
+  {hasChildren(item) && (
+    <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transform transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+  )}
+</Link>
+
 
       {/* Independent nested submenu - appears as a separate dropdown */}
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className="bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 max-h-80 overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 max-h-80 overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
-         
             boxShadow:
               "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
@@ -353,7 +310,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
           {/* Enhanced Grid Layout with perfect spacing */}
           <div
-            className="grid gap-4"
+            className="grid"
             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
           >
             {Array.from({ length: columns }, (_, colIndex) => {
@@ -390,7 +347,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
             <Link
               href={`/brands/${parentItem.alias}`}
-              className=" inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className=" inline-flex items-center p-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               View All {parentItem.title} Products
               <IoChevronForward className="ml-2 text-sm" />

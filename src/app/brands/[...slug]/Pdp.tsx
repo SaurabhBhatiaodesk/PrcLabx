@@ -11,14 +11,17 @@ import Link from "next/link";
 import FaqComponent from "./FaqComponent";
 import Strip from "@/components/Strip/Strip";
 
-const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
+const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, slugData: any, setSlugData: any }> = ({
   pdpDetail,
   tabs,
+  activeTab, setActiveTab, slugData, setSlugData
 }) => {
+  console.log("slugData>>", pdpDetail);
+
   const pathname = usePathname();
   const router = useRouter();
   const [popop, setPopop] = useState(false);
-  const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+  // const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   const [selectedPart, setSelectedPart] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [defaultSelectedPart, setDefaultSelectedPart] = useState<any>(null); // Ensure this is `any` to allow object structure\
@@ -61,19 +64,54 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   // Set the active tab when the component mounts or pathname changes
   useEffect(() => {
     const lastSegment = pathname.split("/").pop(); // Get the last segment from the path
-    const tab = tabs.find((tab: any) => tab.alias === lastSegment);
+    const tab = tabs?.find((tab: any) => tab.alias === lastSegment);
     if (tab) {
       setActiveTab(tab.id.toString()); // Set the active tab based on the slug in the URL
     }
   }, [pathname, tabs]);
 
   // Function to handle tab click and update the URL
-  const handleTabClick = (tab: any) => {
-    setActiveTab(tab.id.toString());
-    // Update the URL to reflect the clicked tab's alias
-    const pathWithoutLastSegment = pathname.split("/").slice(0, -1).join("/");
-    const newUrl = `${pathWithoutLastSegment}/${tab.alias}`;
-    router.push(newUrl); // Replace the last segment without appending
+  // const handleTabClick = (tab: any) => {
+  //   console.log("tab>>>>>",tab,slugData);
+
+  //   setActiveTab(tab.id);
+
+  //   // Update the URL to reflect the clicked tab's alias
+  //   const pathWithoutLastSegment = pathname.split("/").slice(0, -1).join("/");
+  //   const newUrl = `${pathWithoutLastSegment}/${tab.alias}`;
+  //   console.log("tab>>>>>",pathWithoutLastSegment,pathWithoutLastSegment);
+
+  //   router.push(newUrl); // Replace the last segment without appending
+  // };
+  const handleTabClick = async (tab: any) => {
+    console.log("tab>>>>>", tab);
+
+    setActiveTab(tab.id);
+    const slugArray =
+      pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
+
+    const modifiedSlugArray = slugArray.slice(0, -1); // remove last segment (screen-repair)
+    const slugPath = modifiedSlugArray.join("/"); // join back to string
+
+    const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}/${tab.alias}`;
+
+
+    const resSlug = await fetch(slugApi);
+    if (!resSlug.ok) {
+      throw new Error(`HTTP error! status: ${resSlug.status}`);
+    }
+    const slugEndpointData = await resSlug.json();
+
+    console.log(slugEndpointData, "slugEndpointData");
+
+    setSlugData(slugEndpointData);
+    // // Remove the last segment from the current path
+    // const pathWithoutLastSegment = pathname.split("/").slice(0, -1).join("/");
+    // const newUrl = `${pathWithoutLastSegment}/${tab.alias}`;
+
+    // console.log("newUrl >>>>>", newUrl); // ✅ This will now show full path with alias
+
+    // router.push(newUrl); // Update the URL
   };
 
   // Check if the image exists in pdpDetail, otherwise use a fallback static image
@@ -115,7 +153,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
   };
   return (
     <>
-  
+
       <div className="bg-[#FFF5EB] relative">
         <div className=" rounded-lg md:p-6  max-w-6xl mx-auto p-3">
           {/* Header */}
@@ -126,15 +164,14 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 
           {/* Tabs */}
           <div className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-2 mb-3">
-            {tabs.map((tab: any) => (
+            {tabs?.map((tab: any) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabClick(tab)}
-                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${
-                  activeTab === tab.id.toString()
-                    ? "bg-tertiary  text-black border-b-0 text-[11px]"
-                    : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
-                }`}
+                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTab === tab.id.toString()
+                  ? "bg-tertiary  text-black border-b-0 text-[11px]"
+                  : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
+                  }`}
               >
                 {tab.title}
               </button>
@@ -161,36 +198,39 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
 
               {/* Part Options */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                {pdpDetail.map((part: any) => {
-                  const isSelectedPart = isSelected(part);
+                {pdpDetail.length > 0 && (
+                  <>
+                    {pdpDetail?.map((part: any) => {
+                      const isSelectedPart = isSelected(part);
 
-                  return (
-                    <div
-                      key={part.id}
-                      onClick={() => handleParClick(part)}
-                      className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${
-                        isSelectedPart
-                          ? "bg-tertiary  border-prc"
-                          : "bg-white border-gray-300 hover:border-purple-400"
-                      }`}
-                    >
-                      <div>
-                        <h3 className="mdd:text-sm text-xs font-medium text-black">
-                          {part.title}
-                        </h3>
-                      </div>
-                      <div className="mt-1">
-                        <span
-                          className={`text-base font-semibold ${
-                            isSelectedPart ? "text-prc" : "text-prc"
-                          }`}
+                      return (
+                        <div
+                          key={part.id}
+                          onClick={() => handleParClick(part)}
+                          className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${isSelectedPart
+                            ? "bg-tertiary  border-prc"
+                            : "bg-white border-gray-300 hover:border-purple-400"
+                            }`}
                         >
-                          {part.price_range}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
+                          <div>
+                            <h3 className="mdd:text-sm text-xs font-medium text-black">
+                              {part.title}
+                            </h3>
+                          </div>
+                          <div className="mt-1">
+                            <span
+                              className={`text-base font-semibold ${isSelectedPart ? "text-prc" : "text-prc"
+                                }`}
+                            >
+                              {part.price_range}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
+
               </div>
 
               {/* Action Buttons */}
@@ -313,7 +353,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
                       </div>
                     </div>
                   </div>
-                
+
                 </>
               )}
             </div>
@@ -326,7 +366,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any }> = ({
         />
       </div>
 
-     <div><FaqComponent></FaqComponent></div>
+      <div><FaqComponent></FaqComponent></div>
     </>
   );
 };

@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import pointer from "../../../../public/Images/tickicon.png";
-import banner from "../../../../public/Images/datarecovery.webp";
+import banner from "../../../../public/Images/recoveryback.png";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainButton from "@/components/MainButton/MainButton";
 
 const DataRecovery = () => {
 
@@ -57,8 +58,12 @@ const DataRecovery = () => {
       </p>
     </div>
   ))}
+ 
 </div>
+ <div className="flex justify-center items-center">
+  <MainButton MainButton="Read More"  color="bg-prc" link="/data-recovery"/>
 
+  </div>
 
       </div>
       <div>
