@@ -11,17 +11,17 @@ import Link from "next/link";
 import FaqComponent from "./FaqComponent";
 import Strip from "@/components/Strip/Strip";
 
-const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, slugData: any, setSlugData: any }> = ({
+const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, lastElement: string, setSlugData: any }> = ({
   pdpDetail,
   tabs,
-  activeTab, setActiveTab, slugData, setSlugData
+  activeTab, setActiveTab, lastElement, setSlugData
 }) => {
-  console.log("slugData>>", pdpDetail);
+  console.log("lastElement>>", lastElement);
 
   const pathname = usePathname();
   const router = useRouter();
   const [popop, setPopop] = useState(false);
-  // const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+  const [activeTabb, setActiveTabb] = useState<string | undefined>(undefined);
   const [selectedPart, setSelectedPart] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [defaultSelectedPart, setDefaultSelectedPart] = useState<any>(null); // Ensure this is `any` to allow object structure\
@@ -59,16 +59,21 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     if (productId) {
       setDevice(productId); // Set the found product ID in the state
     }
+   
   }, [secondLastSegment, brandsData]); // Ensure `secondLastSegment` and `brandsData` are dependencies
 
   // Set the active tab when the component mounts or pathname changes
   useEffect(() => {
     const lastSegment = pathname.split("/").pop(); // Get the last segment from the path
-    const tab = tabs?.find((tab: any) => tab.alias === lastSegment);
+    let tab = tabs?.find((tab: any) => tab.alias === lastSegment);
     if (tab) {
-      setActiveTab(tab.id.toString()); // Set the active tab based on the slug in the URL
+      setActiveTabb(tab.id.toString()); // Set the active tab based on the slug in the URL
     }
-  }, [pathname, tabs]);
+   
+        handleTabClick(tab);
+      
+
+  }, [pathname, tabs,lastElement]);
 
   // Function to handle tab click and update the URL
   // const handleTabClick = (tab: any) => {
@@ -86,10 +91,14 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   const handleTabClick = async (tab: any) => {
     console.log("tab>>>>>", tab);
 
+    setActiveTabb(tab.id.toString());
     setActiveTab(tab.id);
     const slugArray =
       pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
-
+    const secondLastSlug = slugArray[slugArray.length - 2].toLowerCase();
+    if (secondLastSlug.includes("issue") || secondLastSlug.includes("repair")) {
+      slugArray.splice(slugArray.length - 2, 1); // Remove the second last item if it contains "issue" or "repair"
+    }
     const modifiedSlugArray = slugArray.slice(0, -1); // remove last segment (screen-repair)
     const slugPath = modifiedSlugArray.join("/"); // join back to string
 
@@ -126,9 +135,12 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
       // Make sure the `id` is correctly set to a string
       setDefaultSelectedPart(pdpDetail[0]); // Set the default part to the first item
     }
+    // const index = tabs.findIndex((tab:any) => tab.alias === lastElement);
+    // setDefaultSelectedPart(pdpDetail[index]);
   }, [pdpDetail]);
 
   const handleParClick = (part: any) => {
+    console.log('part',part)
     setSelectedPart(part.id.toString()); // Ensure the selected part's ID is stored as a string
     setDefaultSelectedPart(part); // Update the default selected part on click
   };
@@ -168,7 +180,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
               <button
                 key={tab.id}
                 onClick={() => handleTabClick(tab)}
-                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTab === tab.id.toString()
+                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTabb === tab.id.toString()
                   ? "bg-tertiary  text-black border-b-0 text-[11px]"
                   : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
                   }`}
