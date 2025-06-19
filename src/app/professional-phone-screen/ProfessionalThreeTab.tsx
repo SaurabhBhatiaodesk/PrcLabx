@@ -10,7 +10,7 @@ import MailinRepair from "../../../public/Images/Home/Mail in Repair.svg";
 import repairsoloutaion from "../../../public/Images/Home/repairsoloutaion.svg";
 import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
 import datarecovery from "../../../public/Images/Home/datarecovery.svg";
-
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -113,13 +113,11 @@ const TraningTabBignersecond: React.FC = () => {
 
   return (
     <section
-      className="pb-4 lg:pb-[60px] pt-6"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />

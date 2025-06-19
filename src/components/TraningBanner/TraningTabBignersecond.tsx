@@ -14,7 +14,7 @@ import MainHeading from "../ManinHeading/MainHeading";
 import MainTitle from "../MainTitle/MainTitle";
 import "./TraningTab.css";
 import pointet from "../../../public/Images/icons/pointingright.svg";
-
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 import Link from "next/link";
 import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 import { usePathname } from "next/navigation";
@@ -132,14 +132,13 @@ const TraningTabBignersecond: React.FC = () => {
   };
 
   return (
-    <section
-      className="pb-4 lg:pb-[60px] pt-6"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+
+   <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
