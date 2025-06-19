@@ -57,7 +57,7 @@ export default function App() {
       <Marquee
         marquee_bg="bg-tertiary"
         marquee_text="text-black"
-        marquee_messages=". Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing"
+        marquee_messages="Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing."
       />
       <div className="t">
         <Navbar

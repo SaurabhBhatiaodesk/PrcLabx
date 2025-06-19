@@ -189,7 +189,7 @@ console.log("slugArrayslugArray",slugArray);
             <div className="hidden md:block">
               <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
                 <Link href="/brands" className="hover:underline font-bold">
-                  Home
+                 Brands
                 </Link>
                 {slugArray.map((slug, idx) => {
                   const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;

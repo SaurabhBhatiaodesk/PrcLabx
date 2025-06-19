@@ -101,7 +101,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 max-h-80 overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
             boxShadow:
@@ -273,9 +273,10 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
     const children = getChildren(parentItem);
 
     if (!children.length) return null;
-
+// gurravcomment code 278 line
     // Enhanced column calculation for better layout
-    const columns = Math.min(Math.max(Math.ceil(children.length / 6), 2), 4);
+    // const columns = Math.min(Math.max(Math.ceil(children.length / 6), 2), 4);
+       const columns =  1;
     const itemsPerColumn = Math.ceil(children.length / columns);
 
     // Calculate dropdown position
@@ -288,7 +289,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
         style={{
           width: "auto",
-          minWidth: "500px",
+          minWidth: "300px",
+            // minWidth: "500px",
           maxWidth: "80vw",
           boxShadow:
             "0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1)",
@@ -296,7 +298,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
         onMouseEnter={() => handleMouseEnter(parentItem.id.toString())}
         onMouseLeave={() => handleMouseLeave()}
       >
-        <div className="p-6">
+        <div className="p-3">
           {/* Enhanced Header with gradient */}
           {/* <div className="pb-4 border-b border-gray-200 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] -m-6 mb-4 p-6 rounded-t-lg">
             <h3 className="text-lg font-bold text-white mb-1">
@@ -344,17 +346,17 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           </div>
 
           {/* Enhanced Footer with better styling */}
-          <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
+          <div className="mt-2 pt-4 border-t border-gray-200 flex justify-between items-center ">
             <Link
               href={`/brands/${parentItem.alias}`}
-              className=" inline-flex items-center p-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="w-full inline-flex items-center p-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-xs font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
             >
               View All {parentItem.title} Products
               <IoChevronForward className="ml-2 text-sm" />
             </Link>
-            <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+            {/* <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
               {children.length} categories available
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

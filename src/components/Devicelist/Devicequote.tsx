@@ -13,12 +13,15 @@ interface BrandData {
   alias: string;
   image: string;
   title: string;
+
+  
 }
+
 
 export default function Devicequote() {
   const [brandData, setBrandData] = useState<BrandData[]>([]);
   const [showAll, setShowAll] = useState(false);
-
+  console.log(brandData,"datatypeimage");
   // Fetch data from the API on component mount
   useEffect(() => {
     const fetchData = async () => {

@@ -12,10 +12,10 @@ import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
 import mailinrepairbg from "../../../public/Images/mailinrepairbg.png";
 
-import Textarea from "@mui/joy/Textarea";
-import { FormControlLabel, Modal, Radio, TextField } from "@mui/material";
+// import Textarea from "@mui/joy/Textarea";
+import { FormControlLabel, Modal, Radio, TextField, Select, MenuItem, } from "@mui/material";
 import Image from "next/image";
-import { MenuItem, Select, SelectItem } from "@nextui-org/react";
+// import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 // Example library for pattern drawing
 import "./mail-in-repair.css";
 import Link from "next/link";
@@ -519,10 +519,10 @@ const StaperForm: React.FC = () => {
         shippingDetails,
         pricingAgreement,
         type: `${pathname === "/mail-in-repair"
-            ? "mail-in"
-            : pathname === "/data-recovery"
-              ? "data-recovery"
-              : "ps5"
+          ? "mail-in"
+          : pathname === "/data-recovery"
+            ? "data-recovery"
+            : "ps5"
           }`,
       };
 
@@ -622,9 +622,9 @@ const StaperForm: React.FC = () => {
     }
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     const repairType = sessionStorage.getItem("repairType");
-    
+
     if (repairType) {
       // Scroll to the element with id="stapergkform"
       const element = document.getElementById("stapergk");
@@ -666,13 +666,13 @@ const StaperForm: React.FC = () => {
         </div>
       )}
 
-      <section className="steper-form-section-os" style={{ backgroundImage: `url(${mailinrepairbg.src})` }} // Using .src here
-                      >
+      <section className="steper-form-section-os bg-no-repeat bg-cover" style={{ backgroundImage: `url(${mailinrepairbg.src})` }} // Using .src here
+      >
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
             <MainHeading
-              Heading={`${pathname === "/mail-in-repair"? "PRC Mail-In Repair Submission Form": pathname === "/data-recovery"? "PRC data-recovery Submission Form": "PRC PS5 Repair Submission Form" }`
-              
+              Heading={`${pathname === "/mail-in-repair" ? "PRC Mail-In Repair Submission Form" : pathname === "/data-recovery" ? "PRC data-recovery Submission Form" : "PRC PS5 Repair Submission Form"}`
+
               }
               color="var(--primary)"
               svg_stroke="var(--alpha)"
@@ -684,7 +684,22 @@ const StaperForm: React.FC = () => {
             className="max-w-5xl mx-auto lg:p-4 "
             id="stapergk"
           >
-            <div className="grid grid-cols-2 mb-8  relative text-primary">
+
+            <div className="grid grid-cols-2 mb-8  relative text-primary gaurav-line" >
+              <style jsx>{`
+    .gaurav-line::after {
+      position: absolute;
+      content: "";
+      width: 50%;
+      height: 2px;
+      background: var(--tertiary);
+      top: 37%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 1;
+    }
+  `}</style>
               {["Personal Details", "Repair Details"].map((step, index) => (
                 <div
                   key={index}
@@ -692,10 +707,10 @@ const StaperForm: React.FC = () => {
                 >
                   <div
                     className={`w-[3rem] h-[3rem] xl:w-20 xl:h-20 rounded-full flex items-center justify-center text-white font-bold border-[1px] bg-black  ${activeStep === index
-                        ? "bg-yellow-500"
-                        : activeStep > index
-                          ? "bg-black"
-                          : " relative z-10"
+                      ? "bg-yellow-500"
+                      : activeStep > index
+                        ? "bg-primary"
+                        : " relative z-10"
                       }`}
                   >
                     {activeStep > index ? (
@@ -709,9 +724,9 @@ const StaperForm: React.FC = () => {
                     )}
                   </div>
                   <p
-                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0  ${activeStep === index
-                        ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
-                        : ""
+                    className={`font-medium lg:text-lg text-[12px] leading-[14px] text-center m-0 text-primary  ${activeStep === index
+                      ? "font-medium lg:text-lg text-[12px] leading-[14px]  text-center m-0 "
+                      : ""
                       }`}
                   >
                     {step}
@@ -756,21 +771,29 @@ const StaperForm: React.FC = () => {
                               InputLabelProps={{
                                 shrink: true, // ⬅️ Keeps the label on top
                               }}
-                                     sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                              sx={{
+                                '& label': {
+                                  color: 'white',
+                                },
+                                '& label.Mui-focused': {
+                                  color: 'white',
+                                },
+                                '& .MuiOutlinedInput-root': {
+                                  color: 'white',
+                                  borderRadius: '12px', // 👈 custom border radius here
+                                  '& fieldset': {
+                                    borderColor: 'white',
+                                    borderRadius: '12px', // 👈 also apply to the fieldset
+                                  },
+                                  '&:hover fieldset': {
+                                    borderColor: 'white',
+                                  },
+                                  '&.Mui-focused fieldset': {
+                                    borderColor: 'white',
+                                    borderWidth: 2,
+                                  },
+                                },
+                              }}
                             />
                           </div>
 
@@ -794,21 +817,29 @@ const StaperForm: React.FC = () => {
                               InputLabelProps={{
                                 shrink: true, // ⬅️ Keeps the label on top
                               }}
-                                    sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                              sx={{
+                                '& label': {
+                                  color: 'white',
+                                },
+                                '& label.Mui-focused': {
+                                  color: 'white',
+                                },
+                                '& .MuiOutlinedInput-root': {
+                                  color: 'white',
+                                  borderRadius: '12px', // 👈 custom border radius here
+                                  '& fieldset': {
+                                    borderColor: 'white',
+                                    borderRadius: '12px', // 👈 also apply to the fieldset
+                                  },
+                                  '&:hover fieldset': {
+                                    borderColor: 'white',
+                                  },
+                                  '&.Mui-focused fieldset': {
+                                    borderColor: 'white',
+                                    borderWidth: 2,
+                                  },
+                                },
+                              }}
                             />
                             {errors.fullName && (
                               <p className="text-[red] text-sm mb-0">
@@ -842,21 +873,29 @@ const StaperForm: React.FC = () => {
                               InputLabelProps={{
                                 shrink: true, // ⬅️ Keeps the label on top
                               }}
-                                    sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                              sx={{
+                                '& label': {
+                                  color: 'white',
+                                },
+                                '& label.Mui-focused': {
+                                  color: 'white',
+                                },
+                                '& .MuiOutlinedInput-root': {
+                                  color: 'white',
+                                  borderRadius: '12px', // 👈 custom border radius here
+                                  '& fieldset': {
+                                    borderColor: 'white',
+                                    borderRadius: '12px', // 👈 also apply to the fieldset
+                                  },
+                                  '&:hover fieldset': {
+                                    borderColor: 'white',
+                                  },
+                                  '&.Mui-focused fieldset': {
+                                    borderColor: 'white',
+                                    borderWidth: 2,
+                                  },
+                                },
+                              }}
                               inputProps={{ maxLength: 10 }}
                             />
 
@@ -867,7 +906,7 @@ const StaperForm: React.FC = () => {
                             )}
                           </div>
 
-                          <div className="">
+                          <div className=" ">
                             <TextField
                               required
                               label="Your Email"
@@ -887,22 +926,29 @@ const StaperForm: React.FC = () => {
                               InputLabelProps={{
                                 shrink: true, // ⬅️ Keeps the label on top
                               }}
-                                 sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
-                              className={`w-full bg-primary text-secondary  ${isInvalid ? "border-red-500" : ""
+                              sx={{
+                                '& label': {
+                                  color: 'white',
+                                },
+                                '& label.Mui-focused': {
+                                  color: 'white',
+                                },
+                                '& .MuiOutlinedInput-root': {
+                                  color: 'white',
+                                  borderRadius: '12px', // 👈 custom border radius here
+                                  '& fieldset': {
+                                    borderColor: 'white',
+                                    borderRadius: '12px', // 👈 also apply to the fieldset
+                                  },
+                                  '&:hover fieldset': {
+                                    borderColor: 'white',
+                                  },
+                                  '&.Mui-focused fieldset': {
+                                    borderColor: 'white',
+                                    borderWidth: 2,
+                                  },
+                                },
+                              }} className={`w-full  text-secondary  ${isInvalid ? "border-red-500" : ""
                                 }`}
                               type="email"
                             />
@@ -916,7 +962,7 @@ const StaperForm: React.FC = () => {
 
                         <div>
                           {pathname !== "/ps5-repair" && (
-                            <h4 className="lg:text-lg text-sm pb-[10px]">
+                            <h4 className="lg:text-lg text-sm pb-[10px] text-primary">
                               Device Details
                             </h4>
                           )}
@@ -942,21 +988,29 @@ const StaperForm: React.FC = () => {
                                       InputLabelProps={{
                                         shrink: true, // ⬅️ Keeps the label on top
                                       }}
-                                            sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                                      sx={{
+                                        '& label': {
+                                          color: 'white',
+                                        },
+                                        '& label.Mui-focused': {
+                                          color: 'white',
+                                        },
+                                        '& .MuiOutlinedInput-root': {
+                                          color: 'white',
+                                          borderRadius: '12px', // 👈 custom border radius here
+                                          '& fieldset': {
+                                            borderColor: 'white',
+                                            borderRadius: '12px', // 👈 also apply to the fieldset
+                                          },
+                                          '&:hover fieldset': {
+                                            borderColor: 'white',
+                                          },
+                                          '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                            borderWidth: 2,
+                                          },
+                                        },
+                                      }}
                                     />
                                   </div>
                                   <div className="w-full ">
@@ -978,22 +1032,29 @@ const StaperForm: React.FC = () => {
                                       InputLabelProps={{
                                         shrink: true, // ⬅️ Keeps the label on top
                                       }}
-                                              sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
-                                    />
+                                      sx={{
+                                        '& label': {
+                                          color: 'white',
+                                        },
+                                        '& label.Mui-focused': {
+                                          color: 'white',
+                                        },
+                                        '& .MuiOutlinedInput-root': {
+                                          color: 'white',
+                                          borderRadius: '12px', // 👈 custom border radius here
+                                          '& fieldset': {
+                                            borderColor: 'white',
+                                            borderRadius: '12px', // 👈 also apply to the fieldset
+                                          },
+                                          '&:hover fieldset': {
+                                            borderColor: 'white',
+                                          },
+                                          '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                            borderWidth: 2,
+                                          },
+                                        },
+                                      }} />
                                   </div>
                                   <div className=" w-full ">
                                     <TextField
@@ -1002,7 +1063,7 @@ const StaperForm: React.FC = () => {
                                       name="imei_serial_no"
                                       fullWidth
                                       value={deviceDetails.imeiOrSerialNo}
-                                      onChange={(e) =>  
+                                      onChange={(e) =>
                                         setDeviceDetails({
                                           ...deviceDetails,
                                           imeiOrSerialNo: e.target.value,
@@ -1011,27 +1072,35 @@ const StaperForm: React.FC = () => {
                                       InputLabelProps={{
                                         shrink: true, // ⬅️ Keeps the label on top
                                       }}
-                                             sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                                      sx={{
+                                        '& label': {
+                                          color: 'white',
+                                        },
+                                        '& label.Mui-focused': {
+                                          color: 'white',
+                                        },
+                                        '& .MuiOutlinedInput-root': {
+                                          color: 'white',
+                                          borderRadius: '12px', // 👈 custom border radius here
+                                          '& fieldset': {
+                                            borderColor: 'white',
+                                            borderRadius: '12px', // 👈 also apply to the fieldset
+                                          },
+                                          '&:hover fieldset': {
+                                            borderColor: 'white',
+                                          },
+                                          '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                            borderWidth: 2,
+                                          },
+                                        },
+                                      }}
                                     />
                                   </div>
                                 </>
                               )}
                             <div className="w-full set_lable_color">
-                              <Select
+                              {/* <Select
                                 defaultSelectedKeys={
                                   deviceDetails?.passwordType == "None"
                                     ? ["None"]
@@ -1071,6 +1140,50 @@ const StaperForm: React.FC = () => {
                                     Pattern
                                   </MenuItem>
                                 ) : null}
+                              </Select> */}
+                              <Select
+                                labelId="password-type-label"
+                                name="password_type"
+                                value={deviceDetails.passwordType || "None"}
+                                onChange={(e) => {
+                                  const selectedType = e.target.value;
+                                  setDeviceDetails((prevDetails) => ({
+                                    ...prevDetails,
+                                    passwordType: selectedType,
+                                    devicePassword: "",
+                                  }));
+
+                                  if (selectedType === "PIN") {
+                                    setPinModalOpen(true);
+                                  } else if (selectedType === "Pattern") {
+                                    setPatternModalOpen(true);
+                                  }
+                                }}
+                                sx={{
+                                  color: "white",
+                                  backgroundColor: "transparent",
+                                  borderRadius: "12px",
+                                  "& .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "white",
+                                  },
+                                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "white",
+                                  },
+                                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "white",
+                                    borderWidth: 2,
+                                  },
+                                  "& .MuiSelect-icon": {
+                                    color: "white", // dropdown arrow color
+                                  },
+                                }}
+                                fullWidth
+                              >
+                                <MenuItem value="None">None</MenuItem>
+                                <MenuItem value="PIN">PIN</MenuItem>
+                                {(pathname === "/mail-in-repair" || pathname === "/data-recovery") && (
+                                  <MenuItem value="Pattern">Pattern</MenuItem>
+                                )}
                               </Select>
                               <div className="mt-2">
                                 {deviceDetails.passwordType !== "None" &&
@@ -1111,36 +1224,36 @@ const StaperForm: React.FC = () => {
                                     InputLabelProps={{
                                       shrink: true, // ⬅️ Keeps the label on top
                                     }}
-                                sx={{
-    '& label.Mui-focused': {
-      color: 'var(--prc)', // Label color when focused
-    },
-    '& label': {
-      color: 'var(--prc)', // Default label color
-    },
-    '&:hover label': {
-      color: 'var(--prc)', // Label color on hover
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'var(--prc)',
-      },
-      '&:hover fieldset': {
-        borderColor: 'var(--prc)', // Border color on hover
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)',
-        borderWidth: 2,
-      },
-      '& input::placeholder': {
-        color: 'var(--prc)', // Placeholder color
-        opacity: 1, // Optional: make placeholder fully opaque
-      },
-      '& input': {
-        color: 'black', // Input text color
-      },
-    },
-  }}
+                                    sx={{
+                                      '& label.Mui-focused': {
+                                        color: 'var(--prc)', // Label color when focused
+                                      },
+                                      '& label': {
+                                        color: 'var(--prc)', // Default label color
+                                      },
+                                      '&:hover label': {
+                                        color: 'var(--prc)', // Label color on hover
+                                      },
+                                      '& .MuiOutlinedInput-root': {
+                                        '& fieldset': {
+                                          borderColor: 'var(--prc)',
+                                        },
+                                        '&:hover fieldset': {
+                                          borderColor: 'var(--prc)', // Border color on hover
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                          borderColor: 'var(--prc)',
+                                          borderWidth: 2,
+                                        },
+                                        '& input::placeholder': {
+                                          color: 'var(--prc)', // Placeholder color
+                                          opacity: 1, // Optional: make placeholder fully opaque
+                                        },
+                                        '& input': {
+                                          color: 'black', // Input text color
+                                        },
+                                      },
+                                    }}
                                   />
                                   <div className="flex justify-end mt-4">
                                     <button
@@ -1195,7 +1308,7 @@ const StaperForm: React.FC = () => {
                                       justifyContent: "center",
                                       alignItems: "center",
                                       margin: "0 auto",
-                                      color:"var(--prc)"
+                                      color: "var(--prc)"
                                     }}
                                   >
                                     <ReactCanvasPatternLock
@@ -1215,7 +1328,7 @@ const StaperForm: React.FC = () => {
                                         }));
                                         setPatternModalOpen(false);
                                       }}
-                                      
+
                                     />
                                   </div>
                                   <div className="flex justify-end mt-4">
@@ -1235,13 +1348,14 @@ const StaperForm: React.FC = () => {
                       <div className=" ">
                         <div>
                           <div className="">
-                            <div className="flex flex-col gap-4  text-secondary">
+                            <div className="">
                               {/* Description of Issue */}
                               <div className="mt-2 ">
-                                <Textarea
+                                <TextField
+                                  multiline
                                   placeholder="Please provide a detailed information of the damage(The more information you include, the better chances of successfully repairing the device).*"
-                                  className="bg-primary"
-                                  minRows={5}
+                                  className="w-full"
+                                  minRows={3}
                                   value={repairDetails.issueDescription}
                                   onChange={(e) => {
                                     setRepairDetails({
@@ -1254,21 +1368,29 @@ const StaperForm: React.FC = () => {
                                     }));
                                   }}
                                   required
-                                            sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                                  sx={{
+                                    '& label': {
+                                      color: 'white',
+                                    },
+                                    '& label.Mui-focused': {
+                                      color: 'white',
+                                    },
+                                    '& .MuiOutlinedInput-root': {
+                                      color: 'white',
+                                      borderRadius: '12px', // 👈 custom border radius here
+                                      '& fieldset': {
+                                        borderColor: 'white',
+                                        borderRadius: '12px', // 👈 also apply to the fieldset
+                                      },
+                                      '&:hover fieldset': {
+                                        borderColor: 'white',
+                                      },
+                                      '&.Mui-focused fieldset': {
+                                        borderColor: 'white',
+                                        borderWidth: 2,
+                                      },
+                                    },
+                                  }}
                                 />
                                 {errors.issueDescription && (
                                   <p className="text-[red] text-sm mb-0">
@@ -1276,10 +1398,10 @@ const StaperForm: React.FC = () => {
                                   </p>
                                 )}
                               </div>
-                              <div className="grid md:grid-cols-2 gap-3 ">
+                              <div className="grid md:grid-cols-2 gap-3 mt-3 ">
                                 {/* Previous Repair Attempts */}
                                 <div>
-                                  <p className="text-base leading-5 mb-2 text-secondary">
+                                  <p className="text-base leading-5 mb-2 text-primary">
                                     Any Previous Repair Attempts?
                                   </p>
 
@@ -1289,9 +1411,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(-prc)", // Custom color for the radio button
+                                            color: "var(-primary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "var(--prc)", // Color when radio is checked
+                                              color: "var(--primary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1312,9 +1434,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--prc)", // Custom color for the radio button
+                                            color: "var(--primary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "var(--prc)", // Color when radio is checked
+                                              color: "var(--primary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1336,12 +1458,13 @@ const StaperForm: React.FC = () => {
                                   {repairDetails.previousRepairAttempts ===
                                     "Yes" && (
                                       <div className="steper-textarea-os mt-2">
-                                        <p className="text-prc text-sm mt-2 italic">
+                                        <p className="text-primary text-sm mt-2 italic">
                                           A $66 service fee will be required to
                                           release the device, regardless of
                                           whether it is fixed or not.
                                         </p>
-                                        <Textarea
+                                        <TextField
+                                          className="w-full"
                                           placeholder="Little explanation about previous attempts"
                                           minRows={5}
                                           value={
@@ -1356,9 +1479,26 @@ const StaperForm: React.FC = () => {
                                           }
                                           required
                                           sx={{
-                                            "& textarea::placeholder": {
-                                              color: "gray",
-                                              opacity: 1,
+                                            '& label': {
+                                              color: 'white',
+                                            },
+                                            '& label.Mui-focused': {
+                                              color: 'white',
+                                            },
+                                            '& .MuiOutlinedInput-root': {
+                                              color: 'white',
+                                              borderRadius: '12px', // 👈 custom border radius here
+                                              '& fieldset': {
+                                                borderColor: 'white',
+                                                borderRadius: '12px', // 👈 also apply to the fieldset
+                                              },
+                                              '&:hover fieldset': {
+                                                borderColor: 'white',
+                                              },
+                                              '&.Mui-focused fieldset': {
+                                                borderColor: 'white',
+                                                borderWidth: 2,
+                                              },
                                             },
                                           }}
                                         />
@@ -1375,7 +1515,7 @@ const StaperForm: React.FC = () => {
 
                                 {/* Jump the Queue */}
                                 <div>
-                                  <p className="text-base leading-5 mb-2 text-secondary">
+                                  <p className="text-base leading-5 mb-2 text-primary">
                                     Do you require Priority Repair Service?
                                   </p>
 
@@ -1385,9 +1525,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--prc)", // Custom color for the radio button
+                                            color: "var(--primary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                            color: "var(--prc)", // Color when radio is checked
+                                              color: "var(--primary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1408,9 +1548,9 @@ const StaperForm: React.FC = () => {
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(--prc)", // Custom color for the radio button
+                                            color: "var(--primary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                            color: "var(--prc)", // Color when radio is checked
+                                              color: "var(--primary)", // Color when radio is checked
                                             },
                                           }}
                                           checked={
@@ -1432,7 +1572,7 @@ const StaperForm: React.FC = () => {
                                   {/* Displaying fee message when "Yes" is selected */}
                                   {repairDetails.jumpQueueForFasterService ===
                                     "Yes" && (
-                                      <p className="text-prc text-sm mt-2 mb-0 italic">
+                                      <p className="text-primary text-sm mt-2 mb-0 italic ">
                                         A minimum fee of $100 (or higher) will be
                                         charged for priority service.
                                       </p>
@@ -1441,11 +1581,12 @@ const StaperForm: React.FC = () => {
                               </div>
 
                               {/* Additional Comments (Optional) */}
-                              <div className="steper-textarea-os">
-                                <p className=" text-base leading-5 mb-2 text-secondary">
+                              <div className="steper-textarea-os mt-2">
+                                <p className=" text-base leading-5 mb-2 text-primary">
                                   Additional Comments
                                 </p>
-                                <Textarea
+                                <TextField
+                                  className="w-full"
                                   placeholder="Any other comments or notes"
                                   minRows={5}
                                   value={repairDetails.additionalComments || ""}
@@ -1456,9 +1597,26 @@ const StaperForm: React.FC = () => {
                                     })
                                   }
                                   sx={{
-                                    "& textarea::placeholder": {
-                                      color: "gray",
-                                      opacity: 1,
+                                    '& label': {
+                                      color: 'white',
+                                    },
+                                    '& label.Mui-focused': {
+                                      color: 'white',
+                                    },
+                                    '& .MuiOutlinedInput-root': {
+                                      color: 'white',
+                                      borderRadius: '12px', // 👈 custom border radius here
+                                      '& fieldset': {
+                                        borderColor: 'white',
+                                        borderRadius: '12px', // 👈 also apply to the fieldset
+                                      },
+                                      '&:hover fieldset': {
+                                        borderColor: 'white',
+                                      },
+                                      '&.Mui-focused fieldset': {
+                                        borderColor: 'white',
+                                        borderWidth: 2,
+                                      },
                                     },
                                   }}
                                 />
@@ -1519,7 +1677,7 @@ const StaperForm: React.FC = () => {
                           Would you like PRC to arrange a pickup from your
                           location?
                         </p>
-                        <Select
+                        {/* <Select
                           defaultSelectedKeys={
                             shippingDetails.requirePickupLabel ==
                               "Yes,Please arrange pickup from my location"
@@ -1547,6 +1705,42 @@ const StaperForm: React.FC = () => {
                           >
                             Yes, please arrange pickup from my location
                           </SelectItem>
+                        </Select> */}
+                        <Select
+                          labelId="pickup-label"
+                          value={shippingDetails.requirePickupLabel}
+                          onChange={(e) =>
+                            setShippingDetails({
+                              ...shippingDetails,
+                              requirePickupLabel: e.target.value,
+                            })
+                          }
+                          sx={{
+                            color: "white",
+                            backgroundColor: "transparent",
+                            borderRadius: "12px",
+                            "& .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                            },
+                            "&:hover .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                            },
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                              borderWidth: 2,
+                            },
+                            "& .MuiSelect-icon": {
+                              color: "white",
+                            },
+                          }}
+                          fullWidth
+                        >
+                          <MenuItem value="No,I will send the device myself">
+                            No, I will send the device myself
+                          </MenuItem>
+                          <MenuItem value="Yes,Please arrange pickup from my location">
+                            Yes, please arrange pickup from my location
+                          </MenuItem>
                         </Select>
 
                         {shippingDetails.requirePickupLabel ==
@@ -1561,7 +1755,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ===
                           "No,I will send the device myself" && (
-                            <p className="text-prc text-sm mt-2 mb-0 italic">
+                            <p className="text-primary text-sm mt-2 mb-0 italic">
                               No, I will send the device myself.
                             </p>
                           )}
@@ -1584,21 +1778,29 @@ const StaperForm: React.FC = () => {
                           InputLabelProps={{
                             shrink: true, // forces the label to stay on top
                           }}
-                               sx={{
-                     '& label.Mui-focused': {
-      color: 'var(--prc)', // 👈 custom label color when focused
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'gray',
-      },
-    
-      '&.Mui-focused fieldset': {
-        borderColor: 'var(--prc)', // Customize focus border (e.g. blue-400)
-        borderWidth: 2,
-      },
-    },
-  }}
+                          sx={{
+                            '& label': {
+                              color: 'white',
+                            },
+                            '& label.Mui-focused': {
+                              color: 'white',
+                            },
+                            '& .MuiOutlinedInput-root': {
+                              color: 'white',
+                              borderRadius: '12px', // 👈 custom border radius here
+                              '& fieldset': {
+                                borderColor: 'white',
+                                borderRadius: '12px', // 👈 also apply to the fieldset
+                              },
+                              '&:hover fieldset': {
+                                borderColor: 'white',
+                              },
+                              '&.Mui-focused fieldset': {
+                                borderColor: 'white',
+                                borderWidth: 2,
+                              },
+                            },
+                          }}
                         />
                         {errors.returnShippingAddress && (
                           <p className="text-[red] text-sm mb-0 w-full">
@@ -1607,11 +1809,11 @@ const StaperForm: React.FC = () => {
                         )}
                       </div>
                       {/* Require Return Label */}
-                      <div className="steper-textarea-os space-y-4">
-                        <p className="text-base leading-5 mb-2 text-secondary">
+                      <div className="steper-textarea-os space-y-3">
+                        <p className="text-base leading-5 mb-2 text-primary">
                           How would PRC return your device?
                         </p>
-                        <Select
+                        {/* <Select
                           defaultSelectedKeys={
                             shippingDetails.requireReturnLabel ==
                               "Please ship the device back to me"
@@ -1636,6 +1838,42 @@ const StaperForm: React.FC = () => {
                           <SelectItem key="Please ship the device back to me">
                             Please ship the device back to me
                           </SelectItem>
+                        </Select> */}
+                        <Select
+                          labelId="return-label"
+                          value={shippingDetails.requireReturnLabel || "I will arrange pickup myself"}
+                          onChange={(e) =>
+                            setShippingDetails({
+                              ...shippingDetails,
+                              requireReturnLabel: e.target.value,
+                            })
+                          }
+                          sx={{
+                            color: "white",
+                            backgroundColor: "transparent",
+                            borderRadius: "12px",
+                            "& .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                            },
+                            "&:hover .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                            },
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                              borderWidth: 2,
+                            },
+                            "& .MuiSelect-icon": {
+                              color: "white",
+                            },
+                          }}
+                          fullWidth
+                        >
+                          <MenuItem value="I will arrange pickup myself">
+                            I will arrange pickup myself
+                          </MenuItem>
+                          <MenuItem value="Please ship the device back to me">
+                            Please ship the device back to me
+                          </MenuItem>
                         </Select>
 
                         {shippingDetails.requireReturnLabel ===
@@ -1649,7 +1887,7 @@ const StaperForm: React.FC = () => {
 
                       {/* Terms and Conditions */}
                       <div className="border-b-[1px] border-[#6161617b] xl:py-2">
-                        <h4 className=" lg:text-basic text-sm mb-1 text-prc ">
+                        <h4 className=" lg:text-basic text-sm mb-1 text-primary ">
                           Terms and Conditions Acknowledgment *
                         </h4>
                         <div>
@@ -1670,25 +1908,25 @@ const StaperForm: React.FC = () => {
                               })
                             }
                           />
-                          <span className="lg:text-base text-sm text-secondary ml-2  ">
+                          <span className="lg:text-base text-sm text-primary ml-2  ">
                             By checking this box, I confirm that I have read and
                             agree to the PRC
                             <Link
-                              className="text-prc  font-semibold "
+                              className="text-primary  font-semibold "
                               href="/Terms_and_Conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
-                              className="text-prc font-semibold  "
+                              className="text-primary font-semibold  "
                               href="/Shipping_Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
-                              className="text-prc  font-semibold  "
+                              className="text-primary  font-semibold  "
                               href="/Warranty_and_Terms"
                             >
                               Warranty Terms
@@ -1706,7 +1944,7 @@ const StaperForm: React.FC = () => {
                       {/* Signature */}
                       <div className="my-2">
                         <div className="flex justify-between  rounded-[5px_5px_0px_0px] overflow-hidden">
-                          <span className=" bg-prc text-[14px] 2xl:text-lg xl:text-base uppercase text-primary py-3 2xl:py-3 xl:py-[10px] px-[18px]   w-full">
+                          <span className=" bg-alpha text-[14px] 2xl:text-lg xl:text-base uppercase text-primary py-3 2xl:py-3 xl:py-[10px] px-[18px]   w-full">
                             Draw Your Signature *
                           </span>
                           <button
@@ -1729,7 +1967,7 @@ const StaperForm: React.FC = () => {
                           }
                         /> */}
 
-                        <div className="grid grid-cols-2 gap-3  border-2 border-alpha">
+                        <div className="grid grid-cols-2 gap-3  border-2 border-primary">
                           <div className="">
                             <SignatureCanvas
                               ref={sigPad}
@@ -1773,7 +2011,7 @@ const StaperForm: React.FC = () => {
                         )} */}
                       </div>
                       <div className="p-2 lg:p-2 rounded-md">
-                        <h2 className="text-3xl font-bold mb-4">
+                        <h2 className="text-3xl font-bold mb-4 text-primary">
                           Pricing Agreement*
                         </h2>
                         <div className="flex items-start gap-4 text-yellow-400">
@@ -1792,7 +2030,7 @@ const StaperForm: React.FC = () => {
                             }}
                           />
 
-                          <p className="">
+                          <p className="text-primary">
                             By submitting this form, I agree to proceed with
                             repairs or data recovery based on the prices
                             displayed on the PRC website. PRC will not provide
@@ -1812,15 +2050,15 @@ const StaperForm: React.FC = () => {
                         )}
                       </div>
                       <div className="flex justify-between mt-4">
-                        <button className="btn " onClick={handlePrevStep}>
+                        <button className=" uppercase bg-alpha text-white text-[18px] lg:py-[8px] lg:px-[15px] p-2 text-sm rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center " onClick={handlePrevStep}>
                           Previous
                         </button>
                         <button
                           onClick={handleSubmit}
                           disabled={!pricingAgreement || isLoading} // Disable when loading
-                          className={`btn ${!pricingAgreement || isLoading
-                              ? "opacity-50 cursor-not-allowed"
-                              : ""
+                          className={`uppercase bg-alpha text-white text-[18px] lg:py-[8px] lg:px-[15px] p-2 text-sm rounded-3xl border-[2px] border-[#FFFFFF] flex justify-center items-center ${!pricingAgreement || isLoading
+                            ? "opacity-50 cursor-not-allowed"
+                            : ""
                             }`}
                         >
                           {isLoading ? "Processing..." : "Submit"}
