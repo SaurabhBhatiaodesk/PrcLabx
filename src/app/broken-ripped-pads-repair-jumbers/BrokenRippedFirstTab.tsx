@@ -12,7 +12,7 @@ import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
 import datarecovery from "../../../public/Images/Home/datarecovery.svg";
 
 import "./BrokenRipped.css";
-import pointet from "../../../public/Images/icons/pointingright.svg";
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 
 import Link from "next/link";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -123,13 +123,11 @@ const BrokenRippedFirstTab: React.FC = () => {
 
   return (
     <section
-      className="py-4 lg:py-[20px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange">
         <div className="mb-3">
           <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
