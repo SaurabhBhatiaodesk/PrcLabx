@@ -193,11 +193,7 @@ p {
 .text-black-custom {
   color: #000 !important;
 }
-.learnmore button {
-  font-size: 1.1rem;
-  text-transform: capitalize;
-  line-height: 1.1rem;
-}
+
 @media only screen and (max-width: 1440px) {
 
   p {
@@ -220,7 +216,7 @@ p {
 @media only screen and (max-width: 768px) {
   h2 {
     font-size: 26px;
-    line-height: 38px;
+    line-height: 33px;
     font-family: Gordita, sans-serif;
     font-weight: 600;
  

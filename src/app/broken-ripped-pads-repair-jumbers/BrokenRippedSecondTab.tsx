@@ -195,7 +195,7 @@ const BrokenRippedSecondTab: React.FC = () => {
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
                     <div>
-                      <p>{item.content}</p>
+                      <p className="text-white">{item.content}</p>
                     </div>
                   </div>
                 ))}

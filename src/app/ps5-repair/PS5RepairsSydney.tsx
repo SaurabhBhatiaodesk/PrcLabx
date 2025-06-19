@@ -411,11 +411,11 @@ const PS5RepairsSydney: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[30px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
         <div className="py-3">
@@ -431,7 +431,7 @@ const PS5RepairsSydney: React.FC = () => {
                   className={`p-3 rounded-[10px] border-[1.5px] font-semibold text-base tracking-[1.2px] ${
                     activeTab === tab.id
                       ? "active-tab text-primary"
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

@@ -23,20 +23,25 @@ import Googletest from "../../public/Images/icons/Googletest.svg";
 import sliderimg1 from "../../public/Images/slidercable.webp"
 import sliderimg2 from "../../public/Images/slidercamera.webp"
 import sliderimg3 from "../../public/Images/sliderchip.webp"
-
 import sliderimg4 from "../../public/Images/slidermotherboard.webp"
 import sliderimg5 from "../../public/Images/slidermobilechip.webp"
 import sliderimg6 from "../../public/Images/slidermotherboard.webp"
 import sliderimg7 from "../../public/Images/sliderphoneback.webp"
 import sliderimg8 from "../../public/Images/sliderphonelock.webp"
-
+// china whare house
+import chaina1 from "../../public/Images/chaina1.webp"
+import chaina2 from "../../public/Images/chaina2.webp"
+import chaina3 from "../../public/Images/chaina3.webp"
+import chaina4 from "../../public/Images/chaina4.webp"
+import chaina5 from "../../public/Images/chaina5.webp"
+import chaina6 from "../../public/Images/chaina6.webp"
 import React from "react";
 
 import Productswiper from "@/components/Storeproduct/Productswiper";
 import HandsOnTraining from "@/components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
-  title: "Best Mobile Phone Repair Courses, Services & Training | PRC Repair",
-  description: "PRC Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
+  title: "Mobile Phone Repair Services & Training | Mobile Accessories | PRC Repair",
+  description: "PRC provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
@@ -198,6 +203,44 @@ const slideData = [
     Product: "Screens"
   },
 ];
+const slideData2 = [
+  {
+    src: chaina5,
+    alt: "Charging Port",
+    Product: "Charging Port"
+  },
+  {
+    src: chaina4,
+    alt: "Cameras",
+    Product: "Cameras"
+  },
+  {
+    src: chaina3,
+    alt: "ICs/ Chips",
+    Product: "ICs/ Chips"
+  },
+  {
+    src: chaina2,
+    alt: "PS5 IC/ Parts",
+    Product: "PS5 IC/ Parts"
+  },
+
+  {
+    src: chaina1,
+    alt: "Tools/ Stencils",
+    Product: "Tools/ Stencils"
+  },
+  {
+    src: sliderimg7,
+    alt: "Back Glass",
+    Product: "Back Glass"
+  },
+  {
+    src: chaina6,
+    alt: "Screens",
+    Product: "Screens"
+  },
+];
 const page = () => {
   return (
     <div>
@@ -206,11 +249,11 @@ const page = () => {
       {/* <DeliveryTous/> */}
       <ShipDeviceUs />
 
-      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)" />
+      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://wholesale.prcrepair.com.au/" buttondata="Visit Store"/>
       <HandsOnTraining/>
       <DataRecovery />
   
-      <Productswiper slideData={slideData} Heading="China Warehouse, Global Flow" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="var(--alpha)" color="var(--prc)" />
+      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://warehouse.prcrepair.com.au/" buttondata="Visit Store"/>
 
       <WhyChooseLabX />
       <FixLabx />

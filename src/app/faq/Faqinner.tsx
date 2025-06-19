@@ -70,8 +70,8 @@ const Faqinner: React.FC<FaqinnerProps> = ({ heading, categories }) => {
                 style={{
                   background: getGradientColor(index),
                 }}
-                className={`px-2 py-2 text-[18px] md:text-[18px] rounded-lg border border-gray-300 w-full sm:w-1/3 md:w-1/4 lg:w-[24%] 
-                  ${activeTabIndex === index ? "text-primary" : "text-secondary"}
+                className={`px-2 py-2 text-[18px] md:text-[18px] rounded-lg border  w-full sm:w-1/3 md:w-1/4 lg:w-[24%] 
+                  ${activeTabIndex === index ? "text-primary" : "text-secondary border-alpha"}
                   `}
                 onClick={() => handleTabClick(index)} // On click change the tab color
               >

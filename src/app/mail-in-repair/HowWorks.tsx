@@ -3,6 +3,7 @@ import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainButton from "@/components/MainButton/MainButton";
 import React from "react";
 import Link from "next/link";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const HowWorks = () => {
   const steps = [
@@ -68,20 +69,27 @@ const HowWorks = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="p-4 !bg-primary rounded-md shadow-lg text-secondary transition-all duration-300 border-[1px] border-[#5b5b5b99] flex flex-col justify-between group hover:text-white"
+              className="p-4 !bg-primary rounded-md shadow-lg text-secondary transition-all duration-300 border-[1px] border-[#5b5b5b99] flex flex-col  group hover:text-white"
               style={{ cursor: "pointer" }}
             >
-              <h3 className="text-lg font-bold mb-2 text-secondary">{step.title}</h3>
+              <h3 className="text-lg font-bold mb-2 text-prc">{step.title}</h3>
               <p className="text-sm text-secondary">{step.content}</p>
 
               {step.button ? (
                 step.button === "Mail in Repair" ? (
-                  <button onClick={handleMailRepairClick}>
-                    <MainButton MainButton={step.button} color="bg-prc" />
+                  // <button onClick={handleMailRepairClick}>
+                  //   <MainButton MainButton={step.button} color="bg-prc" />
+                  // </button>
+
+                  <button className=" flex justify-start items-center text-prc text-[15px]" onClick={handleMailRepairClick}>{step.button}
+                    <IoIosArrowRoundForward fontSize={25} />
                   </button>
+
                 ) : (
                   <Link href={step.link ?? "#"}>
-                    <MainButton MainButton={step.button} color="bg-prc" />
+                    <button className=" flex justify-start items-center text-prc text-[15px]" >{step.button}
+                      <IoIosArrowRoundForward fontSize={25} />
+                    </button>
                   </Link>
                 )
               ) : null}

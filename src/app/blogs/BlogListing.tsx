@@ -145,7 +145,7 @@ const Blogs: React.FC = () => {
                   <h3 className="mb-4 mt-4 text-prc">
                     {(blog.heading || "Blog Title").slice(0, 40)}...
                   </h3>
-                  <div className="learnmore flex justify-center">
+                  <div className=" flex justify-center">
                     {/* <MainButton
                       MainButton="View Details"
                       link={`/blogs/${blog._id}`}

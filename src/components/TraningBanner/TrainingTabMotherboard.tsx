@@ -112,20 +112,20 @@ const TraningTabBigner: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[60px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
         <div className="mb-3">
           {/* gaurav comment code  */}
-          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--prc)" />
+          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
         </div>
 
-        <div className="p-3 bg-prc mb-6">
-          <p className="text-primary mb-0 font-[600]">
+        <div className="p-3 bg-primary mb-6">
+          <p className="text-secondary mb-0 font-[600]">
             Advanced Motherboard Repair – Micro Soldering (Level 1)
           </p>
         </div>
@@ -138,7 +138,7 @@ const TraningTabBigner: React.FC = () => {
                   className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[1.5px] text-sm tracking-[1.2px] ${
                     activeTab === tab.id
                     ? "active-tab text-primary"
-                    : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                    : "bg-opacity-50 hover:bg-opacity-75 text-white "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -194,7 +194,7 @@ const TraningTabBigner: React.FC = () => {
                       height={50}
                     /> */}
                     <div>
-                      <p>
+                      <p className="text-white">
                         {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
                           {item.title}
                         </span> */}

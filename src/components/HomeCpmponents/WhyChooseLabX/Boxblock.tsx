@@ -117,7 +117,7 @@ return (
                     >
                       {section.description}
                     </p>
-                    <div className="learnmore">
+                    <div className="flex justify-center ">
                       <MainButton
                         MainButton="Learn More"
                         link={section.pageUrl}

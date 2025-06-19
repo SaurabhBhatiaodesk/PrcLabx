@@ -1,10 +1,13 @@
 
 import React, { FC } from "react";
 import Image from "next/image";
-import course2 from "../../../../public/Images/course2.png";
+import traning1 from "../../../../public/Images/traning1.png";
+import traning2 from "../../../../public/Images/traning2.png";
+import traning3 from "../../../../public/Images/traning3.png";
+import traning4 from "../../../../public/Images/traning4.png";
+import traning5 from "../../../../public/Images/traning5.png";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainButton from "@/components/MainButton/MainButton";
-import blackcheck from "../../../../public/Images/Vector.png"
 interface Feature {
   label: string;
   detail: string;
@@ -15,6 +18,7 @@ interface Feature {
 interface Course {
   id: number;
   title: string;
+  imagesid:any;
   duration: string;
   price: string;
   description?: string;
@@ -35,6 +39,7 @@ interface Course {
 const courses: Course[] = [
   {
     id: 0,
+    imagesid:traning1,
     title: "Beginner Phone Repair Course",
     duration: "5 Days",
     price: "$1249 (Includes a free toolkit for each student)",
@@ -71,6 +76,7 @@ const courses: Course[] = [
   },
   {
     id: 1,
+        imagesid:traning2,
     title: "Advanced Motherboard Repair – Micro Soldering (Level 1)",
     duration: "1 Week",
     price: "$2200",
@@ -109,6 +115,7 @@ const courses: Course[] = [
   },
   {
     id: 2,
+        imagesid:traning3,
     title: "Expert Motherboard Repair – Micro Soldering (Level 2)",
     duration: "1 Week",
     price: "$2800",
@@ -157,6 +164,7 @@ const courses: Course[] = [
   },
   {
     id: 3,
+        imagesid:traning4,
     title: "Master Motherboard Repair – Micro Soldering (Level 3)",
     duration: "5 Days",
     price: "$5500",
@@ -174,6 +182,7 @@ const courses: Course[] = [
   },
   {
     id: 4,
+        imagesid:traning5,
     title: "Professional Phone Screen Refurbishing Course",
     duration: "5 Days",
     price: "$5500",
@@ -267,7 +276,7 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => (
         }`}
     >
       <Image
-        src={course2}
+        src={course.imagesid}
         alt={course.title}
         fill
         className={`object-[4%_10%] object-cover rounded-[30px] border-2 border-[${course.imageBorder}]`}

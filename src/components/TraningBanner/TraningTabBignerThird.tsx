@@ -142,15 +142,15 @@ const TraningTabBignerThird: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[20px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
-        <div className="p-3 bg-prc mb-6 ">
-          <p className="text-primary mb-0 font-[600]">
+        <div className="p-3 bg-primary mb-6  ">
+          <p className="text-secondary mb-0 font-[600]">
             Section 3. Screen Replacement Techniques for iPads
           </p>
         </div>
@@ -163,7 +163,7 @@ const TraningTabBignerThird: React.FC = () => {
                   className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[1.5px] text-base tracking-[1.2px]  ${
                     activeTab === tab.id
                       ? "active-tab text-white"
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -210,7 +210,7 @@ const TraningTabBignerThird: React.FC = () => {
               ]
                 .filter((item) => item.content)
                 .map((item, index) => (
-                  <div className="flex items-start gap-4" key={index}>
+                  <div className="flex items-start gap-4 text-white" key={index}>
                     {/* <Image
                       className="w-[30px] h-[30px]"
                       src={pointet}
@@ -219,7 +219,7 @@ const TraningTabBignerThird: React.FC = () => {
                       height={50}
                     /> */}
                     <div>
-                      <p>
+                      <p className="text-white">
                         {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
                           {item.title}
                         </span> */}

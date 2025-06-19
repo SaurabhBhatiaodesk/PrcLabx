@@ -1,4 +1,5 @@
 "use client";
+import backyellow from "../../../public/Images/backyellow.svg";
 import React from "react";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import Image from "next/image";
@@ -101,7 +102,7 @@ const Page = () => {
             pageName="Professional Screen Refurbishment Services"
             pageNamecolor="text-[#B2F5EA]"
             pageDescription={`At PRCRepair, we specialize in <strong>professional screen refurbishment</strong> for mobile phones, tablets, and other devices. Our advanced techniques and state-of-the-art equipment allow us to restore damaged screens to their original condition, saving both time and money compared to full screen replacements.`}
-            backgroundImage="/Images/screenrefbg.webp"
+            backgroundImage="/Images/bannerimages/screenrafr.png"
             AdminImage="/Images/broken-smart-phone.webp"
             link="/price"
             buttonname="View Pricing"
@@ -265,7 +266,8 @@ const Page = () => {
         <div className="container pt-8 mt-5 pb-8">
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="glass__description">
-              <MainHeading Heading="Why Refurbish Instead of Screen Replacement?" svg_stroke="var(--alpha)" />
+              {/* <MainHeading Heading="Why Refurbish Instead of Screen Replacement?" svg_stroke="var(--alpha)" /> */}
+              <h2 className="text-prc mb-2">Why Refurbish Instead of Screen Replacement?</h2>
               {/* <p>
                 In most cases, we can only replace the glass / touch screen
                 digitizer after phone damage.
@@ -314,7 +316,11 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="relative bg-[#EFF7FF]">
+        <div 
+        
+              className="bg-no-repeat bg-cover lg:py-8 py-4"
+      style={{ backgroundImage: `url(${backyellow.src})` }}
+    >
           <div className="p-8">
             <MainHeading Heading="Our Refurbishment Process" color="var(--secondary)" svg_stroke="var(--alpha)" />
             <div className="grid xl:grid-cols-3  lg:grid-cols-3 grid-cols-1  pt-8 mt-5 relative gap-5">
@@ -379,11 +385,7 @@ const Page = () => {
           <div className="container">
             <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div className="glass__description">
-                <MainHeading Heading="Advanced Technology & Equipment for Premium Mobile Phone Refurbishment" color="var(--secondary)" svg_stroke="var(--secondary)" />
-                {/* <MainTitle Title="At our service center, we use state-of-the-art equipment for mobile phone refurbishment to ensure precision, quality, and longevity in every repair. Our advanced tools allow us to address scratches, cracks, and other screen imperfections with exceptional accuracy, restoring your device to its original clarity and responsiveness." color="var(--primary)" />
-                <MainTitle Title="By investing in top-tier technology, we not only provide superior results but also minimize the time needed for each screen refurbishment. This commitment to high-quality equipment ensures that every refurbished phone looks and functions like new, giving our customers a premium, reliable service experience." color="var(--primary)" /> */}
-
-
+              <h2 className="text-prc">Advanced Technology & Equipment for Premium Mobile Phone Refurbishment</h2>
                 <p className="text-secondary">
                   {
                     "At our service center, we use state-of-the-art equipment for mobile phone refurbishment to ensure precision, quality, and longevity in every repair. Our advanced tools allow us to address scratches, cracks, and other screen imperfections with exceptional accuracy, restoring your device to its original clarity and responsiveness. "
@@ -410,14 +412,8 @@ const Page = () => {
               <Image src={EcoFriendlyPractices} alt=" PRC repair "></Image>
             </div>
             <div>
-              <h2>Eco-Friendly Practices</h2>
-              <Image
-                height="500"
-                width="500"
-                src={Line.src}
-                alt=" PRC repair "
-                className="pb-3"
-              />
+              <h2 className="text-prc">Eco-Friendly Practices</h2>
+              
               <p>
                 By choosing refurbishment, you’re contributing to a{" "}
                 <strong className="font-semibold text-[20px]">
