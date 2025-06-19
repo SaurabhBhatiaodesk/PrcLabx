@@ -11,7 +11,7 @@ const WhatWeDo = () => {
         <Breadcrumb
           pageName="What We Do"
           pageDescription="Discover our range of professional services designed to meet all your needs with precision and care. From innovative solutions to industry-leading expertise, we are committed to delivering excellence every step of the way."
-            backgroundImage="/Images/bannerimages/screenrafr.png"
+            backgroundImage="/Images/bannerimages/screenimage.png"
           AdminImage="/Images/adminimage.png"
           link="/contact-us"
              buttonname="Request a Quote"
