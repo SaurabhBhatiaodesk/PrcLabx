@@ -205,7 +205,7 @@ const ContactUsForm: React.FC = () => {
   return (
     <>
       <section
-        className="py-4 lg:py-[30px] "
+        className="py-4 lg:py-[30px]  bg-[#EFF7FF]"
         // style={{
         //   backgroundImage: "url('/images/Home/back-banner.svg')",
         //   backgroundRepeat: "no-repeat",
@@ -213,19 +213,13 @@ const ContactUsForm: React.FC = () => {
         // }}
       >
         <div className="max-container">
-          <div className="grid lg:grid-cols-[3fr_5fr] grid-cols-1    ">
-            <div
-              className="w-full flex flex-col items-center justify-center hello"
-              style={{
-                backgroundImage: "url('/images/contactusimage.png')",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                // borderRadius: "20px 0 10px 20px",
-              }}
-            >
-              <div className="relative w-full h-[100%] flex flex-col justify-center lg:right-4 right-0">
+          <div className="grid lg:grid-cols-[3fr_5fr] grid-cols-1">
+           <div
+  className="w-full flex flex-col items-center justify-center md:bg-[url('/images/contactusimage.png')]  bg-no-repeat bg-cover"
+>
+              <div className="relative w-full h-[100%] flex flex-col justify-center lg:right-4 right-0 mb-2">
                 <div className=" w-full">
-                  <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-white text-black rounded-3xl">
+                  <div className="flex gap-3 flex-col justify-center p-4 lg:p-6 bg-prc text-prc rounded-3xl">
                  
                     <div className="flex items-center gap-3">
                       <span className="flex-shrink-0">
@@ -233,10 +227,11 @@ const ContactUsForm: React.FC = () => {
                           className="w-[50px] h-[50px] object-contain" // Ensure size is same
                           src={callcontactus}
                           alt="Phone Icon"
+                          quality={1000}
                         />
                       </span>
                       <Link href="tel:+61455777077" passHref>
-                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
+                        <p className="m-0 text-primary lg:font-semibold font-medium text-xl cursor-pointer">
                           +61455777077
                         </p>
                       </Link>
@@ -250,15 +245,15 @@ const ContactUsForm: React.FC = () => {
                           alt="Email Icon"
                         />
                       </span>
-                      <Link href="mailto:info@prc.repair" passHref>
-                        <p className="m-0 text-black lg:font-semibold font-medium text-xl cursor-pointer">
-                          info@prc.repair 
+                      <Link href="mailto:service@prcrepair.com.au " passHref>
+                        <p className="m-0 text-primary lg:font-semibold font-medium text-xl cursor-pointer">
+                          service@prcrepair.com.au  
                         </p>
                       </Link>
                     </div>
                    
                     <div>
-                      <h3 className="text-secondary text-center lg:text-xl text-lg ">
+                      <h3 className="text-primary text-center lg:text-xl text-lg ">
                         We DO NOT accept walk-ins{" "}
                       </h3>
                     </div>

@@ -21,7 +21,9 @@ import newlogo from "../../../public/Images/prclogo.png";
 import MainButton from "../MainButton/MainButton";
 import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
 import { IoChevronDown } from "react-icons/io5";
+
 export default function App() {
+
   const dispatch = useDispatch();
   const Router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -49,6 +51,7 @@ export default function App() {
   const MailRepair = () => {
     sessionStorage.setItem("repairType", "mail-in-repair");
   };
+
   useEffect(() => {
     console.log("isMenuOpen", isMenuOpen);
   }, []);
@@ -98,9 +101,15 @@ export default function App() {
                   />
                 </Link>
 
-                <div className="md:hidden cardicon">
-                 <MainButton MainButton="Read More" color="bg-prc" />
-                </div>
+                <div className="lg:hidden cardicon">
+                 {/* <MainButton MainButton="Instant Quote" link="/contact-us" /> */}
+                
+   <button
+      onClick={() => Router.push('/contact-us')}
+      className="text-sm bg-[#EF0000]  py-2 px-3 capitalize text-primary rounded-xl"
+    >
+      Instant Quote
+    </button>                </div>
                 
                 <ProfessionalMegaMenu />
                 <div className="block lg:hidden">

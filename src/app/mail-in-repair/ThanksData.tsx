@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import MainButton from "@/components/MainButton/MainButton";
 import MainHeading from "@/components/ManinHeading/MainHeading";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface Step {
   title: string;
@@ -31,18 +32,22 @@ const ThanksData: React.FC<ThanksDataProps> = ({ steps, HeadingData }) => { // D
           {steps.map((step, index) => (
             <div
               key={index}
-              className="p-4 bg-prc rounded-md shadow-lg text-white transition-all duration-300 border-[1px] border-[#5b5b5b99] hover:bg-gradient-to-r hover:from-[#56c1c1] hover:to-[#000000] h-full"
+              className="p-4  rounded-md shadow-lg text-white transition-all duration-300 border-[1px] border-[#5b5b5b99]  h-full"
               style={{ cursor: "pointer" }}
             >
-              <h3 className="text-xl text-alpha mb-2">{step.title}</h3>
-              <p className="text-base mb-2  text-primary">{step.content}</p>
+              <h3 className="text-xl text-prc mb-2">{step.title}</h3>
+              <p className="text-sm text-secondary">{step.content}</p>
               {step.subtitle && (
                 <p className="text-xl text-[#EDE574] mb-2">{step.subtitle}</p>
               )}
-              {step.subcontent && <p className="text-base mb-2 text-primary">{step.subcontent}</p>}
+              {step.subcontent && <p className="text-sm text-secondary">{step.subcontent}</p>}
               {step.link && step.buttonad && (
                 <Link href={step.link} target="_blank">
-                  <MainButton MainButton={step.buttonad} />
+                  {/* <MainButton MainButton={step.buttonad} /> */}
+
+                  <button className=" flex justify-start items-center text-prc text-[15px]" >{step.buttonad}
+  <IoIosArrowRoundForward  fontSize={25}/>
+</button> 
                 </Link>
               )}
             </div>

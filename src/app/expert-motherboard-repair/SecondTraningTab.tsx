@@ -104,20 +104,20 @@ const SecondTraningTab: React.FC = () => {
 
   return (
     <section
-      className="pb-4 lg:pb-[60px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      className="pb-4 lg:pb-[60px] pt-6"
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
         </div> */}
 
-        <div className="p-3 bg-prc mb-6">
-          <p className="text-primary mb-0 font-[600]">
+        <div className="p-3 bg-primary mb-6">
+          <p className="text-secondary mb-0 font-[600]">
             Expert Motherboard Repair – Micro Soldering (Level 2)
           </p>
         </div>
@@ -127,10 +127,10 @@ const SecondTraningTab: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  className={`p-3 lg:p-5 xl:p-4   text-sm tracking-[1.2px] ${
+                  className={`p-3 lg:p-5 xl:p-4   text-sm tracking-[1.2px] border-[1.5px]  border-primary ${
                     activeTab === tab.id
-                      ? "active-tab text-primary rounded-[5px] border-[1.5px]"
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc rounded-[5px] border-[1.5px] border-alpha"
+                      ? "active-tab text-primary rounded-[5px] "
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white   "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -186,7 +186,7 @@ const SecondTraningTab: React.FC = () => {
                       height={50}
                     /> */}
                     <div>
-                      <p>
+                      <p className="text-white">
                         {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
                           {item.title}
                         </span> */}

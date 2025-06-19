@@ -246,7 +246,7 @@ const FaqPageCall = () => {
       <Breadcrumb
         pageName="Frequently Asked Questions"
         pageDescription=""
-        backgroundImage="/Images/BannerImages/about.png"
+        backgroundImage="/Images/BannerImages/aboutback.webp"
         AdminImage="/Images/faq.svg"
         link="/contact-us"
         buttonname="Request a Quote"
@@ -261,8 +261,10 @@ const FaqPageCall = () => {
 
       <FixLabx />
 
-
+<div className='bg-[#EFF7FF]'>
       <YouTubeHome />
+  
+</div>
     <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Review"/>
 
     </div>

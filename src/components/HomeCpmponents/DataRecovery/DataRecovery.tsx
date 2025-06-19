@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import pointer from "../../../../public/Images/tickicon.png";
@@ -5,9 +6,15 @@ import banner from "../../../../public/Images/recoveryback.png";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainButton from "@/components/MainButton/MainButton";
+import { useRouter } from "next/navigation";
+
 
 const DataRecovery = () => {
+const Router =useRouter()
+const data = ()=>{
+  Router.push("/data-recovery")
 
+}
   const dataHandle = [
     {
       icon: pointer,
@@ -61,7 +68,34 @@ const DataRecovery = () => {
 
         </div>
         <div className="flex justify-center items-center">
-          <MainButton MainButton="Learn More" link="/data-recovery" />
+       <button onClick={data}
+            className={`uppercase bg-tertiary text-black lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl  justify-center items-center  flex cursor-pointer    md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl  `}
+       
+          >
+         Learn More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M5 12H19"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 5L19 12L12 19"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
 
         </div>
 

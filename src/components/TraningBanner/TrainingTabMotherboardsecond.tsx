@@ -132,15 +132,15 @@ const TrainingTabMotherboardsecond: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[60px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
-        <div className="p-3 bg-prc mb-6">
-          <p className="text-primary mb-0 font-[600]">Microsoldering Level 2</p>
+        <div className="p-3 bg-primary mb-6">
+          <p className="text-secondary mb-0 font-[600]">Microsoldering Level 2</p>
         </div>
         <div className="">
           <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4 ">
@@ -151,7 +151,7 @@ const TrainingTabMotherboardsecond: React.FC = () => {
                   className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[1.5px] text-base tracking-[1.2px] ${
                     activeTab === tab.id
                       ? "active-tab text-primary" 
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -207,7 +207,7 @@ const TrainingTabMotherboardsecond: React.FC = () => {
                       height={50}
                     /> */}
                     <div>
-                      <p>
+                      <p className="text-white">
                         {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
                           {item.title}
                         </span> */}

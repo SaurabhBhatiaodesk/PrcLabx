@@ -13,7 +13,7 @@
 }
 .front__box {
 
-    border: 1px solid var(--primary);
+    border: 1px solid #EDE574;
     box-shadow: 0px 4px 15px 0px #EDE57466;
     padding: 20px;
     border-radius: 20px;

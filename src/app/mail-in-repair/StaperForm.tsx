@@ -13,7 +13,7 @@ import StaperForm3 from "../../../public/Images/StaperForm3.png";
 import mailinrepairbg from "../../../public/Images/mailinrepairbg.png";
 
 // import Textarea from "@mui/joy/Textarea";
-import { FormControlLabel, Modal, Radio, TextField, Select, MenuItem, } from "@mui/material";
+import { FormControlLabel, Modal, Radio, TextField, Select, MenuItem, colors, } from "@mui/material";
 import Image from "next/image";
 // import { MenuItem, Select, SelectItem } from "@nextui-org/react";
 // Example library for pattern drawing
@@ -666,7 +666,7 @@ const StaperForm: React.FC = () => {
         </div>
       )}
 
-      <section className="steper-form-section-os bg-no-repeat bg-cover" style={{ backgroundImage: `url(${mailinrepairbg.src})` }} // Using .src here
+      <section className="steper-form-section-os bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${mailinrepairbg.src})` }} // Using .src here
       >
         <div className="container gaurav-bg-trans ">
           <div className="py-3 xl:py-6 2xl:py-6">
@@ -1408,18 +1408,21 @@ const StaperForm: React.FC = () => {
                                   {/* Radio buttons for Yes or No */}
                                   <div className="flex gap-4">
                                     <FormControlLabel
+                                    className="text-primary"
                                       control={
                                         <Radio
                                           sx={{
-                                            color: "var(-primary)", // Custom color for the radio button
-                                            "&.Mui-checked": {
-                                              color: "var(--primary)", // Color when radio is checked
-                                            },
-                                          }}
+        color: "var(--primary)", // Unchecked color
+        "&.Mui-checked": {
+          color: "var(--alpha)", // Checked color
+        },
+      }}
                                           checked={
                                             repairDetails?.previousRepairAttempts ===
                                             "Yes"
+                                        
                                           }
+                                            className="text-primary"
                                           onChange={() =>
                                             setRepairDetails({
                                               ...repairDetails,
@@ -1428,21 +1431,27 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                      label="Yes" // This is the label that will be shown next to the radio button
+                                       label="Yes"
+  sx={{
+    color: "#fff", // White text for the label
+  }}// This is the label that will be shown next to the radio button
                                     />
                                     <FormControlLabel
+                                      className="text-primary"
                                       control={
                                         <Radio
-                                          sx={{
-                                            color: "var(--primary)", // Custom color for the radio button
-                                            "&.Mui-checked": {
-                                              color: "var(--primary)", // Color when radio is checked
-                                            },
-                                          }}
+                                              sx={{
+        color: "var(--primary)", // Unchecked color
+        "&.Mui-checked": {
+          color: "var(--alpha)", // Checked color
+        },
+      }}
+                                       
                                           checked={
                                             repairDetails?.previousRepairAttempts ===
                                             "No"
                                           }
+                                           className="text-primary"
                                           onChange={() =>
                                             setRepairDetails({
                                               ...repairDetails,
@@ -1451,7 +1460,10 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                      label="No" // This is the label that will be shown next to the radio button
+                                                                           label="Yes"
+  sx={{
+    color: "#fff", // White text for the label
+  }}// This is the label that will be shown next to the radio button
                                     />
                                   </div>
 
@@ -1521,15 +1533,18 @@ const StaperForm: React.FC = () => {
 
                                   {/* Radio buttons for Yes or No */}
                                   <div className="flex gap-4">
+                                   
                                     <FormControlLabel
+                                    className="text-primary"
                                       control={
+                                       
                                         <Radio
-                                          sx={{
-                                            color: "var(--primary)", // Custom color for the radio button
-                                            "&.Mui-checked": {
-                                              color: "var(--primary)", // Color when radio is checked
-                                            },
-                                          }}
+                                                    sx={{
+        color: "var(--primary)", // Unchecked color
+        "&.Mui-checked": {
+          color: "var(--alpha)", // Checked color
+        },
+      }}
                                           checked={
                                             repairDetails?.jumpQueueForFasterService ===
                                             "Yes"
@@ -1565,7 +1580,10 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                      label="No" // This is the label that will be shown next to the radio button
+                                                                           label="No"
+  sx={{
+    color: "#fff", // White text for the label
+  }}// This is the label that will be shown next to the radio button
                                     />
                                   </div>
 

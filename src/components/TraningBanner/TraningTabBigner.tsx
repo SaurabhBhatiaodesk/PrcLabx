@@ -125,20 +125,20 @@ const TraningTabBigner: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[20px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange">
         <div className="mb-3">
                    {/* gaurav comment code  */}
-         <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--prc)" />
+         <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
         </div>
 
-        <div className="p-3 bg-prc mb-6 ">
-          <p className="text-primary mb-0 font-[600]">
+        <div className="p-3 bg-primary mb-6  ">
+          <p className="text-secondary mb-0 font-[600]">
             Section 1. Basic Phone Repair
           </p>
         </div>
@@ -151,7 +151,7 @@ const TraningTabBigner: React.FC = () => {
                   className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[2px] text-base tracking-[1.2px]  ${
                     activeTab === tab.id
                       ? "active-tab text-primary "
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}
@@ -200,7 +200,7 @@ const TraningTabBigner: React.FC = () => {
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
                     <div>
-                      <p>{item.content}</p>
+                      <p className="text-white">{item.content}</p>
                     </div>
                   </div>
                 ))}

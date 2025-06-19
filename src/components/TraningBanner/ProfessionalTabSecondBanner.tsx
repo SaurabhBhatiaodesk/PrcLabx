@@ -106,20 +106,20 @@ const TraningTabBignersecond: React.FC = () => {
 
   return (
     <section
-      className="pb-4 lg:pb-[60px]"
-      // style={{
-      //   backgroundImage: "url('/images/Home/back-banner.svg')",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      className="pb-4 lg:pb-[60px] pt-6"
+      style={{
+        backgroundImage: "url('/images/Home/back-banner.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
           <MainHeading Heading="Course Content" />
         </div> */}
 
-        <div className="p-3 bg-prc mb-6 ">
-          <p className="text-primary mb-0 font-[600] bg-prc">
+        <div className="p-3 bg-primary mb-6  ">
+          <p className="text-secondary mb-0 font-[600] bg-prc">
             Section 2. Screen Refurbishing
           </p>
         </div>
@@ -132,7 +132,7 @@ const TraningTabBignersecond: React.FC = () => {
                   className={`p-3 lg:p-6 xl:p-6  rounded-[5px] border-[1.5px] text-sm tracking-[1.2px] ${
                     activeTab === tab.id
                       ? "active-tab text-primary"
-                      : "bg-opacity-50 hover:bg-opacity-75 text-prc"
+                      : "bg-opacity-50 hover:bg-opacity-75 text-white "
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   data-selected={tab.id.toString()}

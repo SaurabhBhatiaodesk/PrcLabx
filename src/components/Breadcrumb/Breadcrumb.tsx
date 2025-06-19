@@ -139,6 +139,7 @@ function Breadcrumb({
                         MainButton={buttonname}
                         color="bg-prc"
                         link={link}
+                        onClick={handleScrollToTarget}
                       />
                     )}
                   </>
@@ -151,11 +152,11 @@ function Breadcrumb({
                 <FormCode />
               </div>
             ) : (
-              <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px] ">
+              <div className={`admin-image relative 2xl:h-[500px] lg:h-[350px] h-[300px] `}>
                 <Image
                   src={AdminImage}
                   alt="Admin Visual"
-                  className="object-contain p-3"
+                  className={`object-contain  ${pathname === "/screen-refurbishing" ?  "p-3" : ""}`}
                   fill
                 />
               </div>

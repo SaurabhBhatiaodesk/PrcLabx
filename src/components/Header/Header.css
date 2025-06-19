@@ -58,7 +58,10 @@ ul.dropdown-menu li a, ul.dropdown-menus li a {
 @media only screen and (max-width: 	1023px) {
     .logo_LabX{
         width: auto;
-        position: relative;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+
       
 
     }
@@ -119,6 +122,7 @@ ul.menu.menu-horizontal.px-1.flex {
     .logo_LabX {
         width: auto;
         position: absolute;
-        transform: translate(167%, -50%);
+       transform: translate(-50%, -50%);
+        left: 50%;
     }
 }

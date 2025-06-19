@@ -105,7 +105,7 @@ const page = () => {
         <Breadcrumb
           pageName="Contact Us"
           pageDescription="Contact Us For More Information "
-          backgroundImage="/Images/BannerImages/contact-us.png"
+          backgroundImage="/Images/BannerImages/contactnew.webp"
           AdminImage="/Images/contactus.svg"
           link="/contact-us"
           buttonname="Request a Quote"

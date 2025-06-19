@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image, { StaticImageData } from "next/image";
@@ -23,9 +23,19 @@ interface ProductSwiperProps {
   Title: string; // Add Title here
   svg_stroke: any;
   color: any;
+  buttondata: any;
+  buttonlink: any;
 }
 
-export default function Productswiper({ slideData, Heading, Title, svg_stroke, color }: ProductSwiperProps) {
+export default function Productswiper({
+  slideData,
+  Heading,
+  Title,
+  svg_stroke,
+  color,
+  buttondata,
+  buttonlink,
+}: ProductSwiperProps) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
@@ -33,21 +43,21 @@ export default function Productswiper({ slideData, Heading, Title, svg_stroke, c
       <div className="flex justify-between mb-2">
         <div className="text-start">
           <MainHeading
-            Heading={Heading}  // Use Heading prop here
+            Heading={Heading} // Use Heading prop here
             color={color}
             text_align="start"
             svg_stroke={svg_stroke}
           />
           <MainTitle
-            Title={Title}  // Use Title prop here
+            Title={Title} // Use Title prop here
             color="var(--secondary)"
             para_align="start"
           />
         </div>
         <div className="flex items-center">
-          <Link href="/coming-soon">
+          <Link href={buttonlink} target="_blank">
             <button className="hidden lg:flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
-              Visit Store
+              {buttondata}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -95,13 +105,13 @@ export default function Productswiper({ slideData, Heading, Title, svg_stroke, c
         >
           {slideData.map((slide, index) => (
             <SwiperSlide key={index}>
-              <Link href="">
+              <Link href={buttonlink} target="_blank">
                 <div className="relative">
-                <Image
-  className="w-full object-cover h-auto rounded-[10px] transform transition-transform duration-300 ease-in-out hover:scale-90"
-  src={slide.src}
-  alt={slide.alt}
-/>
+                  <Image
+                    className="w-full object-cover h-auto rounded-[10px] transform transition-transform duration-300 ease-in-out hover:scale-90"
+                    src={slide.src}
+                    alt={slide.alt}
+                  />
                   <div className="product pt-3">
                     <p className="product-title text-secondary text-[13px] lg:text-[15px] leading-snug font-semibold mb-[0] font-poppins">
                       {slide.Product}

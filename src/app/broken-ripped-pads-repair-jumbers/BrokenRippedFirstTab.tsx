@@ -132,12 +132,12 @@ const BrokenRippedFirstTab: React.FC = () => {
     >
       <div className="container bgchange">
         <div className="mb-3">
-          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--prc)" />
+          <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
         </div>
 
         <div className="p-3 bg-white mb-6">
           <p className="text-black mb-0 font-[600]">
-            Section 1. Basic Phone Repair
+            Section 1. Basic Phone Repair221
           </p>
         </div>
         <div className="">
@@ -197,7 +197,7 @@ const BrokenRippedFirstTab: React.FC = () => {
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
                     <div>
-                      <p>{item.content}</p>
+                      <p className="!text-white">{item.content}</p>
                     </div>
                   </div>
                 ))}
