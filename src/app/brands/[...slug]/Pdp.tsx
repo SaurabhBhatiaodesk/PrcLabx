@@ -11,12 +11,12 @@ import Link from "next/link";
 import FaqComponent from "./FaqComponent";
 import Strip from "@/components/Strip/Strip";
 
-const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, lastElement: string, setSlugData: any }> = ({
+const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, setSlugData: any }> = ({
   pdpDetail,
   tabs,
-  activeTab, setActiveTab, lastElement, setSlugData
+  activeTab, setActiveTab, setSlugData
 }) => {
-  console.log("lastElement>>", lastElement);
+
 
   const pathname = usePathname();
   const router = useRouter();
@@ -73,7 +73,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
         handleTabClick(tab);
       
 
-  }, [pathname, tabs,lastElement]);
+  }, [pathname, tabs]);
 
   // Function to handle tab click and update the URL
   // const handleTabClick = (tab: any) => {

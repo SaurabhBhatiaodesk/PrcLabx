@@ -221,7 +221,7 @@ const lastElement = slugArray[slugArray.length - 1];
               tabs={tabs}
               activeTab={activeTab}
                setActiveTab={setActiveTab}
-               slugData={lastElement}
+           
                setSlugData={setSlugData}
             />
           )}
