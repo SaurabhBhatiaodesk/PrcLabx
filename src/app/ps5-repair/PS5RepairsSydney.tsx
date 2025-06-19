@@ -19,7 +19,7 @@ import arrow2 from "../../../public/Images/icons/arrow1-2.svg";
 import arrow3 from "../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../public/Images/icons/arrow1-5.svg";
-
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 import DeliveryTousMobile from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 import { usePathname } from "next/navigation";
 
@@ -409,14 +409,12 @@ const PS5RepairsSydney: React.FC = () => {
   };
 
   return (
-    <section
-      className="py-4 lg:py-[30px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+      <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange">
         <div className="py-3">
           {" "}

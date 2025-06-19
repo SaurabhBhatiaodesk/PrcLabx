@@ -14,7 +14,7 @@ import MainHeading from "../../components/ManinHeading/MainHeading";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import "./MasterMotherbord.css";
 import pointet from "../../../public/Images/icons/pointingright.svg";
-
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
@@ -108,14 +108,12 @@ const MasterTabFirsh: React.FC = () => {
   };
 
   return (
-    <section
-      className="py-4 lg:py-[30px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+     <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange">
         <div className="mb-3">
           <MainHeading
