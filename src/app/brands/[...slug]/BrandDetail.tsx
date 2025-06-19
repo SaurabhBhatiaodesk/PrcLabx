@@ -62,7 +62,7 @@ const BrandDetailPage: React.FC = () => {
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
 console.log("slugArrayslugArray",slugArray);
-
+const lastElement = slugArray[slugArray.length - 1];
   // Fetch brands data from API
   useEffect(() => {
     const fetchBrands = async () => {
@@ -70,7 +70,6 @@ console.log("slugArrayslugArray",slugArray);
         const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
         const slugPath = slugArray.length > 0 ? slugArray.join("/") : ""; // Create slugPath
         const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}`; // Construct the endpoint for slug-based API
-        console.log("tab>>>>>",slugApi);
 
         // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
         let baseData: any = JSON.parse(
@@ -222,7 +221,7 @@ console.log("slugArrayslugArray",slugArray);
               tabs={tabs}
               activeTab={activeTab}
                setActiveTab={setActiveTab}
-               slugData={slugData}
+           
                setSlugData={setSlugData}
             />
           )}
