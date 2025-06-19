@@ -418,7 +418,7 @@ const PS5RepairsSydney: React.FC = () => {
       <div className="container bgchange">
         <div className="py-3">
           {" "}
-          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" color="var(--prc) " svg_stroke="var(--alpha)" />
+          <MainHeading Heading="Common PS5 Console Issues We Expertly Fix" color="var(--primary) " svg_stroke="var(--alpha)" />
         </div>
         <div className="lg:block hidden">
           <div className="grid xl:grid-cols-[2fr_5fr] lg:grid-cols-[3fr_6fr] gap-4">
@@ -480,7 +480,7 @@ const PS5RepairsSydney: React.FC = () => {
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
                     <div>
-                      <p className="">
+                      <p className=" text-primary">
                         <span
                           className="font-bold pb-[2px] mr-[3px]"
                           style={{ color: getTextColor(activeTab) }} // Apply dynamic text color here
