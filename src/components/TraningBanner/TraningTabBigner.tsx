@@ -2,21 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import tabimage from "../../../public/Images/tabtraning.png";
-// import screenreplace from "../../../../public/Images/Home/hammer.svg";
-import screenreplace from "../../../public/Images/Home/hammer.svg";
-import traning from "../../../public/Images/Home/Training.svg";
-// import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg";
-import MailinRepair from "../../../public/Images/Home/Mail in Repair.svg";
-import repairsoloutaion from "../../../public/Images/Home/repairsoloutaion.svg";
-import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-import datarecovery from "../../../public/Images/Home/datarecovery.svg";
-import MainHeading from "../ManinHeading/MainHeading";
-import MainTitle from "../MainTitle/MainTitle";
-import "./TraningTab.css";
-import pointet from "../../../public/Images/icons/pointingright.svg";
 
+
+import MainHeading from "../ManinHeading/MainHeading";
+import "./TraningTab.css";
+import backbanner from "../../../public/Images/Home/back-banner.svg"
 import Link from "next/link";
-import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 import { usePathname } from "next/navigation";
 
 interface Tab {
@@ -123,14 +114,12 @@ const TraningTabBigner: React.FC = () => {
   };
 
   return (
-    <section
-      className="py-4 lg:py-[20px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+     <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
       <div className="container bgchange">
         <div className="mb-3">
                    {/* gaurav comment code  */}
