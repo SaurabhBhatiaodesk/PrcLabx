@@ -26,14 +26,17 @@ import New from "../../../public/Images/about/new.svg"
 import Service from "../../../public/Images/about/service.svg"
 import Techcity from "../../../public/Images/about/techcity.png"
 import Traning from "../../../public/Images/about/traning.png"
+import bannerabout from "../../../public/Images/BannerImages/bannerabout.png"
+import aboutback from "../../../public/Images/aboutback.png"
 import './about.css'
+
 
 const AboutUs = () => {
   return (
     <div>
       <section
-        className="bg-prc bg-cover p-0"
-       
+        className="bg-no-repeat bg-cover p-0"
+      style={{ backgroundImage: `url(${bannerabout.src})` }} // Using .src here
       >
         <div className="max-container relative">
           <div className="grid lg:grid-cols-[5fr_3fr] items-center pt-3">
@@ -89,7 +92,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <section data-aos="fade-up" className="aos-init aos-animate">
+      <section data-aos="fade-up" className="aos-init aos-animate bg-[#EFF7FF]">
         <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="User_Image">
@@ -107,11 +110,11 @@ const AboutUs = () => {
 
       <div className="max-container "   >
         <section>
-          <div className="bg-[#FEF6FF] text-secondary flex flex-col items-center py-2 lg:py-4">
+          <div className=" text-secondary flex flex-col items-center py-2 lg:py-4">
 
             <div className="w-full p-6">
-              <h2 className="font-bold text-center mb-2 text-secondary">A Breakthrough </h2>
-              <Image height="100" width="400" src={Break.src} alt=" PRC repair " className="pb-3 m-auto" />
+              <MainHeading Heading="A Breakthrough" color="var(--prc)" svg_stroke="var(--alpha)"/>
+             
               <p className="  text-center  text-secondary">
                 Despite these hardships, I stayed there for six months, determined to learn and grow. Eventually, I found another opportunity at a repair shop in Blacktown. When I approached the owner, I struggled to communicate in English and asked if he spoke Hindi. He didn &apos;t, but he gave me a chance, recognizing my skills instead of focusing on my language barrier.
               </p>
@@ -123,15 +126,20 @@ const AboutUs = () => {
         </section>
       </div>
 
-      <section className=""  >
+          <section className="bg-no-repeat bg-cover p-0"
+      style={{ backgroundImage: `url(${aboutback.src})` }} // Using .src here
+      >
         <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="">
-              <h2 className="mb-2 w-auto">Taking a Leap of Faith</h2>
-              <Image height="100" width="400" src={Leap.src} alt=" PRC repair " className="pb-3  about_line" />
-              <p>After working for three years at the shop in Blacktown, I began to feel a strong urge to start something of my own. While the job provided stability, I wanted to pursue my dream of independence and building something for myself. Eventually, I made the tough decision to leave the job and began working from home.   </p>
-              <p>During this time, I relied on small repair jobs from other shops, using the relationships I had built in the industry. I would visit local shops and offer my services for motherboard repairs and phone unlocks, collecting phones during the week and returning them repaired. However, this was not sustainable in the long term, and I knew I needed a more permanent solution.</p>
-              <p>One weekend in early 2012, while delivering repaired phones to a market, I noticed the bustling activity and thought to myself, Why not start here? I approached the information desk at Parklea Markets to inquire about setting up a stall. The staff explained that I could rent a stall for $282 for two days (Saturday and Sunday only). At that moment, I had just enough money to pay for one week, and despite having no plan or resources, I decided to take the leap.</p>
+              
+                <MainHeading Heading="Taking a Leap of Faith" color="white" svg_stroke="var(--alpha)" text_align="start"/>
+           
+              
+             
+              <p className="text-primary">After working for three years at the shop in Blacktown, I began to feel a strong urge to start something of my own. While the job provided stability, I wanted to pursue my dream of independence and building something for myself. Eventually, I made the tough decision to leave the job and began working from home.   </p>
+                <p className="text-primary">During this time, I relied on small repair jobs from other shops, using the relationships I had built in the industry. I would visit local shops and offer my services for motherboard repairs and phone unlocks, collecting phones during the week and returning them repaired. However, this was not sustainable in the long term, and I knew I needed a more permanent solution.</p>
+               <p className="text-primary">One weekend in early 2012, while delivering repaired phones to a market, I noticed the bustling activity and thought to myself, Why not start here? I approached the information desk at Parklea Markets to inquire about setting up a stall. The staff explained that I could rent a stall for $282 for two days (Saturday and Sunday only). At that moment, I had just enough money to pay for one week, and despite having no plan or resources, I decided to take the leap.</p>
             </div>
             <div className="User_Image">
               <Image height="1000" width="1000" src={Hill} alt=" PRC repair " className="" />
@@ -144,8 +152,7 @@ const AboutUs = () => {
       <div className="about__bg__gradiant "  >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
           <div className="max-container text-secondary text-center rounded-md">
-            <h2 className="mb-2">A Helping Hand</h2>
-            <Image height="100" width="300" src={Hand.src} alt=" PRC repair " className="pb-3 m-auto" />
+                 <MainHeading Heading="A Helping Hand" color="var(--prc)" svg_stroke="var(--alpha)" text_align="end"/>
             <p className=""> Back at home, I shared my plans with my uncle, Paramjit Thiara (I was a paying guest at his place), who had always been a pillar of support. Recognizing my determination, he gave me an old, broken cupboard, which we creatively transformed into a makeshift workbench. This simple gesture played a crucial role in getting me started.
             </p>
 
@@ -160,13 +167,13 @@ const AboutUs = () => {
             <div className="overlap__section_labX relative">
               <Image height="1000" width="1000" src={Helping.src} alt=" PRC repair " />
               <div className="overlap__description ">
-                <h3 >Building My Dream</h3>
-                <p>After one week of preparation, I transformed a simple cupboard into a makeshift workbench. My setup at Parklea Markets was modest—a plastic chair, a laptop, a few spare parts, and a black-and-white paper sign that read, “Yes, we do repairs.”</p>
-                <p>With my wife &apos;s help in packing and organizing, I arrived at the market ready to begin. As I sat there that morning, I felt a surge of pride. This was the realization of my dream to start my own business in Australia.
+                <h3 className="text-primary" >Building My Dream</h3>
+                <p className="text-primary">After one week of preparation, I transformed a simple cupboard into a makeshift workbench. My setup at Parklea Markets was modest—a plastic chair, a laptop, a few spare parts, and a black-and-white paper sign that read, “Yes, we do repairs.”</p>
+                 <p className="text-primary">With my wife &apos;s help in packing and organizing, I arrived at the market ready to begin. As I sat there that morning, I felt a surge of pride. This was the realization of my dream to start my own business in Australia.
                 </p>
-                <p>To my delight, the day exceeded all expectations. I sold accessories, completed repairs, and even handled advanced soldering work, building trust with customers who brought me their devices. By the end of the day, I had earned enough to cover the rent for the following week.
+                <p className="text-primary">To my delight, the day exceeded all expectations. I sold accessories, completed repairs, and even handled advanced soldering work, building trust with customers who brought me their devices. By the end of the day, I had earned enough to cover the rent for the following week.
                 </p>
-                <p>That Sunday marked the beginning of an incredible journey. Sitting at my stall, I didn &apos;t just feel accomplished—I felt like a king.
+               <p className="text-primary">That Sunday marked the beginning of an incredible journey. Sitting at my stall, I didn &apos;t just feel accomplished—I felt like a king.
                 </p>
               </div>
             </div>
@@ -178,9 +185,8 @@ const AboutUs = () => {
 
 
       <section className="py-4 lg-py-[20px] pt-8 mt-5" >
-        <div className="max-container text-center">
-          <h2 className="mt-5"> From Market Stall to a Full-Fledged Shop </h2>
-          <Image height="100" width="700" src={Leap.src} alt=" PRC repair " className="pb-3 pl-3 m-auto about_line" />
+        <div className="max-container text-center pt-6 ">
+              <MainHeading Heading="From Market Stall to a Full-Fledged Shop" color="var(--prc)" svg_stroke="var(--alpha)" />
           <p>By 2013, as my business at Parklea Markets thrived, I realized it was time to upgrade. I replaced my modest table and chair setup with a proper counter, creating a more professional and welcoming space. Over time, I expanded from a single stall to a double stall, complete with a roof, fans, seating, and improved displays. Eventually, I moved to a better location within the market, equipping the shop with a full fit-out, LED lighting, and a polished appearance. My shop became one of the standout businesses in the market, known for its professional look and high-quality service. </p>
           <div >
             <p>Despite this progress, I felt the need to expand further. While I was busy on weekends at the market, my weekdays were relatively free. I decided it was time to open a dedicated shop outside the market. One of my suppliers, who had helped me early on by providing accessories on credit, suggested I look for an affordable location. When I asked about areas with low rent, he smiled and said, Try St Marys. </p>
@@ -222,8 +228,7 @@ const AboutUs = () => {
               <Image height="1000" width="1000" src={Dream} alt=" PRC repair " className="" />
             </div>
             <div className="">
-              <h2 className="mb-0 w-auto">Balancing Dreams with Determination </h2>
-              <Image height="1000" width="600" src={Leap.src} alt=" PRC repair " className="pb-3  about_line" />
+                  <MainHeading Heading="Balancing Dreams with Determination" color="var(--prc)" svg_stroke="var(--alpha)" text_align="start"/>
               <p>As my shop grew and I worked tirelessly day and night to build it, a new challenge emerged—my application for permanent residency in Australia. To qualify, I was required to pass an English proficiency test (IELTS) with a score of 7 in each module: reading, writing, speaking, and listening. </p>
               <p>At the time, my English proficiency level was only 5.5, and the gap seemed daunting. Adding to the challenge, I was still a student, juggling my studies, running my business, and preparing for the exam. Despite these pressures, I began rigorous training to improve my English skills, dedicating significant time to studying. This shift in focus meant I had to divide my attention between my shop and my studies, which impacted my business operations.              </p>
             </div>
@@ -239,11 +244,10 @@ const AboutUs = () => {
       </section>
 
 
-      <div className="about__bg__gradiant pt-8 " >
+      <div className="bg-[#EFF7FF] pt-8 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
           <div className="max-container text-secondary text-center rounded-md">
-            <h2 className="mb-2">Scaling Up: Building a Team and Expanding Services</h2>
-            <Image height="1000" width="900" src={Service.src} className="pb-3 m-auto" alt=" PRC repair " />
+            <MainHeading Heading="Scaling Up: Building a Team and Expanding Services" color="var(--prc)" svg_stroke="var(--alpha)"/>
             <p className="">
               After securing my residency, I shifted my full focus back to growing the business. The shop at St Marys flourished alongside the stall at Parklea Markets, and both locations gained momentum. I worked tirelessly to maximize their potential, experimenting with different strategies and services to meet the growing demand.
             </p>
@@ -265,9 +269,7 @@ const AboutUs = () => {
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
 
             <div className="">
-              <h2 className="mb-2 w-auto">Recognizing a Need for Training
-              </h2>
-              <Image height="1000" width="600" src={NeedLine.src} alt=" PRC repair " className="pb-3 about_line" />
+               <MainHeading Heading="Recognizing a Need for Training" color="var(--prc)" svg_stroke="var(--alpha)" text_align="start"/>
               <p>As my business grew, I began noticing a troubling trend in the industry: many technicians were inadvertently damaging customers devices due to a lack of proper skills and knowledge. It became clear to me that there was a need for structured training to elevate the standard of repairs in the industry.</p>
               <p>Rather than accepting poorly executed repairs from other technicians, I decided to shift my focus toward education. My idea was simple yet impactful: instead of taking repair jobs from technicians, I would teach them the right way to perform these repairs and charge for my coaching.</p>
               <p>Around 2018 or 2019, I began investing in the necessary equipment and laying the groundwork for training programs. I was preparing to launch my first batch of students, and there was significant interest from individuals eager to learn the skills I had mastered over the years.</p>
@@ -287,9 +289,7 @@ const AboutUs = () => {
       <section className="mt-5 pt-8 bg-[#FEF6FF] " >
         <div className="max-container">
           <div className="text-center mt-5">
-            <h2 className="mb-2 w-auto text-secondary">A New Chapter: Focus and Growth
-            </h2>
-            <Image height="1000" width="600" src={New.src} alt=" PRC repair " className="pb-3 m-auto" />
+             <MainHeading Heading="A New Chapter: Focus and Growth" color="var(--prc)" svg_stroke="var(--alpha)" />
           </div>
           <p className="text-center text-secondary">During the COVID-19 pandemic, something remarkable happened—my business thrived despite the challenges. While I had initially planned to focus on launching training programs, the surge in demand for repairs and services led me to postpone those plans. Whether it was due to luck, goodwill, or sheer hard work, I found myself busier than ever.</p>
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
@@ -308,21 +308,20 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="mt-5 pt-8  " >
+      <section className=" pt-8 bg-[#243B55] " >
         <div className="max-container ">
           <div className="text-center mt-5">
-            <h2 className="mb-0 w-auto text-black">Expanding Horizons: The Birth of TechCity
-            </h2>
+            <MainHeading Heading="Expanding Horizons: The Birth of TechCity" color="var(--primary)" svg_stroke="var(--alpha)" />
           </div>
-          <p className="text-black text-center">With a strong and cohesive team in place, built on mutual understanding and cooperation, we reached a point where expansion felt like the natural next step. Confident in our ability to manage growth, we began exploring opportunities for new locations.
+          <p className="text-primary text-center">With a strong and cohesive team in place, built on mutual understanding and cooperation, we reached a point where expansion felt like the natural next step. Confident in our ability to manage growth, we began exploring opportunities for new locations.
           </p>
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div >
-              <p className="text-black">Our first expansion materialized in a small village shopping center at Schofields. The shopping center management requested a more modern and appealing brand name, so we created TechCity to meet their expectations. This marked the beginning of our journey under the TechCity banner.
+              <p className="text-primary">Our first expansion materialized in a small village shopping center at Schofields. The shopping center management requested a more modern and appealing brand name, so we created TechCity to meet their expectations. This marked the beginning of our journey under the TechCity banner.
               </p>
-              <p className="text-black">In 2023, we continued to grow, opening a second TechCity branch in Box Hill, followed shortly by a third location in Kellyville. These stores were strategically designed to offer a welcoming environment and high-quality service, ensuring consistency across all locations.
+              <p className="text-primary">In 2023, we continued to grow, opening a second TechCity branch in Box Hill, followed shortly by a third location in Kellyville. These stores were strategically designed to offer a welcoming environment and high-quality service, ensuring consistency across all locations.
               </p>
-              <p className="text-black">With these new branches, we expanded to four thriving locations, successfully managing operations while maintaining the same level of professionalism and service that defined our original business. This phase of growth represents a milestone in our journey, driven by teamwork, innovation, and a commitment to excellence.
+              <p className="text-primary">With these new branches, we expanded to four thriving locations, successfully managing operations while maintaining the same level of professionalism and service that defined our original business. This phase of growth represents a milestone in our journey, driven by teamwork, innovation, and a commitment to excellence.
               </p>
             </div>
             <div className="tech_Image">
@@ -332,7 +331,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="pt-8 pb-8 bg-tertiary " >
+      <section className="pt-8 pb-8  " >
         <div className="max-container text-secondary pt-8 mt-5">
           <div className="text-center">
             
@@ -353,8 +352,7 @@ const AboutUs = () => {
             <Image height="1000" width="1000" src={Techcity} alt=" PRC repair " className="" />
           </div>
           <div>
-            <h2 className="mb-2">The Vision Behind prc</h2>
-            <Image height="1000" width="1000" src={Service.src} className="pb-3 m-auto" alt=" PRC repair " />
+           <MainHeading Heading="The Vision Behind prc" color="var(--prc)" svg_stroke="var(--alpha)" text_align="start"/>
             <p>My focus has always been on providing top-notch services at truly affordable prices. I believe that good repairs shouldn &apos;t come at an unreasonable cost. Unfortunately, many technicians charge excessively for basic services, like replacing an iPhone battery for $100 to $200. This often stems from a lack of skill—technicians add hidden costs to cover potential mistakes, such as cracking the screen during disassembly, instead of mastering their craft.
             </p>
             <p>As a technician, you are entrusted with customers devices and data. It is your responsibility to handle their property with care and professionalism. You should know how to perform repairs without damaging the device, respect their privacy, and honor the trust they place in you.
@@ -371,13 +369,13 @@ const AboutUs = () => {
         <div className="overlap__section_labX relative">
           <Image height="1000" width="1000" src={Traning.src} alt=" PRC repair " />
           <div className="overlap__description ">
-            <h3 className="pt-6">The Decision to Provide Training
+            <h3 className="pt-6 text-primary">The Decision to Provide Training
             </h3>
-            <p>I noticed a troubling trend in the repair industry—technicians lacking the necessary skills, leading to damaged devices and lost customer trust. Many focused solely on profits, creating a significant gap in expertise and ethics.
+            <p className="text-primary">I noticed a troubling trend in the repair industry—technicians lacking the necessary skills, leading to damaged devices and lost customer trust. Many focused solely on profits, creating a significant gap in expertise and ethics.
             </p>
-            <p>I also saw a need for accessible skill development among various groups. Many international students struggle to find stable jobs and are eager to learn practical skills that can help them build a career. Additionally, DIY enthusiasts and individuals passionate about the repair industry want to upgrade their abilities to pursue opportunities in this field.
+          <p className="text-primary">I also saw a need for accessible skill development among various groups. Many international students struggle to find stable jobs and are eager to learn practical skills that can help them build a career. Additionally, DIY enthusiasts and individuals passionate about the repair industry want to upgrade their abilities to pursue opportunities in this field.
             </p>
-            <p>Instead of simply fixing the mistakes of others, I decided to address the root cause by providing structured training. My goal is to empower aspiring technicians and enthusiasts with the right skills, professionalism, and a customer-focused mindset, allowing them to grow, find opportunities, and contribute to raising the standards of the industry.
+          <p className="text-primary">Instead of simply fixing the mistakes of others, I decided to address the root cause by providing structured training. My goal is to empower aspiring technicians and enthusiasts with the right skills, professionalism, and a customer-focused mindset, allowing them to grow, find opportunities, and contribute to raising the standards of the industry.
             </p>
           </div>
         </div>
@@ -387,8 +385,7 @@ const AboutUs = () => {
       <div className="about__bg__gradiant pt-8 mt-5 " >
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 lg:py-6 py-3 items-center ">
           <div className="max-container text-secondary text-center rounded-md">
-            <h2 className="mb-2">PRC: A Passion Project Born from Purpose </h2>
-            <Image height="1000" width="800" src={Service.src} className="pb-3 m-auto" alt=" PRC repair " />
+             <MainHeading Heading="PRC: A Passion Project Born from Purpose" color="var(--prc)" svg_stroke="var(--alpha)" />
             <p className="">
               The concept of PRC emerged from a vision to bring together every aspect of the repair industry under one roof. I wanted to go beyond just running a repair shop—to create a space that offers solutions for everyone. From wholesale services and data recovery to screen refurbishing, business-to-business repairs, selling spare parts, and accessories online, PRC was designed to be a comprehensive hub for all things repair-related.
             </p>

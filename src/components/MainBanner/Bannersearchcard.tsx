@@ -44,7 +44,6 @@ const Bannersearchcard: React.FC = () => {
     }
     return [];
   };
-
   // Get models or products based on the selected series
   const getModelsOrProducts = (series: string): Item[] => {
     const seriesData = baseData

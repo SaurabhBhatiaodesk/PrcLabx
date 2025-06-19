@@ -63,60 +63,15 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
     if (isHovered && submenuRef.current && itemRef.current) {
       const itemRect = itemRef.current.getBoundingClientRect();
       const submenu = submenuRef.current;
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const submenuWidth = 240; // Consistent width for independent submenus
-      const submenuHeight = submenu.scrollHeight; // Actual height of the submenu content
-
+      
       // Reset positioning styles
       submenu.style.left = "";
-      submenu.style.right = "";
       submenu.style.top = "";
-      submenu.style.bottom = "";
-
-      // Horizontal positioning: Try right, then left
-      const spaceOnRight = viewportWidth - itemRect.right;
-      const spaceOnLeft = itemRect.left;
-
-      if (spaceOnRight >= submenuWidth) {
-        // Position to the right of the parent item
-        submenu.style.left = `${itemRect.right + 2}px`; // 2px gap
-        submenu.style.right = "auto";
-      } else if (spaceOnLeft >= submenuWidth) {
-        // Position to the left of the parent item
-        submenu.style.left = `${itemRect.left - submenuWidth - 2}px`; // 2px gap
-        submenu.style.right = "auto";
-      } else {
-        // Fallback: position within viewport if not enough space on either side
-        // This might overlap the parent, but ensures visibility
-        submenu.style.left = `${Math.max(
-          0,
-          viewportWidth - submenuWidth - 8
-        )}px`;
-        submenu.style.right = "auto";
-      }
-
-      // Vertical positioning: Align with parent item's top, or adjust if off-screen
-      const spaceBelow = viewportHeight - itemRect.top;
-      const spaceAbove = itemRect.bottom;
-
-      if (spaceBelow >= submenuHeight) {
-        // Align top with parent item
-        submenu.style.top = `${itemRect.top}px`;
-        submenu.style.bottom = "auto";
-      } else if (spaceAbove >= submenuHeight) {
-        // Align bottom with parent item
-        submenu.style.top = `${itemRect.bottom - submenuHeight}px`;
-        submenu.style.bottom = "auto";
-      } else {
-        // Fallback: center vertically in viewport
-        submenu.style.top = `${Math.max(
-          8,
-          (viewportHeight - submenuHeight) / 2
-        )}px`;
-        submenu.style.bottom = "auto";
-      }
-
+      
+      // Position the submenu directly to the right of the parent item
+      submenu.style.left = `${itemRect.right - 12}px`; // 2px gap from parent item
+      submenu.style.top = `${itemRect.top - 40}px`; // Align top with parent item
+      
       // Ensure submenu is fixed position relative to viewport
       submenu.style.position = "fixed";
     }
@@ -124,29 +79,31 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
   return (
     <div ref={itemRef} className="relative group/nested">
-      <Link
-        href={`/brands/${itemPath}`}
-        className={`flex items-center justify-between px-3 py-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-l-[#122d37] hover:bg-gray-50 ${isActivePath(item.alias)
-            ? "bg-[#122d37] text-white border-l-[#122d37]"
-            : "text-gray-700 hover:text-[#122d37]"
-          }`}
-        onMouseEnter={() => onMouseEnter(itemId, level)}
-        onMouseLeave={() => onMouseLeave(level + 1)}
-      >
-        <span className="flex-1 truncate pr-2 font-medium">{item.title}</span>
-        {hasChildren(item) && (
-          <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transition-transform duration-200 group-hover/nested:translate-x-1" />
-        )}
-      </Link>
+   <Link
+  href={`/brands/${itemPath}`}
+  className={`group flex items-center justify-between p-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent 
+    ${isActivePath(item.alias)
+      ? "bg-[#122d37] text-white border-l-[#122d37]"
+      : "text-gray-700 hover:text-[#122d37] hover:bg-gray-50 hover:border-l-[#122d37]"
+    }`}
+  onMouseEnter={() => onMouseEnter(itemId, level)}
+  onMouseLeave={() => onMouseLeave(level + 1)}
+>
+  <span className="flex-1 truncate pr-2 font-medium transition-all duration-300 ease-in-out">{item.title}</span>
+
+  {hasChildren(item) && (
+    <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transform transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+  )}
+</Link>
+
 
       {/* Independent nested submenu - appears as a separate dropdown */}
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className="bg-white shadow-xl border border-gray-200 rounded-lg py-2 z-50 max-h-80 overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
-         
             boxShadow:
               "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
@@ -316,9 +273,10 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
     const children = getChildren(parentItem);
 
     if (!children.length) return null;
-
+// gurravcomment code 278 line
     // Enhanced column calculation for better layout
-    const columns = Math.min(Math.max(Math.ceil(children.length / 6), 2), 4);
+    // const columns = Math.min(Math.max(Math.ceil(children.length / 6), 2), 4);
+       const columns =  1;
     const itemsPerColumn = Math.ceil(children.length / columns);
 
     // Calculate dropdown position
@@ -331,7 +289,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
         style={{
           width: "auto",
-          minWidth: "500px",
+          minWidth: "300px",
+            // minWidth: "500px",
           maxWidth: "80vw",
           boxShadow:
             "0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1)",
@@ -339,7 +298,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
         onMouseEnter={() => handleMouseEnter(parentItem.id.toString())}
         onMouseLeave={() => handleMouseLeave()}
       >
-        <div className="p-6">
+        <div className="p-3">
           {/* Enhanced Header with gradient */}
           {/* <div className="pb-4 border-b border-gray-200 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] -m-6 mb-4 p-6 rounded-t-lg">
             <h3 className="text-lg font-bold text-white mb-1">
@@ -353,7 +312,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
           {/* Enhanced Grid Layout with perfect spacing */}
           <div
-            className="grid gap-4"
+            className="grid"
             style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
           >
             {Array.from({ length: columns }, (_, colIndex) => {
@@ -387,17 +346,17 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           </div>
 
           {/* Enhanced Footer with better styling */}
-          <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
+          <div className="mt-2 pt-4 border-t border-gray-200 flex justify-between items-center ">
             <Link
               href={`/brands/${parentItem.alias}`}
-              className=" inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-sm font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="w-full inline-flex items-center p-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-xs font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
             >
               View All {parentItem.title} Products
               <IoChevronForward className="ml-2 text-sm" />
             </Link>
-            <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+            {/* <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
               {children.length} categories available
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -439,9 +398,9 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 >
                   <Link
                     href={`/brands/${item.alias}`}
-                    className={` flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
+                    className={` flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
                         ? "bg-[#122d37] text-white shadow-md"
-                        : "text-gray-700 hover:text-white"
+                        : "text-secondary hover:text-white"
                       }`}
                   >
                     {item.title}
@@ -461,7 +420,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 onMouseEnter={() => setIsDropdownVisible(true)}
                 onMouseLeave={() => setIsDropdownVisible(false)}
               >
-                <button className="flex items-center px-[5px] py-2 text-[16px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
+                <button className="flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
                   Other Brands
                   <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                 </button>
@@ -492,7 +451,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 <ul className="menu menu-horizontal px-1 flex items-center space-x-1">
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">Services</span>
                       </button>
 
@@ -569,7 +528,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
                   <li>
                     <div className="relative inline-block group">
-                      <button className="flex items-center px-2 py-2 text-[16px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
+                      <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
                       </button>
 

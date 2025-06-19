@@ -152,8 +152,8 @@ const MobileFooterMenue = () => {
           onClick={() => handleToggle(1)}
         >
           <span className="text-[17px] tracking-[1.5px] text-primary">Quick links</span>
-          <MdKeyboardArrowDown
-            className={`transition-transform duration-300 !text-primary${
+         <MdKeyboardArrowDown
+            className={`transition-transform duration-300 !text-primary ${
               activeIndex === 1 ? "rotate-180" : ""
             }`}
           />

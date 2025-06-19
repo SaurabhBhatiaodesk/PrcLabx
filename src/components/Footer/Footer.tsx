@@ -22,6 +22,7 @@ import { IoIosCart } from "react-icons/io";
 
 import newlogo from "../../../public/Images/prclogo.png";
 const Footer = () => {
+  
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // State to handle error message
   const [loading, setLoading] = useState(false); // To track loading state
@@ -96,7 +97,11 @@ const Footer = () => {
   const handleToastHide = () => {
     setToast(null); // Reset the toast state
   };
-
+  const scrollTotop = () => {
+  // Scroll to the top with smooth behavior
+  window.scrollTo({ top: 0, behavior: "smooth" });
+ 
+};
   return (
     <div className="bg-prc">
       <div className="container">
@@ -572,7 +577,7 @@ const Footer = () => {
           </section>
           <section className="block lg:hidden">
             <div className="py-3 bg-black  relative z-[1000]  ">
-              <div className="grid grid-cols-5 justify-between gap-2 footer-app py-1 fixed bottom-0 w-full left-0 right-0 bg-black border-t-1 border-[#4a4a4a77]  border-r-[10px_10px_0px_0px]">
+              <div className="grid grid-cols-4 justify-between gap-2 footer-app py-1 fixed bottom-0 w-full left-0 right-0 bg-prc border-t-1 border-[#4a4a4a77]  rounded-[10px_10px_0px_0px] ">
                 <Link href="/">
                   <div className="flex flex-col items-center">
                     <Image
@@ -601,12 +606,7 @@ const Footer = () => {
                     <span className="text-[12px] tracking-[1.5px] text-white  ">Mail</span>
                   </div>
                 </Link>
-                <Link href="/coming-soon">
-                  <div className="flex flex-col items-center">
-                    <IoIosCart fontSize={26} color="white" />
-                    <span className="text-[12px] tracking-[1.5px] text-white">Cart</span>
-                  </div>
-                </Link>
+              
 
                 <Link href="tel:+61455777077">
                   <div className="flex flex-col items-center">
@@ -619,7 +619,8 @@ const Footer = () => {
           </section>
         </div>
       </div>
-      <Image className="p-3 fixed right-0 bottom-0 z-50" src={homespinner} alt="homespinner" />
+      <Image className="p-3 fixed right-0 bottom-0 z-50 lg:block hidden cursor-pointer "  onClick={scrollTotop} src={homespinner} alt="homespinner" />
+
     </div>
   );
 };

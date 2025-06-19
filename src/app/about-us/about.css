@@ -10,7 +10,7 @@
     width: 100%;
 }
 .overlap__description {
-    background:var(--tertiary);
+    background:#243B55;
     padding: 35px;
     padding-top: 30%;
     position: absolute;
@@ -26,9 +26,7 @@
     position: relative;
     width: 95%;
 }
-.overlap__description h3, .overlap__description p{
-    color: #000;
-}
+
 .overlap__section_labX.relative {
     margin-bottom: 22rem;
 }

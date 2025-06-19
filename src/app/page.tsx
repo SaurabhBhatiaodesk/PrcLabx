@@ -31,8 +31,9 @@ import sliderimg7 from "../../public/Images/sliderphoneback.webp"
 import sliderimg8 from "../../public/Images/sliderphonelock.webp"
 
 import React from "react";
-import MasterPhone from "@/components/MasterPhone/MasterPhone";
+
 import Productswiper from "@/components/Storeproduct/Productswiper";
+import HandsOnTraining from "@/components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
   title: "Best Mobile Phone Repair Courses, Services & Training | PRC Repair",
   description: "PRC Repair provides the best mobile phone repair courses, services & training, offering expert guidance and practical experience for a successful career. Join now!",
@@ -206,8 +207,9 @@ const page = () => {
       <ShipDeviceUs />
 
       <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)" />
+      <HandsOnTraining/>
       <DataRecovery />
-      <MasterPhone />
+  
       <Productswiper slideData={slideData} Heading="China Warehouse, Global Flow" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="var(--alpha)" color="var(--prc)" />
 
       <WhyChooseLabX />

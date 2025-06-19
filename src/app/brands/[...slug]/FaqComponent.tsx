@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import Image from "next/image";
+import { LuPlus } from "react-icons/lu";
+import { GrSubtract } from "react-icons/gr";
 
 const FaqComponent: React.FC = () => {
   const [faqData, setFaqData] = useState<any[]>([]); // State to hold the FAQ data
@@ -46,81 +48,81 @@ const FaqComponent: React.FC = () => {
 
   return (
     <>
-    <div className="py-5 xl:py-10  bg-[#FEF6FF]">
-    <div className="container ">
-      <MainHeading Heading="Most People Ask us These Questions" color="black"  svg_stroke="var(--alpha)"/>
-        <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
-    <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
-  <div>
-
-   
-      {faqData.length > 0 && (
-        <div className="max-w-screen-lg mx-auto ">
-          
-
-          {loading && <p className="text-center text-lg">Loading...</p>}
-          {error && <p className="text-center text-lg text-red-500">{error}</p>}
-
-      <div className={`space-y-2 ${faqData.length < 6 ? "" : "h-[450px] overflow-y-scroll w-full scrollbar-thin scrollbar-track-yellow-200 scrollbar-thumb-green-700 gauravkumarscrollbar"}`}>
-  {/* FAQ content goes here */}
+      <div className="py-5 xl:py-10  bg-[#FEF6FF]">
+        <div className="container ">
+          <MainHeading Heading="Most People Ask us These Questions" color="vaar-(prc)" svg_stroke="var(--alpha)" />
+          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." />
+          <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 gap-4 lg:py-5 py-3">
+            <div>
 
 
-            {/* Map through the FAQ data and render each item */}
-            {faqData.map((faq: any) => (
-              <div
-                key={faq.id}
-                className="border-b border-gray-200 dark:border-gray-700"
-              >
-                <div
-                  onClick={() => handleToggleFAQ(faq.id)}
-                  className="flex w-full items-center justify-between py-3 text-left"
-                >
-                  <h3
-                    className="text-sm htmleditor"
-                    dangerouslySetInnerHTML={{ __html: faq.question }}
-                  />
-                  {/* Chevron Icon */}
-                  <span
-                    className={`transition-transform duration-300 ${
-                      activeFAQ === faq.id ? "rotate-180" : ""
-                    }`}
-                  >
-                    &#9660; {/* Unicode for downward chevron */}
-                  </span>
-                </div>
+              {faqData.length > 0 && (
+                <div className="max-w-screen-lg mx-auto ">
 
-                {/* Show/Hide Answer on Toggle */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out max-h-0 ${
-                    activeFAQ === faq.id ? "max-h-[500px]" : ""
-                  }`}
-                >
-                  <div className="p-6 bg-white">
-                    <div
-                      className="faq-answer text-gray-700 space-y-4 text-sm sm:text-base md:text-lg"
-                      dangerouslySetInnerHTML={{ __html: faq.answer }}
-                    ></div>
+
+                  {loading && <p className="text-center text-lg">Loading...</p>}
+                  {error && <p className="text-center text-lg text-red-500">{error}</p>}
+
+                  <div className={`space-y-2 ${faqData.length < 6 ? "" : "h-[450px] overflow-y-scroll w-full scrollbar-thin scrollbar-track-yellow-200 scrollbar-thumb-green-700 gauravkumarscrollbar"}`}>
+                    {/* FAQ content goes here */}
+
+
+                    {/* Map through the FAQ data and render each item */}
+                    {faqData.map((faq: any) => (
+                      <div
+                        key={faq.id}
+                        className="border-b border-gray-200 dark:border-gray-700"
+                      >
+                        <div
+                          onClick={() => handleToggleFAQ(faq.id)}
+                          className="flex w-full items-center justify-between py-3 text-left"
+                        >
+                          <h3
+                            className="text-sm htmleditor"
+                            dangerouslySetInnerHTML={{ __html: faq.question }}
+                          />
+                          {/* Chevron Icon */}
+                          <span className={`transition-transform duration-300`}>
+                            {activeFAQ === faq.id ? (
+                              <GrSubtract color="black" />
+                            ) : (
+                              <LuPlus color="black" />
+                            )}
+
+                          </span>
+                        </div>
+
+                        {/* Show/Hide Answer on Toggle */}
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out max-h-0 ${activeFAQ === faq.id ? "max-h-[500px]" : ""
+                            }`}
+                        >
+                          <div className="p-6 bg-white">
+                            <div
+                              className="font-light text-secondary space-y-4 text-sm sm:text-base md:text-base"
+                              dangerouslySetInnerHTML={{ __html: faq.answer }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
+              )}
+            </div>
+            <div>
+              <Image
+                className="lg:h-auto h-[300px] object-contain"
+                src={banner}
+                alt="Mobile repair"
+                width={500}
+                height={500}
+              />
+            </div>
           </div>
-        </div>
-      )}
-       </div>
-       <div>
-   <Image
-                    className="lg:h-auto h-[300px] object-contain"
-                    src={banner}
-                    alt="Mobile repair"
-                    width={500}
-                    height={500}
-                  />
-</div>
-</div>
 
-</div>
-</div>
+        </div>
+      </div>
     </>
   );
 };
