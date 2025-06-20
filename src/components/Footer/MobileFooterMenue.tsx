@@ -122,12 +122,9 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="data-recovery">Data Recovery</Link>
             </li>
-            <div className="flex items-center gap-2">
-              <li className="mb-2 text-primary">Parts Store</li>
-              <span className="text-white">
-                <Image src={commingsoon} width={40} height={30} alt="" />
-              </span>
-            </div>
+           <li className="mb-2 text-primary">
+              <Link href="https://wholesale.prcrepair.com.au/" target="_blank">Parts Store</Link>
+            </li>
 
             <div className="flex items-center gap-2">
               <li className="mb-2 text-primary">Repair Form</li>

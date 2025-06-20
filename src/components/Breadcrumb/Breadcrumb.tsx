@@ -106,8 +106,8 @@ function Breadcrumb({
                   </li>
                 </ul>
                 <h1
-                  className={`text-dark lg:mb-3 mb-2 text-3xl font-bold ${
-                    pageNamecolor == undefined ? "text-primary" : pageNamecolor
+                  className={`text-fourth lg:mb-3 mb-2 text-3xl font-bold ${
+                    pageNamecolor == undefined ? "text-fourth" : pageNamecolor
                   } sm:text-4xl md:text-[40px] md:leading-[1.2]`}
                 >
                   {pageName}

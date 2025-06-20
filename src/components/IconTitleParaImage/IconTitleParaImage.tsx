@@ -35,7 +35,7 @@ const IconTitleParaImage: React.FC<DataRecoveryProps> = ({
       <div className="grid xl:grid-cols-[3fr_2fr] lg:grid-cols-[3fr_2fr] grid-cols-1 grid-col-recerse gap-4 lg:py-5 py-3 items-center">
         {/* Text Content */}
         <div>
-          <div className="flex-col gap-2 flex">
+          <div className="flex-col flex">
             {points.map((point, index) => (
               <div key={index} className="flex items-start gap-3">
                

@@ -41,7 +41,7 @@ export default function PS5Banner() {
                   </button>
                 </Link>
               </div>
-              <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-primary tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+              <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-fourth tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
                 <span className="text-tertiary">PS5 </span>
                 REPAIRS
               </h1>

@@ -111,14 +111,14 @@ const TraningTabBigner: React.FC = () => {
   return (
     <section
       className="py-4 lg:py-[20px]"
-      style={{
-        backgroundImage: "url('/images/Home/back-banner.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('/images/Home/back-banner.svg')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container bgchange">
-        <div className="mb-3">
+        <div className="mb-5">
           <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
         </div>
 
@@ -192,7 +192,7 @@ const TraningTabBigner: React.FC = () => {
                       height={50}
                     /> */}
                     <div>
-                     <p className="text-white">
+                     <p className="text-primary">
                         {/* <span className="font-bold pb-[2px] border-b-[#fff563] border-b-[1px]">
                           {item.title}
                         </span> */}

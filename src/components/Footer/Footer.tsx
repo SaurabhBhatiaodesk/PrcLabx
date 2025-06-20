@@ -231,21 +231,13 @@ const Footer = () => {
                           </li>
                         </Link>
                       </div>
-                      <div>
-                        <span>
-                          <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
-                            Parts Store
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={40}
-                                height={30}
-                                alt=""
-                              />
-                            </span>
+                       <div>
+                        <Link href="https://wholesale.prcrepair.com.au/" target="_blank">
+                          <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
+                           Parts Store
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
-                        </span>
+                        </Link>
                       </div>
                       <div>
                         <span>

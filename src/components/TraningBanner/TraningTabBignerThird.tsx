@@ -141,10 +141,8 @@ const TraningTabBignerThird: React.FC = () => {
 
   return (
     <section
-    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
-  style={{
-    backgroundImage: `url(${backbanner.src})`,
-  }}
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+
 >
     
       <div className="container bgchange">
