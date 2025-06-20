@@ -1408,21 +1408,21 @@ const StaperForm: React.FC = () => {
                                   {/* Radio buttons for Yes or No */}
                                   <div className="flex gap-4">
                                     <FormControlLabel
-                                    className="text-primary"
+                                      className="text-primary"
                                       control={
                                         <Radio
                                           sx={{
-        color: "var(--primary)", // Unchecked color
-        "&.Mui-checked": {
-          color: "var(--alpha)", // Checked color
-        },
-      }}
+                                            color: "var(--primary)", // Unchecked color
+                                            "&.Mui-checked": {
+                                              color: "var(--alpha)", // Checked color
+                                            },
+                                          }}
                                           checked={
                                             repairDetails?.previousRepairAttempts ===
                                             "Yes"
-                                        
+
                                           }
-                                            className="text-primary"
+                                          className="text-primary"
                                           onChange={() =>
                                             setRepairDetails({
                                               ...repairDetails,
@@ -1431,27 +1431,27 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                       label="Yes"
-  sx={{
-    color: "#fff", // White text for the label
-  }}// This is the label that will be shown next to the radio button
+                                      label="Yes"
+                                      sx={{
+                                        color: "#fff", // White text for the label
+                                      }}// This is the label that will be shown next to the radio button
                                     />
                                     <FormControlLabel
                                       className="text-primary"
                                       control={
                                         <Radio
-                                              sx={{
-        color: "var(--primary)", // Unchecked color
-        "&.Mui-checked": {
-          color: "var(--alpha)", // Checked color
-        },
-      }}
-                                       
+                                          sx={{
+                                            color: "var(--primary)", // Unchecked color
+                                            "&.Mui-checked": {
+                                              color: "var(--alpha)", // Checked color
+                                            },
+                                          }}
+
                                           checked={
                                             repairDetails?.previousRepairAttempts ===
                                             "No"
                                           }
-                                           className="text-primary"
+                                          className="text-primary"
                                           onChange={() =>
                                             setRepairDetails({
                                               ...repairDetails,
@@ -1460,10 +1460,10 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                                                           label="Yes"
-  sx={{
-    color: "#fff", // White text for the label
-  }}// This is the label that will be shown next to the radio button
+                                      label="No"
+                                      sx={{
+                                        color: "#fff", // White text for the label
+                                      }}// This is the label that will be shown next to the radio button
                                     />
                                   </div>
 
@@ -1533,18 +1533,18 @@ const StaperForm: React.FC = () => {
 
                                   {/* Radio buttons for Yes or No */}
                                   <div className="flex gap-4">
-                                   
+
                                     <FormControlLabel
-                                    className="text-primary"
+                                      className="text-primary"
                                       control={
-                                       
+
                                         <Radio
-                                                    sx={{
-        color: "var(--primary)", // Unchecked color
-        "&.Mui-checked": {
-          color: "var(--alpha)", // Checked color
-        },
-      }}
+                                          sx={{
+                                            color: "var(--primary)", // Unchecked color
+                                            "&.Mui-checked": {
+                                              color: "var(--alpha)", // Checked color
+                                            },
+                                          }}
                                           checked={
                                             repairDetails?.jumpQueueForFasterService ===
                                             "Yes"
@@ -1580,10 +1580,10 @@ const StaperForm: React.FC = () => {
                                           }
                                         />
                                       }
-                                                                           label="No"
-  sx={{
-    color: "#fff", // White text for the label
-  }}// This is the label that will be shown next to the radio button
+                                      label="No"
+                                      sx={{
+                                        color: "#fff", // White text for the label
+                                      }}// This is the label that will be shown next to the radio button
                                     />
                                   </div>
 
