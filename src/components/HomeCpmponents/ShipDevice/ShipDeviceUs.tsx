@@ -111,8 +111,10 @@ export default function ShipDeviceUs() {
                   </div>
                 </div>
 
-              </Link>
-<div className="mt-3 flex justify-start items-center gap-2 text-tertiary  text-lg hover:text-white">
+            
+              <p className="text-lg  mt-3 mb-0 text-primary">{slide.Product}</p>
+                </Link>
+<div className="mt-1 flex justify-start items-center gap-2 text-tertiary  text-lg hover:text-white">
   <Link href={slide.linking} className=" " >Learn More</Link>
   <IoIosArrowRoundForward  className="" fontSize={35}/>
 </div>

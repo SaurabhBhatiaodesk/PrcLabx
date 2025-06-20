@@ -98,15 +98,15 @@ function TraningBanner({
               <div className="text-center lg:text-left">
                 <div className="flex gap-3 mb-2">
                   <div className="flex gap-2">
-                    <Image src={trending} alt=" labx repair " />
+                    <Image src={trending} alt=" PRC repair " />
                     <span className=" lg:text-lg text-sm text-primary">{courseName}</span>
                   </div>
                   <div className="flex gap-2">
-                    <Image src={coursereating} alt=" labx repair " />
+                    <Image src={coursereating} alt=" PRC repair " />
                     <span className=" lg:text-lg text-sm text-primary">{courseRating}</span>
                   </div>
                   <div className="flex gap-2">
-                    <Image src={clock} alt=" labx repair " />
+                    <Image src={clock} alt=" PRC repair " />
                     <span className=" lg:text-lg text-sm text-primary">{courseHour}</span>
                   </div>
                 </div>

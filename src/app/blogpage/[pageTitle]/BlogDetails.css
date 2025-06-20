@@ -75,7 +75,7 @@
 .custom-content-styling h2,
 .custom-content-styling h2 span {
     background-color: transparent !important;
-   color: var(--secondary); 
+   color: var(--secondary) !important; 
     font-size: 28px;
 }
 
@@ -84,7 +84,7 @@
     color: var(--secondary)
 }
 .custom-content-styling h3{
-   color: var(--secondary); 
+   color: var(--secondary) !important; 
 }
 
 .custom-content-styling h4 {
@@ -95,12 +95,12 @@
 
 .custom-content-styling h4 strong {
     font-size: 20px;
- color: var(--secondary);
+ color: var(--secondary) !important;
     font-weight: bold;
 }
 .custom-content-styling h3 strong {
     font-size: 24px;
- color: var(--secondary);
+ color: var(--secondary) !important;
     font-weight: bold;
 }
 
@@ -108,18 +108,18 @@
 /* New - h5 and h6 */
 .custom-content-styling h5 {
     font-size: 18px;
-   color: var(--secondary); 
+   color: var(--secondary) !important; 
     margin-bottom: 8px;
 }
 .custom-content-styling h5 strong {
   font-size: 18px;
- color: var(--secondary);
+ color: var(--secondary) !important;
   margin-bottom: 8px;
 }
 
 .custom-content-styling h6 {
     font-size: 16px;
- color: var(--secondary);
+ color: var(--secondary) !important;
     margin-bottom: 8px;
 }
 
@@ -127,20 +127,20 @@
 .custom-content-styling p {
     font-size: 18px; 
     line-height: 1.6; 
-    color: var(--secondary); 
+    color: var(--secondary) !important; 
     margin-bottom: 10px;
 }
 
 /* List Items */
 .custom-content-styling li strong {
- color: var(--secondary); 
+ color: var(--secondary) !important; 
   font-size: 18px;
 }
 
 .custom-content-styling li span {
     font-size: 18px;
     line-height: 1.6;
-   color: var(--secondary); 
+   color: var(--secondary) !important; 
     margin-bottom: 10px;
 }
 
@@ -175,7 +175,7 @@
         font-size: 18px;
     }
     .custom-content-styling li strong {
-     color: var(--secondary); 
+     color: var(--secondary) !important; 
       font-size: 16px;
     }
     .custom-content-styling h4 strong {
@@ -195,12 +195,12 @@
     .custom-content-styling h4 strong,
     .custom-content-styling p strong {
         font-size: 24px !important;
-         color: var(--secondary); 
+         color: var(--secondary) !important; 
     }
 
     .custom-content-styling h3 span {
         font-size: 22px;
-       color: var(--secondary); 
+       color: var(--secondary) !important; 
     }
 
     /* Paragraph */

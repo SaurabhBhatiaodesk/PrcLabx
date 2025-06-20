@@ -179,7 +179,7 @@ const FaqPageCall = () => {
           content: 'Click on “Apply for Business Account” on our website and fill out the necessary details. Once your account is approved by our admin, you’ll have access to wholesale pricing and special features.',
         },
         {
-          title: '4. What are the benefits of B2B partnerships with LabX?',
+          title: '4. What are the benefits of B2B partnerships with PRC ?',
           content: 'Our B2B clients receive competitive pricing, faster turnaround times, and custom solutions to fit their business needs. We also offer repair tracking and automated updates to keep you informed.',
         },
 
@@ -201,7 +201,7 @@ const FaqPageCall = () => {
           content: 'Start by clicking "Start Repair" on our website and provide details about the issue. After receiving a pre-approved quote, you will mail the device to us. We’ll update you throughout the process, and once the repair is done, we’ll ship it back with a tracking number.',
         },
         {
-          title: '4. What are the benefits of B2B partnerships with LabX?',
+          title: '4. What are the benefits of B2B partnerships with PRC ?',
           content: 'Our B2B clients receive competitive pricing, faster turnaround times, and custom solutions to fit their business needs. We also offer repair tracking and automated updates to keep you informed.',
         },
 

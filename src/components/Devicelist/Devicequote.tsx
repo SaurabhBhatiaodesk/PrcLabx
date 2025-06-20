@@ -110,7 +110,7 @@ export default function Devicequote() {
           </h2>
 
           <Link href="/brands" className="hidden md:block">
-            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
+            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               Visit store
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -150,7 +150,7 @@ export default function Devicequote() {
         </div>
         <div className="flex justify-center my-4">
           <Link href="/brands" className="block md:hidden">
-            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
+            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               Visit store
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

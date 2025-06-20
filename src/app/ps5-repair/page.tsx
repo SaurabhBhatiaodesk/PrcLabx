@@ -21,7 +21,7 @@ export const metadata = {
         url: "", // Replace with your image URL
         width: 1200,
         height: 630,
-        alt: "LabX Tech Solutions Banner",
+        alt: "PRC Tech Solutions Banner",
       },
     ],
   },

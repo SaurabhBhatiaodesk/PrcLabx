@@ -116,6 +116,9 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="/b2b-repair-services">B2B Repair</Link>
             </li>
+             <li className="mb-2 text-primary">
+              <Link href="/ps5-repair">PS5 Repair</Link>
+            </li>
             <li className="mb-2 text-primary">
               <Link href="/screen-refurbishing">Screen Refurbishment</Link>
             </li>

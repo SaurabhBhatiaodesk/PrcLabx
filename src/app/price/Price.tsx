@@ -6089,8 +6089,8 @@ const Pricing: React.FC = () => {
   const mobileCategory = [
     { mobile: "iPhone" },
     { mobile: "iPad" },
-    { mobile: "SamsungPhones" },
-    { mobile: "SamsungTablets" },
+    { mobile: "Samsung Phones" },
+    { mobile: "Samsung Tablets" },
     { mobile: "iWatch" },
     { mobile: "Oppo" },
     { mobile: "Google" },

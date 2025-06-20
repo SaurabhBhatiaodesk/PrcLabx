@@ -97,7 +97,7 @@ function HandsOnTraining() {
                 {course.description}
               </p>
         <Link href={course.linking}>
-                           <button  className=" rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center absolute right-0 p-3 bottom-0">
+                           <button  className=" rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center absolute right-0 p-3 bottom-0 hover:scale-105">
                   <FaArrowRight size={18} />
                 </button>
                 </Link>
