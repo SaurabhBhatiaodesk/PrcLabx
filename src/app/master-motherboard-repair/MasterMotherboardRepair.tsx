@@ -1,16 +1,14 @@
 "use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/LightCources";
+
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
-import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
-import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
+import backbanner from "../../../public/Images/Home/back-banner.svg"
+
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 // import MasterReviews from "@/components/GoogleReviews/MasterReviews";
 import React from "react";
-import FristTraningTab from "../expert-motherboard-repair/FristTraningTab";
+
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
-import TraningSales from "../expert-motherboard-repair/TraningSales";
 
 // import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab";
 import MasterTabFirsh from "./MasterTabFirsh";
@@ -22,7 +20,7 @@ import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
-import Iname from "../../../public/Images/icons/I.png";
+
 import Nname from "../../../public/Images/icons/N.png";
 import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
@@ -69,62 +67,62 @@ const MasterMotherboardRepair = () => {
         "Absolutely! This motherboard repair course is ideal for data recovery specialists, as it includes techniques to restore devices with critical board damage and recover valuable data.",
     },
   ];
-const reviewsData = [
-  {
-    name: "Tommy Harris",
-    date: "September 12, 2023",
-    profileImage: hname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "This motherboard repair course taught me everything I needed to know about micro soldering. The hands-on training was fantastic, and I’m now confident handling complex repairs.",
-  },
-  {
-    name: "Emma Wilson",
-    date: "September 12, 2023",
-    profileImage: rname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "An excellent course for anyone looking to level up their skills. The instructors are knowledgeable, and the practical experience has made me a pro in motherboard repairs.",
-  },
-  {
-    name: "Jacob Brown",
-    date: "September 12, 2023",
-    profileImage: Sname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "Highly recommend this micro soldering course! I learned everything from CPU reballing to data recovery. The training was clear, and I feel ready to start my own business.",
-  },
-  {
-    name: "Sarah Clark",
-    date: "October 5, 2023",
-    profileImage: jname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "The Master Motherboard Repair course was a game-changer. I can now confidently repair damaged boards and handle tricky data recovery tasks. Worth every penny!",
-  },
-  {
-    name: "James Walker",
-    date: "November 1, 2023",
-    profileImage: Aname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "Great hands-on experience with real-world scenarios. This course has taken my repair skills to the next level, especially with advanced soldering techniques. Very happy!",
-  },
-  {
-    name: "Lily Roberts",
-    date: "November 1, 2023",
-    profileImage: Nname,
-    logoImage: Googletest,
-    rating: 5,
-    param:
-      "I gained valuable insights into micro soldering and mobile phone repairs. The course helped me become proficient in restoring even the most challenging motherboard issues. Fantastic training!",
-  },
-];
+  const reviewsData = [
+    {
+      name: "Tommy Harris",
+      date: "September 12, 2023",
+      profileImage: hname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "This motherboard repair course taught me everything I needed to know about micro soldering. The hands-on training was fantastic, and I’m now confident handling complex repairs.",
+    },
+    {
+      name: "Emma Wilson",
+      date: "September 12, 2023",
+      profileImage: rname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "An excellent course for anyone looking to level up their skills. The instructors are knowledgeable, and the practical experience has made me a pro in motherboard repairs.",
+    },
+    {
+      name: "Jacob Brown",
+      date: "September 12, 2023",
+      profileImage: Sname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Highly recommend this micro soldering course! I learned everything from CPU reballing to data recovery. The training was clear, and I feel ready to start my own business.",
+    },
+    {
+      name: "Sarah Clark",
+      date: "October 5, 2023",
+      profileImage: jname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "The Master Motherboard Repair course was a game-changer. I can now confidently repair damaged boards and handle tricky data recovery tasks. Worth every penny!",
+    },
+    {
+      name: "James Walker",
+      date: "November 1, 2023",
+      profileImage: Aname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "Great hands-on experience with real-world scenarios. This course has taken my repair skills to the next level, especially with advanced soldering techniques. Very happy!",
+    },
+    {
+      name: "Lily Roberts",
+      date: "November 1, 2023",
+      profileImage: Nname,
+      logoImage: Googletest,
+      rating: 5,
+      param:
+        "I gained valuable insights into micro soldering and mobile phone repairs. The course helped me become proficient in restoring even the most challenging motherboard issues. Fantastic training!",
+    },
+  ];
 
   const instructorData = {
     instructorName: "Bharat Dhingra & Team",
@@ -180,23 +178,33 @@ const reviewsData = [
         Courseformate4="Free Toolkit"
         border="#d5fd33a1"
       />
-      <MasterTabFirsh />
-      <MasterTabSecond />
+      <section
+        className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+        style={{
+          backgroundImage: `url(${backbanner.src})`,
+        }}
+      >
+
+        <MasterTabFirsh />
+        <MasterTabSecond />
+      </section>
+
+
       <TrainingInstructors {...instructorData} />
 
-  <LightCources title=" Tools and Techniques Covered" discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration." />
+      <LightCources title=" Tools and Techniques Covered" discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration." />
 
       {/* <MasterChooseLab /> */}
-{/* this is comment code  */}
+      {/* this is comment code  */}
       <Boxblock></Boxblock>
 
 
       {/* <BeginnerPhoneRepaiCourseSale /> */}
       {pathname === "/beginner-phone-repair-course" ||
-      pathname === "/advanced-motherboard" ||
-      pathname === "/expert-motherboard-repair" ||
-      pathname === "/master-motherboard-repair" ||
-      pathname === "/professional-phone-screen" ? null : (
+        pathname === "/advanced-motherboard" ||
+        pathname === "/expert-motherboard-repair" ||
+        pathname === "/master-motherboard-repair" ||
+        pathname === "/professional-phone-screen" ? null : (
         <div className=" container" id="master-motherboard-repairi-id">
           <MainHeading Heading="Master Motherboard Repair – Micro Soldering" />
           <FormCode />

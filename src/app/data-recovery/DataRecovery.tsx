@@ -16,7 +16,7 @@ import ContactsandMessages from "../../../public/Images/icons/Contacts and Messa
 import emaildocument from "../../../public/Images/icons/emaildocument.svg";
 import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Physically Damaged Devices.svg";
 
-import pointer from "../../../public/Images/icons/pointing-right.svg";
+import pointer from "../../../public/Images/icons/pointing-right 1.svg";
 import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
 import BoxComponents from "@/components/BoxComponents/BoxComponents";
 import StaperForm from "../mail-in-repair/StaperForm";

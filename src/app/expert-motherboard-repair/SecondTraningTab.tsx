@@ -104,10 +104,10 @@ const SecondTraningTab: React.FC = () => {
 
   return (
     <section
-     className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
-  style={{
-    backgroundImage: `url(${backbanner.src})`,
-  }}
+     className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+  // style={{
+  //   backgroundImage: `url(${backbanner.src})`,
+  // }}
 >
       <div className="container bgchange">
         {/* <div className="mb-3">

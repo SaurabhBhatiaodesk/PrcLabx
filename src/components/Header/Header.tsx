@@ -167,25 +167,15 @@ export default function App() {
                           >
                             Data Recovery{" "}
                           </Link>
-                          <div
-                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"'
+                           <Link
+                            href="https://wholesale.prcrepair.com.au/" target="_blank"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
                           >
-                            <span
-                              className="
-                  "
-                            >
-                              Parts Store{" "}
-                            </span>
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={20}
-                                height={20}
-                                alt=""
-                              />
-                            </span>
-                          </div>
+                          Parts Store
+                          </Link>
 
                           <div
                             className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
@@ -364,7 +354,7 @@ export default function App() {
                     MainButton="Instant Quote"
                     color=""
                     // onClick={MailRepair}
-                    link="/brands"
+                    link="/contact-us"
                     aria-label="Start the repair process for your device"
                   />
                 </div>

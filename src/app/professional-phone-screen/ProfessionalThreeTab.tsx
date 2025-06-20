@@ -113,10 +113,10 @@ const TraningTabBignersecond: React.FC = () => {
 
   return (
     <section
-    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
-  style={{
-    backgroundImage: `url(${backbanner.src})`,
-  }}
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+  // style={{
+  //   backgroundImage: `url(${backbanner.src})`,
+  // }}
 >
       <div className="container bgchange pt-5">
         {/* <div className="mb-3">
@@ -186,7 +186,7 @@ const TraningTabBignersecond: React.FC = () => {
                 .map((item, index) => (
                   <div className="flex items-start gap-4" key={index}>
                     <div>
-                      <p>{item.content}</p>
+                      <p className="text-primary">{item.content}</p>
                     </div>
                   </div>
                 ))}

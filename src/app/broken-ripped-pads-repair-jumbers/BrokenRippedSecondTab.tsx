@@ -123,7 +123,7 @@ const BrokenRippedSecondTab: React.FC = () => {
 
   return (
     <section
-     className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+     className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
   style={{
     backgroundImage: `url(${backbanner.src})`,
   }}

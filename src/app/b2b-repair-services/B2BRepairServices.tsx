@@ -268,7 +268,7 @@ const B2BRepairServices: React.FC = () => {
         <Breadcrumb
           pageName="B2B Phone Repair Service"
           pageDescription="We offer tailored B2B solutions designed to streamline your operations and ensure the highest quality mobile phone repairs for your customers. PRC provides specialized services that help you maintain your business efficiency and product quality."
-          backgroundImage="/Images/BannerImages/about.png"
+          backgroundImage="/Images/RepairService.png"
           AdminImage="/Images/B2BRepairServices.svg"
           link="/coming-soon"
           buttonname="Apply for B2B Account"
@@ -277,9 +277,11 @@ const B2BRepairServices: React.FC = () => {
         <section>
           <div className="container">
             <div className="text-center py-8  space-y-4">
-              <h2>
+              {/* <h2>
                 B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers
-              </h2>
+              </h2> */}
+              <MainHeading Heading="B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers" color="var(--prc)" svg_stroke="var(--alpha)"/>
+
               <p>
                 From repair shops to retailers to bulk device suppliers, PRC
                 caters to the specific needs of B2B phone repairs. Our
@@ -295,7 +297,7 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Why Partner with PRC for Your B2B Repair Needs?" />
+            <MainHeading Heading="Why Partner with PRC for Your B2B Repair Needs?" color="var(--prc)" svg_stroke="var(--alpha)" />
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
@@ -376,7 +378,7 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Key Features of Our B2B Phone Repair Services" />
+            <MainHeading Heading="Key Features of Our B2B Phone Repair Services" color="var(--prc)" svg_stroke="var(--alpha)" />
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>

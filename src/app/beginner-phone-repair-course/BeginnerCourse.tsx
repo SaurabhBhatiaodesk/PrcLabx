@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/LightCources";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
@@ -13,7 +13,8 @@ import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerTh
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import FormCode from "@/components/Form/FormCode";
 import { usePathname } from "next/navigation";
-// import Boxblock from "@/components/HomeCpmponents/WhyChooseLabX/boxblock";
+import backbanner from "../../../public/Images/Home/back-banner.svg";
+
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";
@@ -63,14 +64,15 @@ const BeginnerCourse = () => {
         "Absolutely! The phone repair course equips you with the skills needed to start your own mobile repair business, offering practical insights into running a successful operation.",
     },
   ];
-    const reviewsData = [
+  const reviewsData = [
     {
       name: "Harper Lee",
       date: "September 12, 2023",
       profileImage: hname,
       logoImage: Googletest,
       rating: 5,
-      param: "This training was a game-changer! The hands-on approach made complex repairs easy to understand. I feel confident handling all device issues now!",
+      param:
+        "This training was a game-changer! The hands-on approach made complex repairs easy to understand. I feel confident handling all device issues now!",
     },
     {
       name: "Mason Clarke",
@@ -78,7 +80,8 @@ const BeginnerCourse = () => {
       profileImage: rname,
       logoImage: Googletest,
       rating: 5,
-      param: "I’ve learned so much in just five days! The instructors were fantastic, and I can now repair phones and tablets with ease. Highly recommend!",
+      param:
+        "I’ve learned so much in just five days! The instructors were fantastic, and I can now repair phones and tablets with ease. Highly recommend!",
     },
     {
       name: "Mia S.",
@@ -86,7 +89,8 @@ const BeginnerCourse = () => {
       profileImage: Sname,
       logoImage: Googletest,
       rating: 5,
-      param: "The phone fixing course exceeded my expectations. I gained practical skills quickly and now offer repairs in my local area. This program is worth every penny!",
+      param:
+        "The phone fixing course exceeded my expectations. I gained practical skills quickly and now offer repairs in my local area. This program is worth every penny!",
     },
     {
       name: "Ella Brown",
@@ -94,7 +98,8 @@ const BeginnerCourse = () => {
       profileImage: jname,
       logoImage: Googletest,
       rating: 5,
-      param: "Great experience! The training was thorough, with excellent instructor support. I can now confidently replace screens and batteries. Very helpful for anyone looking to start!",
+      param:
+        "Great experience! The training was thorough, with excellent instructor support. I can now confidently replace screens and batteries. Very helpful for anyone looking to start!",
     },
     {
       name: "Isla C.",
@@ -102,7 +107,8 @@ const BeginnerCourse = () => {
       profileImage: Aname,
       logoImage: Googletest,
       rating: 5,
-      param: "I had no prior experience, but this phone repairing course made everything so clear. The instructors were patient and skilled. I’m now repairing devices professionally!",
+      param:
+        "I had no prior experience, but this phone repairing course made everything so clear. The instructors were patient and skilled. I’m now repairing devices professionally!",
     },
     {
       name: "Lucas B.",
@@ -110,12 +116,11 @@ const BeginnerCourse = () => {
       profileImage: Nname,
       logoImage: Googletest,
       rating: 5,
-      param: "This phone fixing course gave me the confidence to open my own repair business. The lessons were clear, and I learned everything from diagnosing issues to completing repairs.",
+      param:
+        "This phone fixing course gave me the confidence to open my own repair business. The lessons were clear, and I learned everything from diagnosing issues to completing repairs.",
     },
   ];
   const pathname = usePathname();
-
-
 
   return (
     <>
@@ -152,18 +157,26 @@ const BeginnerCourse = () => {
         Courseformate4="  Free Toolkit"
         border="#EDE574"
       />
-      <TraningTabBigner />
+      <section
+        className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+        style={{
+          backgroundImage: `url(${backbanner.src})`,
+        }}
+      >
+        <TraningTabBigner />
+        <TraningTabBignersecond />
+        <TraningTabBignerThird />
+      </section>
 
-
-      <TraningTabBignersecond />
-      <TraningTabBignerThird />
       <TraningCourseInstructors />
-     
-       <LightCources title=" Hands-On Learning for Real-World Skills" discripation="We provide comprehensive, hands-on demonstrations of each repair process, ensuring you understand the techniques and methods thoroughly. Following the demonstrations, you will have the opportunity to perform the same repairs independently under the close supervision of our expert trainers, allowing you to gain practical experience and confidence in your skills." />
-      {/* <BiginnerChooseLab /> */}
-    {/* comment code */}
-          <Boxblock />
 
+      <LightCources
+        title=" Hands-On Learning for Real-World Skills"
+        discripation="We provide comprehensive, hands-on demonstrations of each repair process, ensuring you understand the techniques and methods thoroughly. Following the demonstrations, you will have the opportunity to perform the same repairs independently under the close supervision of our expert trainers, allowing you to gain practical experience and confidence in your skills."
+      />
+      {/* <BiginnerChooseLab /> */}
+      {/* comment code */}
+      <Boxblock />
 
       {pathname === "/beginner-phone-repair-course" ||
       pathname === "/advanced-motherboard" ||
@@ -171,10 +184,10 @@ const BeginnerCourse = () => {
       pathname === "/master-motherboard-repair" ||
       pathname === "/professional-phone-screen" ? null : (
         <>
-      <div className=" container" id="beginner-phone-repair-course-id">
-        <MainHeading Heading="Beginner Phone Repair Course" />
-      </div>
-        <FormCode />
+          <div className=" container" id="beginner-phone-repair-course-id">
+            <MainHeading Heading="Beginner Phone Repair Course" />
+          </div>
+          <FormCode />
         </>
       )}
       <FrequentlyAskedQuestions
@@ -182,7 +195,7 @@ const BeginnerCourse = () => {
         title="If you have any doubts, please refer to our FAQs for detailed answers and clarifications."
         accordionData={accordionData}
       />
-       <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
+      <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
     </>
   );
 };

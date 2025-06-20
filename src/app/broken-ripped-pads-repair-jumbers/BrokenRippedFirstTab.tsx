@@ -123,13 +123,13 @@ const BrokenRippedFirstTab: React.FC = () => {
 
   return (
     <section
-    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
   style={{
     backgroundImage: `url(${backbanner.src})`,
   }}
 >
       <div className="container bgchange">
-        <div className="mb-3">
+        <div className="mb-5">
           <MainHeading Heading="Course Syllabus" svg_stroke="var(--alpha)" color="var(--primary)" />
         </div>
 

@@ -2,22 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import tabimage from "../../../public/Images/tabtraning.png";
-// import screenreplace from "../../../../public/Images/Home/hammer.svg";
-import screenreplace from "../../../public/Images/Home/hammer.svg";
-import traning from "../../../public/Images/Home/Training.svg";
-// import MailinRepair from "../../../../public/Images/Home/Mail in Repair.svg";
-import MailinRepair from "../../../public/Images/Home/Mail in Repair.svg";
-import repairsoloutaion from "../../../public/Images/Home/repairsoloutaion.svg";
-import B2BRepair from "../../../../public/Images/Home/B2B Repair.svg";
-import datarecovery from "../../../public/Images/Home/datarecovery.svg";
-import MainHeading from "../../components/ManinHeading/MainHeading";
-import MainTitle from "../../components/MainTitle/MainTitle";
+
 import "./MasterMotherbord.css";
-import pointet from "../../../public/Images/icons/pointingright.svg";
-import backbanner from "../../../public/Images/Home/back-banner.svg"
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import DeliveryTousMobile from "../HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
+
 
 interface Tab {
   id: number;
@@ -106,10 +96,10 @@ const MasterTabSecond: React.FC = () => {
 
   return (
    <section
-    className="py-4 lg:py-[20px] bg-no-repeat bg-cover"
-  style={{
-    backgroundImage: `url(${backbanner.src})`,
-  }}
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+  // style={{
+  //   backgroundImage: `url(${backbanner.src})`,
+  // }}
 >
       <div className="container bgchange">
         <div className="p-3 bg-primary mb-6">

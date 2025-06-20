@@ -15,7 +15,7 @@ function BrokenCourseInstructors() {
 
   // Effect for counting up to the target numbers
   useEffect(() => {
-    const incrementCounters = (target:any, setCounter:any) => {
+    const incrementCounters = (target: any, setCounter: any) => {
       let current = 0;
       const interval = setInterval(() => {
         current += 1;
@@ -62,9 +62,9 @@ function BrokenCourseInstructors() {
                 </div>
 
                 <ul className="space-y-2 pb-5">
-                <p>{`Our instructors for the Advanced Motherboard Repair – Micro Soldering course are seasoned professionals with over a decade of expertise in mobile device repair. They bring extensive industry knowledge, practical insights, and hands-on guidance to every session. Dedicated to helping students master micro soldering techniques, they ensure confidence and precision in advanced motherboard diagnostics, circuit repair, and component-level replacements.
+                  <p>{`Our instructors for the Advanced Motherboard Repair – Micro Soldering course are seasoned professionals with over a decade of expertise in mobile device repair. They bring extensive industry knowledge, practical insights, and hands-on guidance to every session. Dedicated to helping students master micro soldering techniques, they ensure confidence and precision in advanced motherboard diagnostics, circuit repair, and component-level replacements.
 `}</p>
-                 
+
                 </ul>
 
                 {/* Dynamic Counter Section */}

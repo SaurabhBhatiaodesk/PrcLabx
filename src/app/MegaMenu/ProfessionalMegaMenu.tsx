@@ -349,7 +349,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
           <div className="mt-2 pt-4 border-t border-gray-200 flex justify-between items-center ">
             <Link
               href={`/brands/${parentItem.alias}`}
-              className="w-full inline-flex items-center p-2 bg-gradient-to-r from-[#122d37] to-[#1a3d4a] text-white text-xs font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
+              className="w-full inline-flex items-center p-2 bg-tertiary text-prc text-xs font-medium rounded-lg hover:from-[#1a3d4a] hover:to-[#122d37] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 "
             >
               View All {parentItem.title} Products
               <IoChevronForward className="ml-2 text-sm" />
@@ -455,7 +455,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                         <span className="mr-1">Services</span>
                       </button>
 
-                      <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
+                      <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50  shadow-lg border border-gray-200 rounded-lg">
                         <li>
                           <Link
                             href="/training"
@@ -496,9 +496,16 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             Data Recovery
                           </Link>
                         </li>
+                         <li>
+                          <Link
+                            href="https://wholesale.prcrepair.com.au/" target="_blank"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >Parts Store 
+                          </Link>
+                        </li>
 
                         {/* Coming Soon items */}
-                        {["Parts Store", "Repair Form", "Repair Solutions"].map((item, idx) => (
+                        {["Repair Form", "Repair Solutions"].map((item, idx) => (
                           <li
                             key={idx}
                             className="flex justify-between items-center px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200"

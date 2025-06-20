@@ -7,7 +7,8 @@ import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
 import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
 // import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-// import ExpertMotherboardReviews from "@/components/GoogleReviews/ExpertMotherboardReviews";
+import backbanner from "../../../public/Images/Home/back-banner.svg"
+
 import React from "react";
 import FristTraningTab from "./FristTraningTab";
 import SecondTraningTab from "./SecondTraningTab";
@@ -174,13 +175,22 @@ const BeginnerCourse = () => {
         Courseformate4=""
         border="#d5fd33a1"
       />
-      <FristTraningTab />
+          <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
+    <FristTraningTab />
       <SecondTraningTab />
+
+</section>
+  
+
       <TrainingInstructors {...instructorData} />
    <LightCources title=" Tools and Techniques Covered" discripation="The Screen Refurbishment Course offers hands-on learning with essential tools, including screen separators, OCA laminating equipment, vacuum laminators, and laser machines for precise repairs. Master techniques like LOCA UV glue application, ultrasonic cleaning, and polarizer film replacement. Learn to safely remove back glass and create flawless displays, equipping you with professional skills for LCD and OLED screen restoration." />
 
-      {/* <ExpertChooseLab /> */}
-      {/* comment code */}
+
       <Boxblock></Boxblock>
       {pathname === "/beginner-phone-repair-course" ||
         pathname === "/advanced-motherboard" ||

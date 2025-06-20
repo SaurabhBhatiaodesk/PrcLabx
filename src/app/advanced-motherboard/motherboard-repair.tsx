@@ -5,7 +5,8 @@ import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-// import MotherboardReviews from "@/components/GoogleReviews/MotherboardReviews";
+import backbanner from "../../../public/Images/Home/back-banner.svg"
+
 
 import React from "react";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
@@ -153,8 +154,18 @@ const BeginnerCourse = () => {
         Courseformate4=" "
         border="#56c1c1"
       />
-      <TrainingTabMotherboard />
+          <section
+    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+  style={{
+    backgroundImage: `url(${backbanner.src})`,
+  }}
+>
+
+   <TrainingTabMotherboard />
       <TrainingTabMotherboardsecond />
+</section>
+     
+
       <TraningCourseInstructors />
       {/* <MotherboardPhoneReapair /> */}
       <LightCources
