@@ -42,7 +42,7 @@ const DataImportantNote = () => {
             </h2>
             <div className="flex gap-[5px] text-primary items-start">
               <span><LuDot  color="white" /></span>
-              <p className="text-primary m-0">Customers must provide the correct device password to access recovered data. If the password is incorrect or unavailable, LabX will not be able to verify the recovered files.</p>
+              <p className="text-primary m-0">Customers must provide the correct device password to access recovered data. If the password is incorrect or unavailable, PRC will not be able to verify the recovered files.</p>
             </div>
             <div className="flex gap-[5px] text-primary items-start">
               <span><LuDot  color="white" /></span>
