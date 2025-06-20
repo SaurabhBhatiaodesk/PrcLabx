@@ -56,7 +56,7 @@ export default function Productswiper({
         </div>
         <div className="flex items-center">
           <Link href={buttonlink} target="_blank">
-            <button className="hidden lg:flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl">
+            <button className="hidden lg:flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               {buttondata}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

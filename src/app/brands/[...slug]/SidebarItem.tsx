@@ -82,7 +82,7 @@ const SidebarItem: React.FC<{
     <div className="relative group">
       {level > 0 && (
         <div
-          className="absolute top-0 left-4 h-full border-l border-green-400 pointer-events-none"
+          className="absolute top-0 left-4 h-full border-l border-prc pointer-events-none"
           style={{ marginLeft: `${(level - 1) * 6 + 10}px` }}
         />
       )}

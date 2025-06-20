@@ -3,12 +3,12 @@ import React from "react";
 import Contact from "./contact";
 import "./price.css"
 export const metadata = {
-  title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
+  title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
   description:
     "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
   keywords: ["Mobile Repair Solutions", "Expert Device Repair"],
   openGraph: {
-    title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
+    title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
     description:
       "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
     url: "", // Replace with your actual page URL
@@ -18,13 +18,13 @@ export const metadata = {
         url: "", // Replace with your image URL
         width: 1200,
         height: 630,
-        alt: "LabX Tech Solutions Banner",
+        alt: "PRC Tech Solutions Banner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing |  Affordable Repair Services and Courses | Labx Repair",
+    title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
     description:
       "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL

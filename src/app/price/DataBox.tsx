@@ -42,7 +42,7 @@ const DataBox: React.FC = () => {
 
       title: "Data Recovery Pricing",
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
-     
+
       button: "See price",
     },
     {
@@ -50,7 +50,7 @@ const DataBox: React.FC = () => {
 
       title: "General Repair Pricing",
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
-     
+
       button: "See price",
 
     },
@@ -59,7 +59,7 @@ const DataBox: React.FC = () => {
 
       title: "DIY/Techcnian Damage Pricing",
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
-      
+
       button: "See price",
     },
   ];
@@ -81,12 +81,12 @@ const DataBox: React.FC = () => {
             {sectionData.map((section, index) => (
               <div
                 key={index}
-              
-              
+
+
                 className={`p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group "
                   }`}
-              
-              
+
+
                 onClick={() => PricetoggleMenu(section.id)}
               >
                 <h3 className="text-prc  xl:text-xl m-auto">
@@ -97,7 +97,7 @@ const DataBox: React.FC = () => {
                   {/* <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
                     {section.button}
                   </button> */}
-                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)}  color="bg-prc"/>
+                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)} color="bg-prc" />
                 </div>
               </div>
             ))}
@@ -151,7 +151,7 @@ const DataBox: React.FC = () => {
                 <div className="my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
                   <strong className="text-prc font-bold"> Note: </strong> Data
                   recovery services are subject to device condition. Please
-                  refer to our terms for full details. If you choose LabX to fix
+                  refer to our terms for full details. If you choose PRC to fix
                   your dead device, it will be treated as a data recovery case.
                   Our sole responsibility will be to temporarily power on the
                   device to facilitate data retrieval. No guarantees or

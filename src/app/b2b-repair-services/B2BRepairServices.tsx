@@ -5,7 +5,6 @@ import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import Image from "next/image";
 
-
 import processor from "../../../public/Images/icons/processor.svg";
 import lighting from "../../../public/Images/icons/lighting.svg";
 import phonerepair from "../../../public/Images/icons/phonerepair.svg";
@@ -46,7 +45,7 @@ import Googletest from "../../../public/Images/icons/Googletest.svg";
 // import pointer from "../../../public"
 
 const B2BRepairServices: React.FC = () => {
-   const reviewsData = [
+  const reviewsData = [
     {
       name: "Jason T",
       date: "September 22, 2022",
@@ -236,29 +235,24 @@ const B2BRepairServices: React.FC = () => {
       alt: "Repairs",
       title: "Technician Damage",
       description: `If you have broken the connector or torn the flex cable during your repair process,You can send it to us,we will fix it for you.`,
-  
     },
     {
       image: SendUsYourDevices,
       alt: "Transparency",
       title: "Remote Unlocking",
       description: `We can remove user accounts or reset your phone remotely. Contact us for assistance.`,
-     
     },
     {
       image: TrackYourOrders,
       alt: "Recovery",
       title: "Free Guidance",
       description: `Stuck on something or have questions during your repair? Feel free to ask! If it's within our expertise, we'll provide you with free guidance.`,
-      
     },
     {
       image: ReceiveYourRepairedDevices,
       alt: "B2B Services",
       title: "Supply Uncommon Parts",
       description: `We have a wide range of uncommon parts in our inventory that aren’t listed on our website. Feel free to ask if we have what you need on our shelves!`,
-
-     
     },
   ];
 
@@ -280,7 +274,11 @@ const B2BRepairServices: React.FC = () => {
               {/* <h2>
                 B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers
               </h2> */}
-              <MainHeading Heading="B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers" color="var(--prc)" svg_stroke="var(--alpha)"/>
+              <MainHeading
+                Heading="B2B Service For Repair Shop, Retailers, & Bulk Device Suppliers"
+                color="var(--prc)"
+                svg_stroke="var(--alpha)"
+              />
 
               <p>
                 From repair shops to retailers to bulk device suppliers, PRC
@@ -297,77 +295,53 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Why Partner with PRC for Your B2B Repair Needs?" color="var(--prc)" svg_stroke="var(--alpha)" />
+            <MainHeading
+              Heading="Why Partner with PRC for Your B2B Repair Needs?"
+              color="var(--prc)"
+              svg_stroke="var(--alpha)"
+            />
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
                 <Image src={B2BRepairNeeds} alt=" PRC repair " />
               </div>
               <div>
-                <div className="flex-col gap-2  flex">
-                  <div className="flex items-start gap-3">
-                    <div className="w-[35px] mt-[2px]">
-                    
-                    </div>
-                    <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-prc font-semibold ">
-                        Reliable Screen Refurbishing:
-                      </span>
-                      <p className="inline ml-1">
-                        {
-                          "    We focus on offering high-quality screen refurbishing services, particularly for B2B clients. Our refurbishing process ensures factory-level quality at competitive prices, allowing businesses to extend the life of their inventory while reducing waste."
-                        }
-                      </p>
-                    </div>
-                  </div>
+                <div className="">
+                  <span className="text-xl pb-[2px] text-prc font-semibold ">
+                    Reliable Screen Refurbishing:
+                  </span>
+                  <p className="">
+                    {
+                      "We focus on offering high-quality screen refurbishing services, particularly for B2B clients. Our refurbishing process ensures factory-level quality at competitive prices, allowing businesses to extend the life of their inventory while reducing waste."
+                    }
+                  </p>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-[35px] mt-[2px]">
-                    
-                    </div>
-                    <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-prc font-semibold ">
-                        Expert Logic Board Repairs:
-                      </span>
-                      <p className="inline ml-1">
-                        {
-                          " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with PRC, you gain access to a higher level of phone fixing services."
-                        }
-                      </p>
-                    </div>
-                  </div>
+                  <span className="text-xl pb-[2px] text-prc font-semibold ">
+                    Expert Logic Board Repairs:
+                  </span>
+                  <p className="">
+                    {
+                      " As specialists in complex repairs, including motherboard micro soldering and logic board repair, our phone repair store repair handle the most challenging cases that other repair providers may not be equipped for. By partnering with PRC, you gain access to a higher level of phone fixing services."
+                    }
+                  </p>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-[35px] mt-[2px]">
-                    
-                    </div>
-                    <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-prc font-semibold ">
-                        Comprehensive Data Recovery:
-                      </span>
-                      <p className="inline ml-1">
-                        {
-                          "We offer data recovery services to ensure your clients’ data can be retrieved from damaged or dead devices. Our advanced techniques maximize the chances of data retrieval, even from severely damaged devices."
-                        }
-                      </p>
-                    </div>
-                  </div>
+                  <span className="text-xl pb-[2px] text-prc font-semibold ">
+                    Comprehensive Data Recovery:
+                  </span>
+                  <p className="">
+                    {
+                      "We offer data recovery services to ensure your clients’ data can be retrieved from damaged or dead devices. Our advanced techniques maximize the chances of data retrieval, even from severely damaged devices."
+                    }
+                  </p>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-[35px] mt-[2px]">
-                    
-                    </div>
-                    <div className="w-[85%]">
-                      <span className="text-xl pb-[2px] text-prc font-semibold ">
-                        Bulk Repair Solutions:
-                      </span>
-                      <p className="inline ml-1">
-                        {
-                          "Our infrastructure is designed to handle bulk B2B phone repair orders efficiently, ensuring quick turnaround times without compromising on quality. Whether you need screen refurbishments or complex repairs for multiple devices, we can scale our motherboard issue repair services to match your volume."
-                        }
-                      </p>
-                    </div>
-                  </div>
+                  <span className="text-xl pb-[2px] text-prc font-semibold ">
+                    Bulk Repair Solutions:
+                  </span>
+                  <p className="">
+                    {
+                      "Our infrastructure is designed to handle bulk B2B phone repair orders efficiently, ensuring quick turnaround times without compromising on quality. Whether you need screen refurbishments or complex repairs for multiple devices, we can scale our motherboard issue repair services to match your volume."
+                    }
+                  </p>
                 </div>
               </div>
             </div>
@@ -378,19 +352,21 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container lg:py-5 py-4">
-            <MainHeading Heading="Key Features of Our B2B Phone Repair Services" color="var(--prc)" svg_stroke="var(--alpha)" />
+            <MainHeading
+              Heading="Key Features of Our B2B Phone Repair Services"
+              color="var(--prc)"
+              svg_stroke="var(--alpha)"
+            />
 
-            <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
+            <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-4 lg:py-5 py-3 items-center">
               <div>
-                <div className="flex-col gap-2  flex">
-                  <div className="flex items-start gap-3">
-                
-
+                <div className="">
+                  <div className="">
                     <div className="">
                       <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Competitive Pricing:
                       </span>
-                      <p className="inline ml-1">
+                      <p className="">
                         Our pricing is already competitive, so we do not offer
                         additional discounts for regular mobile phone repairs.
                         However, we guarantee cost-effective solutions without
@@ -399,13 +375,12 @@ const B2BRepairServices: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                
+                  <div className="">
                     <div className="">
                       <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Fast Turnaround Times:
                       </span>
-                      <p className="inline ml-1">
+                      <p className="">
                         {
                           " We understand that time is money. That’s why we prioritize fast turnaround times for all B2B clients, ensuring that your devices are repaired or refurbished quickly to minimize downtime."
                         }
@@ -413,13 +388,12 @@ const B2BRepairServices: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                
+                  <div className="">
                     <div className="">
                       <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Custom Repair Solutions:
                       </span>
-                      <p className="inline ml-1">
+                      <p className="">
                         {
                           "Whether you need screen refurbishing, bulk cellular device repairs, or a specific service tailored to your business model, we can customize our repair offerings to meet your needs."
                         }
@@ -427,26 +401,24 @@ const B2BRepairServices: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                
+                  <div className="">
                     <div className="">
                       <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Repair Tracking and Updates:
                       </span>
-                      <p className="inline ml-1">
+                      <p className="">
                         {
                           "You’ll always know the status of your repairs. We provide automated updates and tracking, so you can stay informed at every stage of the repair process."
                         }
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                
+                  <div className="">
                     <div>
                       <span className="text-xl pb-[2px] text-prc font-semibold ">
                         Easy B2B Account Setup:
                       </span>
-                      <p className="inline ml-1">
+                      <p className="">
                         {
                           " Signing up for a B2B account is simple. Just fill out the Apply for Business Account form on our website, and we’ll get your account activated promptly. Once approved, you’ll have access to special technician damage phone repair designed to support your business operations."
                         }
@@ -464,7 +436,11 @@ const B2BRepairServices: React.FC = () => {
 
         <section>
           <div className="container" data-aos="fade-up">
-            <MainHeading Heading="We Do, What Others Don't"  svg_stroke="var(--alpha)" color="var(--prc)"/>
+            <MainHeading
+              Heading="We Do, What Others Don't"
+              svg_stroke="var(--alpha)"
+              color="var(--prc)"
+            />
             {/* <MainTitle Title="At LabX, we tackle complex mobile phone repair challenges that others can’t, delivering reliable solutions and unmatched expertise." /> */}
 
             <div className="lg:pb-8 py-4">
@@ -474,7 +450,6 @@ const B2BRepairServices: React.FC = () => {
                     key={index}
                     style={{ background: "transparent" }}
                     className="p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col  hover:shadow-[0_0_20px_10px_#ede57456] group"
-                   
                   >
                     <div className="flex justify-center">
                       <Image
@@ -483,11 +458,10 @@ const B2BRepairServices: React.FC = () => {
                         alt={section.alt}
                       />
                     </div>
-                    <h3 className="text-alpha xl:text-lg ">
-                      {section.title}
-                    </h3>
-                    <p className="text-prc text-[17px] leading-6">{section.description}</p>
-
+                    <h3 className="text-alpha xl:text-lg ">{section.title}</h3>
+                    <p className="text-prc text-[17px] leading-6">
+                      {section.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -497,7 +471,10 @@ const B2BRepairServices: React.FC = () => {
 
         <OurClient />
         <YouTubeHome />
-        <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Review"/>
+        <BiginnerReviews
+          reviews={reviewsData}
+          googletitle="Our Google Review"
+        />
       </div>
     </>
   );

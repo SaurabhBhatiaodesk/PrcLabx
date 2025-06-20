@@ -1,4 +1,4 @@
-  "use client";
+"use client";
 import Image from "next/image";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import Link from "next/link";
@@ -63,15 +63,15 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
     if (isHovered && submenuRef.current && itemRef.current) {
       const itemRect = itemRef.current.getBoundingClientRect();
       const submenu = submenuRef.current;
-      
+
       // Reset positioning styles
       submenu.style.left = "";
       submenu.style.top = "";
-      
+
       // Position the submenu directly to the right of the parent item
       submenu.style.left = `${itemRect.right - 12}px`; // 2px gap from parent item
       submenu.style.top = `${itemRect.top - 40}px`; // Align top with parent item
-      
+
       // Ensure submenu is fixed position relative to viewport
       submenu.style.position = "fixed";
     }
@@ -79,23 +79,25 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
   return (
     <div ref={itemRef} className="relative group/nested">
-   <Link
-  href={`/brands/${itemPath}`}
-  className={`group flex items-center justify-between p-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent 
-    ${isActivePath(item.alias)
-      ? "bg-[#122d37] text-white border-l-[#122d37]"
-      : "text-gray-700 hover:text-[#122d37] hover:bg-gray-50 hover:border-l-[#122d37]"
+      <Link
+        href={`/brands/${itemPath}`}
+        className={`group flex items-center justify-between p-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent 
+    ${
+      isActivePath(item.alias)
+        ? "bg-[#122d37] text-white border-l-[#122d37]"
+        : "text-gray-700 hover:text-[#122d37] hover:bg-gray-50 hover:border-l-[#122d37]"
     }`}
-  onMouseEnter={() => onMouseEnter(itemId, level)}
-  onMouseLeave={() => onMouseLeave(level + 1)}
->
-  <span className="flex-1 truncate pr-2 font-medium transition-all duration-300 ease-in-out">{item.title}</span>
+        onMouseEnter={() => onMouseEnter(itemId, level)}
+        onMouseLeave={() => onMouseLeave(level + 1)}
+      >
+        <span className="flex-1 truncate pr-2 font-medium transition-all duration-300 ease-in-out">
+          {item.title}
+        </span>
 
-  {hasChildren(item) && (
-    <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transform transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-  )}
-</Link>
-
+        {hasChildren(item) && (
+          <IoChevronForward className="text-sm opacity-60 flex-shrink-0 transform transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+        )}
+      </Link>
 
       {/* Independent nested submenu - appears as a separate dropdown */}
       {hasChildren(item) && isHovered && (
@@ -273,10 +275,10 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
     const children = getChildren(parentItem);
 
     if (!children.length) return null;
-// gurravcomment code 278 line
+    // gurravcomment code 278 line
     // Enhanced column calculation for better layout
     // const columns = Math.min(Math.max(Math.ceil(children.length / 6), 2), 4);
-       const columns =  1;
+    const columns = 1;
     const itemsPerColumn = Math.ceil(children.length / columns);
 
     // Calculate dropdown position
@@ -285,12 +287,13 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
     return (
       <div
-        className={`absolute top-full ${isRightSide ? "right-0" : "left-0"
-          } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
+        className={`absolute top-full ${
+          isRightSide ? "right-0" : "left-0"
+        } bg-white shadow-xl border border-gray-200 rounded-lg z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out`}
         style={{
           width: "auto",
           minWidth: "300px",
-            // minWidth: "500px",
+          // minWidth: "500px",
           maxWidth: "80vw",
           boxShadow:
             "0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1)",
@@ -388,7 +391,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
       <div className="hidden lg:block">
         <nav className={` ${className}`}>
           <div className="">
-            <ul className="flex justify-center items-center space-x-3 relative">
+            <ul className="flex justify-center items-center space-x-2 relative">
               {menuData.slice(0, 6).map((item, index) => (
                 <li
                   key={item.id}
@@ -398,10 +401,11 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 >
                   <Link
                     href={`/brands/${item.alias}`}
-                    className={` flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${isActivePath(item.alias)
+                    className={` flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5 ${
+                      isActivePath(item.alias)
                         ? "bg-[#122d37] text-white shadow-md"
                         : "text-secondary hover:text-white"
-                      }`}
+                    }`}
                   >
                     {item.title}
                     {hasChildren(item) && (
@@ -420,7 +424,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 onMouseEnter={() => setIsDropdownVisible(true)}
                 onMouseLeave={() => setIsDropdownVisible(false)}
               >
-                <button className="flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-gray-700  ">
+                <button className="flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-secondary   ">
                   Other Brands
                   <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                 </button>
@@ -437,7 +441,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                   `}
                           >
                             {item.title}
-                              <IoChevronForward className="ml-2 text-sm" />
+                            <IoChevronForward className="ml-2 text-sm" />
                           </Link>
                         </li>
                       ))}
@@ -445,14 +449,13 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                   </div>
                 )}
               </div>
-              <div className="lg:block  hidden"
-
-              >
+              <div className="lg:block  hidden">
                 <ul className="menu menu-horizontal px-1 flex items-center space-x-1">
                   <li>
                     <div className="relative inline-block group">
                       <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">Services</span>
+                           <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50  shadow-lg border border-gray-200 rounded-lg">
@@ -496,47 +499,43 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             Data Recovery
                           </Link>
                         </li>
-                         <li>
+                        <li>
                           <Link
-                            href="https://wholesale.prcrepair.com.au/" target="_blank"
+                            href="https://wholesale.prcrepair.com.au/"
+                            target="_blank"
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
-                          >Parts Store 
+                          >
+                            Parts Store
                           </Link>
                         </li>
 
                         {/* Coming Soon items */}
-                        {["Repair Form", "Repair Solutions"].map((item, idx) => (
-                          <li
-                            key={idx}
-                            className="flex justify-between items-center px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200"
-                          >
-                            <span>{item}</span>
-                            <Image src={commingsoon} alt="Coming soon" width={20} height={20} />
-                          </li>
-                        ))}
+                        {["Repair Form", "Repair Solutions"].map(
+                          (item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex justify-between items-center px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200"
+                            >
+                              <span>{item}</span>
+                              <Image
+                                src={commingsoon}
+                                alt="Coming soon"
+                                width={20}
+                                height={20}
+                              />
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
-
                   </li>
-                  <li>
-
-
-
-
-
-
-
-
-
-
-
-
-                  </li>
+                  <li></li>
 
                   <li>
                     <div className="relative inline-block group">
                       <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
+                           <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
@@ -546,48 +545,40 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             onClick={toggleMenu}
                             className="blck px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between"
                           >
-                         Meet Bharat
-                            
+                            Meet Bharat
                           </Link>
                         </li>
                         <li>
                           <Link
-                          href="/what-we-do"
+                            href="/what-we-do"
                             onClick={toggleMenu}
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                          What We Do
+                            What We Do
                           </Link>
                         </li>
                         <li>
                           <Link
-                         href="/faq"
+                            href="/faq"
                             onClick={toggleMenu}
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                           FAQ{" "}
+                            FAQ{" "}
                           </Link>
                         </li>
                         <li>
                           <Link
-                           href="/blogs"
+                            href="/blogs"
                             onClick={toggleMenu}
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                               Blogs{" "}
-                            
+                            Blogs{" "}
                           </Link>
                         </li>
-                      
-
-                     
                       </ul>
                     </div>
-
                   </li>
                 </ul>
-
-
               </div>
             </ul>
           </div>

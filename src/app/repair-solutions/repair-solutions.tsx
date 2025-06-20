@@ -32,21 +32,21 @@ const page = () => {
                   height="300"
                   width="600"
                   src={Line.src}
-                  alt=" labx repair "
+                  alt=" PRC repair "
                   className="pb-3"
                 />
 
                 <p>
                   Are you in search of a reliable B2B repair service provider?
-                  Look no further than LabX With years of experience and
-                  thousands of satisfied clients, LabX is the go-to destination
+                  Look no further than PRC With years of experience and
+                  thousands of satisfied clients, PRC is the go-to destination
                   for all your B2B phone repair needs.{" "}
                 </p>
 
                 <p>
                   Are you in search of a reliable B2B repair service provider?
-                  Look no further than LabX With years of experience and
-                  thousands of satisfied clients, LabX is the go-to destination
+                  Look no further than PRC With years of experience and
+                  thousands of satisfied clients, PRC is the go-to destination
                   for all your B2B phone repair needs.{" "}
                 </p>
 
@@ -69,7 +69,7 @@ const page = () => {
                 height="300"
                 width="400"
                 src={Line.src}
-                alt=" labx repair "
+                alt=" PRC repair "
                 className="pb-3"
               />
 

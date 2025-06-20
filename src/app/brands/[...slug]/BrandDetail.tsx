@@ -131,15 +131,15 @@ const lastElement = slugArray[slugArray.length - 1];
   return (
     <div className="mb-2">
       <Strip title="Repair Prices" />
-      <div className={`flex min-h-screen bg-white max-w-[1920px]  mx-auto  border-b border-[#122d37] ${isSidebarOpen ? "gap-5 m-3" : "gap-0"}`}>
+      <div className={`flex min-h-screen bg-white max-w-[1920px]  mx-auto  border-b border-[#122d37] ${isSidebarOpen ? "gap-8 m-3" : "gap-0"}`}>
         {/* Sidebar */}
         <div className="relative">
           {isSidebarOpen && (
-            <div className="lg:relative absolute z-10 transition-all duration-300 h-full">
+            <div className="lg:relative absolute z-10 transition-all duration-300 h-full left-3">
               <aside
                 className={`lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl`}
               >
-                <h2 className="text-lg font-extrabold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors">
+                <h2 className="text-lg font-semibold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors pb-1">
                   Select Brands
                 </h2>
 

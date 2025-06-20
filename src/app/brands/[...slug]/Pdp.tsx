@@ -180,8 +180,8 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
               <button
                 key={tab.id}
                 onClick={() => handleTabClick(tab)}
-                className={`rounded-t-lg rounded-b-none md:px-4 md:py-2 p-1 text-xs font-medium border border-gray-300 ${activeTabb === tab.id.toString()
-                  ? "bg-tertiary  text-black border-b-0 text-[11px]"
+                className={`rounded-t-lg rounded-b-none md:px-4 md:py- p-2 text-xs font-medium border border-gray-300 ${activeTabb === tab.id.toString()
+                  ? "bg-prc  text-white border-b-0 text-[11px]"
                   : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
                   }`}
               >
@@ -193,7 +193,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row items-center">
             {/* Left: Phone Image */}
-            <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
+            <div className="w-full lg:w-1/3 md:flex justify-center mb-6 lg:mb-0  hidden">
               <img
                 src={getImage(pdpDetail[0])} // Use getImage function to get the image
                 alt="iPhone 15"
@@ -378,7 +378,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
         />
       </div>
 
-      <div><FaqComponent></FaqComponent></div>
+      <div><FaqComponent/></div>
     </>
   );
 };

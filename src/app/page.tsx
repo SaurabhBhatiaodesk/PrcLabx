@@ -41,7 +41,7 @@ import Productswiper from "@/components/Storeproduct/Productswiper";
 import HandsOnTraining from "@/components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
   title: "Mobile Phone Repair Services & Training | Mobile Accessories | PRC Repair",
-  description: "PRC provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
+  description: "PRC Repair provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",

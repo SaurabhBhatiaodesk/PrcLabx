@@ -55,6 +55,8 @@ export default function App() {
   useEffect(() => {
     console.log("isMenuOpen", isMenuOpen);
   }, []);
+
+
   return (
     <>
       <Marquee
@@ -88,6 +90,7 @@ export default function App() {
               </button>
             )}
           </NavbarContent>
+
           <div className="w-full">
             <div className="navbar text-pastelBlue items-center justify-between">
               <div className="navmenu flex items-center justify-between ">

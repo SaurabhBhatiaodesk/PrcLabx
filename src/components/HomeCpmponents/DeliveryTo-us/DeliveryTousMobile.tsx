@@ -48,32 +48,28 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                 activeIndex === item.id ? item.buttonColor : undefined,
             }}
           >
-           <span
-  className={`${
-    item.label && item.label.length > 30
-      ? "text-[15px]"
-      : "text-[17px]"
-  } tracking-[1.5px] gaurav admin  ${
-    activeIndex === item.id ? "text-primary" : "text-prc"
-  }`}
->
-  {item.label}
-</span>
+            <span
+              className={`${item.label && item.label.length > 30
+                  ? "text-[15px]"
+                  : "text-[17px]"
+                } tracking-[1.5px]  ${activeIndex === item.id ? "text-primary" : "text-primary"
+                }`}
+            >
+              {item.label}
+            </span>
 
             <MdKeyboardArrowDown
-              className={`transition-transform duration-300 text-white ${
-                activeIndex === item.id ? "rotate-180" : ""
-              }`}
+              className={`transition-transform duration-300 text-white ${activeIndex === item.id ? "rotate-180" : ""
+                }`}
             />
           </div>
           <div
-            className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
-              activeIndex === item.id ? "h-full" : "max-h-0"
-            }`}
+            className={`overflow-hidden transition-max-height duration-500 ease-in-out ${activeIndex === item.id ? "h-full" : "max-h-0"
+              }`}
           >
             <div className="p-[12px] rounded-b-lg text-[16px]">
               <div className="flex items-center gap-2 mb-3">
-                <p className="xl:pb-2 pb-1 m-0 text-secondary">{item.content}</p>
+                <p className="xl:pb-2 pb-1 m-0 text-primary">{item.content}</p>
               </div>
               {item.contentf2 && (
                 <div className="flex items-start gap-2 mb-2">
@@ -83,7 +79,7 @@ const DeliveryTousMobile: React.FC<DeliveryTousMobileProps> = ({ itoms }) => {
                     width={20}
                     height={20}
                   />
-                  <p className="text-secondary">{item.contentf2}</p>
+                  <p className="text-primary">{item.contentf2}</p>
                 </div>
               )}
               {item.contentf3 && (

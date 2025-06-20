@@ -19,7 +19,7 @@ const MobileBrandName = () => {
         <MainHeading Heading="Supported Models" svg_stroke="var(--alpha)" />
         <MainTitle Title="We refurbish screens for a wide range of devices, including" />
 
-        <div className="grid xl:grid-cols-7 lg:grid-cols-3 grid-cols-1 gap-2 lg:py-5 py-3 items-center">
+        <div className="grid xl:grid-cols-7 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-2 lg:py-5 py-3 items-center">
           {brands.map((brand, index) => (
             <div
               key={index}

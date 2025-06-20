@@ -165,7 +165,7 @@ const Page = () => {
           height="1000"
           width="1000"
           src={Device.src}
-          alt=" labx repair "
+          alt=" PRC repair "
           className="m-auto"
         />
         <div className="overlap__number">

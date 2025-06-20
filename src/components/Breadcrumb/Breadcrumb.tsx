@@ -123,14 +123,36 @@ function Breadcrumb({
                 {pathname === "/training" ? null : (
                   <>
                     {isBrowser && window.location.pathname === link ? (
-                      // <button className="btn" onClick={handleScrollToTarget}>
-                      //   {buttonname}
-                      // </button>
-                      <MainButton
-                        MainButton={buttonname}
-                        color="bg-prc"
-                        onClick={handleScrollToTarget}
-                      />
+                      <button className="uppercase bg-prc text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer    border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl " onClick={handleScrollToTarget}>
+                        {buttonname}
+                         <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M5 12H19"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 5L19 12L12 19"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+                      </button>
+                      // <MainButton
+                      //   MainButton={buttonname}
+                      //   color="bg-prc"
+                      //   onClick={handleScrollToTarget}
+                      // />
                     ) : (
                       // <Link href={link}>
                       //   <button className="btn">{buttonname}</button>
