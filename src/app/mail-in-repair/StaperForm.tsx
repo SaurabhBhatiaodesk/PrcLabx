@@ -1763,7 +1763,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requirePickupLabel ==
                           "Yes,Please arrange pickup from my location" && (
-                            <p className="text-prc text-sm mt-2 mb-0 italic">
+                            <p className="text-primary text-sm mt-2 mb-0 italic break-words">
                               A one-way shipping fee of $15-$20 will be added to
                               your invoice, regardless of whether the device is
                               repaired or not. Connote label will be sent to your
@@ -1896,7 +1896,7 @@ const StaperForm: React.FC = () => {
 
                         {shippingDetails.requireReturnLabel ===
                           "Please ship the device back to me" && (
-                            <p className="text-prc text-sm mt-2 mb-0 italic">
+                            <p className="text-primary text-sm mt-2 mb-0 italic">
                               Additional shipping fee of $15-$20 will be added to
                               your invoice.
                             </p>

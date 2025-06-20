@@ -152,6 +152,15 @@ export default function App() {
                           >
                             PS5 Repair
                           </Link>
+                            <Link
+                            href="/mail-in-repair"
+                            onClick={toggleMenu}
+                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
+                    "text-gray-700 hover:text-white"
+                  '
+                          >
+                           Mail In Repair
+                          </Link>
                           <Link
                             href="/screen-refurbishing"
                             onClick={toggleMenu}
