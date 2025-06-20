@@ -18,7 +18,7 @@ export const metadata = {
         url: "", // Replace with your image URL
         width: 1200,
         height: 630,
-        alt: "LabX Tech Solutions Banner",
+        alt: "PRC Tech Solutions Banner",
       },
     ],
   },
@@ -26,11 +26,11 @@ export const metadata = {
     card: "summary_large_image",
     title: "Welcome to LabX - Your Trusted Tech Solutions",
     description:
-      "Explore LabX Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
-    canonical: "https://labxrepair.com.au/what-we-do",
+    canonical: "https://prcrepair.com.au/what-we-do",
   },
 };
 

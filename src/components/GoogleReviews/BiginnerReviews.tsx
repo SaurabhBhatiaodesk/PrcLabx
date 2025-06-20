@@ -35,7 +35,7 @@ export default function BiginnerReviews({ reviews = [], googletitle }: BiginnerR
   return (
     <div>
       <div className="py-5 xl:p-6 px-2">
-        <div className="mb-3">
+        <div className="mb-5">
           <MainHeading Heading={googletitle} color="var(--prc)" svg_stroke="var(--alpha)" />
         </div>
         <MainTitle Title="" />

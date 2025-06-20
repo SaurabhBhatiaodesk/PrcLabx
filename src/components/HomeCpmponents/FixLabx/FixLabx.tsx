@@ -37,14 +37,14 @@ const FixLabx = () => {
               src={bharat}
               width={500}
               height={500}
-              alt=" labx repair "
+              alt=" PRC repair "
             />
             <Image
               className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block object-contain "
               src={bharat}
               width={400}
               height={300}
-              alt=" labx repair "
+              alt=" PRC repair "
             />
           </div>
         </div>
