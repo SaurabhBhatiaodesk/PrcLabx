@@ -19,12 +19,11 @@ const BrandDetailPage: React.FC = () => {
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
-   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
-    const [activeTabData, setActiveTabData] = useState();
+  const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+  const [activeTabData, setActiveTabData] = useState();
 
+  console.log("isLastItemClicked>>>::", isLastItemClicked);
 
-   console.log("isLastItemClicked>>>::",isLastItemClicked);
-   
   // State for mobile detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -37,15 +36,16 @@ const BrandDetailPage: React.FC = () => {
     // }
   }, [tabs, activeTab]);
   useEffect(() => {
-    if (typeof window !== "undefined") { // Check if window is available (client-side)
+    if (typeof window !== "undefined") {
+      // Check if window is available (client-side)
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
       };
 
       handleResize(); // Initial check
-      window.addEventListener('resize', handleResize); // Update on window resize
+      window.addEventListener("resize", handleResize); // Update on window resize
 
-      return () => window.removeEventListener('resize', handleResize); // Cleanup on unmount
+      return () => window.removeEventListener("resize", handleResize); // Cleanup on unmount
     }
   }, []); // Empty dependency array ensures it runs only once
 
@@ -61,8 +61,7 @@ const BrandDetailPage: React.FC = () => {
   // Build slugArray by stripping "/brands" and splitting the rest
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
-console.log("slugArrayslugArray",slugArray);
-const lastElement = slugArray[slugArray.length - 1];
+  const lastElement = slugArray[slugArray.length - 1];
   // Fetch brands data from API
   useEffect(() => {
     const fetchBrands = async () => {
@@ -131,7 +130,11 @@ const lastElement = slugArray[slugArray.length - 1];
   return (
     <div className="mb-2">
       <Strip title="Repair Prices" />
-      <div className={`flex min-h-screen bg-white max-w-[1920px]  mx-auto  border-b border-[#122d37] ${isSidebarOpen ? "gap-8 m-3" : "gap-0"}`}>
+      <div
+        className={`flex min-h-screen bg-white max-w-[1920px]  mx-auto  border-b border-[#122d37] ${
+          isSidebarOpen ? "gap-8 m-3" : "gap-0"
+        }`}
+      >
         {/* Sidebar */}
         <div className="relative">
           {isSidebarOpen && (
@@ -162,7 +165,9 @@ const lastElement = slugArray[slugArray.length - 1];
                 className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-2 right-[1rem] z-10 border-prc"
               >
                 <IoIosArrowForward
-                  className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
+                  className={`inline-block transform transition-transform duration-300 ease-in-out ${
+                    isSidebarOpen ? "rotate-180" : "rotate-0"
+                  }`}
                   size={24}
                 />
               </button>
@@ -172,15 +177,21 @@ const lastElement = slugArray[slugArray.length - 1];
 
         {/* Main Content */}
         <main
-          className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${isSidebarOpen ? "md:pt-[25px] pt-[30px] rounded-xl " : " pt-[10px]"}`}
+          className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${
+            isSidebarOpen ? "md:pt-[25px] pt-[30px] rounded-xl " : " pt-[10px]"
+          }`}
         >
           <div className="md:pl-6 pl-2">
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${isSidebarOpen ? "hidden" : ""}`}
+              className={`mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center ${
+                isSidebarOpen ? "hidden" : ""
+              }`}
             >
               <IoIosArrowForward
-                className={`inline-block transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
+                className={`inline-block transform transition-transform duration-300 ease-in-out ${
+                  isSidebarOpen ? "rotate-180" : "rotate-0"
+                }`}
                 size={24}
               />
             </button>
@@ -188,18 +199,29 @@ const lastElement = slugArray[slugArray.length - 1];
             <div className="hidden md:block">
               <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
                 <Link href="/brands" className="hover:underline font-bold">
-                 Brands
+                  Brands
                 </Link>
                 {slugArray.map((slug, idx) => {
-                  const path = `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
+                  const isSecondLast = idx === slugArray.length - 2;
+                  const isLast = idx === slugArray.length - 1;
+
+                  // If second last, include the last slug as well
+                  const path = isSecondLast
+                    ? `/brands/${slugArray.slice(0, idx + 2).join("/")}` // include next too
+                    : `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
+
                   const displayText = slug
-                    .replace(/-\d+$/, "") 
+                    .replace(/-\d+$/, "")
                     .replace(/-/g, " ");
+
                   return (
                     <span key={path}>
                       {" "}
                       &gt;{" "}
-                      <Link href={path} className="hover:underline capitalize font-bold">
+                      <Link
+                        href={path}
+                        className="hover:underline capitalize font-bold"
+                      >
                         {displayText}
                       </Link>
                     </span>
@@ -217,12 +239,13 @@ const lastElement = slugArray[slugArray.length - 1];
             />
           ) : (
             <Pdp
-              pdpDetail={isLastItemClicked && slugData.length > 0 ? slugData : []}
+              pdpDetail={
+                isLastItemClicked && slugData.length > 0 ? slugData : []
+              }
               tabs={tabs}
               activeTab={activeTab}
-               setActiveTab={setActiveTab}
-           
-               setSlugData={setSlugData}
+              setActiveTab={setActiveTab}
+              setSlugData={setSlugData}
             />
           )}
         </main>

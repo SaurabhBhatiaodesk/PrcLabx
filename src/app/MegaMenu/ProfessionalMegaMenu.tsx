@@ -57,7 +57,6 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
   const children = getChildren(item);
   const submenuRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement>(null);
-
   // Positioning logic for independent submenus
   useEffect(() => {
     if (isHovered && submenuRef.current && itemRef.current) {
@@ -149,12 +148,13 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
 const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [menuData, setMenuData] = useState<MenuItem[]>([]);
-  console.log("menuData", menuData);
-
+  console.log("menuData",menuData);
+  
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredPath, setHoveredPath] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
+  const hasFetchedData = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const submenuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -179,6 +179,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   };
   // Fetch menu data from API
   useEffect(() => {
+    if (hasFetchedData.current) return;
+    hasFetchedData.current = true;
     const fetchMenuData = async () => {
       try {
         setIsLoading(true);
@@ -455,7 +457,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     <div className="relative inline-block group">
                       <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">Services</span>
-                           <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50  shadow-lg border border-gray-200 rounded-lg">
@@ -535,7 +537,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     <div className="relative inline-block group">
                       <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
-                           <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
+                        <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
                       </button>
 
                       <ul className="absolute hidden group-hover:block w-64 bg-primary text-prc pt-1 z-50 rounded-md shadow-lg">
