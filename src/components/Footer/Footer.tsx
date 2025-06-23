@@ -556,13 +556,13 @@ const Footer = () => {
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Copyright © PRC Repair {new Date().getFullYear()} - All
-                  rights reserved .
+                  rights reserved.
                 </p>
               </div>
               <div className="sm:text-center">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Website Designed by{" "}
-                  <a href="https://www.base2brand.com/">Base2Brand Infotech .</a>{" "}
+                  <a href="https://www.base2brand.com/">Base2Brand Infotech.</a>{" "}
                 </p>
               </div>
             </div>

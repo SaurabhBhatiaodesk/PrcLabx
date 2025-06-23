@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import quote1 from "../../../public/Images/quoteimg1.png";
 import quote2 from "../../../public/Images/quoteimg2.png";
 import quote3 from "../../../public/Images/quoteimg3.png";
@@ -13,17 +13,16 @@ interface BrandData {
   alias: string;
   image: string;
   title: string;
-
-  
 }
-
 
 export default function Devicequote() {
   const [brandData, setBrandData] = useState<BrandData[]>([]);
   const [showAll, setShowAll] = useState(false);
-  console.log(brandData,"datatypeimage");
+  const hasFetchedData = useRef(false);
   // Fetch data from the API on component mount
   useEffect(() => {
+    if (hasFetchedData.current) return;
+    hasFetchedData.current = true;
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -112,9 +111,27 @@ export default function Devicequote() {
           <Link href="/brands" className="hidden md:block">
             <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               Visit store
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 5L19 12L12 19"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
           </Link>
@@ -140,24 +157,36 @@ export default function Devicequote() {
                     />
                   </div>
                 </div>
-
               </Link>
-
-
-
             ))}
-
         </div>
         <div className="flex justify-center my-4">
           <Link href="/brands" className="block md:hidden">
             <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               Visit store
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 5L19 12L12 19"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-
           </Link>
         </div>
       </div>

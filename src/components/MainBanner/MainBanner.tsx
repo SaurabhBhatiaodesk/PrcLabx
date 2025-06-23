@@ -3,7 +3,7 @@ import "./MainBanner.css";
 import Image from "next/image";
 import MainButton from "../MainButton/MainButton";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,15 +22,16 @@ import Marquee from "../Marquee/Marquee";
 export default function MainBanner() {
   const [backgroundImage, setBackgroundImage] = useState(mainf3); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
-
-
-  const backgroundImages = [ mainf3];
+ const hasFetchedData = useRef(false);
+  const backgroundImages = [mainf3];
 
   const handleSlideChange = (swiper: any) => {
     const index = swiper.realIndex; // Get the real index of the slide
     setBackgroundImage(backgroundImages[index % backgroundImages.length]); // Update the background image
   };
   useEffect(() => {
+      if (hasFetchedData.current) return;
+    hasFetchedData.current = true;
     const fetchBrands = async () => {
       try {
         const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
@@ -57,6 +58,76 @@ export default function MainBanner() {
 
     fetchBrands();
   }, []);
+  const bannerSlides = [
+    {
+      heading: "Get Your Device Fixed or Learn Mobile Phone Repairs",
+      highlight: "— PRC Repair Does It All!",
+      highlightColor: "text-tertiary",
+      description: `PRC Repair is more than just a mobile phone repair service.
+                    We’re a full-service platform dedicated to quality mobile
+                    phone repairing, professional training, and community
+                    support. Whether you're looking to get your iPhone or
+                    smartphone repaired, purchase repair parts, or enhance your
+                    repair skills through our training programs, PRC Repair has
+                    it all.`,
+      button: {
+        text: "Request a Quote",
+        link: "/contact-us",
+      },
+    },
+    {
+      heading: "Learn to Repair Mobile Phones Through",
+      highlight: "– Our Training Programs",
+      highlightColor: "text-[#FFDAB9]",
+      description:
+        "Join PRC’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!",
+      button: {
+        text: "Start Training",
+        link: "/training",
+      },
+    },
+    {
+      heading: "Professional Mobile Phone Screen Refurbishing",
+      highlight: "– Service for Your Devices",
+      highlightColor: "text-[#39FF14]",
+      description: `Restore your phone’s display to like-new condition with our expert screen refurbishing service. Get high-quality, cost-effective repairs that bring your screen back to life, saving you money and extending your device's lifespan!`,
+      button: {
+        text: "Start Repair",
+        link: "/screen-refurbishing",
+      },
+    },
+    {
+      heading: "Get Back Your Lost Data with Our Expert",
+      highlight: "– Mobile Phone Recovery Service",
+      highlightColor: "text-[#A8FFEB]",
+      description: `Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`,
+      button: {
+        text: "Data Recovery",
+        link: "/data-recovery",
+      },
+    },
+    {
+      heading: "Premium Mobile Phone Parts",
+      highlight: "– Direct from China Warehouse",
+      highlightColor: "text-[#e6720e]",
+      description: `Shop top-quality mobile phone parts and accessories direct from China — no middlemen, just reliable sourcing. Get the best value with fast delivery, bulk deals, and expert service tailored for your repair or retail business needs!`,
+      button: {
+        text: "Data Recovery",
+        link: "/data-recovery",
+      },
+    },
+    {
+      heading: "Trusted Mobile Parts Store",
+      highlight: "– Quality Spares at Wholesale Prices",
+      highlightColor: "text-[#15e8cf]",
+      description: `Power your repairs with the best parts in the market. Our Parts Store offers a wide range of reliable, high-performance mobile phone components sourced directly from trusted suppliers. Enjoy fast shipping, bulk pricing, and top-tier service.`,
+      button: {
+        text: "Data Recovery",
+        link: "/data-recovery",
+      },
+    },
+  ];
+
   return (
     <>
       <section
@@ -101,110 +172,29 @@ export default function MainBanner() {
               onMouseEnter={() => setIsPaused(true)} // Pause autoplay when mouse enters
               onMouseLeave={() => setIsPaused(false)} // Resume autoplay when mouse leaves
             >
-              {/* Slide 1 */}
-              <SwiperSlide>
-                <div className="gap-4 items-start xl:py-5">
-                  <div>
-                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-3 transition-opacity duration-1000">
-                      Get Your Device Fixed or Learn Mobile Phone Repairs
-                      <span className="text-tertiary ">
-                        {" "}
-                        — PRC Repair Does It All!
-                      </span>
-                    </h1>
-                    <p className="text-primary">
-                      {`PRC Repair is more than just a mobile phone repair service.
-                    We’re a full-service platform dedicated to quality mobile
-                    phone repairing, professional training, and community
-                    support. Whether you're looking to get your iPhone or
-                    smartphone repaired, purchase repair parts, or enhance your
-                    repair skills through our training programs, PRC Repair has
-                    it all.`}
-                    </p>
-                    <div className="my-4 xl:my-6">
-                      <MainButton
+              {bannerSlides.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="gap-4 items-start xl:py-5">
+                    <div>
+                      <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                        {slide.heading}
+                        <span className={slide.highlightColor}>
+                          {" "}
+                          {slide.highlight}
+                        </span>
+                      </h1>
+                      <p className="text-primary">{slide.description}</p>
+                      <div className="my-4 xl:my-10">
+                        <MainButton
+                          MainButton={slide.button.text}
+                          link={slide.button.link}
                           color="bg-prc"
-                        MainButton="Request a Quote"
-                        link="/contact-us"
-                      />
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              {/* Slide 2 */}
-              <SwiperSlide>
-                <div className="gap-4 items-start xl:py-5">
-                  <div>
-                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                      Learn to Repair Mobile Phones Through
-                      <span className="text-[#FFDAB9]">
-                        {" "}
-                        – Our Training Programs
-                      </span>
-                    </h1>
-                    <p className="text-primary">
-                      {
-                        "Join PRC’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!"
-                      }
-                    </p>
-                    <div className="my-4 xl:my-10">
-                      <MainButton
-                        MainButton="Start Training"
-                        link="/training"
-                          color="bg-prc"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              {/* Slide 3 */}
-              <SwiperSlide>
-                <div className="gap-4 items-start xl:py-5">
-                  <div>
-                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                      Professional Mobile Phone Screen Refurbishing
-                      <span className="text-[#39FF14]">
-                        {" "}
-                        – Service for Your Devices
-                      </span>
-                    </h1>
-                    <p className="text-primary">
-                      {` Restore your phone’s display to like-new condition with our expert screen refurbishing service. Get high-quality, cost-effective repairs that bring your screen back to life, saving you money and extending your device's lifespan!`}
-                    </p>
-                    <div className="my-4 xl:my-10">
-                      <MainButton
-                        MainButton="Start Repair"
-                        link="/screen-refurbishing"
-                       color="bg-prc"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              {/* Slide 4 */}
-              <SwiperSlide>
-                <div className="gap-4 items-start xl:py-5">
-                  <div>
-                    <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
-                      Get Back Your Lost Data with Our Expert
-                      <span className="text-[#A8FFEB]">
-                        {" "}
-                        – Mobile Phone Recovery Service
-                      </span>
-                    </h1>
-                    <p className="text-primary">
-                      {`Recover lost or corrupted data with our expert data recovery service. Whether it’s from a damaged phone, hard drive, or storage device, we use advanced techniques to retrieve your important files, ensuring your data is safe and accessible again!`}
-                    </p>
-                    <div className="my-4 xl:my-10">
-                      <MainButton
-                        MainButton="Data Recovery"
-                        link="/data-recovery"
-                       color="bg-prc"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="flex justify-end items-center">
