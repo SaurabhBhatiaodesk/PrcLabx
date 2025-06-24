@@ -105,7 +105,7 @@ export default function ShipDeviceUs() {
                     alt={slide.Product}
                   />
                   <div className="absolute inset-0 bg-secondary bg-opacity-40 opacity-0 group-hover:opacity-75 transition-all duration-300 flex justify-center items-center rounded-[10px]">
-                    <p className="text-primary font-semibold lg:text-3xl md:2xl text-sm">{slide.Product}</p>
+                    <p className="text-primary font-semibold xl:text-2xl md:text-lg text-sm text-center">{slide.Product}</p>
                   </div>
                   <div className="absolute bottom-4 left-4">
                   </div>

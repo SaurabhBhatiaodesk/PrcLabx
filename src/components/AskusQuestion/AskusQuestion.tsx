@@ -34,7 +34,7 @@ export default function AskusQuestion({ accordionData, faq, faqbg_color, faq_sub
   };
 
   return (
-    <section className={`py-5 xl:py-10 bg-no-repeat bg-cover ${faqbg_color}`}>
+    <section className={`py-5 xl:py-10 bg-no-repeat bg-cover border-t-1 border-prc rounded-t-lg  ${faqbg_color}`}>
       <div className="container">
         <MainHeading Heading={faq} color="var(--prc)"  svg_stroke="var(--alpha)"/>
         <MainTitle Title={`${faq_subheading}`} />
@@ -50,7 +50,7 @@ export default function AskusQuestion({ accordionData, faq, faqbg_color, faq_sub
                     className="flex w-full items-center justify-between py-3 text-left"
                     onClick={() => handleToggle(index)}
                   >
-                    <h3 className="text-black xl:text-[22px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                    <h3 className="text-black xl:text-[18px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                       {item.title}
                     </h3>
                     {active === index ? (

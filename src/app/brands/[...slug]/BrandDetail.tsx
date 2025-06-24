@@ -22,7 +22,7 @@ const BrandDetailPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   const [activeTabData, setActiveTabData] = useState();
 
-  console.log("isLastItemClicked>>>::", isLastItemClicked);
+
 
   // State for mobile detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -39,6 +39,8 @@ const BrandDetailPage: React.FC = () => {
     if (typeof window !== "undefined") {
       // Check if window is available (client-side)
       const handleResize = () => {
+
+        
         setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
       };
 
@@ -197,7 +199,7 @@ const BrandDetailPage: React.FC = () => {
             </button>
             {/* Breadcrumb */}
             <div className="hidden md:block">
-              <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
+              {/* <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
                 <Link href="/brands" className="hover:underline font-bold">
                   Brands
                 </Link>
@@ -227,7 +229,7 @@ const BrandDetailPage: React.FC = () => {
                     </span>
                   );
                 })}
-              </nav>
+              </nav> */}
             </div>
           </div>
           {/* Render content based on the fetched brands data */}

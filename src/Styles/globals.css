@@ -132,7 +132,7 @@ h2 {
   font-weight: 700;
   letter-spacing: normal;
     color:var(--secondary);
-    word-spacing: -3px;
+
 }
 .btn,
 h3 {
@@ -321,4 +321,10 @@ h3.text-sm.htmleditor span {
 .scrollbar {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For IE and Edge */
+}
+
+
+/* banner section slider  */
+.swiper-pagination-bullet-active {
+  background-color: var(--tertiary) !important;
 }

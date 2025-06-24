@@ -102,7 +102,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 h-[38px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
             boxShadow:

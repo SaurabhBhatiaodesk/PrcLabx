@@ -112,8 +112,8 @@ export default function MainBanner() {
       highlightColor: "text-[#e6720e]",
       description: `Shop top-quality mobile phone parts and accessories direct from China — no middlemen, just reliable sourcing. Get the best value with fast delivery, bulk deals, and expert service tailored for your repair or retail business needs!`,
       button: {
-        text: "Data Recovery",
-        link: "/data-recovery",
+        text: "Visit store",
+        link: "https://warehouse.prcrepair.com.au/",
       },
     },
     {
@@ -211,7 +211,7 @@ export default function MainBanner() {
           <Marquee
             marquee_bg="bg-tertiary"
             marquee_text="text-black"
-            marquee_messages=". Fast Phone Repairs: 30 Mins to Same Day, Only a Few Need Extra Time!"
+            marquee_messages="Fast Phone Repairs: 30 Mins to Same Day, Only a Few Need Extra Time!."
           />
         </div>
       </section>

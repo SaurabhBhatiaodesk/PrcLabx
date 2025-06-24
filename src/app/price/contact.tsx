@@ -137,7 +137,7 @@ const Page = () => {
       <section className="pt-8">
         <div className="max-container">
           <div className="text-center">
-            <MainHeading Heading="Get the Best Value for Your Device - LabX Buyback Prices" />
+            <MainHeading Heading="Get the Best Value for Your Device - PRC Buyback Prices" />
             <p>
               Select your mobile phone brand and explore our price list for
               various repair services we offer, from screen refurbishment to
