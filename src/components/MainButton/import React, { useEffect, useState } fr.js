@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import newlogo from "../../../public/Images/prclogo.png"; // Adjust the path as needed
+import Link from "next/link";
 
 export default function Header() {
   const [isDesktop, setIsDesktop] = useState(false); // Track if it's desktop
