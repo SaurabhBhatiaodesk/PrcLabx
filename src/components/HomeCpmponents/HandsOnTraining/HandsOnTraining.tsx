@@ -81,7 +81,7 @@ function HandsOnTraining() {
           {courses.map((course, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-4 border border-[#e4e4e7] w-full sm:w-[48%] lg:w-[30%] flex lg:flex-row flex-col gap-5 relative"
+              className="bg-white rounded-lg shadow-md p-4 border border-[#e4e4e7] w-full xl:w-[30%] lg:w-[48%] md:w-[48%] flex lg:flex-row flex-col gap-5 relative"
             >
               <Link
                 href={course.linking}
@@ -100,7 +100,7 @@ function HandsOnTraining() {
                   <p className=" text-base mb-4 flex-grow">
                     {course.description}
                   </p>
-                  <button className="rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center absolute right-0 p-3 bottom-0 hover:scale-105">
+                  <button className="rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center absolute right-[-16px] p-3 bottom-[-17px] hover:scale-105">
                     <FaArrowRight size={18} />
                   </button>
                 </div>

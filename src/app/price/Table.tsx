@@ -112,7 +112,7 @@ const TableData: React.FC = () => {
                 </table>
             </div>
             <div className="my-9">
-                <div className="my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
+                <div className=" my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
                     <span className="text-center block font-bold">Additional Notes</span>
                     <ul className="mt-[10px] list-disc pl-[20px] text-sm">
                         <li className="list-none"><strong className="text-prc font-bold">No Obligation:</strong> There s no obligation on shipping charges. We bear those expenses.</li>

@@ -2,20 +2,34 @@ import Link from "next/link";
 import { useRouter } from "next/navigation"; // Import useRouter
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 
 const BrandImageGrid: React.FC<{ brandsData: any[]; pathname: string; isSidebarOpen:boolean; }> = ({
   brandsData,
   pathname,
   isSidebarOpen
 }) => {
-    useEffect(() => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
     AOS.init({ duration: 1000 });
-  }, []);
+
+    // Delay showing the fallback message for 2 seconds
+    if (brandsData.length === 0) {
+      const timer = setTimeout(() => {
+        setShowMessage(true);
+      }, 2000);
+
+      return () => clearTimeout(timer); // Cleanup
+    }
+  }, [brandsData]);
   return (
+ <>
+
     <div className={`grid grid-cols-2  md:grid-cols-3 ${isSidebarOpen ? "xl:grid-cols-4 lg:grid-cols-2":"xl:grid-cols-5 lg:grid-cols-3"} lg:gap-8 md:gap-6 gap-4 bg-[#fff4f0]  md:pb-6 md:pt-2 px-6  p-4  `} 
     >
-    {/* // data-aos="fade-up"> */}
+   
       {brandsData.map((brand: any) => (
         <Link
           key={brand.id}
@@ -37,6 +51,11 @@ const BrandImageGrid: React.FC<{ brandsData: any[]; pathname: string; isSidebarO
         </Link>
       ))}
     </div>
+
+
+
+   {(brandsData.length === 0 && showMessage) && <div> <h3 className="text-center">No Data found</h3></div>}  
+ </>
   );
 };
 

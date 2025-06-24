@@ -5,7 +5,7 @@ import homespinner from "../../../public/Images/homespinner.gif"
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import { SlSocialFacebook } from "react-icons/sl";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { IoCallOutline } from "react-icons/io5";
@@ -382,7 +382,7 @@ const Footer = () => {
                       </Link>
                     </div>
                     <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
-                      <CiLocationOn
+                    <FaLocationDot
                         className="hover:scale-110 transition-transform duration-200 text-tertiary"
                         fontSize={25}
                       />

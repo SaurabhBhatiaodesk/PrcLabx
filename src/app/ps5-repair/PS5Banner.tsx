@@ -17,7 +17,7 @@ export default function PS5Banner() {
   return (
     <>
       <section
-        className="background-banner  h-[50vh]"
+        className="background-banner"
         style={{
           backgroundImage: `url(${PSBanner.src})`,
           backgroundSize: "cover",
@@ -33,11 +33,10 @@ export default function PS5Banner() {
               <div className="md:mb-16 mb-11 lg:mt-[0] mt-[0px] relative">
                 <Link href="/training">
                   <button
-                    className="px-[20px] py-[6px] border-[2px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#9d9c98]
-                    animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_rgba(255,223,101,0.8)] md:text-[18px] text-[12px] tracking-[1.5px] relative top-6"
+                    className="text-black px-[20px] py-[6px] border-[3px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_#B2F5EA] text-[18px] tracking-[1.5px] relative top-6 md:m-0 mb-7"
                     style={{ transform: "rotate(354deg)" }} // Equivalent to -5deg (360 - 5)
                   >
-                    WHEN YOU NEED IT FIXED, NOW
+                    Mail-In PS5 Repair
                   </button>
                 </Link>
               </div>

@@ -55,7 +55,7 @@ const MainButton: React.FC<MainButtonProps> = ({
       {link ? (
         <Link href={link}>
           <button
-            className={`uppercase bg-[#EF0000] text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer    border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl ${color} `}
+            className={`uppercase bg-[#EF0000] text-white 2xl:text-[16px] lg:text-[14px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer    border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl ${color} `}
             aria-label={`Click ${MainButton}`}
           >
             {MainButton}
@@ -71,7 +71,7 @@ const MainButton: React.FC<MainButtonProps> = ({
                 stroke="white"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke-linejoin="round" 
               />
               <path
                 d="M12 5L19 12L12 19"
@@ -85,7 +85,7 @@ const MainButton: React.FC<MainButtonProps> = ({
         </Link>
       ) : (
         <button
-          className={` uppercase bg-[#EF0000] text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl
+          className={` uppercase bg-[#EF0000] text-white 2xl:text-[16px] lg:text-[14px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl
               
               ${color} `}
           aria-label={`Click ${MainButton}`}

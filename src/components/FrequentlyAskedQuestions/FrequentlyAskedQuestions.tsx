@@ -37,7 +37,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
   return (
     <>
     <div>
-      <section className="py-5 xl:py-10 bg-[url('/Images/Home/faq.svg')]  bg-no-repeat bg-cover faq-main-title">
+      <section className="py-5 xl:py-10  bg-no-repeat bg-cover bg-[#FEF6FF]">
         <div className="container">
           <MainHeading Heading={heading} />
           <MainTitle Title={title} />
@@ -53,7 +53,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
                       className="flex w-full items-center justify-between py-4 text-left"
                       onClick={() => handleToggle(index)}
                     >
-                      <h3 className="text-black xl:text-[24px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
+                      <h3 className="text-black xl:text-[18px] text-[18px] font-[500] xl:leading-[2rem] leading-[24px]">
                         {item.title}
                       </h3>
                       {active === index ? (

@@ -91,7 +91,7 @@ const SidebarItem: React.FC<{
           ${
             isActive
               ? "bg-[#122d37] text-white shadow-lg md:text-[15px] text-[13px]"
-              : "text-gray-800 hover:bg-green-100 hover:text-[#122d37] text-sm"
+              : "text-gray-800 hover:bg-prc hover:text-primary text-sm"
           }`}
         style={{ paddingLeft: `${level * 20 + 20}px` }}
         onClick={handleCategoryClick} // Handle category click

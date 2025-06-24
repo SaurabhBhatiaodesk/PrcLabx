@@ -1,380 +1,199 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
-import { RxCross2 } from "react-icons/rx";
-import "./Header.css";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { TbMenu2 } from "react-icons/tb";
-import { IoIosCart } from "react-icons/io";
-import Marquee from "../Marquee/Marquee";
-import { SlSocialFacebook } from "react-icons/sl";
-import { useDispatch } from "react-redux";
-import { setPriceCat } from "@/app/redux/slice";
 import { useRouter } from "next/navigation";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import commingsoon from "../../../public/Images/coming-soon.svg";
-import newlogo from "../../../public/Images/prclogo.png";
-import MainButton from "../MainButton/MainButton";
-import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import { RxCross2 } from "react-icons/rx";
+import { TbMenu2 } from "react-icons/tb";
 import { IoChevronDown } from "react-icons/io5";
 
-export default function App() {
+import newlogo from "../../../public/Images/prclogo.png";
+import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import "./Header.css";
+import MainButton from "../MainButton/MainButton";
 
-  const dispatch = useDispatch();
-  const Router = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+export default function CustomHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
-
-  // Toggle function to change menu state
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const togglePriceDropdown = () => {
-    setIsPriceDropdownOpen(!isPriceDropdownOpen);
-  };
-
-  const toggleAboutDropdown = () => {
-    setIsAboutDropdownOpen(!isAboutDropdownOpen);
-  };
-
-  const MailRepair = () => {
-    sessionStorage.setItem("repairType", "mail-in-repair");
-  };
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    console.log("isMenuOpen", isMenuOpen);
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  return (
-    <>
-      <Marquee
-        marquee_bg="bg-tertiary"
-        marquee_text="text-black"
-        marquee_messages="Every Device, Every Repair—Handled Entirely In-House, Zero Outsourcing."
-      />
-      <div className="t">
-        <Navbar
-          className="text-secondary bg-primary h-20 "
-          isBordered
-          maxWidth="2xl"
-        >
-          <NavbarContent
-            className="lg:hidden"
-            id="nav-toggle"
-            onClick={toggleMenu}
-          >
-            {/* <NavbarMenuToggle
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            /> */}
-            {isMenuOpen ? (
-              <button className=" w-[30px] text-[12px] font-medium font-poppins flex flex-col items-center rounded-lg p-[4px] text-secondary">
-                {" "}
-                <TbMenu2 fontSize={24} height={19} />{" "}
-                <span className="leading-3"> Menu</span>
-              </button>
-            ) : (
-              <button className="w-[30px] flex justify-center">
-                <RxCross2 />
-              </button>
-            )}
-          </NavbarContent>
+  if (loading) {
+    return (
+      <>
+        <div className="container lg:block hidden">
+          <div className="flex justify-between items-center px-6 py-4 animate-pulse bg-white ">
+            {/* Logo Placeholder */}
+            <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
 
-          <div className="w-full">
-            <div className="navbar text-pastelBlue items-center justify-between">
-              <div className="navmenu flex items-center justify-between ">
-                <Link href="/">
-                  <Image
-                    src={newlogo}
-                    width={200}
-                    height={200}
-                    alt="Brand Logo"
-                    className="logo_LabX w-[60px]"
-                  />
-                </Link>
-
-                <div className="lg:hidden cardicon">
-                 {/* <MainButton MainButton="Instant Quote" link="/contact-us" /> */}
-                
-   <button
-      onClick={() => Router.push('/contact-us')}
-      className="text-sm bg-[#EF0000]  py-2 px-3 capitalize text-primary rounded-xl"
-    >
-      Instant Quote
-    </button>                </div>
-                
-                <ProfessionalMegaMenu />
-                <div className="block lg:hidden">
-                  <div
-                    className={`${
-                      isMenuOpen ? "hidden" : "block"
-                    } lg:flex  flex-grow  items-center absolute bg-primary left-0 h-screen w-full md:top-[72px] !top-[65px]`}
-                    id="nav-content"
-                  >
-                    <ul className="menu menu-horizontal px-1 flex items-center space-y-2 mt-2">
-                      <li>
-                        <div className="">
-                          <Link
-                            href="/training"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                            Training{" "}
-                          </Link>
-                          <Link
-                            href="/b2b-repair-services"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                            B2B Repair{" "}
-                          </Link>
-                          <Link
-                            href="/ps5-repair"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                            PS5 Repair
-                          </Link>
-                            <Link
-                            href="/mail-in-repair"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                           Mail In Repair
-                          </Link>
-                          <Link
-                            href="/screen-refurbishing"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                            Screen Refurbishment{" "}
-                          </Link>
-                          <Link
-                            href="/data-recovery"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                            Data Recovery{" "}
-                          </Link>
-                           <Link
-                            href="https://wholesale.prcrepair.com.au/" target="_blank"
-                            onClick={toggleMenu}
-                            className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                          >
-                          Parts Store
-                          </Link>
-
-                          <div
-                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"'
-                          >
-                            <span
-                              className="
-                  "
-                            >
-                              Repair Form{" "}
-                            </span>
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={20}
-                                height={20}
-                                alt=""
-                              />
-                            </span>
-                          </div>
-
-                          <div
-                            className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"'
-                          >
-                            <span
-                              className="
-                  "
-                            >
-                              Repair Solutions{" "}
-                            </span>
-                            <span className="text-white">
-                              <Image
-                                src={commingsoon}
-                                width={20}
-                                height={20}
-                                alt=""
-                              />
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="dropdowns services_drop inline-block relative">
-                          <button
-                            className="flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform "
-                            onClick={toggleDropdown}
-                          >
-                            <span className="mr-1">About us</span>
-                            <IoChevronDown className="ml-2 text-sm transition-transform duration-200 group-hover:rotate-180" />
-                          </button>
-                          {isDropdownOpen && (
-                            <ul className="dropdown-menus  hidden text-prc  pt-1">
-                              <Link
-                                href="/about-us"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                                Meet Bharat
-                              </Link>
-                              <Link
-                                href="/what-we-do"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                                What We Do
-                              </Link>
-                              <Link
-                                href="/blogs"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                                Blogs{" "}
-                              </Link>
-                                   <Link
-                                href="/faq"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                                Faq{" "}
-                              </Link>
-                                   <Link
-                                href="/Trademark_Disclaimer"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                              Trademark Disclaimer{" "}
-                              </Link>
-                                  <Link
-                                href="/Warranty_and_Terms"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                              Warranty And Terms{" "}
-                              </Link>
-                                      <Link
-                                href="/Shipping_Policy"
-                                onClick={toggleMenu}
-                                className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
-                    "text-gray-700 hover:text-white"
-                  '
-                              >
-                             Shipping Policy{" "}
-                              </Link>
-                            </ul>
-                          )}
-                        </div>
-                      </li>
-                    </ul>
-
-                    <div className="lg:hidden block">
-                      <div className=" flex gap-3 mt-5 justify-start pt-3">
-                        <Link
-                          href="https://www.facebook.com/prcrepair122/"
-                          target="blank"
-                        >
-                          <SlSocialFacebook
-                            className="hover:scale-110 transition-transform duration-200"
-                            fontSize={30}
-                          />
-                        </Link>
-                        <Link
-                          href="https://www.instagram.com/prc.repair/"
-                          target="blank"
-                        >
-                          <FaInstagram
-                            className="hover:scale-110 transition-transform duration-200"
-                            fontSize={30}
-                          />
-                        </Link>
-                        <Link href="https://x.com/prc_repair" target="blank">
-                          <FaXTwitter
-                            className="hover:scale-110 transition-transform duration-200"
-                            fontSize={30}
-                          />
-                        </Link>
-                        <Link
-                          href="https://www.youtube.com/channel/UClA97i8j5HkTHcK5pgCtpBw"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaYoutube
-                            className="hover:scale-110 transition-transform duration-200"
-                            fontSize={30}
-                          />
-                        </Link>
-                        {/* <Link
-                          href="https://www.tiktok.com/@labxrepair"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaTiktok
-                            className="hover:scale-110 transition-transform duration-200"
-                            fontSize={30}
-                          />
-                        </Link> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:block  hidden">
-                  <MainButton
-                    MainButton="Instant Quote"
-                    color=""
-                    // onClick={MailRepair}
-                    link="/contact-us"
-                    aria-label="Start the repair process for your device"
-                  />
-                </div>
-              </div>
+            {/* Nav Links Placeholder */}
+            <div className="flex gap-6 flex-1 justify-center">
+              {Array.from({ length: 8 }).map((_, index) => (
+                <div key={index} className="w-20 h-4 bg-gray-300 rounded"></div>
+              ))}
             </div>
+
+            {/* Button Placeholder */}
+            <div className="w-24 h-10 bg-red-300 rounded-lg"></div>
           </div>
-        </Navbar>
-      </div>
-    </>
+        </div>
+        <div className="lg:hidden block">
+          <div className="flex items-center justify-between px-4 py-3 border-b animate-pulse bg-white">
+            {/* Close icon placeholder */}
+            <div className="w-6 h-6 bg-gray-300 rounded"></div>
+
+            {/* Logo placeholder */}
+            <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+
+            {/* Instant Quote button placeholder */}
+            <div className="w-24 h-8 bg-red-300 rounded-md"></div>
+          </div>
+        </div>
+      </>
+    );
+  }
+  return (
+    <div className="bg-primary">
+      <header className=" text-secondary  z-50 relative container">
+        {/* Header content */}
+        <div className="flex justify-between items-center lg:py-4 md:py-4 py-2 relative">
+          <div className="lg:hidden flex items-center gap-3">
+            <button onClick={toggleMenu} className="text-secondary">
+              {isMenuOpen ? <RxCross2 size={24} /> : <TbMenu2 size={24} />}
+            </button>
+          </div>
+          {/* Logo */}
+          <Link href="/">
+            <Image
+              src={newlogo}
+              width={60}
+              height={60}
+              alt="Brand Logo"
+              className="w-[60px]"
+            />
+          </Link>
+
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center gap-6">
+            <ProfessionalMegaMenu />
+          </nav>
+
+          {/* Mobile toggle */}
+
+          {/* <button
+            onClick={() => router.push("/contact-us")}
+            className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]"
+            
+          >
+            Instant Quote
+          </button> */}
+          <MainButton
+            MainButton=" Instant Quote"
+            color="bg-[#EF0000] text-white"
+            link="/contact-us"
+          />
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden px-4 py-6 bg-primary border-t border-secondary absolute w-full top-full left-0 z-40 h-screen overflow-y-auto">
+            <ul className="flex flex-col gap-4 text-sm">
+              <li>
+                <Link href="/training" onClick={toggleMenu}>
+                  Training
+                </Link>
+              </li>
+              <li>
+                <Link href="/b2b-repair-services" onClick={toggleMenu}>
+                  B2B Repair
+                </Link>
+              </li>
+              <li>
+                <Link href="/ps5-repair" onClick={toggleMenu}>
+                  PS5 Repair
+                </Link>
+              </li>
+              <li>
+                <Link href="/mail-in-repair" onClick={toggleMenu}>
+                  Mail In Repair
+                </Link>
+              </li>
+              <li>
+                <Link href="/screen-refurbishing" onClick={toggleMenu}>
+                  Screen Refurbishment
+                </Link>
+              </li>
+              <li>
+                <Link href="/data-recovery" onClick={toggleMenu}>
+                  Data Recovery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://wholesale.prcrepair.com.au/"
+                  target="_blank"
+                  onClick={toggleMenu}
+                >
+                  Parts Store
+                </Link>
+              </li>
+
+              {/* About us dropdown */}
+              <li>
+                <button onClick={toggleDropdown} className="flex items-center">
+                  About us <IoChevronDown className="ml-2 text-base" />
+                </button>
+                {isDropdownOpen && (
+                  <ul className="ml-4 mt-2 flex flex-col gap-2 text-sm">
+                    <Link href="/about-us" onClick={toggleMenu}>
+                      Meet Bharat
+                    </Link>
+                    <Link href="/what-we-do" onClick={toggleMenu}>
+                      What We Do
+                    </Link>
+                    <Link href="/blogs" onClick={toggleMenu}>
+                      Blogs
+                    </Link>
+                    <Link href="/faq" onClick={toggleMenu}>
+                      FAQ
+                    </Link>
+                    <Link href="/Trademark_Disclaimer" onClick={toggleMenu}>
+                      Trademark Disclaimer
+                    </Link>
+                    <Link href="/Warranty_and_Terms" onClick={toggleMenu}>
+                      Warranty And Terms
+                    </Link>
+                    <Link href="/Shipping_Policy" onClick={toggleMenu}>
+                      Shipping Policy
+                    </Link>
+                  </ul>
+                )}
+              </li>
+
+              {/* <li>
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  router.push("/contact-us");
+                }}
+                className="mt-4 bg-red-600 text-white text-sm px-4 py-2 rounded-xl w-fit"
+              >
+                Instant Quote
+              </button>
+            </li> */}
+            </ul>
+          </div>
+        )}
+      </header>
+    </div>
   );
 }
