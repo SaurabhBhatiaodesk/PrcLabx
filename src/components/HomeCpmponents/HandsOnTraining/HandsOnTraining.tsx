@@ -81,7 +81,7 @@ function HandsOnTraining() {
           {courses.map((course, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-4 border border-[#e4e4e7] w-full xl:w-[30%] lg:w-[48%] md:w-[48%] flex lg:flex-row flex-col gap-5 relative"
+              className="bg-white rounded-lg shadow-md p-4 border border-[#e4e4e7] w-full xl:w-[32%] lg:w-[48%] md:w-[48%] flex lg:flex-row flex-col gap-5 relative"
             >
               <Link
                 href={course.linking}

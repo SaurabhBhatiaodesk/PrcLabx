@@ -9,9 +9,12 @@ import Link from "next/link";
 import Pdp from "./Pdp";
 import Strip from "@/components/Strip/Strip";
 import { log } from "console";
+import { useAppDispatch } from "@/app/redux/hooks";
+import { setUiFlag } from "@/app/redux/slice";
 
 const BrandDetailPage: React.FC = () => {
   const pathname = usePathname();
+  const dispatch = useAppDispatch();
   const [brandsData, setBrandsData] = useState<any>([]); // State to hold brands data
   const [slugData, setSlugData] = useState<any>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true); // Sidebar state
@@ -59,7 +62,12 @@ const BrandDetailPage: React.FC = () => {
       setIsSidebarOpen(true); // Open sidebar on larger screens
     }
   }, [isMobile]);
-
+  useEffect(() => {
+    const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+    if (data.length > 0) {
+      dispatch(setUiFlag(false));
+    }
+  }, []);
   // Build slugArray by stripping "/brands" and splitting the rest
   const slugArray =
     pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
@@ -84,6 +92,7 @@ const BrandDetailPage: React.FC = () => {
             }
             baseData = await res.json();
             sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
+            dispatch(setUiFlag(false));
           } catch (error) {
             console.error("Error fetching base data:", error);
           }
@@ -199,11 +208,11 @@ const BrandDetailPage: React.FC = () => {
             </button>
             {/* Breadcrumb */}
             <div className="hidden md:block">
-              {/* <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
+              <nav className="mb-4 text-sm flex-1 truncate font-bold flex-wrap">
                 <Link href="/brands" className="hover:underline font-bold">
                   Brands
                 </Link>
-                {slugArray.map((slug, idx) => {
+                {slugArray.slice(0, -1).map((slug, idx) => {
                   const isSecondLast = idx === slugArray.length - 2;
                   const isLast = idx === slugArray.length - 1;
 
@@ -229,7 +238,7 @@ const BrandDetailPage: React.FC = () => {
                     </span>
                   );
                 })}
-              </nav> */}
+              </nav>
             </div>
           </div>
           {/* Render content based on the fetched brands data */}
@@ -238,6 +247,7 @@ const BrandDetailPage: React.FC = () => {
               brandsData={slugData}
               pathname={pathname}
               isSidebarOpen={isSidebarOpen}
+              tabs={tabs}
             />
           ) : (
             <Pdp

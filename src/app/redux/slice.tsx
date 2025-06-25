@@ -10,11 +10,13 @@ type User = {
 interface UsersState {
   users: User[];
   priceCat: number | null; // Add priceCat to the state
+  uiFlag: boolean; 
 }
 
 const initialState: UsersState = {
   users: [],
   priceCat: null, // Initialize with null or a default value
+  uiFlag: true,
 };
 
 const userSlice = createSlice({
@@ -31,8 +33,11 @@ const userSlice = createSlice({
     setPriceCat: (state, action: PayloadAction<number>) => {
       state.priceCat = action.payload; // Update priceCat in the state
     },
+    setUiFlag: (state, action: PayloadAction<boolean>) => {
+      state.uiFlag = action.payload;   // true या false सेट करने के लिए
+    },
   },
 });
 
-export const { addUser, setPriceCat } = userSlice.actions;
+export const { addUser, setPriceCat,setUiFlag } = userSlice.actions;
 export default userSlice.reducer;

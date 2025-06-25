@@ -15,15 +15,31 @@ const Bannersearchcard: React.FC = () => {
   const [baseData, setBaseData] = useState<Item[]>([]); // Store base data (brands, devices, series, etc.)
 
   // Store title and alias for each selected option
-  const [selectedBrand, setSelectedBrand] = useState<{ title: string; alias: string }>({ title: "", alias: "" });
-  const [selectedDevice, setSelectedDevice] = useState<{ title: string; alias: string }>({ title: "", alias: "" });
-  const [selectedSeries, setSelectedSeries] = useState<{ title: string; alias: string }>({ title: "", alias: "" });
-  const [selectedModel, setSelectedModel] = useState<{ title: string; alias: string }>({ title: "", alias: "" });
+  const [selectedBrand, setSelectedBrand] = useState<{
+    title: string;
+    alias: string;
+  }>({ title: "", alias: "" });
+  const [selectedDevice, setSelectedDevice] = useState<{
+    title: string;
+    alias: string;
+  }>({ title: "", alias: "" });
+  const [selectedSeries, setSelectedSeries] = useState<{
+    title: string;
+    alias: string;
+  }>({ title: "", alias: "" });
+  const [selectedModel, setSelectedModel] = useState<{
+    title: string;
+    alias: string;
+  }>({ title: "", alias: "" });
+  const [generatedSlug, setGeneratedSlug] = useState<string>("");
 
-  // Fetch baseData from sessionStorage or an API
   useEffect(() => {
-    const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
-    setBaseData(data);
+    const timer = setTimeout(() => {
+      const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+      setBaseData(data);
+    }, 3000); // Corrected the delay to 3000 milliseconds
+    // Cleanup function to clear the timer if the component is unmounted
+    return () => clearTimeout(timer);
   }, []);
 
   // Get the list of devices or products based on the selected brand
@@ -40,7 +56,9 @@ const Bannersearchcard: React.FC = () => {
 
     if (deviceData) {
       // Check if data is empty, fallback to products
-      return deviceData.data?.length ? deviceData.data : deviceData.products || [];
+      return deviceData.data?.length
+        ? deviceData.data
+        : deviceData.products || [];
     }
     return [];
   };
@@ -53,14 +71,37 @@ const Bannersearchcard: React.FC = () => {
 
     if (seriesData) {
       // Check if data is empty, fallback to products
-      return seriesData.data?.length ? seriesData.data : seriesData.products || [];
+      return seriesData.data?.length
+        ? seriesData.data
+        : seriesData.products || [];
     }
     return [];
   };
 
+  useEffect(() => {
+    const models = getModelsOrProducts(selectedSeries.title);
+
+    // Filter the models based on the selected model's alias
+    const matchedModel = models.find(
+      (item) => item.alias === selectedModel.alias
+    );
+
+    if (matchedModel) {
+      // Find the repair issue (e.g., screen-repair) for the matched model
+      const selectedIssue = matchedModel.data?.find(
+        (issue) => issue.alias === "screen-repair"
+      );
+
+      // Generate the slug if the issue is found
+      if (selectedIssue) {
+        const generatedSlug = `${matchedModel.alias}/${selectedIssue.alias}`;
+        setGeneratedSlug(generatedSlug);
+      }
+    }
+  }, [selectedModel, selectedSeries, selectedDevice, selectedBrand]);
   // Handle form submission to generate the slug and search for services
   const handleSearch = () => {
-    const slug = `${selectedBrand.alias}/${selectedDevice.alias}/${selectedSeries.alias}/${selectedModel.alias}`;
+    const slug = `${selectedBrand.alias}/${selectedDevice.alias}/${selectedSeries.alias}/${generatedSlug}`;
     router.push(`/brands/${slug}`); // Redirect to the search results page with the generated slug
   };
 
@@ -68,20 +109,25 @@ const Bannersearchcard: React.FC = () => {
   const devices = getItems(selectedBrand.title);
   const series = getSeriesOrProducts(selectedDevice.title);
   const models = getModelsOrProducts(selectedSeries.title);
+  console.log("models", models);
 
   return (
     <div className="max-w-lg mr-0 lg:p-8 p-6 bg-gray-50 rounded-lg shadow-md">
       {/* <h2 className="text-center text-2xl font-semibold mb-6 text-gray-800">Select Your Device</h2> */}
       <div className="mb-4">
-<MainHeading Heading="Select Your Device" svg_stroke="var(--alpha)" color="var(--prc)"/>
-
-
+        <MainHeading
+          Heading="Select Your Device"
+          svg_stroke="var(--alpha)"
+          color="var(--prc)"
+        />
       </div>
       {/* Brand Selection */}
       <select
         value={selectedBrand.title}
         onChange={(e) => {
-          const selected = baseData.find((item) => item.title === e.target.value);
+          const selected = baseData.find(
+            (item) => item.title === e.target.value
+          );
           setSelectedBrand({
             title: selected?.title || "",
             alias: selected?.alias || "",
@@ -104,7 +150,9 @@ const Bannersearchcard: React.FC = () => {
       <select
         value={selectedDevice.title}
         onChange={(e) => {
-          const selected = getItems(selectedBrand.title).find((device) => device.title === e.target.value);
+          const selected = getItems(selectedBrand.title).find(
+            (device) => device.title === e.target.value
+          );
           setSelectedDevice({
             title: selected?.title || "",
             alias: selected?.alias || "",
@@ -133,7 +181,9 @@ const Bannersearchcard: React.FC = () => {
         <select
           value={selectedSeries.title}
           onChange={(e) => {
-            const selected = series.find((series) => series.title === e.target.value);
+            const selected = series.find(
+              (series) => series.title === e.target.value
+            );
             setSelectedSeries({
               title: selected?.title || "",
               alias: selected?.alias || "",
@@ -156,7 +206,9 @@ const Bannersearchcard: React.FC = () => {
         <select
           value={selectedModel.title}
           onChange={(e) => {
-            const selected = models.find((model) => model.title === e.target.value);
+            const selected = models.find(
+              (model) => model.title === e.target.value
+            );
             setSelectedModel({
               title: selected?.title || "",
               alias: selected?.alias || "",

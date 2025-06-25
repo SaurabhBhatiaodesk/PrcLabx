@@ -8,6 +8,8 @@ import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoChevronDown, IoChevronForward } from "react-icons/io5";
 import { SlSocialFacebook } from "react-icons/sl";
+import { useAppDispatch } from "../redux/hooks";
+import { setUiFlag } from "../redux/slice";
 
 // TypeScript interfaces
 interface MenuItem {
@@ -51,12 +53,45 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
   getChildren,
   parentRef,
 }) => {
+  const [matchingPath, setMatchingPath] = useState<string | null>(null);
   const itemPath = buildPath(parentPath, item.alias);
   const itemId = `${item.id}-${level}`;
   const isHovered = hoveredPath[level] === itemId;
   const children = getChildren(item);
   const submenuRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement>(null);
+  const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+  const slugData = itemPath;
+  useEffect(() => {
+    if (isHovered) {
+      // Extract the last part of itemPath (the last slug after the last `/`)
+      const lastSlug = itemPath.split("/").pop(); // This will give you the last part of the itemPath
+
+      // Iterate over the data structure
+      data.forEach((category: any) => {
+        category.data.forEach((subcategory: any) => {
+          subcategory.data.forEach((subItem: any) => {
+            if (subItem.products) {
+              // Only filter products if the alias of subItem matches the last slug of itemPath
+              const matchingProducts = subItem.products.filter(
+                (product: any) => product.alias === lastSlug
+              );
+
+              // Log alias and updated data path for matching products
+              if (matchingProducts.length > 0) {
+                matchingProducts.forEach((product: any) => {
+                  // Construct the full path without duplicate alias
+                  const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
+                  setMatchingPath(updatedPath);
+                });
+              }
+            }
+          });
+        });
+      });
+    }
+  }, [isHovered, item.alias, data, itemPath]); // Added itemPath to the dependency array
+
   // Positioning logic for independent submenus
   useEffect(() => {
     if (isHovered && submenuRef.current && itemRef.current) {
@@ -69,7 +104,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
       // Position the submenu directly to the right of the parent item
       submenu.style.left = `${itemRect.right - 12}px`; // 2px gap from parent item
-      submenu.style.top = `${itemRect.top - 40}px`; // Align top with parent item
+      submenu.style.top = `${itemRect.top - 5}px`; // Align top with parent item
 
       // Ensure submenu is fixed position relative to viewport
       submenu.style.position = "fixed";
@@ -79,7 +114,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
   return (
     <div ref={itemRef} className="relative group/nested">
       <Link
-        href={`/brands/${itemPath}`}
+        href={`/brands/${matchingPath || itemPath}`}
         className={`group flex items-center justify-between p-2 text-sm transition-all duration-200 cursor-pointer border-l-2 border-transparent 
     ${
       isActivePath(item.alias)
@@ -102,7 +137,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 h-[38px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
             boxShadow:
@@ -148,8 +183,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
 const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [menuData, setMenuData] = useState<MenuItem[]>([]);
-  console.log("menuData",menuData);
-  
+  const dispatch = useAppDispatch();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredPath, setHoveredPath] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -162,10 +196,16 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    if (menuData.length > 0) {
+      dispatch(setUiFlag(false));
+    }
+  }, [menuData]);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };

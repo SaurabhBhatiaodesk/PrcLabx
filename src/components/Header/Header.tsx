@@ -12,22 +12,20 @@ import newlogo from "../../../public/Images/prclogo.png";
 import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
 import "./Header.css";
 import MainButton from "../MainButton/MainButton";
+// import { useSelector } from "react-redux";
+// import { RootState } from "@/app/redux/store";
+import { useAppSelector } from "@/app/redux/hooks";
 
 export default function CustomHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
+ const uiFlag   = useAppSelector(s => s.users.uiFlag);
+ 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  if (loading) {
+  if (uiFlag) {
     return (
       <>
         <div className="container lg:block hidden">
@@ -65,7 +63,7 @@ export default function CustomHeader() {
     <div className="bg-primary">
       <header className=" text-secondary  z-50 relative container">
         {/* Header content */}
-        <div className="flex justify-between items-center lg:py-4 md:py-4 py-2 relative">
+        <div className="flex justify-between items-center lg:py-4 md:py-2 py-2 relative">
           <div className="lg:hidden flex items-center gap-3">
             <button onClick={toggleMenu} className="text-secondary">
               {isMenuOpen ? <RxCross2 size={24} /> : <TbMenu2 size={24} />}

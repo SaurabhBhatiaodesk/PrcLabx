@@ -89,8 +89,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   //   router.push(newUrl); // Replace the last segment without appending
   // };
   const handleTabClick = async (tab: any) => {
-    console.log("tab>>>>>", tab);
-
     setActiveTabb(tab.id.toString());
     setActiveTab(tab.id);
     const slugArray =
@@ -182,7 +180,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                 onClick={() => handleTabClick(tab)}
                 className={`rounded-t-lg rounded-b-none md:px-4 md:py- p-2 text-xs font-medium border border-gray-300 ${activeTabb === tab.id.toString()
                   ? "bg-prc  text-white border-b-0 text-[11px]"
-                  : "bg-white text-gray-700 hover:bg-gray-100 text-xs"
+                  : "bg-white text-gray-700  text-xs border-prc border-1"
                   }`}
               >
                 {tab.title}
@@ -209,7 +207,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
               </p>
 
               {/* Part Options */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-3 mb-6">
                 {pdpDetail.length > 0 && (
                   <>
                     {pdpDetail?.map((part: any) => {
@@ -221,7 +219,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                           onClick={() => handleParClick(part)}
                           className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${isSelectedPart
                             ? "bg-tertiary  border-prc"
-                            : "bg-white border-gray-300 hover:border-purple-400"
+                            : "bg-white border-gray-300 hover:border-prc"
                             }`}
                         >
                           <div>
@@ -231,7 +229,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                           </div>
                           <div className="mt-1">
                             <span
-                              className={`text-base font-semibold ${isSelectedPart ? "text-prc" : "text-prc"
+                              className={`text-lg font-semibold ${isSelectedPart ? "text-prc" : "text-prc"
                                 }`}
                             >
                               {part.price_range}
@@ -246,16 +244,16 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="flex flex-row gap-3 md:justify-start justify-center mb-6">
                 <button
-                  className="flex-1 bg-prc text-white rounded-lg py-3 text-center font-medium hover:bg-teal-900 transition lg:text-base text-sm"
+                  className=" bg-prc text-white rounded-lg p-3 text-center font-medium hover:bg-teal-900 transition lg:text-base text-sm md:w-[11.5rem] w-[9rem]"
                   onClick={() => setIsModalOpen(true)}
                 >
                   BOOK NOW
                 </button>
                 <Link href="/mail-in-repair">
                   <button
-                    className="w-full flex-1 border-2 border-gray-600 text-gray-700 rounded-lg py-3 text-center font-medium hover:bg-gray-100 transition lg:text-base text-sm"
+                    className=" border-2 border-gray-600 text-secondary rounded-lg p-3 text-center font-medium  transition lg:text-base text-sm md:w-[11.5rem] w-[9rem]"
                     onClick={MailRepair}
                   >
                     MAIL IN REPAIR
