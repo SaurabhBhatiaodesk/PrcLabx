@@ -65,7 +65,7 @@ export default function CustomHeader() {
     <div className="bg-primary">
       <header className=" text-secondary  z-50 relative container">
         {/* Header content */}
-        <div className="flex justify-between items-center lg:py-4 md:py-4 py-2 relative">
+        <div className="flex justify-between items-center lg:py-4 md:py-2 py-2 relative">
           <div className="lg:hidden flex items-center gap-3">
             <button onClick={toggleMenu} className="text-secondary">
               {isMenuOpen ? <RxCross2 size={24} /> : <TbMenu2 size={24} />}
