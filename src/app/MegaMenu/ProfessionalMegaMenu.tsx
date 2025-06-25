@@ -69,7 +69,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
       // Position the submenu directly to the right of the parent item
       submenu.style.left = `${itemRect.right - 12}px`; // 2px gap from parent item
-      submenu.style.top = `${itemRect.top - 40}px`; // Align top with parent item
+      submenu.style.top = `${itemRect.top - 5}px`; // Align top with parent item
 
       // Ensure submenu is fixed position relative to viewport
       submenu.style.position = "fixed";
@@ -102,7 +102,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 h-[38px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50  overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
           style={{
             width: "240px",
             boxShadow:
@@ -122,7 +122,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
           </div>
 
           {/* Enhanced submenu items */}
-          <div className="py-1">
+          <div className="">
             {children.map((child) => (
               <IndependentSubmenu
                 key={child.id}

@@ -91,7 +91,7 @@ const RecentNews: React.FC = () => {
                   <SwiperSlide key={blog._id}>
                     <div
                       onClick={() => sendId(blog.pageTitle)}
-                      className="blogs-row-col-os cursor-pointer"
+                      className="blogs-row-col-os cursor-pointer hover:scale-105 transition-transform duration-300 "
                       data-aos="zoom-in"
                     >
                       <div>
@@ -101,7 +101,7 @@ const RecentNews: React.FC = () => {
                             alt={blog.heading}
                             width={500}
                             height={350}
-                            className="rounded-md object-cover blog-image-home"
+                            className="rounded-md object-cover blog-image-home hover:scale-105 transition-transform duration-300 "
                           />
                         )}
                       </div>
