@@ -89,8 +89,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   //   router.push(newUrl); // Replace the last segment without appending
   // };
   const handleTabClick = async (tab: any) => {
-    console.log("tab>>>>>", tab);
-
     setActiveTabb(tab.id.toString());
     setActiveTab(tab.id);
     const slugArray =

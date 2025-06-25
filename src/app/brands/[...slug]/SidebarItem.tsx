@@ -1,8 +1,9 @@
+"use client";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const SidebarItem: React.FC<{
@@ -24,6 +25,7 @@ const SidebarItem: React.FC<{
   setIsLastItemClicked,
   setTabs,
 }) => {
+  const router = useRouter();
   const [selectedData, setSelectedData] = useState<any>(null); // Store data or products for the clicked category
 
   const pathname = usePathname();
@@ -31,32 +33,47 @@ const SidebarItem: React.FC<{
   const hasChildren = Boolean(item.data) || Boolean(item.products); // Check if the item has subcategories or products
   const isActive = currentPath === href; // Check if the current item is active
 
-  // Handle category click and expand it
-  const handleCategoryClick = () => {
-    toggleExpand(href); // Toggle the expanded state of the category
+  // Handle category click and expand it (and auto-drill if it's the second-last level)
+  const handleCategoryClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // 1) toggle open/close
+    toggleExpand(href);
+    // 2) set selectedData for children rendering
     if (item.data) {
-      setSelectedData(item.data); // Set data if subcategories exist
+      setSelectedData(item.data);
     } else if (item.products) {
-      setSelectedData(item.products); // Set products if no subcategories exist
+      setSelectedData(item.products);
+    }
+
+    // 3) determine if its children are all leaves (no deeper .data/.products)
+    const children = item.data?.length ? item.data : item.products ?? [];
+    const isLeafParent =
+      children.length > 0 &&
+      children.every(
+        (c: any) => !Array.isArray(c.data) && !Array.isArray(c.products)
+      );
+
+    // 4) if it is a leaf-parent (second-last), auto-navigate to first child
+    if (isLeafParent) {
+      setTabs(children);
+      setIsLastItemClicked(true);
+      router.push(`${href}/${children[0].alias}`);
+    } else {
+      setIsLastItemClicked(false);
     }
   };
 
   // Function to recursively map over items (data or products)
   const renderChildItems = (items: any[], parentHref: string) => {
-    console.log(items, 'items>>>>', parentHref, "parentHref")
     setTabs(items);
-    const lastSegment = pathname.split("/").pop(); // Get the last part of the URL (slugMatch)
-    console.log(lastSegment, 'lastSegment>>>>')
+    const lastSegment = pathname.split("/").pop();
 
     // Check if there are no nested arrays and if the alias matches the last segment of the URL
     const hasNestedArrays = items.some(
       (child: any) => Array.isArray(child.data) || Array.isArray(child.products)
     );
-    console.log(hasNestedArrays,'hasNestedArrayshasNestedArrays')
-    const slugMatch = items.some((child: any) => child.alias === lastSegment); // Check if alias matches last segment of URL
+    const slugMatch = items.some((child: any) => child.alias === lastSegment);
 
-    console.log(slugMatch,'slugMatchslugMatch')
-    // If no nested arrays and slug matches, set the state to true
     if (!hasNestedArrays && slugMatch) {
       setIsLastItemClicked(true);
     } else {
@@ -94,22 +111,24 @@ const SidebarItem: React.FC<{
               : "text-gray-800 hover:bg-prc hover:text-primary text-sm"
           }`}
         style={{ paddingLeft: `${level * 20 + 20}px` }}
-        onClick={handleCategoryClick} // Handle category click
+        onClick={handleCategoryClick}
       >
         <Link href={href} className="flex-1 truncate font-semibold">
-          {item.title} 
+          {item.title}
         </Link>
         {hasChildren && (
           <span
-            className={` font-bold select-none transition-transform duration-300 text-base ${isActive ? "text-white" : ""}`}>
-          {isExpanded ? <MdKeyboardArrowUp  /> : <MdKeyboardArrowDown />}
+            className={`font-bold select-none transition-transform duration-300 text-base ${
+              isActive ? "text-white" : ""
+            }`}
+          >
+            {isExpanded ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
           </span>
         )}
       </div>
 
       {isExpanded && hasChildren && (
         <div className="mt-1">
-          {/* Render child items (either data or products) */}
           {item.data &&
             item.data.length > 0 &&
             renderChildItems(item.data, href)}

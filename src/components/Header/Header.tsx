@@ -12,22 +12,20 @@ import newlogo from "../../../public/Images/prclogo.png";
 import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
 import "./Header.css";
 import MainButton from "../MainButton/MainButton";
+// import { useSelector } from "react-redux";
+// import { RootState } from "@/app/redux/store";
+import { useAppSelector } from "@/app/redux/hooks";
 
 export default function CustomHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
+ const uiFlag   = useAppSelector(s => s.users.uiFlag);
+ 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  if (loading) {
+  if (uiFlag) {
     return (
       <>
         <div className="container lg:block hidden">

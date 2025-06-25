@@ -18,19 +18,29 @@ import mainf3 from "../../../public/Images/BannerImages/bannerf3.webp";
 // import mainf4 from "../../../public/Images/BannerImages/bannerf4.webp";
 import Bannersearchcard from "./Bannersearchcard";
 import Marquee from "../Marquee/Marquee";
+import { useAppDispatch } from "@/app/redux/hooks";
+import { setUiFlag } from "@/app/redux/slice";
 
 export default function MainBanner() {
+  const dispatch = useAppDispatch();
   const [backgroundImage, setBackgroundImage] = useState(mainf3); // State to track background image
   const [isPaused, setIsPaused] = useState(false); // State to control autoplay pause
- const hasFetchedData = useRef(false);
+  const hasFetchedData = useRef(false);
   const backgroundImages = [mainf3];
+
+  useEffect(() => {
+    const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+    if (data.length > 0) {
+      dispatch(setUiFlag(false));
+    }
+  }, []);
 
   const handleSlideChange = (swiper: any) => {
     const index = swiper.realIndex; // Get the real index of the slide
     setBackgroundImage(backgroundImages[index % backgroundImages.length]); // Update the background image
   };
   useEffect(() => {
-      if (hasFetchedData.current) return;
+    if (hasFetchedData.current) return;
     hasFetchedData.current = true;
     const fetchBrands = async () => {
       try {
@@ -47,6 +57,7 @@ export default function MainBanner() {
             }
             baseData = await res.json();
             sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
+            dispatch(setUiFlag(false));
           } catch (error) {
             console.error("Error fetching base data:", error);
           }
@@ -122,8 +133,8 @@ export default function MainBanner() {
       highlightColor: "text-[#15e8cf]",
       description: `Power your repairs with the best parts in the market. Our Parts Store offers a wide range of reliable, high-performance mobile phone components sourced directly from trusted suppliers. Enjoy fast shipping, bulk pricing, and top-tier service.`,
       button: {
-        text: "Data Recovery",
-        link: "/data-recovery",
+        text: "Visit Store",
+        link: "https://wholesale.prcrepair.com.au/",
       },
     },
   ];
