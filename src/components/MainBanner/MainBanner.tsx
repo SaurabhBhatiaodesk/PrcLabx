@@ -39,36 +39,36 @@ export default function MainBanner() {
     const index = swiper.realIndex; // Get the real index of the slide
     setBackgroundImage(backgroundImages[index % backgroundImages.length]); // Update the background image
   };
-  useEffect(() => {
-    if (hasFetchedData.current) return;
-    hasFetchedData.current = true;
-    const fetchBrands = async () => {
-      try {
-        const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
-        // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
-        let baseData: any = JSON.parse(
-          sessionStorage.getItem("baseData") || "[]"
-        );
-        if (baseData.length === 0) {
-          try {
-            const res = await fetch(api);
-            if (!res.ok) {
-              throw new Error(`HTTP error! status: ${res.status}`);
-            }
-            baseData = await res.json();
-            sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
-            dispatch(setUiFlag(false));
-          } catch (error) {
-            console.error("Error fetching base data:", error);
-          }
-        }
-      } catch (error) {
-        console.error("Unexpected error:", error);
-      }
-    };
+  // useEffect(() => {
+  //   if (hasFetchedData.current) return;
+  //   hasFetchedData.current = true;
+  //   const fetchBrands = async () => {
+  //     try {
+  //       const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
+  //       // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
+  //       let baseData: any = JSON.parse(
+  //         sessionStorage.getItem("baseData") || "[]"
+  //       );
+  //       if (baseData.length === 0) {
+  //         try {
+  //           const res = await fetch(api);
+  //           if (!res.ok) {
+  //             throw new Error(`HTTP error! status: ${res.status}`);
+  //           }
+  //           baseData = await res.json();
+  //           sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
+  //           dispatch(setUiFlag(false));
+  //         } catch (error) {
+  //           console.error("Error fetching base data:", error);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error("Unexpected error:", error);
+  //     }
+  //   };
 
-    fetchBrands();
-  }, []);
+  //   fetchBrands();
+  // }, []);
   const bannerSlides = [
     {
       heading: "Get Your Device Fixed or Learn Mobile Phone Repairs",

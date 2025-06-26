@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -14,17 +14,49 @@ import "./Header.css";
 import MainButton from "../MainButton/MainButton";
 // import { useSelector } from "react-redux";
 // import { RootState } from "@/app/redux/store";
-import { useAppSelector } from "@/app/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
+import { setUiFlag } from "@/app/redux/slice";
 
 export default function CustomHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
- const uiFlag   = useAppSelector(s => s.users.uiFlag);
- 
+  const uiFlag = useAppSelector((s) => s.users.uiFlag);
+  const hasFetchedData = useRef(false);
+  const dispatch = useAppDispatch();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  useEffect(() => {
+    if (hasFetchedData.current) return;
+    hasFetchedData.current = true;
+    const fetchBrands = async () => {
+      try {
+        const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
+        // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
+        let baseData: any = JSON.parse(
+          sessionStorage.getItem("baseData") || "[]"
+        );
+        if (baseData.length === 0) {
+          try {
+            const res = await fetch(api);
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            baseData = await res.json();
+            sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
+            dispatch(setUiFlag(false));
+          } catch (error) {
+            console.error("Error fetching base data:", error);
+          }
+        } else if (baseData.length > 0) {
+          dispatch(setUiFlag(false));
+        }
+      } catch (error) {
+        console.error("Unexpected error:", error);
+      }
+    };
 
+    fetchBrands();
+  }, []);
   if (uiFlag) {
     return (
       <>
@@ -59,6 +91,7 @@ export default function CustomHeader() {
       </>
     );
   }
+
   return (
     <div className="bg-primary">
       <header className=" text-secondary  z-50 relative container">
