@@ -66,27 +66,42 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
     if (isHovered) {
       // Extract the last part of itemPath (the last slug after the last `/`)
       const lastSlug = itemPath.split("/").pop(); // This will give you the last part of the itemPath
-
       // Iterate over the data structure
       data.forEach((category: any) => {
         category.data.forEach((subcategory: any) => {
-          subcategory.data.forEach((subItem: any) => {
-            if (subItem.products) {
-              // Only filter products if the alias of subItem matches the last slug of itemPath
-              const matchingProducts = subItem.products.filter(
-                (product: any) => product.alias === lastSlug
-              );
+          if (subcategory.data.length > 0) {
+            subcategory.data.forEach((subItem: any) => {
+              if (subItem.products) {
+                // Only filter products if the alias of subItem matches the last slug of itemPath
+                const matchingProducts = subItem.products.filter(
+                  (product: any) => product.alias === lastSlug
+                );
 
-              // Log alias and updated data path for matching products
-              if (matchingProducts.length > 0) {
-                matchingProducts.forEach((product: any) => {
-                  // Construct the full path without duplicate alias
-                  const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
-                  setMatchingPath(updatedPath);
-                });
+                // Log alias and updated data path for matching products
+                if (matchingProducts.length > 0) {
+                  matchingProducts.forEach((product: any) => {
+                    // Construct the full path without duplicate alias
+                    const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
+                    setMatchingPath(updatedPath);
+                  });
+                }
               }
+            });
+          } else if (
+            subcategory.data.length === 0 &&
+            subcategory.products.length > 0
+          ) {
+            const matchingProducts = subcategory.products.filter(
+              (product: any) => product.alias === lastSlug
+            );
+            if (matchingProducts.length > 0) {
+              matchingProducts.forEach((product: any) => {
+                // Construct the full path without duplicate alias
+                const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
+                setMatchingPath(updatedPath);
+              });
             }
-          });
+          }
         });
       });
     }
@@ -158,8 +173,11 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
 
           {/* Enhanced submenu items */}
           <div className="py-1">
-            {children.map((child) => (
-              // {(item.data && item.data.length > 0 ? item.data : item.products || []).map((child) => (
+            {/* {children.map((child) => ( */}
+            {(item.data && item.data.length > 0
+              ? item.data
+              : item.products || []
+            ).map((child) => (
               <IndependentSubmenu
                 key={child.id}
                 item={child}
