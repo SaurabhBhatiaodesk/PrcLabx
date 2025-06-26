@@ -34,7 +34,7 @@ const userSlice = createSlice({
       state.priceCat = action.payload; // Update priceCat in the state
     },
     setUiFlag: (state, action: PayloadAction<boolean>) => {
-      state.uiFlag = action.payload;   // true या false सेट करने के लिए
+      state.uiFlag = action.payload;   
     },
   },
 });
