@@ -159,6 +159,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
           {/* Enhanced submenu items */}
           <div className="py-1">
             {children.map((child) => (
+              // {(item.data && item.data.length > 0 ? item.data : item.products || []).map((child) => (
               <IndependentSubmenu
                 key={child.id}
                 item={child}
@@ -341,7 +342,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
             "0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1)",
         }}
         onMouseEnter={() => handleMouseEnter(parentItem.id.toString())}
-        onMouseLeave={() => handleMouseLeave()}
+        // onMouseLeave={() => handleMouseLeave()}
       >
         <div className="p-3">
           {/* Enhanced Header with gradient */}
@@ -439,7 +440,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                   key={item.id}
                   className="relative group"
                   onMouseEnter={() => handleMouseEnter(item.id.toString())}
-                  onMouseLeave={() => handleMouseLeave()}
+                  // onMouseLeave={() => handleMouseLeave()}
                 >
                   <Link
                     href={`/brands/${item.alias}`}

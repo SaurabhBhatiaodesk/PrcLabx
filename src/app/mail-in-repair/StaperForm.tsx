@@ -1565,7 +1565,7 @@ const StaperForm: React.FC = () => {
                                           sx={{
                                             color: "var(--primary)", // Custom color for the radio button
                                             "&.Mui-checked": {
-                                              color: "var(--primary)", // Color when radio is checked
+                                              color: "var(--alpha)", // Color when radio is checked
                                             },
                                           }}
                                           checked={

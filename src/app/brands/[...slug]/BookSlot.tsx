@@ -366,7 +366,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
                 type="submit"
                 className="bg-prc text-white py-2 px-4 rounded w-full"
               >
-                Book Now
+                {loading ? "Loading..." : "Book Now"}
               </button>
             </form>
 
