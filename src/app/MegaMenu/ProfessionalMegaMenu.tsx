@@ -483,7 +483,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                   `}
                           >
                             {item.title}
-                            <IoChevronForward className="ml-2 text-sm" />
+                            {/* <IoChevronForward className="ml-2 text-sm" /> */}
                           </Link>
                         </li>
                       ))}

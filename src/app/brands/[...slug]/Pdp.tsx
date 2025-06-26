@@ -9,7 +9,6 @@ import american from "../../../assets/Icons/american-express_349228.svg";
 import BookSlot from "./BookSlot";
 import Link from "next/link";
 import FaqComponent from "./FaqComponent";
-import Strip from "@/components/Strip/Strip";
 
 const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, setSlugData: any }> = ({
   pdpDetail,
@@ -125,7 +124,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   const getImage = (part: any) => {
     return part?.image
       ? part.image
-      : "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg"; // Default image if no image is available
+      : "/Images/no-image.png"; // Default image if no image is available
   };
 
   useEffect(() => {

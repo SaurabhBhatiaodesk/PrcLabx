@@ -17,15 +17,22 @@ const BrandDetailPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const [brandsData, setBrandsData] = useState<any>([]); // State to hold brands data
   const [slugData, setSlugData] = useState<any>([]);
+  const [LastslugData, setLastSlugData] = useState<any>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true); // Sidebar state
   const [expandedPaths, setExpandedPaths] = useState<string[]>([]); // Expanded paths for sidebar
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
+  const [LatTabs, setLastTabs] = useState();
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
-  const [activeTabData, setActiveTabData] = useState();
+  // const [activeTabData, setActiveTabData] = useState();
 
-
+  useEffect(() => {
+    if (activeTab !== "undefined" && isLastItemClicked && slugData.length > 0) {
+      setLastTabs(tabs); // Store the tabs data to LatTabs when activeTab is not "undefined"
+      setLastSlugData(slugData);
+    }
+  }, [activeTab, tabs, slugData]);
 
   // State for mobile detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -42,8 +49,6 @@ const BrandDetailPage: React.FC = () => {
     if (typeof window !== "undefined") {
       // Check if window is available (client-side)
       const handleResize = () => {
-
-        
         setIsMobile(window.innerWidth <= 768); // Adjust the 768px value based on your design
       };
 
@@ -221,9 +226,9 @@ const BrandDetailPage: React.FC = () => {
                     ? `/brands/${slugArray.slice(0, idx + 2).join("/")}` // include next too
                     : `/brands/${slugArray.slice(0, idx + 1).join("/")}`;
 
-                  const displayText = slug
-                    .replace(/-\d+$/, "")
-                    .replace(/-/g, " ");
+                  const displayText = slug;
+                  // .replace(/-\d+$/, "")
+                  // .replace(/-/g, " ");
 
                   return (
                     <span key={path}>
@@ -242,7 +247,7 @@ const BrandDetailPage: React.FC = () => {
             </div>
           </div>
           {/* Render content based on the fetched brands data */}
-          {!isLastItemClicked ? (
+          {!isLastItemClicked && activeTab === undefined ? (
             <BrandImageGrid
               brandsData={slugData}
               pathname={pathname}
@@ -251,10 +256,8 @@ const BrandDetailPage: React.FC = () => {
             />
           ) : (
             <Pdp
-              pdpDetail={
-                isLastItemClicked && slugData.length > 0 ? slugData : []
-              }
-              tabs={tabs}
+              pdpDetail={LastslugData}
+              tabs={LatTabs}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
               setSlugData={setSlugData}
