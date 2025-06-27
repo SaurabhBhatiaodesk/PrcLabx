@@ -10,13 +10,13 @@ import BookSlot from "./BookSlot";
 import Link from "next/link";
 import FaqComponent from "./FaqComponent";
 
-const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab: any, setSlugData: any }> = ({
-  pdpDetail,
-  tabs,
-  activeTab, setActiveTab, setSlugData
-}) => {
-
-
+const Pdp: React.FC<{
+  pdpDetail: any[];
+  tabs: any;
+  setActiveTab: any;
+  activeTab: any;
+  setSlugData: any;
+}> = ({ pdpDetail, tabs, activeTab, setActiveTab, setSlugData }) => {
   const pathname = usePathname();
   const router = useRouter();
   const [popop, setPopop] = useState(false);
@@ -58,7 +58,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     if (productId) {
       setDevice(productId); // Set the found product ID in the state
     }
-
   }, [secondLastSegment, brandsData]); // Ensure `secondLastSegment` and `brandsData` are dependencies
 
   // Set the active tab when the component mounts or pathname changes
@@ -70,8 +69,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     }
 
     handleTabClick(tab);
-
-
   }, [pathname, tabs]);
 
   // Function to handle tab click and update the URL
@@ -101,7 +98,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
 
     const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}/${tab.alias}`;
 
-
     const resSlug = await fetch(slugApi);
     if (!resSlug.ok) {
       throw new Error(`HTTP error! status: ${resSlug.status}`);
@@ -122,9 +118,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
 
   // Check if the image exists in pdpDetail, otherwise use a fallback static image
   const getImage = (part: any) => {
-    return part?.image
-      ? part.image
-      : "/Images/no-image.png"; // Default image if no image is available
+    return part?.image ? part.image : "/Images/no-image.png"; // Default image if no image is available
   };
 
   useEffect(() => {
@@ -137,7 +131,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   }, [pdpDetail]);
 
   const handleParClick = (part: any) => {
-
     setSelectedPart(part.id.toString()); // Ensure the selected part's ID is stored as a string
     setDefaultSelectedPart(part); // Update the default selected part on click
   };
@@ -162,14 +155,13 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   };
   return (
     <>
-
       <div className="bg-[#FFF5EB] relative">
-        <div className={`rounded-lg md:px-6 md:pb-6  max-w-7xl mx-auto px-3 pb-3`}>
+        <div
+          className={`rounded-lg md:px-6 md:pb-6  max-w-7xl mx-auto px-3 pb-3`}
+        >
           {/* Header */}
 
-
           {/* Tabs */}
-
 
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row items-center">
@@ -188,15 +180,16 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                 SERVICES WE OFFER FOR{" "}
                 <span className="text-purple-700">{device}</span>
               </h2>
-              <div className="grid xl:grid-cols-4 lg:grid-cols-4 grid-cols-3 gap-2 mb-3">
+              <div className="grid xl:grid-cols-4 lg:grid-cols-4 grid-cols-3 mb-5">
                 {tabs?.map((tab: any) => (
                   <button
                     key={tab.id}
                     onClick={() => handleTabClick(tab)}
-                    className={`rounded-t-lg rounded-b-none md:px-4 md:py- p-2 md:text-base text-sm md:font-semibold border border-gray-300 ${activeTabb === tab.id.toString()
-                      ? "bg-prc  text-white border-b-0  "
-                      : "bg-white text-gray-700 border-prc border-1 "
-                      }`}
+                    className={`  2xl:p-2 lg:p-[8px] p-2 md:text-[13px] text-sm font-semibold border border-gray-300 ${
+                      activeTabb === tab.id.toString()
+                        ? "bg-prc  text-white border-b-0  "
+                        : "bg-white text-gray-700  "
+                    }`}
                   >
                     {tab.title}
                   </button>
@@ -218,10 +211,11 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                         <div
                           key={part.id}
                           onClick={() => handleParClick(part)}
-                          className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${isSelectedPart
-                            ? "bg-tertiary  border-prc"
-                            : "bg-white border-gray-300 hover:border-prc"
-                            }`}
+                          className={`cursor-pointer lg:p-4 p-2 rounded-xl border-2 flex flex-col justify-between ${
+                            isSelectedPart
+                              ? "bg-tertiary  border-prc"
+                              : "bg-white border-gray-300 hover:border-prc"
+                          }`}
                         >
                           <div>
                             <h3 className="md:text-[15px] text-xs font-medium text-black">
@@ -230,8 +224,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                           </div>
                           <div className="mt-1">
                             <span
-                              className={`text-lg font-semibold ${isSelectedPart ? "text-prc" : "text-prc"
-                                }`}
+                              className={`text-lg font-semibold ${
+                                isSelectedPart ? "text-prc" : "text-prc"
+                              }`}
                             >
                               {part.price_range}
                             </span>
@@ -241,20 +236,29 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                     })}
                   </>
                 )}
-
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-row gap-3 md:justify-start justify-center mb-6">
-                <button
-                  className=" bg-prc text-white rounded-lg p-3 text-center font-medium hover:bg-teal-900 transition lg:text-base text-sm md:w-[11.5rem] w-[9rem]"
-                  onClick={() => setIsModalOpen(true)}
+                {/* <button
+                  className=" bg-prc text-white rounded-lg p-3 text-center font-medium hover:bg-teal-900 transition lg:text-base text-sm md:w-[11.5rem] w-[9rem] hover:scale-105"
+                
                 >
                   BOOK NOW
+                </button> */}
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="border-2 border-prc group/button relative inline-flex items-center justify-center overflow-hidden rounded-full bg-prc backdrop-blur-lg md:px-6 px-3 py-2 text-base  text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 font-light"
+                >
+                  <span className="lg:text-base text-sm"> BOOK NOW</span>
+                  <div className="absolute inset-0 flex lg:text-base text-sm md:w-[11.5rem] w-[9rem] justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                    <div className="relative h-full w-10 bg-white/20"></div>
+                  </div>
                 </button>
+
                 <Link href="/mail-in-repair">
                   <button
-                    className=" border-2 border-gray-600 text-secondary rounded-lg p-3 text-center font-medium  transition lg:text-base text-sm md:w-[11.5rem] w-[9rem]"
+                    className=" hover:scale-105 border-2 border-gray-600 text-secondary rounded-full md:px-6 px-3 py-2 text-center font-medium  transition lg:text-base text-sm md:w-[11.5rem] w-[9rem]"
                     onClick={MailRepair}
                   >
                     MAIL IN REPAIR
@@ -364,7 +368,6 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                       </div>
                     </div>
                   </div>
-
                 </>
               )}
             </div>
@@ -377,7 +380,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
         />
       </div>
 
-      <div><FaqComponent /></div>
+      <div>
+        <FaqComponent />
+      </div>
     </>
   );
 };
