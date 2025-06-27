@@ -562,7 +562,7 @@ const Footer = () => {
               <div className="sm:text-center">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
                   Website Designed by{" "}
-                  <a href="https://www.base2brand.com/">Base2Brand Infotech.</a>{" "}
+                  <a href="https://www.base2brand.com/" target="_blank">Base2Brand Infotech.</a>{" "}
                 </p>
               </div>
             </div>
