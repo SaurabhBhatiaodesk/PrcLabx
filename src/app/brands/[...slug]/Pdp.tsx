@@ -58,7 +58,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     if (productId) {
       setDevice(productId); // Set the found product ID in the state
     }
-   
+
   }, [secondLastSegment, brandsData]); // Ensure `secondLastSegment` and `brandsData` are dependencies
 
   // Set the active tab when the component mounts or pathname changes
@@ -68,9 +68,9 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     if (tab) {
       setActiveTabb(tab.id.toString()); // Set the active tab based on the slug in the URL
     }
-   
-        handleTabClick(tab);
-      
+
+    handleTabClick(tab);
+
 
   }, [pathname, tabs]);
 
@@ -137,7 +137,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
   }, [pdpDetail]);
 
   const handleParClick = (part: any) => {
-    console.log('part',part)
+
     setSelectedPart(part.id.toString()); // Ensure the selected part's ID is stored as a string
     setDefaultSelectedPart(part); // Update the default selected part on click
   };
@@ -164,28 +164,12 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
     <>
 
       <div className="bg-[#FFF5EB] relative">
-        <div className=" rounded-lg md:p-6  max-w-6xl mx-auto p-3">
+        <div className={`rounded-lg md:px-6 md:pb-6  max-w-7xl mx-auto px-3 pb-3`}>
           {/* Header */}
-          <h2 className="text-2xl font-bold mb-4 text-prc">
-            SERVICES WE OFFER FOR{" "}
-            <span className="text-purple-700">{device}</span>
-          </h2>
+
 
           {/* Tabs */}
-          <div className="grid xl:grid-cols-6 lg:grid-cols-4 grid-cols-3 gap-2 mb-3">
-            {tabs?.map((tab: any) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabClick(tab)}
-                className={`rounded-t-lg rounded-b-none md:px-4 md:py- p-2 text-xs font-medium border border-gray-300 ${activeTabb === tab.id.toString()
-                  ? "bg-prc  text-white border-b-0 text-[11px]"
-                  : "bg-white text-gray-700  text-xs border-prc border-1"
-                  }`}
-              >
-                {tab.title}
-              </button>
-            ))}
-          </div>
+
 
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row items-center">
@@ -200,6 +184,24 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
 
             {/* Right: Part Selection & Buttons */}
             <div className="w-full lg:w-2/3 lg:pl-6">
+              <h2 className="text-2xl font-bold mb-4 text-prc">
+                SERVICES WE OFFER FOR{" "}
+                <span className="text-purple-700">{device}</span>
+              </h2>
+              <div className="grid xl:grid-cols-4 lg:grid-cols-4 grid-cols-3 gap-2 mb-3">
+                {tabs?.map((tab: any) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => handleTabClick(tab)}
+                    className={`rounded-t-lg rounded-b-none md:px-4 md:py- p-2 md:text-base text-sm md:font-semibold border border-gray-300 ${activeTabb === tab.id.toString()
+                      ? "bg-prc  text-white border-b-0  "
+                      : "bg-white text-gray-700 border-prc border-1 "
+                      }`}
+                  >
+                    {tab.title}
+                  </button>
+                ))}
+              </div>
               {/* “Select a Part” Label */}
               <p className="text-lg font-semibold mb-3 text-black">
                 Select a Part
@@ -222,7 +224,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
                             }`}
                         >
                           <div>
-                            <h3 className="mdd:text-sm text-xs font-medium text-black">
+                            <h3 className="md:text-[15px] text-xs font-medium text-black">
                               {part.title}
                             </h3>
                           </div>
@@ -375,7 +377,7 @@ const Pdp: React.FC<{ pdpDetail: any[]; tabs: any, setActiveTab: any, activeTab:
         />
       </div>
 
-      <div><FaqComponent/></div>
+      <div><FaqComponent /></div>
     </>
   );
 };
