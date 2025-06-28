@@ -94,7 +94,9 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(0)}
         >
-          <span className="text-[17px] tracking-[1.5px] text-primary">Our Services</span>
+          <span className="text-[17px] tracking-[1.5px] text-primary">
+            Our Services
+          </span>
           <MdKeyboardArrowDown
             className={`transition-transform duration-300 !text-primary ${
               activeIndex === 0 ? "rotate-180" : ""
@@ -116,7 +118,7 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="/b2b-repair-services">B2B Repair</Link>
             </li>
-             <li className="mb-2 text-primary">
+            <li className="mb-2 text-primary">
               <Link href="/ps5-repair">PS5 Repair</Link>
             </li>
             <li className="mb-2 text-primary">
@@ -125,22 +127,27 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="data-recovery">Data Recovery</Link>
             </li>
-           <li className="mb-2 text-primary">
-              <Link href="https://wholesale.prcrepair.com.au/" target="_blank">Parts Store</Link>
+            <li className="mb-2 text-primary">
+              <Link href="https://wholesale.prcrepair.com.au/" target="_blank">
+                Parts Store
+              </Link>
             </li>
-
-            <div className="flex items-center gap-2">
-              <li className="mb-2 text-primary">Repair Form</li>
-              <span className="text-white">
-                <Image src={commingsoon} width={40} height={30} alt="" />
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <li className="mb-2 text-primary">Repair Solutions</li>
-              <span className="text-white">
-                <Image src={commingsoon} width={40} height={30} alt="" />
-              </span>
-            </div>
+            <Link href="/coming-soon">
+              <div className="flex items-center gap-2">
+                <li className="mb-2 text-primary">Repair Form</li>
+                <span className="text-white">
+                  <Image src={commingsoon} width={40} height={30} alt="" />
+                </span>
+              </div>
+            </Link>
+            <Link href="/coming-soon">
+              <div className="flex items-center gap-2">
+                <li className="mb-2 text-primary">Repair Solutions</li>
+                <span className="text-white">
+                  <Image src={commingsoon} width={40} height={30} alt="" />
+                </span>
+              </div>
+            </Link>
           </ul>
         </div>
       </div>
@@ -151,8 +158,10 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(1)}
         >
-          <span className="text-[17px] tracking-[1.5px] text-primary">Quick links</span>
-         <MdKeyboardArrowDown
+          <span className="text-[17px] tracking-[1.5px] text-primary">
+            Quick links
+          </span>
+          <MdKeyboardArrowDown
             className={`transition-transform duration-300 !text-primary ${
               activeIndex === 1 ? "rotate-180" : ""
             }`}
@@ -199,7 +208,9 @@ const MobileFooterMenue = () => {
           className="flex justify-between items-center  p-[12px] rounded-[10px] cursor-pointer border-[1px]"
           onClick={() => handleToggle(2)}
         >
-          <span className="text-[17px] tracking-[1.5px] text-primary">Contact Info</span>
+          <span className="text-[17px] tracking-[1.5px] text-primary">
+            Contact Info
+          </span>
           <MdKeyboardArrowDown
             className={`transition-transform duration-300 !text-primary ${
               activeIndex === 2 ? "rotate-180" : ""
@@ -217,7 +228,7 @@ const MobileFooterMenue = () => {
                 href="mailto:service@prcrepair.com.au  "
                 className="hover:underline"
               >
-                service@prcrepair.com.au  
+                service@prcrepair.com.au
               </a>
             </li>
             <li className="mb-2 text-primary">
@@ -229,7 +240,11 @@ const MobileFooterMenue = () => {
               href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D"
               legacyBehavior
             >
-              <a className="text-primary" target="_blank" rel="noopener noreferrer">
+              <a
+                className="text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 122 Queen St, St Marys NSW 2760, Australia
               </a>
             </Link>

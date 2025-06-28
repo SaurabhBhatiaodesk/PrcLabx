@@ -36,7 +36,7 @@ const BrandImageGrid: React.FC<{
       >
         {brandsData.map((brand: any) => {
           // 1️⃣ find the matching tab
-          const matchingTab = tabs.find((t: any) => t.alias === brand.alias);
+          const matchingTab = tabs?.find((t: any) => t.alias === brand.alias);
 
           // 2️⃣ grab the first repair slug (screen-repair)
           const firstRepairSlug = matchingTab?.data?.[0]?.alias;

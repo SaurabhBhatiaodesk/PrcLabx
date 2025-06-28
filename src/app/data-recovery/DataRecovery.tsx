@@ -189,7 +189,7 @@ Videos`,
           pageName="Data Recovery Services - PRCRepair"
           pageDescription="At <strong> PRCRepair,</strong> we specialize in professional data recovery services for mobile phones, tablets, MacBooks, laptops, and more. Whether you’ve experienced hardware failure on device, or need to recover vital information from a damaged device, our skilled technicians are here to help."
           backgroundImage="/Images/BannerImages/mailinrepair.png"
-          AdminImage="/Images/Data Recovery side.png"
+          adminimagenew="/Images/Data Recovery side.png"
           link="/price"
           buttonname="View Pricing"
         />

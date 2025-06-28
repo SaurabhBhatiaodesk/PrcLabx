@@ -128,9 +128,9 @@ export default function CustomHeader() {
             Instant Quote
           </button> */}
           <MainButton
-            MainButton=" Instant Quote"
+            MainButton="Instant Quote"
             color="bg-[#EF0000] text-white"
-            link="/contact-us"
+            link="/brands"
           />
         </div>
 

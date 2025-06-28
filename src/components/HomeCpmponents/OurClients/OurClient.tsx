@@ -97,7 +97,7 @@ export default function Productswiper({}) {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <div className="relative  client-slider  my-5">
                   <Image
                     className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
@@ -107,7 +107,7 @@ export default function Productswiper({}) {
                     alt="Mercedes Benz"
                   />
                 </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
               <SwiperSlide>
                 <div className="relative  client-slider  my-5 ">
                   <Image
@@ -141,7 +141,7 @@ export default function Productswiper({}) {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <div className="relative  client-slider  my-5">
                   <Image
                     className="w-full transition-transform duration-300 ease-in-out hover:scale-110"
@@ -151,7 +151,7 @@ export default function Productswiper({}) {
                     alt="Mercedes Benz"
                   />
                 </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             
           
             </Swiper>

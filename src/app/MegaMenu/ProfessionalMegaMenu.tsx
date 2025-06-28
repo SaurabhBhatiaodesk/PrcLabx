@@ -536,12 +536,28 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             B2B Repair
                           </Link>
                         </li>
+                            <li>
+                          <Link
+                            href="/mail-in-repair"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                           Mail In Repair
+                          </Link>
+                        </li>
                         <li>
                           <Link
                             href="/ps5-repair"
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
                             PS5 Repair
+                          </Link>
+                        </li>
+                          <li>
+                          <Link
+                            href="/price"
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                           Price
                           </Link>
                         </li>
                         <li>
@@ -570,23 +586,38 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                           </Link>
                         </li>
 
-                        {/* Coming Soon items */}
-                        {["Repair Form", "Repair Solutions"].map(
-                          (item, idx) => (
-                            <li
-                              key={idx}
-                              className="flex justify-between items-center px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200"
-                            >
-                              <span>{item}</span>
+                          <li>
+                          <Link
+                            href="/coming-soon"
+                          
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                          Repair Form
+                         
                               <Image
                                 src={commingsoon}
                                 alt="Coming soon"
                                 width={20}
                                 height={20}
                               />
-                            </li>
-                          )
-                        )}
+                          </Link>
+                           <Link
+                            href="/coming-soon"
+                          
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                          Repair Solutions
+                         
+                              <Image
+                                src={commingsoon}
+                                alt="Coming soon"
+                                width={20}
+                                height={20}
+                              />
+                          </Link>
+                        </li>
+                      
+                       
                       </ul>
                     </div>
                   </li>

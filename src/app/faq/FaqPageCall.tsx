@@ -247,7 +247,7 @@ const FaqPageCall = () => {
         pageName="Frequently Asked Questions"
         pageDescription=""
         backgroundImage="/Images/BannerImages/aboutback.webp"
-        AdminImage="/Images/faq.svg"
+        adminimagenew="/Images/faq.svg"
         link="/contact-us"
         buttonname="Request a Quote"
       />

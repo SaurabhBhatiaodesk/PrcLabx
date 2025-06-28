@@ -11,7 +11,7 @@ interface BreadcrumbProps {
   pageName: string;
   pageDescription: string;
   backgroundImage: string;
-  AdminImage: string;
+  adminimagenew: string;
   link?: any;
   buttonname: string;
   scrollId?: any;
@@ -24,7 +24,7 @@ function Breadcrumb({
   pageName,
   pageDescription,
   backgroundImage,
-  AdminImage,
+  adminimagenew,
   link,
   buttonname, // Destructure the link prop
   scrollId,
@@ -176,7 +176,7 @@ function Breadcrumb({
             ) : (
               <div className={`admin-image relative 2xl:h-[500px] lg:h-[350px] h-[300px] `}>
                 <Image
-                  src={AdminImage}
+                  src={adminimagenew}
                   alt="Admin Visual"
                   className={`object-contain  ${pathname === "/screen-refurbishing" ?  "p-3" : ""}`}
                   fill

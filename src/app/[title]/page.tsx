@@ -53,7 +53,7 @@ export async function generateMetadata({
   }
 }
 
-// Utility function to replace underscores with spaces
+// Utility function to replace underscores with spaces 
 function formatPageName(pageName: string): string {
   return pageName.replace(/_/g, " ");
 }

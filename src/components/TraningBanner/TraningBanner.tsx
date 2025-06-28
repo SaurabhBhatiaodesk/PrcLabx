@@ -12,7 +12,7 @@ interface TraningBanner {
   pageName: string;
   pageDescription: string;
   backgroundImage: string;
-  AdminImage: string;
+  adminimagenew: string;
   link: any;
   courseName: string;
   courseRating: any;
@@ -26,7 +26,7 @@ function TraningBanner({
   pageName,
   pageDescription,
   backgroundImage,
-  AdminImage,
+  adminimagenew,
   link,
   courseName,
   courseRating,
@@ -167,7 +167,7 @@ function TraningBanner({
             ) : (
               <div className="admin-image relative 2xl:h-[500px] lg:h-[350px] h-[350px]">
                 <Image
-                  src={AdminImage}
+                  src={adminimagenew}
                   alt="Admin Visual"
                   className="object-contain pt-3"
                   fill // Makes the image fill the parent container
