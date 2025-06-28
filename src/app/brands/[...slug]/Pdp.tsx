@@ -68,7 +68,7 @@ const Pdp: React.FC<{
       setActiveTabb(tab.id.toString()); // Set the active tab based on the slug in the URL
     }
 
-    handleTabClick(tab);
+    // handleTabClick(tab);
   }, [pathname, tabs]);
 
   // Function to handle tab click and update the URL
@@ -85,40 +85,42 @@ const Pdp: React.FC<{
   //   router.push(newUrl); // Replace the last segment without appending
   // };
   const handleTabClick = async (tab: any) => {
-    setActiveTabb(tab.id.toString());
-    setActiveTab(tab.id);
+    setActiveTabb(tab?.id.toString());
+    setActiveTab(tab?.id);
     const slugArray =
       pathname?.replace("/brands", "").split("/").filter(Boolean) || [];
     const secondLastSlug = slugArray[slugArray.length - 2].toLowerCase();
     if (secondLastSlug.includes("issue") || secondLastSlug.includes("repair")) {
       slugArray.splice(slugArray.length - 2, 1); // Remove the second last item if it contains "issue" or "repair"
     }
-    const modifiedSlugArray = slugArray.slice(0, -1); // remove last segment (screen-repair)
-    const slugPath = modifiedSlugArray.join("/"); // join back to string
+    // const modifiedSlugArray = slugArray.slice(0, -1); // remove last segment (screen-repair)
+    // const slugPath = modifiedSlugArray.join("/"); // join back to string
 
-    const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}/${tab.alias}`;
+    // const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}/${tab.alias}`;
 
-    const resSlug = await fetch(slugApi);
-    if (!resSlug.ok) {
-      throw new Error(`HTTP error! status: ${resSlug.status}`);
-    }
-    const slugEndpointData = await resSlug.json();
+    // const resSlug = await fetch(slugApi);
+    // if (!resSlug.ok) {
+    //   throw new Error(`HTTP error! status: ${resSlug.status}`);
+    // }
+    // const slugEndpointData = await resSlug.json();
 
-    console.log(slugEndpointData, "slugEndpointData");
+    // console.log(slugEndpointData, "slugEndpointData");
 
-    setSlugData(slugEndpointData);
+    // setSlugData(slugEndpointData);
     // // Remove the last segment from the current path
     // const pathWithoutLastSegment = pathname.split("/").slice(0, -1).join("/");
     // const newUrl = `${pathWithoutLastSegment}/${tab.alias}`;
 
     // console.log("newUrl >>>>>", newUrl); // ✅ This will now show full path with alias
-
-    // router.push(newUrl); // Update the URL
+    const newUrl = `${pathname.split("/").slice(0, -1).join("/")}/${
+      tab?.alias
+    }`;
+    router.push(newUrl); // Update the URL
   };
 
   // Check if the image exists in pdpDetail, otherwise use a fallback static image
   const getImage = (part: any) => {
-    return part?.image ? part.image : "/Images/no-image.png"; // Default image if no image is available
+    return part?.image ? part.image : ""; // Default image if no image is available
   };
 
   useEffect(() => {
@@ -381,7 +383,7 @@ const Pdp: React.FC<{
       </div>
 
       <div>
-        <FaqComponent />
+        <FaqComponent brandImage={getImage(pdpDetail[0])} />
       </div>
     </>
   );
