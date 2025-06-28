@@ -120,7 +120,7 @@ const BrokenRippedPadsRepairJumbers = () => {
         pageName=" Broken/ Ripped Pads Repair Jumbers "
         pageDescription=" "
         backgroundImage="/Images/BannerImages/mailinrepair.png"
-        AdminImage="/Images/adminimage.png"
+        adminimagenew="/Images/adminimagenew.png"
         link="/broken-ripped-pads-repair-jumbers"
         courseName="Beginner"
         courseRating="4.7"

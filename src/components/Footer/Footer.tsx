@@ -240,7 +240,9 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
+                         <Link href="/coming-soon">
                         <span>
+                         
                           <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
                             Repair Form
                             <span className="text-white">
@@ -253,9 +255,12 @@ const Footer = () => {
                             </span>
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
+                        
                         </span>
+                          </Link>
                       </div>
                       <div>
+                         <Link href="/coming-soon">
                         <span>
                           <li className="relative inline-flex  items-center gap-2 xl:p-1 group font-poppins font-[300] text-primary hover:text-yellow-200 cursor-pointer">
                             Repair Solutions
@@ -270,6 +275,7 @@ const Footer = () => {
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </span>
+                        </Link>
                       </div>
                     </ul>
                   </div>

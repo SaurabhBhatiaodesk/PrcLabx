@@ -114,7 +114,7 @@ const TableData: React.FC = () => {
             <div className="my-9">
                 <div className=" my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
                     <span className="text-center block font-bold">Additional Notes</span>
-                    <ul className="mt-[10px] list-disc pl-[20px] text-sm">
+                  <ul className="mt-[10px] list-disc pl-[20px] text-sm text-center">
                         <li className="list-none"><strong className="text-prc font-bold">No Obligation:</strong> There s no obligation on shipping charges. We bear those expenses.</li>
                         <li className="list-none"><strong className="text-prc font-bold">Fair Deal:</strong> We ask customers to send good screens, and in return, we will keep full transparency on the quality check outcome.</li>
                         <li className="list-none"><strong className="text-prc font-bold">Time Respect:</strong> We value your time and have made the process as smooth as possible. Please respect our time by sending quality screens only.</li>

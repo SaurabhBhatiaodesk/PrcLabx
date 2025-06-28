@@ -18,7 +18,7 @@ const page = () => {
         pageName="Repair Solutions"
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/repair.png"
-        AdminImage="/Images/repair-ph.png"
+        adminimagenew="/Images/repair-ph.png"
         link="/contact-us"
         buttonname="Request a Quote"
       />

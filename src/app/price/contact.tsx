@@ -129,7 +129,7 @@ const Page = () => {
           pageName={selectedPriceData.title}
           pageDescription={selectedPriceData.description}
           backgroundImage="/Images/BannerImages/price.png"
-          AdminImage="/Images/dollars.webp"
+          adminimagenew="/Images/dollars.webp"
           link=""
           buttonname=""
         />
@@ -155,11 +155,13 @@ const Page = () => {
       <TableData />
       </>
       )}
-      <div className="container_small  pt-8 pb-6">
+        <div className="bg-[#EFF7FF]">
+        <div className="container_small  pt-8 pb-6">
         {/* <h2 className="text-center text-primary">Contact Information</h2> */}
         <MainHeading Heading="Contact Information" color="var(--prc)"  svg_stroke="var(--alpha)"/>
         <ContactForm />
       </div>
+       </div>
       <div className="device__img text-center container pt-8 mt-5 pb-8 mb-5 relative">
         <Image
           height="1000"

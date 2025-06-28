@@ -142,7 +142,7 @@ const ProfessionalScreen = () => {
         pageName="Professional Phone Screen Refurbishing Course"
         pageDescription="This course is designed and based on the highest industry standards and over 14 years of industry experience. It includes everything that anyone needs to be one of the best technicians or a successful business owner."
         backgroundImage="/Images/BannerImages/mailinrepair.png"
-        AdminImage="/Images/adminimage.png"
+        adminimagenew="/Images/adminimagenew.png"
         link="/professional-phone-screen"
         courseName="Professional Phone Screen"
         courseRating="4.7"

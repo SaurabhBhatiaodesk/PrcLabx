@@ -212,7 +212,7 @@ useEffect(() => {
                           >
                           Parts Store
                           </Link>
-
+ <Link href="/coming-soon">
                           <div
                             className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"'
@@ -232,6 +232,7 @@ useEffect(() => {
                               />
                             </span>
                           </div>
+                          </Link>
 
                           <div
                             className='flex justify-between items-center px-[5px] py-2  text-base font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5

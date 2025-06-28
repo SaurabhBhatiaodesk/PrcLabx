@@ -36,13 +36,15 @@ const DataBox: React.FC = () => {
       description: `For fast screen refurbishment, you have two options: you can choose our service to replace the glass only, or you can sell your old broken screens to us, as we offer competitive buyback prices.`,
 
       button: "See price",
+      background: "linear-gradient(74deg, rgb(86, 193, 193), rgb(0, 0, 0))",
     },
     {
       id: 2,
 
       title: "Data Recovery Pricing",
       description: `We offer professional data recovery services to retrieve essential information from non-functional devices. Any devices that are dead or have no power will be classified as data recovery cases.`,
-
+      background:
+        "linear-gradient(74deg, rgba(243, 85, 32, 0.753), rgb(0, 0, 0))",
       button: "See price",
     },
     {
@@ -52,14 +54,16 @@ const DataBox: React.FC = () => {
       description: `Our general repair pricing includes common services such as screen replacements, charging port repairs, and other standard issues typically offered by most repair shops. `,
 
       button: "See price",
-
+      background:
+        "linear-gradient(74deg, rgba(213, 253, 51, 0.63), rgb(0, 0, 0))",
     },
     {
       id: 4,
 
       title: "DIY/Techcnian Damage Pricing",
       description: `We repair devices damaged during DIY or technician attempts, addressing connector issues, fitting errors, and torn flex cables. Trust us for reliable service to restore your device.`,
-
+      background:
+        "linear-gradient(74deg, rgba(207, 35, 98, 0.655), rgb(0, 0, 0))",
       button: "See price",
     },
   ];
@@ -75,29 +79,29 @@ const DataBox: React.FC = () => {
   return (
     <div>
       <div className="container" data-aos="fade-up">
-
         <div className="lg:pb-8 py-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">
             {sectionData.map((section, index) => (
               <div
                 key={index}
-
-
-                className={`p-[20px] rounded-[15px] border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group "
-                  }`}
-
-
+                className={`p-[20px] rounded-[15px] text-white border-2 border-[var(--prc)] shadow-lg shadow-[#ede57456] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#ede57456] cursor-pointer group`}
+                style={{
+                  background: section.background, // 👈 apply gradient
+                }}
                 onClick={() => PricetoggleMenu(section.id)}
               >
-                <h3 className="text-prc  xl:text-xl m-auto">
+                <h3 className="text-yellow-300 xl:text-xl m-auto font-semibold">
                   {section.title}
                 </h3>
-                <p className={` text-[17px]  leading-6`}>{section.description}</p>
+                <p className={`text-[17px] leading-6 text-white`}>
+                  {section.description}
+                </p>
                 <div className="w-[50%] m-auto">
-                  {/* <button className="btn capitalize text-secondary" onClick={() => PricetoggleMenu(section.id)}>
-                    {section.button}
-                  </button> */}
-                  <MainButton MainButton={section.button} onClick={() => PricetoggleMenu(section.id)} color="bg-prc" />
+                  <MainButton
+                    MainButton={section.button}
+                    onClick={() => PricetoggleMenu(section.id)}
+                    color="bg-prc"
+                  />
                 </div>
               </div>
             ))}
@@ -109,9 +113,8 @@ const DataBox: React.FC = () => {
               <section className="datarecovery">
                 <div className="KeyFeaturesDataRecovery">
                   <div>
-                    <MainHeading Heading="Key Features" />Key Features
+                    <MainHeading Heading="Key Features" />
                   </div>
-
 
                   <div className="grid lg:grid-cols-3 grid-cols-1 py-5">
                     <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
@@ -129,7 +132,6 @@ const DataBox: React.FC = () => {
                         className="w-[44px] h-[50px]"
                         src={Competitiveandupfrontpricing}
                         alt="Repairs for cracked"
-
                       />
                       <p className="lg:w-[70%] m-auto text-center text-primary">
                         Specialized recovery for water-damaged, dead, or
@@ -148,7 +150,7 @@ const DataBox: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
+                <div className="text-center text-sm my-4 px-[20px] py-[6px] border-[var(--prc)] border-[2px] rounded-[15px] bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 text-[18px] tracking-[1.5px]">
                   <strong className="text-prc font-bold"> Note: </strong> Data
                   recovery services are subject to device condition. Please
                   refer to our terms for full details. If you choose PRC to fix
@@ -192,7 +194,6 @@ const DataBox: React.FC = () => {
                       className="w-[44px] h-[50px]"
                       src={Competitiveandupfrontpricing}
                       alt="Repairs for cracked"
-
                     />
                     <p className="lg:w-[70%] m-auto text-center text-primary">
                       Competitive and upfront pricing.
@@ -209,7 +210,11 @@ const DataBox: React.FC = () => {
                 </div>
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5">
                   <div className="flex flex-col justify-center items-center bg-prc rounded-xl lg:mx-3 py-3 lg:my-0 my-3 ">
-                    <Image className="w-[44px] h-[50px]" src={repairforconnectdamage} alt="Repairs for cracked" />
+                    <Image
+                      className="w-[44px] h-[50px]"
+                      src={repairforconnectdamage}
+                      alt="Repairs for cracked"
+                    />
                     <p className="lg:w-[70%] m-auto text-center text-primary">
                       Repairs for connector damage, bent connectors, fitting
                       issues, installation problems, torn flex cables, ripped
@@ -229,7 +234,6 @@ const DataBox: React.FC = () => {
                     </p>
                   </div>
                 </div>
-
 
                 <p className="text-center">
                   We ensure transparency and accuracy in pricing based on the

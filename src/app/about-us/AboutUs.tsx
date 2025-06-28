@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import MainHeading from "@/components/ManinHeading/MainHeading";
 
-import Adminimage from "../../../public/Images/adminimage.png"
+import adminimagenew from "../../../public/Images/adminimagenew.png"
 import Banner from "../../../public/Images/BannerImages/about.png"
 import UnderLine from "../../../public/Images/about/about-line.svg"
 import Line from "../../../public/Images/about/line.svg"
@@ -70,7 +70,7 @@ const AboutUs = () => {
             </div>
             <div className="admin-image relative 2xl:h-[400px] lg:h-[350px] h-[350px]">
               <Image
-                src={Adminimage}
+                src={adminimagenew}
                 alt="Admin Visual"
                 className="object-contain pt-3"
                 fill // Makes the image fill the parent max-container
