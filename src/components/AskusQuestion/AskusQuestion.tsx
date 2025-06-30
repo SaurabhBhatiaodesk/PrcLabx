@@ -19,7 +19,7 @@ interface AskusQuestionProps {
   faq?: string;
   faqbg_color?: string;
   faq_subheading?: string;
-  brandImage:any;
+  brandImage?:any;
 }
 export default function AskusQuestion({
   accordionData,
