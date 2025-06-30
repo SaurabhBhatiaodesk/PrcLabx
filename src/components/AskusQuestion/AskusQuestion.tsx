@@ -19,12 +19,14 @@ interface AskusQuestionProps {
   faq?: string;
   faqbg_color?: string;
   faq_subheading?: string;
+  brandImage:any;
 }
 export default function AskusQuestion({
   accordionData,
   faq,
   faqbg_color,
   faq_subheading,
+  brandImage
 }: AskusQuestionProps) {
   const [active, setActive] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
@@ -100,13 +102,15 @@ export default function AskusQuestion({
                       height={500}
                     />
                   ) : (
+                    <div className="md:max-h-[450px] max-h-[350px]  flex">
                     <Image
-                      className="lg:h-auto h-[300px] object-contain"
-                      src={banner}
+                      className="h-[90%] m-auto object-contain"
+                      src={brandImage ? brandImage : banner}
                       alt="Mobile repair"
                       width={500}
                       height={500}
                     />
+                    </div>
                   )}
                 </div>
               </div>
