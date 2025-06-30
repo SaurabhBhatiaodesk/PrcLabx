@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15  # Timeout set karo
 
     strategy:
       matrix:
@@ -15,24 +15,49 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node ${{ matrix.node-version }}
+    
+    # Node.js setup with better caching
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run build
+        cache-dependency-path: 'package-lock.json'
+    
+    # Install only production dependencies
+    - name: Install dependencies
+      run: |
+        npm ci --production
+        npm cache clean --force
+        
+    # Build with optimizations
+    - name: Build application
+      run: npm run build
       env:
-        CI: false
-        NODE_OPTIONS: --max_old_space-size=4096 
-    - name: ssh deploy
+        NODE_ENV: production
+        NODE_OPTIONS: --max_old_space_size=4096
+        GENERATE_SOURCEMAP: false  # Source maps disable for production
+        
+    # Create deployment package (only necessary files)
+    - name: Create deployment package
+      run: |
+        mkdir -p deploy
+        cp -r .next public package.json package-lock.json next.config.js node_modules deploy/
+        tar -czf deploy.tar.gz deploy/
+        
+    # SSH deploy with optimized transfer
+    - name: Deploy via SSH
       uses: easingthemes/ssh-deploy@main
-      env:
+      with:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY_LIVE }}
         REMOTE_HOST: ${{ secrets.SERVER_IP }}
         REMOTE_USER: ${{ secrets.SERVER_USER }}
         TARGET: /home/ec2-user/labx-prc-repair/
-    - name: executing remote ssh commands using password
+        SOURCE: 'deploy.tar.gz'  # Only transfer the package
+        ARGS: '-rzv --ignore-existing'  # Rsync optimizations
+        
+    # Remote commands with better process management
+    - name: Execute remote commands
       uses: appleboy/ssh-action@v1.2.0
       with:
         host: ${{ secrets.SERVER_IP }}
@@ -40,10 +65,19 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY_LIVE }}
         script: |
           cd /home/ec2-user/labx-prc-repair/
-          # Check if the process exists
-          if pm2 list | grep -q "labx-prc-repair"; then
-            pm2 restart labx-prc-repair
+          # Extract deployment package
+          tar -xzf deploy.tar.gz
+          cp -r deploy/* .
+          rm -rf deploy deploy.tar.gz
+          
+          # PM2 process management
+          if pm2 describe labx-prc-repair >/dev/null 2>&1; then
+            pm2 reload labx-prc-repair --update-env
           else
-             pm2 start /home/ec2-user/labx-prc-repair/node_modules/.bin/next --name "labx-prc-repair" -- start -- -p 3002
+            NODE_ENV=production pm2 start "node_modules/.bin/next start -p 3002" \
+              --name "labx-prc-repair" \
+              --log /var/log/labx-prc-repair.log \
+              --time
           fi
           pm2 save --force
+          pm2 log labx-prc-repair --lines 100  # Logs check karo
