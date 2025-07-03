@@ -62,7 +62,7 @@ const TraningTabBigner: React.FC = () => {
       content: "",
       contentf2title: "",
       contentf2:
-        "Gain a clear understanding of key electronic components like capacitors, resistors, ICs, and more, including their functions and uses in mobile devices.",
+        "Gain a clear understanding of key electronic components like capacitors, resistors, ICs, and more, including their functions and uses in mobile phone devices.",
       contentf3title: "",
       contentf3: " ",
       contentf4title: "",

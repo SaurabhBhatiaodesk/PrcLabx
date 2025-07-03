@@ -97,7 +97,7 @@ export default function AskusQuestion({
                     <Image
                       className="lg:h-auto h-[300px] object-contain"
                       src={ps5game}
-                      alt="Mobile repair"
+                      alt="mobile phone repair  "
                       width={500}
                       height={500}
                     />
@@ -106,7 +106,7 @@ export default function AskusQuestion({
                     <Image
                       className="h-[90%] m-auto object-contain"
                       src={brandImage ? brandImage : banner}
-                      alt="Mobile repair"
+                      alt="mobile phone repair  "
                       width={500}
                       height={500}
                     />

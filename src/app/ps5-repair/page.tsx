@@ -4,7 +4,7 @@ import PS5Repair from './PS5Repair'
 export const metadata = {
   title: "PS5 Repair & Controller Repair | Expert PlayStation Repairs",
   description:
-    "Get fast and reliable PS5 repair or PS5 controller repair at PRC Repair. Our experts offer professional PlayStation repairs to get your console back in action.",
+    "Get fast and reliable PS5 repair or PS5 controller repair at Phone repair center. Our experts offer professional PlayStation repairs to get your console back in action.",
     keywords: ["PS5 repair service", "Phone Repair Service"],
 
     
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "PS5 Repair & Controller Repair | Expert PlayStation Repairs",
     description:
-      "Get fast and reliable PS5 repair or PS5 controller repair at PRC Repair. Our experts offer professional PlayStation repairs to get your console back in action.",
+      "Get fast and reliable PS5 repair or PS5 controller repair at Phone repair center. Our experts offer professional PlayStation repairs to get your console back in action.",
     url: "Images/aboutadmin.png", // Replace with your actual page URL
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "PS5 Repair & Controller Repair | Expert PlayStation Repairs",
     description:
-      "Get fast and reliable PS5 repair or PS5 controller repair at PRC Repair. Our experts offer professional PlayStation repairs to get your console back in action.",
+      "Get fast and reliable PS5 repair or PS5 controller repair at Phone repair center. Our experts offer professional PlayStation repairs to get your console back in action.",
     images: "Images/aboutadmin.png", // Replace with your image URL
   },
   alternates: {

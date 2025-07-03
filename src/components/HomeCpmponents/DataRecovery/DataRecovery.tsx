@@ -36,12 +36,12 @@ const data = ()=>{
     }, {
       icon: pointer,
       title: "Damaged Storage Chips",
-      description: "We can recover data from partially damaged eMMC or UFS chips, the key storage components in mobile devices."
+      description: "We can recover data from partially damaged eMMC or UFS chips, the key storage components in mobile phone devices."
     },
     {
       icon: pointer,
       title: "Damaged Storage Chips",
-      description: "We can recover data from partially damaged eMMC or UFS chips, the key storage components in mobile devices."
+      description: "We can recover data from partially damaged eMMC or UFS chips, the key storage components in mobile phone devices."
     },
   ]
   return (

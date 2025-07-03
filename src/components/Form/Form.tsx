@@ -12,7 +12,7 @@ const Form = () => {
         <div className="container ">
           {pathname === "/training" ? null : (
             <div className="form-section">
-              <MainHeading Heading="Ready to Kickstart Your Career in Mobile Repair? Enquire Now!" />
+              <MainHeading Heading="Ready to Kickstart Your Career in mobile phone repair  ? Enquire Now!" />
               <div className="form">
                 <FormCode />
               </div>

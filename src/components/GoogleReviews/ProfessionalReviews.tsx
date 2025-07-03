@@ -55,7 +55,7 @@
 //     logoImage: Googletest,
 //     rating: 5,
 //     param:
-//       "Screen Refurbishing Course exceeded expectations. I mastered polarizer replacement and vacuum laminating. Great value for anyone entering the mobile repair industry!",
+//       "Screen Refurbishing Course exceeded expectations. I mastered polarizer replacement and vacuum laminating. Great value for anyone entering the mobile phone repair   industry!",
 //   },
 //   {
 //     name: "Kevin H",

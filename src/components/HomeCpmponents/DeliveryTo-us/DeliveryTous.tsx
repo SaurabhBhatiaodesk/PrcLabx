@@ -41,7 +41,7 @@ const VerticalTabs: React.FC = () => {
       content: "PRC Professional Screen Refurbishment:",
       contentf2title: "Expert B2B Screen Refurbishing",
       contentf2:
-        "At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "At Phone repair center, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3title: "State-of-the-Art Technology",
       contentf3:
         "We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
@@ -194,7 +194,7 @@ const VerticalTabs: React.FC = () => {
       label: "Screen Refurbishment",
       content: "PRC Professional Screen Refurbishment Services:",
       contentf2:
-        "Expert B2B Screen Refurbishing: At PRC Repair, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
+        "Expert B2B Screen Refurbishing: At Phone repair center, we specialize in screen refurbishment services for businesses, offering high-quality, cost-effective solutions to repair shops, retailers, and wholesalers.",
       contentf3:
         "State-of-the-Art Technology: We use the latest equipment and techniques to restore damaged or defective screens, ensuring they meet factory standards.",
       contentf4:
@@ -290,7 +290,7 @@ const VerticalTabs: React.FC = () => {
       }}
     >
       <div className="container bgchange">
-        <MainHeading Heading="Ship Your Device To Us"  color="var(--fourth)" svg_stroke="var(--primary)" />
+        <MainHeading Heading="Send Your Device for Repair"  color="var(--fourth)" svg_stroke="var(--primary)" />
         <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
         <div className="lg:block hidden">
           <div className="grid justify-center grid-cols-2 lg:grid-cols-5  py-5 w-full gap-4">
