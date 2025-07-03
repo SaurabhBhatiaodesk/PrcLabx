@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import PS5HDMIPortRepair from "../../../public/Images/PS5 HDMI Port Repair.webp";
 import PS5PowerIssues from "../../../public/Images/PS5 Power Issues.webp";
 import OverheatingFanNoise from "../../../public/Images/Overheating & Fan Noise.webp";
@@ -20,7 +20,7 @@ import arrow3 from "../../../public/Images/icons/arrow1-3.svg";
 import arrow4 from "../../../public/Images/icons/arrow1-4.svg";
 import arrow5 from "../../../public/Images/icons/arrow1-5.svg";
 import backbanner from "../../../public/Images/Home/back-banner.svg"
-import DeliveryTousMobile from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
+import DeliveryTousMobile from "../../components/HomeCpmponents/DeliveryTo-us/DeliveryTousMobile";
 import { usePathname } from "next/navigation";
 
 interface Tab {

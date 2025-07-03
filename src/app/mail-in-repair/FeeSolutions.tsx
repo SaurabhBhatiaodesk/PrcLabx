@@ -1,9 +1,9 @@
 import React from "react";
-import MainButton from "@/components/MainButton/MainButton";
+import MainButton from "../../components/MainButton/MainButton";
 import FeeSolutionss from "../../../public/Images/FeeSolutions.png";
 import Image from "next/image";
 
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 const FeeSolutions = () => {
   return (

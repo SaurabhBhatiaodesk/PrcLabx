@@ -1,16 +1,16 @@
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import React from "react";
 
-import MainTitle from "@/components/MainTitle/MainTitle";
+import MainTitle from "../../components/MainTitle/MainTitle";
 import Image from "next/image";
 
-import BoxIconComponents from "@/components/BoxIconComponents/BoxIconComponents";
+import BoxIconComponents from "../../components/BoxIconComponents/BoxIconComponents";
 import PhotosandVideos from "../../../public/Images/icons/PhotosandVideos.svg";
 
 import datarecoverychip from "../../../public/Images/datarecoverychip.png";
-import IconTitleParaImage from "@/components/IconTitleParaImage/IconTitleParaImage";
-import DataImportantNote from "@/components/DataImportantNote/DataImportantNote";
+import IconTitleParaImage from "../../components/IconTitleParaImage/IconTitleParaImage";
+import DataImportantNote from "../../components/DataImportantNote/DataImportantNote";
 import DataStarted from "./DataStarted";
 import ContactsandMessages from "../../../public/Images/icons/Contacts and Messages.svg";
 import emaildocument from "../../../public/Images/icons/emaildocument.svg";
@@ -18,7 +18,7 @@ import PhysicallyDamagedDevices from "../../../public/Images/icons/Data from Phy
 
 import pointer from "../../../public/Images/icons/pointing-right 1.svg";
 import datarecoverytop from "../../../public/Images/Home/datarecoverytop.png";
-import BoxComponents from "@/components/BoxComponents/BoxComponents";
+import BoxComponents from "../../components/BoxComponents/BoxComponents";
 import StaperForm from "../mail-in-repair/StaperForm";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
@@ -27,7 +27,7 @@ import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 const DataRecovery = () => {
  const reviewsData = [
     {

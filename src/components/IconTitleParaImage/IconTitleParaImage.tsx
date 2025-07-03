@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainButton from "@/components/MainButton/MainButton";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import MainButton from "../../components/MainButton/MainButton";
 
 interface DataPoint {
   title: string;

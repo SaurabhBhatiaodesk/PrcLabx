@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, memo } from "react";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../../components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";

@@ -1,10 +1,10 @@
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import React from "react";
 import ContactUsForm from "./ContactUsForm";
 
-import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
-import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import YouTubeHome from "../../components/HomeCpmponents/YouTubeHome/YouTubeHome";
+import FixLabx from "../../components/HomeCpmponents/FixLabx/FixLabx";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";

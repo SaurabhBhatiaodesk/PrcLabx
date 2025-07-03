@@ -6,8 +6,8 @@ import traning2 from "../../../../public/Images/traning2.png";
 import traning3 from "../../../../public/Images/traning3.png";
 import traning4 from "../../../../public/Images/traning4.png";
 import traning5 from "../../../../public/Images/traning5.png";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainButton from "@/components/MainButton/MainButton";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
+import MainButton from "../../../components/MainButton/MainButton";
 interface Feature {
   label: string;
   detail: string;

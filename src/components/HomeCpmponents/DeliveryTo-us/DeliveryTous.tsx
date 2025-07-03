@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
+import MainTitle from "../../../components/MainTitle/MainTitle";
 import "./DeliveryTo.css";
 import DeliveryTousMobile from "./DeliveryTousMobile";
 import Link from "next/link";

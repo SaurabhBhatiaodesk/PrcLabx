@@ -1,6 +1,6 @@
 "use client";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../../components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";

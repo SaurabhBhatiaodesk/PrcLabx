@@ -1,23 +1,23 @@
 "use client";
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import FrequentlyAskedQuestions from "../../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
+import TraningBanner from "../../components/TraningBanner/TraningBanner";
 import backbanner from "../../../public/Images/Home/back-banner.svg"
 
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-// import MasterReviews from "@/components/GoogleReviews/MasterReviews";
+import TraningWillLearn from "../../components/TraningBanner/TraningWillLearn";
+// import MasterReviews from "../../components/GoogleReviews/MasterReviews";
 import React from "react";
 
 import TrainingInstructors from "../expert-motherboard-repair/TrainingInstructors";
 
-// import MasterChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/MasterChooseLab";
+// import MasterChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/MasterChooseLab";
 import MasterTabFirsh from "./MasterTabFirsh";
 import MasterTabSecond from "./MasterTabSecond";
-import FormCode from "@/components/Form/FormCode";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import FormCode from "../../components/Form/FormCode";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import { usePathname } from "next/navigation";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 
@@ -26,7 +26,7 @@ import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
-import LightCources from "@/components/TraningBanner/LightCources";
+import LightCources from "../../components/TraningBanner/LightCources";
 const MasterMotherboardRepair = () => {
   const pathname = usePathname();
   const accordionData = [

@@ -7,7 +7,7 @@ import BrandImageGrid from "./BrandImageGrid";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Pdp from "./Pdp";
-import Strip from "@/components/Strip/Strip";
+import Strip from "../../../components/Strip/Strip";
 import { log } from "console";
 import { useAppDispatch } from "@/app/redux/hooks";
 import { setUiFlag } from "@/app/redux/slice";

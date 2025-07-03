@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
-import MainButton from "@/components/MainButton/MainButton";
+import MainButton from "../../components/MainButton/MainButton";
 import BlogImage from "../../../public/Images/adminimagenew.png"; // Fallback image
 import Link from "next/link";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";

@@ -7,8 +7,8 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 // TypeScript interfaces
 interface SlideData {

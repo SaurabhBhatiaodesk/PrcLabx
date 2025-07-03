@@ -1,20 +1,20 @@
 "use client";
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import TraningProfessionalBanner from "@/components/TraningBanner/TrainingTabProfessionalBanner";
-import ProfessionalSecondTab from "@/components/TraningBanner/ProfessionalTabSecondBanner";
+import FrequentlyAskedQuestions from "../../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import TraningBanner from "../../components/TraningBanner/TraningBanner";
+import TraningWillLearn from "../../components/TraningBanner/TraningWillLearn";
+import TraningProfessionalBanner from "../../components/TraningBanner/TrainingTabProfessionalBanner";
+import ProfessionalSecondTab from "../../components/TraningBanner/ProfessionalTabSecondBanner";
 import TraningCourseInstructors from "./ProfessionalInstructor";
 import ProfessionalInstructorSecond from "./ProfessionalInstructorSecond";
 import backbanner from "../../../public/Images/Home/back-banner.svg";
 
 import React from "react";
-import FormCode from "@/components/Form/FormCode";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import FormCode from "../../components/Form/FormCode";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import ProfessionalThreeTab from "./ProfessionalThreeTab";
 import { usePathname } from "next/navigation";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";
@@ -22,7 +22,7 @@ import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
-import LightCources from "@/components/TraningBanner/LightCources";
+import LightCources from "../../components/TraningBanner/LightCources";
 const ProfessionalScreen = () => {
   const pathname = usePathname();
   const accordionData = [

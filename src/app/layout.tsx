@@ -1,7 +1,6 @@
 // import type { Metadata } from "next";
 // import "../Styles/globals.css";
-// import Header from "@/components/Header/Header";
-// import Footer from "@/components/Footer/Footer";
+
 // import { Space_Grotesk, Poppins } from "next/font/google"; // Ensure imports are at the top
 
 // const space_Grotesk = Space_Grotesk({
@@ -41,10 +40,8 @@
 // }
 
 import "../Styles/globals.css";
-// import Header from "@/components/Header/Header";
-// import Footer from "@/components/Footer/Footer";
 import { Space_Grotesk, Poppins } from "next/font/google";
-import ConditionalWrapper from "@/components/ConditionalWrapper"; // New client-side wrapper component
+import ConditionalWrapper from "../components/ConditionalWrapper"; // New client-side wrapper component
 import { Providers } from "./redux/providers";
 import Script from "next/script";
 import Canonical from "./Canonical";

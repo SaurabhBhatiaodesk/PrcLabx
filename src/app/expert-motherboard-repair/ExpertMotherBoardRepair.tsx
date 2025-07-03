@@ -1,12 +1,12 @@
 "use client";
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/LightCources";
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
-import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
-import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
-// import ExpertChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
+import FrequentlyAskedQuestions from "../../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import BeginnerPhoneRepaiCourseSale from "../../components/TraningBanner/LightCources";
+import TraningBanner from "../../components/TraningBanner/TraningBanner";
+import TraningCourseInstructors from "../../components/TraningBanner/TraningCourseInstructors";
+import TraningTabBigner from "../../components/TraningBanner/TraningTabBigner";
+import TraningTabBignersecond from "../../components/TraningBanner/TraningTabBignersecond";
+// import ExpertChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab";
+import TraningWillLearn from "../../components/TraningBanner/TraningWillLearn";
 import backbanner from "../../../public/Images/Home/back-banner.svg"
 
 import React from "react";
@@ -14,11 +14,11 @@ import FristTraningTab from "./FristTraningTab";
 import SecondTraningTab from "./SecondTraningTab";
 import TrainingInstructors from "./TrainingInstructors";
 import TraningSales from "./TraningSales";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import FormCode from "@/components/Form/FormCode";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import FormCode from "../../components/Form/FormCode";
 import { usePathname } from "next/navigation";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Iname from "../../../public/Images/icons/I.png";
@@ -27,7 +27,7 @@ import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
-import LightCources from "@/components/TraningBanner/LightCources";
+import LightCources from "../../components/TraningBanner/LightCources";
 const BeginnerCourse = () => {
   const pathname = usePathname();
 

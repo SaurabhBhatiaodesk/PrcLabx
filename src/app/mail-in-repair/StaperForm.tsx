@@ -7,7 +7,7 @@ import correct from "../../../public/Images/jsonfile/lottieflow-fill.json";
 import React, { useState, useRef, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import StaperForm1 from "../../../public/Images/StaperForm1.png";
 import StaperForm3 from "../../../public/Images/StaperForm3.png";
 import mailinrepairbg from "../../../public/Images/mailinrepairbg.png";

@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import React from "react";
 import FeeSolutions from "./FeeSolutions";
 import HowWorks from "./HowWorks";
@@ -6,7 +6,7 @@ import StaperForm from "./StaperForm";
 
 import ThanksData from "./ThanksData";
 import PleaseNote from "./PleaseNote";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";

@@ -11,8 +11,8 @@ import Shop6 from "../../../public/Images/shop6.png";
 import Shop7 from "../../../public/Images/shop7.png";
 import Shop8 from "../../../public/Images/shop8.png";
 
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import MainTitle from "../../components/MainTitle/MainTitle";
 
 const services = [
   { href: "/training", image: Shop1, title: "Training" },

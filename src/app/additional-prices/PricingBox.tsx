@@ -1,6 +1,4 @@
 "use client";
-// import MainTitle from "@/components/MainTitle/MainTitle";
-// import MainHeading from "@/components/ManinHeading/MainHeading";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import MainHeading from "../../components/ManinHeading/MainHeading";
 

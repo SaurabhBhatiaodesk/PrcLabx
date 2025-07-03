@@ -1,4 +1,4 @@
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../../components/GoogleReviews/BiginnerReviews";
 import BrandDetail from "./BrandDetail";
 // import rname from "../../../public/Images/icons/rname.png";
 import rname from "../../../../public/Images/icons/rname.png";

@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import HowtoGetStarted from "../../../public/Images/HowtoGetStarted.png";
 import pointer from "../../../public/Images/icons/pointing-right 1.svg";
-import MainButton from "@/components/MainButton/MainButton";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainButton from "../../components/MainButton/MainButton";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 const DataStarted = () => {
   return (

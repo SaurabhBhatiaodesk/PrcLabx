@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { usePathname } from "next/navigation";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../../components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
 import Image from "next/image";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
-import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+import AskusQuestion from "../../../components/AskusQuestion/AskusQuestion";
 interface brands {
   brandImage: any;
 }

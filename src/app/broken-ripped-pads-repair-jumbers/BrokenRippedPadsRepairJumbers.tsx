@@ -1,15 +1,15 @@
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
+import TraningBanner from "../../components/TraningBanner/TraningBanner";
+import TraningWillLearn from "../../components/TraningBanner/TraningWillLearn";
 import React from "react";
 // import ExpertChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/ExpertChooseLab"
 import BrokenRippedFirstTab from "./BrokenRippedFirstTab";
 import BrokenRippedSecondTab from "./BrokenRippedSecondTab";
 import BrokenCourseInstructors from "./BrokenCourseInstructors";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import FormCode from "@/components/Form/FormCode";
+import FrequentlyAskedQuestions from "../../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import FormCode from "../../components/Form/FormCode";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";

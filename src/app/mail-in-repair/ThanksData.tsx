@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
-import MainButton from "@/components/MainButton/MainButton";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface Step {

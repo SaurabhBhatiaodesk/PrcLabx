@@ -1,6 +1,6 @@
 "use client";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../../components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Repairs from "../../../../public/Images/icons/Vector.svg";

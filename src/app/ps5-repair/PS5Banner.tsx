@@ -7,11 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import AOS from "aos";
 import "aos/dist/aos.css";
-import { Pagination } from "swiper/modules";
 import Link from "next/link";
 
 import PSBanner from "../../../public/Images/BannerImages/PS5.webp";
-import MainButton from "@/components/MainButton/MainButton";
+import MainButton from "../../components/MainButton/MainButton";
 
 export default function PS5Banner() {
   return (
