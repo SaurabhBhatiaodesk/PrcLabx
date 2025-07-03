@@ -1,14 +1,12 @@
 "use client";
+import React from "react";
+
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import MotherboardPhoneReapair from "@/components/TraningBanner/MotherboardPhoneRepair";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 import backbanner from "../../../public/Images/Home/back-banner.svg"
-
-
-import React from "react";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
