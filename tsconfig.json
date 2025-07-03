@@ -21,6 +21,15 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/HeaderTwo", "src/app/advanced-motherboard/motherboard-repair.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*"  // This includes all files within the src directory
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"  // Exclude the .next folder from type checking
+  ]
 }
