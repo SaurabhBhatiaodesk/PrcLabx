@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import Image from "next/image";
 
 import processor from "../../../public/Images/icons/processor.svg";
 import lighting from "../../../public/Images/icons/lighting.svg";
 import phonerepair from "../../../public/Images/icons/phonerepair.svg";
 import laptop from "../../../public/Images/icons/laptop.svg";
-import OurClient from "@/components/HomeCpmponents/OurClients/OurClient";
+import OurClient from "../../components/HomeCpmponents/OurClients/OurClient";
 import {
   TextField,
   Button,
@@ -19,7 +19,7 @@ import {
   ImageList,
   ImageListItem,
 } from "@mui/material";
-import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
+import YouTubeHome from "../../components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import "./B2BRepairServices.css";
 
 import pointer from "../../../public/Images/tickicon.png";
@@ -33,7 +33,7 @@ import ReceiveYourRepairedDevices from "../../../public/Images/Receive Your Repa
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";

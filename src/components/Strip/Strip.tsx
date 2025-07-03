@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import laptoprep from "../../../public/Images/laptoprep.png";
 interface stripdata {
     title:string

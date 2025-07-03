@@ -3,7 +3,7 @@ import { Typography, Box } from "@mui/material";
 import Link from "next/link";
 import "./policy.css";
 import Image from "next/image";
-import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
+import YouTubeHome from "../../components/HomeCpmponents/YouTubeHome/YouTubeHome";
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";
 import Nname from "../../../public/Images/icons/N.png";
@@ -12,8 +12,8 @@ import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import Line from "../../../public/Images/about/leap.svg"; // Function to fetch data from the server
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 async function fetchPageData(title: string) {
   const apiUrl = process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL;
   const res = await fetch(

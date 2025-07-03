@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 // Accordion and FaqCategory structure
 interface AccordionItem {

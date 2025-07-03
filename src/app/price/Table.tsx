@@ -1,4 +1,4 @@
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import React from "react";
 
 type Step = {

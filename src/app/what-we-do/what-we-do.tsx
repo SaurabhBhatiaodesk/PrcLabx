@@ -1,8 +1,8 @@
 import React from "react";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import WhatBlock from "./what-we-do-block";
 
-import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
+import YouTubeHome from '../../components/HomeCpmponents/YouTubeHome/YouTubeHome';
 
 const WhatWeDo = () => {
   return (

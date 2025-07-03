@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import { LuPlus } from "react-icons/lu";
 import { GrSubtract } from "react-icons/gr";
-import MainTitle from "@/components/MainTitle/MainTitle";
+import MainTitle from "../../components/MainTitle/MainTitle";
 
 // Define interfaces for your data structure
 interface TableColumn {

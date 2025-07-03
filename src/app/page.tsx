@@ -1,16 +1,16 @@
 
-import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
-import Devicequote from "@/components/Devicelist/Devicequote";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
-import DataRecovery from "@/components/HomeCpmponents/DataRecovery/DataRecovery";
-import DeliveryTous from "@/components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
-import FixLabx from "@/components/HomeCpmponents/FixLabx/FixLabx";
-import OurClient from "@/components/HomeCpmponents/OurClients/OurClient";
-import ShipDeviceUs from "@/components/HomeCpmponents/ShipDevice/ShipDeviceUs";
-import WhyChooseLabX from "@/components/HomeCpmponents/WhyChooseLabX/WhyChooseLabX";
-import YouTubeHome from "@/components/HomeCpmponents/YouTubeHome/YouTubeHome";
-import MainBanner from "@/components/MainBanner/MainBanner";
-import RecentNews from "@/components/RecentNews/RecentNews";
+import AskusQuestion from "../components/AskusQuestion/AskusQuestion";
+import Devicequote from "../components/Devicelist/Devicequote";
+import BiginnerReviews from "../components/GoogleReviews/BiginnerReviews";
+import DataRecovery from "../components/HomeCpmponents/DataRecovery/DataRecovery";
+import DeliveryTous from "../components/HomeCpmponents/DeliveryTo-us/DeliveryTous";
+import FixLabx from "../components/HomeCpmponents/FixLabx/FixLabx";
+import OurClient from "../components/HomeCpmponents/OurClients/OurClient";
+import ShipDeviceUs from "../components/HomeCpmponents/ShipDevice/ShipDeviceUs";
+import WhyChooseLabX from "../components/HomeCpmponents/WhyChooseLabX/WhyChooseLabX";
+import YouTubeHome from "../components/HomeCpmponents/YouTubeHome/YouTubeHome";
+import MainBanner from "../components/MainBanner/MainBanner";
+import RecentNews from "../components/RecentNews/RecentNews";
 // import rname from "../../../../public/Images/icons/rname.png";
 import rname from "../../public/Images/icons/rname.png";
 import jname from "../../public/Images/icons/E.png";
@@ -37,8 +37,8 @@ import chaina5 from "../../public/Images/chaina5.webp"
 import chaina6 from "../../public/Images/chaina6.webp"
 import React from "react";
 
-import Productswiper from "@/components/Storeproduct/Productswiper";
-import HandsOnTraining from "@/components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
+import Productswiper from "../components/Storeproduct/Productswiper";
+import HandsOnTraining from "../components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
   title: "Mobile Phone Repair Services & Training | Mobile Accessories | Phone repair center",
   description: "Phone repair center provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",

@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 import adminimagenew from "../../../public/Images/adminimagenew.png"
 import Banner from "../../../public/Images/BannerImages/about.png"

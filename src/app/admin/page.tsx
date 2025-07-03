@@ -1,6 +1,6 @@
 import React from "react";
-import AdminLogIn from "@/components/AdminLogIn/AdminLogIn";
-import PageTitle from "@/components/Commen/PageTitle";
+import AdminLogIn from "../../components/AdminLogIn/AdminLogIn";
+import PageTitle from "../../components/Commen/PageTitle";
 
 export default function Page() {
   return (

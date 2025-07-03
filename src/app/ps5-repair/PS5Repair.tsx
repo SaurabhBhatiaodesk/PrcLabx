@@ -1,14 +1,12 @@
 import React from "react";
 import PS5Banner from "./PS5Banner";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainTitle from "@/components/MainTitle/MainTitle";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import PS5RepairsSydney from "./PS5RepairsSydney";
 import PS5ExpertRepair from "./PS5ExpertRepair";
 
-import AskusQuestion from "@/components/AskusQuestion/AskusQuestion";
+import AskusQuestion from "../../components/AskusQuestion/AskusQuestion";
 import PS5Sydney from "./PS5Sydney";
 import dynamic from "next/dynamic";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 
 const StaperForm = dynamic(() => import("../mail-in-repair/StaperForm"), {
   ssr: false,

@@ -1,16 +1,16 @@
 "use client"
 import React from 'react'
 
-import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb'
 import Faqinner from './Faqinner'
 
-import YouTubeHome from '@/components/HomeCpmponents/YouTubeHome/YouTubeHome';
+import YouTubeHome from '../../components/HomeCpmponents/YouTubeHome/YouTubeHome';
 // import { title } from 'process';
 // import { Content } from 'next/font/google';
 import "./Faq.css"
-import FixLabx from '@/components/HomeCpmponents/FixLabx/FixLabx';
+import FixLabx from '../../components/HomeCpmponents/FixLabx/FixLabx';
 import TabFaq from './TabFaq';
-import BiginnerReviews from '@/components/GoogleReviews/BiginnerReviews';
+import BiginnerReviews from '../../components/GoogleReviews/BiginnerReviews';
 
 import rname from "../../../public/Images/icons/rname.png";
 import jname from "../../../public/Images/icons/E.png";

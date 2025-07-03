@@ -1,6 +1,6 @@
 "use client";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Recoverphotos from "../../././../public/Images/icons/Recoverphotos.svg";
@@ -17,7 +17,7 @@ import "aos/dist/aos.css";
 import { setPriceCat } from "../redux/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import MainButton from "@/components/MainButton/MainButton";
+import MainButton from "../../components/MainButton/MainButton";
 
 const DataBox: React.FC = () => {
   const dispatch = useDispatch();

@@ -4,7 +4,6 @@
 // import MainHeading from "../../../components/ManinHeading/MainHeading";
 // import MainTitle from "../../../components/MainTitle/MainTitle";
 // import Link from "next/link";
-// import MainButton from "@/components/MainButton/MainButton";
 
 // interface Params {
 //   id: string | null; // id can be a string or null if not found

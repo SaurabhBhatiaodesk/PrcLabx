@@ -1,6 +1,5 @@
 "use client";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainButton from "@/components/MainButton/MainButton";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 import React from "react";
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";

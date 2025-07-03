@@ -1,13 +1,10 @@
 // "use client";
-// import MainTitle from "@/components/MainTitle/MainTitle";
-// import MainHeading from "@/components/ManinHeading/MainHeading";
 // import React, { useEffect } from "react";
 // import Image from "next/image";
 // import Repairs from "../../../../public/Images/icons/Vector.svg";
 // import Transparency from "../../../../public/Images/icons/Transparency.svg";
 // import Recovery from "../../../../public/Images/icons/Recovery.svg";
 // import B2BServices from "../../../../public/Images/icons/B2B Services.svg";
-// import MainButton from "@/components/MainButton/MainButton";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 // import Link from "next/link";

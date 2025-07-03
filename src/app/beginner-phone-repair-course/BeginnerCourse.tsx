@@ -1,17 +1,17 @@
 "use client";
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import BeginnerPhoneRepaiCourseSale from "@/components/TraningBanner/LightCources";
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
-import TraningTabBigner from "@/components/TraningBanner/TraningTabBigner";
-import TraningTabBignersecond from "@/components/TraningBanner/TraningTabBignersecond";
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-// import BiginnerChooseLab from "@/components/HomeCpmponents/WhyChooseLabX/BiginnerChooseLab";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import FrequentlyAskedQuestions from "../../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import BeginnerPhoneRepaiCourseSale from "../../components/TraningBanner/LightCources";
+import TraningBanner from "../../components/TraningBanner/TraningBanner";
+import TraningCourseInstructors from "../../components/TraningBanner/TraningCourseInstructors";
+import TraningTabBigner from "../../components/TraningBanner/TraningTabBigner";
+import TraningTabBignersecond from "../../components/TraningBanner/TraningTabBignersecond";
+import TraningWillLearn from "../../components/TraningBanner/TraningWillLearn";
+// import BiginnerChooseLab from "../../components/HomeCpmponents/WhyChooseLabX/BiginnerChooseLab";
+import BiginnerReviews from "../../components/GoogleReviews/BiginnerReviews";
 import React from "react";
-import TraningTabBignerThird from "@/components/TraningBanner/TraningTabBignerThird";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import FormCode from "@/components/Form/FormCode";
+import TraningTabBignerThird from "../../components/TraningBanner/TraningTabBignerThird";
+import MainHeading from "../../components/ManinHeading/MainHeading";
+import FormCode from "../../components/Form/FormCode";
 import { usePathname } from "next/navigation";
 import backbanner from "../../../public/Images/Home/back-banner.svg";
 
@@ -23,7 +23,7 @@ import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
-import LightCources from "@/components/TraningBanner/LightCources";
+import LightCources from "../../components/TraningBanner/LightCources";
 
 const BeginnerCourse = () => {
   const accordionData = [

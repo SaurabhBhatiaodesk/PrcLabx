@@ -3,9 +3,8 @@ import React from "react";
 import Image from "next/image";
 import pointer from "../../../../public/Images/tickicon.png";
 import banner from "../../../../public/Images/recoveryback.png";
-import MainTitle from "@/components/MainTitle/MainTitle";
-import MainHeading from "@/components/ManinHeading/MainHeading";
-import MainButton from "@/components/MainButton/MainButton";
+import MainTitle from "../../../components/MainTitle/MainTitle";
+import MainHeading from "../../../components/ManinHeading/MainHeading";
 import { useRouter } from "next/navigation";
 
 

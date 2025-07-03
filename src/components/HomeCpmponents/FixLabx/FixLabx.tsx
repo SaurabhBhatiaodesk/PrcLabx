@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import owoner from "../../../../public/Images/Home/lab-x-owner.svg";
-import MainButton from "@/components/MainButton/MainButton";
+import MainButton from "../../../components/MainButton/MainButton";
 import "./FixLabx.css";
 import bharat from "../../../../public/Images/ownerimg.webp";
 import banner from "../../../../public/Images/ownerbanner.png"

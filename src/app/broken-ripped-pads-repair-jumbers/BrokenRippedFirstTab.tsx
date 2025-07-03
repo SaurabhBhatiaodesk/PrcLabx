@@ -15,7 +15,7 @@ import "./BrokenRipped.css";
 import backbanner from "../../../public/Images/Home/back-banner.svg"
 
 import Link from "next/link";
-import MainHeading from "@/components/ManinHeading/MainHeading";
+import MainHeading from "../../components/ManinHeading/MainHeading";
 
 interface Tab {
   id: number;
