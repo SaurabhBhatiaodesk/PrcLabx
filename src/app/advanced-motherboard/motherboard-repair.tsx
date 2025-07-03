@@ -1,12 +1,6 @@
 "use client";
 import React from "react";
-
-import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
-import TraningBanner from "@/components/TraningBanner/TraningBanner";
-import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
-import TrainingTabMotherboard from "@/components/TraningBanner/TrainingTabMotherboard";
-import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
-import backbanner from "../../../public/Images/Home/back-banner.svg"
+import backbanner from "../../../public/Images/Home/back-banner.svg";
 import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
 import FormCode from "@/components/Form/FormCode";
 import MainHeading from "@/components/ManinHeading/MainHeading";
@@ -21,7 +15,11 @@ import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
 import LightCources from "@/components/TraningBanner/LightCources";
-
+import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
+import TraningBanner from "@/components/TraningBanner/TraningBanner";
+import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
+import TraningTabBigner from "@/components/TraningBanner/TrainingTabMotherboard";
+import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
 const BeginnerCourse = () => {
   const reviewsData = [
     {
@@ -152,17 +150,15 @@ const BeginnerCourse = () => {
         Courseformate4=" "
         border="#56c1c1"
       />
-          <section
-    className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
-  style={{
-    backgroundImage: `url(${backbanner.src})`,
-  }}
->
-
-   <TrainingTabMotherboard />
-      <TrainingTabMotherboardsecond />
-</section>
-     
+      <section
+        className="py-4 lg:py-[20px] bg-no-repeat bg-cover bg-center "
+        style={{
+          backgroundImage: `url(${backbanner.src})`,
+        }}
+      >
+        <TraningTabBigner />
+        <TrainingTabMotherboardsecond />
+      </section>
 
       <TraningCourseInstructors />
       {/* <MotherboardPhoneReapair /> */}
@@ -190,7 +186,7 @@ const BeginnerCourse = () => {
         accordionData={accordionData}
       />
       {/* <MotherboardReviews /> */}
-      <BiginnerReviews reviews={reviewsData}  googletitle="Our Google Reviews"/>
+      <BiginnerReviews reviews={reviewsData} googletitle="Our Google Reviews" />
     </>
   );
 };
