@@ -48,7 +48,7 @@ const courses: Course[] = [
       {
         label: "Introduction to Tools and Parts:",
         detail:
-          "Tools and parts are essential for mobile phone repair  s, ensuring precision, efficiency, and high-quality results.",
+          "Tools and parts are essential for mobile phone repairs, ensuring precision, efficiency, and high-quality results.",
         accentClass: "text-[var(--prc)]",
         iconcolor: "#00303E"
       },
