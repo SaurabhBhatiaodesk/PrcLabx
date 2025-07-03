@@ -9,13 +9,12 @@ import { TbMenu2 } from "react-icons/tb";
 import { IoChevronDown } from "react-icons/io5";
 
 import newlogo from "../../../public/Images/prclogo.png";
-import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import ProfessionalMegaMenu from "../../app/MegaMenu/ProfessionalMegaMenu";
 import "./Header.css";
 import MainButton from "../MainButton/MainButton";
 // import { useSelector } from "react-redux";
-// import { RootState } from "@/app/redux/store";
-import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
-import { setUiFlag } from "@/app/redux/slice";
+import { useAppDispatch, useAppSelector } from "../../app/redux/hooks";
+import { setUiFlag } from "../../app/redux/slice";
 
 export default function CustomHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

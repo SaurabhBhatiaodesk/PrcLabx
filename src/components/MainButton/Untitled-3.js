@@ -13,13 +13,12 @@ import { IoIosCart } from "react-icons/io";
 import Marquee from "../Marquee/Marquee";
 import { SlSocialFacebook } from "react-icons/sl";
 import { useDispatch } from "react-redux";
-import { setPriceCat } from "@/app/redux/slice";
 import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import commingsoon from "../../../public/Images/coming-soon.svg";
 import newlogo from "../../../public/Images/prclogo.png";
 import MainButton from "../MainButton/MainButton";
-import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import ProfessionalMegaMenu from "../../app/MegaMenu/ProfessionalMegaMenu";
 import { IoChevronDown } from "react-icons/io5";
 
 export default function App() {
