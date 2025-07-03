@@ -249,7 +249,7 @@ const page = () => {
       {/* <DeliveryTous/> */}
       <ShipDeviceUs />
 
-      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://wholesale.prcrepair.com.au/" buttondata="Visit Store"/>
+      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="/coming-soon" buttondata="Visit Store"/>
       <HandsOnTraining/>
       <DataRecovery />
   
