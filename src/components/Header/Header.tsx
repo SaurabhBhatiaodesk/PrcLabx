@@ -15,6 +15,7 @@ import MainButton from "../MainButton/MainButton";
 // import { useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../app/redux/hooks";
 import { setUiFlag } from "../../app/redux/slice";
+import TopaHeader from "./TopaHeader";
 
 export default function CustomHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,20 +94,7 @@ export default function CustomHeader() {
 
   return (
     <div className="bg-primary">
-      <div className="bg-prc p-2 text-center hidden lg:flex justify-center">
-        <button className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          PHONE REPAIR
-        </button>
-        <button className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          Repair TRAINING
-        </button>
-        <button className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          Parts Store
-        </button>
-        <button className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          China Warehouse
-        </button>
-      </div>
+      <TopaHeader/>
       <header className=" text-secondary  z-50 relative container">
         {/* Header content */}
         <div className="flex justify-between items-center lg:py-4 md:py-2 py-2 relative">
