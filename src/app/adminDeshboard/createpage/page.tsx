@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 // import Form from "@/components/PageForm/PageForm";
 
-const Form = dynamic(() => import("@/components/PageForm/PageForm"), {
+const Form = dynamic(() => import("../../../components/PageForm/PageForm"), {
   ssr: false,
 });
 
@@ -17,7 +17,6 @@ export default function AddPage() {
     description: string;
     content: string;
   }) => {
-    console.log("Form submitted:", formData);
     router.push("/adminDeshboardList");
   };
 

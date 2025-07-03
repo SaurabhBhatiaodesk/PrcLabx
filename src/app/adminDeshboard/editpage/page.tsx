@@ -19,7 +19,7 @@
 import dynamic from "next/dynamic";
 
 // Dynamically import the EditPage component with ssr: false
-const EditPage = dynamic(() => import("@/components/EditPage/EditPage"), {
+const EditPage = dynamic(() => import("../../../components/EditPage/EditPage"), {
   ssr: false,
 });
 
