@@ -1,5 +1,4 @@
 "use client";
-import MainTitle from "@/components/MainTitle/MainTitle";
 import MainHeading from "@/components/ManinHeading/MainHeading";
 import React, { useEffect } from "react";
 import Image from "next/image";
@@ -11,6 +10,7 @@ import Recovery from "../../../public/Images/icons/Recovery.svg";
 import B2BServices from "../../../public/Images/icons/B2B Services.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import MainTitle from "@/components/MainTitle/MainTitle";
 
 const PricingBox: React.FC = () => {
   useEffect(() => {
