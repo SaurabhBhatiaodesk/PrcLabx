@@ -18,8 +18,8 @@ import mainf3 from "../../../public/Images/BannerImages/bannerf3.webp";
 // import mainf4 from "../../../public/Images/BannerImages/bannerf4.webp";
 import Bannersearchcard from "./Bannersearchcard";
 import Marquee from "../Marquee/Marquee";
-import { useAppDispatch } from "@/app/redux/hooks";
-import { setUiFlag } from "@/app/redux/slice";
+import { useAppDispatch } from "../../app/redux/hooks";
+import { setUiFlag } from "../../app/redux/slice";
 
 export default function MainBanner() {
   const dispatch = useAppDispatch();

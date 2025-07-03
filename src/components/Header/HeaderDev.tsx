@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import newlogo from "../../../public/Images/prclogo.png";
-import ProfessionalMegaMenu from "@/app/MegaMenu/ProfessionalMegaMenu";
+import ProfessionalMegaMenu from "../../app/MegaMenu/ProfessionalMegaMenu";
 import MainButton from "../MainButton/MainButton";
 const HeaderDev = () => {
     return (
