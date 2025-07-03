@@ -2,7 +2,7 @@
 
 import React, { ReactNode } from "react";
 import { Box, AppBar, Toolbar, Typography } from "@mui/material";
-import LeftSidebar from "@/components/AdminLayouts/LeftSidebar";
+import LeftSidebar from "../../components/AdminLayouts/LeftSidebar";
 
 interface DashboardLayoutProps {
   children: ReactNode;
