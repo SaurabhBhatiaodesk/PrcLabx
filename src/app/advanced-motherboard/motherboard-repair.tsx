@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
 import backbanner from "../../../public/Images/Home/back-banner.svg";
-import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
-import FormCode from "@/components/Form/FormCode";
-import MainHeading from "@/components/ManinHeading/MainHeading";
 import { usePathname } from "next/navigation";
 import Boxblock from "../../components/HomeCpmponents/WhyChooseLabX/Boxblock";
 import rname from "../../../public/Images/icons/rname.png";
@@ -13,13 +10,16 @@ import Sname from "../../../public/Images/icons/S.png";
 import Aname from "../../../public/Images/icons/A.png";
 import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
-import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
-import LightCources from "@/components/TraningBanner/LightCources";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions";
 import TraningBanner from "@/components/TraningBanner/TraningBanner";
 import TraningCourseInstructors from "@/components/TraningBanner/TraningCourseInstructors";
 import TraningTabBigner from "@/components/TraningBanner/TrainingTabMotherboard";
 import TraningWillLearn from "@/components/TraningBanner/TraningWillLearn";
+import TrainingTabMotherboardsecond from "@/components/TraningBanner/TrainingTabMotherboardsecond";
+import FormCode from "@/components/Form/FormCode";
+import MainHeading from "@/components/ManinHeading/MainHeading";
+import BiginnerReviews from "@/components/GoogleReviews/BiginnerReviews";
+import LightCources from "@/components/TraningBanner/LightCources";
 const BeginnerCourse = () => {
   const reviewsData = [
     {
