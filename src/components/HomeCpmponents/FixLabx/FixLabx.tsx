@@ -18,15 +18,15 @@ const FixLabx = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_4fr] xl:grid-cols-[2fr_4fr_2fr] md-[4fr_2fr] items-center pxs-0 md:px-[30px]">
           <div className="xl:block hidden"></div>
           <div className="text-center  p-4 flex flex-col justify-center items-center">
-            <h2 className="text-secondary text-[32px]  lg:text-[36px] 2xl:text-[42px] font-[800] pb-2">
-              PRC Mobile Phone Repair
+            <h2 className="text-secondary text-[32px]  lg:text-[36px] font-[800] pb-2">
+             Meet the founder of Phone Repair Center
             </h2>
             <p className="text-[#040404] text-[24px]  lg:text-[26px] 2xl:text-[28px] font-[800] m-[4px]">
-              About Bharat Dhingra 
+            Bharat Dhingra 
             </p>
             <p className="text-black " style={{ color: "#040404" }}>
               {
-                " I'm Bharat Dhingra, the founder of PRC, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts PRC."
+                " I'm Bharat Dhingra, the founder of Phone Repair Centre, dedicated to providing exceptional, complex mobile phone repair services. With years of experience in the tech industry, I combine innovation and expertise to offer reliable solutions, ensuring quality and customer satisfaction for everyone who trusts the Phone Repair Centre."
               }
             </p>
             <MainButton MainButton="Read My Story" link="/about-us" color="bg-prc" />
@@ -37,14 +37,14 @@ const FixLabx = () => {
               src={bharat}
               width={500}
               height={500}
-              alt=" PRC repair "
+              alt=" Phone repair center "
             />
             <Image
               className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block object-contain "
               src={bharat}
               width={400}
               height={300}
-              alt=" PRC repair "
+              alt=" Phone repair center "
             />
           </div>
         </div>

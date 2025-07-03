@@ -42,7 +42,7 @@ const TabFaq = () => {
       accordionData: [
         {
           title: '1. What types of devices do you repair?',
-          content: 'We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.',
+          content: 'We repair a wide range of mobile phone devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.',
         },
         {
           title: '2. What types of repairs do you specialize in?',

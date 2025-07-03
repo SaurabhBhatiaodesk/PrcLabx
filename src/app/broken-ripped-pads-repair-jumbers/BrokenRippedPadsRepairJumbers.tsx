@@ -81,7 +81,7 @@ const BrokenRippedPadsRepairJumbers = () => {
     {
       title: "What is the duration of the training program?",
       content:
-        "The training program lasts for 5 days, providing intensive hands-on experience and theoretical knowledge to master mobile repair techniques efficiently.",
+        "The training program lasts for 5 days, providing intensive hands-on experience and theoretical knowledge to master mobile phone repair   techniques efficiently.",
     },
     {
       title: "Do I need prior experience in mobile phone repairs?",
@@ -111,7 +111,7 @@ const BrokenRippedPadsRepairJumbers = () => {
     {
       title: "Will I be able to start my own repair business after this training?",
       content:
-        "Absolutely! The phone repair course equips you with the skills needed to start your own mobile repair business, offering practical insights into running a successful operation.",
+        "Absolutely! The phone repair course equips you with the skills needed to start your own mobile phone repair   business, offering practical insights into running a successful operation.",
     },
   ];
   return (
@@ -135,7 +135,7 @@ const BrokenRippedPadsRepairJumbers = () => {
         title="Course Highlights"
         Course="Phone Repair Course Format"
         paramtitle1="Essential Tools, Parts, and Screen Replacement"
-        param1="Learn to use essential tools and parts for high-quality mobile repairs. This phone fixing course covers effective screen replacement techniques for phones and iPads, helping you restore device appearance and functionality. Mastering these skills ensures efficient, professional screen repairs.
+        param1="Learn to use essential tools and parts for high-quality mobile phone repair  s. This phone fixing course covers effective screen replacement techniques for phones and iPads, helping you restore device appearance and functionality. Mastering these skills ensures efficient, professional screen repairs.
 "
         paramtitle2="Battery and Charging Port Repairs"
         param2="Gain expertise in battery and charging port replacements for smartphones and tablets. You’ll learn safe removal, installation, and testing techniques that ensure proper power flow. These skills are essential for extending device lifespan and delivering reliable, long-lasting repairs.

@@ -15,7 +15,7 @@ import { Swiper as SwiperType } from "swiper";
 import sliderimage from "../../../../public/Images/specialist.webp"
 import sliderimage2 from "../../../../public/Images/young.webp"
 import sliderimage3 from "../../../../public/Images/digital.webp"
-import sliderimage4 from "../../../../public/Images/closeup.webp"
+import sliderimage4 from "../../../../public/Images/closeup221.png"
 import sliderimage5 from "../../../../public/Images/specialistlast.webp"
 import backsv  from "../../../../public/Images/backsv.svg" 
 
@@ -72,8 +72,9 @@ export default function ShipDeviceUs() {
 >
       <div className="container">
         <div className="">
-          <MainHeading Heading="Ship Your Device To Us" color="#00BC9D" svg_stroke="var(--primary)" />
-          <MainTitle Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." color="var(--primary)" />
+          <MainHeading Heading="Send Your Device for Repair" color="#00BC9D" svg_stroke="var(--primary)" />
+          <MainTitle Title="Carefully pack your device and send it to our repair centre using the provided shipping address. Be sure to include any necessary documents to help us process your repair quickly and efficiently.
+" color="var(--primary)" />
 
         </div>
       </div>

@@ -3,14 +3,14 @@ import React from "react";
 import Contact from "./contact";
 import "./price.css"
 export const metadata = {
-  title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
+  title: "Pricing |  Affordable Repair Services and Courses | Phone repair center",
   description:
-    "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
-  keywords: ["Mobile Repair Solutions", "Expert Device Repair"],
+    "At Phone repair center, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
+  keywords: ["mobile phone repair   Solutions", "Expert Device Repair"],
   openGraph: {
-    title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
+    title: "Pricing |  Affordable Repair Services and Courses | Phone repair center",
     description:
-      "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
+      "At Phone repair center, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
     url: "", // Replace with your actual page URL
     type: "website",
     images: [
@@ -24,9 +24,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing |  Affordable Repair Services and Courses | PRC Repair",
+    title: "Pricing |  Affordable Repair Services and Courses | Phone repair center",
     description:
-      "At PRC Repair, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile repair training.& more.",
+      "At Phone repair center, we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

@@ -40,12 +40,12 @@ import React from "react";
 import Productswiper from "@/components/Storeproduct/Productswiper";
 import HandsOnTraining from "@/components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
-  title: "Mobile Phone Repair Services & Training | Mobile Accessories | PRC Repair",
-  description: "PRC Repair provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
+  title: "Mobile Phone Repair Services & Training | Mobile Accessories | Phone repair center",
+  description: "Phone repair center provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description: "Explore Phone repair center for expert mobile phone repair  s and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/",
     type: "website",
     images: [
@@ -60,7 +60,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore PRC Repair for expert mobile repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description: "Explore Phone repair center for expert mobile phone repair  s and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
@@ -72,7 +72,7 @@ const accordionData = [
   {
     title: "What types of devices do you repair?",
     content:
-      "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+      "We repair a wide range of mobile phone devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
   },
   {
     title: "What types of repairs do you specialize in?",
@@ -249,11 +249,11 @@ const page = () => {
       {/* <DeliveryTous/> */}
       <ShipDeviceUs />
 
-      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile repair offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://wholesale.prcrepair.com.au/" buttondata="Visit Store"/>
+      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://wholesale.prcrepair.com.au/" buttondata="Visit Store"/>
       <HandsOnTraining/>
       <DataRecovery />
   
-      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://warehouse.prcrepair.com.au/" buttondata="Visit Store"/>
+      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Discover premium Samsung, OnePlus, and OPPO accessories shipped directly from China. High-quality, affordable, and reliable—delivered straight to your door with confidence and care." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://warehouse.prcrepair.com.au/" buttondata="Visit Store"/>
 
       <WhyChooseLabX />
       <FixLabx />

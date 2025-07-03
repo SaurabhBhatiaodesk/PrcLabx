@@ -12,8 +12,8 @@ interface ExpertRepairItem {
 const PS5ExpertRepair = () => {
   const ExpertRepair: ExpertRepairItem[] = [
     {
-      title: `Expert PS5 Repair at PRC Repair`,
-      dataitom:`Get expert PS5 repair at PRC Repair for fast, reliable fixes. From HDMI port issues to power failures, our skilled technicians ensure your PlayStation 5 is restored to peak performance quickly!`,
+      title: `Expert PS5 Repair at Phone repair center`,
+      dataitom:`Get expert PS5 repair at Phone repair center for fast, reliable fixes. From HDMI port issues to power failures, our skilled technicians ensure your PlayStation 5 is restored to peak performance quickly!`,
       contactlink: "/contact-us",
       contactname: "Contact Us",
     },

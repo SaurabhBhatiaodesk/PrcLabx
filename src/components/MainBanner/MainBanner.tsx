@@ -74,12 +74,12 @@ export default function MainBanner() {
       heading: "Get Your Device Fixed or Learn Mobile Phone Repairs",
       highlight: "— PRC Repair Does It All!",
       highlightColor: "text-tertiary",
-      description: `PRC Repair is more than just a mobile phone repair service.
+      description: `Phone repair center is more than just a mobile phone repair service.
                     We’re a full-service platform dedicated to quality mobile
                     phone repairing, professional training, and community
                     support. Whether you're looking to get your iPhone or
                     smartphone repaired, purchase repair parts, or enhance your
-                    repair skills through our training programs, PRC Repair has
+                    repair skills through our training programs, Phone repair center has
                     it all.`,
       button: {
         text: "Request a Quote",
@@ -91,7 +91,7 @@ export default function MainBanner() {
       highlight: "– Our Training Programs",
       highlightColor: "text-[#FFDAB9]",
       description:
-        "Join PRC’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile repair needs!",
+        "Join PRC’s mobile phone repair courses and develop your skills from beginner to pro level. Master everything from basic repairs to solving complex issues, and make a real impact by helping others with their mobile phone repair   needs!",
       button: {
         text: "Start Training",
         link: "/training",

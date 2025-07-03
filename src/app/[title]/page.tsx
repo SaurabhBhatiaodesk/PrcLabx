@@ -159,7 +159,7 @@ export default async function PageDetail({
                   height="300"
                   width="400"
                   src={Line.src}
-                  alt=" PRC repair "
+                  alt=" Phone repair center "
                   className="pb-3 m-auto"
                 />
               </h1> */}
@@ -168,7 +168,7 @@ export default async function PageDetail({
                 <Image
                   key={image}
                   src={image}
-                  alt=" PRC repair "
+                  alt=" Phone repair center "
                   width="100"
                   height="100"
                   className="dynamic__img"

@@ -48,7 +48,7 @@ const courses: Course[] = [
       {
         label: "Introduction to Tools and Parts:",
         detail:
-          "Tools and parts are essential for mobile repairs, ensuring precision, efficiency, and high-quality results.",
+          "Tools and parts are essential for mobile phone repair  s, ensuring precision, efficiency, and high-quality results.",
         accentClass: "text-[var(--prc)]",
         iconcolor: "#00303E"
       },
@@ -188,7 +188,7 @@ const courses: Course[] = [
     price: "$5500",
     description: `Our Professional Phone Screen Refurbishing Course is designed to teach technicians how to refurbish damaged or broken phone screens using industry-standard tools and techniques. This hands-on phone fixing course covers the entire refurbishing process, from screen disassembly to reassembly, ensuring high-quality results for both LCD and OLED screens.`,
     subTitle: "What You’ll Learn",
-    featuresHtml: `<ul class=\"space-y-2 pb-5\"><li><strong class=\"text-[#00BC9D]\">Screen Disassembly and Inspection:</strong>&nbsp;Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.</li></ul>`,
+    featuresHtml: `<ul class=\"space-y-2 pb-5\"><li><strong class=\"text-[#00BC9D]\">Screen Disassembly and Inspection:</strong>&nbsp;Learn how to safely disassemble mobile phone devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.</li></ul>`,
     note: `This course provides a complete understanding of the professional screen refurbishing process, enabling you to offer high-quality refurbishing services for both LCD and OLED screens on iPhones, Samsung devices, and other popular smartphones.`,
     accentColor: "#cf2362a7",
     svgStroke: "#cf2362a7",

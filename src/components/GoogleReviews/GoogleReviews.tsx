@@ -37,7 +37,7 @@
 //     logoImage: Googletest,
 //     rating: 5,
 //     param:
-//       "I had an outstanding experience at the PRC Repair Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
+//       "I had an outstanding experience at the Phone repair center Training Centre! Bharat is highly knowledgeable and patient, offering clear, step-by-step guidance throughout the course..",
 //   },
 //   {
 //     name: "Sahil Sardana",
@@ -55,7 +55,7 @@
 //     logoImage: Googletest,
 //     rating: 5,
 //     param:
-//       "I had a great experience with PRC Repair. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
+//       "I had a great experience with Phone repair center. Their team handled my data recovery effortlessly. They were professional and kept me informed every step of the way. Truly impressive service!",
 //   },
 //   {
 //     name: "Ashley Jay",
@@ -81,7 +81,7 @@
 //   //   profileImage: Iname,
 //   //   logoImage: Googletest,
 //   //   rating: 5,
-//   //   param:"Fantastic experience with PRC Repair! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
+//   //   param:"Fantastic experience with Phone repair center! They not only fixed my phone quickly but also offered invaluable advice on maintenance. Their team is friendly and efficient. I’ll be back for sure!",
 //   // },
 //   {
 //     name: "Ethan Wilson",
@@ -90,7 +90,7 @@
 //     logoImage: Googletest,
 //     rating: 5,
 //     param:
-//       "PRC Repair's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
+//       "Phone repair center's B2B services are top-notch! They handle our bulk repairs with efficiency and transparency. Communication is excellent, and we’ve never had an issue. Highly recommended for business needs!",
 //   },
 //   // Add more review objects as needed
 // ];

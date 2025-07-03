@@ -31,7 +31,7 @@ const WhatWeDo = () => {
       <div className="container">
         <div className="text-center py-5 my-5">
           <MainHeading
-            Heading="Ship Your Device To Us"
+            Heading="Send Your Device for Repair"
             color="var(--prc)"
             svg_stroke="var(--alpha)"
           />
@@ -46,7 +46,7 @@ const WhatWeDo = () => {
           {services.map((service, index) => (
             <Link key={index} href={service.href}>
               <div className="shop-block rounded-[15px] border-2 shadow-lg shadow-[#00303e75] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#00303e75  ]">
-                <Image src={service.image} alt="PRC repair" />
+                <Image src={service.image} alt="Phone repair center" />
                 <h1 className="m-4 bg-prc text-primary lg:p-3  p-3 rounded-2xl">{service.title}</h1>
               </div>
             </Link>

@@ -110,7 +110,7 @@ export default function Devicequote() {
 
           <Link href="/brands" className="hidden md:block">
             <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
-              Visit store
+              View All
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -230,9 +230,12 @@ const ContactUsForm: React.FC = () => {
                           quality={1000}
                         />
                       </span>
-                      <Link href="tel:+61455777077" passHref>
+                      <a className="m-0 text-primary lg:font-semibold font-medium text-xl cursor-pointer" href="tel:+(02)86783298" >
+                           (02) 8678 3298
+                      </a>
+                       <Link href="tel:(02)72527141" >
                         <p className="m-0 text-primary lg:font-semibold font-medium text-xl cursor-pointer">
-                          +61455777077
+                        (02) 7252 7141
                         </p>
                       </Link>
                     </div>

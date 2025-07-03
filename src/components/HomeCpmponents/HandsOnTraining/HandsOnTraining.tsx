@@ -55,7 +55,7 @@ function HandsOnTraining() {
     >
       <div className="container mx-auto">
         <h2 className=" xl:w-3/5 w-full m-auto  text-center text-prc mb-4">
-          Become a Mobile Repair Pro — Start Your Hands-On&nbsp;
+          Become a Mobile Phone Repair   Pro — Start Your Hands-On&nbsp;
           <span className="relative inline-block">
             Training
             <svg

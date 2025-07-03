@@ -167,13 +167,13 @@ const Page = () => {
           height="1000"
           width="1000"
           src={Device.src}
-          alt=" PRC repair "
+          alt=" Phone repair center "
           className="m-auto"
         />
         <div className="overlap__number">
           <h2>Start Buy Back Process Now</h2>
           <h3>
-            <Link href="tel:+61455777077">+61455777077</Link>
+            <Link href="tel:+(02)86783298 "> (02) 8678 3298 </Link>
           </h3>
         </div>
       </div>

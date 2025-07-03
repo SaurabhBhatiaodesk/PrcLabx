@@ -52,7 +52,7 @@ const FaqComponent: React.FC<brands> = ({ brandImage }) => {
     {
       title: "What types of devices do you repair?",
       content:
-        "We repair a wide range of mobile devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+        "We repair a wide range of mobile phone devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
     },
     {
       title: "What types of repairs do you specialize in?",
@@ -167,7 +167,7 @@ const FaqComponent: React.FC<brands> = ({ brandImage }) => {
                 <Image
                   className="h-[90%] m-auto object-contain"
                   src={brandImage}
-                  alt="Mobile repair"
+                  alt="mobile phone repair  "
                   width={500}
                   height={500}
                 />

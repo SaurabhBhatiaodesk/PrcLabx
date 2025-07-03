@@ -667,6 +667,15 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             Blogs{" "}
                           </Link>
                         </li>
+                           <li>
+                          <Link
+                            href="/contact-us"
+                            onClick={toggleMenu}
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                           Contact Us
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </li>

@@ -77,7 +77,7 @@ const FrequentlyAskedQuestions: React.FC<FrequentlyAskedQuestionsProps> = ({
                   <Image
                     className="lg:h-auto h-[300px] object-contain"
                     src={faqimages}
-                    alt=" PRC repair "
+                    alt=" Phone repair center "
                   />
                 </div>
               </div>

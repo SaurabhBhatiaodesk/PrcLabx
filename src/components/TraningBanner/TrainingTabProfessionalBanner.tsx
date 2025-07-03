@@ -48,7 +48,7 @@ const TraningTabBigner: React.FC = () => {
       content: "",
       contentf2title: "",
       contentf2:
-        "Learn how to safely disassemble mobile devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.",
+        "Learn how to safely disassemble mobile phone devices and inspect LCD and OLED screens for damage, determining whether a screen is suitable for refurbishing or replacement.",
       contentf3title: "",
       contentf3: "",
 

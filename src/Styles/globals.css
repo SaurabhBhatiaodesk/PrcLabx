@@ -300,7 +300,7 @@ p {
 /* For smaller screens */
 @media (max-width: 767px) {
   .gauravkumarscrollbar::-webkit-scrollbar {
-    width: 0px; /* Thinner scrollbar for mobile devices */
+    width: 0px; /* Thinner scrollbar for mobile phone devices */
   }
 }
 /* Custom scrollbar for the main content */

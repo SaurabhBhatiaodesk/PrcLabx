@@ -231,12 +231,8 @@ const MobileFooterMenue = () => {
                 service@prcrepair.com.au
               </a>
             </li>
-            <li className="mb-2 text-primary">
-              <a href="tel:+61455777077" className="hover:underline">
-                +61455777077
-              </a>
-            </li>
-            <Link
+            <div className="border-gray-300 border-1 rounded-lg p-2 mb-2">
+   <Link
               href="https://www.google.com/maps/place/LabXRepair/@-33.766127,150.7743917,15z/data=!4m6!3m5!1s0x6b129b2ceccf72d7:0x2bd3b51996f0eed4!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11lv7kb0ct?hl=en-GB&entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D"
               legacyBehavior
             >
@@ -248,6 +244,41 @@ const MobileFooterMenue = () => {
                 122 Queen St, St Marys NSW 2760, Australia
               </a>
             </Link>
+    <li className="mb-2 text-primary">
+              <a href="tel:+(02)86783298 " className="hover:underline">
+                (02)86783298 
+              </a>
+            </li>
+            </div>
+
+
+
+
+
+
+
+
+            <div className="border-gray-300 border-1 rounded-lg p-2 mb-2">
+   <Link
+              href="https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m1!1e3!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D"
+              legacyBehavior
+            >
+              <a
+                className="text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Kiosk 1/227 Railway Terrace, Schofields NSW 2762
+              </a>
+            </Link>
+    <li className="mb-2 text-primary">
+              <a href="tel:+(02)72527141 " className="hover:underline">
+                (02)72527141 
+              </a>
+            </li>
+            </div>
+        
+         
             {toast && (
               <ToastNotification
                 message={toast.message}
