@@ -45,7 +45,7 @@ export const metadata = {
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore Phone repair center for expert mobile phone repair  s and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description: "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/",
     type: "website",
     images: [
@@ -60,7 +60,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore Phone repair center for expert mobile phone repair  s and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description: "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

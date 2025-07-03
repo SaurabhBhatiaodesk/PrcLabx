@@ -142,7 +142,7 @@ const BeginnerCourse = () => {
         title="Course Highlights"
         Course="Phone Repair Course Format"
         paramtitle1="Essential Tools, Parts, and Screen Replacement"
-        param1="Learn to use essential tools and parts for high-quality mobile phone repair  s. This phone fixing course covers effective screen replacement techniques for phones and iPads, helping you restore device appearance and functionality. Mastering these skills ensures efficient, professional screen repairs.
+        param1="Learn to use essential tools and parts for high-quality mobile phone repairs. This phone fixing course covers effective screen replacement techniques for phones and iPads, helping you restore device appearance and functionality. Mastering these skills ensures efficient, professional screen repairs.
 "
         paramtitle2="Battery and Charging Port Repairs"
         param2="Gain expertise in battery and charging port replacements for smartphones and tablets. You’ll learn safe removal, installation, and testing techniques that ensure proper power flow. These skills are essential for extending device lifespan and delivering reliable, long-lasting repairs.
