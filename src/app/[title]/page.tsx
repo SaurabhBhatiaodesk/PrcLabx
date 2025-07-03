@@ -21,7 +21,7 @@ async function fetchPageData(title: string) {
     {
       cache: "no-store",
     }
-  );
+  ); 
   if (!res.ok) {
     const errorData = await res.json().catch(() => null);
     throw new Error(errorData?.message || "Failed to fetch data");
