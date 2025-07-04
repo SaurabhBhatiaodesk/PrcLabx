@@ -46,6 +46,7 @@ import { Providers } from "./redux/providers";
 import Script from "next/script";
 import Canonical from "./Canonical";
 import Image from "next/image";
+import { ToastContainer } from "react-toastify";
 
 
 const space_Grotesk = Space_Grotesk({
@@ -192,6 +193,18 @@ export default function RootLayout({
               gtag("js", new Date());
             `}
           </Script>
+            <ToastContainer
+             style={{ fontSize: '12px' }}
+        position="top-center"      // You can still use the position prop if needed
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       </body>
     </html>
   );

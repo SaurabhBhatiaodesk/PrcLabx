@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { RxCross2 } from "react-icons/rx";
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 interface FormData {
   name: string;
   mobile: string;
@@ -11,7 +12,7 @@ interface FormData {
   timeSlot: string;
   phoneColor: string;
   comment: string;
-  storeLocation: string; 
+  storeLocation: string;
 }
 
 interface Errors {
@@ -20,7 +21,7 @@ interface Errors {
   email: string;
   date: string;
   timeSlot: string;
-  storeLocation: string; 
+  storeLocation: string;
 }
 
 interface BookSlotProps {
@@ -108,7 +109,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
       formErrors.timeSlot = "Time slot is required";
       isValid = false;
     }
-if (!formData.storeLocation) {
+    if (!formData.storeLocation) {
       formErrors.storeLocation = "Please select a store location";
       isValid = false;
     }
@@ -125,6 +126,15 @@ if (!formData.storeLocation) {
         time_slot: formData.timeSlot,
         phone_color: formData.phoneColor,
         comment: formData.comment,
+        address_no:
+          formData.storeLocation ===
+          "122 Queen St, St Marys NSW 2760, Australia"
+            ? `(02) 8678 3298`
+            : `(02) 7252 7141`,
+            direction_url: formData.storeLocation ===
+          "122 Queen St, St Marys NSW 2760, Australia"
+            ? `https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia/@-33.7586704,150.756797,5340m/data=!3m1!1e3!4m6!3m5!1s0x6b129ab1929d4f97:0x103feb9784d7d023!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D`
+            : `https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D`,
       };
       setLoading(true);
       try {
@@ -142,7 +152,7 @@ if (!formData.storeLocation) {
         const data = await response.json();
 
         if (response.ok) {
-          alert("Appointment booked successfully!");
+          toast.success("Appointment booked successfully!");
           closeModal();
           setLoading(false);
           setFormData({
@@ -156,12 +166,12 @@ if (!formData.storeLocation) {
             storeLocation: "",
           });
         } else {
-          alert("Failed to book appointment. Please try again.");
+          toast.error("Failed to book appointment. Please try again.");
           setLoading(false);
         }
       } catch (error) {
         console.error("Error booking appointment:", error);
-        alert("Error booking appointment. Please try again.");
+         toast.error("Error booking appointment. Please try again.");
         setLoading(false);
       }
     }
@@ -177,30 +187,37 @@ if (!formData.storeLocation) {
       return "h-[100px]";
     }
   };
+
+  // useEffect(() => {
+  //  toast.success("Appointment booked successfully!");
+  
+  
+  // }, [])
+  
   return (
     <>
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
-          <div className="bg-white md:p-6 p-2 rounded-lg md:w-1/2 w-full relative m-2 md:h-auto h-[600px] md:overflow-auto overflow-scroll">
-            <h2 className="text-2xl font-bold mb-4 text-prc">BOOK YOUR SLOT</h2>
+          <div className="bg-white md:p-6 p-4 rounded-lg md:w-1/2 w-full relative m-3 md:h-auto h-[600px] md:overflow-auto overflow-y-scroll ">
+            <h2 className="text-2xl font-bold mb-4 text-prc text-center">BOOK YOUR SLOT</h2>
 
             <form onSubmit={handleSubmit}>
               {/* Name Field */}
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-1 md:gap-2 gap-1">
                 <div className="relative mb-2">
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                    className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
                       errors.name ? "border-red-500" : "border-prc "
                     } focus:ring-prc`}
                     placeholder="John Doe"
                   />
                   <label
                     htmlFor="name"
-                    className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${
+                    className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
                       formData.name || errors.name
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc "
@@ -212,7 +229,7 @@ if (!formData.storeLocation) {
                     <p className="text-red-500 text-sm m-0">{errors.name}</p>
                   )}
                 </div>
-                <div className="grid md:grid-cols-2 gap-2">
+                <div className="grid md:grid-cols-2 md:gap-2 gap-1">
                   {/* Mobile Field */}
                   <div className="relative mb-2">
                     <input
@@ -220,14 +237,14 @@ if (!formData.storeLocation) {
                       name="mobile"
                       value={formData.mobile}
                       onChange={handleInputChange}
-                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  ${
                         errors.mobile ? "border-red-500" : " border-prc "
                       } focus:ring-prc`}
                       placeholder="Enter Your Mobile Number"
                     />
                     <label
                       htmlFor="mobile"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
                         formData.mobile || errors.mobile
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
@@ -249,14 +266,14 @@ if (!formData.storeLocation) {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
                         errors.email ? "border-red-500" : "border-prc "
                       }  focus:ring-prc`}
                       placeholder="abc@mail.com"
                     />
                     <label
                       htmlFor="email"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  md:text-[16px]  text-[13px] ${
                         formData.email || errors.email
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
@@ -277,13 +294,13 @@ if (!formData.storeLocation) {
                       value={formData.date}
                       onChange={handleInputChange}
                       min={today}
-                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus max-[300px] overflow-hidden ${
                         errors.date ? "border-red-500" : "border-prc "
                       }  focus:ring-prc`}
                     />
                     <label
                       htmlFor="date"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  text-[16px] ${
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  md:text-[16px]  text-[13px] ${
                         formData.date || errors.date
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
@@ -302,7 +319,7 @@ if (!formData.storeLocation) {
                       name="timeSlot"
                       value={formData.timeSlot}
                       onChange={handleInputChange}
-                      className={`h-12 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
                         errors.timeSlot ? "border-red-500" : "border-prc "
                       }  focus:ring-prc`}
                     >
@@ -331,7 +348,7 @@ if (!formData.storeLocation) {
                     </select>
                     <label
                       htmlFor="timeSlot"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
                         formData.timeSlot || errors.timeSlot
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
@@ -347,28 +364,55 @@ if (!formData.storeLocation) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3 mb-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 md:gap-3 gap-1 mb-1 md:grid-cols-2">
                   <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer">
-                    <input type="checkbox"  
-                    checked={formData.storeLocation === "122 Queen St, St Marys NSW 2760, Australia"}
-                    onChange={() => handleCheckboxChange("122 Queen St, St Marys NSW 2760, Australia")}/>
-                     <label className="text-[14px] line-clamp-2 ml-2 cursor-pointer" htmlFor="address">
+                    <input
+                      type="checkbox"
+                      checked={
+                        formData.storeLocation ===
+                        "122 Queen St, St Marys NSW 2760, Australia"
+                      }
+                      onChange={() =>
+                        handleCheckboxChange(
+                          "122 Queen St, St Marys NSW 2760, Australia"
+                        )
+                      }
+                    />
+                    <label
+                      className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
+                      htmlFor="address"
+                    >
                       122 Queen St, St Marys NSW 2760, Australia
                     </label>
                   </div>
                   <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer">
-                    <input type="checkbox"  
-                    checked={formData.storeLocation === "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"}
-                    onChange={() => handleCheckboxChange("Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia")}/>
-                    <label className="text-[14px] line-clamp-2 ml-2 cursor-pointer" htmlFor="address">
+                    <input
+                      type="checkbox"
+                      checked={
+                        formData.storeLocation ===
+                        "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
+                      }
+                      onChange={() =>
+                        handleCheckboxChange(
+                          "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
+                        )
+                      }
+                    />
+                    <label
+                      className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
+                      htmlFor="address"
+                    >
                       Kiosk 1/227 Railway Terrace, Schofields NSW 2762,
                       Australia
                     </label>
                   </div>
+                    {errors.storeLocation && (
+                  <p className="text-red-500 text-sm m-0">
+                    {errors.storeLocation}
+                  </p>
+                )}
                 </div>
-{errors.storeLocation && (
-                <p className="text-red-500 text-sm m-0">{errors.storeLocation}</p>
-              )}
+              
                 {/* Phone Color Field */}
                 <div className="relative mb-2">
                   <input
@@ -376,12 +420,12 @@ if (!formData.storeLocation) {
                     name="phoneColor"
                     value={formData.phoneColor}
                     onChange={handleInputChange}
-                    className="h-12 text-base peer w-full p-2 border rounded   focus:border-prc custom-focus border-prc  focus:ring-prc"
+                    className="md:h-12 h-10 text-base peer w-full p-2 border rounded   focus:border-prc custom-focus border-prc  focus:ring-prc"
                     placeholder="Enter your phone color here"
                   />
                   <label
                     htmlFor="phoneColor"
-                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc text-[16px] ${
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc md:text-[16px]  text-[13px] ${
                       formData.phoneColor
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc"
@@ -403,7 +447,7 @@ if (!formData.storeLocation) {
                   />
                   <label
                     htmlFor="comment"
-                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-[16px] ${
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
                       formData.comment
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc "
@@ -416,7 +460,7 @@ if (!formData.storeLocation) {
 
               <button
                 type="submit"
-                className="bg-prc text-white py-2 px-4 rounded w-full"
+                className="bg-prc text-white py-1 px-4 rounded w-full text-base"
               >
                 {loading ? "Loading..." : "Book Now"}
               </button>

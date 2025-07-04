@@ -74,7 +74,7 @@ const MainHeading: React.FC<MainHeadingProps> = ({
         {Heading}
       </h2>
       <svg
-        className={`absolute left-0  rotate-[180deg] z-[-1] bottom-0`}
+        className={`absolute left-0  rotate-[180deg] z-[-1] bottom-[-3px] `}
         width="100%"
         height="20"
         viewBox="0 0 100 30"
