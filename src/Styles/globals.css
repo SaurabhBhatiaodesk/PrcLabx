@@ -337,5 +337,7 @@ h3.text-sm.htmleditor span {
     -moz-appearance: none !important; 
     appearance: none !important;
      box-sizing: border-box; /* Ensures padding is included in width */
+     width: 100% !important;
+     max-width: 100% !important;
 
   }
