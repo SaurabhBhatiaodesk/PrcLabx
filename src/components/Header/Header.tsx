@@ -94,7 +94,7 @@ export default function CustomHeader() {
 
   return (
     <div className="bg-primary">
-      <TopaHeader/>
+      <TopaHeader />
       <header className=" text-secondary  z-50 relative container">
         {/* Header content */}
         <div className="flex justify-between items-center lg:py-4 md:py-2 py-2 relative">
@@ -128,11 +128,14 @@ export default function CustomHeader() {
           >
             Instant Quote
           </button> */}
-          <MainButton
-            MainButton="Instant Quote"
-            color="bg-[#EF0000] text-white"
-            link="/brands"
-          />
+          <div className="hidden md:block">
+            <MainButton
+              MainButton="Instant Quote"
+              color="bg-[#EF0000] text-white"
+              link="/brands"
+            />
+          </div>
+          <div></div>
         </div>
 
         {/* Mobile Menu */}

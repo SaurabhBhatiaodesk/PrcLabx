@@ -228,7 +228,7 @@ const Bannersearchcard: React.FC = () => {
       {/* Search Button */}
       <button
         onClick={handleSearch}
-        className="w-full py-3 bg-[#00303E] text-white font-semibold rounded-full shadow-lg hover:bg-[#005063] focus:outline-none focus:ring-2 focus:ring-[#00303E]"
+        className="w-full py-2 bg-[#00303E] text-white font-semibold rounded-full shadow-lg hover:bg-[#005063] focus:outline-none focus:ring-2 focus:ring-[#00303E]"
       >
         Search Services
       </button>
