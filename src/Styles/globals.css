@@ -328,3 +328,8 @@ h3.text-sm.htmleditor span {
 .swiper-pagination-bullet-active {
   background-color: var(--tertiary) !important;
 }
+
+input[type="date"] {
+    width: 100% !important;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
