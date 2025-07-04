@@ -356,6 +356,15 @@ export default function CustomHeader() {
               </button>
             </li> */}
             </ul>
+
+
+             <div className="mt-3">
+                <MainButton
+              MainButton="Instant Quote"
+              color="bg-[#EF0000] text-white"
+              link="/brands"
+            />
+             </div>
           </div>
         )}
       </header>

@@ -341,3 +341,7 @@ h3.text-sm.htmleditor span {
      max-width: 100% !important;
 
   }
+
+  .container .mx-auto .my-10 .md:p-6 .p-3  .rounded-lg .flex .flex-col .lg:flex-row .mb-right span{
+color: #000 !important;
+  }
