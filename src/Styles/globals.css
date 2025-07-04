@@ -329,7 +329,13 @@ h3.text-sm.htmleditor span {
   background-color: var(--tertiary) !important;
 }
 
-input[type="date"] {
-    width: 100% !important;
-    box-sizing: border-box; /* Ensures padding is included in width */
-}
+
+
+
+  .profile-label-rs input[type="date"] {
+    -webkit-appearance: none !important; 
+    -moz-appearance: none !important; 
+    appearance: none !important;
+     box-sizing: border-box; /* Ensures padding is included in width */
+
+  }
