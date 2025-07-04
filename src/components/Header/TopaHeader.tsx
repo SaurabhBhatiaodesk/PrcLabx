@@ -1,22 +1,24 @@
-import React from 'react'
+import React from "react";
 
 const TopaHeader = () => {
   return (
-    <div className="bg-prc p-2 text-center hidden lg:flex justify-center">
-        <a href="https://www.prcrepair.com.au/" className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          PHONE REPAIR
-        </a>
-        <a href="https://www.prcrepair.com.au/training" className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          Repair TRAINING
-        </a>
-        <a href="https://wholesale.prcrepair.com.au/" className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          Parts Store
-        </a>
-        <a href="https://warehouse.prcrepair.com.au/" className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          China Warehouse
-        </a>
+    <div className="bg-prc p-2">
+      <div className=" text-center grid md:grid-cols-4 grid-cols-2 gap-2 md:text-[13px] text-xs md:w-1/2 w-ful m-auto ">
+        <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
+          <a href="https://www.prcrepair.com.au/"> PHONE REPAIR</a>
+        </div>
+        <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
+          <a href="https://www.prcrepair.com.au/training">Repair TRAINING</a>
+        </div>
+        <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
+          <a href="https://wholesale.prcrepair.com.au/"> Parts Store</a>
+        </div>
+        <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
+          <a href="https://warehouse.prcrepair.com.au/">China Warehouse</a>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default TopaHeader
+export default TopaHeader;

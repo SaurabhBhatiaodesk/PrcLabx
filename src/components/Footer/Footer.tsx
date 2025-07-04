@@ -109,8 +109,8 @@ const Footer = () => {
     setpopopOpen(true);
   };
   const handleClose = () => {
-    setpopopOpen(false)
-  }
+    setpopopOpen(false);
+  };
   return (
     <div className="bg-prc">
       <div className="container">
@@ -386,7 +386,6 @@ const Footer = () => {
                     <div className="flex gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <div className=" flex  flex-col gap-2">
                         <div className="flex gap-2">
-
                           <FaLocationDot
                             className="hover:scale-110 transition-transform duration-200 text-tertiary"
                             fontSize={25}
@@ -403,7 +402,6 @@ const Footer = () => {
                         </div>
 
                         <div className="flex gap-2">
-
                           <IoCallOutline
                             className="hover:scale-110 transition-transform duration-200 text-tertiary"
                             fontSize={25}
@@ -419,13 +417,10 @@ const Footer = () => {
                           </Link>
                         </div>
                       </div>
-
                     </div>
-
                     <div className="flex flex-row gap-4 items-center xl:py-[8px] py-[5px] border-b-[0.5px] border-[#a7a7a7b3]">
                       <div className=" flex  flex-col gap-2">
                         <div className="flex gap-2">
-
                           <FaLocationDot
                             className="hover:scale-110 transition-transform duration-200 text-tertiary"
                             fontSize={25}
@@ -436,13 +431,13 @@ const Footer = () => {
                               className="text-[16px] transition-transform duration-300 hover:scale-105 font-poppins font-[300] hover:text-yellow-200 text-primary"
                               target="_blank"
                             >
-                              Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia
+                              Kiosk 1/227 Railway Terrace, Schofields NSW 2762,
+                              Australia
                             </a>
                           </Link>
                         </div>
 
                         <div className="flex gap-2">
-
                           <IoCallOutline
                             className="hover:scale-110 transition-transform duration-200 text-tertiary"
                             fontSize={25}
@@ -505,8 +500,9 @@ const Footer = () => {
                       />
                       <button
                         type="submit"
-                        className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${loading ? "blur-sm pointer-events-none" : ""
-                          }`}
+                        className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${
+                          loading ? "blur-sm pointer-events-none" : ""
+                        }`}
                         style={{ width: "14%" }}
                         onClick={handleSubscribe} // Trigger the subscription logic on button click
                         disabled={loading} // Prevent multiple clicks
@@ -617,8 +613,8 @@ const Footer = () => {
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
-                  Copyright © Phone repair center {new Date().getFullYear()} - All rights
-                  reserved.
+                  Copyright © Phone repair center {new Date().getFullYear()} -
+                  All rights reserved.
                 </p>
               </div>
               <div className="sm:text-center">
@@ -703,7 +699,12 @@ const Footer = () => {
                             aria-modal="true"
                             aria-labelledby="modal-headline"
                           >
-                            <div className="flex justify-end absolute right-[20px]" onClick={handleClose}><RxCross2 /></div>
+                            <div
+                              className="flex justify-end absolute right-[4px] top-[10px]"
+                              onClick={handleClose}
+                            >
+                              <RxCross2 />
+                            </div>
                             <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
                               <button
                                 type="button"
@@ -730,14 +731,20 @@ const Footer = () => {
                             </div>
 
                             <div className="sm:flex sm:items-start">
-                              <h3 className="text-prc">Phone repair center</h3>
+                              <h3 className="text-prc bg-tertiary p-2 rounded-lg">
+                                Phone repair center
+                              </h3>
                               <div className="flex flex-col gap-1 mb-2 border-y-1 border-gray-200">
                                 <div className="p-2">
                                   <div className=" flex justify-start align-middle gap-2 ">
                                     <FaLocationDot />
                                     <span className="text-sm leading-6 font-medium text-black text-left">
-                                      <Link target="_blank" href="https://www.google.com/maps/place/Phone+Repair+Centre+-+Superior+Repairs,+Lowest+Cost/@-33.7586704,150.756797,6871m/data=!3m1!1e3!4m15!1m8!3m7!1s0x6b129ab1929d4f97:0x103feb9784d7d023!2s122+Queen+St,+St+Marys+NSW+2760,+Australia!3b1!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6!3m5!1s0x6b129ab1929fd41b:0x40e0571691bf988f!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b6p5v0sf?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D">
-                                        122 Queen St, St Marys NSW 2760, Australia
+                                      <Link
+                                        target="_blank"
+                                        href="https://www.google.com/maps/place/Phone+Repair+Centre+-+Superior+Repairs,+Lowest+Cost/@-33.7586704,150.756797,6871m/data=!3m1!1e3!4m15!1m8!3m7!1s0x6b129ab1929d4f97:0x103feb9784d7d023!2s122+Queen+St,+St+Marys+NSW+2760,+Australia!3b1!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6!3m5!1s0x6b129ab1929fd41b:0x40e0571691bf988f!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b6p5v0sf?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D"
+                                      >
+                                        122 Queen St, St Marys NSW 2760,
+                                        Australia
                                       </Link>
                                     </span>
                                   </div>
@@ -752,14 +759,27 @@ const Footer = () => {
                                       (02)86783298
                                     </a>
                                   </div>
+                                  <span className=" flex justify-start items-center gap-2 ">
+                                    <IoMailUnread />
+                                    <a
+                                      href="mailto:service@prcrepair.com.au  "
+                                      className="hover:underline text-sm leading-6 font-medium text-black text-left"
+                                    >
+                                      service@prcrepair.com.au
+                                    </a>
+                                  </span>
                                 </div>
                                 <hr></hr>
                                 <div className="p-2">
                                   <div className=" flex justify-start align-middle gap-2">
                                     <FaLocationDot />
                                     <span className="text-sm leading-6 font-medium text-black text-left">
-                                      <Link href="https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m1!1e3!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                        Kiosk 1/227 Railway Terrace, Schofields NSW 2762
+                                      <Link
+                                        href="https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m1!1e3!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D"
+                                        target="_blank"
+                                      >
+                                        Kiosk 1/227 Railway Terrace, Schofields
+                                        NSW 2762
                                       </Link>
                                     </span>
                                   </div>
@@ -774,17 +794,16 @@ const Footer = () => {
                                       (02)72527141
                                     </a>
                                   </div>
+                                  <span className=" flex justify-start items-center gap-2">
+                                    <IoMailUnread />
+                                    <a
+                                      href="mailto:service@prcrepair.com.au  "
+                                      className="hover:underline text-sm leading-6 font-medium text-black text-left"
+                                    >
+                                      service@prcrepair.com.au
+                                    </a>
+                                  </span>
                                 </div>
-                                <span className=" flex justify-start items-center gap-2 p-2">
-                                  <IoMailUnread />
-                                  <a
-                                    href="mailto:service@prcrepair.com.au  "
-                                    className="hover:underline text-sm leading-6 font-medium text-black text-left"
-                                  >
-                                    service@prcrepair.com.au
-                                  </a>
-                                </span>
-
                               </div>
                             </div>
                           </div>
