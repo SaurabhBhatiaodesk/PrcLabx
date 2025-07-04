@@ -30,10 +30,10 @@ import sliderimg7 from "../../public/Images/sliderphoneback.webp"
 import sliderimg8 from "../../public/Images/sliderphonelock.webp"
 // china whare house
 import chaina1 from "../../public/Images/chaina1.webp"
-import chaina2 from "../../public/Images/chaina2.webp"
-import chaina3 from "../../public/Images/chaina3.webp"
-import chaina4 from "../../public/Images/chaina4.webp"
-import chaina5 from "../../public/Images/chaina5.webp"
+import oneplus from "../../public/Images/oneplus.jpg"
+import OnePlusNord from "../../public/Images/OnePlus Nord.jpg"
+import SamsungGalaxyS25S24 from "../../public/Images/Samsung Galaxy S25 S24.jpg"
+import iphone16 from "../../public/Images/For iPhone 16 Pro.jpg"
 import chaina6 from "../../public/Images/chaina6.webp"
 import React from "react";
 
@@ -203,27 +203,30 @@ const slideData = [
     Product: "Screens"
   },
 ];
+
+
 const slideData2 = [
   {
-    src: chaina5,
-    alt: "Charging Port",
-    Product: "Charging Port"
+    src: iphone16,
+    alt: "iPhone 16 Pro",
+    Product: "iPhone 16 Pro"
   },
   {
-    src: chaina4,
-    alt: "Cameras",
-    Product: "Cameras"
+    src: SamsungGalaxyS25S24,
+    alt: "SamsungGalaxyS25S24",
+    Product: "Samsung Galaxy S25 S24"
+  },
+    {
+    src: oneplus,
+    alt: "OnePlus 10",
+    Product: "OnePlus 10"
   },
   {
-    src: chaina3,
-    alt: "ICs/ Chips",
-    Product: "ICs/ Chips"
+    src: OnePlusNord,
+    alt: "OnePlus Nord",
+    Product: "OnePlus Nord"
   },
-  {
-    src: chaina2,
-    alt: "PS5 IC/ Parts",
-    Product: "PS5 IC/ Parts"
-  },
+
 
   {
     src: chaina1,

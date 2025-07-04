@@ -40,7 +40,7 @@ export default function Productswiper({
 
   return (
     <div className="container py-4">
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between mb-2  md:flex-row  flex-col ">
         <div className="text-start">
           <MainHeading
             Heading={Heading} // Use Heading prop here
@@ -54,9 +54,9 @@ export default function Productswiper({
             para_align="start"
           />
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center mb-3">
           <Link href={buttonlink} target="_blank">
-            <button className="hidden lg:flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
+            <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
               {buttondata}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
