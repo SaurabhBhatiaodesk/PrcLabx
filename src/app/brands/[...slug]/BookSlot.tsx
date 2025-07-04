@@ -292,7 +292,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
                         onChange={handleInputChange}
                         min={new Date().toISOString().split("T")[0]}
                         className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc focus:border-prc custom-focus overflow-hidden box-border ${errors.date ? "border-red-500" : "border-prc"} focus:ring-prc`}
-                        style={{ appearance: "none" }}
+                        style={{ appearance: "none", textAlign: "left" }}
                       />
                       <label
                         htmlFor="date"
@@ -357,18 +357,18 @@ const BookSlot: React.FC<BookSlotProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 md:gap-3 gap-1 mb-1 md:grid-cols-2">
-                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer">
+                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer" onClick={() =>
+                        handleCheckboxChange(
+                          "122 Queen St, St Marys NSW 2760, Australia"
+                        )
+                      }>
                     <input
                       type="checkbox"
                       checked={
                         formData.storeLocation ===
                         "122 Queen St, St Marys NSW 2760, Australia"
                       }
-                      onChange={() =>
-                        handleCheckboxChange(
-                          "122 Queen St, St Marys NSW 2760, Australia"
-                        )
-                      }
+                      
                     />
                     <label
                       className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
@@ -377,18 +377,18 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       122 Queen St, St Marys NSW 2760, Australia
                     </label>
                   </div>
-                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer">
+                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer" onClick={() =>
+                        handleCheckboxChange(
+                          "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
+                        )
+                      }>
                     <input
                       type="checkbox"
                       checked={
                         formData.storeLocation ===
                         "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
                       }
-                      onChange={() =>
-                        handleCheckboxChange(
-                          "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
-                        )
-                      }
+                      
                     />
                     <label
                       className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
