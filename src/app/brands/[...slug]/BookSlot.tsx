@@ -2,8 +2,8 @@
 
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { RxCross2 } from "react-icons/rx";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 interface FormData {
   name: string;
   mobile: string;
@@ -131,7 +131,8 @@ const BookSlot: React.FC<BookSlotProps> = ({
           "122 Queen St, St Marys NSW 2760, Australia"
             ? `(02) 8678 3298`
             : `(02) 7252 7141`,
-            direction_url: formData.storeLocation ===
+        direction_url:
+          formData.storeLocation ===
           "122 Queen St, St Marys NSW 2760, Australia"
             ? `https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia/@-33.7586704,150.756797,5340m/data=!3m1!1e3!4m6!3m5!1s0x6b129ab1929d4f97:0x103feb9784d7d023!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D`
             : `https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D`,
@@ -171,7 +172,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
         }
       } catch (error) {
         console.error("Error booking appointment:", error);
-         toast.error("Error booking appointment. Please try again.");
+        toast.error("Error booking appointment. Please try again.");
         setLoading(false);
       }
     }
@@ -190,16 +191,17 @@ const BookSlot: React.FC<BookSlotProps> = ({
 
   // useEffect(() => {
   //  toast.success("Appointment booked successfully!");
-  
-  
+
   // }, [])
-  
+
   return (
     <>
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
           <div className="bg-white md:p-6 p-4 rounded-lg md:w-1/2 w-full relative m-3 md:h-auto h-[600px] md:overflow-auto overflow-y-scroll ">
-            <h2 className="text-2xl font-bold mb-4 text-prc text-center">BOOK YOUR SLOT</h2>
+            <h2 className="text-2xl font-bold mb-4 text-prc text-center">
+              BOOK YOUR SLOT
+            </h2>
 
             <form onSubmit={handleSubmit}>
               {/* Name Field */}
@@ -294,9 +296,15 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       value={formData.date}
                       onChange={handleInputChange}
                       min={today}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  overflow-hidden box-border ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  overflow-hidden box-border profile-label-rs ${
                         errors.date ? "border-red-500" : "border-prc "
-                      }  focus:ring-prc`} style={{maxWidth:"100%" , width:"100%"}}
+                      }  focus:ring-prc`}
+                     style={{
+                            width: "100%",
+                            maxWidth: "100%",
+                         
+                          }}
+ 
                     />
                     <label
                       htmlFor="date"
@@ -406,13 +414,13 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       Australia
                     </label>
                   </div>
-                    {errors.storeLocation && (
-                  <p className="text-red-500 text-sm m-0">
-                    {errors.storeLocation}
-                  </p>
-                )}
+                  {errors.storeLocation && (
+                    <p className="text-red-500 text-sm m-0">
+                      {errors.storeLocation}
+                    </p>
+                  )}
                 </div>
-              
+
                 {/* Phone Color Field */}
                 <div className="relative mb-2">
                   <input
