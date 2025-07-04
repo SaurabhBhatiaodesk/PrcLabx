@@ -294,7 +294,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       value={formData.date}
                       onChange={handleInputChange}
                       min={today}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  overflow-hidden ${
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  overflow-hidden box-border ${
                         errors.date ? "border-red-500" : "border-prc "
                       }  focus:ring-prc`} style={{maxWidth:"100%" , width:"100%"}}
                     />
