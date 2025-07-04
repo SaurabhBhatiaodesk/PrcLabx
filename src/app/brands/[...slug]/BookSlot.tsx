@@ -203,7 +203,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
 
             <form onSubmit={handleSubmit}>
               {/* Name Field */}
-              <div className="grid grid-cols-1 md:gap-2 gap-1">
+              <div className="grid grid-cols-1 md:gap-2 gap-2">
                 <div className="relative mb-2">
                   <input
                     type="text"
