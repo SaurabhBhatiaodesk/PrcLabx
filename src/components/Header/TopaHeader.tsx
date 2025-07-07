@@ -11,10 +11,10 @@ const TopaHeader = () => {
           <a href="https://www.prcrepair.com.au/training"  target="_blank" className="block w-full h-full">Repair TRAINING</a>
         </div>
         <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          <a href="https://wholesaleretailnew.myshopify.com/" target="_blank" className="block w-full h-full">Parts Store</a>
+          <a href="/coming-soon" target="_blank" className="block w-full h-full">Parts Store</a>
         </div>
         <div className="bg-[#FFCC00] text-black font-bold py-1 px-4 mx-2 rounded-xl uppercase hover:bg-[#e6b800]">
-          <a href="https://warehouse.prcrepair.com.au/" target="_blank" className="block w-full h-full">China Warehouse</a>
+          <a href="/coming-soon" target="_blank" className="block w-full h-full">China Warehouse</a>
         </div>
       </div>
     </div>

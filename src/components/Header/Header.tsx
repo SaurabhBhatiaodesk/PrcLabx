@@ -304,7 +304,7 @@ export default function CustomHeader() {
               </li>
               <li>
                 <Link
-                  href="https://wholesale.prcrepair.com.au/"
+                  href="/coming-soon"
                   target="_blank"
                   onClick={toggleMenu}
                 >

@@ -128,7 +128,7 @@ const MobileFooterMenue = () => {
               <Link href="data-recovery">Data Recovery</Link>
             </li>
             <li className="mb-2 text-primary">
-              <Link href="https://wholesale.prcrepair.com.au/" target="_blank">
+              <Link href="/coming-soon" target="_blank">
                 Parts Store
               </Link>
             </li>
