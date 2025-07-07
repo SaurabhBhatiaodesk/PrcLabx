@@ -128,14 +128,19 @@ const BookSlot: React.FC<BookSlotProps> = ({
         comment: formData.comment,
         address_no:
           formData.storeLocation ===
-            "122 Queen St, St Marys NSW 2760, Australia"
+          "122 Queen St, St Marys NSW 2760, Australia"
             ? `(02) 8678 3298`
             : `(02) 7252 7141`,
         direction_url:
           formData.storeLocation ===
-            "122 Queen St, St Marys NSW 2760, Australia"
+          "122 Queen St, St Marys NSW 2760, Australia"
             ? `https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia/@-33.7586704,150.756797,5340m/data=!3m1!1e3!4m6!3m5!1s0x6b129ab1929d4f97:0x103feb9784d7d023!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D`
             : `https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D`,
+        location_id:
+          formData.storeLocation ===
+          "122 Queen St, St Marys NSW 2760, Australia"
+            ? 1
+            : 2,
       };
       setLoading(true);
       try {
@@ -212,16 +217,18 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.name ? "border-red-500" : "border-prc "
-                      } focus:ring-prc`}
+                    className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                      errors.name ? "border-red-500" : "border-prc "
+                    } focus:ring-prc`}
                     placeholder="John Doe"
                   />
                   <label
                     htmlFor="name"
-                    className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${formData.name || errors.name
+                    className={` leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
+                      formData.name || errors.name
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc "
-                      }`}
+                    }`}
                   >
                     Name <span className="text-red-500">*</span>
                   </label>
@@ -237,16 +244,18 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="mobile"
                       value={formData.mobile}
                       onChange={handleInputChange}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  ${errors.mobile ? "border-red-500" : " border-prc "
-                        } focus:ring-prc`}
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus  ${
+                        errors.mobile ? "border-red-500" : " border-prc "
+                      } focus:ring-prc`}
                       placeholder="Enter Your Mobile Number"
                     />
                     <label
                       htmlFor="mobile"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${formData.mobile || errors.mobile
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
+                        formData.mobile || errors.mobile
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
-                        }`}
+                      }`}
                     >
                       Mobile <span className="text-red-500">*</span>
                     </label>
@@ -264,16 +273,18 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.email ? "border-red-500" : "border-prc "
-                        }  focus:ring-prc`}
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                        errors.email ? "border-red-500" : "border-prc "
+                      }  focus:ring-prc`}
                       placeholder="abc@mail.com"
                     />
                     <label
                       htmlFor="email"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  md:text-[16px]  text-[13px] ${formData.email || errors.email
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  md:text-[16px]  text-[13px] ${
+                        formData.email || errors.email
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
-                        }`}
+                      }`}
                     >
                       Email <span className="text-red-500">*</span>
                     </label>
@@ -291,21 +302,28 @@ const BookSlot: React.FC<BookSlotProps> = ({
                         value={formData.date}
                         onChange={handleInputChange}
                         min={new Date().toISOString().split("T")[0]}
-                        className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc focus:border-prc custom-focus overflow-hidden box-border ${errors.date ? "border-red-500" : "border-prc"} focus:ring-prc`}
+                        className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc focus:border-prc custom-focus overflow-hidden box-border ${
+                          errors.date ? "border-red-500" : "border-prc"
+                        } focus:ring-prc`}
                         style={{ appearance: "none", textAlign: "left" }}
                       />
                       <label
                         htmlFor="date"
-                        className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px] text-[13px] ${formData.date || errors.date ? "scale-100 top-0 text-prc" : "scale-100 text-prc"}`}
+                        className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px] text-[13px] ${
+                          formData.date || errors.date
+                            ? "scale-100 top-0 text-prc"
+                            : "scale-100 text-prc"
+                        }`}
                       >
                         Date <span className="text-red-500">*</span>
                       </label>
                       {errors.date && (
-                        <p className="text-red-500 text-sm m-0">{errors.date}</p>
+                        <p className="text-red-500 text-sm m-0">
+                          {errors.date}
+                        </p>
                       )}
                     </div>
                   </div>
-
 
                   {/* Time Slot Dropdown */}
                   <div className="relative mb-2">
@@ -313,8 +331,9 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="timeSlot"
                       value={formData.timeSlot}
                       onChange={handleInputChange}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${errors.timeSlot ? "border-red-500" : "border-prc "
-                        }  focus:ring-prc`}
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
+                        errors.timeSlot ? "border-red-500" : "border-prc "
+                      }  focus:ring-prc`}
                     >
                       <option value="">Select</option>
                       {formData.date && (
@@ -341,10 +360,11 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     </select>
                     <label
                       htmlFor="timeSlot"
-                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${formData.timeSlot || errors.timeSlot
+                      className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
+                        formData.timeSlot || errors.timeSlot
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
-                        }`}
+                      }`}
                     >
                       Time Slot <span className="text-red-500">*</span>
                     </label>
@@ -357,18 +377,20 @@ const BookSlot: React.FC<BookSlotProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 md:gap-3 gap-1 mb-1 md:grid-cols-2">
-                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer" onClick={() =>
-                        handleCheckboxChange(
-                          "122 Queen St, St Marys NSW 2760, Australia"
-                        )
-                      }>
+                  <div
+                    className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer"
+                    onClick={() =>
+                      handleCheckboxChange(
+                        "122 Queen St, St Marys NSW 2760, Australia"
+                      )
+                    }
+                  >
                     <input
                       type="checkbox"
                       checked={
                         formData.storeLocation ===
                         "122 Queen St, St Marys NSW 2760, Australia"
                       }
-                      
                     />
                     <label
                       className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
@@ -377,18 +399,20 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       122 Queen St, St Marys NSW 2760, Australia
                     </label>
                   </div>
-                  <div className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer" onClick={() =>
-                        handleCheckboxChange(
-                          "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
-                        )
-                      }>
+                  <div
+                    className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer"
+                    onClick={() =>
+                      handleCheckboxChange(
+                        "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
+                      )
+                    }
+                  >
                     <input
                       type="checkbox"
                       checked={
                         formData.storeLocation ===
                         "Kiosk 1/227 Railway Terrace, Schofields NSW 2762,Australia"
                       }
-                      
                     />
                     <label
                       className="md:text-[14px] text-[13px] line-clamp-2 ml-2 cursor-pointer"
@@ -417,10 +441,11 @@ const BookSlot: React.FC<BookSlotProps> = ({
                   />
                   <label
                     htmlFor="phoneColor"
-                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc md:text-[16px]  text-[13px] ${formData.phoneColor
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 text-prc md:text-[16px]  text-[13px] ${
+                      formData.phoneColor
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc"
-                      }`}
+                    }`}
                   >
                     Phone Color
                   </label>
@@ -438,10 +463,11 @@ const BookSlot: React.FC<BookSlotProps> = ({
                   />
                   <label
                     htmlFor="comment"
-                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${formData.comment
+                    className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200 md:text-[16px]  text-[13px] ${
+                      formData.comment
                         ? "scale-100 top-0 text-prc"
                         : "scale-100 text-prc "
-                      }`}
+                    }`}
                   >
                     Comment
                   </label>
