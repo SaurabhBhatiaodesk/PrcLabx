@@ -172,7 +172,10 @@ const BookSlot: React.FC<BookSlotProps> = ({
             storeLocation: "",
           });
         } else {
-          toast.error("Failed to book appointment. Please try again.");
+          const errorMessage =
+            data.errors_string ||
+            "Failed to book appointment. Please try again.";
+          toast.error(errorMessage);
           setLoading(false);
         }
       } catch (error) {
