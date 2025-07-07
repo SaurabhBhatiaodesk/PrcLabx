@@ -157,7 +157,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
 
         const data = await response.json();
 
-        if (response.ok) {
+        if (data.succ) {
           toast.success("Appointment booked successfully!");
           closeModal();
           setLoading(false);
