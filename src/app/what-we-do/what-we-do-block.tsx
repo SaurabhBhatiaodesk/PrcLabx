@@ -21,7 +21,7 @@ const services = [
   { href: "/screen-refurbishing", image: Shop4, title: "Screen Refurbishing" },
   { href: "/b2b-repair-services", image: Shop5, title: "B2B Repair" },
   { href: "/repair-solutions", image: Shop6, title: "Repair Solutions" },
-  { href: "https://wholesale.prcrepair.com.au/", image: Shop7, title: "Parts Store" },
+  { href: "/coming-soon", image: Shop7, title: "Parts Store" },
   { href: "/coming-soon", image: Shop8, title: "Repair Form" },
 ];
 

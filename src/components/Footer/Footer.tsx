@@ -242,7 +242,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <Link
-                          href="https://wholesale.prcrepair.com.au/"
+                          href="/coming-soon"
                           target="_blank"
                         >
                           <li className="relative inline-block xl:p-1 group font-poppins font-[300]  hover:text-yellow-200 text-primary">
