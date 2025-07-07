@@ -256,7 +256,7 @@ const page = () => {
       <HandsOnTraining/>
       <DataRecovery />
   
-      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Discover premium Samsung, OnePlus, and OPPO accessories shipped directly from China. High-quality, affordable, and reliable—delivered straight to your door with confidence and care." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="https://warehouse.prcrepair.com.au/" buttondata="Visit Store"/>
+      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Discover premium Samsung, OnePlus, and OPPO accessories shipped directly from China. High-quality, affordable, and reliable—delivered straight to your door with confidence and care." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="/coming-soon" buttondata="Visit Store"/>
 
       <WhyChooseLabX />
       <FixLabx />

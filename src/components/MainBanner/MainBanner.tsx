@@ -124,7 +124,7 @@ export default function MainBanner() {
       description: `Shop top-quality mobile phone parts and accessories direct from China — no middlemen, just reliable sourcing. Get the best value with fast delivery, bulk deals, and expert service tailored for your repair or retail business needs!`,
       button: {
         text: "Visit store",
-        link: "https://warehouse.prcrepair.com.au/",
+        link: "/coming-soon",
       },
     },
     {
@@ -134,7 +134,7 @@ export default function MainBanner() {
       description: `Power your repairs with the best parts in the market. Our Parts Store offers a wide range of reliable, high-performance mobile phone components sourced directly from trusted suppliers. Enjoy fast shipping, bulk pricing, and top-tier service.`,
       button: {
         text: "Visit Store",
-        link: "https://wholesale.prcrepair.com.au/",
+        link: "/coming-soon",
       },
     },
   ];
