@@ -48,7 +48,6 @@ import Canonical from "./Canonical";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 
-
 const space_Grotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--Font-SpaceGrotesk",
@@ -181,30 +180,57 @@ export default function RootLayout({
         `}
         </Script>
         <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=AW-16874061920"
+          id="Meta_Pixel_Code"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                      !function(f,b,e,v,n,t,s)
+                      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                      n.queue=[];t=b.createElement(e);t.async=!0;
+                      t.src=v;s=b.getElementsByTagName(e)[0];
+                      s.parentNode.insertBefore(t,s)}(window, document,'script',
+                      'https://connect.facebook.net/en_US/fbevents.js');
+                      fbq('init', '1955223578346009');
+                      fbq('track', 'PageView');
+                    `,
+          }}
+        />
+        <noscript>
+          <Image
+            alt="facebook"
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1955223578346009&ev=PageView&noscript=1"
           />
-          <Script id="conversion-api">
-            {`
+        </noscript>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16874061920"
+        />
+        <Script id="conversion-api">
+          {`
               window.dataLayer = window.dataLayer || [];
               function gtag() {
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
             `}
-          </Script>
-            <ToastContainer
-             style={{ fontSize: '12px' }}
-        position="top-center"      // You can still use the position prop if needed
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+        </Script>
+        <ToastContainer
+          style={{ fontSize: "12px" }}
+          position="top-center" // You can still use the position prop if needed
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </body>
     </html>
   );
