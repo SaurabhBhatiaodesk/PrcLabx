@@ -10,7 +10,6 @@ const BrandImageGrid: React.FC<{
   isSidebarOpen: boolean;
   tabs: any;
 }> = ({ brandsData, pathname, isSidebarOpen, tabs }) => {
-
   const [showMessage, setShowMessage] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -19,9 +18,11 @@ const BrandImageGrid: React.FC<{
     if (brandsData.length === 0) {
       const timer = setTimeout(() => {
         setShowMessage(true);
-      }, 2000);
+      }, 4000);
 
       return () => clearTimeout(timer); // Cleanup
+    } else {
+      setShowMessage(false);
     }
   }, [brandsData]);
 

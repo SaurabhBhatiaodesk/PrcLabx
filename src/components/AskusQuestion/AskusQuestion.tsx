@@ -103,12 +103,12 @@ export default function AskusQuestion({
                     />
                   ) : (
                     <div className="md:max-h-[450px] max-h-[350px]  flex">
-                    <Image
+                    <img
                       className="h-[90%] m-auto object-contain"
                       src={brandImage ? brandImage : banner}
                       alt="mobile phone repair  "
-                      width={500}
-                      height={500}
+                      // width={500}
+                      // height={500}
                     />
                     </div>
                   )}
