@@ -19,6 +19,7 @@ interface MenuItem {
   image?: string;
   data?: MenuItem[];
   products?: MenuItem[];
+  pivot?: any; 
 }
 
 interface MegaMenuProps {
@@ -122,6 +123,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       submenu.style.top = `${itemRect.top - 5}px`; // Align top with parent item
 
       // Ensure submenu is fixed position relative to viewport
+      submenu.style.opacity = "1";
       submenu.style.position = "fixed";
     }
   }, [isHovered, item.id, level]);
@@ -152,9 +154,10 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
       {hasChildren(item) && isHovered && (
         <div
           ref={submenuRef}
-          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar"
+          className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar absolute"
           style={{
             width: "240px",
+            opacity:'0',
             boxShadow:
               "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
@@ -310,7 +313,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
   // Check if item has children
   const hasChildren = useCallback((item: MenuItem): boolean => {
-    return Boolean(item.data?.length) || Boolean(item.products?.length);
+    return Boolean(item.pivot ? 0 : item.data?.length) || Boolean(item.products?.length);
   }, []);
 
   // Get children items
