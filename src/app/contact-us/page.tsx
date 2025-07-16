@@ -38,7 +38,7 @@ export const metadata = {
     images: "Images/aboutadmin.png",
   },
   alternates: {
-    canonical: `https://labxrepair.com.au/about-us`,
+    canonical: `https://www.prcrepair.com.au/about-us`,
   },
 
 };

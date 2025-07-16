@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://labxrepair.com.au/sitemap.xml
+Sitemap: https://www.prcrepair.com.au/sitemap.xml

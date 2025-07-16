@@ -29,7 +29,7 @@ export const metadata = {
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
-    canonical: `https://labxrepair.com.au/about-us`,
+    canonical: `https://www.prcrepair.com.au/about-us`,
   },
 
 };

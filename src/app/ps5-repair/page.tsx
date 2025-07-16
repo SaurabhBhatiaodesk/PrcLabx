@@ -34,7 +34,7 @@ export const metadata = {
     images: "Images/aboutadmin.png", // Replace with your image URL
   },
   alternates: {
-    canonical: "https://labxrepair.com.au/ps5-repair",
+    canonical: "https://www.prcrepair.com.au/ps5-repair",
   },                                                                  
 };
 const page = () => {

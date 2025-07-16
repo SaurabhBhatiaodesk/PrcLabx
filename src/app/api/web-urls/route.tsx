@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import * as cheerio from "cheerio";
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
-  const websiteUrl = "https://labxrepair.com.au/";
+  const websiteUrl = "https://www.prcrepair.com.au/";
   let fetchedUrls: Set<string> = new Set();
 
   try {
@@ -26,11 +26,11 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   }
 
   const manualUrls = [
-    "https://labxrepair.com.au/expert-motherboard-repair",
-    "https://labxrepair.com.au/beginner-phone-repair-course",
-    "https://labxrepair.com.au/advanced-motherboard",
-    "https://labxrepair.com.au/master-motherboard-repair",
-    "https://labxrepair.com.au/professional-phone-screen",
+    "https://www.prcrepair.com.au/expert-motherboard-repair",
+    "https://www.prcrepair.com.au/beginner-phone-repair-course",
+    "https://www.prcrepair.com.au/advanced-motherboard",
+    "https://www.prcrepair.com.au/master-motherboard-repair",
+    "https://www.prcrepair.com.au/professional-phone-screen",
   ];
   manualUrls.forEach(url => fetchedUrls.add(url));
   fetchedUrls.add(websiteUrl);
