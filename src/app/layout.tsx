@@ -69,10 +69,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="robots" content="index, follow" />
-        <meta
-          name="google-site-verification"
-          content="daUSUNFfgNz6HBE7DkYP6jsrgiCz3DDWT0mP696YPBA"
-        />
+        <meta name="google-site-verification" content="LMFsWYzlRSY06vCi3KAa1SckPUcH-Ijw_1ICt0HGi3I" />
         {/* code_221 */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Canonical />
