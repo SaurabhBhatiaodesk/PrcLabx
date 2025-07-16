@@ -31,7 +31,7 @@ export const metadata = {
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
-    canonical: "https://labxrepair.com.au/data-recovery",
+    canonical: "https://www.prcrepair.com.au/data-recovery",
   },
 };
 

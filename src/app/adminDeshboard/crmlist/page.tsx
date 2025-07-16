@@ -73,7 +73,7 @@ const CreatePageList: React.FC = () => {
   };
 
   const handleCopyClick = (pageName: string) => {
-    const pageUrl = `https://labxrepair.com.au/${pageName.replace(
+    const pageUrl = `https://www.prcrepair.com.au/${pageName.replace(
       /\s+/g,
       "_"
     )}`;
