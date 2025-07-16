@@ -26,6 +26,7 @@ const BrandDetailPage: React.FC = () => {
   const [LatTabs, setLastTabs] = useState();
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   // const [activeTabData, setActiveTabData] = useState();
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     if (activeTab !== "undefined" && isLastItemClicked && slugData.length > 0) {
@@ -35,7 +36,6 @@ const BrandDetailPage: React.FC = () => {
   }, [activeTab, tabs, slugData]);
 
   // State for mobile detection
-  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // Detect if the device is mobile, only after the component is mounted
 
@@ -153,8 +153,8 @@ const BrandDetailPage: React.FC = () => {
       >
         {/* Sidebar */}
         <div className="relative">
-          {isSidebarOpen && (
-            <div className="lg:relative absolute z-10 transition-all duration-300 h-full left-3">
+          {/* {isSidebarOpen && ( */}
+            <div className={`${isSidebarOpen ? "lg:relative absolute z-10 transition-all duration-300 h-full left-3" : "hidden"}`}>
               <aside
                 className={`lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl`}
               >
@@ -188,7 +188,7 @@ const BrandDetailPage: React.FC = () => {
                 />
               </button>
             </div>
-          )}
+          {/* )} */}
         </div>
 
         {/* Main Content */}
