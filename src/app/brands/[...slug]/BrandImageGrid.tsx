@@ -3,29 +3,30 @@ import { useRouter } from "next/navigation"; // Import useRouter
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
- 
+
 const BrandImageGrid: React.FC<{
   brandsData: any[];
   pathname: string;
   isSidebarOpen: boolean;
   tabs: any;
   loading: boolean;
-}> = ({ brandsData, pathname, isSidebarOpen, tabs,loading }) => {
- 
+}> = ({ brandsData, pathname, isSidebarOpen, tabs, loading }) => {
   const [showMessage, setShowMessage] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000 });
- 
+
     // Delay showing the fallback message for 2 seconds
     if (brandsData.length === 0) {
       const timer = setTimeout(() => {
         setShowMessage(true);
       }, 2000);
- 
+
       return () => clearTimeout(timer); // Cleanup
     }
+    localStorage.setItem("tabsData", "");
+    localStorage.setItem("Lastslug", "");
   }, [brandsData]);
- 
+
   return (
     <>
       <div
@@ -38,15 +39,15 @@ const BrandImageGrid: React.FC<{
         {brandsData.map((brand: any) => {
           // 1️⃣ find the matching tab
           const matchingTab = tabs?.find((t: any) => t.alias === brand.alias);
- 
+
           // 2️⃣ grab the first repair slug (screen-repair)
           const firstRepairSlug = matchingTab?.data?.[0]?.alias;
- 
+
           // 3️⃣ build the URL
           const href = firstRepairSlug
             ? `${pathname}/${brand.alias}/${firstRepairSlug}`
             : `${pathname}/${brand.alias}`;
- 
+
           return (
             <Link
               key={brand.id}
@@ -68,9 +69,12 @@ const BrandImageGrid: React.FC<{
           );
         })}
       </div>
- 
+
       {brandsData.length === 0 && loading && (
-        <div role="status" className="flex items-center justify-center min-h-[60vh]">
+        <div
+          role="status"
+          className="flex items-center justify-center min-h-[60vh]"
+        >
           <svg
             aria-hidden="true"
             className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -93,7 +97,5 @@ const BrandImageGrid: React.FC<{
     </>
   );
 };
- 
+
 export default BrandImageGrid;
- 
- 

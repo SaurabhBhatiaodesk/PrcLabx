@@ -26,12 +26,14 @@ const BrandDetailPage: React.FC = () => {
   const [LatTabs, setLastTabs] = useState();
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(true);
-  
+
   // const [activeTabData, setActiveTabData] = useState();
   const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
     if (activeTab !== "undefined" && isLastItemClicked && slugData.length > 0) {
       setLastTabs(tabs); // Store the tabs data to LatTabs when activeTab is not "undefined"
+      localStorage.setItem("tabsData", JSON.stringify(tabs));
+      localStorage.setItem("Lastslug", JSON.stringify(slugData));
       setLastSlugData(slugData);
     }
   }, [activeTab, tabs, slugData]);
@@ -41,11 +43,15 @@ const BrandDetailPage: React.FC = () => {
   // Detect if the device is mobile, only after the component is mounted
 
   useEffect(() => {
-    // if (tabs && activeTab !== undefined) {
-    //   const matchedTab = tabs?.find((tab:any) => tab?.id === activeTab);
-    //   setActiveTabData(matchedTab);
-    // }
-  }, [tabs, activeTab]);
+    const storedTabs = localStorage.getItem("tabsData");
+    const storedTabsImg = localStorage.getItem("Lastslug");
+    if (storedTabs) {
+      setLastTabs(JSON.parse(storedTabs)); // Set to LatTabs from localStorage
+    }
+    if (storedTabsImg) {
+      setLastSlugData(JSON.parse(storedTabsImg)); // Set to LatTabs from localStorage
+    }
+  }, []);
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Check if window is available (client-side)
@@ -99,7 +105,7 @@ const BrandDetailPage: React.FC = () => {
             baseData = await res.json();
             sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
             dispatch(setUiFlag(false));
-            setLoading(false)
+            setLoading(false);
           } catch (error) {
             console.error("Error fetching base data:", error);
           }
@@ -205,7 +211,7 @@ const BrandDetailPage: React.FC = () => {
         {/* Main Content */}
         <main
           className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${
-            isSidebarOpen ? "md:pt-[25px] pt-[30px] rounded-xl " : " pt-[10px]"
+            isSidebarOpen ? "md:pt-[10px] pt-[10px] rounded-xl " : " pt-[10px]"
           }`}
         >
           <div className="md:pl-6 pl-2">
