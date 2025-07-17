@@ -18,16 +18,19 @@ interface BrandData {
 export default function Devicequote() {
   const [brandData, setBrandData] = useState<BrandData[]>([]);
   const [showAll, setShowAll] = useState(false);
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
   const hasFetchedData = useRef(false);
 
   // Update window width
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);  // Use window only on the client
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   // Fetch data from the API on component mount
