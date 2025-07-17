@@ -478,26 +478,26 @@ const Footer = () => {
                         </a>
                       </Link>
                     </div> */}
-                    <div>
+                    {/* <div>
                       <h3 className="lg:text-xl text-lg text-primary">
                         Sign-Up The PRC
                       </h3>
-                    </div>
+                    </div> */}
                     <div>
-                      {toast && (
+                      {/* {toast && (
                         <ToastNotification
                           message={toast.message}
                           type={toast.type}
                           onHide={handleToastHide}
                           notiClass=""
                         />
-                      )}
+                      )} */}
 
                       {/* <h2 className="xl:text-[30px]  lg:text-26px text-30px font-poppins">
                         Newsletter
                       </h2> */}
                     </div>
-                    <div className="relative max-w-full">
+                    {/* <div className="relative max-w-full">
                       <input
                         type="email"
                         placeholder="Enter your email address"
@@ -516,7 +516,7 @@ const Footer = () => {
                       >
                         <Image className="gl" src={sendicon} alt="Send icon" />
                       </button>
-                    </div>
+                    </div> */}
                     {error && <p className="text-[red] text-sm m-0">{error}</p>}{" "}
                     {loading && (
                       <div className="flex justify-center items-center">

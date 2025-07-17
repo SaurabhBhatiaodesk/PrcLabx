@@ -291,16 +291,16 @@ const MobileFooterMenue = () => {
               />
             )}
 
-            <li className="mb-2 text-primary">Newsletter </li>
+            {/* <li className="mb-2 text-primary">Newsletter </li> */}
           </ul>
         </div>
       </div>
       <div>
-        <h3 className="text-center lg:text-xl text-lg mb-3 text-primary">
+        {/* <h3 className="text-center lg:text-xl text-lg mb-3 text-primary">
           We DO NOT provide Walk-In Service
-        </h3>
+        </h3> */}
       </div>
-      <div className="emailsection relative">
+      {/* <div className="emailsection relative">
         <h3 className="text-center text-primary">Newsletter </h3>
         <div className="relative max-w-full">
           <input
@@ -338,7 +338,7 @@ const MobileFooterMenue = () => {
             </p>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

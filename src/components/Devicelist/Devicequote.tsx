@@ -18,7 +18,18 @@ interface BrandData {
 export default function Devicequote() {
   const [brandData, setBrandData] = useState<BrandData[]>([]);
   const [showAll, setShowAll] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const hasFetchedData = useRef(false);
+
+  // Update window width
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // Fetch data from the API on component mount
   useEffect(() => {
     if (hasFetchedData.current) return;
@@ -44,7 +55,7 @@ export default function Devicequote() {
       .replace(/[^\w-]+/g, ""); // Remove non-word chars
 
   return (
-    <div className="lg:py-10 p-0 bg-white">
+    <div className="lg:pt-10 p-0 bg-white">
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:mx-[4%] py-3">
           <div className="flex items-center lg:justify-center py-3 lg:py-0">
@@ -55,7 +66,7 @@ export default function Devicequote() {
               height={300}
               className="w-[70px] mx-3"
             />
-            <p className="text-black lg:text-[18px] text-sm  font-semibold leading-normal m-0">
+            <p className="text-black lg:text-[18px] text-sm font-semibold leading-normal m-0">
               30 Minute <br />
               Express Repair
             </p>
@@ -68,7 +79,7 @@ export default function Devicequote() {
               height={300}
               className="w-[70px] mx-3"
             />
-            <p className="text-black lg:text-[18px] text-sm  font-semibold leading-normal m-0">
+            <p className="text-black lg:text-[18px] text-sm font-semibold leading-normal m-0">
               On-Site
               <br />
               (No Outsourcing)
@@ -82,7 +93,7 @@ export default function Devicequote() {
               height={300}
               className="w-[70px] mx-3"
             />
-            <p className="text-black lg:text-[18px] text-sm  font-semibold leading-normal m-0">
+            <p className="text-black lg:text-[18px] text-sm font-semibold leading-normal m-0">
               After Pay / Zip Pay <br />
               Available
             </p>
@@ -95,14 +106,15 @@ export default function Devicequote() {
               height={300}
               className="w-[70px] mx-3 rounded-[10px]"
             />
-            <p className="text-black lg:text-[18px] text-sm  font-semibold leading-normal m-0">
+            <p className="text-black lg:text-[18px] text-sm font-semibold leading-normal m-0">
               Lowest Price <br />
               Guaranteed
             </p>
           </div>
         </div>
       </div>
-      <div className="container lg:pt-12 md:p-8 ">
+
+      <div className="container lg:pt-4 md:p-4 ">
         <div className="flex items-center justify-between lg:flex-row flex-col tracking-normal">
           <h2 className="text-prc text-center md:text-left py-2">
             Click to Get an Instant Quote Now!
@@ -139,8 +151,7 @@ export default function Devicequote() {
         <div
           className={`pt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3`}
         >
-          {brandData
-            .slice(0, showAll ? brandData.length : 14)
+          {brandData.slice(0, windowWidth <= 768 ? 4 : showAll ? brandData.length : 14)
             .map((data, index) => (
               <Link key={index} href={`/brands/${slugify(data.alias)}`}>
                 <div className="border-[2px] group border-[#16161680] cursor-pointer rounded-2xl flex items-center justify-center md:p-4 p-2 relative overflow-hidden">
@@ -163,7 +174,7 @@ export default function Devicequote() {
         <div className="flex justify-center my-4">
           <Link href="/brands" className="block md:hidden">
             <button className="flex uppercase bg-[#EF0000] w-max h-max text-white text-[18px] py-[8px] px-[15px] rounded-3xl transition-all duration-300 hover:[transform:translateY(-.335rem)]">
-             View All
+              View All
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -1,4 +1,3 @@
-
 import AskusQuestion from "../components/AskusQuestion/AskusQuestion";
 import Devicequote from "../components/Devicelist/Devicequote";
 import BiginnerReviews from "../components/GoogleReviews/BiginnerReviews";
@@ -20,32 +19,41 @@ import Aname from "../../public/Images/icons/A.png";
 import hname from "../../public/Images/icons/h.png";
 import Googletest from "../../public/Images/icons/Googletest.svg";
 
-import sliderimg1 from "../../public/Images/slidercable.webp"
-import sliderimg2 from "../../public/Images/slidercamera.webp"
-import sliderimg3 from "../../public/Images/sliderchip.webp"
-import sliderimg4 from "../../public/Images/slidermotherboard.webp"
-import sliderimg5 from "../../public/Images/slidermobilechip.webp"
-import sliderimg6 from "../../public/Images/slidermotherboard.webp"
-import sliderimg7 from "../../public/Images/sliderphoneback.webp"
-import sliderimg8 from "../../public/Images/sliderphonelock.webp"
+import sliderimg1 from "../../public/Images/Charging Connecotrs.webp";
+import sliderimg2 from "../../public/Images/FPC Connector.webp";
+import sliderimg3 from "../../public/Images/IC Chip.jpg";
+import sliderimg4 from "../../public/Images/Machines.webp";
+import sliderimg5 from "../../public/Images/Reballing Stencils.jpg";
+import sliderimg6 from "../../public/Images/Repair Tools.jpg";
+import sliderimg7 from "../../public/Images/PS5-guts-hub.jpg";
+import sliderimg8 from "../../public/Images/ps5-muddaburd.jpg";
 // china whare house
-import chaina1 from "../../public/Images/chaina1.webp"
-import oneplus from "../../public/Images/oneplus.jpg"
-import OnePlusNord from "../../public/Images/OnePlus Nord.jpg"
-import SamsungGalaxyS25S24 from "../../public/Images/Samsung Galaxy S25 S24.jpg"
-import iphone16 from "../../public/Images/For iPhone 16 Pro.jpg"
-import chaina6 from "../../public/Images/chaina6.webp"
+import chaina1 from "../../public/Images/chaina1.webp";
+import oneplus from "../../public/Images/oneplus.jpg";
+import OnePlusNord from "../../public/Images/OnePlus Nord.jpg";
+import SamsungGalaxyS25S24 from "../../public/Images/Samsung Galaxy S25 S24.jpg";
+import iphone16 from "../../public/Images/For iPhone 16 Pro.jpg";
+import chaina6 from "../../public/Images/chaina6.webp";
 import React from "react";
 
 import Productswiper from "../components/Storeproduct/Productswiper";
 import HandsOnTraining from "../components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
-  title: "Mobile Phone Repair Services & Training | Mobile Accessories | Phone repair center",
-  description: "Phone repair center provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
-  keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
+  title:
+    "Mobile Phone Repair Services & Training | Mobile Accessories | Phone repair center",
+  description:
+    "Phone repair center provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
+  keywords: [
+    "PRC",
+    "tech solutions",
+    "data recovery",
+    "client reviews",
+    "tech services",
+  ],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description:
+      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/",
     type: "website",
     images: [
@@ -60,51 +68,67 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Welcome to PRC - Your Trusted Tech Solutions",
-    description: "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    description:
+      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {
     canonical: "https://www.prcrepair.com.au/",
   },
-
 };
 const accordionData = [
   {
-    title: "What types of devices do you repair?",
+    title: "1. How long will it take to fix my phone?",
     content:
-      "We repair a wide range of mobile phone devices, including iPhones, Android phones, tablets, and MacBooks. We specialize in logic board repairs, microsoldering, and screen refurbishments.",
+      "Most phone repairs are completed within 30 minutes to 1 hour. In some cases, if parts are not in stock, it may take a few days. If the parts need to be ordered from overseas, the repair may take a few weeks.",
   },
   {
-    title: "What types of repairs do you specialize in?",
+    title: "2. What types of devices do you repair?",
     content:
-      "Our expertise includes screen replacement, motherboard repairs, data recovery, and micro soldering. We also handle complex repairs like Face ID issues, and water damage recovery.",
+      "We repair a wide range of devices including:\n\n- iPhones, iPads, Android phones and tablets\n- MacBooks and laptops\n- Game consoles and controllers\n\nWe also specialise in complex motherboard repairs and data recovery from mobile phones.",
   },
   {
-    title: "Do you offer any warranties on your repairs?",
+    title: "3. What kind of issues can you fix?",
     content:
-      "Yes, all repairs come with a 1 Year warranty on parts and workmanship. This ensures that if the same issue reoccurs, we will repair it free of charge, provided no further damage has occurred to the device.",
+      "We repair everything from:\n\n- Cracked screens and battery replacements\n- Charging and power issues\n- Advanced motherboard faults\n- Data recovery from dead, broken, or liquid-damaged phones\n- Console motherboard issues",
   },
   {
-    title: "What is the warranty on liquid-damaged devices?",
+    title: "4. What areas do you service?",
     content:
-      "We do not recommend repairing liquid-damaged devices and suggest only data recovery services. If the customer insists on repair, we do not provide any warranty, including for the replaced parts.",
+      "We have two physical locations:\n\n- St Marys, NSW 2760 (our main service hub)\n- Schofields, NSW 2762\n\nWe also offer Australia-wide service via our Mail-In Repair option. We accept repairs from all regions, including Victoria, Darwin, Perth, Adelaide, and even from New Zealand and other countries.",
   },
   {
-    title: "Will all functions work on my dead device after repair?",
+    title: "5. I have insurance on my phone. Can you repair it and claim through insurance?",
     content:
-      "No guarantees can be made. The initial quote covers the visible issue, e.g., turning on a dead device. Since devices have numerous functions, issues like a non-working camera or mic will require a separate quote unless the fault is minor, in which case we’ll address it during the repair. Major issues will need re-quoting.",
+      "We do not work directly with insurance companies. However, we can provide a detailed repair quote and tax invoice. You will need to pay us directly, and handle the claim with your insurer yourself.",
   },
   {
-    title: "Do you offer repair services for all phone brands?",
+    title: "6. What payment methods do you accept?",
     content:
-      "Yes, we provide repair services for a wide range of phone brands, including Apple, Samsung, Xiaomi, and more. Our technicians are experienced in handling various devices and models.",
+      "We accept the following:\n\n-  Credit and debit cards\n- Cash\n- Afterpay and Zip Pay\n- PayID and bank transfers\n\nPlease note: Devices will only be released once payment is cleared in our account.",
   },
   {
-    title: "How long does a typical phone repair take?",
+    title: "7. What warranty do you offer?",
     content:
-      "Most phone repairs are completed within a few hours, depending on the complexity of the issue. We strive to return your device in working condition as quickly as possible.",
+      "All repairs come with a 3-month warranty.\nNote: We do not provide any warranty for liquid-damaged devices, not even for the parts replaced.",
+  },
+  {
+    title: "8. How long will you hold my device after the repair?",
+    content:
+      "We will hold repaired devices for a maximum of 4 weeks. If the device is not collected within this time, it may be recycled or disposed of, and we will not be responsible for it.",
+  },
+  {
+    title: "9. If you can't fix my device, will I get it back in the same condition?",
+    content:
+      "Not always. If your device is partially working, there is a chance it may become completely non-functional during the repair attempt.\nIf you're concerned about any functionality or internal condition, please discuss this with our staff before submitting your device.\nWe may need to open shields or access internal components, which may leave marks. We do not guarantee the device will be returned in the exact same condition as received.",
+  },
+  {
+    title: "10. Will my original manufacturer warranty remain valid after your repair, even if you use original parts?",
+    content:
+      "Probably not. Most manufacturers will void your warranty once a third party has opened the device — even if original parts are used. It’s best to check with your brand’s authorised service centre regarding their warranty policy before proceeding with repair.",
   },
 ];
+
 const reviewsData = [
   {
     name: "Liam Foster",
@@ -164,84 +188,83 @@ const reviewsData = [
 const slideData = [
   {
     src: sliderimg1,
-    alt: "Charging Port",
-    Product: "Charging Port"
+    alt: "Charging Connecotrs",
+    Product: "Charging Connecotrs",
   },
   {
     src: sliderimg2,
-    alt: "Cameras",
-    Product: "Cameras"
+    alt: "FPC Connector",
+    Product: "FPC Connector",
   },
   {
     src: sliderimg3,
-    alt: "ICs/ Chips",
-    Product: "ICs/ Chips"
+    alt: "IC BGA Chips",
+    Product: "IC BGA Chips",
   },
   {
     src: sliderimg4,
-    alt: "PS5 IC/ Parts",
-    Product: "PS5 IC/ Parts"
+    alt: "Machines",
+    Product: " Repair Machines",
   },
   {
     src: sliderimg5,
-    alt: "Motherboard Component Connect",
-    Product: "Motherboard Component Connect"
+    alt: "Reballing Stencils",
+    Product: "Reballing Stencils",
   },
   {
     src: sliderimg6,
-    alt: "Tools/ Stencils",
-    Product: "Tools/ Stencils"
+    alt: "Repair Tools",
+    Product: "Repair Tools",
   },
   {
     src: sliderimg7,
-    alt: "Back Glass",
-    Product: "Back Glass"
+    alt: "PS5-guts-hub",
+    Product: "PS5 Guts Hub",
   },
   {
     src: sliderimg8,
-    alt: "Screens",
-    Product: "Screens"
+    alt: "Game Console Parts",
+    Product: "Game Console Parts",
   },
 ];
-
 
 const slideData2 = [
   {
     src: iphone16,
     alt: "iPhone 16 Pro",
-    Product: "iPhone 16 Pro"
+    Product: "iPhone 16 Pro",
   },
   {
     src: SamsungGalaxyS25S24,
     alt: "SamsungGalaxyS25S24",
-    Product: "Samsung Galaxy S25 S24"
+    Product: "Samsung Galaxy S25 S24",
   },
-    {
+  {
     src: oneplus,
     alt: "OnePlus 10",
-    Product: "OnePlus 10"
+    Product: "OnePlus 10",
   },
   {
     src: OnePlusNord,
     alt: "OnePlus Nord",
-    Product: "OnePlus Nord"
+    Product: "OnePlus Nord",
   },
-
 
   {
     src: chaina1,
     alt: "Tools/ Stencils",
-    Product: "Tools/ Stencils"
+    Product: "Tools/ Stencils",
   },
-  {
-    src: sliderimg7,
-    alt: "Back Glass",
-    Product: "Back Glass"
-  },
+
   {
     src: chaina6,
     alt: "Screens",
-    Product: "Screens"
+    Product: "Screens",
+  },
+  {
+    src: oneplus,
+    alt: "OnePlus 10",
+    Product: "OnePlus 10",
   },
 ];
 const page = () => {
@@ -250,25 +273,46 @@ const page = () => {
       <MainBanner />
       <Devicequote />
       {/* <DeliveryTous/> */}
-      <ShipDeviceUs />
-
-      <Productswiper slideData={slideData} Heading="Parts Store" Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="/coming-soon" buttondata="Visit Store"/>
-      <HandsOnTraining/>
-      <DataRecovery />
-  
-      <Productswiper slideData={slideData2} Heading="China Warehouse" Title="Discover premium Samsung, OnePlus, and OPPO accessories shipped directly from China. High-quality, affordable, and reliable—delivered straight to your door with confidence and care." svg_stroke="var(--alpha)" color="var(--prc)"  buttonlink="/coming-soon" buttondata="Visit Store"/>
-
       <WhyChooseLabX />
+      {/* <ShipDeviceUs /> */}
+    
+      <HandsOnTraining />
+  
+
+      <DataRecovery />
+
+      <Productswiper
+        slideData={slideData2}
+        Heading="China Warehouse"
+        Title="Discover premium Samsung, OnePlus, and OPPO accessories shipped directly from China. High-quality, affordable, and reliable—delivered straight to your door with confidence and care."
+        svg_stroke="var(--alpha)"
+        color="var(--prc)"
+        buttonlink="/coming-soon"
+        buttondata="Visit Store"
+      />
+          <Productswiper
+        slideData={slideData}
+        Heading="Parts Store"
+        Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services."
+        svg_stroke="var(--alpha)"
+        color="var(--prc)"
+        buttonlink="/coming-soon"
+        buttondata="Visit Store"
+      />
+
+   
       <FixLabx />
 
       <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
-      <RecentNews />
+      {/* <RecentNews /> */}
       <YouTubeHome />
       {/* <OurClient /> */}
-      <AskusQuestion accordionData={accordionData}
+      <AskusQuestion
+        accordionData={accordionData}
         faq_subheading="Please securely package your phone and ship it to us at the designated address. Make sure to include any required documentation for efficient processing."
         faqbg_color="bg-[#FEF6FF]"
-        faq="Most People Ask us These Questions" />
+        faq="Most People Ask us These Questions"
+      />
     </div>
   );
 };

@@ -83,9 +83,10 @@ export default function AskusQuestion({
                           maxHeight: active === index ? "500px" : "0px",
                         }}
                       >
-                        <p className="py-4 pt-0 text-[#0B0B0B]">
-                          {item.content}
-                        </p>
+    <p
+         className="text-secondary group-hover:text-white 2xl:text-lg text-sm"
+         dangerouslySetInnerHTML={{ __html: item.content}}
+       ></p>
                       </div>
                     </div>
                   ))}

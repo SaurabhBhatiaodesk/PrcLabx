@@ -138,14 +138,14 @@ export default function CustomHeader() {
           >
             Instant Quote
           </button> */}
-          <div className="hidden md:block">
+          <div className="md:block">
             <MainButton
               MainButton="Instant Quote"
               color="bg-[#EF0000] text-white"
               link="/brands"
             />
           </div>
-          <div className="p-2 md:hidden block">
+          {/* <div className="p-2 md:hidden block">
             <MdCall fontSize={24} color="black" onClick={callpopop} />
             {popopOpendesk && (
               <>
@@ -265,7 +265,7 @@ export default function CustomHeader() {
                 </div>
               </>
             )}
-          </div>
+          </div> */}
         </div>
 
         {/* Mobile Menu */}
@@ -359,11 +359,11 @@ export default function CustomHeader() {
 
 
              <div className="mt-3">
-                <MainButton
+                {/* <MainButton
               MainButton="Instant Quote"
               color="bg-[#EF0000] text-white"
               link="/brands"
-            />
+            /> */}
              </div>
           </div>
         )}

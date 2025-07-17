@@ -1,4 +1,8 @@
+"use client";
+
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import HandsOnTraining1 from "../../../../public/Images/HandsOnTraining1.png";
@@ -20,21 +24,21 @@ const courses = [
   {
     title: "Advanced Motherboard Repair – Level 1",
     description:
-      "Learn micro soldering, fault tracing, and chip-level fixes — ideal for advancing beyond basic repairs.",
+      "Learn micro soldering, and chip-level fixes — ideal for advancing beyond basic repairs.",
     image: HandsOnTraining12,
     linking: "/advanced-motherboard",
   },
   {
     title: "Expert Motherboard Repair – Level 2",
     description:
-      "Master Face ID, baseband, iCloud unlocks, and NAND repairs — perfect for advanced smartphone repair.",
+      "Master Face ID, baseband, and NAND repairs — perfect for advanced smartphone repair.",
     image: HandsOnTraining13,
     linking: "/expert-motherboard-repair",
   },
   {
     title: "Master Motherboard Repair – Level 3",
     description:
-      "Master dual-layer repairs, big ICs, and data recovery — ideal for experts handling complex chip-level issues.",
+      "Master dual-layer repairs, big ICs, cpu and data recovery — ideal for experts handling complex chip-level issues.",
     image: HandsOnTraining14,
     linking: "/master-motherboard-repair",
   },
@@ -54,10 +58,10 @@ function HandsOnTraining() {
       style={{ backgroundImage: `url(${backyellow.src})` }}
     >
       <div className="container mx-auto">
-        <h2 className=" xl:w-3/5 w-full m-auto  text-center text-prc mb-4">
-          Become a Mobile Phone Repair   Pro — Start Your Hands-On&nbsp;
+        <h2 className="xl:w-3/5 w-full m-auto text-center text-prc mb-4">
+          Become a Mobile Phone Repair Pro — Start Your{" "}
           <span className="relative inline-block">
-            Training
+            Hands-On&nbsp; Training
             <svg
               className="absolute left-0 bottom-0 w-full h-2 z-[2]"
               width="100%"
@@ -77,7 +81,52 @@ function HandsOnTraining() {
           &nbsp;Today!
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        {/* Swiper Slider for courses - only on mobile */}
+        <div className="block md:hidden">
+          <Swiper
+            className="w-full py-4"
+            modules={[Autoplay, Navigation]}
+            spaceBetween={20}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            speed={600}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              450: { slidesPerView: 1 },
+            }}
+          >
+            {courses.map((course, index) => (
+              <SwiperSlide key={index}>
+                <Link
+                  href={course.linking}
+                  className="w-full flex lg:flex-row flex-col md:gap-5 gap-2 relative bg-white p-2 rounded-lg"
+                >
+                  <div className="relative w-full h-[200px] rounded-md overflow-hidden">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      className="object-cover rounded-md"
+                      fill
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2 line-clamp-2 ">{course.title}</h3>
+                    <p className="text-base mb-4 flex-grow line-clamp-2">{course.description}</p>
+                    <div className="w-full">
+                    <button className="rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center float-end  p-3  hover:scale-105">
+                      <FaArrowRight size={18} />
+                    </button>
+                    </div>
+                   
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Flex layout for courses - only on md and up */}
+        <div className="hidden md:flex flex-wrap justify-center gap-6">
           {courses.map((course, index) => (
             <div
               key={index}
@@ -85,9 +134,9 @@ function HandsOnTraining() {
             >
               <Link
                 href={course.linking}
-                className=" w-full flex lg:flex-row flex-col gap-5 relative"
+                className="w-full flex lg:flex-row flex-col gap-5 relative"
               >
-                <div className="relative w-full h-[200px]  rounded-md overflow-hidden">
+                <div className="relative w-full h-[200px] rounded-md overflow-hidden">
                   <Image
                     src={course.image}
                     alt={course.title}
@@ -97,9 +146,7 @@ function HandsOnTraining() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-2">{course.title}</h3>
-                  <p className=" text-base mb-4 flex-grow">
-                    {course.description}
-                  </p>
+                  <p className="text-base mb-4 flex-grow">{course.description}</p>
                   <button className="rounded-[10px_0px] bg-teal-900 text-white flex items-center justify-center absolute right-[-16px] p-3 bottom-[-17px] hover:scale-105">
                     <FaArrowRight size={18} />
                   </button>
