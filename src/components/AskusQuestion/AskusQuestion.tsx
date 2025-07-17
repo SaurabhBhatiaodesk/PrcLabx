@@ -19,14 +19,14 @@ interface AskusQuestionProps {
   faq?: string;
   faqbg_color?: string;
   faq_subheading?: string;
-  brandImage?:any;
+  brandImage?: any;
 }
 export default function AskusQuestion({
   accordionData,
   faq,
   faqbg_color,
   faq_subheading,
-  brandImage
+  brandImage,
 }: AskusQuestionProps) {
   const [active, setActive] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
@@ -83,10 +83,10 @@ export default function AskusQuestion({
                           maxHeight: active === index ? "500px" : "0px",
                         }}
                       >
-    <p
-         className="text-secondary group-hover:text-white 2xl:text-lg text-sm"
-         dangerouslySetInnerHTML={{ __html: item.content}}
-       ></p>
+                        <p
+                          className="text-secondary group-hover:text-white 2xl:text-lg text-sm"
+                          dangerouslySetInnerHTML={{ __html: item.content || ''}}
+                        ></p>
                       </div>
                     </div>
                   ))}
@@ -104,13 +104,13 @@ export default function AskusQuestion({
                     />
                   ) : (
                     <div className="md:max-h-[450px] max-h-[350px]  flex">
-                    <img
-                      className="h-[90%] m-auto object-contain"
-                      src={brandImage ? brandImage : banner}
-                      alt="mobile phone repair  "
-                      // width={500}
-                      // height={500}
-                    />
+                      <img
+                        className="h-[90%] m-auto object-contain"
+                        src={brandImage ? brandImage : '/Images/faqbanner.webp'}
+                        alt="mobile phone repair  "
+                        // width={500}
+                        // height={500}
+                      />
                     </div>
                   )}
                 </div>
