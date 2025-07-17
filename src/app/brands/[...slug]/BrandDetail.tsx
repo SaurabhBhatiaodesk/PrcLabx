@@ -18,33 +18,40 @@ const BrandDetailPage: React.FC = () => {
   const [brandsData, setBrandsData] = useState<any>([]); // State to hold brands data
   const [slugData, setSlugData] = useState<any>([]);
   const [LastslugData, setLastSlugData] = useState<any>([]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true); // Sidebar state
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false); // Sidebar state
   const [expandedPaths, setExpandedPaths] = useState<string[]>([]); // Expanded paths for sidebar
   const dataFetchedRef = useRef(false); // Ref to track if data has already been fetched
   const [isLastItemClicked, setIsLastItemClicked] = useState(false); // State to track if last item is clicked
   const [tabs, setTabs] = useState();
   const [LatTabs, setLastTabs] = useState();
   const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
-  // const [activeTabData, setActiveTabData] = useState();
+  const [loading, setLoading] = useState(true);
 
+  // const [activeTabData, setActiveTabData] = useState();
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
     if (activeTab !== "undefined" && isLastItemClicked && slugData.length > 0) {
       setLastTabs(tabs); // Store the tabs data to LatTabs when activeTab is not "undefined"
+      localStorage.setItem("tabsData", JSON.stringify(tabs));
+      localStorage.setItem("Lastslug", JSON.stringify(slugData));
       setLastSlugData(slugData);
     }
   }, [activeTab, tabs, slugData]);
 
   // State for mobile detection
-  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // Detect if the device is mobile, only after the component is mounted
 
   useEffect(() => {
-    // if (tabs && activeTab !== undefined) {
-    //   const matchedTab = tabs?.find((tab:any) => tab?.id === activeTab);
-    //   setActiveTabData(matchedTab);
-    // }
-  }, [tabs, activeTab]);
+    const storedTabs = localStorage.getItem("tabsData");
+    const storedTabsImg = localStorage.getItem("Lastslug");
+    if (storedTabs) {
+      setLastTabs(JSON.parse(storedTabs)); // Set to LatTabs from localStorage
+    }
+    if (storedTabsImg) {
+      setLastSlugData(JSON.parse(storedTabsImg)); // Set to LatTabs from localStorage
+    }
+  }, []);
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Check if window is available (client-side)
@@ -98,12 +105,13 @@ const BrandDetailPage: React.FC = () => {
             baseData = await res.json();
             sessionStorage.setItem("baseData", JSON.stringify(baseData)); // Save data in sessionStorage
             dispatch(setUiFlag(false));
+            setLoading(false);
           } catch (error) {
             console.error("Error fetching base data:", error);
           }
         }
         setBrandsData(baseData); // Set the base data to state
-
+        setLoading(false);
         // Fetch data for slug-based endpoint (only if the slugArray is non-empty)
         try {
           const resSlug = await fetch(slugApi);
@@ -112,11 +120,14 @@ const BrandDetailPage: React.FC = () => {
           }
           const slugEndpointData = await resSlug.json();
           setSlugData(slugEndpointData); // Set the slug-specific data to state
+          setLoading(false);
         } catch (error) {
           console.error("Error fetching slug data:", error);
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching brands:", error);
+        setLoading(false);
       }
     };
 
@@ -153,48 +164,54 @@ const BrandDetailPage: React.FC = () => {
       >
         {/* Sidebar */}
         <div className="relative">
-          {isSidebarOpen && (
-            <div className="lg:relative absolute z-10 transition-all duration-300 h-full left-3">
-              <aside
-                className={`lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl`}
-              >
-                <h2 className="text-lg font-semibold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors pb-1">
-                  Select Brands
-                </h2>
+          {/* {isSidebarOpen && ( */}
+          <div
+            className={`${
+              isSidebarOpen
+                ? "lg:relative absolute z-10 transition-all duration-300 h-full left-3"
+                : "hidden"
+            }`}
+          >
+            <aside
+              className={`lg:w-96 w-[320px] bg-tertiary md:p-6 p-3 overflow-y-auto sticky top-0 shadow-lg scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-yellow-200 h-[1000px] scrollbar rounded-xl`}
+            >
+              <h2 className="text-lg font-semibold text-[#122d37] mb-2 border-b tracking-wide hover:bg-[] transition-colors pb-1">
+                Select Brands
+              </h2>
 
-                {brandsData.map((brand: any) => (
-                  <SidebarItem
-                    key={brand.id}
-                    item={brand}
-                    href={`/brands/${brand.alias}`}
-                    level={0}
-                    expandedPaths={expandedPaths}
-                    toggleExpand={toggleExpand}
-                    currentPath={pathname}
-                    setIsLastItemClicked={setIsLastItemClicked}
-                    setTabs={setTabs}
-                  />
-                ))}
-              </aside>
-              <button
-                onClick={() => setIsSidebarOpen((prev) => !prev)}
-                className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-2 right-[1rem] z-10 border-prc"
-              >
-                <IoIosArrowForward
-                  className={`inline-block transform transition-transform duration-300 ease-in-out ${
-                    isSidebarOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                  size={24}
+              {brandsData.map((brand: any) => (
+                <SidebarItem
+                  key={brand.id}
+                  item={brand}
+                  href={`/brands/${brand.alias}`}
+                  level={0}
+                  expandedPaths={expandedPaths}
+                  toggleExpand={toggleExpand}
+                  currentPath={pathname}
+                  setIsLastItemClicked={setIsLastItemClicked}
+                  setTabs={setTabs}
                 />
-              </button>
-            </div>
-          )}
+              ))}
+            </aside>
+            <button
+              onClick={() => setIsSidebarOpen((prev) => !prev)}
+              className="mb-[5px] p-2 bg-[#122d37] text-white rounded-md md:h-10 h-8 flex items-center justify-center absolute top-2 right-[1rem] z-10 border-prc"
+            >
+              <IoIosArrowForward
+                className={`inline-block transform transition-transform duration-300 ease-in-out ${
+                  isSidebarOpen ? "rotate-180" : "rotate-0"
+                }`}
+                size={24}
+              />
+            </button>
+          </div>
+          {/* )} */}
         </div>
 
         {/* Main Content */}
         <main
           className={`flex-1  transition-all duration-300 bg-[#fff4f0] ${
-            isSidebarOpen ? "md:pt-[25px] pt-[30px] rounded-xl " : " pt-[10px]"
+            isSidebarOpen ? "md:pt-[10px] pt-[10px] rounded-xl " : " pt-[10px]"
           }`}
         >
           <div className="md:pl-6 pl-2">
@@ -253,6 +270,7 @@ const BrandDetailPage: React.FC = () => {
               pathname={pathname}
               isSidebarOpen={isSidebarOpen}
               tabs={tabs}
+              loading={loading}
             />
           ) : (
             <Pdp
