@@ -108,7 +108,7 @@ export default function Productswiper({
               <Link href={buttonlink} target="_blank">
                 <div className="relative">
                   <Image
-                    className="w-full object-cover h-auto rounded-[10px] transform transition-transform duration-300 ease-in-out hover:scale-90"
+                    className="w-full object-contain h-[200px] rounded-[10px] transform transition-transform duration-300 ease-in-out hover:scale-90"
                     src={slide.src}
                     alt={slide.alt}
                   />

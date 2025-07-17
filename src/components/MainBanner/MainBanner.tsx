@@ -155,7 +155,7 @@ export default function MainBanner() {
             <div className="mb-4 lg:mt-[0] mt-[0px] relative ">
               <Link href="/training">
                 <button
-                  className="text-black px-[20px] py-[6px] border-[3px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_#B2F5EA] text-[18px] tracking-[1.5px] relative top-6 md:m-0 mb-7"
+                  className="text-black px-[15px] py-[6px] border-[1px] rounded-full bg-[#B2F5EA] shadow-[5px_4px_28px_1px_#B2F5EA] animate-pulse transition-all duration-300 hover:shadow-[0_0_25px_10px_#B2F5EA] text-base tracking-[1.5px] relative top-6 md:m-0 mb-7"
                   style={{ transform: "rotate(354deg)" }} // Equivalent to -5deg (360 - 5)
                 >
                   Need Training?
@@ -164,7 +164,7 @@ export default function MainBanner() {
             </div>
             <Swiper
               pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay, Navigation]}
+              modules={[Autoplay, Navigation]}
               className="mySwipergk"
               spaceBetween={20}
               loop={true}
@@ -185,9 +185,9 @@ export default function MainBanner() {
             >
               {bannerSlides.map((slide, index) => (
                 <SwiperSlide key={index}>
-                  <div className="gap-4 items-start xl:py-5">
+                  <div className="gap-4 items-start xl:pt-5">
                     <div>
-                      <h1 className="2xl:text-[2.6rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black py-5 transition-opacity duration-1000">
+                      <h1 className="2xl:text-[2rem] text-[1.6rem] font-bold text-white tracking-[1.5px] leading-tight bg-gradient-to-r to-black pt-3 transition-opacity duration-1000">
                         {slide.heading}
                         <span className={slide.highlightColor}>
                           {" "}
