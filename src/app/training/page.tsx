@@ -18,17 +18,17 @@ const Form = dynamic(() => import("../../components/Form/Form"), {
 
 
 export const metadata = {
-  title: "Mobile Phone Repair Course - Phone Repair Course | Phone repair center",
+  title: "Mobile Phone Repair Course - Phone Repair Course | Phone Repair Center ",
   description:
-    "Phone repair center provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+    "Phone Repair Center  provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
   keywords: [
     "mobile phone repair   Training",
     "Phone Repair Course",
   ],
   openGraph: {
-    title: "Mobile Phone Repair Course - Phone Repair Course | Phone repair center",
+    title: "Mobile Phone Repair Course - Phone Repair Course | Phone Repair Center ",
     description:
-      "Phone repair center provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+      "Phone Repair Center  provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     url: "/",
     type: "website",
 
@@ -43,9 +43,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile Phone Repair Course - Phone Repair Course | Phone repair center",
+    title: "Mobile Phone Repair Course - Phone Repair Course | Phone Repair Center ",
     description:
-      "Phone repair center provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
+      "Phone Repair Center  provides the best mobile phone repair   training with phone repair course. Learn hands-on skills from experts, get certified, & start your career with confidence.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

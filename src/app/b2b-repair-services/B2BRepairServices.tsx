@@ -303,7 +303,7 @@ const B2BRepairServices: React.FC = () => {
 
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={B2BRepairNeeds} alt=" Phone repair center " />
+                <Image src={B2BRepairNeeds} alt=" Phone Repair Center  " />
               </div>
               <div>
                 <div className="">
@@ -428,7 +428,7 @@ const B2BRepairServices: React.FC = () => {
                 </div>
               </div>
               <div>
-                <Image src={RepairServices} alt=" Phone repair center " />
+                <Image src={RepairServices} alt=" Phone Repair Center  " />
               </div>
             </div>
           </div>

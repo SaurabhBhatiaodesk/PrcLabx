@@ -6,14 +6,14 @@ const MasterMotherboardRepair = dynamic(() => import('./MasterMotherboardRepair'
 
 
 export const metadata = {
-  title: "Phone repair center Mobile Phone Services - Expert Repair & Training",
+  title: "Phone Repair Center  Mobile Phone Services - Expert Repair & Training",
   description:
-    "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
     description:
-      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Welcome to PRC - Your Trusted Tech Solutions",
     description:
-      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

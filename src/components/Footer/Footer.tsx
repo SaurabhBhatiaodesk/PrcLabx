@@ -620,7 +620,7 @@ const Footer = () => {
             <div className="flex-col flex justify-between xl:flex-row">
               <div className="">
                 <p className="xl:text-[16px] text-[14px] tracking-[1px] text-center text-primary m-0">
-                  Copyright © Phone repair center {new Date().getFullYear()} -
+                  Copyright © Phone Repair Center  {new Date().getFullYear()} -
                   All rights reserved.
                 </p>
               </div>
@@ -642,7 +642,7 @@ const Footer = () => {
                     <Image
                       className="w-[24px]"
                       src={homefooter}
-                      alt=" Phone repair center "
+                      alt=" Phone Repair Center  "
                     />
                     <span className="text-[12px] tracking-[1.5px] text-white ">
                       Home
@@ -654,7 +654,7 @@ const Footer = () => {
                     <Image
                       className="w-[27px]"
                       src={traning}
-                      alt=" Phone repair center "
+                      alt=" Phone Repair Center  "
                     />
                     <span className="text-[12px] tracking-[1.5px] text-white ">
                       Training
@@ -738,8 +738,8 @@ const Footer = () => {
                             </div>
 
                             <div className="sm:flex sm:items-start">
-                              <h3 className="text-prc bg-tertiary p-2 rounded-lg">
-                                Phone repair center
+                              <h3 className="text-prc text-base bg-tertiary p-1 rounded-lg">
+                               St Marys
                               </h3>
                               <div className="flex flex-col gap-1 mb-2 border-y-1 border-gray-200">
                                 <div className="p-2">
@@ -755,15 +755,16 @@ const Footer = () => {
                                       </Link>
                                     </span>
                                   </div>
+                                  
                                   <div className=" flex justify-start align-middle gap-2 ">
                                     <span>
-                                      <BiSolidPhoneCall />
+                                       <BiSolidPhoneCall className="text-prc scale-infinite" />
                                     </span>
                                     <a
                                       className="text-sm leading-6 font-medium text-black underline"
                                       href="tel:+(02)86783298"
                                     >
-                                      (02)86783298
+                                      (02)86-7832-98
                                     </a>
                                   </div>
                                   <span className=" flex justify-start items-center gap-2 ">
@@ -777,6 +778,9 @@ const Footer = () => {
                                   </span>
                                 </div>
                                 <hr></hr>
+                                 <h3 className="text-prc text-base bg-tertiary p-1 rounded-lg">
+                              Schofields
+                              </h3>
                                 <div className="p-2">
                                   <div className=" flex justify-start align-middle gap-2">
                                     <FaLocationDot />
@@ -792,13 +796,13 @@ const Footer = () => {
                                   </div>
                                   <div className=" flex justify-start align-middle gap-2">
                                     <span>
-                                      <BiSolidPhoneCall />
+                                    <BiSolidPhoneCall className="text-prc scale-infinite" />
                                     </span>
                                     <a
                                       className="text-sm leading-6 font-medium text-black text-left underline"
                                       href="tel:+(02)72527141"
                                     >
-                                      (02)72527141
+                                      (02)72-527-141
                                     </a>
                                   </div>
                                   <span className=" flex justify-start items-center gap-2">

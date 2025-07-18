@@ -19,7 +19,7 @@ const FixLabx = () => {
           <div className="xl:block hidden"></div>
           <div className="text-center  p-4 flex flex-col justify-center items-center">
             <h2 className="text-secondary text-[32px]  lg:text-[36px] font-[800] pb-2">
-             Meet the founder of Phone Repair Center
+             Meet the founder of Phone Repair Center 
             </h2>
             <p className="text-[#040404] text-[24px]  lg:text-[26px] 2xl:text-[28px] font-[800] m-[4px]">
             Bharat Dhingra 
@@ -37,14 +37,14 @@ const FixLabx = () => {
               src={bharat}
               width={500}
               height={500}
-              alt=" Phone repair center "
+              alt=" Phone Repair Center  "
             />
             <Image
               className="h-[19rem] lg:h-[100%] xl:h-[26rem] 2xl:h-[30rem] 3xl:h-[32rem] w-full lg:hidden block object-contain "
               src={bharat}
               width={400}
               height={300}
-              alt=" Phone repair center "
+              alt=" Phone Repair Center  "
             />
           </div>
         </div>

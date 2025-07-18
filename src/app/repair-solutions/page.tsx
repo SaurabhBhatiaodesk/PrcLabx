@@ -6,12 +6,12 @@ import "./repair.css";
 export const metadata = {
   title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
   description:
-    "Phone repair center offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
+    "Phone Repair Center  offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
   keywords: ["mobile phone repair   Solutions", "Expert Device Repair"],
   openGraph: {
     title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
     description:
-      "Phone repair center offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
+      "Phone Repair Center  offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
     url: "", // Replace with your actual page URL
     type: "website",
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Mobile Phone Repair Solutions - Expert Phone & Device Repair ",
     description:
-      "Phone repair center offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
+      "Phone Repair Center  offers professional mobile phone repair   solutions with expert phone and device repair services. Get fast, reliable fixes for all mobile issues. Contact us today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

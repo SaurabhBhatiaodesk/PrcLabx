@@ -53,7 +53,7 @@ const PricingBox: React.FC = () => {
     <div>
       <div className="container lg:pb-8 py-4" data-aos="fade-up">
         <MainHeading Heading="PRC Repair Affordable Repair Services" />
-        <MainTitle Title="Phone repair center offers Data Recovery, Technician Damage Repair, DIY Damage Repair, Screen Refurbishment, and Spare Part Replacement with affordable pricing in four categories for reliable and quality device repair services." />
+        <MainTitle Title="Phone Repair Center  offers Data Recovery, Technician Damage Repair, DIY Damage Repair, Screen Refurbishment, and Spare Part Replacement with affordable pricing in four categories for reliable and quality device repair services." />
 
         <div className="lg:pb-8 py-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 justify-center text-center gap-4">

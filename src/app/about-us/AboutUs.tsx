@@ -96,11 +96,11 @@ const AboutUs = () => {
         <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="User_Image">
-              <Image height="1000" width="1000" src={User} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={User} alt=" Phone Repair Center  " className="" />
             </div>
             <div className="">
               <h2>Starting From Scratch in Australia</h2>
-              <Image height="1000" width="1000" src={Line.src} alt=" Phone repair center " className="pb-3 m-auto" />
+              <Image height="1000" width="1000" src={Line.src} alt=" Phone Repair Center  " className="pb-3 m-auto" />
               <p>When I arrived in Australia, I quickly realized the road ahead would be anything but easy. People often told me that my skills were useless here because mobile phones were mostly on contracts, and broken ones were typically replaced rather than repaired. My poor English made things even harder, but I refused to give up on my passion. </p>
               <p>Desperate to stay in the industry, I took a job at a phone repair shop. The working conditions were tough— two weeks of unpaid training, followed by a very low hourly wage, with no guarantee of regular payment. Many days, I couldn&apos;t even afford train fare to attend my classes. I vividly remember standing at the shop, asking the staff for $10 to buy a train ticket. Often, I had to wait for the shop &apos;s first sale of the day to get the money I needed.</p>
             </div>
@@ -142,7 +142,7 @@ const AboutUs = () => {
                <p className="text-primary">One weekend in early 2012, while delivering repaired phones to a market, I noticed the bustling activity and thought to myself, Why not start here? I approached the information desk at Parklea Markets to inquire about setting up a stall. The staff explained that I could rent a stall for $282 for two days (Saturday and Sunday only). At that moment, I had just enough money to pay for one week, and despite having no plan or resources, I decided to take the leap.</p>
             </div>
             <div className="User_Image">
-              <Image height="1000" width="1000" src={Hill} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Hill} alt=" Phone Repair Center  " className="" />
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ const AboutUs = () => {
             </p>
 
             <div className="overlap__section_labX relative">
-              <Image height="1000" width="1000" src={Helping.src} alt=" Phone repair center " />
+              <Image height="1000" width="1000" src={Helping.src} alt=" Phone Repair Center  " />
               <div className="overlap__description ">
                 <h3 className="text-primary" >Building My Dream</h3>
                 <p className="text-primary">After one week of preparation, I transformed a simple cupboard into a makeshift workbench. My setup at Parklea Markets was modest—a plastic chair, a laptop, a few spare parts, and a black-and-white paper sign that read, “Yes, we do repairs.”</p>
@@ -198,10 +198,10 @@ const AboutUs = () => {
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
 
             <div className="about__Image">
-              <Image height="1000" width="1000" src={Express} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Express} alt=" Phone Repair Center  " className="" />
             </div>
             <div className="about__Image">
-              <Image height="1000" width="1000" src={Entry} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Entry} alt=" Phone Repair Center  " className="" />
             </div>
           </div>
 
@@ -225,7 +225,7 @@ const AboutUs = () => {
         <div className="max-container">
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="User_Image">
-              <Image height="1000" width="1000" src={Dream} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Dream} alt=" Phone Repair Center  " className="" />
             </div>
             <div className="">
                   <MainHeading Heading="Balancing Dreams with Determination" color="var(--prc)" svg_stroke="var(--alpha)" text_align="start"/>
@@ -256,7 +256,7 @@ const AboutUs = () => {
             </p>
             <p>With a strong team in place, I was able to take the business to the next level. I began offering professional motherboard repairs and launched a YouTube channel to showcase my expertise and reach a wider audience. This increased our visibility and helped us secure partnerships with local repair shops.
             </p>
-            <Image height="1000" width="1000" style={{ width: '100%' }} src={Team.src} alt=" Phone repair center " />
+            <Image height="1000" width="1000" style={{ width: '100%' }} src={Team.src} alt=" Phone Repair Center  " />
             <p>Our B2B services became a significant part of the business, with local shops sending us devices for advanced repairs they couldn &apos;t handle. Many were curious about the techniques and expertise that allowed us to fix complex issues. This recognition and trust from others in the industry further solidified our reputation as specialists in mobile phone repairs.
             </p>
             <p>This phase marked a turning point for the business as we transitioned from a local repair shop to a hub for specialized services and industry collaborations.</p>
@@ -276,7 +276,7 @@ const AboutUs = () => {
               <p>Unfortunately, the outbreak of COVID-19 put everything on hold. Lockdowns and restrictions delayed my plans, but the experience reinforced the importance of creating a platform to upskill technicians and improve the industry overall.</p>
             </div>
             <div className="User_Image">
-              <Image height="1000" width="1000" src={Need} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Need} alt=" Phone Repair Center  " className="" />
             </div>
           </div>
           {/* <p> During this challenging time, my friend Robin became an invaluable part of my journey. He stepped in to manage the shop while I concentrated on my studies. I trained him extensively in phone repairs and the day-to-day operations of the business, and he took on the responsibility with dedication and care.
@@ -294,7 +294,7 @@ const AboutUs = () => {
           <p className="text-center text-secondary">During the COVID-19 pandemic, something remarkable happened—my business thrived despite the challenges. While I had initially planned to focus on launching training programs, the surge in demand for repairs and services led me to postpone those plans. Whether it was due to luck, goodwill, or sheer hard work, I found myself busier than ever.</p>
           <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
             <div className="chap_Image">
-              <Image height="1000" width="1000" src={Chapter} alt=" Phone repair center " className="" />
+              <Image height="1000" width="1000" src={Chapter} alt=" Phone Repair Center  " className="" />
             </div>
             <div className="">
               <p className="text-secondary">One significant milestone during this period was securing authorization to become a Samsung Service Centre. This partnership brought a tremendous influx of work and solidified our reputation as a trusted repair provider.
@@ -349,7 +349,7 @@ const AboutUs = () => {
       <div className="max-container text-secondary pt-8 mt-5 " >
         <div className="grid xl:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
           <div className="tech_Image">
-            <Image height="1000" width="1000" src={Techcity} alt=" Phone repair center " className="" />
+            <Image height="1000" width="1000" src={Techcity} alt=" Phone Repair Center  " className="" />
           </div>
           <div>
            <MainHeading Heading="The Vision Behind prc" color="var(--prc)" svg_stroke="var(--alpha)" text_align="start"/>
@@ -367,7 +367,7 @@ const AboutUs = () => {
 
       <div className="max-container pt-8 mt-5 mb-5 " >
         <div className="overlap__section_labX relative">
-          <Image height="1000" width="1000" src={Traning.src} alt=" Phone repair center " />
+          <Image height="1000" width="1000" src={Traning.src} alt=" Phone Repair Center  " />
           <div className="overlap__description ">
             <h3 className="pt-6 text-primary">The Decision to Provide Training
             </h3>
