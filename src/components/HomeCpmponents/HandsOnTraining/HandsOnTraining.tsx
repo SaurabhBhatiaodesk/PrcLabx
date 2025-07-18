@@ -38,7 +38,7 @@ const courses = [
   {
     title: "Master Motherboard Repair – Level 3",
     description:
-      "Master dual-layer repairs, big ICs, cpu and data recovery — ideal for experts handling complex chip-level issues.",
+      "Master dual-layer repairs, big ICs, CPU and data recovery — ideal for experts handling complex chip-level issues.",
     image: HandsOnTraining14,
     linking: "/master-motherboard-repair",
   },
