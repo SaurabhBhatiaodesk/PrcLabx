@@ -26,6 +26,9 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
   const requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow" as RequestRedirect,
+    headers: {
+      "Cache-Control": "no-store", // Instructs the server to not cache the response
+    },
   };
 
   try {
@@ -34,10 +37,13 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
       `${apiUrl}/api/admin/getPageBypageTitle/${encodeURIComponent(pageTitle)}`,
       requestOptions
     );
+    console.log("resres", res);
 
     if (!res.ok) {
       const errorText = await res.text(); // Get the response as text in case of an error
-      throw new Error(`Failed to fetch blog data. Status: ${res.status}, Response: ${errorText}`);
+      throw new Error(
+        `Failed to fetch blog data. Status: ${res.status}, Response: ${errorText}`
+      );
     }
 
     const data = await res.json();
@@ -47,7 +53,6 @@ async function fetchBlogData(pageTitle: string | undefined): Promise<BlogData> {
     throw error;
   }
 }
-
 
 // Generate Metadata for the Blog
 export async function generateMetadata({
