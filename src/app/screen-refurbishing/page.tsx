@@ -2,18 +2,18 @@ import React from "react";
 import Screen from "./screen-refurbishing";
 
 export const metadata = {
-  title: "Screen Refurbishing Service - Mobile Screen Repair | Phone repair center",
+  title: "Screen Refurbishing Service - Mobile Screen Repair | Phone Repair Center ",
   description:
-    "Phone repair center offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
+    "Phone Repair Center  offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
   keywords: [
     "Screen Refurbishing Service",
     "Mobile Screen Repair ",
 
   ],
   openGraph: {
-    title: "Screen Refurbishing Service - Mobile Screen Repair | Phone repair center",
+    title: "Screen Refurbishing Service - Mobile Screen Repair | Phone Repair Center ",
     description:
-      "Phone repair center offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
+      "Phone Repair Center  offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Screen Refurbishing Service - Mobile Screen Repair | Phone repair center",
+    title: "Screen Refurbishing Service - Mobile Screen Repair | Phone Repair Center ",
     description:
-      "Phone repair center offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
+      "Phone Repair Center  offers professional screen refurbishing service & mobile screen repair. Restore cracked or damaged screens with expert care. Get your screen fixed today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

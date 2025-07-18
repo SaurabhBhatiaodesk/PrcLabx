@@ -213,7 +213,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
 
             <form onSubmit={handleSubmit}>
               {/* Name Field */}
-              <div className="grid grid-cols-1 md:gap-2 gap-2">
+              <div className="grid grid-cols-1 md:gap-2 gap-2 ">
                 <div className="relative mb-2">
                   <input
                     type="text"
@@ -379,7 +379,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:gap-3 gap-1 mb-1 md:grid-cols-2">
+                {/* <div className="grid grid-cols-1 md:gap-3 gap-1 mb-1 md:grid-cols-2">
                   <div
                     className="border rounded border-prc  focus:border-prc custom-focus p-3   focus:ring-prc flex items-center cursor-pointer"
                     onClick={() =>
@@ -430,7 +430,26 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       {errors.storeLocation}
                     </p>
                   )}
-                </div>
+                </div> */}
+ <div className="mb-1 overflow-hidden ">
+  <select
+    className="border rounded border-prc focus:border-prc custom-focus p-3 focus:ring-prc w-full text-sm box-border overflow-hidden"
+    value={formData.storeLocation}
+    onChange={(e) => handleCheckboxChange(e.target.value)}
+  >
+    <option value="">Select</option>
+    <option value="122 Queen St, St Marys NSW 2760, Australia" className="w-full overflow-hidden">
+      122 Queen St, St Marys NSW 2760, Australia
+    </option>
+    <option value="Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia" className="w-full overflow-hidden">
+      Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia
+    </option>
+  </select>
+  {errors.storeLocation && (
+    <p className="text-red-500 text-sm m-0">{errors.storeLocation}</p>
+  )}
+</div>
+
 
                 {/* Phone Color Field */}
                 <div className="relative mb-2">

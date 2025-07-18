@@ -84,21 +84,21 @@ function TraningWillLearn({
               className="p-3 rounded-[15px] items-center"
               style={{ border: `2px solid ${border}` }} // Apply dynamic border here
             >
-              <Image src={moniter} alt=" Phone repair center " />
+              <Image src={moniter} alt=" Phone Repair Center  " />
               <h3 className="mb-1">{Course}</h3>
               <ul className="space-y-3">
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt=" Phone repair center " />
+                  <Image src={arrowright} alt=" Phone Repair Center  " />
                   <li className="text-sm lg:text-base">{Courseformate1}</li>
                 </div>
 
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt=" Phone repair center " />
+                  <Image src={arrowright} alt=" Phone Repair Center  " />
                   <li className="text-sm lg:text-base">{Courseformate2}</li>
                 </div>
 
                 <div className="flex gap-1">
-                  <Image src={arrowright} alt=" Phone repair center " />
+                  <Image src={arrowright} alt=" Phone Repair Center  " />
                   <li className="text-sm lg:text-base">{Courseformate3}</li>
                 </div>
 
@@ -106,7 +106,7 @@ function TraningWillLearn({
                 {
                   pathName === '/beginner-phone-repair-course' && 
                   <div className="flex gap-1">
-                  <Image src={arrowright} alt=" Phone repair center " />
+                  <Image src={arrowright} alt=" Phone Repair Center  " />
                   <li className="text-sm lg:text-base animate-zoomInOut "  style={{ color: `${color}` }}>
                     {Courseformate4}
                   </li>

@@ -2,14 +2,14 @@ import React from 'react'
 import B2BRepairServices from './B2BRepairServices'
 
 export const metadata = {
-  title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone repair center",
+  title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone Repair Center ",
   description:
-    "Phone repair center offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
+    "Phone Repair Center  offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
   keywords: ["B2B Phone Repair Service", "Bulk Device Repair"],
   openGraph: {
-    title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone repair center",
+    title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone Repair Center ",
     description:
-      "Phone repair center offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
+      "Phone Repair Center  offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -23,9 +23,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone repair center",
+    title: "B2B Mobile Phone Repair Service - Bulk Device Repair | Phone Repair Center ",
     description:
-      "Phone repair center offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
+      "Phone Repair Center  offers expert B2B phone repair service and bulk device repair for businesses. Get fast, reliable maintenance & quality repairs for all your devices today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

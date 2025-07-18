@@ -185,7 +185,7 @@ export default function CustomHeader() {
 
                         <div className="sm:flex sm:items-start">
                           <h3 className="text-prc bg-tertiary p-2 rounded-lg">
-                            Phone repair center
+                            Phone Repair Center 
                           </h3>
                           <div className="flex flex-col gap-1 mb-2 border-y-1 border-gray-200">
                             <div className="p-2">

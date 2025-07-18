@@ -124,7 +124,7 @@ const Page = () => {
           <div className="container">
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 lg:py-5 py-3 items-center">
               <div>
-                <Image src={Glass} alt=" Phone repair center " />
+                <Image src={Glass} alt=" Phone Repair Center  " />
               </div>
               <div className="glass__description">
                 <h2 className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[20px]">Benefits of Working with PRCRepair</h2>
@@ -194,7 +194,7 @@ const Page = () => {
 
                   {/* <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt=" Phone repair center " />
+                    <Image src={Icon} alt=" Phone Repair Center  " />
                   </span>
                   All buttons and sensors work properly.
                 </p> */}
@@ -216,7 +216,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={ExpertB2BDisplayRefurbishing}
-                  alt=" Phone repair center "
+                  alt=" Phone Repair Center  "
                 />
                 <h3 className="!text-primary">Expert B2B Display Refurbishing</h3>
                 <p className="text-primary">
@@ -229,7 +229,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={StateoftheArtTechnology}
-                  alt=" Phone repair center "
+                  alt=" Phone Repair Center  "
                 />
                 <h3 className="!text-primary">State-of-the-Art Technology</h3>
                 <p className="text-primary">
@@ -241,7 +241,7 @@ const Page = () => {
                 <Image
                   className="w-[80px]"
                   src={FairandTransparentGrading}
-                  alt=" Phone repair center "
+                  alt=" Phone Repair Center  "
                 />
                 <h3 className="!text-primary">Fair and Transparent Grading</h3>
                 <p className="text-primary">
@@ -251,7 +251,7 @@ const Page = () => {
                 </p>
               </div>
               <div className="front__box">
-                <Image className="w-[80px]" src={FastTurnaroundTime} alt=" Phone repair center " />
+                <Image className="w-[80px]" src={FastTurnaroundTime} alt=" Phone Repair Center  " />
                 <h3 className="!text-primary">Fast Turnaround Time</h3>
                 <p className="text-primary">
                   We understand the urgency of business needs, which is why we
@@ -275,44 +275,44 @@ const Page = () => {
               <div className="list__glass">
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={vectorprc} alt=" Phone repair center " />
+                    <Image src={vectorprc} alt=" Phone Repair Center  " />
                   </span>
                   Retain original brightness, clarity, and color accuracy
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={vectorprc} alt=" Phone repair center " />
+                    <Image src={vectorprc} alt=" Phone Repair Center  " />
                   </span>
                   Refurbishment is more affordable than full replacement
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={vectorprc} alt=" Phone repair center " />
+                    <Image src={vectorprc} alt=" Phone Repair Center  " />
                   </span>
                   Get your phone back faster than replacement
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={vectorprc} alt=" Phone repair center " />
+                    <Image src={vectorprc} alt=" Phone Repair Center  " />
                   </span>
                   Reduces electronic waste for a sustainable choice
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
-                    <Image src={vectorprc} alt=" Phone repair center " />
+                    <Image src={vectorprc} alt=" Phone Repair Center  " />
                   </span>
                   Ideal for scratches or small cracks without replacement
                 </p>
                 {/* <p className="flex items-center gap-2">
                   <span>
-                    <Image src={Icon} alt=" Phone repair center " />
+                    <Image src={Icon} alt=" Phone Repair Center  " />
                   </span>
                   All buttons and sensors work properly.
                 </p> */}
               </div>
             </div>
             <div>
-              <Image src={Glass2} alt=" Phone repair center " />
+              <Image src={Glass2} alt=" Phone Repair Center  " />
             </div>
           </div>
         </div>
@@ -325,7 +325,7 @@ const Page = () => {
             <MainHeading Heading="Our Refurbishment Process" color="var(--secondary)" svg_stroke="var(--alpha)" />
             <div className="grid xl:grid-cols-3  lg:grid-cols-3 grid-cols-1  pt-8 mt-5 relative gap-5">
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Screen} alt=" Phone repair center " />
+                <Image src={Screen} alt=" Phone Repair Center  " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg text-prc font-semibold py-2">Assessment</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full text-secondary">
                   {
@@ -334,7 +334,7 @@ const Page = () => {
                 </p>
               </div>
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Small} alt=" Phone repair center " />
+                <Image src={Small} alt=" Phone Repair Center  " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-prc font-semibold py-2">Lamination and Separation</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full text-secondary">
                   {
@@ -343,7 +343,7 @@ const Page = () => {
                 </p>
               </div>
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Saprate} alt=" Phone repair center " />
+                <Image src={Saprate} alt=" Phone Repair Center  " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-prc font-semibold py-2">Cleaning and Polishing</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full text-secondary">
                   {
@@ -356,7 +356,7 @@ const Page = () => {
 
             <div className="grid__processs_section process__section pt-8 mt-5 relative gap-5 grid xl:grid-cols-[2fr_1fr_2fr]  lg:grid-cols-2 grid-cols-1">
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={Test} alt=" Phone repair center " />
+                <Image src={Test} alt=" Phone Repair Center  " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-prc font-semibold py-2" >Final Testing</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full text-secondary">
                   {
@@ -367,7 +367,7 @@ const Page = () => {
               <div className="hidden lg:block"></div>
 
               <div className=" flex flex-col text-center justify-center items-center ">
-                <Image src={OCA} alt=" Phone repair center " />
+                <Image src={OCA} alt=" Phone Repair Center  " />
                 <h4 className="2xl:text-2xl lg:text-xl text-lg  text-prc font-semibold py-2">Glass Replacement</h4>
                 <p className="lg:w-[75%] 2xl:w-[50%] w-full text-secondary">
                   {
@@ -400,7 +400,7 @@ const Page = () => {
                 <MainButton MainButton="START REPAIR" link="/mail-in-repair" color="bg-prc" />
               </div>
               <div className="text-center m-auto">
-                <Image className="h-[300px] lg:h-auto object-contain " src={Machine} alt=" Phone repair center " />
+                <Image className="h-[300px] lg:h-auto object-contain " src={Machine} alt=" Phone Repair Center  " />
               </div>
             </div>
           </div>
@@ -409,7 +409,7 @@ const Page = () => {
         <section className="container ">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4  lg:p-8 p-4 items-center">
             <div>
-              <Image src={EcoFriendlyPractices} alt=" Phone repair center "></Image>
+              <Image src={EcoFriendlyPractices} alt=" Phone Repair Center  "></Image>
             </div>
             <div>
               <h2 className="text-prc">Eco-Friendly Practices</h2>

@@ -6,11 +6,11 @@ import AboutUs from "./AboutUs";
 
 export const metadata = {
   title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
-  description: "About Phone repair center, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
+  description: "About Phone Repair Center , We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
     title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
-    description: "About Phone repair center, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
+    description: "About Phone Repair Center , We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
     url: "/", 
     type: "website",
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Us - Phone Repair Courses | Mobile Phone Repair Training",
-    description: "About Phone repair center, We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
+    description: "About Phone Repair Center , We provide top-tier phone repair courses and mobile phone repair training. Learn phone screen repair and other essential skills with us today! refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

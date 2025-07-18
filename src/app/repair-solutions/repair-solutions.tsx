@@ -32,7 +32,7 @@ const page = () => {
                   height="300"
                   width="600"
                   src={Line.src}
-                  alt=" Phone repair center "
+                  alt=" Phone Repair Center  "
                   className="pb-3"
                 />
 
@@ -69,7 +69,7 @@ const page = () => {
                 height="300"
                 width="400"
                 src={Line.src}
-                alt=" Phone repair center "
+                alt=" Phone Repair Center  "
                 className="pb-3"
               />
 

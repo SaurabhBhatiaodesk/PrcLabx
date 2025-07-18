@@ -46,7 +46,7 @@ const WhatWeDo = () => {
           {services.map((service, index) => (
             <Link key={index} href={service.href}>
               <div className="shop-block rounded-[15px] border-2 shadow-lg shadow-[#00303e75] transition-shadow duration-300 flex flex-col justify-between hover:shadow-[0_0_20px_10px_#00303e75  ]">
-                <Image src={service.image} alt="Phone repair center" />
+                <Image src={service.image} alt="Phone Repair Center " />
                 <h1 className="m-4 bg-prc text-primary lg:p-3  p-3 rounded-2xl">{service.title}</h1>
               </div>
             </Link>

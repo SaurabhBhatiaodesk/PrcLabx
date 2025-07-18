@@ -40,9 +40,9 @@ import Productswiper from "../components/Storeproduct/Productswiper";
 import HandsOnTraining from "../components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
   title:
-    "Mobile Phone Repair Services & Training | Mobile Accessories | Phone repair center",
+    "Mobile Phone Repair Services & Training | Mobile Accessories | Phone Repair Center ",
   description:
-    "Phone repair center provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
+    "Phone Repair Center  provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
   keywords: [
     "PRC",
     "tech solutions",
@@ -53,7 +53,7 @@ export const metadata = {
   openGraph: {
     title: "Welcome to PRC - Your Trusted Tech Solutions",
     description:
-      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     url: "/",
     type: "website",
     images: [
@@ -69,7 +69,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Welcome to PRC - Your Trusted Tech Solutions",
     description:
-      "Explore Phone repair center for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

@@ -6,14 +6,14 @@ const DataRecovery = dynamic(() => import('./DataRecovery'), { ssr: false });
 import "./data.css";
 
 export const metadata = {
-  title: "Data Recovery Services - Mobile Phone Data Recovery | Phone repair center",
+  title: "Data Recovery Services - Mobile Phone Data Recovery | Phone Repair Center ",
   description:
-    "Phone repair center offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
+    "Phone Repair Center  offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
   keywords: ["Data Recovery Services", "Mobile Data Recovery"],
   openGraph: {
-    title: "Data Recovery Services - Mobile Phone Data Recovery | Phone repair center",
+    title: "Data Recovery Services - Mobile Phone Data Recovery | Phone Repair Center ",
     description:
-      "Phone repair center offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
+      "Phone Repair Center  offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
     url: "", // Replace with your actual page URL
     type: "website",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Recovery Services - Mobile Phone Data Recovery | Phone repair center",
+    title: "Data Recovery Services - Mobile Phone Data Recovery | Phone Repair Center ",
     description:
-      "Phone repair center offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
+      "Phone Repair Center  offers expert data recovery services, specializing in mobile data recovery. Restore lost files, photos, & important data safely & efficiently. Help now!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
