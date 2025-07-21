@@ -5,6 +5,7 @@ export async function GET(req: Request): Promise<Response> {
    const staticUrls = [
     "https://www.prcrepair.com.au/api/web-urls",
     "https://www.prcrepair.com.au/api/blogs-urls",
+    "https://www.prcrepair.com.au/api/brands-products"
   ];
 
   // Helper function to escape special characters in URLs

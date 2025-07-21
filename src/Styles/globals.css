@@ -364,3 +364,15 @@ color: #000 !important;
     transform: scale(1);
   }
 }
+
+/* in your main stylesheet or component CSS/module */
+.unorder-list ul {
+  list-style-type: disc;        /* make them discs */
+  list-style-position: outside; /* put the bullet outside the text flow */
+  margin: 0 0 1em 1.5em;        /* give them some left-indent */
+  padding: 0;                   /* kill any browser default padding */
+}
+
+.unorder-list ul li {
+  margin-bottom: 0.5em;         /* optional: space between items */
+}

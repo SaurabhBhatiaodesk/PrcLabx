@@ -26,11 +26,13 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   }
 
   const manualUrls = [
+    "https://www.prcrepair.com.au",
     "https://www.prcrepair.com.au/expert-motherboard-repair",
     "https://www.prcrepair.com.au/beginner-phone-repair-course",
     "https://www.prcrepair.com.au/advanced-motherboard",
     "https://www.prcrepair.com.au/master-motherboard-repair",
     "https://www.prcrepair.com.au/professional-phone-screen",
+    "https://www.prcrepair.com.au/price"
   ];
   manualUrls.forEach(url => fetchedUrls.add(url));
   fetchedUrls.add(websiteUrl);
@@ -40,6 +42,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   const xmlSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from(fetchedUrls)
+  .reverse()
   .map(
     (url) => `
   <url>

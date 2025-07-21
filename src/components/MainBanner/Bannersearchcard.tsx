@@ -100,17 +100,26 @@ const Bannersearchcard: React.FC = () => {
     }
   }, [selectedModel, selectedSeries, selectedDevice, selectedBrand]);
   // Handle form submission to generate the slug and search for services
-  const handleSearch = () => {
-    const slug = `${selectedBrand.alias}/${selectedDevice.alias}/${selectedSeries.alias}/${generatedSlug}`;
-    router.push(`/brands/${slug}`); // Redirect to the search results page with the generated slug
-  };
 
   // Get data based on the selection
   const devices = getItems(selectedBrand.title);
-  const series = getSeriesOrProducts(selectedDevice.title);
-  const models = getModelsOrProducts(selectedSeries.title);
-  console.log("models", models);
 
+  const series = getSeriesOrProducts(selectedDevice.title);
+  const filteredSeriesItems = series.filter(
+    (item) => item.title === selectedSeries.title
+  );
+
+  const models = getModelsOrProducts(selectedSeries.title);
+  const handleSearch = () => {
+    if (selectedSeries.title && models.length > 0) {
+      const slug = `${selectedBrand.alias}/${selectedDevice.alias}/${selectedSeries.alias}/${generatedSlug}`;
+      router.push(`/brands/${slug}`); // Redirect to the search results page with the generated slug
+    } else {
+      const firstIssueAlias = filteredSeriesItems[0]?.data?.[0]?.alias || "";
+      const slug = `${selectedBrand.alias}/${selectedDevice.alias}/${selectedSeries.alias}/${firstIssueAlias}`;
+      router.push(`/brands/${slug}`);
+    }
+  };
   return (
     <div className="max-w-lg mr-0 lg:p-8 p-6 bg-gray-50 rounded-lg shadow-md">
       {/* <h2 className="text-center text-2xl font-semibold mb-6 text-gray-800">Select Your Device</h2> */}

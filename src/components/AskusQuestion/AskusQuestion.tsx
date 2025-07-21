@@ -85,7 +85,7 @@ export default function AskusQuestion({
                       >
                         {/* push */}
                         <p
-                          className="text-secondary group-hover:text-white 2xl:text-lg text-sm"
+                          className="text-secondary group-hover:text-white 2xl:text-lg text-sm unorder-list"
                           dangerouslySetInnerHTML={{ __html: item.content || ''}}
                         ></p>
                       </div>

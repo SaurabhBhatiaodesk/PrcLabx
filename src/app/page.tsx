@@ -28,12 +28,13 @@ import sliderimg6 from "../../public/Images/Repair Tools.jpg";
 import sliderimg7 from "../../public/Images/PS5-guts-hub.jpg";
 import sliderimg8 from "../../public/Images/ps5-muddaburd.jpg";
 // china whare house
-import chaina1 from "../../public/Images/chaina1.webp";
-import oneplus from "../../public/Images/oneplus.jpg";
-import OnePlusNord from "../../public/Images/OnePlus Nord.jpg";
-import SamsungGalaxyS25S24 from "../../public/Images/Samsung Galaxy S25 S24.jpg";
-import iphone16 from "../../public/Images/For iPhone 16 Pro.jpg";
-import chaina6 from "../../public/Images/chaina6.webp";
+import one from "../../public/Images/one.png";
+import two from "../../public/Images/two.png";
+import three from "../../public/Images/three.png";
+import four from "../../public/Images/four.png";
+import five from "../../public/Images/five.png";
+import six from "../../public/Images/six.png";
+import seven from "../../public/Images/seven.webp";
 import React from "react";
 
 import Productswiper from "../components/Storeproduct/Productswiper";
@@ -80,52 +81,94 @@ const accordionData = [
   {
     title: "1. How long will it take to fix my phone?",
     content:
-      "Most phone repairs are completed within 30 minutes to 1 hour. In some cases, if parts are not in stock, it may take a few days. If the parts need to be ordered from overseas, the repair may take a few weeks.",
+      "Most phone repairs are completed within <strong>30 minutes to 1 hour</strong>. In some cases, if parts are not in stock, it may take a few days. If the parts need to be ordered from overseas, the repair may take <strong>a few weeks</strong>.",
   },
   {
     title: "2. What types of devices do you repair?",
     content:
-      "We repair a wide range of devices including:\n\n- iPhones, iPads, Android phones and tablets\n- MacBooks and laptops\n- Game consoles and controllers\n\nWe also specialise in complex motherboard repairs and data recovery from mobile phones.",
+      "We repair a wide range of devices including:" +
+      "<ul>" +
+      "<li><strong>iPhones, iPads, Android phones and tablets</strong></li>" +
+      "<li><strong>MacBooks and laptops</strong></li>" +
+      "<li><strong>Game consoles and controllers</strong></li>" +
+      "</ul>" +
+      "We also specialise in <strong>complex motherboard repairs</strong> and <strong>data recovery from mobile phones</strong>.",
   },
   {
     title: "3. What kind of issues can you fix?",
     content:
-      "We repair everything from:\n\n- Cracked screens and battery replacements\n- Charging and power issues\n- Advanced motherboard faults\n- Data recovery from dead, broken, or liquid-damaged phones\n- Console motherboard issues",
+      "We repair everything from:" +
+      "<ul>" +
+      "<li><strong>Cracked screens and battery replacements</strong></li>" +
+      "<li><strong>Charging and power issues</strong></li>" +
+      "<li><strong>Advanced motherboard faults</strong></li>" +
+      "<li><strong>Data recovery from dead, broken, or liquid-damaged phones</strong></li>" +
+      "<li><strong>Console motherboard issues</strong></li>" +
+      "</ul>",
   },
   {
     title: "4. What areas do you service?",
     content:
-      "We have two physical locations:\n\n- St Marys, NSW 2760 (our main service hub)\n- Schofields, NSW 2762\n\nWe also offer Australia-wide service via our Mail-In Repair option. We accept repairs from all regions, including Victoria, Darwin, Perth, Adelaide, and even from New Zealand and other countries.",
+      "We have two physical locations:" +
+      "<ul>" +
+      "<li><strong>St Marys, NSW 2760</strong> (our main service hub)</li>" +
+      "<li><strong>Schofields, NSW 2762</strong></li>" +
+      "</ul>" +
+      "We also offer <strong>Australia-wide service</strong> via our <strong>Mail-In Repair</strong> option. We accept repairs from all regions, including <strong>Victoria, Darwin, Perth, Adelaide</strong>, and even from <strong>New Zealand and other countries</strong>.",
   },
   {
-    title: "5. I have insurance on my phone. Can you repair it and claim through insurance?",
+    title:
+      "5. I have insurance on my phone. Can you repair it and claim through insurance?",
     content:
-      "We do not work directly with insurance companies. However, we can provide a detailed repair quote and tax invoice. You will need to pay us directly, and handle the claim with your insurer yourself.",
+      "<ul>" +
+      "<li>We <strong>do not work directly with insurance companies</strong>.</li>" +
+      "<li>We can provide a <strong>detailed repair quote and tax invoice</strong>.</li>" +
+      "<li>You will need to <strong>pay us directly</strong>, and handle the claim with your insurer yourself.</li>" +
+      "</ul>",
   },
   {
     title: "6. What payment methods do you accept?",
     content:
-      "We accept the following:\n\n-  Credit and debit cards\n- Cash\n- Afterpay and Zip Pay\n- PayID and bank transfers\n\nPlease note: Devices will only be released once payment is cleared in our account.",
+      "We accept the following:" +
+      "<ul>" +
+      "<li><strong>Credit and debit cards</strong></li>" +
+      "<li><strong>Cash</strong></li>" +
+      "<li><strong>Afterpay and Zip Pay</strong></li>" +
+      "<li><strong>PayID and bank transfers</strong></li>" +
+      "</ul>" +
+      "<p>Please note: <strong>Devices will only be released once payment is cleared</strong> in our account.</p>",
   },
   {
     title: "7. What warranty do you offer?",
     content:
-      "All repairs come with a 3-month warranty.\nNote: We do not provide any warranty for liquid-damaged devices, not even for the parts replaced.",
+      "<ul>" +
+      "<li>All repairs come with a <strong>3-month warranty</strong>.</li>" +
+      "<li><strong>Note:</strong> We do<strong>not</strong> provide any warranty for <strong>liquid-damaged devices</strong>, not even for the parts replaced.</li>" +
+      "</ul>",
   },
   {
     title: "8. How long will you hold my device after the repair?",
     content:
-      "We will hold repaired devices for a maximum of 4 weeks. If the device is not collected within this time, it may be recycled or disposed of, and we will not be responsible for it.",
+      "We will hold repaired devices for a maximum of <strong>4 weeks</strong>. If the device is <strong>not collected within this time</strong>, it may be <strong>recycled or disposed of</strong>, and we will <strong>not be responsible</strong> for it.",
   },
   {
-    title: "9. If you can't fix my device, will I get it back in the same condition?",
+    title:
+      "9. If you can't fix my device, will I get it back in the same condition?",
     content:
-      "Not always. If your device is partially working, there is a chance it may become completely non-functional during the repair attempt.\nIf you're concerned about any functionality or internal condition, please discuss this with our staff before submitting your device.\nWe may need to open shields or access internal components, which may leave marks. We do not guarantee the device will be returned in the exact same condition as received.",
+      "<ul>" +
+      "<li>Not always. If your device is <strong>partially working</strong>, there is a chance it may become <strong>completely non-functional</strong> during the repair attempt.</li>" +
+      "<li>If you're concerned about any functionality or internal condition, please <strong>discuss this with our staff before submitting your device</strong>.</li>" +
+      "<li>We may need to <strong>open shields or access internal components</strong>, which may leave marks. We <strong>do not guarantee</strong> the device will be returned in the <strong>exact same condition</strong> as received.</li>" +
+      "</ul>",
   },
   {
-    title: "10. Will my original manufacturer warranty remain valid after your repair, even if you use original parts?",
+    title:
+      "10. Will my original manufacturer warranty remain valid after your repair, even if you use original parts?",
     content:
-      "Probably not. Most manufacturers will void your warranty once a third party has opened the device — even if original parts are used. It’s best to check with your brand’s authorised service centre regarding their warranty policy before proceeding with repair.",
+      "<ul>" +
+      "<li><strong>Probably not.</strong> Most manufacturers will <strong>void your warranty</strong> once a third party has opened the device — even if original parts are used.</li>" +
+      "<li>It’s best to <strong>check with your brand’s authorised service centre</strong> regarding their warranty policy before proceeding with repair.</li>" +
+      "</ul>",
   },
 ];
 
@@ -230,41 +273,41 @@ const slideData = [
 
 const slideData2 = [
   {
-    src: iphone16,
-    alt: "iPhone 16 Pro",
-    Product: "iPhone 16 Pro",
+    src: one,
+    alt: "Samsung Fold 7 Cases",
+    Product: "Samsung Fold 7 Cases",
   },
   {
-    src: SamsungGalaxyS25S24,
-    alt: "SamsungGalaxyS25S24",
-    Product: "Samsung Galaxy S25 S24",
+    src: two,
+    alt: "iPad Cover",
+    Product: "iPad Cover",
   },
   {
-    src: oneplus,
-    alt: "OnePlus 10",
-    Product: "OnePlus 10",
+    src: three,
+    alt: "MacBook Cases",
+    Product: "MacBook Cases",
   },
   {
-    src: OnePlusNord,
-    alt: "OnePlus Nord",
-    Product: "OnePlus Nord",
-  },
-
-  {
-    src: chaina1,
-    alt: "Tools/ Stencils",
-    Product: "Tools/ Stencils",
+    src: four,
+    alt: "Microsoft Surface Cases",
+    Product: "Microsoft Surface Cases",
   },
 
   {
-    src: chaina6,
-    alt: "Screens",
-    Product: "Screens",
+    src: five,
+    alt: "iWatch Cases",
+    Product: "iWatch Cases",
+  },
+
+  {
+    src: six,
+    alt: "Earphone Headphones",
+    Product: "Earphone Headphones",
   },
   {
-    src: oneplus,
-    alt: "OnePlus 10",
-    Product: "OnePlus 10",
+    src: seven,
+    alt: "iphone 17",
+    Product: "iphone 17",
   },
 ];
 const page = () => {
@@ -275,9 +318,8 @@ const page = () => {
       {/* <DeliveryTous/> */}
       <WhyChooseLabX />
       {/* <ShipDeviceUs /> */}
-    
+
       <HandsOnTraining />
-  
 
       <DataRecovery />
 
@@ -290,7 +332,7 @@ const page = () => {
         buttonlink="/coming-soon"
         buttondata="Visit Store"
       />
-          <Productswiper
+      <Productswiper
         slideData={slideData}
         Heading="Parts Store"
         Title="Our Parts Store for mobile phone repair   offers a wide selection of high-quality phone screens, iPhone mobile parts, and accessories. With full e-commerce functionality, businesses can easily purchase the parts they need for efficient mobile phone repairs and services."
@@ -300,7 +342,6 @@ const page = () => {
         buttondata="Visit Store"
       />
 
-   
       <FixLabx />
 
       <BiginnerReviews reviews={reviewsData} googletitle="Our Google Review" />
