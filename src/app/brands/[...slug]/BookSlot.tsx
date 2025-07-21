@@ -18,7 +18,7 @@ interface FormData {
 interface Errors {
   name: string;
   mobile: string;
-  email: string;
+  // email: string;
   date: string;
   timeSlot: string;
   storeLocation: string;
@@ -48,7 +48,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
   const [errors, setErrors] = useState<Errors>({
     name: "",
     mobile: "",
-    email: "",
+    // email: "",
     date: "",
     timeSlot: "",
     storeLocation: "",
@@ -79,7 +79,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
     let formErrors: Errors = {
       name: "",
       mobile: "",
-      email: "",
+      // email: "",
       date: "",
       timeSlot: "",
       storeLocation: "",
@@ -95,10 +95,10 @@ const BookSlot: React.FC<BookSlotProps> = ({
       isValid = false;
     }
 
-    if (!formData.email) {
-      formErrors.email = "Email is required";
-      isValid = false;
-    }
+    // if (!formData.email) {
+    //   formErrors.email = "Email is required";
+    //   isValid = false;
+    // }
 
     if (!formData.date) {
       formErrors.date = "Date is required";
@@ -276,24 +276,22 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus ${
-                        errors.email ? "border-red-500" : "border-prc "
-                      }  focus:ring-prc`}
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus border-prc focus:ring-prc`}
                       placeholder="abc@mail.com"
                     />
                     <label
                       htmlFor="email"
                       className={`leading-5 absolute left-2 top-0 bg-white transform -translate-y-1/2 transition-all duration-200  md:text-[16px]  text-[13px] ${
-                        formData.email || errors.email
+                        formData.email
                           ? "scale-100 top-0 text-prc"
                           : "scale-100 text-prc "
                       }`}
                     >
-                      Email <span className="text-red-500">*</span>
+                      Email
                     </label>
-                    {errors.email && (
+                    {/* {errors.email && (
                       <p className="text-red-500 text-sm m-0">{errors.email}</p>
-                    )}
+                    )} */}
                   </div>
 
                   {/* Date Field */}
@@ -431,25 +429,40 @@ const BookSlot: React.FC<BookSlotProps> = ({
                     </p>
                   )}
                 </div> */}
- <div className="mb-1 overflow-hidden ">
-  <select
-    className="border rounded border-prc focus:border-prc custom-focus p-3 focus:ring-prc w-full text-sm box-border overflow-hidden"
-    value={formData.storeLocation}
-    onChange={(e) => handleCheckboxChange(e.target.value)}
-  >
-    <option value="">Select</option>
-    <option value="122 Queen St, St Marys NSW 2760, Australia" className="w-full overflow-hidden">
-      122 Queen St, St Marys NSW 2760, Australia
-    </option>
-    <option value="Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia" className="w-full overflow-hidden">
-      Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia
-    </option>
-  </select>
-  {errors.storeLocation && (
-    <p className="text-red-500 text-sm m-0">{errors.storeLocation}</p>
-  )}
-</div>
-
+                <div className="mb-1 overflow-hidden leading-[18px]">
+                  <select
+                    className="border rounded border-prc focus:border-prc custom-focus p-3 focus:ring-prc w-full text-sm box-border overflow-hidden"
+                    value={formData.storeLocation}
+                    onChange={(e) => handleCheckboxChange(e.target.value)}
+                  >
+                    <option value="">Select Store</option>
+                    <option
+                      value="122 Queen St, St Marys NSW 2760, Australia"
+                      className="w-full overflow-hidden"
+                    >
+                      122 Queen St, St Marys NSW 2760, Australia - (Preferred)
+                    </option>
+                    <option
+                      value="Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia"
+                      className="w-full overflow-hidden"
+                    >
+                      Kiosk 1/227 Railway Terrace, Schofields NSW 2762,
+                      Australia
+                    </option>
+                  </select>
+                  {formData.storeLocation ===
+                    "Kiosk 1/227 Railway Terrace, Schofields NSW 2762, Australia" && (
+                    <span className="text-red-500 text-[12px] font-semibold">
+                      For quick resolution we recommended visit our St. Marys
+                      store.
+                    </span>
+                  )}
+                  {errors.storeLocation && (
+                    <p className="text-red-500 text-sm m-0">
+                      {errors.storeLocation}
+                    </p>
+                  )}
+                </div>
 
                 {/* Phone Color Field */}
                 <div className="relative mb-2">
