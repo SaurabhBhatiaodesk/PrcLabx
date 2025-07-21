@@ -113,7 +113,7 @@ export default function Productswiper({
                     alt={slide.alt}
                   />
                   <div className="product pt-3">
-                    <p className="product-title text-secondary text-[13px] lg:text-[15px] leading-snug font-semibold mb-[0] font-poppins">
+                    <p className="product-title text-secondary text-[13px] lg:text-[15px] leading-snug font-semibold mb-[0] font-poppins text-center">
                       {slide.Product}
                     </p>
                   </div>
