@@ -311,9 +311,18 @@ export default function CustomHeader() {
                   Parts Store
                 </Link>
               </li>
+                 <li>
+                <Link
+                  href="/game-console"
+                  target="_blank"
+                  onClick={toggleMenu}
+                >
+                Game Console
+                </Link>
+              </li> 
 
               {/* About us dropdown */}
-              <li>
+              {/* <li>
                 <button onClick={toggleDropdown} className="flex items-center">
                   About us <IoChevronDown className="ml-2 text-base" />
                 </button>
@@ -342,7 +351,7 @@ export default function CustomHeader() {
                     </Link>
                   </ul>
                 )}
-              </li>
+              </li> */}
 
               {/* <li>
               <button

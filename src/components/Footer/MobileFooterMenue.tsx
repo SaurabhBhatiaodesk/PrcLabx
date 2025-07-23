@@ -173,6 +173,9 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
+             <li className="mb-2 text-primary">
+              <Link href="/about-us">About Us</Link>
+            </li>
             <li className="mb-2 text-primary">
               <Link href="/contact-us">Contact Us</Link>
             </li>
