@@ -296,10 +296,16 @@ const Footer = () => {
                   <h3 className="xl:mb-5 text-tertiary">Quick links</h3>
                   <div>
                     <ul className="text-[18px]">
-                      <div>
+                      <div className="flex flex-col">
                         <Link href="/about-us">
                           <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             About Us
+                            <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+                          </li>
+                        </Link>
+                          <Link href="/game-console">
+                          <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
+                          Game Console
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
                           </li>
                         </Link>

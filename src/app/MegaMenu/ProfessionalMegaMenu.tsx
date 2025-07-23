@@ -497,7 +497,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 {isDropdownVisible && (
                   <div className="absolute top-[28px] left-0 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg w-64 py-2 z-10">
                     <ul className="">
-                      {menuData.slice(6).map((item) => (
+                      {menuData.slice(6) .filter(item => item.alias !== 'game-console') .map((item) => (
                         <li key={item.id} className="relative group">
                           <Link
                             href={`/brands/${item.alias}`}
@@ -626,7 +626,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                   </li>
                   <li></li>
 
-                  <li>
+
+                  {/* <li>
                     <div className="relative inline-block group">
                       <button className="flex items-center px-2 py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200 rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md">
                         <span className="mr-1">About us</span>
@@ -681,7 +682,18 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                         </li>
                       </ul>
                     </div>
-                  </li>
+                  </li> */}
+
+                        <div className="relative inline-block group">
+                   <Link
+                            href="/brands/game-console"
+                            onClick={toggleMenu}
+                            className=" flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-secondary hover:text-white"
+                          >
+                          Game Console
+                          </Link>
+                  </div>
+ 
                 </ul>
               </div>
             </ul>
