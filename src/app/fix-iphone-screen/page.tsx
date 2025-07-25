@@ -14,6 +14,7 @@ import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import batteryProcess from "../../../public/Images/fix-iphone-screen-screenrepair221.jpg";
 import iphoneModels from "../../../public/Images/fix-iphone-screen-screenrepair.jpg";
+import Image from "next/image";
 
 const Page = () => {
   const accordionData = [
@@ -146,16 +147,16 @@ const Page = () => {
           color="var(--prc)"
           svg_stroke="var(--alpha)"
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-lg leading-relaxed text-gray-700">
-              Phone Repair Centre knows how inconvenient a weak or dying battery can be. Whether you're in Brisbane, Adelaide, Darwin, or a remote area, we're here to make iPhone battery replacement simple and hassle-free.
+              {` Phone Repair Centre knows how inconvenient a weak or dying battery can be. Whether you're in Brisbane, Adelaide, Darwin, or a remote area, we're here to make iPhone battery replacement simple and hassle-free.`}
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-lg leading-relaxed text-gray-700">
-              We use only premium-grade batteries that match or exceed Apple's performance standards. Our experienced technicians ensure each iPhone battery replacement is done with care and precision, so you can enjoy longer battery life without compromising safety or quality.
+              {` We use only premium-grade batteries that match or exceed Apple's performance standards. Our experienced technicians ensure each iPhone battery replacement is done with care and precision, so you can enjoy longer battery life without compromising safety or quality.`}
             </p>
           </div>
         </div>
@@ -168,7 +169,7 @@ const Page = () => {
             color="var(--prc)"
             svg_stroke="var(--alpha)"
           />
-          
+
           <div className="mt-8 space-y-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
@@ -185,19 +186,24 @@ const Page = () => {
 
       <section className="bg-gray-50 py-6">
         <div className="container mx-auto px-4">
-         <MainHeading
+          <MainHeading
             Heading="Our Battery Replacement Process – Safe, Thorough, and Efficient"
             color="var(--prc)"
             svg_stroke="var(--alpha)"
           />
           <h3 className="text-xl font-semibold text-center text-gray-700 mb-8">
+            {`
+
             We Don't Just Replace – We Revive Your iPhone
+
+
+`}
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-          
-              <img src={batteryProcess.src} alt="iPhone battery replacement process" className="rounded-lg shadow-md" />
+
+              <Image src={batteryProcess.src} alt="iPhone battery replacement process" className="rounded-lg shadow-md" />
             </div>
             <div>
               <ul className="space-y-4">
@@ -221,7 +227,7 @@ const Page = () => {
             svg_stroke="var(--alpha)"
           />
 
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             {replacementSteps.map((step, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -245,23 +251,23 @@ const Page = () => {
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
           <MainHeading
-            Heading="From iPhone 6 to iPhone 17 Pro Max – We've Got You Covered"
+            Heading={`From iPhone 6 to iPhone 17 Pro Max – We've Got You Covered`}
             color="var(--prc)"
             svg_stroke="var(--alpha)"
           />
           <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8">
-            Whether you're using an older iPhone 7 or the latest iPhone 17 Pro Max, we perform iPhone battery replacement for nearly every model. As Apple updates its devices, we upgrade our tools and techniques to match.
+            {` Whether you're using an older iPhone 7 or the latest iPhone 17 Pro Max, we perform iPhone battery replacement for nearly every model. As Apple updates its devices, we upgrade our tools and techniques to match.`}
           </p>
-          
+
           <div className="flex justify-center">
-            <img src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full md:h-[500px] " />
+            <Image src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full md:h-[500px] " />
           </div>
         </div>
       </section>
 
       <section className="py-12 bg-prc text-white">
         <div className="container mx-auto px-4 text-center">
-            <MainHeading
+          <MainHeading
             Heading="Fix iPhone Battery Issues with Confidence – Choose Phone Repair Centre Today"
             color="white"
             svg_stroke="var(--alpha)"

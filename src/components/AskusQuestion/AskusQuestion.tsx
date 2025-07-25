@@ -105,7 +105,7 @@ export default function AskusQuestion({
                     />
                   ) : (
                     <div className="md:max-h-[450px] max-h-[350px]  flex">
-                      <img
+                      <Image
                         className="h-[90%] m-auto object-contain"
                         src={brandImage ? brandImage : '/Images/faqbanner.webp'}
                         alt="mobile phone repair  "
