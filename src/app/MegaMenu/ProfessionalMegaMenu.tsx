@@ -618,6 +618,26 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                                 height={20}
                               />
                           </Link>
+
+
+                           <Link
+                            href="/iphone-battery-replacement"
+                          
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                        iPhone Battery Replacement
+                         
+                            
+                          </Link>
+                           <Link
+                            href="/fix-iphone-screen"
+                          
+                            className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
+                          >
+                      Fix iPhone screen
+                         
+                            
+                          </Link>
                         </li>
                       
                        

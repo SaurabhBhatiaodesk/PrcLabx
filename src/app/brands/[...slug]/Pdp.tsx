@@ -278,7 +278,7 @@ const Pdp: React.FC<{
                 />
                 <Image src={zip} alt="Zip" className="h-10 w-12 rounded-md" />
                 <Image src={american} alt="Amex" className="h-10 w-12" />
-                <Image
+                <img
                   src="https://img.icons8.com/fluency/48/000000/cash-in-hand.png"
                   alt="Cash"
                   className="h-10 w-12"

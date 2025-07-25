@@ -212,8 +212,8 @@ const Page = () => {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <Image src={repairProcess.src} alt="iPhone repair process" className="rounded-lg shadow-md" />
+            <div className="w-full">
+              <img src={repairProcess.src} alt="iPhone repair process" className="rounded-lg shadow-md w-full"  />
             </div>
             <div>
               <ul className="space-y-4">
@@ -272,7 +272,7 @@ const Page = () => {
           </p>
           
           <div className="flex justify-center">
-            <Image src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full" />
+            <img src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full"   />
           </div>
         </div>
       </section>
