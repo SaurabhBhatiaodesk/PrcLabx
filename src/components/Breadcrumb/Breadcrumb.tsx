@@ -8,12 +8,12 @@ import FormCode from "../Form/FormCode";
 import { usePathname } from "next/navigation";
 
 interface BreadcrumbProps {
-  pageName: string;
-  pageDescription: string;
-  backgroundImage: string;
-  adminimagenew: string;
-  link?: any;
-  buttonname: string;
+  pageName?: string;
+  pageDescription?:any;
+  backgroundImage?: string;
+  adminimagenew?: string;
+  link?:any;
+  buttonname?: string;
   scrollId?: any;
   scrollOffSet?: any;
   pageNamecolor?: string;
@@ -83,13 +83,13 @@ function Breadcrumb({
           }`}
         >
           <div
-            className={`grid lg:grid-cols-2 grid-cols-1 items-center pt-3 ${
+            className={`grid lg:grid-cols-2 grid-cols-1 items-center ${adminimagenew === undefined ? "md:py-14 py-10" :"pt-3"}  ${
               pathname === "/training" ? "2xl:grid-cols-[5fr_3fr] " : ""
             }`}
           >
             <div className="w-full lg:px-4 mb-8 lg:mb-0">
               <div className="text-center lg:text-left">
-                <ul className="flex items-center lg:justify-start justify-center gap-[10px]">
+                <ul className="flex items-center lg:justify-start justify-center gap-[10px] ">
                   <li>
                     <Link
                       href="/"
@@ -99,7 +99,7 @@ function Breadcrumb({
                     </Link>
                   </li>
                   <li>
-                    <p className="text-body-color text-primary flex items-center lg:gap-[10px] gap-[3px] lg:text-base font-medium mb-0 text-sm ">
+                    <p className="text-body-color text-primary flex items-center lg:gap-[10px] gap-[3px] lg:text-base font-medium mb-0 md:text-sm  text-xs">
                       <span className="text-body-color text-primary">/</span>
                       {pageName}
                     </p>
@@ -112,60 +112,53 @@ function Breadcrumb({
                 >
                   {pageName}
                 </h1>
-                <p
-                  className="text-body-color text-primary mb-5 text-base"
-                  dangerouslySetInnerHTML={{ __html: pageDescription }}
-                ></p>
+            <p 
+  className="text-body-color text-primary mb-5 text-base" 
+  dangerouslySetInnerHTML={{ __html: pageDescription }} 
+/>  
               </div>
+
               <div className="flex lg:justify-start justify-center">
                 {/* Button is now dynamic */}
 
-                {pathname === "/training" ? null : (
-                  <>
-                    {isBrowser && window.location.pathname === link ? (
-                      <button className="uppercase bg-prc text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl  border-[#FFFFFF] justify-center items-center  flex cursor-pointer    border-[1.58px]  x-5 md:py-3  font-medium  shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl " onClick={handleScrollToTarget}>
-                        {buttonname}
-                         <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M5 12H19"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12 5L19 12L12 19"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-                      </button>
-                      // <MainButton
-                      //   MainButton={buttonname}
-                      //   color="bg-prc"
-                      //   onClick={handleScrollToTarget}
-                      // />
-                    ) : (
-                      // <Link href={link}>
-                      //   <button className="btn">{buttonname}</button>
-                      // </Link>
-                      <MainButton
-                        MainButton={buttonname}
-                        color="bg-prc"
-                        link={link}
-                        onClick={handleScrollToTarget}
-                      />
-                    )}
-                  </>
-                )}
+             {pathname === "/training" ? null : (
+  <>
+    {buttonname && ( // Check if buttonname exists before rendering any button
+      isBrowser && window.location.pathname === link ? (
+        <button
+          className="uppercase bg-prc text-white lg:text-[18px] text-[14px] lg:py-[8px] lg:px-[15px] p-[5px] px-3 rounded-3xl border-[#FFFFFF] justify-center items-center flex cursor-pointer border-[1.58px] x-5 md:py-3 font-medium shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl"
+          onClick={handleScrollToTarget}
+        >
+          {buttonname}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M5 12H19"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M12 5L19 12L12 19"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      ) : (
+        <MainButton
+          MainButton={buttonname}
+          color="bg-prc"
+          link={link}
+          onClick={handleScrollToTarget}
+        />
+      )
+    )}
+  </>
+)}
+
               </div>
             </div>
 
@@ -174,15 +167,18 @@ function Breadcrumb({
                 <FormCode />
               </div>
             ) : (
-              <div className={`admin-image relative 2xl:h-[500px] lg:h-[350px] h-[300px] `}>
-                <Image
-                  src={adminimagenew}
-                  alt="Admin Visual"
-                  className={`object-contain  ${pathname === "/screen-refurbishing" ?  "p-3" : ""}`}
-                  fill
-                />
-              </div>
-            )}
+
+              adminimagenew && (
+    <div className={`admin-image relative 2xl:h-[500px] lg:h-[350px] h-[300px]`}>
+      <Image
+        src={adminimagenew}
+        alt={adminimagenew}
+        className={`object-contain ${pathname === "/screen-refurbishing" ? "p-3" : ""}`}
+        fill
+      />
+    </div>
+  )
+)}
           </div>
         </div>
       </section>
