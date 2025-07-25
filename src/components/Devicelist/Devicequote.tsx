@@ -162,7 +162,7 @@ export default function Devicequote() {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-alpha opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl z-10" />
 
-                    <img
+                    <Image
                       src={data.image}
                       alt="device_image"
                       width={100}

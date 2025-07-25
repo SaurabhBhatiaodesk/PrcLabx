@@ -164,7 +164,7 @@ const FaqComponent: React.FC<brands> = ({ brandImage }) => {
                 )}
               </div>
               <div className="md:max-h-[450px] max-h-[350px]  flex">
-                <img
+                <Image
                   className="h-[90%] m-auto object-contain"
                   src={brandImage}
                   alt="mobile phone repair  "

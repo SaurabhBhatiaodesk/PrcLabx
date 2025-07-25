@@ -16,36 +16,37 @@ import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 import repairProcess from "../../../public/Images/iphone-battery-replacement-2.jpg";
 import iphoneModels from "../../../public/Images/iphone-battery-replacement-1.jpg";
+import Image from "next/image";
 
 const Page = () => {
   const accordionData = [
     {
       title: "How does PRC Repair's mail-in service work?",
-      content: "Simply book online, ship your phone to us, and we'll refurbish or repair it before sending it safely back to you."
+      content: `Simply book online, ship your phone to us, and we'll refurbish or repair it before sending it safely back to you.`
     },
     {
       title: "What devices does Phone Repair Centre support?",
-      content: "We currently specialize in refurbishing and repairing iPhones, including various models with OLED screens that require high-precision tools and expert handling."
+      content: `We currently specialize in refurbishing and repairing iPhones, including various models with OLED screens that require high-precision tools and expert handling.`
     },
     {
       title: "How long does the repair process take?",
-      content: "Once we receive your device, most refurbishments are completed within 48 hours and shipped back to you with tracking details provided."
+      content:  `Once we receive your device, most refurbishments are completed within 48 hours and shipped back to you with tracking details provided.`
     },
     {
       title: "Is screen refurbishment better than full replacement?",
-      content: "Yes, refurbishment retains your original screen, costs less, and avoids quality issues often seen with third-party replacement displays or cheaper alternatives."
+      content: `Yes, refurbishment retains your original screen, costs less, and avoids quality issues often seen with third-party replacement displays or cheaper alternatives.`
     },
     {
       title: "Will I be notified during the repair process?",
-      content: "Absolutely! We provide updates at each stage, including diagnosis, repair status, and dispatch, so you're always informed about your device's condition."
+      content: `Absolutely! We provide updates at each stage, including diagnosis, repair status, and dispatch, so you're always informed about your device's condition.`
     },
     {
       title: "What happens if my screen cannot be refurbished?",
-      content: "If refurbishment isn't possible, we'll contact you with photos and offer options, including replacement or return, based on your preference—no hidden decisions."
+      content: `If refurbishment isn't possible, we'll contact you with photos and offer options, including replacement or return, based on your preference—no hidden decisions.`
     },
     {
       title: "Is my phone safe during mail-in repair?",
-      content: "Yes, all phones are handled with care, insured, and tracked throughout the entire process to ensure your device remains protected and secure."
+      content: `Yes, all phones are handled with care, insured, and tracked throughout the entire process to ensure your device remains protected and secure.`
     }
   ];
 
@@ -157,7 +158,7 @@ const Page = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="text-lg leading-relaxed text-gray-700">
-              Phone Repair Centre understands that life gets busy, and finding time to visit a repair shop can be inconvenient. Whether you're in Sydney, Melbourne, Perth, or a remote area, our team is ready to serve you with precision and care.
+             {` Phone Repair Centre understands that life gets busy, and finding time to visit a repair shop can be inconvenient. Whether you're in Sydney, Melbourne, Perth, or a remote area, our team is ready to serve you with precision and care.`}
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -196,7 +197,7 @@ const Page = () => {
             Committed to Quality Over Quantity
           </h2>
           <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto">
-            At Phone Repair Centre, we don't just refurbish screens—we restore performance. Every iPhone screen we handle goes through meticulous testing to ensure it meets our high standards. We focus on delivering consistent quality in every repair, not rushing through bulk jobs. It's not about doing more; it's about doing it right the first time.
+          {`At Phone Repair Centre, we don't just refurbish screens—we restore performance. Every iPhone screen we handle goes through meticulous testing to ensure it meets our high standards. We focus on delivering consistent quality in every repair, not rushing through bulk jobs. It's not about doing more; it's about doing it right the first time.`}
           </p>
         </div>
       </section>
@@ -204,15 +205,15 @@ const Page = () => {
       <section className="bg-white py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Our Refurbishment Process – Precision Meets Perfection
+         {`   Our Refurbishment Process – Precision Meets Perfection`}
           </h2>
           <h3 className="text-xl font-semibold text-center text-gray-700 mb-8">
-            We Don't Just Repair, We Restore
+          {`  We Don't Just Repair, We Restore`}
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <img src={repairProcess.src} alt="iPhone repair process" className="rounded-lg shadow-md" />
+              <Image src={repairProcess.src} alt="iPhone repair process" className="rounded-lg shadow-md" />
             </div>
             <div>
               <ul className="space-y-4">
@@ -271,7 +272,7 @@ const Page = () => {
           </p>
           
           <div className="flex justify-center">
-            <img src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full" />
+            <Image src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full" />
           </div>
         </div>
       </section>
