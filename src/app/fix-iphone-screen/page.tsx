@@ -203,7 +203,7 @@ const Page = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
 
-              <Image src={batteryProcess.src} alt="iPhone battery replacement process" className="rounded-lg shadow-md" />
+              <img src={batteryProcess.src} alt="iPhone battery replacement process" className="rounded-lg shadow-md" />
             </div>
             <div>
               <ul className="space-y-4">
@@ -260,7 +260,7 @@ const Page = () => {
           </p>
 
           <div className="flex justify-center">
-            <Image src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full md:h-[500px] " />
+            <img src={iphoneModels.src} alt="iPhone models we repair" className="rounded-lg shadow-md max-w-full md:h-[500px] " />
           </div>
         </div>
       </section>
