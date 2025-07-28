@@ -38,7 +38,7 @@ const Blogs: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          `${apiUrl}/api/admin/blogs?page=${currentPage}&limit=${limit}`
+          `https://prcbackend.prcrepair.com.au/api/admin/blogs?page=${currentPage}&limit=${limit}`
         );
         console.log(
           "response?.data?.blogresponse?.data?.blog",
