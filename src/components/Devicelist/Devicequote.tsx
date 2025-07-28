@@ -40,7 +40,7 @@ export default function Devicequote() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://www.prc.repair/api/getbrands"
+          `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/getbrands`
         );
         setBrandData(response.data);
       } catch (error) {

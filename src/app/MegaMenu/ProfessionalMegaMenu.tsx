@@ -252,7 +252,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
         );
 
         if (baseData.length === 0) {
-          const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
+          const api = `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/sidebar-filter`; // Replace with your API endpoint
           const res = await fetch(api);
           if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
           baseData = await res.json();

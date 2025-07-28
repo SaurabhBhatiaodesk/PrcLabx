@@ -145,7 +145,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
       setLoading(true);
       try {
         const response = await fetch(
-          "https://www.prc.repair/api/submit-appointment",
+          `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/submit-appointment`,
           {
             method: "POST",
             headers: {

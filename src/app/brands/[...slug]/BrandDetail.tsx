@@ -88,9 +88,9 @@ const BrandDetailPage: React.FC = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
+        const api = `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/sidebar-filter`; // Default endpoint for the sidebar
         const slugPath = slugArray.length > 0 ? slugArray.join("/") : ""; // Create slugPath
-        const slugApi = `https://www.prc.repair/api/getbrands/${slugPath}`; // Construct the endpoint for slug-based API
+        const slugApi = `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/getbrands/${slugPath}`; // Construct the endpoint for slug-based API
 
         // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
         let baseData: any = JSON.parse(
