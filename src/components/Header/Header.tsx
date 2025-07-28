@@ -34,7 +34,7 @@ export default function CustomHeader() {
     hasFetchedData.current = true;
     const fetchBrands = async () => {
       try {
-        const api = "https://www.prc.repair/api/sidebar-filter"; // Default endpoint for the sidebar
+        const api = `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/sidebar-filter`; // Default endpoint for the sidebar
         // Fetch data for base endpoint ('getbrands') and store it in sessionStorage for the sidebar
         let baseData: any = JSON.parse(
           sessionStorage.getItem("baseData") || "[]"

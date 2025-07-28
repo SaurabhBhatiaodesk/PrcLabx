@@ -84,14 +84,14 @@ const data = ()=>{
                 stroke="black"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12 5L19 12L12 19"
                 stroke="black"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
