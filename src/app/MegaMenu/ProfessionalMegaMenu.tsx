@@ -19,7 +19,7 @@ interface MenuItem {
   image?: string;
   data?: MenuItem[];
   products?: MenuItem[];
-  pivot?: any; 
+  pivot?: any;
 }
 
 interface MegaMenuProps {
@@ -157,7 +157,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
           className=" bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-h-[40px] overflow-y-auto opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 ease-out scrollbar absolute"
           style={{
             width: "240px",
-            opacity:'0',
+            opacity: "0",
             boxShadow:
               "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
@@ -252,7 +252,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
         );
 
         if (baseData.length === 0) {
-          const api = "https://www.prc.repair/api/sidebar-filter"; // Replace with your API endpoint
+          const api = `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/sidebar-filter`; // Replace with your API endpoint
           const res = await fetch(api);
           if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
           baseData = await res.json();
@@ -313,7 +313,10 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
 
   // Check if item has children
   const hasChildren = useCallback((item: MenuItem): boolean => {
-    return Boolean(item.pivot ? 0 : item.data?.length) || Boolean(item.products?.length);
+    return (
+      Boolean(item.pivot ? 0 : item.data?.length) ||
+      Boolean(item.products?.length)
+    );
   }, []);
 
   // Get children items
@@ -497,18 +500,21 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                 {isDropdownVisible && (
                   <div className="absolute top-[28px] left-0 mt-2 bg-white shadow-lg border border-gray-200 rounded-lg w-64 py-2 z-10">
                     <ul className="">
-                      {menuData.slice(6) .filter(item => item.alias !== 'game-console') .map((item) => (
-                        <li key={item.id} className="relative group">
-                          <Link
-                            href={`/brands/${item.alias}`}
-                            className={` px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between items-center "
+                      {menuData
+                        .slice(6)
+                        .filter((item) => item.alias !== "game-console")
+                        .map((item) => (
+                          <li key={item.id} className="relative group">
+                            <Link
+                              href={`/brands/${item.alias}`}
+                              className={` px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 flex justify-between items-center "
                   `}
-                          >
-                            {item.title}
-                            {/* <IoChevronForward className="ml-2 text-sm" /> */}
-                          </Link>
-                        </li>
-                      ))}
+                            >
+                              {item.title}
+                              {/* <IoChevronForward className="ml-2 text-sm" /> */}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
                   </div>
                 )}
@@ -539,12 +545,12 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             B2B Repair
                           </Link>
                         </li>
-                            <li>
+                        <li>
                           <Link
                             href="/mail-in-repair"
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                           Mail In Repair
+                            Mail In Repair
                           </Link>
                         </li>
                         <li>
@@ -555,12 +561,12 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                             PS5 Repair
                           </Link>
                         </li>
-                          <li>
+                        <li>
                           <Link
                             href="/price"
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                           Price
+                            Price
                           </Link>
                         </li>
                         <li>
@@ -589,63 +595,49 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                           </Link>
                         </li>
 
-                          <li>
+                        <li>
                           <Link
                             href="/coming-soon"
-                          
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                          Repair Form
-                         
-                              <Image
-                                src={commingsoon}
-                                alt="Coming soon"
-                                width={20}
-                                height={20}
-                              />
+                            Repair Form
+                            <Image
+                              src={commingsoon}
+                              alt="Coming soon"
+                              width={20}
+                              height={20}
+                            />
                           </Link>
-                           <Link
+                          <Link
                             href="/coming-soon"
-                          
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                          Repair Solutions
-                         
-                              <Image
-                                src={commingsoon}
-                                alt="Coming soon"
-                                width={20}
-                                height={20}
-                              />
+                            Repair Solutions
+                            <Image
+                              src={commingsoon}
+                              alt="Coming soon"
+                              width={20}
+                              height={20}
+                            />
                           </Link>
 
-
-                           <Link
+                          <Link
                             href="/iphone-battery-replacement"
-                          
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                        iPhone Battery Replacement
-                         
-                            
+                            iPhone Battery Replacement
                           </Link>
-                           <Link
+                          <Link
                             href="/fix-iphone-screen"
-                          
                             className="flex px-3 py-2 text-sm font-medium hover:bg-[#122d37] hover:text-white transition-all duration-200 justify-between"
                           >
-                      Fix iPhone screen
-                         
-                            
+                            Fix iPhone screen
                           </Link>
                         </li>
-                      
-                       
                       </ul>
                     </div>
                   </li>
                   <li></li>
-
 
                   {/* <li>
                     <div className="relative inline-block group">
@@ -704,16 +696,15 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     </div>
                   </li> */}
 
-                        <div className="relative inline-block group">
-                   <Link
-                            href="/brands/game-console"
-                            onClick={toggleMenu}
-                            className=" flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-secondary hover:text-white"
-                          >
-                          Game Console
-                          </Link>
+                  <div className="relative inline-block group">
+                    <Link
+                      href="/brands/game-console"
+                      onClick={toggleMenu}
+                      className=" flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-secondary"
+                    >
+                      Game Console
+                    </Link>
                   </div>
- 
                 </ul>
               </div>
             </ul>
