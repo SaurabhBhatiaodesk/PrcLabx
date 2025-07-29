@@ -82,7 +82,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
                 if (matchingProducts.length > 0) {
                   matchingProducts.forEach((product: any) => {
                     // Construct the full path without duplicate alias
-                    const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
+                    const updatedPath = `${itemPath}/${product?.data[0]?.alias}`;
                     setMatchingPath(updatedPath);
                   });
                 }
@@ -98,7 +98,7 @@ const IndependentSubmenu: React.FC<IndependentSubmenuProps> = ({
             if (matchingProducts.length > 0) {
               matchingProducts.forEach((product: any) => {
                 // Construct the full path without duplicate alias
-                const updatedPath = `${itemPath}/${product.data[0]?.alias}`;
+                const updatedPath = `${itemPath}/${product?.data[0]?.alias}`;
                 setMatchingPath(updatedPath);
               });
             }
