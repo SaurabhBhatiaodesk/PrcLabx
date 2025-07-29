@@ -75,7 +75,7 @@
 .custom-content-styling h2,
 .custom-content-styling h2 span {
     background-color: transparent !important;
-  color: var(--secondary); 
+  color: var(--secondary) !important; 
     font-size: 28px;
 }
 
@@ -130,7 +130,7 @@ strong{
 .custom-content-styling p {
     font-size: 18px; 
     line-height: 1.6; 
-    color: var(--secondary); 
+    color: var(--secondary) !important; 
     margin-bottom: 10px;
 }
 
@@ -249,7 +249,7 @@ strong{
 
     .custom-content-styling h3 span {
         font-size: 20px;
-      color: var(--secondary); 
+      color: var(--secondary) !important; 
     }
 
     /* Paragraph */
