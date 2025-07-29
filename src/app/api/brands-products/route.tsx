@@ -8,7 +8,7 @@ interface Item {
 }
 
 export async function GET(req: Request): Promise<Response> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/sidebar-filter`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/sidebar-filter`);
   const baseData: Item[] = await res.json();
 
   const dynamicUrls = new Set<string>();

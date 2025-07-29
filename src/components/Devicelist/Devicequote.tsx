@@ -40,7 +40,7 @@ export default function Devicequote() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/getbrands`
+          `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/getbrands`
         );
         setBrandData(response.data);
       } catch (error) {
@@ -138,14 +138,14 @@ export default function Devicequote() {
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12 5L19 12L12 19"
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -190,14 +190,14 @@ export default function Devicequote() {
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12 5L19 12L12 19"
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>

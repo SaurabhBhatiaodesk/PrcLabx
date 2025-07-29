@@ -31,7 +31,7 @@ const FaqComponent: React.FC<brands> = ({ brandImage }) => {
   );
   // Fetch FAQ data from API on component mount
   useEffect(() => {
-    const api = `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/getFaq/${matchedBrand?.title}/${matchedModel?.id}`;
+    const api = `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/getFaq/${matchedBrand?.title}/${matchedModel?.id}`;
     axios
       .get(api)
       .then((res) => {

@@ -71,14 +71,14 @@ const MainButton: React.FC<MainButtonProps> = ({
                 stroke="white"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round" 
+                strokeLinejoin="round" 
               />
               <path
                 d="M12 5L19 12L12 19"
                 stroke="white"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
@@ -103,14 +103,14 @@ const MainButton: React.FC<MainButtonProps> = ({
               stroke="white"
               stroke-width="2"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
             <path
               d="M12 5L19 12L12 19"
               stroke="white"
               stroke-width="2"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>

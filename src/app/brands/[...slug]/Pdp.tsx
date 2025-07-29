@@ -96,7 +96,7 @@ const Pdp: React.FC<{
     // const modifiedSlugArray = slugArray.slice(0, -1); // remove last segment (screen-repair)
     // const slugPath = modifiedSlugArray.join("/"); // join back to string
 
-    // const slugApi = `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/getbrands/${slugPath}/${tab.alias}`;
+    // const slugApi = `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/getbrands/${slugPath}/${tab.alias}`;
 
     // const resSlug = await fetch(slugApi);
     // if (!resSlug.ok) {

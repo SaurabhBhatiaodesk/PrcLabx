@@ -7,25 +7,25 @@
 <circle cx="1036.5" cy="16.5" r="14.5385" stroke="#161616" stroke-width="2.07692"/>
 <circle cx="1589.5" cy="16.5" r="9.34615" fill="#00303E"/>
 <circle cx="1589.5" cy="16.5" r="14.5385" stroke="#161616" stroke-width="2.07692"/>
-<path d="M195 22L201 16L195 10" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M181 22L187 16L181 10" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M805 22L811 16L805 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M791 22L797 16L791 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1418 22L1424 16L1418 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1404 22L1410 16L1404 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M195 22L201 16L195 10" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M181 22L187 16L181 10" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M805 22L811 16L805 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M791 22L797 16L791 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M1418 22L1424 16L1418 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M1404 22L1410 16L1404 10" stroke="#00303E" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
 <path d="M1 17H1590V339H1" stroke="#161616" stroke-width="2" stroke-dasharray="4 4"/>
-<path d="M1584 170L1590 176L1596 170" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1584 156L1590 162L1596 156" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1584 170L1590 176L1596 170" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M1584 156L1590 162L1596 156" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
 <circle cx="564.5" cy="337.5" r="9.34615" fill="#00303E"/>
 <circle cx="564.5" cy="337.5" r="14.5385" stroke="#161616" stroke-width="2.07692"/>
 <circle cx="1036.5" cy="337.5" r="9.34615" fill="#00303E"/>
 <circle cx="1036.5" cy="337.5" r="14.5385" stroke="#161616" stroke-width="2.07692"/>
 <circle cx="16.5005" cy="338.5" r="9.34615" fill="#00303E"/>
 <circle cx="16.5" cy="338.5" r="14.5385" stroke="#161616" stroke-width="2.07692"/>
-<path d="M187 345L181 339L187 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M201 345L195 339L201 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M797 345L791 339L797 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M811 345L805 339L811 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1410 345L1404 339L1410 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1424 345L1418 339L1424 333" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M187 345L181 339L187 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M201 345L195 339L201 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M797 345L791 339L797 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M811 345L805 339L811 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M1410 345L1404 339L1410 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
+<path d="M1424 345L1418 339L1424 333" stroke="#161616" stroke-width="2" stroke-linecap="round" strokeLinejoin="round"/>
 </svg>

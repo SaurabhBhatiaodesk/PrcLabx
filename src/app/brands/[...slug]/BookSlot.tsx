@@ -145,7 +145,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
       setLoading(true);
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_LEAFYMANGO_API_URL}/api/submit-appointment`,
+          `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/submit-appointment`,
           {
             method: "POST",
             headers: {
@@ -276,7 +276,7 @@ const BookSlot: React.FC<BookSlotProps> = ({
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus border-prc focus:ring-prc`}
+                      className={`md:h-12 h-10 text-base peer w-full p-2 border rounded border-prc  focus:border-prc custom-focus focus:ring-prc`}
                       placeholder="abc@mail.com"
                     />
                     <label
