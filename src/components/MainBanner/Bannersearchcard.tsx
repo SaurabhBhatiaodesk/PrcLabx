@@ -33,14 +33,44 @@ const Bannersearchcard: React.FC = () => {
   }>({ title: "", alias: "" });
   const [generatedSlug, setGeneratedSlug] = useState<string>("");
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
-      setBaseData(data);
-    }, 3000); // Corrected the delay to 3000 milliseconds
-    // Cleanup function to clear the timer if the component is unmounted
-    return () => clearTimeout(timer);
+   useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const api = `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/api/sidebar-filter`;
+        let baseData: any = JSON.parse(
+          sessionStorage.getItem("baseData") || "[]"
+        );
+        console.log("baseData.length",baseData.length);
+        
+        if (baseData.length === 0) {
+          try {
+            const res = await fetch(api);
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            baseData = await res.json();
+            sessionStorage.setItem("baseData", JSON.stringify(baseData));
+            setBaseData(baseData);
+          } catch (error) {
+            console.error("Error fetching base data:", error);
+          }
+        }
+        setBaseData(baseData);
+      } catch (error) {
+        console.error("Error fetching brands:", error);
+      }
+    };
+    fetchBrands();
   }, []);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     const data = JSON.parse(sessionStorage.getItem("baseData") || "[]");
+  //     setBaseData(data);
+  //   }, 3000); // Corrected the delay to 3000 milliseconds
+  //   // Cleanup function to clear the timer if the component is unmounted
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   // Get the list of devices or products based on the selected brand
   const getItems = (brand: string): Item[] => {
