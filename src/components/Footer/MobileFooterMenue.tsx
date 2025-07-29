@@ -122,6 +122,9 @@ const MobileFooterMenue = () => {
               <Link href="/ps5-repair">PS5 Repair</Link>
             </li>
             <li className="mb-2 text-primary">
+              <Link href="/brands/game-console">Game Console</Link>
+            </li>
+            <li className="mb-2 text-primary">
               <Link href="/screen-refurbishing">Screen Refurbishment</Link>
             </li>
             <li className="mb-2 text-primary">
@@ -173,7 +176,7 @@ const MobileFooterMenue = () => {
           }`}
         >
           <ul className="p-[12px]   rounded-b-lg text-[16px]">
-             <li className="mb-2 text-primary">
+            <li className="mb-2 text-primary">
               <Link href="/about-us">About Us</Link>
             </li>
             <li className="mb-2 text-primary">
@@ -182,9 +185,7 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="/blogs">Blogs</Link>
             </li>
-               <li className="mb-2 text-primary">
-              <Link href="/brands/game-console">Game Console</Link>
-            </li>
+
             <li className="mb-2 text-primary">
               <Link href="/faq">FAQs</Link>
             </li>
@@ -296,55 +297,10 @@ const MobileFooterMenue = () => {
                 notiClass=""
               />
             )}
-
-            {/* <li className="mb-2 text-primary">Newsletter </li> */}
           </ul>
         </div>
       </div>
-      <div>
-        {/* <h3 className="text-center lg:text-xl text-lg mb-3 text-primary">
-          We DO NOT provide Walk-In Service
-        </h3> */}
-      </div>
-      {/* <div className="emailsection relative">
-        <h3 className="text-center text-primary">Newsletter </h3>
-        <div className="relative max-w-full">
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="text-black w-full p-[11px] rounded-[50px] cursor-pointer border-[1px] border-gray-300 focus:outline-none my-2 placeholder:text-[#3737379c] placeholder:font-normal placeholder:text-[16px]"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          <button
-            type="submit"
-            className={`text-white rounded-[50px] flex items-center justify-center game absolute bg-black p-[11px] right-[2px] top-1/2 transform -translate-y-1/2 ${
-              loading ? "blur-sm pointer-events-none" : ""
-            }`}
-            style={{ width: "14%" }}
-            onClick={handleSubscribe} // Trigger the subscription logic on button click
-            disabled={loading} // Prevent multiple clicks
-          >
-            <Image className="gl" src={sendicon} alt="Send icon" />
-          </button>
-        </div>
-        {error && <p className="text-[red] text-sm mt-2">{error}</p>}{" "}
-        {loading && (
-          // <p className="xl:text-[30px] lg:text-26px text-30px font-poppins text-blue-500">
-          //   Processing...
-          // </p>
-          <div className="flex justify-center items-center">
-            <p className="text-sm text-tertiary flex items-center">
-              Processing
-              <span className="ml-2 flex space-x-1">
-                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce"></span>
-                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-200"></span>
-                <span className="w-2 h-2 bg-tertiary rounded-full animate-bounce delay-400"></span>
-              </span>
-            </p>
-          </div>
-        )}
-      </div> */}
+      <div></div>
     </div>
   );
 };
