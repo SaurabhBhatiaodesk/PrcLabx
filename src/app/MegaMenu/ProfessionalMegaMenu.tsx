@@ -486,6 +486,15 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     renderMegaDropdown(item, index)}
                 </li>
               ))}
+                <div className="relative inline-block group">
+                    <Link
+                      href="/brands/game-console"
+                      onClick={toggleMenu}
+                      className=" flex items-center px-[5px] py-2 2xl:text-[16px] lg:text-[13px] font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white  text-secondary"
+                    >
+                      Game Console
+                    </Link>
+                  </div>
               <div
                 className="relative"
                 onMouseEnter={() => setIsDropdownVisible(true)}
@@ -696,7 +705,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     </div>
                   </li> */}
 
-                  <div className="relative inline-block group">
+                  {/* <div className="relative inline-block group">
                     <Link
                       href="/brands/game-console"
                       onClick={toggleMenu}
@@ -704,7 +713,7 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
                     >
                       Game Console
                     </Link>
-                  </div>
+                  </div> */}
                 </ul>
               </div>
             </ul>

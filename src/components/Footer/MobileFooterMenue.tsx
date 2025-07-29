@@ -182,6 +182,9 @@ const MobileFooterMenue = () => {
             <li className="mb-2 text-primary">
               <Link href="/blogs">Blogs</Link>
             </li>
+               <li className="mb-2 text-primary">
+              <Link href="/brands/game-console">Game Console</Link>
+            </li>
             <li className="mb-2 text-primary">
               <Link href="/faq">FAQs</Link>
             </li>
