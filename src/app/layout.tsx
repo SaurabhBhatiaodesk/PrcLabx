@@ -82,11 +82,26 @@ export default function RootLayout({
         </Providers>
 
         {/* <!-- Google tag (gtag.js) --> */}
-        <Script
+   <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-W7DL9DN808"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W7DL9DN808');
+            `,
+          }}
+        />
+
+        {/* <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-6GPFSRTXQE"
         />
-        {/* <Script
+        <Script
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -98,6 +113,9 @@ export default function RootLayout({
             `,
           }}
         /> */}
+
+
+
         {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7DL9DN808"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-W7DL9DN808'); </script> */}
         {/* Google Tag Manager (GTM) */}
         <Script
