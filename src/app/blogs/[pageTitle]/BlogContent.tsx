@@ -24,7 +24,7 @@ const BlogContent: React.FC<BlogContentProps> = ({ content }) => {
   return (
     <div
       ref={contentRef}
-      className="mt-2 text-white custom-content-styling"
+      className="mt-2 text-black custom-content-styling"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
