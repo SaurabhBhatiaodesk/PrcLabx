@@ -32,7 +32,9 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     "https://www.prcrepair.com.au/advanced-motherboard",
     "https://www.prcrepair.com.au/master-motherboard-repair",
     "https://www.prcrepair.com.au/professional-phone-screen",
-    "https://www.prcrepair.com.au/price"
+    "https://www.prcrepair.com.au/price",
+    "https://www.prcrepair.com.au/iphone-speaker-and-microphone-repair",
+    "https://www.prcrepair.com.au/iphone-camera-replacement-service"
   ];
   manualUrls.forEach(url => fetchedUrls.add(url));
   fetchedUrls.add(websiteUrl);
