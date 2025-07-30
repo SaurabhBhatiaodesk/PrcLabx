@@ -313,7 +313,7 @@ export default function CustomHeader() {
               </li>
                  <li>
                 <Link
-                  href="/game-console"
+                  href="/brands/game-console"
                   target="_blank"
                   onClick={toggleMenu}
                 >

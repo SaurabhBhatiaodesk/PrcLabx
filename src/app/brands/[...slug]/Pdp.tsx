@@ -171,7 +171,7 @@ const Pdp: React.FC<{
             <div className="w-full lg:w-1/3 md:flex justify-center mb-6 lg:mb-0  hidden">
               <img
                 src={getImage(pdpDetail[0])} // Use getImage function to get the image
-                alt="iPhone 15"
+                alt={device}
                 className="w-56 h-auto object-contain rounded-lg"
               />
             </div>
