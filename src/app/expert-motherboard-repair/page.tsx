@@ -9,9 +9,9 @@ const ExpertMotherBoardRepair = dynamic(
 import "./Expert.css";
 
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Expert Motherboard Repair | Micro Soldering (Level 2) | PRC ",
   description:
-    "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Advance your mobile phone repair skills with phone repair center Level 2 course. Master Face ID, baseband, NAND repairs, and dual-board systems in just 5 days.",
   keywords: [
     "LabX",
     "tech solutions",
@@ -20,9 +20,9 @@ export const metadata = {
     "tech services",
   ],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Expert Motherboard Repair | Micro Soldering (Level 2) | PRC ",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Advance your mobile phone repair skills with phone repair center Level 2 course. Master Face ID, baseband, NAND repairs, and dual-board systems in just 5 days.",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -36,9 +36,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Expert Motherboard Repair | Micro Soldering (Level 2) | PRC ",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Advance your mobile phone repair skills with phone repair center Level 2 course. Master Face ID, baseband, NAND repairs, and dual-board systems in just 5 days.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

@@ -108,7 +108,7 @@ const DataImportantNote = () => {
             </div>
             <div className="flex gap-[5px] text-secondary items-start">
               <span><LuDot  color="black" /></span>
-              <p className="text-secondary m-0">Customers are encouraged to review our <Link className="font-semibold" href="/faq"> FAQ, </Link><Link className="font-semibold" href="/Terms_and_Conditions">Terms and Conditions, </Link> and  <Link className="font-semibold" href="/Shipping_Policy">Shipping Policy for more details. </Link> </p>
+              <p className="text-secondary m-0">Customers are encouraged to review our <Link className="font-semibold" href="/faq"> FAQ, </Link><Link className="font-semibold" href="/Terms-and-conditions">Terms and Conditions, </Link> and  <Link className="font-semibold" href="/Shipping-Policy">Shipping Policy for more details. </Link> </p>
             </div>
           </div>
         </div>

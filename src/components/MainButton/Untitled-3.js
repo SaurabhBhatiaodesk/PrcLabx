@@ -300,7 +300,7 @@ export default function App() {
                                     Faq{" "}
                                   </Link>
                                   <Link
-                                    href="/Trademark_Disclaimer"
+                                    href="/Trademark-Disclaimer"
                                     onClick={toggleMenu}
                                     className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
@@ -309,7 +309,7 @@ export default function App() {
                                     Trademark Disclaimer{" "}
                                   </Link>
                                   <Link
-                                    href="/Warranty_and_Terms"
+                                    href="/Warranty-and-Terms"
                                     onClick={toggleMenu}
                                     className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"
@@ -318,7 +318,7 @@ export default function App() {
                                     Warranty And Terms{" "}
                                   </Link>
                                   <Link
-                                    href="/Shipping_Policy"
+                                    href="/Shipping-Policy"
                                     onClick={toggleMenu}
                                     className='flex items-center px-[5px] py-2 text-base font-semibold transition-all duration-200  rounded-lg hover:bg-[#122d37] hover:text-white hover:shadow-md transform hover:-translate-y-0.5
                     "text-gray-700 hover:text-white"

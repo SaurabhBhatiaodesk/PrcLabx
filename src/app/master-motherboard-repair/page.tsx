@@ -1,19 +1,26 @@
 import dynamic from "next/dynamic";
-import React from 'react'
+import React from "react";
 // import MasterMotherboardRepair from './MasterMotherboardRepair'
-const MasterMotherboardRepair = dynamic(() => import('./MasterMotherboardRepair'), { ssr: false });
-
-
+const MasterMotherboardRepair = dynamic(
+  () => import("./MasterMotherboardRepair"),
+  { ssr: false }
+);
 
 export const metadata = {
-  title: "Phone Repair Center  Mobile Phone Services - Expert Repair & Training",
+  title: "Master Motherboard Repair | PS5 Motherboard Repair Australia | PRC",
   description:
-    "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
-  keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
+    "Advance your mobile repair skills with PRC Repair’s Level 3 course. Master complex motherboard repairs, data recovery, & micro soldering techniques in just 5 days.",
+  keywords: [
+    "PRC",
+    "tech solutions",
+    "data recovery",
+    "client reviews",
+    "tech services",
+  ],
   openGraph: {
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Master Motherboard Repair | PS5 Motherboard Repair Australia | PRC",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Advance your mobile repair skills with PRC Repair’s Level 3 course. Master complex motherboard repairs, data recovery, & micro soldering techniques in just 5 days.",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -27,9 +34,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Master Motherboard Repair | PS5 Motherboard Repair Australia | PRC",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Advance your mobile repair skills with PRC Repair’s Level 3 course. Master complex motherboard repairs, data recovery, & micro soldering techniques in just 5 days.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
@@ -37,14 +44,12 @@ export const metadata = {
   },
 };
 
-
-
 const page = () => {
   return (
     <div>
-        <MasterMotherboardRepair/>
+      <MasterMotherboardRepair />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

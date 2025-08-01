@@ -3,14 +3,14 @@ import WhatWeDo from "./what-we-do";
 import "./whatWeDo.css";
 
 export const metadata = {
-  title: "Phone Repair Center  Mobile Phone Services - Expert Repair & Training",
+  title: "Expert Mobile Phone Repairing in Australia | Phone Repair Center",
   description:
-    "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Explore PRC Repair's specialized services, including screen refurbishing, data recovery, advanced motherboard repairs, and professional training programs.",
   keywords: ["PRC", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Expert Mobile Phone Repairing in Australia | Phone Repair Center",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore PRC Repair's specialized services, including screen refurbishing, data recovery, advanced motherboard repairs, and professional training programs.",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -24,9 +24,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Expert Mobile Phone Repairing in Australia | Phone Repair Center",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Explore PRC Repair's specialized services, including screen refurbishing, data recovery, advanced motherboard repairs, and professional training programs.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

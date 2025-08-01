@@ -335,7 +335,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/Trademark_Disclaimer">
+                        <Link href="/Trademark-Disclaimer">
                           <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Trademark Disclaimer
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -343,7 +343,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/Warranty_and_Terms">
+                        <Link href="/Warranty-and-Terms">
                           <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Warranty and Terms
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -351,7 +351,7 @@ const Footer = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/Shipping_Policy">
+                        <Link href="/Shipping-Policy">
                           <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Shipping Policy
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
@@ -360,7 +360,7 @@ const Footer = () => {
                       </div>
 
                       <div>
-                        <Link href="/Terms_and_Conditions">
+                        <Link href="/Terms-and-conditions">
                           <li className="text-primary relative inline-block xl:p-1 group font-poppins font-[300] hover:text-yellow-200">
                             Terms and conditions
                             <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>

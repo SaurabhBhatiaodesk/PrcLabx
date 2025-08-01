@@ -5,14 +5,14 @@ const BeginnerCourse = dynamic(() => import("./BeginnerCourse"), {
   ssr: false,
 });
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Beginner Phone Repair Course | Mobile Phone Repair Courses | PRC",
   description:
-    "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Kickstart your mobile repair journey with PRC Repair’s 5-day Beginner Course. Learn essential skills like screen replacements, camera repairs, and more. Visit today!",
   // keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Beginner Phone Repair Course | Mobile Phone Repair Courses | PRC",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Kickstart your mobile repair journey with PRC Repair’s 5-day Beginner Course. Learn essential skills like screen replacements, camera repairs, and more. Visit today!",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -26,9 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Beginner Phone Repair Course | Mobile Phone Repair Courses | PRC",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Kickstart your mobile repair journey with PRC Repair’s 5-day Beginner Course. Learn essential skills like screen replacements, camera repairs, and more. Visit today!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {
@@ -39,7 +39,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
-        <BeginnerCourse />
+      <BeginnerCourse />
     </>
   );
 };

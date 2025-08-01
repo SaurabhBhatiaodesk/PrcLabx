@@ -41,9 +41,9 @@ import Productswiper from "../components/Storeproduct/Productswiper";
 import HandsOnTraining from "../components/HomeCpmponents/HandsOnTraining/HandsOnTraining";
 export const metadata = {
   title:
-    "Mobile Phone Repair Services & Training | Mobile Accessories | Phone Repair Center ",
+    "Mobile Phone Repair Services & Training | Phone Repair Center in Australia",
   description:
-    "Phone Repair Center  provides expert mobile phone repair services, training, & quality mobile accessories. Fast, reliable solutions to keep your devices in top condition. Join now!",
+    "Phone Repair Center provides expert mobile phone repair services, training, & mobile accessories. Fast, reliable solutions to keep devices in top condition. Join now!",
   keywords: [
     "PRC",
     "tech solutions",
@@ -52,9 +52,9 @@ export const metadata = {
     "tech services",
   ],
   openGraph: {
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Mobile Phone Repair Services & Training | Phone Repair Center in Australia",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Phone Repair Center provides expert mobile phone repair services, training, & mobile accessories. Fast, reliable solutions to keep devices in top condition. Join now!",
     url: "/",
     type: "website",
     images: [
@@ -68,9 +68,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to PRC - Your Trusted Tech Solutions",
+    title: "Mobile Phone Repair Services & Training | Phone Repair Center in Australia",
     description:
-      "Explore Phone Repair Center  for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Phone Repair Center provides expert mobile phone repair services, training, & mobile accessories. Fast, reliable solutions to keep devices in top condition. Join now!",
     images: ["https://example.com/path-to-your-image.jpg"],
   },
   alternates: {

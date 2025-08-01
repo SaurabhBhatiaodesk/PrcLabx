@@ -30,7 +30,7 @@
 //       subtitle: "",
 //       subcontent:
 //         "Read our Shipping Policy or Shipping FAQ for more information.",
-//       link: "/Shipping_Policy",
+//       link: "/Shipping-Policy",
 //       buttonad:"Shipping Policy",
 //     },
 //     {
@@ -176,7 +176,7 @@ const Thankyou: React.FC = () => {
       content:
         "Print the PDF attachment in your email and place it inside the package.",
       subcontent: "Read our Shipping Policy or Shipping FAQ for more information.",
-      link: "/Shipping_Policy",
+      link: "/Shipping-Policy",
       buttonad: "Shipping Policy",
     },
     {
