@@ -3,14 +3,14 @@ import React from "react";
 import Contact from "./contact";
 import "./price.css"
 export const metadata = {
-  title: "Pricing |  Affordable Repair Services and Courses | Phone Repair Center ",
+  title: "Mobile Phone Repair Services Australia | Phone Repair Center Price",
   description:
-    "At Phone Repair Center , we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
+    "Explore PRC Repair’s affordable mobile phone repair services in Australia. Get transparent pricing for phone repairs, data recovery, fix iphone screen and more.",
   keywords: ["mobile phone repair   Solutions", "Expert Device Repair"],
   openGraph: {
-    title: "Pricing |  Affordable Repair Services and Courses | Phone Repair Center ",
+    title: "Mobile Phone Repair Services Australia | Phone Repair Center Price",
     description:
-      "At Phone Repair Center , we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
+      "Explore PRC Repair’s affordable mobile phone repair services in Australia. Get transparent pricing for phone repairs, data recovery, fix iphone screen and more.",
     url: "", // Replace with your actual page URL
     type: "website",
     images: [
@@ -24,9 +24,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing |  Affordable Repair Services and Courses | Phone Repair Center ",
+    title: "Mobile Phone Repair Services Australia | Phone Repair Center Price",
     description:
-      "At Phone Repair Center , we offer cost-effective pricing for mobile phone repairs. Our services include screen repairs, phone repair course , , mobile phone repair   training.& more.",
+      "Explore PRC Repair’s affordable mobile phone repair services in Australia. Get transparent pricing for phone repairs, data recovery, fix iphone screen and more.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
   alternates: {

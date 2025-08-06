@@ -1,11 +1,11 @@
 import React from 'react'
 import FaqPageCall from './FaqPageCall'
 export const metadata = {
-  title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+  title: "Frequently Asked Questions | Phone Repair Training Australia | PRC",
   description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
   keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+    title: "Frequently Asked Questions | Phone Repair Training Australia | PRC",
     description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
     url: "/", // Replace with your actual page URL
     type: "website",
@@ -20,7 +20,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Frequently Asked Questions - Phone Repair Training | Labx Repair",
+    title: "Frequently Asked Questions | Phone Repair Training Australia | PRC",
     description: "Get answers to your questions about phone repair training. Learn about our mobile phone repair courses and phone screen repair services. Contact us for more info!",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },

@@ -14,12 +14,12 @@ import hname from "../../../public/Images/icons/h.png";
 import Googletest from "../../../public/Images/icons/Googletest.svg";
 
 export const metadata = {
-  title: "Contact Us Today - Mobile Phone Repair Training | Labx Repair",
-  description: "Get in touch with LabX Repair for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
+  title: "Contact Us Today - Mobile Phone Repair Course | Phone Repair Center",
+  description: "Get in touch with Phone Repair Center for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
   keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Contact Us Today - Mobile Phone Repair Training | Labx Repair",
-    description: "Get in touch with LabX Repair for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
+    title: "Contact Us Today - Mobile Phone Repair Course | Phone Repair Center",
+    description: "Get in touch with Phone Repair Center for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
     url: "Images/aboutadmin.png", 
     type: "website",
     images: [
@@ -33,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us Today - Mobile Phone Repair Training | Labx Repair",
-    description: "Get in touch with LabX Repair for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
+    title: "Contact Us Today - Mobile Phone Repair Course | Phone Repair Center",
+    description: "Get in touch with Phone Repair Center for expert mobile phone repair course, Services & Training. Whether you need screen replacements, data recovery. Contact us today!",
     images: "Images/aboutadmin.png",
   },
   alternates: {

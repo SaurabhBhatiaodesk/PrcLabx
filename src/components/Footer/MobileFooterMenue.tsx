@@ -193,13 +193,13 @@ const MobileFooterMenue = () => {
               <Link href="/what-we-do">What we do</Link>
             </li>
             <li className="mb-2 text-primary">
-              <Link href="/Trademark_Disclaimer">Trademark Disclaimer</Link>
+              <Link href="/Trademark-Disclaimer">Trademark Disclaimer</Link>
             </li>
             <li className="mb-2 text-primary">
-              <Link href="/Warranty_and_Terms">Warranty and Terms</Link>
+              <Link href="/Warranty-and-Terms">Warranty and Terms</Link>
             </li>
             <li className="mb-2 text-primary">
-              <Link href="/Shipping_Policy">Shipping Policy</Link>
+              <Link href="/Shipping-Policy">Shipping Policy</Link>
             </li>
 
             <li className="mb-2 text-primary">

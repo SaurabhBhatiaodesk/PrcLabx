@@ -1931,21 +1931,21 @@ const StaperForm: React.FC = () => {
                             agree to the PRC
                             <Link
                               className="text-primary  font-semibold "
-                              href="/Terms_and_Conditions"
+                              href="/Terms-and-conditions"
                             >
                               {" "}
                               Terms and Conditions{" "}
                             </Link>
                             <Link
                               className="text-primary font-semibold  "
-                              href="/Shipping_Policy"
+                              href="/Shipping-Policy"
                             >
                               Privacy Policy
                             </Link>{" "}
                             and{" "}
                             <Link
                               className="text-primary  font-semibold  "
-                              href="/Warranty_and_Terms"
+                              href="/Warranty-and-Terms"
                             >
                               Warranty Terms
                             </Link>

@@ -1,5 +1,9 @@
 import React from 'react'
-
+export const metadata = {
+  title: "PRC Repair Privacy Policy | Mobile Phone Repairing in Australia ",
+  description:
+    "Learn how Phone Repair Center collects, uses, and protects your personal information during mobile phone device repairs. Your privacy is our first priority. ",
+};
 function getPrivacyPolicySections() {
   return [
     {

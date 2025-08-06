@@ -327,7 +327,8 @@ const ProfessionalMegaMenu: React.FC<MegaMenuProps> = ({ className = "" }) => {
   // Check if current path is active
   const isActivePath = useCallback(
     (alias: string): boolean => {
-      return pathname.includes(`/brands/${alias}`);
+      const regex = new RegExp(`^/brands/${alias}(/|$)`); // Matches /brands/${alias} and any path after it
+      return regex.test(pathname);
     },
     [pathname]
   );

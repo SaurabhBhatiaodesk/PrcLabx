@@ -5,14 +5,14 @@ const MotherboardRepair = dynamic(() => import("./motherboard-repair"), {
   ssr: false,
 });
 export const metadata = {
-  title: "LabX Repair Mobile Phone Services - Expert Repair & Training",
+  title: "Advanced Motherboard Repair | Micro Soldering (Level 1) | PRC ",
   description:
-    "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+    "Master micro soldering & chip-level repairs with PRC Repair Level 1 course. Gain hands-on experience in diagnosing & fixing common motherboard issues in just 1 week.",
   // keywords: ["LabX", "tech solutions", "data recovery", "client reviews", "tech services"],
   openGraph: {
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Advanced Motherboard Repair | Micro Soldering (Level 1) | PRC ",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Master micro soldering & chip-level repairs with PRC Repair Level 1 course. Gain hands-on experience in diagnosing & fixing common motherboard issues in just 1 week.",
     url: "/", // Replace with your actual page URL
     type: "website",
     images: [
@@ -26,9 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome to LabX - Your Trusted Tech Solutions",
+    title: "Advanced Motherboard Repair | Micro Soldering (Level 1) | PRC ",
     description:
-      "Explore LabX Repair for expert mobile phone repairs and training in Melbourne West by Bharat, specializing in screen refurbishment and motherboard solutions.",
+      "Master micro soldering & chip-level repairs with PRC Repair Level 1 course. Gain hands-on experience in diagnosing & fixing common motherboard issues in just 1 week.",
     images: ["https://example.com/path-to-your-image.jpg"], // Replace with your image URL
   },
 };

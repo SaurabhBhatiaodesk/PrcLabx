@@ -313,7 +313,7 @@ export default function CustomHeader() {
               </li>
                  <li>
                 <Link
-                  href="/game-console"
+                  href="/brands/game-console"
                   target="_blank"
                   onClick={toggleMenu}
                 >
@@ -340,13 +340,13 @@ export default function CustomHeader() {
                     <Link href="/faq" onClick={toggleMenu}>
                       FAQ
                     </Link>
-                    <Link href="/Trademark_Disclaimer" onClick={toggleMenu}>
+                    <Link href="/Trademark-Disclaimer" onClick={toggleMenu}>
                       Trademark Disclaimer
                     </Link>
-                    <Link href="/Warranty_and_Terms" onClick={toggleMenu}>
+                    <Link href="/Warranty-and-Terms" onClick={toggleMenu}>
                       Warranty And Terms
                     </Link>
-                    <Link href="/Shipping_Policy" onClick={toggleMenu}>
+                    <Link href="/Shipping-Policy" onClick={toggleMenu}>
                       Shipping Policy
                     </Link>
                   </ul>

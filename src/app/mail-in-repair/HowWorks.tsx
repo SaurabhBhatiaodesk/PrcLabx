@@ -31,7 +31,7 @@ const HowWorks = () => {
       content:
         "After approval, follow the Mailing Instructions to ship your device.",
       button: "Shipping Information",
-      link: "/Shipping_Policy",
+      link: "/Shipping-Policy",
     },
     {
       title: "Device Intake and Repair",

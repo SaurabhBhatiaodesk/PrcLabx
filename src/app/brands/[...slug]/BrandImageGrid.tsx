@@ -27,6 +27,9 @@ const BrandImageGrid: React.FC<{
     localStorage.setItem("Lastslug", "");
   }, [brandsData]);
 
+    if (brandsData.length === 0 && showMessage) {
+    return <div className="text-center font-semibold">Services not available for this brand at the moment.</div>;
+  }
   return (
     <>
       <div
